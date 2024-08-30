@@ -77,7 +77,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.GridControlCheats.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.GridControlCheats.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
             this.GridControlCheats.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GridControlCheats.Location = new System.Drawing.Point(16, 3);
+            this.GridControlCheats.Location = new System.Drawing.Point(15, 3);
             this.GridControlCheats.MainView = this.GridViewCheats;
             this.GridControlCheats.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.GridControlCheats.Name = "GridControlCheats";
@@ -107,7 +107,6 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.GridViewCheats.OptionsMenu.ShowAutoFilterRowItem = false;
             this.GridViewCheats.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.GridViewCheats.OptionsSelection.EnableAppearanceHotTrackedRow = DevExpress.Utils.DefaultBoolean.True;
-            this.GridViewCheats.OptionsView.ShowColumnHeaders = false;
             this.GridViewCheats.OptionsView.ShowGroupPanel = false;
             this.GridViewCheats.OptionsView.ShowHorizontalLines = DevExpress.Utils.DefaultBoolean.False;
             this.GridViewCheats.OptionsView.ShowIndicator = false;
@@ -281,8 +280,8 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
             this.Appearance.Options.UseForeColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(650, 400);
             this.ControlBox = false;

@@ -111,7 +111,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.TextBoxFileName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxFileName.Properties.Appearance.Options.UseFont = true;
             this.TextBoxFileName.Properties.NullValuePrompt = "Screenshot File Name...";
-            this.TextBoxFileName.Size = new System.Drawing.Size(496, 22);
+            this.TextBoxFileName.Size = new System.Drawing.Size(496, 24);
             this.TextBoxFileName.TabIndex = 1183;
             // 
             // ImageScreenshot
@@ -134,15 +134,15 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.CheckBoxUploadToImgur.Properties.Appearance.Options.UseFont = true;
             this.CheckBoxUploadToImgur.Properties.AutoWidth = true;
             this.CheckBoxUploadToImgur.Properties.Caption = "Upload to Imgur";
-            this.CheckBoxUploadToImgur.Size = new System.Drawing.Size(109, 19);
+            this.CheckBoxUploadToImgur.Size = new System.Drawing.Size(111, 20);
             this.CheckBoxUploadToImgur.TabIndex = 1185;
             this.CheckBoxUploadToImgur.ToolTip = "if set to true, this will block the console from resolving LIVE related dns\r\nif n" +
     "ot set this value will be TRUE";
             // 
             // TakeScreenshot
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(520, 386);
             this.Controls.Add(this.CheckBoxUploadToImgur);
             this.Controls.Add(this.ImageScreenshot);

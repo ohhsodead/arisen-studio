@@ -38,6 +38,8 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         private void ResourceDialog_Load(object sender, EventArgs e)
         {
+            IsFavorite = Settings.FavoriteMods.Exists(x => x.CategoryType == CategoryType && x.CategoryId == ModItem.CategoryId && x.ModId == ModItem.Id && x.Platform == ModItem.GetPlatform());
+
             StatLastUpdated.Title = Language.GetString("LABEL_LAST_UPDATED");
             StatSystemType.Title = Language.GetString("LABEL_SYSTEM_TYPE");
             StatModType.Title = Language.GetString("LABEL_MOD_TYPE");
@@ -63,6 +65,14 @@ namespace ArisenStudio.Forms.Dialogs.Details
                 ? Language.GetString("NO_MORE_DETAILS")
                 : ModItem.Description.Replace("&", "&&");
 
+            ButtonDownload.Text = ModItem.DownloadFiles.Count > 1 ? Language.GetString("LABEL_DOWNLOAD_LATEST") : Language.GetString("LABEL_DOWNLOAD");
+            ButtonInstall.Text = ModItem.DownloadFiles.Count > 1 ? Language.GetString("LABEL_INSTALL_LATEST") : Language.GetString("LABEL_INSTALL");
+            ButtonInstall.Enabled = MainWindow.IsConsoleConnected || MainWindow.Settings.InstallResourcesToUsbDevice;
+
+            ButtonFavorite.Text = IsFavorite ? Language.GetString("LABEL_REMOVE_FROM_FAVORITES") : Language.GetString("LABEL_ADD_TO_FAVORITES");
+
+            ButtonReport.Text = Language.GetString("LABEL_REPORT_ISSUE");
+
             int count = 0;
             foreach (DownloadFiles downloadFile in ModItem.DownloadFiles)
             {
@@ -83,22 +93,6 @@ namespace ArisenStudio.Forms.Dialogs.Details
                 downloadItem.Dock = DockStyle.Top;
                 TabDownloads.Controls.Add(downloadItem);
             }
-
-            ButtonDownload.Text = Language.GetString("LABEL_DOWNLOAD");
-            ButtonInstall.Text = Language.GetString("LABEL_INSTALL");
-
-            IsFavorite = Settings.FavoriteMods.Exists(x => x.CategoryType == CategoryType && x.CategoryId == ModItem.CategoryId && x.ModId == ModItem.Id && x.Platform == ModItem.GetPlatform());
-
-            if (IsFavorite)
-            {
-                ButtonFavorite.Text = Language.GetString("LABEL_REMOVE_FROM_FAVORITES");
-            }
-            else
-            {
-                ButtonFavorite.Text = Language.GetString("LABEL_ADD_TO_FAVORITES");
-            }
-
-            ButtonReport.Text = Language.GetString("LABEL_REPORT_ISSUE");
         }
 
         private void ImageClose_Click(object sender, EventArgs e)
@@ -127,14 +121,14 @@ namespace ArisenStudio.Forms.Dialogs.Details
             }
         }
 
-        private void ButtonInstall_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ButtonDownloadLatest_Click(object sender, EventArgs e)
         {
             DialogExtensions.ShowTransferFilesDialog(this, TransferType.DownloadMods, ModItem.GetCategory(Categories), ModItem, ModItem.GetDownloadFiles(this));
+        }
+
+        private void ButtonInstall_Click(object sender, EventArgs e)
+        {
+            DialogExtensions.ShowTransferFilesDialog(this, TransferType.InstallMods, ModItem.GetCategory(Categories), ModItem, ModItem.GetDownloadFiles(this));
         }
 
         private void ButtonFavorite_Click(object sender, EventArgs e)

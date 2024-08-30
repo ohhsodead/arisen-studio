@@ -147,10 +147,10 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             this.PanelConsoleProfiles.AutoScroll = true;
             this.PanelConsoleProfiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelConsoleProfiles.Location = new System.Drawing.Point(2, 21);
+            this.PanelConsoleProfiles.Location = new System.Drawing.Point(2, 22);
             this.PanelConsoleProfiles.Name = "PanelConsoleProfiles";
             this.PanelConsoleProfiles.Padding = new System.Windows.Forms.Padding(4);
-            this.PanelConsoleProfiles.Size = new System.Drawing.Size(476, 345);
+            this.PanelConsoleProfiles.Size = new System.Drawing.Size(476, 344);
             this.PanelConsoleProfiles.TabIndex = 0;
             this.PanelConsoleProfiles.Scroll += new System.Windows.Forms.ScrollEventHandler(this.PanelConsoleProfiles_Scroll);
             this.PanelConsoleProfiles.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.PanelConsoleProfiles_ControlAddedOrRemoved);
@@ -289,8 +289,8 @@ namespace ArisenStudio.Forms.Dialogs
             this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
             this.Appearance.Options.UseFont = true;
             this.Appearance.Options.UseForeColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(504, 424);
             this.Controls.Add(this.ButtonAddNewProfile);

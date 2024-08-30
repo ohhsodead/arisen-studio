@@ -211,6 +211,16 @@ namespace ArisenStudio.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage available_update {
+            get {
+                object obj = ResourceManager.GetObject("available-update", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap backup_files {
@@ -1585,6 +1595,16 @@ namespace ArisenStudio.Properties {
         internal static DevExpress.Utils.Svg.SvgImage stop {
             get {
                 object obj = ResourceManager.GetObject("stop", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage trainers {
+            get {
+                object obj = ResourceManager.GetObject("trainers", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
             }
         }

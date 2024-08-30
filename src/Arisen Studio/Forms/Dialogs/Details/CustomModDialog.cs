@@ -56,9 +56,20 @@ namespace ArisenStudio.Forms.Dialogs.Details
             StatVersion.Value = CustomItem.Version;
             //StatCreatedBy.Value = CustomItem.CreatedBy;
 
+            TabDescription.Text = Language.GetString("LABEL_DESCRIPTION");
+            TabInstallationFiles.Text = $"{Language.GetString("LABEL_INSTALLATION_FILES")} ({CustomItem.Files.Count()})";
+
             LabelDescription.Text = string.IsNullOrWhiteSpace(CustomItem.Description)
                 ? Language.GetString("NO_MORE_DETAILS")
                 : CustomItem.Description.Replace("&", "&&");
+
+            ButtonInstall.Text = Language.GetString("LABEL_INSTALL");
+            ButtonEditDetails.Text = Language.GetString("LABEL_EDIT");
+
+            if (!MainWindow.IsConsoleConnected && !MainWindow.Settings.InstallHomebrewToUsbDevice)
+            {
+                ButtonInstall.Enabled = false;
+            }
 
             int count = 0;
             foreach (ListItem installFile in CustomItem.Files)
@@ -79,12 +90,6 @@ namespace ArisenStudio.Forms.Dialogs.Details
                 customFileItem.Dock = DockStyle.Top;
                 TabInstallationFiles.Controls.Add(customFileItem);
             }
-
-            TabDescription.Text = Language.GetString("LABEL_DESCRIPTION");
-            TabInstallationFiles.Text = $"{Language.GetString("LABEL_INSTALLATION_FILES")} ({CustomItem.Files.Count()})";
-
-            ButtonInstall.Text = Language.GetString("LABEL_INSTALL");
-            ButtonEditDetails.Text = Language.GetString("LABEL_EDIT");
         }
 
         private void ImageClose_Click(object sender, EventArgs e)

@@ -43,8 +43,8 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.SeparatorHeader = new DevExpress.XtraEditors.SeparatorControl();
             this.ImageClose = new DevExpress.XtraEditors.SvgImageBox();
             this.PanelHomebrewItemActions = new DevExpress.Utils.Layout.StackPanel();
-            this.ButtonInstall = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonDownload = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonInstall = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonFavorite = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonReport = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
@@ -57,10 +57,10 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TablePanelStats = new DevExpress.Utils.Layout.TablePanel();
             this.StatVersion = new ArisenStudio.Controls.StatItem();
             this.StatLastUpdated = new ArisenStudio.Controls.StatItem();
+            this.StatSystemType = new ArisenStudio.Controls.StatItem();
             this.StatSubmittedBy = new ArisenStudio.Controls.StatItem();
             this.StatModType = new ArisenStudio.Controls.StatItem();
             this.StatCreatedBy = new ArisenStudio.Controls.StatItem();
-            this.StatSystemType = new ArisenStudio.Controls.StatItem();
             ((System.ComponentModel.ISupportInitialize)(this.PanelHeader)).BeginInit();
             this.PanelHeader.SuspendLayout();
             this.PanelTitle.SuspendLayout();
@@ -213,30 +213,6 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.PanelHomebrewItemActions.Size = new System.Drawing.Size(800, 50);
             this.PanelHomebrewItemActions.TabIndex = 1175;
             // 
-            // ButtonInstall
-            // 
-            this.ButtonInstall.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ButtonInstall.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.ButtonInstall.Appearance.Options.UseFont = true;
-            this.ButtonInstall.Appearance.Options.UseForeColor = true;
-            this.ButtonInstall.AutoSize = true;
-            this.ButtonInstall.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ButtonInstall.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.ButtonInstall.ImageOptions.ImageToTextIndent = 6;
-            this.ButtonInstall.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.ButtonInstall.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.install_svg;
-            this.ButtonInstall.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonInstall.Location = new System.Drawing.Point(133, 11);
-            this.ButtonInstall.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ButtonInstall.MinimumSize = new System.Drawing.Size(0, 28);
-            this.ButtonInstall.Name = "ButtonInstall";
-            this.ButtonInstall.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
-            this.ButtonInstall.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonInstall.Size = new System.Drawing.Size(90, 28);
-            this.ButtonInstall.TabIndex = 1185;
-            this.ButtonInstall.Text = "Install";
-            this.ButtonInstall.Click += new System.EventHandler(this.ButtonInstall_Click);
-            // 
             // ButtonDownload
             // 
             this.ButtonDownload.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
@@ -260,6 +236,30 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonDownload.TabIndex = 1183;
             this.ButtonDownload.Text = "Download";
             this.ButtonDownload.Click += new System.EventHandler(this.ButtonDownloadLatest_Click);
+            // 
+            // ButtonInstall
+            // 
+            this.ButtonInstall.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ButtonInstall.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.ButtonInstall.Appearance.Options.UseFont = true;
+            this.ButtonInstall.Appearance.Options.UseForeColor = true;
+            this.ButtonInstall.AutoSize = true;
+            this.ButtonInstall.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonInstall.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonInstall.ImageOptions.ImageToTextIndent = 6;
+            this.ButtonInstall.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonInstall.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.install_svg;
+            this.ButtonInstall.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.ButtonInstall.Location = new System.Drawing.Point(133, 11);
+            this.ButtonInstall.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ButtonInstall.MinimumSize = new System.Drawing.Size(0, 28);
+            this.ButtonInstall.Name = "ButtonInstall";
+            this.ButtonInstall.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
+            this.ButtonInstall.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonInstall.Size = new System.Drawing.Size(90, 28);
+            this.ButtonInstall.TabIndex = 1185;
+            this.ButtonInstall.Text = "Install";
+            this.ButtonInstall.Click += new System.EventHandler(this.ButtonInstall_Click);
             // 
             // ButtonFavorite
             // 
@@ -351,14 +351,15 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TabPane.AppearanceButton.Pressed.Options.UseFont = true;
             this.TabPane.Controls.Add(this.TabDescription);
             this.TabPane.Controls.Add(this.TabDownloads);
-            this.TabPane.Location = new System.Drawing.Point(12, 140);
+            this.TabPane.Location = new System.Drawing.Point(16, 140);
+            this.TabPane.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.TabPane.Name = "TabPane";
             this.TabPane.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.TabDescription,
             this.TabDownloads});
-            this.TabPane.RegularSize = new System.Drawing.Size(776, 330);
+            this.TabPane.RegularSize = new System.Drawing.Size(770, 336);
             this.TabPane.SelectedPage = this.TabDescription;
-            this.TabPane.Size = new System.Drawing.Size(776, 330);
+            this.TabPane.Size = new System.Drawing.Size(770, 336);
             this.TabPane.TabIndex = 1195;
             this.TabPane.Text = "TabPane";
             this.TabPane.TransitionAnimationProperties.FrameCount = 900;
@@ -372,7 +373,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TabDescription.Caption = "Description";
             this.TabDescription.Controls.Add(this.LabelDescription);
             this.TabDescription.Name = "TabDescription";
-            this.TabDescription.Size = new System.Drawing.Size(776, 296);
+            this.TabDescription.Size = new System.Drawing.Size(770, 302);
             this.TabDescription.Scroll += new DevExpress.XtraEditors.XtraScrollEventHandler(this.TabDescription_Scroll);
             // 
             // LabelDescription
@@ -389,7 +390,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.LabelDescription.Margin = new System.Windows.Forms.Padding(8, 8, 8, 3);
             this.LabelDescription.Name = "LabelDescription";
             this.LabelDescription.Padding = new System.Windows.Forms.Padding(8, 8, 8, 0);
-            this.LabelDescription.Size = new System.Drawing.Size(776, 23);
+            this.LabelDescription.Size = new System.Drawing.Size(770, 23);
             this.LabelDescription.TabIndex = 1176;
             this.LabelDescription.Text = "...";
             // 
@@ -418,8 +419,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             // 
             // TablePanelStats
             // 
-            this.TablePanelStats.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.TablePanelStats.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TablePanelStats.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
@@ -438,7 +438,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TablePanelStats.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 30F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 30F)});
-            this.TablePanelStats.Size = new System.Drawing.Size(768, 117);
+            this.TablePanelStats.Size = new System.Drawing.Size(768, 108);
             this.TablePanelStats.TabIndex = 1205;
             // 
             // StatVersion
@@ -451,7 +451,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.StatVersion.Margin = new System.Windows.Forms.Padding(0);
             this.StatVersion.Name = "StatVersion";
             this.TablePanelStats.SetRow(this.StatVersion, 0);
-            this.StatVersion.Size = new System.Drawing.Size(154, 59);
+            this.StatVersion.Size = new System.Drawing.Size(154, 54);
             this.StatVersion.TabIndex = 5;
             this.StatVersion.Title = "Version";
             this.StatVersion.Value = "Value";
@@ -462,14 +462,29 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.StatLastUpdated.Appearance.Options.UseBackColor = true;
             this.TablePanelStats.SetColumn(this.StatLastUpdated, 0);
             this.StatLastUpdated.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.StatLastUpdated.Location = new System.Drawing.Point(0, 59);
+            this.StatLastUpdated.Location = new System.Drawing.Point(0, 54);
             this.StatLastUpdated.Margin = new System.Windows.Forms.Padding(0);
             this.StatLastUpdated.Name = "StatLastUpdated";
             this.TablePanelStats.SetRow(this.StatLastUpdated, 1);
-            this.StatLastUpdated.Size = new System.Drawing.Size(154, 58);
+            this.StatLastUpdated.Size = new System.Drawing.Size(154, 54);
             this.StatLastUpdated.TabIndex = 0;
             this.StatLastUpdated.Title = "Last Updated";
             this.StatLastUpdated.Value = "Value";
+            // 
+            // StatSystemType
+            // 
+            this.StatSystemType.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.StatSystemType.Appearance.Options.UseBackColor = true;
+            this.TablePanelStats.SetColumn(this.StatSystemType, 0);
+            this.StatSystemType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.StatSystemType.Location = new System.Drawing.Point(0, 0);
+            this.StatSystemType.Margin = new System.Windows.Forms.Padding(0);
+            this.StatSystemType.Name = "StatSystemType";
+            this.TablePanelStats.SetRow(this.StatSystemType, 0);
+            this.StatSystemType.Size = new System.Drawing.Size(154, 54);
+            this.StatSystemType.TabIndex = 1;
+            this.StatSystemType.Title = "System Type";
+            this.StatSystemType.Value = "Value";
             // 
             // StatSubmittedBy
             // 
@@ -481,7 +496,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.StatSubmittedBy.Margin = new System.Windows.Forms.Padding(0);
             this.StatSubmittedBy.Name = "StatSubmittedBy";
             this.TablePanelStats.SetRow(this.StatSubmittedBy, 0);
-            this.StatSubmittedBy.Size = new System.Drawing.Size(154, 59);
+            this.StatSubmittedBy.Size = new System.Drawing.Size(154, 54);
             this.StatSubmittedBy.TabIndex = 4;
             this.StatSubmittedBy.Title = "Submitted By";
             this.StatSubmittedBy.Value = "Value";
@@ -496,7 +511,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.StatModType.Margin = new System.Windows.Forms.Padding(0);
             this.StatModType.Name = "StatModType";
             this.TablePanelStats.SetRow(this.StatModType, 0);
-            this.StatModType.Size = new System.Drawing.Size(154, 59);
+            this.StatModType.Size = new System.Drawing.Size(154, 54);
             this.StatModType.TabIndex = 2;
             this.StatModType.Title = "Mod Type";
             this.StatModType.Value = "Value";
@@ -511,25 +526,10 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.StatCreatedBy.Margin = new System.Windows.Forms.Padding(0);
             this.StatCreatedBy.Name = "StatCreatedBy";
             this.TablePanelStats.SetRow(this.StatCreatedBy, 0);
-            this.StatCreatedBy.Size = new System.Drawing.Size(154, 59);
+            this.StatCreatedBy.Size = new System.Drawing.Size(154, 54);
             this.StatCreatedBy.TabIndex = 3;
             this.StatCreatedBy.Title = "Created By";
             this.StatCreatedBy.Value = "Value";
-            // 
-            // StatSystemType
-            // 
-            this.StatSystemType.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.StatSystemType.Appearance.Options.UseBackColor = true;
-            this.TablePanelStats.SetColumn(this.StatSystemType, 0);
-            this.StatSystemType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.StatSystemType.Location = new System.Drawing.Point(0, 0);
-            this.StatSystemType.Margin = new System.Windows.Forms.Padding(0);
-            this.StatSystemType.Name = "StatSystemType";
-            this.TablePanelStats.SetRow(this.StatSystemType, 0);
-            this.StatSystemType.Size = new System.Drawing.Size(154, 59);
-            this.StatSystemType.TabIndex = 1;
-            this.StatSystemType.Title = "System Type";
-            this.StatSystemType.Value = "Value";
             // 
             // ResourceDialog
             // 

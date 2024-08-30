@@ -98,7 +98,7 @@ namespace ArisenStudio.Database
         /// <returns> </returns>
         public string DownloadFilesDirectory(AppItemFile appFile)
         {
-            return $@"{MainWindow.Settings.PathGameMods.GetFullPath(MainWindow.Settings.PathBaseDirectory)}\{Platform}\{Name.RemoveInvalidChars()}\{CreatedBy.RemoveInvalidChars()}\{appFile.Name.RemoveInvalidChars()}-{GetVersion(appFile)}-{Id}\";
+            return $@"{MainWindow.Settings.PathDownloads.GetFullPath(MainWindow.Settings.PathAppData)}\{Platform}\Homebrew\{Name.RemoveInvalidChars()}\{CreatedBy.RemoveInvalidChars()}\{appFile.Name.RemoveInvalidChars()}-{GetVersion(appFile)}-{Id}\";
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace ArisenStudio.Database
         /// <returns> Mods Archive File Path </returns>
         public string LocalFilePath(AppItemFile appFile)
         {
-            return $@"{MainWindow.Settings.PathGameMods.GetFullPath(MainWindow.Settings.PathBaseDirectory)}\{Platform}\{Name.RemoveInvalidChars()}\{CreatedBy.RemoveInvalidChars()}\{appFile.Name.RemoveInvalidChars()}{GetVersion(appFile)}-{Id}.pkg";
+            return $@"{MainWindow.Settings.PathDownloads.GetFullPath(MainWindow.Settings.PathAppData)}\{Platform}\Homebrew\{Name.RemoveInvalidChars()}\{CreatedBy.RemoveInvalidChars()}\{appFile.Name.RemoveInvalidChars()}{GetVersion(appFile)}-{Id}.pkg";
         }
 
         /// <summary>

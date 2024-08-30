@@ -42,7 +42,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             try
             {
 #if !DEBUG
-                PS3 = new(SelectAPI.TargetManager);
+                PS3 = new(SelectAPI.ControlConsole);
                 PS3.ConnectTarget(ConsoleProfile.Address);
                 PS3.AttachProcess();
 #endif

@@ -49,6 +49,8 @@ using FluentFTP.Exceptions;
 using Microsoft.Web.WebView2.WinForms;
 using Microsoft.Web.WebView2.Core;
 using DevExpress.XtraCharts;
+using DevExpress.Drawing;
+using DevExpress.XtraEditors.Controls;
 
 namespace ArisenStudio.Forms.Windows
 {
@@ -186,17 +188,17 @@ namespace ArisenStudio.Forms.Windows
 
             handleSplashScreenProgress = ShowSplashScreenProgress();
 
-            if (HttpExtensions.CheckForInternetConnection())
+            if (HttpExtensions.CheckInternetConnection())
             {
                 Program.Log.Info("Internet connection detected.");
-
-                UpdateExtensions.CheckApplicationVersion();
 
                 if (Settings.FirstTimeOpenAfterUpdate)
                 {
                     Settings.FirstTimeOpenAfterUpdate = false;
                     DialogExtensions.ShowWhatsNewDialog(this, UpdateExtensions.AllReleases[0]);
                 }
+
+                UpdateExtensions.CheckApplicationVersion();
 
                 SetStatus(ResourceLanguage.GetString("INITIALIZING_APP_DB") + "...");
                 await Task.Run(LoadDataAsync);
@@ -256,7 +258,7 @@ namespace ArisenStudio.Forms.Windows
                                 Settings.LocalPathPS3 = TextBoxFileManagerLocalPath.Text;
                                 break;
                             case Platform.PS4:
-                                Settings.LocalPathPS3 = TextBoxFileManagerLocalPath.Text;
+                                Settings.LocalPathPS4 = TextBoxFileManagerLocalPath.Text;
                                 break;
                             case Platform.XBOX360:
                                 Settings.LocalPathXbox = TextBoxFileManagerLocalPath.Text;
@@ -272,7 +274,7 @@ namespace ArisenStudio.Forms.Windows
                                 Settings.ConsolePathPS3 = TextBoxFileManagerConsolePath.Text;
                                 break;
                             case Platform.PS4:
-                                Settings.ConsolePathPS3 = TextBoxFileManagerConsolePath.Text;
+                                Settings.ConsolePathPS4 = TextBoxFileManagerConsolePath.Text;
                                 break;
                             case Platform.XBOX360:
                                 Settings.ConsolePathXbox = TextBoxFileManagerConsolePath.Text;
@@ -408,6 +410,7 @@ namespace ArisenStudio.Forms.Windows
             {
                 NavigationItemGameMods.Visible = true;
                 NavigationItemHomebrew.Visible = true;
+                NavigationItemTrainers.Visible = false;
                 NavigationItemPackages.Visible = true;
                 NavigationItemResources.Visible = true;
                 NavigationItemGames.Visible = false;
@@ -417,6 +420,7 @@ namespace ArisenStudio.Forms.Windows
             {
                 NavigationItemGameMods.Visible = false;
                 NavigationItemHomebrew.Visible = true;
+                NavigationItemTrainers.Visible = false;
                 NavigationItemPackages.Visible = false;
                 NavigationItemResources.Visible = false;
                 NavigationItemGames.Visible = true;
@@ -426,6 +430,7 @@ namespace ArisenStudio.Forms.Windows
             {
                 NavigationItemGameMods.Visible = true;
                 NavigationItemHomebrew.Visible = true;
+                NavigationItemTrainers.Visible = true;
                 NavigationItemPackages.Visible = false;
                 NavigationItemResources.Visible = false;
                 NavigationItemGames.Visible = false;
@@ -598,7 +603,18 @@ namespace ArisenStudio.Forms.Windows
 
         private void ButtonDownloadsFolder_ItemClick(object sender, ItemClickEventArgs e)
         {
-            SetDownloadsLocation();
+            string downloadsPath = DialogExtensions.ShowFolderBrowseDialog(this, ResourceLanguage.GetString("LABEL_DOWNLOADS"));
+
+            if (!downloadsPath.IsNullOrEmpty())
+            {
+                if (!Directory.Exists(downloadsPath))
+                {
+                    XtraMessageBox.Show(this, ResourceLanguage.GetString("DIRECTORY_NOT_EXIST"), ResourceLanguage.GetString("DIRECTORY_NOT_FOUND"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                TextBoxSettingsPathDownloads.Text = downloadsPath + @"\";
+            }
         }
 
         private void ButtonDiscordPresence_CheckedChanged(object sender, ItemClickEventArgs e)
@@ -612,7 +628,7 @@ namespace ArisenStudio.Forms.Windows
         {
             NavigationMenu.SelectElement(NavigationItemSettings);
             NavigationFrame.SelectedPage = PageSettings;
-            TabControlSettings.SelectedPage = TabPageTransfer;
+            TabControlSettings.SelectedPage = TabPageMods;
         }
 
         private void ButtonAdvancedSettings_ItemClick(object sender, ItemClickEventArgs e)
@@ -1295,6 +1311,20 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
+        private bool hasLoadedTrainers = false;
+
+        private void NavigationItemTrainers_Click(object sender, EventArgs e)
+        {
+            NavigationFrame.SelectedPage = PageTrainersXbox;
+
+            if (!hasLoadedTrainers)
+            {
+                LoadTrainersCategories();
+                SearchTrainers();
+                hasLoadedTrainers = true;
+            }
+        }
+
         private bool hasLoadedResources = false;
 
         private void NavigationItemResources_Click(object sender, EventArgs e)
@@ -1872,7 +1902,7 @@ namespace ArisenStudio.Forms.Windows
 
         private void TileItemDownloadsOpenFolder_ItemClick(object sender, TileItemEventArgs e)
         {
-            Process.Start(IoExtensions.GetFullPath(Settings.PathBaseDirectory, Settings.PathDownloads));
+            Process.Start(Settings.PathDownloads);
         }
 
         private void TileItemDownloadsOpenFile_ItemClick(object sender, TileItemEventArgs e)
@@ -1912,7 +1942,7 @@ namespace ArisenStudio.Forms.Windows
         {
             if (XtraMessageBox.Show(this, ResourceLanguage.GetString("CONFIRM_DELETE_ALL_ITEMS"), ResourceLanguage.GetString("CONFIRM_DELETE_ALL"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                foreach (string file in Directory.GetFiles(IoExtensions.GetFullPath(Settings.PathBaseDirectory, Settings.PathDownloads), "*.zip", System.IO.SearchOption.AllDirectories))
+                foreach (string file in Directory.GetFiles(Settings.PathDownloads, "*.zip", System.IO.SearchOption.AllDirectories))
                 {
                     File.Delete(file);
                 }
@@ -4775,19 +4805,22 @@ namespace ArisenStudio.Forms.Windows
                 LabelSettingsUseRelativeTimes.Text = ResourceLanguage.GetString("USE_RELATIVE_TIMES");
 
                 LabelSettingsAutomation.Text = ResourceLanguage.GetString("AUTOMATION");
+                LabelSettingsAutoLoadDirectoryListings.Text = ResourceLanguage.GetString("AUTO_LOAD_DIRECTORY_LISTINGS");
+                LabelSettingsShowGamesFromExternalDevices.Text = ResourceLanguage.GetString("SHOW_GAMES_IN_EXTERNAL_DEVICES");
+                LabelSettingsAutoDetectGameRegions.Text = ResourceLanguage.GetString("AUTO_DETECT_GAME_REGIONS");
+                LabelSettingsAutoDetectGameTitles.Text = ResourceLanguage.GetString("AUTO_DETECT_GAME_TITLES");
+                LabelSettingsRememberLocalPath.Text = ResourceLanguage.GetString("REMEMBER_LOCAL_DIRECTORY_PATH");
+                LabelSettingsRememberConsolePath.Text = ResourceLanguage.GetString("REMEMBER_CONSOLE_DIRECTORY_PATH");
+
+                // Settings: Mods
                 LabelSettingsInstallModsToUsbDevice.Text = ResourceLanguage.GetString("INSTALL_MODS_TO_LOCAL_USB");
                 LabelSettingsInstallHomebrewToUsbDevice.Text = ResourceLanguage.GetString("INSTALL_HOMEBREW_TO_LOCAL_USB");
                 LabelSettingsInstallResourcesToUsbDevice.Text = ResourceLanguage.GetString("INSTALL_RESOURCES_TO_LOCAL_USB");
                 LabelSettingsInstallPackagesToUsbDevice.Text = ResourceLanguage.GetString("INSTALL_PACKAGES_TO_LOCAL_USB");
                 LabelSettingsInstallGameSavesToUsbDevice.Text = ResourceLanguage.GetString("INSTALL_GAME_SAVES_TO_LOCAL_USB");
                 LabelSettingsCleanUpFilesAfterInstalling.Text = ResourceLanguage.GetString("AUTO_DELETE_FILES_AFTER_INSTALLING");
-                LabelSettingsShowGamesFromExternalDevices.Text = ResourceLanguage.GetString("SHOW_GAMES_IN_EXTERNAL_DEVICES");
-                LabelSettingsAutoDetectGameRegions.Text = ResourceLanguage.GetString("AUTO_DETECT_GAME_REGIONS");
-                LabelSettingsAutoDetectGameTitles.Text = ResourceLanguage.GetString("AUTO_DETECT_GAME_TITLES");
                 LabelSettingsRememberGameRegions.Text = ResourceLanguage.GetString("REMEMBER_GAME_REGIONS_WHEN_INSTALLING");
-                LabelSettingsAutoLoadDirectoryListings.Text = ResourceLanguage.GetString("AUTO_LOAD_DIRECTORY_LISTINGS");
-                LabelSettingsRememberLocalPath.Text = ResourceLanguage.GetString("REMEMBER_LOCAL_DIRECTORY_PATH");
-                LabelSettingsRememberConsolePath.Text = ResourceLanguage.GetString("REMEMBER_CONSOLE_DIRECTORY_PATH");
+                LabelSettingsAlwaysBackupGameFiles.Text = ResourceLanguage.GetString("ALWAYS_BACKUP_GAME_FILES");
                 LabelSettingsForceInstallAnyRegions.Text = ResourceLanguage.GetString("LABEL_INSTALL_IGNORE_REGIONS");
 
                 // Settings: Files
@@ -4795,15 +4828,19 @@ namespace ArisenStudio.Forms.Windows
                 LabelSettingsPackagesFilePathPS4.Text = ResourceLanguage.GetString("PACKAGES_INSTALL_FILE_PATH");
                 LabelSettingsLaunchIniFilePath.Text = ResourceLanguage.GetString("LAUNCH_FILE_PATH");
 
-                // Settings: Paths
-                LabelSettingsPathBaseDirectory.Text = ResourceLanguage.GetString("LABEL_BASE_DIRECTORY");
+                // Settings: Downloads
+                LabelSettingsPathBaseDirectory.Text = ResourceLanguage.GetString("LABEL_APP_DATA");
                 LabelSettingsPathDownloads.Text = ResourceLanguage.GetString("LABEL_DOWNLOADS");
-                LabelSettingsPathGameMods.Text = ResourceLanguage.GetString("LABEL_GAME_MODS");
-                LabelSettingsPathPackages.Text = ResourceLanguage.GetString("LABEL_PACKAGES");
-                LabelSettingsPathGameSaves.Text = ResourceLanguage.GetString("LABEL_GAME_SAVES");
+                LabelSettingsPathTemp.Text = ResourceLanguage.GetString("LABEL_TEMP");
 
-                LabelSettingsReferToBaseDirectory.Text = ResourceLanguage.GetString("REFER_TO_BASE_DIRECTORY");
-                LabelSettingsDirectoriesMustBeWritable.Text = ResourceLanguage.GetString("DIRECTORIES_MUST_BE_WRITABLE");
+                LabelSettingsReferToBaseDirectory.Text = ResourceLanguage.GetString("REFER_TO_BASE_DIRECTORY") + "\n\n" + ResourceLanguage.GetString("DIRECTORIES_MUST_BE_WRITABLE");
+
+                // Settings: Cache
+                LabelSettingsLocalCache.Text = ResourceLanguage.GetString("LOCAL_CACHE");
+                ToggleSettingsClearCacheOnClose.Text = ResourceLanguage.GetString("CLEAR_LOCAL_CACHE_ON_CLOSE");
+
+                LabelSettingsLocalCache.Text = ResourceLanguage.GetString("CLEAR_CACHE");
+                ButtonSettingsClearCache.Text = ResourceLanguage.GetString("CLEAR_CACHE_RESTART");
 
                 // Settings: Discord
                 LabelSettingsRichPresence.Text = ResourceLanguage.GetString("RICH_PRESENCE");
@@ -4983,13 +5020,12 @@ namespace ArisenStudio.Forms.Windows
             TextBoxSettingsAuroraFolderPath.Text = Settings.AuroraFolderPath;
 
             /* Paths */
-            TextBoxSettingsPathBaseDirectory.Text = Settings.PathBaseDirectory;
+            TextBoxSettingsPathAppData.Text = Settings.PathAppData;
             TextBoxSettingsPathDownloads.Text = Settings.PathDownloads;
-            TextBoxSettingsPathGameMods.Text = Settings.PathGameMods;
-            TextBoxSettingsPathHomebrew.Text = Settings.PathHomebrew;
-            TextBoxSettingsPathResources.Text = Settings.PathResources;
-            TextBoxSettingsPathPackages.Text = Settings.PathPackages;
-            TextBoxSettingsPathGameSaves.Text = Settings.PathGameSaves;
+            TextBoxSettingsPathTemp.Text = Settings.PathTemp;
+
+            /* Cache */
+            ToggleSettingsClearCacheOnClose.IsOn = Settings.ClearCacheOnClose;
 
             /* Discord */
 
@@ -5264,300 +5300,114 @@ namespace ArisenStudio.Forms.Windows
 
         /* Paths */
 
-        private void TextBoxSettingsPathBaseDirectory_EditValueChanged(object sender, EventArgs e)
+        private void TextBoxSettingsPathAppData_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
-            if (TextBoxSettingsPathBaseDirectory.Text.Contains(@"\\"))
-            {
-                TextBoxSettingsPathBaseDirectory.Text = TextBoxSettingsPathBaseDirectory.Text.Replace(@"\\", @"\");
-            }
-
-            Settings.PathBaseDirectory = TextBoxSettingsPathBaseDirectory.Text;
-
-            //if (TextBoxSettingsPathBaseDirectory.Text.Contains(@"\\"))
-            //{
-            //    TextBoxSettingsPathBaseDirectory.Text.Replace(@"\\", @"\");
-            //    Settings.PathBaseDirectory = TextBoxSettingsPathBaseDirectory.Text += @"\";
-            //}
-        }
-
-        private void TextBoxSettingsPathBaseDirectory_Leave(object sender, EventArgs e)
-        {
-            if (TextBoxSettingsPathBaseDirectory.Text.Contains(@"\\"))
-            {
-                //Settings.PathBaseDirectory = TextBoxSettingsPathBaseDirectory.Text;
-                TextBoxSettingsPathBaseDirectory.Text = TextBoxSettingsPathBaseDirectory.Text.Replace(@"\\", @"\");
-                Settings.PathBaseDirectory = TextBoxSettingsPathBaseDirectory.Text += @"\";
-            }
-
-            if (!TextBoxSettingsPathBaseDirectory.Text.EndsWith(@"\"))
-            {
-                //Settings.PathBaseDirectory = TextBoxSettingsPathBaseDirectory.Text;
-                TextBoxSettingsPathBaseDirectory.Text += @"\";
-            }
-        }
-
-        private void ButtonSettingsPathBaseDirectory_Click(object sender, EventArgs e)
-        {
-            string path = DialogExtensions.ShowFolderBrowseDialog(this, ResourceLanguage.GetString("LABEL_BASE_DIRECTORY"));
+            string path = DialogExtensions.ShowFolderBrowseDialog(this, ResourceLanguage.GetString("LABEL_APP_DATA"));
 
             if (!path.IsNullOrEmpty())
             {
-                TextBoxSettingsPathBaseDirectory.Text = path + @"\";
+                TextBoxSettingsPathAppData.Text = path + @"\";
+                TextBoxSettingsPathAppData.Text = TextBoxSettingsPathAppData.Text.Replace(@"\\", @"\");
+                Settings.PathAppData = TextBoxSettingsPathAppData.Text;
             }
         }
 
-        private void TextBoxSettingsPathDownloads_EditValueChanged(object sender, EventArgs e)
-        {
-            if (TextBoxSettingsPathDownloads.Text.Contains(@"\\"))
-            {
-                TextBoxSettingsPathDownloads.Text = TextBoxSettingsPathDownloads.Text.Replace(@"\\", @"\");
-            }
-
-            Settings.PathDownloads = TextBoxSettingsPathDownloads.Text + @"\";
-        }
-
-        private void TextBoxSettingsPathDownloads_Leave(object sender, EventArgs e)
-        {
-            if (!TextBoxSettingsPathDownloads.Text.EndsWith(@"\"))
-            {
-                TextBoxSettingsPathDownloads.Text += @"\";
-            }
-        }
-
-        private void ButtonSettingsPathDownloads_Click(object sender, EventArgs e)
+        private void TextBoxSettingsPathDownloads_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
             string path = DialogExtensions.ShowFolderBrowseDialog(this, ResourceLanguage.GetString("LABEL_DOWNLOADS"));
 
             if (!path.IsNullOrEmpty())
             {
                 TextBoxSettingsPathDownloads.Text = path + @"\";
+                TextBoxSettingsPathDownloads.Text = TextBoxSettingsPathDownloads.Text.Replace(@"\\", @"\");
+                Settings.PathDownloads = TextBoxSettingsPathDownloads.Text;
             }
         }
 
-        private void TextBoxSettingsPathGameMods_EditValueChanged(object sender, EventArgs e)
+        private void TextBoxSettingsPathTemp_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
-            if (TextBoxSettingsPathGameMods.Text.Contains(@"\\"))
-            {
-                TextBoxSettingsPathGameMods.Text = TextBoxSettingsPathGameMods.Text.Replace(@"\\", @"\");
-            }
-
-            Settings.PathGameMods = TextBoxSettingsPathGameMods.Text;
-        }
-
-        private void TextBoxSettingsPathGameMods_Leave(object sender, EventArgs e)
-        {
-            if (!TextBoxSettingsPathGameMods.Text.EndsWith(@"\"))
-            {
-                TextBoxSettingsPathGameMods.Text += @"\";
-            }
-        }
-
-        private void ButtonSettingsPathGameMods_Click(object sender, EventArgs e)
-        {
-            string path = DialogExtensions.ShowFolderBrowseDialog(this, ResourceLanguage.GetString("LABEL_GAME_MODS"));
+            string path = DialogExtensions.ShowFolderBrowseDialog(this, ResourceLanguage.GetString("LABEL_TEMP"));
 
             if (!path.IsNullOrEmpty())
             {
-                TextBoxSettingsPathGameMods.Text = path + @"\";
+                TextBoxSettingsPathTemp.Text = path + @"\";
+                TextBoxSettingsPathTemp.Text = TextBoxSettingsPathTemp.Text.Replace(@"\\", @"\");
+                Settings.PathTemp = TextBoxSettingsPathTemp.Text;
             }
         }
 
-        private void TextBoxSettingsPathHomebrew_EditValueChanged(object sender, EventArgs e)
-        {
-            if (TextBoxSettingsPathHomebrew.Text.Contains(@"\\"))
-            {
-                TextBoxSettingsPathHomebrew.Text = TextBoxSettingsPathHomebrew.Text.Replace(@"\\", @"\");
-            }
-
-            Settings.PathHomebrew = TextBoxSettingsPathHomebrew.Text;
-        }
-
-        private void TextBoxSettingsPathHomebrew_Leave(object sender, EventArgs e)
-        {
-            if (!TextBoxSettingsPathHomebrew.Text.EndsWith(@"\"))
-            {
-                TextBoxSettingsPathHomebrew.Text += @"\";
-            }
-        }
-
-        private void ButtonSettingsPathHomebrew_Click(object sender, EventArgs e)
-        {
-            string path = DialogExtensions.ShowFolderBrowseDialog(this, ResourceLanguage.GetString("LABEL_HOMEBREW"));
-
-            if (!path.IsNullOrEmpty())
-            {
-                TextBoxSettingsPathHomebrew.Text = path + @"\";
-            }
-        }
-
-        private void TextBoxSettingsPathResources_EditValueChanged(object sender, EventArgs e)
-        {
-            if (TextBoxSettingsPathResources.Text.Contains(@"\\"))
-            {
-                TextBoxSettingsPathResources.Text = TextBoxSettingsPathResources.Text.Replace(@"\\", @"\");
-            }
-
-            Settings.PathResources = TextBoxSettingsPathResources.Text;
-        }
-
-        private void TextBoxSettingsPathResources_Leave(object sender, EventArgs e)
-        {
-            if (!TextBoxSettingsPathResources.Text.EndsWith(@"\"))
-            {
-                TextBoxSettingsPathResources.Text += @"\";
-            }
-        }
-
-        private void ButtonSettingsPathResources_Click(object sender, EventArgs e)
-        {
-            string path = DialogExtensions.ShowFolderBrowseDialog(this, ResourceLanguage.GetString("LABEL_RESOURCES"));
-
-            if (!path.IsNullOrEmpty())
-            {
-                TextBoxSettingsPathResources.Text = path + @"\";
-            }
-        }
-
-        private void TextBoxSettingsPathPackages_EditValueChanged(object sender, EventArgs e)
-        {
-            if (TextBoxSettingsPathPackages.Text.Contains(@"\\"))
-            {
-                TextBoxSettingsPathPackages.Text = TextBoxSettingsPathPackages.Text.Replace(@"\\", @"\");
-            }
-
-            Settings.PathPackages = TextBoxSettingsPathPackages.Text;
-        }
-
-        private void TextBoxSettingsPathPackages_Leave(object sender, EventArgs e)
-        {
-            if (!TextBoxSettingsPathPackages.Text.EndsWith(@"\"))
-            {
-                TextBoxSettingsPathPackages.Text += @"\";
-            }
-        }
-
-        private void ButtonSettingsPathPackages_Click(object sender, EventArgs e)
-        {
-            string path = DialogExtensions.ShowFolderBrowseDialog(this, ResourceLanguage.GetString("LABEL_PACKAGES"));
-
-            if (!path.IsNullOrEmpty())
-            {
-                TextBoxSettingsPathPackages.Text = path + @"\";
-            }
-        }
-
-        private void TextBoxSettingsPathGameSaves_EditValueChanged(object sender, EventArgs e)
-        {
-            if (TextBoxSettingsPathGameSaves.Text.Contains(@"\\"))
-            {
-                TextBoxSettingsPathGameSaves.Text = TextBoxSettingsPathGameSaves.Text.Replace(@"\\", @"\");
-            }
-
-            Settings.PathGameSaves = TextBoxSettingsPathGameSaves.Text;
-        }
-
-        private void TextBoxSettingsPathGameSaves_Leave(object sender, EventArgs e)
-        {
-            if (!TextBoxSettingsPathGameSaves.Text.EndsWith(@"\"))
-            {
-                TextBoxSettingsPathGameSaves.Text += @"\";
-            }
-        }
-
-        private void ButtonSettingsPathGameSaves_Click(object sender, EventArgs e)
-        {
-            string path = DialogExtensions.ShowFolderBrowseDialog(this, ResourceLanguage.GetString("LABEL_GAME_SAVES"));
-
-            if (!path.IsNullOrEmpty())
-            {
-                TextBoxSettingsPathGameSaves.Text = path + @"\";
-            }
-        }
-
-        // Tools
+        // Console
 
         /* PlayStation 3 */
 
-        private void TextBoxSettingsPackagesFilePathPS3_KeyDown(object sender, KeyEventArgs e)
+        private void TextBoxSettingsPackagesInstallPathPS3_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (TextBoxSettingsPackagesInstallPathPS3.Text.IsNullOrEmpty() | TextBoxSettingsPackagesInstallPathPS3.Text.IsNullOrWhiteSpace())
             {
-                if (TextBoxSettingsPackagesInstallPathPS3.Text.IsNullOrEmpty() | TextBoxSettingsPackagesInstallPathPS3.Text.IsNullOrWhiteSpace())
-                {
-                    TextBoxSettingsPackagesInstallPathPS3.Text = Settings.PackageInstallPathPS3;
-                    return;
-                }
-
-                Settings.PackageInstallPathPS3 = TextBoxSettingsPackagesInstallPathPS3.Text;
+                TextBoxSettingsPackagesInstallPathPS3.Text = Settings.PackageInstallPathPS3;
+                return;
             }
+
+            Settings.PackageInstallPathPS3 = TextBoxSettingsPackagesInstallPathPS3.Text;
         }
 
         /* PlayStation 4 */
 
-        private void TextBoxSettingsPackagesInstallPathPS4_KeyDown(object sender, KeyEventArgs e)
+        private void TextBoxSettingsPackagesInstallPathPS4_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (TextBoxSettingsPackagesInstallPathPS4.Text.IsNullOrEmpty() | TextBoxSettingsPackagesInstallPathPS4.Text.IsNullOrWhiteSpace())
             {
-                if (TextBoxSettingsPackagesInstallPathPS4.Text.IsNullOrEmpty() | TextBoxSettingsPackagesInstallPathPS4.Text.IsNullOrWhiteSpace())
-                {
-                    TextBoxSettingsPackagesInstallPathPS4.Text = Settings.PackageInstallPathPS4;
-                    return;
-                }
-
-                Settings.PackageInstallPathPS4 = TextBoxSettingsPackagesInstallPathPS4.Text;
+                TextBoxSettingsPackagesInstallPathPS4.Text = Settings.PackageInstallPathPS4;
+                return;
             }
+
+            Settings.PackageInstallPathPS4 = TextBoxSettingsPackagesInstallPathPS4.Text;
         }
 
         /* Xbox 360 */
 
-        private void TextBoxSettingsLaunchIniFilePath_KeyDown(object sender, KeyEventArgs e)
+        private void TextBoxSettingsLaunchIniFilePath_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (TextBoxSettingsLaunchIniFilePath.Text.IsNullOrEmpty() | TextBoxSettingsLaunchIniFilePath.Text.IsNullOrWhiteSpace())
             {
-                if (TextBoxSettingsLaunchIniFilePath.Text.IsNullOrEmpty() | TextBoxSettingsLaunchIniFilePath.Text.IsNullOrWhiteSpace())
-                {
-                    TextBoxSettingsLaunchIniFilePath.Text = Settings.LaunchIniFilePath;
-                    return;
-                }
-
-                Settings.LaunchIniFilePath = TextBoxSettingsLaunchIniFilePath.Text;
+                TextBoxSettingsLaunchIniFilePath.Text = Settings.LaunchIniFilePath;
+                return;
             }
+
+            Settings.LaunchIniFilePath = TextBoxSettingsLaunchIniFilePath.Text;
         }
 
-        private void TextBoxSettingsAuroraFolderPath_KeyDown(object sender, KeyEventArgs e)
+        private void TextBoxSettingsAuroraFolderPath_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (TextBoxSettingsAuroraFolderPath.Text.IsNullOrEmpty() | TextBoxSettingsAuroraFolderPath.Text.IsNullOrWhiteSpace())
             {
-                if (TextBoxSettingsAuroraFolderPath.Text.IsNullOrEmpty() | TextBoxSettingsAuroraFolderPath.Text.IsNullOrWhiteSpace())
-                {
-                    TextBoxSettingsAuroraFolderPath.Text = Settings.AuroraFolderPath;
-                    return;
-                }
-
-                Settings.AuroraFolderPath = TextBoxSettingsAuroraFolderPath.Text;
+                TextBoxSettingsAuroraFolderPath.Text = Settings.AuroraFolderPath;
+                return;
             }
+
+            Settings.AuroraFolderPath = TextBoxSettingsAuroraFolderPath.Text;
         }
 
-        // Download
+        // Cache
 
-        private void ImageSettingsDownloadsFolder_Click(object sender, EventArgs e)
+        private void ToggleSettingsClearCacheOnClose_Toggled(object sender, EventArgs e)
         {
-            SetDownloadsLocation();
+            Settings.ClearCacheOnClose = ToggleSettingsClearCacheOnClose.IsOn;
         }
 
-        private void SetDownloadsLocation()
+        private void ButtonSettingsClearCache_Click(object sender, EventArgs e)
         {
-            string downloadsPath = DialogExtensions.ShowFolderBrowseDialog(this, ResourceLanguage.GetString("LABEL_DOWNLOADS"));
-
-            if (!downloadsPath.IsNullOrEmpty())
+            try
             {
-                if (!Directory.Exists(downloadsPath))
-                {
-                    XtraMessageBox.Show(this, ResourceLanguage.GetString("DIRECTORY_NOT_EXIST"), ResourceLanguage.GetString("DIRECTORY_NOT_FOUND"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
-
-                TextBoxSettingsPathDownloads.Text = downloadsPath + @"\";
+                Program.Log.Info("Clearing local cache and restarting...");
+                string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                string directoryPath = Path.Combine(appDataPath, "Arisen Studio", "Cache");
+                IoExtensions.DeleteDirectory(directoryPath);
+                Application.Restart();
+            }
+            catch (Exception ex)
+            {
+                SetStatus("Unable to clear local cache. Error: " + ex.Message);
             }
         }
 
@@ -8058,7 +7908,7 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        private void TileItemHomebrewXboxSortBy_ItemClick(object sender, TileItemEventArgs e)
+        private void TileItemHomebrewXboxSort_ItemClick(object sender, TileItemEventArgs e)
         {
             Dialogs.SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterHomebrewXboxSortOption, [ResourceLanguage.GetString("LABEL_CATEGORY"), ResourceLanguage.GetString("LABEL_NAME"), ResourceLanguage.GetString("LABEL_VERSION"), ResourceLanguage.GetString("LABEL_CREATOR"), ResourceLanguage.GetString("LABEL_STATUS")], FilterHomebrewXboxSortOrder);
 
@@ -8272,7 +8122,7 @@ namespace ArisenStudio.Forms.Windows
         {
             if (e.FocusedRowHandle != -1)
             {
-                SelectedGameModXboxId = (int)GridViewHomebrewXbox.GetRowCellValue(e.FocusedRowHandle, GridViewHomebrewXbox.Columns[0]);
+                SelectedHomebrewXboxId = (int)GridViewHomebrewXbox.GetRowCellValue(e.FocusedRowHandle, GridViewHomebrewXbox.Columns[0]);
             }
 
             TileItemHomebrewXboxDownload.Enabled = e.FocusedRowHandle != -1;
@@ -8286,11 +8136,11 @@ namespace ArisenStudio.Forms.Windows
             GridHitInfo info = view.CalcHitInfo(ea.Location);
             if (info.InRow)
             {
-                SelectedGameModXboxId = (int)GridViewHomebrewXbox.GetRowCellValue(info.RowHandle, GridViewHomebrewXbox.Columns[0]);
+                SelectedHomebrewXboxId = (int)GridViewHomebrewXbox.GetRowCellValue(info.RowHandle, GridViewHomebrewXbox.Columns[0]);
             }
 
-            TileItemHomebrewXboxDownload.Enabled = SelectedGameModXboxId != -1;
-            TileItemHomebrewXboxShowDetails.Enabled = SelectedGameModXboxId != -1;
+            TileItemHomebrewXboxDownload.Enabled = SelectedHomebrewXboxId != -1;
+            TileItemHomebrewXboxShowDetails.Enabled = SelectedHomebrewXboxId != -1;
         }
 
         private void GridViewHomebrewXbox_DoubleClick(object sender, EventArgs e)
@@ -8303,9 +8153,9 @@ namespace ArisenStudio.Forms.Windows
                 //string colCaption = info.Column == null ? "N/A" : info.Column.GetCaption();
                 //MessageBox.Show(string.Format("DoubleClick on row: {0}, column: {1}.", info.RowHandle, colCaption));
 
-                SelectedGameModXboxId = (int)GridViewHomebrewXbox.GetRowCellValue(info.RowHandle, GridViewHomebrewXbox.Columns[0]); ;
+                SelectedHomebrewXboxId = (int)GridViewHomebrewXbox.GetRowCellValue(info.RowHandle, GridViewHomebrewXbox.Columns[0]); ;
 
-                ModItemData selectedPlugin = Database.HomebrewX360.GetModById(Platform.XBOX360, SelectedGameModXboxId);
+                ModItemData selectedPlugin = Database.HomebrewX360.GetModById(Platform.XBOX360, SelectedHomebrewXboxId);
                 ShowHomebrewDetails(Platform.XBOX360, selectedPlugin.Id);
             }
         }
@@ -9463,7 +9313,7 @@ namespace ArisenStudio.Forms.Windows
 
         #region Trainers Page
 
-        private GameCheatItemData SelectedTrainersItem { get; set; }
+        private TrainerGameData SelectedTrainerGame { get; set; }
 
         private void TileItemTrainersSortBy_ItemClick(object sender, TileItemEventArgs e)
         {
@@ -9479,7 +9329,7 @@ namespace ArisenStudio.Forms.Windows
 
         private void TileItemTrainersAddFavorite_ItemClick(object sender, TileItemEventArgs e)
         {
-            if (SelectedTrainersItem != null)
+            if (SelectedTrainerGame != null)
             {
                 //var gameCheatItem = Database.TrainersPS3.Trainers.First(x => x.Game == );
                 //Settings.FavoriteMods.Add(new() { Platform = gameSaveItem.GetPlatform(), CategoryId = gameSaveItem.CategoryId, CategoryType = CategoryType.GameSave, ModId = gameSaveItem.Id });
@@ -9488,7 +9338,7 @@ namespace ArisenStudio.Forms.Windows
 
         private void TileItemTrainersDownload_ItemClick(object sender, TileItemEventArgs e)
         {
-            if (SelectedTrainersItem != null)
+            if (SelectedTrainerGame != null)
             {
                 //ShowTransferTrainersFileDialog(this, TransferType.DownloadGameSave, SelectedTrainersItem);
             }
@@ -9498,7 +9348,7 @@ namespace ArisenStudio.Forms.Windows
         {
             if (SelectedGameSaveItem != null)
             {
-                ShowTrainers(SelectedTrainersItem);
+                ShowGameTrainers(SelectedTrainerGame);
             }
         }
 
@@ -9515,53 +9365,61 @@ namespace ArisenStudio.Forms.Windows
         /// <summary>
         /// Get/set the category Id for filtering game saves.
         /// </summary>
-        private string FilterTrainersCategoryId { get; set; } = string.Empty;
+        private string FilterTrainersGame { get; set; } = string.Empty;
 
         /// <summary>
         /// Get/set the file name for filtering game saves.
         /// </summary>
-        private string FilterTrainersName { get; set; } = string.Empty;
+        private string FilterTrainersTitleId { get; set; } = string.Empty;
 
         /// <summary>
         /// Get/set the mod type for filtering game saves.
         /// </summary>
-        private string FilterTrainersRegion { get; set; } = string.Empty;
+        private string FilterTrainersDashType { get; set; } = string.Empty;
 
         /// <summary>
         /// Get/set the version for filtering game saves.
         /// </summary>
-        private string FilterTrainersVersion { get; set; } = string.Empty;
+        private string FilterTrainersCount { get; set; } = string.Empty;
 
         private void ComboBoxTrainersFilterGame_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ComboBoxTrainersFilterGame.SelectedIndex == 0 | ComboBoxTrainersFilterGame.SelectedIndex == -1)
             {
-                FilterTrainersCategoryId = string.Empty;
+                FilterTrainersGame = string.Empty;
             }
             else
             {
-                string selectedCategory = ComboBoxTrainersFilterGame.SelectedItem as string;
-                Category category = Database.CategoriesData.GetCategoryByTitle(selectedCategory);
-                FilterTrainersCategoryId = category.Id;
+                string selectedGame = ComboBoxTrainersFilterGame.SelectedItem as string;
+                FilterTrainersGame = selectedGame;
             }
 
             SearchTrainers();
         }
 
-        private void ComboBoxTrainersFilterRegion_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBoxTrainersFilterTitleId_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FilterTrainersRegion = ComboBoxTrainersFilterRegion.SelectedIndex == 0 | ComboBoxTrainersFilterRegion.SelectedIndex == -1
+            FilterTrainersTitleId = ComboBoxTrainersFilterTitleId.SelectedIndex == 0 | ComboBoxTrainersFilterTitleId.SelectedIndex == -1
                 ? string.Empty
-                : ComboBoxTrainersFilterRegion.SelectedItem as string;
+                : ComboBoxTrainersFilterTitleId.SelectedItem as string;
 
             SearchTrainers();
         }
 
-        private void ComboBoxTrainersFilterVersion_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBoxTrainersFilterDashType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FilterTrainersVersion = ComboBoxTrainersFilterVersion.SelectedIndex == 0 | ComboBoxTrainersFilterVersion.SelectedIndex == -1
+            FilterTrainersDashType = ComboBoxTrainersFilterDashType.SelectedIndex == 0 | ComboBoxTrainersFilterDashType.SelectedIndex == -1
                 ? string.Empty
-                : ComboBoxTrainersFilterVersion.SelectedItem as string;
+                : ComboBoxTrainersFilterDashType.SelectedItem as string;
+
+            SearchTrainers();
+        }
+
+        private void ComboBoxTrainersFilterCount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterTrainersCount = ComboBoxTrainersFilterCount.SelectedIndex == 0 | ComboBoxTrainersFilterCount.SelectedIndex == -1
+                ? string.Empty
+                : ComboBoxTrainersFilterCount.SelectedItem as string;
 
             SearchTrainers();
         }
@@ -9588,31 +9446,19 @@ namespace ArisenStudio.Forms.Windows
             //    }
             //}
 
-            foreach (GameCheatItemData game in Database.TrainersPS3.Trainers.OrderBy(x => x.Game))
+            //foreach (GameCheatItemData game in Database.TrainersX360.Library.OrderBy(x => x.Game))
+            //{
+            //    ComboBoxTrainersFilterGame.Properties.Items.Add(game.Game);
+            //}
+
+            foreach (TrainerGameData game in Database.TrainersX360.Library)
             {
-                ComboBoxTrainersFilterGame.Properties.Items.Add(game.Game);
+                ComboBoxTrainersFilterGame.Properties.Items.Add(Database.TitleIdsX360.GetTitleFromTitleId(game.TitleId));
+
+                ComboBoxTrainersFilterTitleId.Properties.Items.Add(game.TitleId);
             }
 
-            List<string> ignoreValues = ["n/a", "-", "all regions", "all", "n", "a"];
-
-            foreach (GameCheatItemData gameCheatItem in Database.TrainersPS3.Trainers)
-            {
-                foreach (string region in from string region in gameCheatItem.Region.Split(' ')
-                                          where !ComboBoxTrainersFilterRegion.Properties.Items.Contains(region)
-                                          where !ignoreValues.Exists(x => x.EqualsIgnoreCase(region))
-                                          select region)
-                {
-                    ComboBoxTrainersFilterRegion.Properties.Items.Add(region);
-                }
-
-                foreach (string version in from string version in gameCheatItem.Version.Split('/')
-                                           where !ComboBoxTrainersFilterVersion.Properties.Items.Contains(version)
-                                           where !ignoreValues.Exists(x => x.EqualsIgnoreCase(version))
-                                           select version)
-                {
-                    ComboBoxTrainersFilterVersion.Properties.Items.Add(version);
-                }
-            }
+            ComboBoxTrainersFilterGame.Properties.Sorted = true;
         }
 
         /// <summary>
@@ -9626,36 +9472,49 @@ namespace ArisenStudio.Forms.Windows
 
             DataTableTrainers.Rows.Clear();
 
-            foreach (GameCheatItemData gameCheatItem in Database.TrainersPS3.Trainers.FindAll(x => x.Game == FilterTrainersName && x.Region == FilterTrainersRegion && x.Version == FilterTrainersVersion))
+            foreach (TrainerGameData trainerGame in Database.TrainersX360.Library.FindAll(x =>
             {
-                Category category = Database.CategoriesData.GetCategoryById(gameCheatItem.Game);
+                return Database.TitleIdsX360.GetTitleFromTitleId(x.TitleId).ContainsIgnoreCaseSymbols(FilterTrainersGame) && x.TitleId.ContainsIgnoreCaseSymbols(FilterTrainersTitleId)
+                && string.IsNullOrEmpty(FilterTrainersTitleId) ? true : x.TitleId.ContainsIgnoreCaseSymbols(FilterTrainersTitleId)
+                && string.IsNullOrEmpty(FilterTrainersDashType) ? true : x.Trainers.Any(x => x.Type.EqualsIgnoreCaseSymbols(FilterTrainersDashType))
+                && string.IsNullOrEmpty(FilterTrainersCount) ? true : x.Trainers.Count().ToString().Equals(FilterTrainersCount);
+            }))
+            {
+                DataTableTrainers.Rows.Add(Database.TitleIdsX360.GetTitleFromTitleId(trainerGame.TitleId),
+                                           trainerGame.TitleId,
+                                           string.IsNullOrEmpty(FilterTrainersDashType) ? "All Types" : FilterTrainersDashType, //trainerGame.Trainers.Any(x => x.Type.EqualsIgnoreCaseSymbols(FilterTrainersDashType)).ToYesNoString(ResourceLanguage),
+                                           trainerGame.Trainers.Count() + " Trainers");
 
-                DataTableTrainers.Rows.Add(gameCheatItem.Game,
-                                             gameCheatItem.Region,
-                                             gameCheatItem.Version,
-                                             gameCheatItem.Cheats.Count() + " Cheats");
+                if (!FilterTrainersGame.IsNullOrEmpty() && FilterTrainersTitleId.IsNullOrEmpty())
+                {
+                    FilterTrainersTitleId = Database.TitleIdsX360.GetTitleIdFromTitle(FilterTrainersGame);
+                }
+                else if (FilterTrainersGame.IsNullOrEmpty() && !FilterTrainersTitleId.IsNullOrEmpty())
+                {
+                    FilterTrainersGame = Database.TitleIdsX360.GetTitleFromTitleId(FilterTrainersTitleId);
+                }
             }
 
             GridControlTrainers.DataSource = DataTableTrainers;
 
             //GridViewTrainers.Columns[0].Visible = false;
 
-            GridViewTrainers.Columns[1].MinWidth = 112;
-            GridViewTrainers.Columns[1].MaxWidth = 112;
+            GridViewTrainers.Columns[1].MinWidth = 162;
+            GridViewTrainers.Columns[1].MaxWidth = 162;
 
-            GridViewTrainers.Columns[2].MinWidth = 112;
-            GridViewTrainers.Columns[2].MaxWidth = 112;
+            GridViewTrainers.Columns[2].MinWidth = 142;
+            GridViewTrainers.Columns[2].MaxWidth = 142;
 
-            GridViewTrainers.Columns[3].MinWidth = 92;
-            GridViewTrainers.Columns[3].MaxWidth = 92;
+            GridViewTrainers.Columns[3].MinWidth = 82;
+            GridViewTrainers.Columns[3].MaxWidth = 82;
 
-            ComboBoxTrainersFilterType.SelectedIndexChanged -= ComboBoxTrainersFilterRegion_SelectedIndexChanged;
-            ComboBoxTrainersFilterType.SelectedIndex = string.IsNullOrEmpty(FilterTrainersRegion) ? -1 : ComboBoxTrainersFilterRegion.Properties.Items.IndexOf(FilterTrainersRegion);
-            ComboBoxTrainersFilterType.SelectedIndexChanged += ComboBoxTrainersFilterRegion_SelectedIndexChanged;
+            //ComboBoxTrainersFilterTitleId.SelectedIndexChanged -= ComboBoxTrainersFilterTitleId_SelectedIndexChanged;
+            //ComboBoxTrainersFilterTitleId.SelectedIndex = string.IsNullOrEmpty(FilterTrainersTitleId) ? -1 : ComboBoxTrainersFilterTitleId.Properties.Items.IndexOf(ComboBoxTrainersFilterTitleId);
+            //ComboBoxTrainersFilterTitleId.SelectedIndexChanged += ComboBoxTrainersFilterTitleId_SelectedIndexChanged;
 
-            ComboBoxTrainersFilterVersion.SelectedIndexChanged -= ComboBoxTrainersFilterVersion_SelectedIndexChanged;
-            ComboBoxTrainersFilterVersion.SelectedIndex = string.IsNullOrEmpty(FilterTrainersVersion) ? -1 : ComboBoxTrainersFilterVersion.Properties.Items.IndexOf(FilterTrainersVersion);
-            ComboBoxTrainersFilterVersion.SelectedIndexChanged += ComboBoxTrainersFilterVersion_SelectedIndexChanged;
+            //ComboBoxTrainersFilterVersion.SelectedIndexChanged -= ComboBoxTrainersFilterVersion_SelectedIndexChanged;
+            //ComboBoxTrainersFilterVersion.SelectedIndex = string.IsNullOrEmpty(FilterTrainersVersion) ? -1 : ComboBoxTrainersFilterVersion.Properties.Items.IndexOf(FilterTrainersVersion);
+            //ComboBoxTrainersFilterVersion.SelectedIndexChanged += ComboBoxTrainersFilterVersion_SelectedIndexChanged;
 
             GridViewTrainers.SortInfo.ClearAndAddRange([
                 new GridColumnSortInfo(GridViewTrainers.Columns[FilterTrainersSortOption], FilterTrainersSortOrder),
@@ -9671,13 +9530,21 @@ namespace ArisenStudio.Forms.Windows
 
         private void GridViewTrainers_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            if (e.FocusedRowHandle != -1)
+            if (GridViewTrainers.RowCount > 0)
             {
-                SelectedTrainersItem = Database.Trainers.GetModById(Platform, (int)GridViewTrainers.GetRowCellValue(e.FocusedRowHandle, GridViewGames.Columns[0]));
+                if (e.FocusedRowHandle != -1)
+                {
+                    SelectedTrainerGame = Database.TrainersX360.Library.First(x => x.TitleId == (string)GridViewTrainers.GetRowCellValue(e.FocusedRowHandle, GridViewTrainers.Columns[1]));
+
+                    //try
+                    //{
+                    //    SelectedTrainerGame = Database.TrainersX360.Library.First(x => x.TitleId == (string)GridViewTrainers.GetRowCellValue(e.FocusedRowHandle, GridViewTrainers.Columns[1]));
+                    //}
+                    //catch { }
+                }
             }
 
-            TileItemTrainersDownload.Enabled = e.FocusedRowHandle != -1;
-            TileItemTrainersShowDetails.Enabled = e.FocusedRowHandle != -1;
+            TileItemTrainerShowDetails.Enabled = e.FocusedRowHandle != -1;
         }
 
         private void GridViewTrainers_RowClick(object sender, RowClickEventArgs e)
@@ -9687,11 +9554,10 @@ namespace ArisenStudio.Forms.Windows
             GridHitInfo info = view.CalcHitInfo(ea.Location);
             if (info.InRow)
             {
-                SelectedTrainersItem = Database.Trainers.GetModById(Platform, (int)GridViewTrainers.GetRowCellValue(e.RowHandle, GridViewGames.Columns[0]));
+                SelectedTrainerGame = Database.TrainersX360.Library.First(x => x.TitleId == (string)GridViewTrainers.GetRowCellValue(e.RowHandle, GridViewTrainers.Columns[1]));
             }
 
-            TileItemTrainersDownload.Enabled = SelectedTrainersItem != null;
-            TileItemTrainersShowDetails.Enabled = SelectedTrainersItem != null;
+            TileItemTrainerShowDetails.Enabled = SelectedTrainerGame != null;
         }
 
         private void GridViewTrainers_DoubleClick(object sender, EventArgs e)
@@ -9707,9 +9573,9 @@ namespace ArisenStudio.Forms.Windows
                 //int modId = (int)GridViewGames.GetRowCellValue(info.RowHandle, GridViewGames.Columns[0]);
                 //SelectedGameModXboxId = modId;
 
-                SelectedTrainersItem = Database.Trainers.GetModById(Platform, (int)GridViewTrainers.GetRowCellValue(info.RowHandle, GridViewGames.Columns[0]));
+                SelectedTrainerGame = Database.TrainersX360.Library.First(x => x.TitleId == (string)GridViewTrainers.GetRowCellValue(info.RowHandle, GridViewTrainers.Columns[1]));
 
-                ShowTrainers(SelectedTrainersItem);
+                ShowGameTrainers(SelectedTrainerGame);
             }
         }
 
@@ -9954,10 +9820,10 @@ namespace ArisenStudio.Forms.Windows
         /// <summary>
         /// Show the details dialog.
         /// </summary>
-        /// <param name="trainerItem"> Specifies the <see cref="TrainerItem" /> </param>
-        private void ShowGameTrainers(TrainerItem trainerItem)
+        /// <param name="trainerGame"> Specifies the <see cref="TrainerGameData" /> </param>
+        private void ShowGameTrainers(TrainerGameData trainerGame)
         {
-            DialogExtensions.ShowGameTrainers(this, trainerItem);
+            DialogExtensions.ShowGameTrainers(this, trainerGame);
         }
 
         #endregion
@@ -10589,6 +10455,22 @@ namespace ArisenStudio.Forms.Windows
             {
                 DXMouseEventArgs.GetMouseArgs(e).Handled = true;
             }
+        }
+
+        //public bool IsUpdateAvailable { get; set; } = false;
+
+        public void UpdateAvailable(bool isNewUpdate)
+        {
+            //IsUpdateAvailable = isNewUpdate;
+            ButtonUpdate.Visibility = isNewUpdate ? BarItemVisibility.Always : BarItemVisibility.Never;
+        }
+
+        private void ButtonUpdate_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //if (IsUpdateAvailable)
+            //{
+                UpdateExtensions.UpdateApplication();
+            //}
         }
 
         private void GridViewDownloads_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)

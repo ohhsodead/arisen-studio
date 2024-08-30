@@ -368,7 +368,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TablePanelStats.Name = "TablePanelStats";
             this.TablePanelStats.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F)});
-            this.TablePanelStats.Size = new System.Drawing.Size(768, 60);
+            this.TablePanelStats.Size = new System.Drawing.Size(768, 54);
             this.TablePanelStats.TabIndex = 1208;
             // 
             // StatTitleId
@@ -381,7 +381,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.StatTitleId.Margin = new System.Windows.Forms.Padding(0);
             this.StatTitleId.Name = "StatTitleId";
             this.TablePanelStats.SetRow(this.StatTitleId, 0);
-            this.StatTitleId.Size = new System.Drawing.Size(491, 60);
+            this.StatTitleId.Size = new System.Drawing.Size(491, 54);
             this.StatTitleId.TabIndex = 6;
             this.StatTitleId.Title = "Title ID";
             this.StatTitleId.Value = "Value";
@@ -396,7 +396,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.StatFileSize.Margin = new System.Windows.Forms.Padding(0);
             this.StatFileSize.Name = "StatFileSize";
             this.TablePanelStats.SetRow(this.StatFileSize, 0);
-            this.StatFileSize.Size = new System.Drawing.Size(139, 60);
+            this.StatFileSize.Size = new System.Drawing.Size(139, 54);
             this.StatFileSize.TabIndex = 5;
             this.StatFileSize.Title = "File Size";
             this.StatFileSize.Value = "Value";
@@ -411,7 +411,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.StatModifiedDate.Margin = new System.Windows.Forms.Padding(0);
             this.StatModifiedDate.Name = "StatModifiedDate";
             this.TablePanelStats.SetRow(this.StatModifiedDate, 0);
-            this.StatModifiedDate.Size = new System.Drawing.Size(139, 60);
+            this.StatModifiedDate.Size = new System.Drawing.Size(139, 54);
             this.StatModifiedDate.TabIndex = 0;
             this.StatModifiedDate.Title = "Modified Date";
             this.StatModifiedDate.Value = "Value";
@@ -419,8 +419,8 @@ namespace ArisenStudio.Forms.Dialogs.Details
             // PackageDialog
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 332);
             this.ControlBox = false;

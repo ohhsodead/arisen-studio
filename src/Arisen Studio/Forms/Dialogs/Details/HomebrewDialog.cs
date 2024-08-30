@@ -40,6 +40,9 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         private void HomebrewDialog_Load(object sender, EventArgs e)
         {
+            InstalledModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, ModItem.CategoryId, ModItem.Id, false) : null;
+            IsFavorite = MainWindow.Settings.FavoriteMods.Exists(x => x.CategoryType == CategoryType && x.CategoryId == ModItem.CategoryId && x.ModId == ModItem.Id && x.Platform == ModItem.GetPlatform());
+
             StatLastUpdated.Title = Language.GetString("LABEL_LAST_UPDATED");
             StatSystemType.Title = Language.GetString("LABEL_SYSTEM_TYPE");
             StatVersion.Title = Language.GetString("LABEL_VERSION");
@@ -59,7 +62,17 @@ namespace ArisenStudio.Forms.Dialogs.Details
                 ? Language.GetString("NO_MORE_DETAILS")
                 : ModItem.Description.Replace("&", "&&");
 
-            InstalledModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, ModItem.CategoryId, ModItem.Id, false) : null;
+            TabDescription.Text = Language.GetString("LABEL_DESCRIPTION");
+            TabDownloads.Text = $"{Language.GetString("LABEL_DOWNLOADS")} ({ModItem.DownloadFiles.Count})";
+
+            ButtonDownload.Text = ModItem.DownloadFiles.Count > 1 ? Language.GetString("LABEL_DOWNLOAD_LATEST") : Language.GetString("LABEL_DOWNLOAD");
+            ButtonInstall.Text = ModItem.DownloadFiles.Count > 1 ? Language.GetString("LABEL_INSTALL_LATEST") : Language.GetString("LABEL_INSTALL");
+
+            ButtonInstall.Enabled = MainWindow.IsConsoleConnected || MainWindow.Settings.InstallHomebrewToUsbDevice;
+
+            ButtonFavorite.Text = IsFavorite ? Language.GetString("LABEL_REMOVE_FROM_FAVORITES") : Language.GetString("LABEL_ADD_TO_FAVORITES");
+
+            ButtonReport.Text = Language.GetString("LABEL_REPORT_ISSUE");
 
             int count = 0;
             foreach (DownloadFiles downloadFile in ModItem.DownloadFiles)
@@ -81,22 +94,6 @@ namespace ArisenStudio.Forms.Dialogs.Details
                 downloadItem.Dock = DockStyle.Top;
                 TabDownloads.Controls.Add(downloadItem);
             }
-
-            TabDescription.Text = Language.GetString("LABEL_DESCRIPTION");
-            TabDownloads.Text = $"{Language.GetString("LABEL_DOWNLOADS")} ({ModItem.DownloadFiles.Count})";
-
-            IsFavorite = MainWindow.Settings.FavoriteMods.Exists(x => x.CategoryType == CategoryType && x.CategoryId == ModItem.CategoryId && x.ModId == ModItem.Id && x.Platform == ModItem.GetPlatform());
-
-            if (IsFavorite)
-            {
-                ButtonFavorite.Text = Language.GetString("LABEL_REMOVE_FROM_FAVORITES");
-            }
-            else
-            {
-                ButtonFavorite.Text = Language.GetString("LABEL_ADD_TO_FAVORITES");
-            }
-
-            ButtonReport.Text = Language.GetString("LABEL_REPORT_ISSUE");
         }
 
         private void ImageClose_Click(object sender, EventArgs e)
@@ -123,6 +120,16 @@ namespace ArisenStudio.Forms.Dialogs.Details
             {
                 TabDownloads.VerticalScroll.Value = e.NewValue;
             }
+        }
+
+        private void ButtonDownloadLatest_Click(object sender, EventArgs e)
+        {
+            DialogExtensions.ShowTransferFilesDialog(this, TransferType.DownloadMods, ModItem.GetCategory(Categories), ModItem, ModItem.DownloadFiles.Last());
+        }
+
+        private void ButtonInstall_Click(object sender, EventArgs e)
+        {
+            DialogExtensions.ShowTransferFilesDialog(this, TransferType.InstallMods, ModItem.GetCategory(Categories), ModItem, ModItem.DownloadFiles.Last());
         }
 
         private void ButtonReport_Click(object sender, EventArgs e)

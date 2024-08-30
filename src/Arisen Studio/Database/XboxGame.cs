@@ -3,7 +3,7 @@
     /// <summary>
     /// Get the mod item information.
     /// </summary>
-    public class TitleIdsXbox
+    public class XboxGame
     {
         public string GameTitle { get; set; }
 

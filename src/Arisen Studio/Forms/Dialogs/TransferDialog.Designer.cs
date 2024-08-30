@@ -36,8 +36,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.ButtonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.LabelStatus = new DevExpress.XtraEditors.LabelControl();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.ButtonOpenPath = new DevExpress.XtraEditors.SimpleButton();
-            this.Label = new DevExpress.XtraEditors.LabelControl();
+            this.ButtonOpenFolder = new DevExpress.XtraEditors.SimpleButton();
             this.ProgressBarStatus = new DevExpress.XtraEditors.ProgressBarControl();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProgressBarStatus.Properties)).BeginInit();
@@ -58,7 +57,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.LabelModName.Name = "LabelModName";
             this.LabelModName.Size = new System.Drawing.Size(530, 50);
             this.LabelModName.TabIndex = 14;
-            this.LabelModName.Text = "Mod Name\r\nCategory";
+            this.LabelModName.Text = "Category\r\nMod Name";
             // 
             // ButtonCancel
             // 
@@ -93,39 +92,19 @@ namespace ArisenStudio.Forms.Dialogs
             this.LabelStatus.TabIndex = 16;
             this.LabelStatus.Text = "Preparing...";
             // 
-            // ButtonOpenPath
+            // ButtonOpenFolder
             // 
-            this.ButtonOpenPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonOpenPath.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.ButtonOpenPath.Appearance.Options.UseFont = true;
-            this.ButtonOpenPath.Location = new System.Drawing.Point(364, 154);
-            this.ButtonOpenPath.Name = "ButtonOpenPath";
-            this.ButtonOpenPath.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonOpenPath.Size = new System.Drawing.Size(97, 25);
-            this.ButtonOpenPath.TabIndex = 17;
-            this.ButtonOpenPath.Text = "Open Path";
-            this.ButtonOpenPath.Visible = false;
-            this.ButtonOpenPath.Click += new System.EventHandler(this.ButtonOpenPath_Click);
-            // 
-            // Label
-            // 
-            this.Label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Label.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.Label.Appearance.Options.UseFont = true;
-            this.Label.Appearance.Options.UseTextOptions = true;
-            this.Label.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.Label.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
-            this.Label.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.Label.AutoEllipsis = true;
-            this.Label.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.Label.Location = new System.Drawing.Point(12, 165);
-            this.Label.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
-            this.Label.Name = "Label";
-            this.Label.Size = new System.Drawing.Size(346, 22);
-            this.Label.TabIndex = 18;
-            this.Label.Text = "Installing...";
-            this.Label.Visible = false;
+            this.ButtonOpenFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonOpenFolder.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.ButtonOpenFolder.Appearance.Options.UseFont = true;
+            this.ButtonOpenFolder.Location = new System.Drawing.Point(364, 154);
+            this.ButtonOpenFolder.Name = "ButtonOpenFolder";
+            this.ButtonOpenFolder.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonOpenFolder.Size = new System.Drawing.Size(97, 25);
+            this.ButtonOpenFolder.TabIndex = 17;
+            this.ButtonOpenFolder.Text = "Open Folder";
+            this.ButtonOpenFolder.Visible = false;
+            this.ButtonOpenFolder.Click += new System.EventHandler(this.ButtonOpenPath_Click);
             // 
             // ProgressBarStatus
             // 
@@ -142,14 +121,13 @@ namespace ArisenStudio.Forms.Dialogs
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(554, 191);
             this.ControlBox = false;
             this.Controls.Add(this.ProgressBarStatus);
-            this.Controls.Add(this.Label);
-            this.Controls.Add(this.ButtonOpenPath);
+            this.Controls.Add(this.ButtonOpenFolder);
             this.Controls.Add(this.LabelStatus);
             this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.LabelModName);
@@ -178,8 +156,7 @@ namespace ArisenStudio.Forms.Dialogs
         public LabelControl LabelStatus;
         public LabelControl LabelModName;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
-        private SimpleButton ButtonOpenPath;
-        public LabelControl Label;
+        private SimpleButton ButtonOpenFolder;
         private ProgressBarControl ProgressBarStatus;
     }
 }

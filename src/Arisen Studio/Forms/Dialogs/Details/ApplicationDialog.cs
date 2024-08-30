@@ -40,6 +40,9 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         private void ApplicationDialog_Load(object sender, EventArgs e)
         {
+            InstalledModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, AppItem.CategoryId, AppItem.Id, false) : null;
+            IsFavorite = MainWindow.Settings.FavoriteMods.Exists(x => x.CategoryType == CategoryType && x.CategoryId == AppItem.CategoryId && x.ModId == AppItem.Id && x.Platform == AppItem.GetPlatform());
+
             LabelCategory.Text = Categories.GetCategoryById(AppItem.CategoryId).Title;
             LabelName.Text = AppItem.Name.Replace("&", "&&");
 
@@ -64,10 +67,13 @@ namespace ArisenStudio.Forms.Dialogs.Details
                 ? Language.GetString("NO_MORE_DETAILS")
                 : AppItem.Description.Replace("&", "&&");
 
-            ButtonDownload.Text = Language.GetString("LABEL_DOWNLOAD");
-            ButtonInstall.Text = Language.GetString("LABEL_INSTALL");
+            ButtonDownload.Text = AppItem.DownloadFiles.Count > 1 ? Language.GetString("LABEL_DOWNLOAD_LATEST") : Language.GetString("LABEL_DOWNLOAD");
+            ButtonInstall.Text = AppItem.DownloadFiles.Count > 1 ? Language.GetString("LABEL_INSTALL_LATEST") : Language.GetString("LABEL_INSTALL");
+            ButtonInstall.Enabled = MainWindow.IsConsoleConnected || MainWindow.Settings.InstallHomebrewToUsbDevice;
 
-            InstalledModInfo = MainWindow.ConsoleProfile != null ? MainWindow.Settings.GetInstalledMods(ConsoleProfile, AppItem.CategoryId, AppItem.Id, false) : null;
+            ButtonFavorite.Text = IsFavorite ? Language.GetString("LABEL_REMOVE_FROM_FAVORITES") : Language.GetString("LABEL_ADD_TO_FAVORITES");
+            ButtonReport.Text = Language.GetString("LABEL_REPORT_ISSUE");
+
 
             int count = 0;
             foreach (AppItemFile appItem in AppItem.DownloadFiles)
@@ -76,41 +82,16 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
                 DownloadAppFileItem fileItem = new()
                 {
-                    //CategoryType = CategoryType.Homebrew
-                    
                     AppItemData = AppItem,
-                    AppItemFile = appItem
+                    AppItemFile = appItem,
+
+                    ShowSeparator = AppItem.DownloadFiles.Count() > 1 && count != 1,
+
+                    Dock = DockStyle.Top
                 };
 
-                if (AppItem.DownloadFiles.Count() > 1 && count != 1)
-                {
-                    fileItem.ShowSeparator = true;
-                }
-
-                fileItem.Dock = DockStyle.Top;
                 TabDownloads.Controls.Add(fileItem);
             }
-
-            if (!MainWindow.IsConsoleConnected)
-            {
-                if (!MainWindow.Settings.InstallPackagesToUsbDevice)
-                {
-                    ButtonInstall.Visible = false;
-                }
-            }
-
-            IsFavorite = MainWindow.Settings.FavoriteMods.Exists(x => x.CategoryType == CategoryType && x.CategoryId == AppItem.CategoryId && x.ModId == AppItem.Id && x.Platform == AppItem.GetPlatform());
-
-            if (IsFavorite)
-            {
-                ButtonFavorite.Text = Language.GetString("LABEL_REMOVE_FROM_FAVORITES");
-            }
-            else
-            {
-                ButtonFavorite.Text = Language.GetString("LABEL_ADD_TO_FAVORITES");
-            }
-
-            ButtonReport.Text = Language.GetString("LABEL_REPORT_ISSUE");
         }
 
         private void ImageClose_Click(object sender, EventArgs e)
@@ -137,6 +118,16 @@ namespace ArisenStudio.Forms.Dialogs.Details
             {
                 TabDownloads.VerticalScroll.Value = e.NewValue;
             }
+        }
+
+        private void ButtonDownload_Click(object sender, EventArgs e)
+        {
+            DialogExtensions.ShowTransferFilesDialog(this, TransferType.DownloadApplication, AppItem.GetCategory(Categories), AppItem, AppItem.DownloadFiles.Last());
+        }
+
+        private void ButtonInstall_Click(object sender, EventArgs e)
+        {
+            DialogExtensions.ShowTransferFilesDialog(this, TransferType.InstallApplication, AppItem.GetCategory(Categories), AppItem, AppItem.DownloadFiles.Last());
         }
 
         private void ButtonReport_Click(object sender, EventArgs e)

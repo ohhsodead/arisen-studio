@@ -48,28 +48,48 @@ namespace ArisenStudio.Io
 
             DirectoryInfo dir = new(path);
 
-            for (int i = 0; i < 3; i++)
+            try
             {
-                try
+                foreach (DirectoryInfo subdir in dir.GetDirectories())
                 {
-                    foreach (DirectoryInfo subdir in dir.GetDirectories())
-                    {
-                        subdir.Delete(true);
-                    }
-
-                    dir.Delete(true);
+                    subdir.Delete(true);
                 }
-                catch (Exception ex)
+
+                dir.Delete(true);
+            }
+            catch (Exception ex)
+            {
+                Program.Log.Warn(ex);
+                switch (ex)
                 {
-                    Program.Log.Warn(ex);
-                    switch (ex)
-                    {
-                        case UnauthorizedAccessException:
-                        case DirectoryNotFoundException:
-                            return;
-                    }
+                    case UnauthorizedAccessException:
+                    case DirectoryNotFoundException:
+                        return;
                 }
             }
+
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    try
+            //    {
+            //        foreach (DirectoryInfo subdir in dir.GetDirectories())
+            //        {
+            //            subdir.Delete(true);
+            //        }
+
+            //        dir.Delete(true);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Program.Log.Warn(ex);
+            //        switch (ex)
+            //        {
+            //            case UnauthorizedAccessException:
+            //            case DirectoryNotFoundException:
+            //                return;
+            //        }
+            //    }
+            //}
         }
     }
 }

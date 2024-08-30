@@ -143,9 +143,9 @@ namespace ArisenStudio.Forms.Tools.PS3
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 388);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 385);
             this.barDockControlBottom.Manager = this.BarManager;
-            this.barDockControlBottom.Size = new System.Drawing.Size(705, 26);
+            this.barDockControlBottom.Size = new System.Drawing.Size(705, 29);
             // 
             // barDockControlLeft
             // 
@@ -153,7 +153,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.BarManager;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 388);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 385);
             // 
             // barDockControlRight
             // 
@@ -161,7 +161,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(705, 0);
             this.barDockControlRight.Manager = this.BarManager;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 388);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 385);
             // 
             // MenuButtonFile
             // 
@@ -270,7 +270,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.WebViewGames.Dock = System.Windows.Forms.DockStyle.Fill;
             this.WebViewGames.Location = new System.Drawing.Point(0, 0);
             this.WebViewGames.Name = "WebViewGames";
-            this.WebViewGames.Size = new System.Drawing.Size(705, 388);
+            this.WebViewGames.Size = new System.Drawing.Size(705, 385);
             this.WebViewGames.TabIndex = 19;
             this.WebViewGames.ZoomFactor = 1D;
             this.WebViewGames.NavigationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs>(this.WebViewGames_NavigationCompleted);
@@ -279,8 +279,8 @@ namespace ArisenStudio.Forms.Tools.PS3
             // GameLauncher
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(705, 414);
             this.Controls.Add(this.WebViewGames);
             this.Controls.Add(this.barDockControlLeft);

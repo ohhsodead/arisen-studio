@@ -180,13 +180,12 @@
     <Compile Include="Database\AppItemFile.cs" />
     <Compile Include="Database\GameCheatItemData.cs" />
     <Compile Include="Database\GamePatchItemData.cs" />
-    <Compile Include="Database\GameTrainerItem.cs" />
+    <Compile Include="Database\TrainerGameData.cs" />
     <Compile Include="Database\GameSaveItemData.cs" />
     <Compile Include="Database\AppItemData.cs" />
     <Compile Include="Database\PackageItemData.cs" />
-    <Compile Include="Database\TitleIdsXbox.cs" />
+    <Compile Include="Database\XboxGame.cs" />
     <Compile Include="Enums\Enums.cs" />
-    <Compile Include="Extensions\GitHubCacheUpdater.cs" />
     <Compile Include="Extensions\SimpleCache.cs" />
     <Compile Include="Extensions\GraphicExtensions.cs" />
     <Compile Include="Extensions\ImgurUploader.cs" />
@@ -243,11 +242,11 @@
     <Compile Include="Forms\Dialogs\Details\GameSaveDialog.Designer.cs">
       <DependentUpon>GameSaveDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Dialogs\Details\PluginDialog.cs">
+    <Compile Include="Forms\Dialogs\Details\HomebrewXboxDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Dialogs\Details\PluginDialog.Designer.cs">
-      <DependentUpon>PluginDialog.cs</DependentUpon>
+    <Compile Include="Forms\Dialogs\Details\HomebrewXboxDialog.Designer.cs">
+      <DependentUpon>HomebrewXboxDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Dialogs\Details\GameModDialog.cs">
       <SubType>Form</SubType>
@@ -432,12 +431,12 @@
     <Compile Include="Models\Dashboard\AnnouncementsData.cs" />
     <Compile Include="Models\Database\GameCheatsData.cs" />
     <Compile Include="Models\Database\GamePatchesData.cs" />
-    <Compile Include="Models\Database\GameTrainersData.cs" />
+    <Compile Include="Models\Database\TrainersData.cs" />
     <Compile Include="Models\Database\GameSavesData.cs" />
     <Compile Include="Models\Database\AppsData.cs" />
     <Compile Include="Models\Database\StatsData.cs" />
     <Compile Include="Models\Database\PackagesData.cs" />
-    <Compile Include="Models\Database\TitleIdsDataXbox.cs" />
+    <Compile Include="Models\Database\XboxTitleIds.cs" />
     <Compile Include="Models\Game Updates\GameUpdates.cs" />
     <Compile Include="Models\Resources\BackupFilesData.cs" />
     <Compile Include="Extensions\FtpExtensions.cs" />
@@ -445,11 +444,11 @@
     <Compile Include="Extensions\HttpExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\UpdateExtensions.cs" />
-    <Compile Include="Forms\Dialogs\LoginDialog.cs">
+    <Compile Include="Forms\Dialogs\EditLoginDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Dialogs\LoginDialog.Designer.cs">
-      <DependentUpon>LoginDialog.cs</DependentUpon>
+    <Compile Include="Forms\Dialogs\EditLoginDialog.Designer.cs">
+      <DependentUpon>EditLoginDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tools\PS3\GameRegions.cs">
       <SubType>Form</SubType>
@@ -541,8 +540,8 @@
     <EmbeddedResource Include="Forms\Dialogs\Details\GameSaveDialog.resx">
       <DependentUpon>GameSaveDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Dialogs\Details\PluginDialog.resx">
-      <DependentUpon>PluginDialog.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Dialogs\Details\HomebrewXboxDialog.resx">
+      <DependentUpon>HomebrewXboxDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\Details\GameModDialog.resx">
       <DependentUpon>GameModDialog.cs</DependentUpon>
@@ -575,8 +574,8 @@
     <EmbeddedResource Include="Forms\Dialogs\ConnectionsDialog.resx">
       <DependentUpon>ConnectionsDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Dialogs\LoginDialog.resx">
-      <DependentUpon>LoginDialog.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Dialogs\EditLoginDialog.resx">
+      <DependentUpon>EditLoginDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\RequestModsDialog.resx">
       <DependentUpon>RequestModsDialog.cs</DependentUpon>
@@ -704,7 +703,7 @@
       <Version>51.0.0</Version>
     </PackageReference>
     <PackageReference Include="HtmlAgilityPack">
-      <Version>1.11.63</Version>
+      <Version>1.11.64</Version>
     </PackageReference>
     <PackageReference Include="Humanizer">
       <Version>2.14.1</Version>
@@ -716,13 +715,16 @@
       <Version>2.5.2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Web.WebView2">
-      <Version>1.0.2651.64</Version>
+      <Version>1.0.2739.15</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.3</Version>
     </PackageReference>
     <PackageReference Include="NLog">
       <Version>5.3.3</Version>
+    </PackageReference>
+    <PackageReference Include="NLog.Config">
+      <Version>4.7.15</Version>
     </PackageReference>
     <PackageReference Include="SharpZipLib">
       <Version>1.4.2</Version>
@@ -732,6 +734,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Icons\trainers.svg" />
     <None Include="Resources\Icons\request.svg" />
     <None Include="Resources\Icons\scan-users.svg" />
     <None Include="Resources\Icons\icons8-games.svg" />
@@ -754,6 +757,7 @@
     <None Include="Resources\Icons\edit-user.svg" />
     <None Include="Resources\Icons\change-user.svg" />
     <None Include="Resources\Icons\bug.svg" />
+    <None Include="Resources\Icons\available-update.svg" />
     <Content Include="Resources\Icons\about.svg" />
     <Content Include="Resources\Icons\actions_arrow3left.svg" />
     <Content Include="Resources\Icons\actions_arrow3right.svg" />

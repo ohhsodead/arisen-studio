@@ -88,8 +88,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             // 
             // TablePanelStats
             // 
-            this.TablePanelStats.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.TablePanelStats.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TablePanelStats.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
@@ -216,15 +215,15 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TabPane.Controls.Add(this.TabDescription);
             this.TabPane.Controls.Add(this.TabDownloads);
             this.TabPane.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.TabPane.Location = new System.Drawing.Point(12, 132);
-            this.TabPane.Margin = new System.Windows.Forms.Padding(3, 14, 3, 6);
+            this.TabPane.Location = new System.Drawing.Point(15, 132);
+            this.TabPane.Margin = new System.Windows.Forms.Padding(3, 10, 3, 6);
             this.TabPane.Name = "TabPane";
             this.TabPane.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.TabDescription,
             this.TabDownloads});
-            this.TabPane.RegularSize = new System.Drawing.Size(776, 331);
+            this.TabPane.RegularSize = new System.Drawing.Size(770, 340);
             this.TabPane.SelectedPage = this.TabDescription;
-            this.TabPane.Size = new System.Drawing.Size(776, 331);
+            this.TabPane.Size = new System.Drawing.Size(770, 340);
             this.TabPane.TabIndex = 1203;
             this.TabPane.Text = "TabPane";
             this.TabPane.TransitionAnimationProperties.FrameCount = 900;
@@ -236,7 +235,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TabDescription.Caption = "Description";
             this.TabDescription.Controls.Add(this.LabelDescription);
             this.TabDescription.Name = "TabDescription";
-            this.TabDescription.Size = new System.Drawing.Size(776, 295);
+            this.TabDescription.Size = new System.Drawing.Size(770, 304);
             this.TabDescription.Scroll += new DevExpress.XtraEditors.XtraScrollEventHandler(this.TabDescription_Scroll);
             // 
             // LabelDescription
@@ -253,7 +252,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.LabelDescription.Margin = new System.Windows.Forms.Padding(8, 8, 8, 3);
             this.LabelDescription.Name = "LabelDescription";
             this.LabelDescription.Padding = new System.Windows.Forms.Padding(8, 8, 8, 0);
-            this.LabelDescription.Size = new System.Drawing.Size(776, 23);
+            this.LabelDescription.Size = new System.Drawing.Size(770, 23);
             this.LabelDescription.TabIndex = 1176;
             this.LabelDescription.Text = "...";
             this.LabelDescription.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelDescription_HyperlinkClick);
@@ -415,6 +414,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonDownload.Size = new System.Drawing.Size(113, 30);
             this.ButtonDownload.TabIndex = 1182;
             this.ButtonDownload.Text = "Download";
+            this.ButtonDownload.Click += new System.EventHandler(this.ButtonDownload_Click);
             // 
             // ButtonInstall
             // 
@@ -439,6 +439,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonInstall.Size = new System.Drawing.Size(90, 30);
             this.ButtonInstall.TabIndex = 1184;
             this.ButtonInstall.Text = "Install";
+            this.ButtonInstall.Click += new System.EventHandler(this.ButtonInstall_Click);
             // 
             // ButtonFavorite
             // 
@@ -519,8 +520,8 @@ namespace ArisenStudio.Forms.Dialogs.Details
             // ApplicationDialog
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 606);
             this.ControlBox = false;

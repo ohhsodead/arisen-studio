@@ -247,7 +247,9 @@ namespace ArisenStudio.Controls
             // 
             this.ListBoxInstallFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListBoxInstallFiles.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ListBoxInstallFiles.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.ListBoxInstallFiles.Appearance.Options.UseBackColor = true;
             this.ListBoxInstallFiles.Appearance.Options.UseFont = true;
             this.ListBoxInstallFiles.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.ListBoxInstallFiles.Location = new System.Drawing.Point(-9, 82);
@@ -326,7 +328,7 @@ namespace ArisenStudio.Controls
             // 
             // DownloadFileItem
             // 
-            this.Appearance.BackColor = System.Drawing.Color.Black;
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;

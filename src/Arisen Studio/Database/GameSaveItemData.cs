@@ -10,6 +10,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
+using ArisenStudio.Models.Database;
 
 /// <summary>
 /// Get the game save information.
@@ -57,28 +58,28 @@ public class GameSaveItemData
     /// Get the directory for extracting modded files.
     /// </summary>
     /// <returns> </returns>
-    public string DownloadDataDirectory(DownloadFiles downloadFiles)
+    public string DownloadDataDirectory(DownloadFiles downloadFiles, Category category)
     {
-        return $@"{MainWindow.Settings.PathGameMods.GetFullPath(MainWindow.Settings.PathBaseDirectory)}\{Platform.Humanize()}\{Name.RemoveInvalidChars()}\{CreatedBy.RemoveInvalidChars()}\{downloadFiles.Name.RemoveInvalidChars()}-{Version}-{Id}\";
+        return $@"{MainWindow.Settings.PathDownloads.GetFullPath(MainWindow.Settings.PathAppData)}\{Platform.Humanize()}\Game Saves\{category.Title}\{Name.RemoveInvalidChars()}\{CreatedBy.RemoveInvalidChars()}\{downloadFiles.Name.RemoveInvalidChars()}-{Version}-{Id}\";
     }
 
     /// <summary>
     /// Get the downloaded mods archive file path.
     /// </summary>
     /// <returns> Mods Archive File Path </returns>
-    public string ArchiveZipFile(DownloadFiles downloadFiles)
+    public string ArchiveZipFile(DownloadFiles downloadFiles, Category category)
     {
-        return $@"{MainWindow.Settings.PathGameSaves.GetFullPath(MainWindow.Settings.PathBaseDirectory)}\{Platform.Humanize()}\{Name.RemoveInvalidChars()}\{CreatedBy.RemoveInvalidChars()}\{downloadFiles.Name.RemoveInvalidChars()}-{Version}-{Id}.zip";
+        return $@"{MainWindow.Settings.PathDownloads.GetFullPath(MainWindow.Settings.PathAppData)}\{Platform.Humanize()}\Game Saves\{category.Title}\{Name.RemoveInvalidChars()}\{CreatedBy.RemoveInvalidChars()}\{downloadFiles.Name.RemoveInvalidChars()}-{Version}-{Id}.zip";
     }
 
     /// <summary>
     /// Download the modded files archive and extracts all files to <see cref="DownloadDataDirectory" />.
     /// </summary>
     /// <param name="downloadFiles"> </param>
-    public void DownloadInstallFiles(DownloadFiles downloadFiles)
+    public void DownloadInstallFiles(DownloadFiles downloadFiles, Category category)
     {
-        string archivePath = DownloadDataDirectory(downloadFiles);
-        string archiveFilePath = ArchiveZipFile(downloadFiles);
+        string archivePath = DownloadDataDirectory(downloadFiles, category);
+        string archiveFilePath = ArchiveZipFile(downloadFiles, category);
 
         if (Directory.Exists(archivePath))
         {

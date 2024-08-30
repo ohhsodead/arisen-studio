@@ -39,6 +39,8 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         private void GameSaveDialog_Load(object sender, EventArgs e)
         {
+            IsFavorite = Settings.FavoriteGameSaves.Exists(x => x.CategoryType == CategoryType && x.CategoryId == GameSaveItem.CategoryId && x.ModId == GameSaveItem.Id && x.Platform == GameSaveItem.GetPlatform());
+
             StatLastUpdated.Title = Language.GetString("LABEL_LAST_UPDATED");
             StatVersion.Title = Language.GetString("LABEL_VERSION");
             StatCreatedBy.Title = Language.GetString("LABEL_CREATED_BY");
@@ -56,6 +58,9 @@ namespace ArisenStudio.Forms.Dialogs.Details
             StatCreatedBy.Value = GameSaveItem.CreatedBy.IsNullOrWhiteSpace() ? "Unknown" : GameSaveItem.CreatedBy.Replace("&", "&&");
             StatSubmittedBy.Value = GameSaveItem.SubmittedBy.Replace("&", "&&");
 
+            TabDescription.Text = Language.GetString("LABEL_DESCRIPTION");
+            TabDownloads.Text = $"{Language.GetString("LABEL_DOWNLOADS")} ({GameSaveItem.DownloadFiles.Count})";
+
             LabelDescription.Text = string.IsNullOrWhiteSpace(GameSaveItem.Description)
                 ? Language.GetString("NO_MORE_DETAILS")
                 : GameSaveItem.Description.Replace("&", "&&");
@@ -66,6 +71,13 @@ namespace ArisenStudio.Forms.Dialogs.Details
                             .Append("- It's suggested to use 'Apollo Tool' (Homebrew Applications) for patching and resigning game save files directly on your console.");
 
             LabelDescription.Text += extraDescription.ToString();
+
+            ButtonDownload.Text = GameSaveItem.DownloadFiles.Count > 1 ? Language.GetString("LABEL_DOWNLOAD_LATEST") : Language.GetString("LABEL_DOWNLOAD");
+            ButtonInstall.Text = GameSaveItem.DownloadFiles.Count > 1 ? Language.GetString("LABEL_INSTALL_LATEST") : Language.GetString("LABEL_INSTALL");
+            ButtonInstall.Enabled = MainWindow.IsConsoleConnected || MainWindow.Settings.InstallGameSavesToUsbDevice;
+
+            ButtonFavorite.Text = IsFavorite ? Language.GetString("LABEL_REMOVE_FROM_FAVORITES") : Language.GetString("LABEL_ADD_TO_FAVORITES");
+            ButtonReport.Text = Language.GetString("LABEL_REPORT_ISSUE");
 
             int count = 0;
             foreach (DownloadFiles downloadFile in GameSaveItem.DownloadFiles)
@@ -87,22 +99,6 @@ namespace ArisenStudio.Forms.Dialogs.Details
                 downloadItem.Dock = DockStyle.Top;
                 TabDownloads.Controls.Add(downloadItem);
             }
-
-            TabDescription.Text = Language.GetString("LABEL_DESCRIPTION");
-            TabDownloads.Text = $"{Language.GetString("LABEL_DOWNLOADS")} ({GameSaveItem.DownloadFiles.Count})";
-
-            IsFavorite = Settings.FavoriteGameSaves.Exists(x => x.CategoryType == CategoryType && x.CategoryId == GameSaveItem.CategoryId && x.ModId == GameSaveItem.Id && x.Platform == GameSaveItem.GetPlatform());
-
-            if (IsFavorite)
-            {
-                ButtonFavorite.Text = Language.GetString("LABEL_REMOVE_FROM_FAVORITES");
-            }
-            else
-            {
-                ButtonFavorite.Text = Language.GetString("LABEL_ADD_TO_FAVORITES");
-            }
-
-            ButtonReport.Text = Language.GetString("LABEL_REPORT_ISSUE");
         }
 
         private void ImageClose_Click(object sender, EventArgs e)
@@ -131,9 +127,14 @@ namespace ArisenStudio.Forms.Dialogs.Details
             Process.Start(e.Link);
         }
 
-        private void ButtonDownloadLatest_Click(object sender, EventArgs e)
+        private void ButtonDownload_Click(object sender, EventArgs e)
         {
             DialogExtensions.ShowTransferGameSavesDialog(this, TransferType.DownloadGameSave, Categories.GetCategoryById(GameSaveItem.CategoryId), GameSaveItem, GameSaveItem.DownloadFiles.Last());
+        }
+
+        private void ButtonInstall_Click(object sender, EventArgs e)
+        {
+            DialogExtensions.ShowTransferGameSavesDialog(this, TransferType.InstallGameSave, Categories.GetCategoryById(GameSaveItem.CategoryId), GameSaveItem, GameSaveItem.DownloadFiles.Last());
         }
 
         private void ButtonFavorite_Click(object sender, EventArgs e)

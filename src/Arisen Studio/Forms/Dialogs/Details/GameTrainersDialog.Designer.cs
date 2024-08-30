@@ -33,8 +33,9 @@ namespace ArisenStudio.Forms.Dialogs.Details
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameTrainersDialog));
             this.PanelDetails = new DevExpress.XtraEditors.XtraScrollableControl();
-            this.GridControlCheats = new DevExpress.XtraGrid.GridControl();
-            this.GridViewCheats = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.GridControlTrainers = new DevExpress.XtraGrid.GridControl();
+            this.GridViewTrainers = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.PanelHeader = new DevExpress.XtraEditors.PanelControl();
             this.SeparatorHeader = new DevExpress.XtraEditors.SeparatorControl();
             this.ImageClose = new DevExpress.XtraEditors.SvgImageBox();
@@ -42,11 +43,12 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.LabelGame = new DevExpress.XtraEditors.LabelControl();
             this.LabelTitleId = new DevExpress.XtraEditors.LabelControl();
             this.PanelActions = new DevExpress.Utils.Layout.StackPanel();
-            this.ButtonInstallTrainer = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonDownload = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonInstall = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonReportIssue = new DevExpress.XtraEditors.SimpleButton();
             this.PanelDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridControlCheats)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewCheats)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridControlTrainers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewTrainers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelHeader)).BeginInit();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SeparatorHeader)).BeginInit();
@@ -60,60 +62,80 @@ namespace ArisenStudio.Forms.Dialogs.Details
             // 
             this.PanelDetails.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.PanelDetails.Appearance.Options.UseBackColor = true;
-            this.PanelDetails.Controls.Add(this.GridControlCheats);
+            this.PanelDetails.Controls.Add(this.labelControl1);
+            this.PanelDetails.Controls.Add(this.GridControlTrainers);
             this.PanelDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelDetails.Location = new System.Drawing.Point(0, 50);
             this.PanelDetails.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.PanelDetails.Name = "PanelDetails";
-            this.PanelDetails.Size = new System.Drawing.Size(650, 300);
+            this.PanelDetails.Size = new System.Drawing.Size(650, 356);
             this.PanelDetails.TabIndex = 1;
             // 
-            // GridControlCheats
+            // labelControl1
             // 
-            this.GridControlCheats.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseTextOptions = true;
+            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.labelControl1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
+            this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl1.AutoEllipsis = true;
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelControl1.Location = new System.Drawing.Point(15, 247);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(620, 109);
+            this.labelControl1.TabIndex = 1171;
+            this.labelControl1.Text = resources.GetString("labelControl1.Text");
+            // 
+            // GridControlTrainers
+            // 
+            this.GridControlTrainers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GridControlCheats.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.GridControlCheats.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.GridControlCheats.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GridControlCheats.Location = new System.Drawing.Point(16, 3);
-            this.GridControlCheats.MainView = this.GridViewCheats;
-            this.GridControlCheats.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.GridControlCheats.Name = "GridControlCheats";
-            this.GridControlCheats.Size = new System.Drawing.Size(620, 297);
-            this.GridControlCheats.TabIndex = 6;
-            this.GridControlCheats.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.GridViewCheats});
+            this.GridControlTrainers.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.GridControlTrainers.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
+            this.GridControlTrainers.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GridControlTrainers.Location = new System.Drawing.Point(15, 3);
+            this.GridControlTrainers.MainView = this.GridViewTrainers;
+            this.GridControlTrainers.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.GridControlTrainers.Name = "GridControlTrainers";
+            this.GridControlTrainers.Size = new System.Drawing.Size(620, 241);
+            this.GridControlTrainers.TabIndex = 6;
+            this.GridControlTrainers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.GridViewTrainers});
             // 
-            // GridViewCheats
+            // GridViewTrainers
             // 
-            this.GridViewCheats.ActiveFilterEnabled = false;
-            this.GridViewCheats.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.GridViewCheats.Appearance.Empty.Options.UseBackColor = true;
-            this.GridViewCheats.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.GridViewCheats.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GridViewCheats.Appearance.Row.Options.UseBackColor = true;
-            this.GridViewCheats.Appearance.Row.Options.UseFont = true;
-            this.GridViewCheats.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.GridViewCheats.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
-            this.GridViewCheats.GridControl = this.GridControlCheats;
-            this.GridViewCheats.GroupRowHeight = 20;
-            this.GridViewCheats.Name = "GridViewCheats";
-            this.GridViewCheats.OptionsBehavior.Editable = false;
-            this.GridViewCheats.OptionsBehavior.ReadOnly = true;
-            this.GridViewCheats.OptionsCustomization.AllowFilter = false;
-            this.GridViewCheats.OptionsFilter.AllowFilterEditor = false;
-            this.GridViewCheats.OptionsMenu.ShowAutoFilterRowItem = false;
-            this.GridViewCheats.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.GridViewCheats.OptionsSelection.EnableAppearanceHotTrackedRow = DevExpress.Utils.DefaultBoolean.True;
-            this.GridViewCheats.OptionsView.ShowColumnHeaders = false;
-            this.GridViewCheats.OptionsView.ShowGroupPanel = false;
-            this.GridViewCheats.OptionsView.ShowHorizontalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.GridViewCheats.OptionsView.ShowIndicator = false;
-            this.GridViewCheats.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.GridViewCheats.RowHeight = 24;
-            this.GridViewCheats.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewCheats_RowClick);
-            this.GridViewCheats.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridViewCheats_FocusedRowChanged);
+            this.GridViewTrainers.ActiveFilterEnabled = false;
+            this.GridViewTrainers.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.GridViewTrainers.Appearance.Empty.Options.UseBackColor = true;
+            this.GridViewTrainers.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.GridViewTrainers.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GridViewTrainers.Appearance.Row.Options.UseBackColor = true;
+            this.GridViewTrainers.Appearance.Row.Options.UseFont = true;
+            this.GridViewTrainers.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.GridViewTrainers.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
+            this.GridViewTrainers.GridControl = this.GridControlTrainers;
+            this.GridViewTrainers.GroupRowHeight = 20;
+            this.GridViewTrainers.Name = "GridViewTrainers";
+            this.GridViewTrainers.OptionsBehavior.Editable = false;
+            this.GridViewTrainers.OptionsBehavior.ReadOnly = true;
+            this.GridViewTrainers.OptionsCustomization.AllowFilter = false;
+            this.GridViewTrainers.OptionsFilter.AllowFilterEditor = false;
+            this.GridViewTrainers.OptionsMenu.ShowAutoFilterRowItem = false;
+            this.GridViewTrainers.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.GridViewTrainers.OptionsSelection.EnableAppearanceHotTrackedRow = DevExpress.Utils.DefaultBoolean.True;
+            this.GridViewTrainers.OptionsView.ShowGroupPanel = false;
+            this.GridViewTrainers.OptionsView.ShowHorizontalLines = DevExpress.Utils.DefaultBoolean.False;
+            this.GridViewTrainers.OptionsView.ShowIndicator = false;
+            this.GridViewTrainers.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.False;
+            this.GridViewTrainers.RowHeight = 24;
+            this.GridViewTrainers.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewCheats_RowClick);
+            this.GridViewTrainers.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridViewCheats_FocusedRowChanged);
             // 
             // PanelHeader
             // 
@@ -198,39 +220,64 @@ namespace ArisenStudio.Forms.Dialogs.Details
             // 
             // PanelActions
             // 
-            this.PanelActions.Controls.Add(this.ButtonInstallTrainer);
+            this.PanelActions.Controls.Add(this.ButtonDownload);
+            this.PanelActions.Controls.Add(this.ButtonInstall);
             this.PanelActions.Controls.Add(this.ButtonReportIssue);
             this.PanelActions.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelActions.Location = new System.Drawing.Point(0, 350);
+            this.PanelActions.Location = new System.Drawing.Point(0, 406);
             this.PanelActions.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.PanelActions.Name = "PanelActions";
             this.PanelActions.Size = new System.Drawing.Size(650, 50);
             this.PanelActions.TabIndex = 1175;
             // 
-            // ButtonInstallTrainer
+            // ButtonDownload
             // 
-            this.ButtonInstallTrainer.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ButtonInstallTrainer.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.ButtonInstallTrainer.Appearance.Options.UseFont = true;
-            this.ButtonInstallTrainer.Appearance.Options.UseForeColor = true;
-            this.ButtonInstallTrainer.AutoSize = true;
-            this.ButtonInstallTrainer.Enabled = false;
-            this.ButtonInstallTrainer.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ButtonInstallTrainer.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.ButtonInstallTrainer.ImageOptions.ImageToTextIndent = 6;
-            this.ButtonInstallTrainer.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.ButtonInstallTrainer.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_install;
-            this.ButtonInstallTrainer.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonInstallTrainer.Location = new System.Drawing.Point(12, 11);
-            this.ButtonInstallTrainer.Margin = new System.Windows.Forms.Padding(12, 3, 4, 3);
-            this.ButtonInstallTrainer.MinimumSize = new System.Drawing.Size(0, 28);
-            this.ButtonInstallTrainer.Name = "ButtonInstallTrainer";
-            this.ButtonInstallTrainer.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
-            this.ButtonInstallTrainer.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonInstallTrainer.Size = new System.Drawing.Size(133, 28);
-            this.ButtonInstallTrainer.TabIndex = 1176;
-            this.ButtonInstallTrainer.Text = "Install Trainer";
-            this.ButtonInstallTrainer.Click += new System.EventHandler(this.ButtonInstallTrainer_Click);
+            this.ButtonDownload.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ButtonDownload.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.ButtonDownload.Appearance.Options.UseFont = true;
+            this.ButtonDownload.Appearance.Options.UseForeColor = true;
+            this.ButtonDownload.AutoSize = true;
+            this.ButtonDownload.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonDownload.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonDownload.ImageOptions.ImageToTextIndent = 6;
+            this.ButtonDownload.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonDownload.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.download;
+            this.ButtonDownload.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.ButtonDownload.Location = new System.Drawing.Point(12, 10);
+            this.ButtonDownload.Margin = new System.Windows.Forms.Padding(12, 3, 4, 3);
+            this.ButtonDownload.MinimumSize = new System.Drawing.Size(0, 30);
+            this.ButtonDownload.Name = "ButtonDownload";
+            this.ButtonDownload.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
+            this.ButtonDownload.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonDownload.Size = new System.Drawing.Size(113, 30);
+            this.ButtonDownload.TabIndex = 1180;
+            this.ButtonDownload.Text = "Download";
+            this.ButtonDownload.Click += new System.EventHandler(this.ButtonDownload_Click);
+            // 
+            // ButtonInstall
+            // 
+            this.ButtonInstall.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ButtonInstall.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.ButtonInstall.Appearance.Options.UseFont = true;
+            this.ButtonInstall.Appearance.Options.UseForeColor = true;
+            this.ButtonInstall.AutoSize = true;
+            this.ButtonInstall.Enabled = false;
+            this.ButtonInstall.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonInstall.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonInstall.ImageOptions.ImageToTextIndent = 6;
+            this.ButtonInstall.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonInstall.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_install;
+            this.ButtonInstall.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.ButtonInstall.Location = new System.Drawing.Point(133, 11);
+            this.ButtonInstall.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ButtonInstall.MinimumSize = new System.Drawing.Size(0, 28);
+            this.ButtonInstall.Name = "ButtonInstall";
+            this.ButtonInstall.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
+            this.ButtonInstall.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonInstall.Size = new System.Drawing.Size(90, 28);
+            this.ButtonInstall.TabIndex = 1176;
+            this.ButtonInstall.Text = "Install";
+            this.ButtonInstall.Click += new System.EventHandler(this.ButtonInstallTrainer_Click);
             // 
             // ButtonReportIssue
             // 
@@ -245,7 +292,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonReportIssue.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.ButtonReportIssue.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonReportIssue.ImageOptions.SvgImage")));
             this.ButtonReportIssue.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonReportIssue.Location = new System.Drawing.Point(153, 11);
+            this.ButtonReportIssue.Location = new System.Drawing.Point(231, 11);
             this.ButtonReportIssue.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ButtonReportIssue.MinimumSize = new System.Drawing.Size(0, 28);
             this.ButtonReportIssue.Name = "ButtonReportIssue";
@@ -263,10 +310,10 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
             this.Appearance.Options.UseForeColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(650, 400);
+            this.ClientSize = new System.Drawing.Size(650, 456);
             this.ControlBox = false;
             this.Controls.Add(this.PanelDetails);
             this.Controls.Add(this.PanelActions);
@@ -286,8 +333,8 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.GameTrainersDialog_Load);
             this.PanelDetails.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridControlCheats)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewCheats)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridControlTrainers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewTrainers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelHeader)).EndInit();
             this.PanelHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SeparatorHeader)).EndInit();
@@ -305,15 +352,17 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         private XtraScrollableControl PanelDetails;
         private DevExpress.Utils.Layout.StackPanel PanelActions;
-        private SimpleButton ButtonInstallTrainer;
+        private SimpleButton ButtonInstall;
         private SimpleButton ButtonReportIssue;
         private LabelControl LabelGame;
         private PanelControl PanelHeader;
         private SvgImageBox ImageClose;
         private SeparatorControl SeparatorHeader;
         private System.Windows.Forms.FlowLayoutPanel PanelRegion;
-        private DevExpress.XtraGrid.GridControl GridControlCheats;
-        private DevExpress.XtraGrid.Views.Grid.GridView GridViewCheats;
+        private DevExpress.XtraGrid.GridControl GridControlTrainers;
+        private DevExpress.XtraGrid.Views.Grid.GridView GridViewTrainers;
         private LabelControl LabelTitleId;
+        private SimpleButton ButtonDownload;
+        private LabelControl labelControl1;
     }
 }

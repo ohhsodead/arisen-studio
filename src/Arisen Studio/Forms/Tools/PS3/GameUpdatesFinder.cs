@@ -140,7 +140,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             {
                 string updateUrl = GridViewGameUpdates.GetRowCellDisplayText(GridViewGameUpdates.FocusedRowHandle, GridViewGameUpdates.Columns[0]);
                 string fileName = Path.GetFileName(updateUrl);
-                string filePath = IoExtensions.GetFullPath(Settings.PathBaseDirectory, Settings.PathDownloads) + "/" + fileName;
+                string filePath = Settings.PathDownloads.GetFullPath(Settings.PathAppData) + "/" + fileName;
 
                 SetStatus(string.Format(Language.GetString("FILE_DOWNLOADING"), fileName));
                 HttpExtensions.DownloadFile(updateUrl, filePath);

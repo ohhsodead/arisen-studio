@@ -97,7 +97,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.CheckBoxEnableLiveStrong.Properties.Appearance.Options.UseFont = true;
             this.CheckBoxEnableLiveStrong.Properties.AutoWidth = true;
             this.CheckBoxEnableLiveStrong.Properties.Caption = "Enable Live Strong";
-            this.CheckBoxEnableLiveStrong.Size = new System.Drawing.Size(119, 19);
+            this.CheckBoxEnableLiveStrong.Size = new System.Drawing.Size(121, 20);
             this.CheckBoxEnableLiveStrong.TabIndex = 5;
             this.CheckBoxEnableLiveStrong.CheckedChanged += new System.EventHandler(this.CheckBoxEnableLiveStrong_CheckedChanged);
             // 
@@ -109,7 +109,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.CheckBoxEnableLiveBlock.Properties.Appearance.Options.UseFont = true;
             this.CheckBoxEnableLiveBlock.Properties.AutoWidth = true;
             this.CheckBoxEnableLiveBlock.Properties.Caption = "Enable Live Block";
-            this.CheckBoxEnableLiveBlock.Size = new System.Drawing.Size(113, 19);
+            this.CheckBoxEnableLiveBlock.Size = new System.Drawing.Size(115, 20);
             this.CheckBoxEnableLiveBlock.TabIndex = 4;
             this.CheckBoxEnableLiveBlock.ToolTip = "if set to true, this will block the console from resolving LIVE related dns\r\nif n" +
     "ot set this value will be TRUE";
@@ -190,7 +190,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.TextBoxKey.Name = "TextBoxKey";
             this.TextBoxKey.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxKey.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxKey.Size = new System.Drawing.Size(84, 22);
+            this.TextBoxKey.Size = new System.Drawing.Size(84, 24);
             this.TextBoxKey.TabIndex = 1;
             // 
             // TextBoxValue
@@ -201,7 +201,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.TextBoxValue.Name = "TextBoxValue";
             this.TextBoxValue.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxValue.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxValue.Size = new System.Drawing.Size(159, 22);
+            this.TextBoxValue.Size = new System.Drawing.Size(159, 24);
             this.TextBoxValue.TabIndex = 2;
             // 
             // ComboBoxSections
@@ -218,7 +218,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             "Plugins",
             "Externals",
             "Settings"});
-            this.ComboBoxSections.Size = new System.Drawing.Size(72, 22);
+            this.ComboBoxSections.Size = new System.Drawing.Size(72, 24);
             this.ComboBoxSections.TabIndex = 0;
             this.ComboBoxSections.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSections_SelectedIndexChanged);
             // 
@@ -259,8 +259,8 @@ namespace ArisenStudio.Forms.Tools.XBOX
             // 
             // DashlaunchEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(452, 345);
             this.Controls.Add(this.PanelButtons);
             this.Controls.Add(this.CheckBoxEnableLiveStrong);

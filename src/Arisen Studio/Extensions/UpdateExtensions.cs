@@ -17,6 +17,11 @@ namespace ArisenStudio.Extensions
     public abstract class UpdateExtensions
     {
         /// <summary>
+        /// Check if there is a new update available found on startup.
+        /// </summary>
+        public static bool IsUpdateAvailable { get; set; } = false;
+
+        /// <summary>
         /// Get the application current version.
         /// </summary>
         public static Version CurrentVersion { get; } = Assembly.GetExecutingAssembly().GetName().Version;
@@ -58,35 +63,172 @@ namespace ArisenStudio.Extensions
 
         /// <summary>
         /// Check the current application version against the latest version in GitHub Releases. 
-        /// If there's a newer version, then download and update the files.
+        /// If there's an update then download and update the new files.
         /// </summary>
         public static void CheckApplicationVersion()
         {
-            MainWindow.Window.SetStatus("Checking application for new updates...");
+            MainWindow.Window.SetStatus("Checking for new updates...");
+            //AutoUpdater.CheckForUpdateEvent += CheckForUpdate;
+            AutoUpdater.SetOwner(MainWindow.Window);
+            AutoUpdater.HttpUserAgent = "AutoUpdater";
             AutoUpdater.CheckForUpdateEvent += AutoUpdaterOnCheckForUpdateEvent;
             AutoUpdater.ShowSkipButton = false;
+            //AutoUpdater.TopMost = true;
+            //AutoUpdater.ClearAppDirectory = true;
             AutoUpdater.ShowRemindLaterButton = false;
-            AutoUpdater.Mandatory = true;
+            //AutoUpdater.Mandatory = true;
             AutoUpdater.RunUpdateAsAdmin = true;
             AutoUpdater.UpdateMode = Mode.ForcedDownload;
             AutoUpdater.Start(Urls.UpdateData);
         }
 
+        public static UpdateInfoEventArgs updateInfo;
+
         /// <summary>
-        /// Check for the a newer version and prompt the user.
+        /// Check for the a newer version and prompt the user depending on update variables.
         /// </summary>
         /// <param name="args"></param>
-        private static void AutoUpdaterOnCheckForUpdateEvent(UpdateInfoEventArgs args)
+        public static void CheckForUpdate(UpdateInfoEventArgs args)
         {
             switch (args.Error)
             {
                 case null when args.IsUpdateAvailable:
-                    MainWindow.Settings.FirstTimeOpenAfterUpdate = true;
-                    MainWindow.Window.SetStatus("A new update is available. Downloading installer...");
-                    XtraMessageBox.Show(MainWindow.Window, $"There is a new version available ({AllReleases[0].Name})", @"Update Available", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    IsUpdateAvailable = args.IsUpdateAvailable;
+                    updateInfo = args;
+                    MainWindow.Window.UpdateAvailable(args.IsUpdateAvailable);
+                    MainWindow.Window.SetStatus($"A new update is available: ({AllReleases[0].Name})");
 
+                    if (args.Mandatory.Value)
+                    {
+                        XtraMessageBox.Show(MainWindow.Window, $"A new version of Arisen Studio is available: {AllReleases[0].Name}. " +
+                            $"This update is required and includes important fixes and improvements. You need to install it to keep using the app.\n\n" +
+                            $"Would you like to download and install it now?", @"Update Available", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        UpdateApplication(); break;
+                    }
+
+                    if (XtraMessageBox.Show(MainWindow.Window, $"A new version of Arisen Studio is available: {AllReleases[0].Name}\n\n" +
+                        $"Would you like to download and install it now?", @"Update Available", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    {
+                        UpdateApplication(); break;
+                    }
+
+                    break;
+                case null:
+                    MainWindow.Window.SetStatus($"You're currently using the latest version of Arisen Studio ({CurrentVersionName})");
+                    break;
+                case WebException:
+                    MainWindow.Window.SetStatus($"Unable to check for a new application version at the moment. Error: {args.Error.Message}", args.Error);
+                    XtraMessageBox.Show(MainWindow.Window, @"There is a problem reaching update server. Please check your internet connection and try again later.", @"Update Check Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                default:
+                    MainWindow.Window.SetStatus($"Unable to check for a new application version at the moment. Error: {args.Error.Message}", args.Error);
+                    XtraMessageBox.Show(MainWindow.Window, args.Error.Message, args.Error.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Check for a new available update and downloads whether on the update conditions.
+        /// </summary>
+        /// <param name="args"></param>
+        private static void AutoUpdaterOnCheckForUpdateEvent(UpdateInfoEventArgs args)
+        {
+            updateInfo = args;
+
+            if (args.Error == null)
+            {
+                if (args.IsUpdateAvailable)
+                {
+                    IsUpdateAvailable = args.IsUpdateAvailable;
+                    updateInfo = args;
+                    MainWindow.Window.UpdateAvailable(args.IsUpdateAvailable);
+                    MainWindow.Window.SetStatus($"A new update is available: ({AllReleases[0].Name})");
+                    DialogResult dialogResult;
+                    if (args.Mandatory.Value)
+                    {
+                        dialogResult =
+                            XtraMessageBox.Show(MainWindow.Window,
+                            $"A new version of Arisen Studio is available: {AllReleases[0].Name}. " +
+                            $"This update is required and includes important fixes and improvements. You need to install it to keep using the app.\n\n" +
+                            $"Update will begin downloading when you click OK.",
+                            @"Update Available",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        dialogResult =
+                            XtraMessageBox.Show(MainWindow.Window,
+                            $"A new version of Arisen Studio is available: {AllReleases[0].Name}\n\n" +
+                            $"Would you like to download and install it now?",
+                            @"Update Available",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Information);
+                    }
+
+                    // Uncomment the following line if you want to show standard update dialog instead.
+                    // AutoUpdater.ShowUpdateForm(args);
+
+                    if (dialogResult.Equals(DialogResult.Yes) || dialogResult.Equals(DialogResult.OK))
+                    {
+                        try
+                        {
+                            if (AutoUpdater.DownloadUpdate(args))
+                            {
+                                Application.Exit();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MainWindow.Window.SetStatus($"Unable to download new version at the moment. Error: {ex.Message}", ex);
+                            XtraMessageBox.Show(MainWindow.Window, $@"There is a problem reaching update server. " +
+                                "Please check your internet connection and try again later.\n\nError: {ex.Message}",
+                                @"Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                    }
+                }
+                else
+                {
+                    MainWindow.Window.SetStatus($"You're currently using the latest version of Arisen Studio ({CurrentVersionName})");
+                }
+            }
+            else
+            {
+                if (args.Error is WebException)
+                {
+                    MainWindow.Window.SetStatus($"Unable to check application version at this current time. Error: {args.Error.Message}", args.Error);
+                    XtraMessageBox.Show(MainWindow.Window, @"There is a problem reaching update server. " +
+                        "Please check your internet connection and try again later.",
+                        @"Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MainWindow.Window.SetStatus($"Unable to check application for a new version." +
+                        $"Error Message: {args.Error.Message}", args.Error);
+                    XtraMessageBox.Show(MainWindow.Window, args.Error.Message,
+                        args.Error.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Close the app, then download and install the new update.
+        /// </summary>
+        public static void UpdateApplication()
+        {
+            var args = updateInfo;
+
+            switch (args.Error)
+            {
+                case null when args.IsUpdateAvailable:
                     try
                     {
+                        MainWindow.Settings.FirstTimeOpenAfterUpdate = true;
+                        IsUpdateAvailable = args.IsUpdateAvailable;
+                        updateInfo = args;
+                        MainWindow.Window.SetStatus($"A new update is available: ({AllReleases[0].Name})");
+
                         if (AutoUpdater.DownloadUpdate(args))
                         {
                             Application.Exit();
@@ -98,16 +240,19 @@ namespace ArisenStudio.Extensions
                     }
 
                     break;
-                case null:
-                    MainWindow.Window.SetStatus($"You're currently using the latest version of Arisen Studio ({CurrentVersionName})");
-                    break;
                 case WebException:
-                    MainWindow.Window.SetStatus($"Unable to check application version at this current time. Error: {args.Error.Message}", args.Error);
-                    XtraMessageBox.Show(MainWindow.Window, @"There is a problem reaching update server. Please check your internet connection and try again later.", @"Update Check Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MainWindow.Window.SetStatus($"Unable to download new version at the moment. Error: {args.Error.Message}", args.Error);
+                    XtraMessageBox.Show(MainWindow.Window, @"There is a problem reaching update server. " + 
+                        "Please check your internet connection and try again later.", 
+                        @"Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 default:
-                    MainWindow.Window.SetStatus($"Unable to check application for a new version. Error Message: {args.Error.Message}", args.Error);
-                    XtraMessageBox.Show(MainWindow.Window, args.Error.Message, args.Error.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MainWindow.Window.SetStatus($"Unable to check for a new application version at the moment." +
+                        $" Error: {args.Error.Message}", args.Error);
+                    XtraMessageBox.Show(MainWindow.Window, 
+                        args.Error.Message, 
+                        args.Error.GetType().ToString(), 
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
         }

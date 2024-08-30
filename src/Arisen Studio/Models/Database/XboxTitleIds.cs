@@ -6,20 +6,20 @@ using System.Linq;
 
 namespace ArisenStudio.Models.Database
 {
-    public class TitleIdsDataXbox
+    public class XboxTitleIds
     {
         /// <summary>
-        /// Get the date/time the database was last updated.
+        /// Date/time the file was updated in ISO format
         /// </summary>
         public DateTime LastUpdated { get; set; }
 
         /// <summary>
-        /// Get the mods from the database.
+        /// All of the title IDs for Xbox 360
         /// </summary>
-        public List<TitleIdsXbox> Games { get; set; }
+        public List<XboxGame> Games { get; set; }
 
         /// <summary>
-        /// Get the game title for the specified titleId.
+        /// Get the Game Title for the specified title ID
         /// </summary>
         /// <param name="titleId"></param>
         /// <returns></returns>
@@ -27,11 +27,11 @@ namespace ArisenStudio.Models.Database
         {
             string gameTitle = Games.FirstOrDefault(x => x.TitleId.EqualsIgnoreCase(titleId)).GameTitle;
 
-            return gameTitle == null ? "Unknown Game Title" : gameTitle;
+            return gameTitle ?? "Unknown Title";
         }
 
         /// <summary>
-        /// Get the gameId for the specified game title.
+        /// Get the Title ID for the specified Game Title
         /// </summary>
         /// <param name="gameTitle"></param>
         /// <returns></returns>
@@ -39,7 +39,7 @@ namespace ArisenStudio.Models.Database
         {
             string gameId = Games.FirstOrDefault(x => x.GameTitle.EqualsIgnoreCase(gameTitle)).TitleId;
 
-            return gameId == null ? "Unknown Game ID" : gameId;
+            return gameId ?? "Unknown Title ID";
         }
     }
 }

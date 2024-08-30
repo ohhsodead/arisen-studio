@@ -56,7 +56,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
         {
             try
             {
-                string filePath = Path.Combine(Settings.PathBaseDirectory, "Xbox Screenshots") + @"\";
+                string filePath = Path.Combine(Settings.PathAppData, "Xbox Screenshots") + @"\";
                 string fileName = TextBoxFileName.Text;
 
                 if (TextBoxFileName.Text.IsNullOrWhiteSpace())

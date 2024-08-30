@@ -90,7 +90,7 @@ namespace ArisenStudio.Extensions
                     break;
 
                 case Platform.XBOX360:
-                    detailsDialog = new PluginDialog
+                    detailsDialog = new HomebrewXboxDialog
                     {
                         //CategoryType = CategoryType.Homebrew,
                         CategoryType = modItem.GetCategoryType(categories),
@@ -260,10 +260,10 @@ namespace ArisenStudio.Extensions
             overlayForm.Dispose();
         }
 
-        public static void ShowGameTrainers(Form owner, TrainerItem trainerItem)
+        public static void ShowGameTrainers(Form owner, TrainerGameData trainerItem)
         {
             using GameTrainersDialog gameTrainersDialog = new();
-            gameTrainersDialog.TrainerItem = trainerItem;
+            gameTrainersDialog.TrainerGameData = trainerItem;
 
             XtraForm overlayForm = new()
             {
@@ -299,7 +299,7 @@ namespace ArisenStudio.Extensions
             dataViewDialog.MaximumSize = new Size(dataViewDialog.MaximumSize.Width, owner.Height + 100);
             dataViewDialog.Size = new Size(dataViewDialog.Width, dataViewDialog.Height + 15);
             dataViewDialog.Owner = owner;
-            dataViewDialog.ShowDialog();
+            dataViewDialog.ShowDialog(owner);
         }
 
         public static ListItem ShowListViewDialog(Form owner, string title, List<ListItem> items)
@@ -430,6 +430,12 @@ namespace ArisenStudio.Extensions
             return (Color)XtraInputBox.Show(args);
         }
 
+        /// <summary>
+        /// Transfer files for custom mods.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="transferType"></param>
+        /// <param name="customItem"></param>
         public static void ShowTransferFilesDialog(Form owner, TransferType transferType, CustomItemData customItem)
         {
             using TransferDialog transferDialog = new()
@@ -443,6 +449,15 @@ namespace ArisenStudio.Extensions
             transferDialog.ShowDialog();
         }
 
+        /// <summary>
+        /// Transfer files for normal type of mods.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="transferType"></param>
+        /// <param name="category"></param>
+        /// <param name="modItem"></param>
+        /// <param name="downloadFiles"></param>
+        /// <param name="region"></param>
         public static void ShowTransferFilesDialog(Form owner, TransferType transferType, Category category, ModItemData modItem, DownloadFiles downloadFiles, string region = "")
         {
             using TransferDialog transferDialog = new()
@@ -458,6 +473,14 @@ namespace ArisenStudio.Extensions
             transferDialog.ShowDialog();
         }
 
+        /// <summary>
+        /// Transfer homebrew applications for PS4.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="transferType"></param>
+        /// <param name="category"></param>
+        /// <param name="appData"></param>
+        /// <param name="appFile"></param>
         public static void ShowTransferFilesDialog(Form owner, TransferType transferType, Category category, AppItemData appData, AppItemFile appFile)
         {
             using TransferDialog transferDialog = new()
@@ -472,12 +495,39 @@ namespace ArisenStudio.Extensions
             transferDialog.ShowDialog();
         }
 
+        /// <summary>
+        /// Transfer package files from the store for PS3.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="transferType"></param>
+        /// <param name="packageItem"></param>
         public static void ShowTransferPackagesDialog(Form owner, TransferType transferType, PackageItemData packageItem)
         {
             using TransferDialog transferDialog = new()
             {
                 TransferType = transferType,
                 PackageItem = packageItem
+            };
+
+            transferDialog.Owner = owner;
+            transferDialog.ShowDialog();
+        }
+
+        /// <summary>
+        /// Transfer trainer files for Xbox 360
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="transferType"></param>
+        /// <param name="trainersGame"></param>
+        /// <param name="trainerItem"></param>
+        public static void ShowTransferFilesDialog(Form owner, TransferType transferType, TrainerGameData trainersGame, TrainerItem trainerItem)
+        {
+            using TransferDialog transferDialog = new()
+            {
+                TransferType = transferType,
+                //Category = category,
+                TrainerGame = trainersGame,
+                TrainerItem = trainerItem
             };
 
             transferDialog.Owner = owner;

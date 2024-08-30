@@ -105,6 +105,15 @@ namespace ArisenStudio
         InstallGameSave,
 
         [Description("DOWNLOADING_GAME_SAVE")]
-        DownloadGameSave
+        DownloadGameSave,
+
+        [Description("INSTALLING_TRAINER")]
+        InstallTrainer,
+
+        [Description("UNINSTALLING_TRAINER")]
+        UninstallTrainer,
+
+        [Description("DOWNLOADING_TRAINER")]
+        DownloadTrainer,
     }
 }

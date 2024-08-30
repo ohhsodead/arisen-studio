@@ -160,8 +160,8 @@ namespace ArisenStudio.Forms.Tools.XBOX
             // XuidGameSpoofer
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(360, 137);
             this.Controls.Add(this.LabelXuid);
             this.Controls.Add(this.TextBoxXuid);

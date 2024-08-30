@@ -93,11 +93,11 @@ namespace ArisenStudio.Forms.Tools.PS3
             // TextBoxTitleID
             // 
             this.TextBoxTitleID.EditValue = "e.g. BLES01807";
-            this.TextBoxTitleID.Location = new System.Drawing.Point(45, 1);
+            this.TextBoxTitleID.Location = new System.Drawing.Point(45, 0);
             this.TextBoxTitleID.Name = "TextBoxTitleID";
             this.TextBoxTitleID.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxTitleID.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxTitleID.Size = new System.Drawing.Size(100, 22);
+            this.TextBoxTitleID.Size = new System.Drawing.Size(100, 24);
             this.TextBoxTitleID.TabIndex = 0;
             // 
             // GridGameUpdates
@@ -312,9 +312,9 @@ namespace ArisenStudio.Forms.Tools.PS3
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 385);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 382);
             this.barDockControlBottom.Manager = this.BarManagerStatus;
-            this.barDockControlBottom.Size = new System.Drawing.Size(644, 28);
+            this.barDockControlBottom.Size = new System.Drawing.Size(644, 31);
             // 
             // barDockControlLeft
             // 
@@ -322,7 +322,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.BarManagerStatus;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 385);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 382);
             // 
             // barDockControlRight
             // 
@@ -330,7 +330,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(644, 0);
             this.barDockControlRight.Manager = this.BarManagerStatus;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 385);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 382);
             // 
             // barHeaderItem1
             // 
@@ -410,8 +410,8 @@ namespace ArisenStudio.Forms.Tools.PS3
             // 
             this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
             this.Appearance.Options.UseForeColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(644, 413);
             this.Controls.Add(this.PanelButtonsHeader);

@@ -1,7 +1,9 @@
-﻿using System;
+﻿using ArisenStudio.Properties;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -61,6 +63,17 @@ namespace ArisenStudio.Extensions
             return Regex.Replace(text,
                 @"^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$",
                 message);
+        }
+        
+        /// <summary>
+        /// Convert boolean values to either Yes/No
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="resource"></param>
+        /// <returns></returns>
+        public static string ToYesNoString(this bool value, ResourceManager resource)
+        {
+            return value ? resource.GetString("LABEL_YES") : resource.GetString("LABEL_NO");
         }
 
         /// <summary>

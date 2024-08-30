@@ -41,7 +41,7 @@ namespace ArisenStudio.Controls
 
         private void CustomFileItem_Load(object sender, EventArgs e)
         {
-            BackColor = Parent.BackColor;
+            //BackColor = Parent.BackColor;
 
             LabelHeaderLocalFile.Text = Language.GetString("LABEL_LOCAL_FILE") + ":";
             LabelLocalFile.Text = InstallFile.Name;

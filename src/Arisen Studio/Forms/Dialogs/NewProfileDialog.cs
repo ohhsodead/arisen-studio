@@ -39,16 +39,18 @@ namespace ArisenStudio.Forms.Dialogs
                 Text = Language.GetString("LABEL_NEW_PROFILE_DETAILS");
             }
 
+            GroupBoxProfileInfo.Text = Language.GetString("PROFILE_INFO");
             LabelName.Text = Language.GetString("LABEL_PROFILE_NAME") + ":";
             LabelPlatformType.Text = Language.GetString("LABEL_PLATFORM_TYPE") + ":";
             LabelAddress.Text = Language.GetString("LABEL_IP_ADDRESS") + ":";
             LabelLoginDetails.Text = Language.GetString("LABEL_LOGIN_DETAILS") + ":";
             LabelOptions.Text = Language.GetString("OPTIONS") + ":";
 
+            GroupBoxProfileInfo.Text = Language.GetString("ADVANCED_SETTINGS");
             CheckBoxDefaultLogin.Text = Language.GetString("LABEL_DEFAULT_CREDENTIALS");
-            ButtonChangeLoginDetails.Text = Language.GetString("LABEL_CHANGE");
-            CheckBoxPassiveMode.Text = Language.GetString("LABEL_PASSIVE_MODE");
+            ButtonEditLoginDetails.Text = Language.GetString("LABEL_EDIT");
             CheckBoxDefaultProfile.Text = Language.GetString("LABEL_DEFAULT_PROFILE");
+            CheckBoxPassiveMode.Text = Language.GetString("LABEL_PASSIVE_MODE");
             ButtonSave.Text = Language.GetString("LABEL_SAVE");
             ButtonCancel.Text = Language.GetString("LABEL_CANCEL");
 
@@ -61,14 +63,24 @@ namespace ArisenStudio.Forms.Dialogs
             //    : ConsoleProfile.Username + " / " + ConsoleProfile.Password;
 
             //LabelUserPass.Visible = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
-            ButtonChangeLoginDetails.Enabled = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
+            ButtonEditLoginDetails.Enabled = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
 
             //CheckBoxDefaultLogin.Enabled = ConsoleProfile.Platform == Platform.XBOX360;
             //CheckBoxDefaultLogin.CheckState = ConsoleProfile.UseDefaultLogin ? CheckState.Checked : CheckState.Unchecked;
-            CheckBoxDefaultLogin.Checked = ConsoleProfile.UseDefaultLogin;
+            if (IsEditingProfile)
+            {
+                CheckBoxDefaultLogin.Checked = false;
+            }
+            else
+            {
+                CheckBoxDefaultLogin.Checked = ConsoleProfile.UseDefaultLogin;
+            }
 
             CheckBoxPassiveMode.Enabled = ConsoleProfile.Platform == Platform.PS3;
             CheckBoxPassiveMode.Checked = ConsoleProfile.PassiveMode;
+
+            CheckBoxGoldHEN.Enabled = ConsoleProfile.Platform == Platform.PS3;
+            CheckBoxGoldHEN.Checked = ConsoleProfile.GoldHEN;
 
             int defaults = 0;
 
@@ -250,8 +262,11 @@ namespace ArisenStudio.Forms.Dialogs
             //}
 
             //LabelUserPass.Visible = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
-            ButtonChangeLoginDetails.Enabled = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
+            ButtonEditLoginDetails.Enabled = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
             CheckBoxPassiveMode.Enabled = ConsoleProfile.Platform == Platform.PS3;
+            CheckBoxPassiveMode.Checked = false;
+            CheckBoxGoldHEN.Enabled = ConsoleProfile.Platform == Platform.PS3;
+            CheckBoxGoldHEN.Checked = false;
 
             //CheckBoxDefault.Enabled = ConsoleProfile.Platform == Platform.XBOX360;
         }
@@ -260,12 +275,31 @@ namespace ArisenStudio.Forms.Dialogs
         {
             ConsoleProfile.UseDefaultLogin = CheckBoxDefaultLogin.Checked;
 
-            LabelAddress.Enabled = !CheckBoxDefaultLogin.Checked;
-            TextBoxAddress.Enabled = !CheckBoxDefaultLogin.Checked;
+            if (CheckBoxDefaultLogin.Checked)
+            {
+                if (ConsoleProfile.Platform == Platform.XBOX360)
+                {
+                    LabelAddress.Enabled = false;
+                    TextBoxAddress.Enabled = false;
+                }
+                else
+                {
+                    LabelAddress.Enabled = true;
+                    TextBoxAddress.Enabled = true;
+                }
+            }
+            else
+            {
+                LabelAddress.Enabled = true;
+                TextBoxAddress.Enabled = true;
+            }
+
+            //LabelAddress.Enabled = CheckBoxDefaultLogin.Checked && ConsoleProfile.Platform != Platform.XBOX360;
+            //TextBoxAddress.Enabled = CheckBoxDefaultLogin.Checked && ConsoleProfile.Platform != Platform.XBOX360;
 
             //TextBoxConsoleAddress.Text = ConsoleProfile.Platform == ConsolePlatform.PS3 ? ConsoleProfile.Address : "Default";
             TextBoxAddress.Text = CheckBoxDefaultLogin.Checked ? Language.GetString("LABEL_DEFAULT_PROFILE") : ConsoleProfile.Address;
-            ButtonChangeLoginDetails.Enabled = !CheckBoxDefaultLogin.Checked;
+            ButtonEditLoginDetails.Enabled = !CheckBoxDefaultLogin.Checked;
         }
 
         private void CheckBoxDefaultLogin_Properties_EditValueChanging(object sender, ChangingEventArgs e)
@@ -284,9 +318,9 @@ namespace ArisenStudio.Forms.Dialogs
             }
         }
 
-        private void ButtonChangeCredentials_Click(object sender, EventArgs e)
+        private void ButtonEditCredentials_Click(object sender, EventArgs e)
         {
-            using LoginDialog consoleCredentials = new();
+            using EditLoginDialog consoleCredentials = new();
 
             consoleCredentials.TextBoxUsername.Text = ConsoleProfile.Username;
             consoleCredentials.TextBoxPassword.Text = ConsoleProfile.Password;
@@ -296,15 +330,11 @@ namespace ArisenStudio.Forms.Dialogs
             switch (setCredentials)
             {
                 case DialogResult.OK:
-                    //LabelUserPass.Text = consoleCredentials.TextBoxUsername.Text + @" / " + consoleCredentials.TextBoxPassword.Text;
-
                     ConsoleProfile.Username = consoleCredentials.TextBoxUsername.Text;
                     ConsoleProfile.Password = consoleCredentials.TextBoxPassword.Text;
                     ConsoleProfile.UseDefaultLogin = false;
                     break;
                 case DialogResult.Abort:
-                    //LabelUserPass.Text = Language.GetString("LABEL_DEFAULT");
-
                     ConsoleProfile.Username = string.Empty;
                     ConsoleProfile.Password = string.Empty;
                     ConsoleProfile.UseDefaultLogin = true;
@@ -355,8 +385,17 @@ namespace ArisenStudio.Forms.Dialogs
                 {
                     if (consoleProfile.IsDefault)
                     {
-                        XtraMessageBox.Show(this, string.Format(Language.GetString("DEFAULT_PROFILE_ALREADY_EXISTS"), consoleProfile.Name), Language.GetString("LABEL_DEFAULT_PROFILE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        e.Cancel = true;
+                        if (XtraMessageBox.Show(this, string.Format(Language.GetString("DEFAULT_PROFILE_ALREADY_EXISTS"), consoleProfile.Name), Language.GetString("LABEL_DEFAULT_PROFILE"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                        {
+                            consoleProfile.IsDefault = false;
+                            e.Cancel = false;
+                        }
+                        else
+                        {
+                            e.Cancel = true;
+                            return;
+                        }
+
                         return;
                     }
                 }

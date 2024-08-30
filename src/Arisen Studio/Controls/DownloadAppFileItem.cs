@@ -38,7 +38,7 @@ namespace ArisenStudio.Controls
 
         private void DownloadItem_Load(object sender, EventArgs e)
         {
-            BackColor = Parent.BackColor;
+            //BackColor = Parent.BackColor;
 
             LabelHeaderLastUpdated.Text = Language.GetString("LABEL_LAST_UPDATED");
             LabelHeaderVersion.Text = Language.GetString("LABEL_VERSION");

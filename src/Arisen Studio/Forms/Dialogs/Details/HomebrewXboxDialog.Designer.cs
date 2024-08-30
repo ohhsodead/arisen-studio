@@ -3,7 +3,7 @@ using DevExpress.XtraEditors;
 
 namespace ArisenStudio.Forms.Dialogs.Details
 {
-    partial class PluginDialog
+    partial class HomebrewXboxDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PluginDialog));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomebrewXboxDialog));
             this.PanelDetails = new DevExpress.XtraEditors.XtraScrollableControl();
             this.LabelLastUpdated = new DevExpress.XtraEditors.LabelControl();
             this.LabelHeaderLastUpdated = new DevExpress.XtraEditors.LabelControl();
@@ -285,9 +285,9 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.LabelPackages.Location = new System.Drawing.Point(0, 1);
             this.LabelPackages.Margin = new System.Windows.Forms.Padding(0, 1, 3, 10);
             this.LabelPackages.Name = "LabelPackages";
-            this.LabelPackages.Size = new System.Drawing.Size(46, 17);
+            this.LabelPackages.Size = new System.Drawing.Size(67, 17);
             this.LabelPackages.TabIndex = 1190;
-            this.LabelPackages.Text = "Plugins";
+            this.LabelPackages.Text = "Homebrew";
             // 
             // LabelSlash
             // 
@@ -297,7 +297,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.LabelSlash.Appearance.Options.UseFont = true;
             this.LabelSlash.AutoEllipsis = true;
             this.LabelSlash.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSlash.Location = new System.Drawing.Point(52, 1);
+            this.LabelSlash.Location = new System.Drawing.Point(73, 1);
             this.LabelSlash.Margin = new System.Windows.Forms.Padding(3, 1, 3, 10);
             this.LabelSlash.Name = "LabelSlash";
             this.LabelSlash.Size = new System.Drawing.Size(7, 17);
@@ -312,7 +312,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.LabelCategory.Appearance.Options.UseFont = true;
             this.LabelCategory.AutoEllipsis = true;
             this.LabelCategory.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelCategory.Location = new System.Drawing.Point(65, 1);
+            this.LabelCategory.Location = new System.Drawing.Point(86, 1);
             this.LabelCategory.Margin = new System.Windows.Forms.Padding(3, 1, 3, 10);
             this.LabelCategory.Name = "LabelCategory";
             this.LabelCategory.Size = new System.Drawing.Size(55, 17);
@@ -405,6 +405,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonInstall.Size = new System.Drawing.Size(91, 28);
             this.ButtonInstall.TabIndex = 1181;
             this.ButtonInstall.Text = "Install";
+            this.ButtonInstall.Click += new System.EventHandler(this.ButtonInstall_Click);
             // 
             // ButtonFavorite
             // 
@@ -498,15 +499,15 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TabPane.AppearanceButton.Pressed.Options.UseFont = true;
             this.TabPane.Controls.Add(this.TabDescription);
             this.TabPane.Controls.Add(this.TabDownloads);
-            this.TabPane.Location = new System.Drawing.Point(12, 92);
-            this.TabPane.Margin = new System.Windows.Forms.Padding(3, 14, 3, 3);
+            this.TabPane.Location = new System.Drawing.Point(12, 96);
+            this.TabPane.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.TabPane.Name = "TabPane";
             this.TabPane.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.TabDescription,
             this.TabDownloads});
-            this.TabPane.RegularSize = new System.Drawing.Size(776, 384);
+            this.TabPane.RegularSize = new System.Drawing.Size(776, 380);
             this.TabPane.SelectedPage = this.TabDescription;
-            this.TabPane.Size = new System.Drawing.Size(776, 384);
+            this.TabPane.Size = new System.Drawing.Size(776, 380);
             this.TabPane.TabIndex = 1195;
             this.TabPane.Text = "TabPane";
             this.TabPane.TransitionAnimationProperties.FrameCount = 900;
@@ -520,7 +521,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TabDescription.Caption = "Description";
             this.TabDescription.Controls.Add(this.LabelDescription);
             this.TabDescription.Name = "TabDescription";
-            this.TabDescription.Size = new System.Drawing.Size(776, 348);
+            this.TabDescription.Size = new System.Drawing.Size(776, 344);
             this.TabDescription.Scroll += new DevExpress.XtraEditors.XtraScrollEventHandler(this.TabDescription_Scroll);
             // 
             // LabelDescription
@@ -544,10 +545,12 @@ namespace ArisenStudio.Forms.Dialogs.Details
             // 
             // TabDownloads
             // 
+            this.TabDownloads.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.TabDownloads.Appearance.Options.UseBackColor = true;
             this.TabDownloads.AutoScroll = true;
             this.TabDownloads.Caption = "Downloads";
             this.TabDownloads.Name = "TabDownloads";
-            this.TabDownloads.Size = new System.Drawing.Size(776, 353);
+            this.TabDownloads.Size = new System.Drawing.Size(776, 348);
             this.TabDownloads.Scroll += new DevExpress.XtraEditors.XtraScrollEventHandler(this.TabDownloads_Scroll);
             // 
             // xtraScrollableControl1
@@ -565,8 +568,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             // 
             // TablePanelStats
             // 
-            this.TablePanelStats.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.TablePanelStats.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TablePanelStats.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
@@ -579,11 +581,11 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TablePanelStats.Controls.Add(this.StatSubmittedBy);
             this.TablePanelStats.Controls.Add(this.StatCreatedBy);
             this.TablePanelStats.Controls.Add(this.StatLastUpdated);
-            this.TablePanelStats.Location = new System.Drawing.Point(12, 14);
+            this.TablePanelStats.Location = new System.Drawing.Point(16, 14);
             this.TablePanelStats.Name = "TablePanelStats";
             this.TablePanelStats.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F)});
-            this.TablePanelStats.Size = new System.Drawing.Size(776, 72);
+            this.TablePanelStats.Size = new System.Drawing.Size(768, 72);
             this.TablePanelStats.TabIndex = 1205;
             // 
             // StatGameMode
@@ -592,11 +594,11 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.StatGameMode.Appearance.Options.UseBackColor = true;
             this.TablePanelStats.SetColumn(this.StatGameMode, 2);
             this.StatGameMode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.StatGameMode.Location = new System.Drawing.Point(310, 0);
+            this.StatGameMode.Location = new System.Drawing.Point(307, 0);
             this.StatGameMode.Margin = new System.Windows.Forms.Padding(0);
             this.StatGameMode.Name = "StatGameMode";
             this.TablePanelStats.SetRow(this.StatGameMode, 0);
-            this.StatGameMode.Size = new System.Drawing.Size(155, 72);
+            this.StatGameMode.Size = new System.Drawing.Size(154, 72);
             this.StatGameMode.TabIndex = 6;
             this.StatGameMode.Title = "Game Mode";
             this.StatGameMode.Value = "Value";
@@ -607,11 +609,11 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.StatVersion.Appearance.Options.UseBackColor = true;
             this.TablePanelStats.SetColumn(this.StatVersion, 1);
             this.StatVersion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.StatVersion.Location = new System.Drawing.Point(155, 0);
+            this.StatVersion.Location = new System.Drawing.Point(154, 0);
             this.StatVersion.Margin = new System.Windows.Forms.Padding(0);
             this.StatVersion.Name = "StatVersion";
             this.TablePanelStats.SetRow(this.StatVersion, 0);
-            this.StatVersion.Size = new System.Drawing.Size(155, 72);
+            this.StatVersion.Size = new System.Drawing.Size(154, 72);
             this.StatVersion.TabIndex = 5;
             this.StatVersion.Title = "Version";
             this.StatVersion.Value = "Value";
@@ -622,11 +624,11 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.StatSubmittedBy.Appearance.Options.UseBackColor = true;
             this.TablePanelStats.SetColumn(this.StatSubmittedBy, 4);
             this.StatSubmittedBy.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.StatSubmittedBy.Location = new System.Drawing.Point(621, 0);
+            this.StatSubmittedBy.Location = new System.Drawing.Point(614, 0);
             this.StatSubmittedBy.Margin = new System.Windows.Forms.Padding(0);
             this.StatSubmittedBy.Name = "StatSubmittedBy";
             this.TablePanelStats.SetRow(this.StatSubmittedBy, 0);
-            this.StatSubmittedBy.Size = new System.Drawing.Size(155, 72);
+            this.StatSubmittedBy.Size = new System.Drawing.Size(154, 72);
             this.StatSubmittedBy.TabIndex = 4;
             this.StatSubmittedBy.Title = "Submitted By";
             this.StatSubmittedBy.Value = "Value";
@@ -637,11 +639,11 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.StatCreatedBy.Appearance.Options.UseBackColor = true;
             this.TablePanelStats.SetColumn(this.StatCreatedBy, 3);
             this.StatCreatedBy.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.StatCreatedBy.Location = new System.Drawing.Point(466, 0);
+            this.StatCreatedBy.Location = new System.Drawing.Point(461, 0);
             this.StatCreatedBy.Margin = new System.Windows.Forms.Padding(0);
             this.StatCreatedBy.Name = "StatCreatedBy";
             this.TablePanelStats.SetRow(this.StatCreatedBy, 0);
-            this.StatCreatedBy.Size = new System.Drawing.Size(155, 72);
+            this.StatCreatedBy.Size = new System.Drawing.Size(154, 72);
             this.StatCreatedBy.TabIndex = 3;
             this.StatCreatedBy.Title = "Created By";
             this.StatCreatedBy.Value = "Value";
@@ -656,20 +658,20 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.StatLastUpdated.Margin = new System.Windows.Forms.Padding(0);
             this.StatLastUpdated.Name = "StatLastUpdated";
             this.TablePanelStats.SetRow(this.StatLastUpdated, 0);
-            this.StatLastUpdated.Size = new System.Drawing.Size(155, 72);
+            this.StatLastUpdated.Size = new System.Drawing.Size(154, 72);
             this.StatLastUpdated.TabIndex = 0;
             this.StatLastUpdated.Title = "Last Updated";
             this.StatLastUpdated.Value = "Value";
             // 
-            // PluginDialog
+            // HomebrewXboxDialog
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
             this.Appearance.Options.UseForeColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 606);
             this.ControlBox = false;
@@ -681,13 +683,13 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
-            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("PluginDialog.IconOptions.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("HomebrewXboxDialog.IconOptions.Icon")));
             this.IconOptions.Image = global::ArisenStudio.Properties.Resources.arisenstudio;
             this.IconOptions.ShowIcon = false;
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "PluginDialog";
+            this.Name = "HomebrewXboxDialog";
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

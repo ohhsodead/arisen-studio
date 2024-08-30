@@ -11,6 +11,7 @@ using System.Xml.Serialization;
 using System.Collections.Generic;
 using System.Windows.Media.Imaging;
 using FluentFTP;
+using System.Linq;
 
 namespace ArisenStudio.Extensions
 {
@@ -120,47 +121,24 @@ namespace ArisenStudio.Extensions
             return false;
         }
 
-        public static List<string> ScanForConsoles()
+        public static bool CheckInternetConnection()
         {
-            string baseIpAddress = "192.168.1."; 
-            List<string> foundAddress = [];
+            //NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
 
-            for (int i = 1; i <= 255; i++)
-            {
-                string ipAddress = baseIpAddress + i.ToString();
+            //foreach (NetworkInterface nic in nics)
+            //{
+            //    if (nic.NetworkInterfaceType != NetworkInterfaceType.Loopback && nic.NetworkInterfaceType != NetworkInterfaceType.Tunnel && 
+            //        nic.OperationalStatus == OperationalStatus.Up)
+            //    {
+            //        return true;
+            //    }
+            //}
 
-                if (PingIpAddress(ipAddress))
-                {
-                    foundAddress.Add(ipAddress);
+            //NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler(NetworkChange_NetworkAvailabilityChanged);
 
-                    Console.WriteLine($"Found device at: {ipAddress}");
-                    // Further logic to check for PS3 or modded PS3 consoles
-                    // Example: Check specific ports or UPnP services
+            //return false;
 
-                    FtpClient ftpClient = new();
-
-                    ftpClient.Connect();
-                }
-            }
-
-
-            return foundAddress;
-        }
-
-        private static bool PingIpAddress(string ipAddress)
-        {
-            try
-            {
-                using (Ping ping = new())
-                {
-                    PingReply reply = ping.Send(ipAddress, 1000); // Timeout set to 1000 ms (1 second)
-                    return reply.Status == IPStatus.Success;
-                }
-            }
-            catch (PingException)
-            {
-                return false;
-            }
+            return NetworkInterface.GetAllNetworkInterfaces().Any(static x => x.OperationalStatus == OperationalStatus.Up);
         }
     }
 }

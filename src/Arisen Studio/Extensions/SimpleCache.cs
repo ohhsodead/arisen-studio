@@ -7,9 +7,8 @@ namespace ArisenStudio.Extensions
 {
     public class SimpleCache<T>
     {
-        private readonly Dictionary<string, CacheItem> _cache = new();
         private readonly string _cacheFilePath;
-        private readonly string _cacheShaFilePath;
+        private CacheContainer<T> _cacheContainer;
 
         public SimpleCache(string cacheFileName)
         {
@@ -18,97 +17,80 @@ namespace ArisenStudio.Extensions
 
             Directory.CreateDirectory(directoryPath);
 
+            // Ensure the directory exists
+            var directory = Path.GetDirectoryName(directoryPath);
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+
             _cacheFilePath = Path.Combine(directoryPath, cacheFileName);
-            _cacheShaFilePath = Path.Combine(directoryPath, $"{cacheFileName}.sha");
-
-            LoadCacheFromFile();
+            LoadCache();
         }
 
-        public void Add(string key, T value, string sha)
+        // Try to get the cached value and its metadata
+        public bool TryGetValue(string key, out T value, out CacheMetadata metadata)
         {
-            var cacheItem = new CacheItem
+            if (_cacheContainer.Cache.TryGetValue(key, out var cacheEntry))
             {
-                Value = value,
-                Sha = sha
-            };
-            _cache[key] = cacheItem;
-            SaveCacheToFile();
-            SaveShaToFile();
-        }
-
-        public bool TryGetValue(string key, out T value, out string sha)
-        {
-            if (_cache.TryGetValue(key, out var cacheItem))
-            {
-                value = cacheItem.Value;
-                sha = cacheItem.Sha;
+                value = cacheEntry.Data;
+                metadata = cacheEntry.Metadata;
                 return true;
             }
+
             value = default;
-            sha = null;
+            metadata = null;
             return false;
         }
 
-        private void SaveCacheToFile()
+        // Add or update the cache with new data and metadata
+        public void Add(string key, T data, CacheMetadata metadata)
         {
-            var json = JsonConvert.SerializeObject(_cache);
-            File.WriteAllText(_cacheFilePath, json);
+            _cacheContainer.Cache[key] = new CacheEntry<T> { Data = data, Metadata = metadata };
+            SaveCache();
         }
 
-        private void SaveShaToFile()
-        {
-            var shaCache = new Dictionary<string, string>();
-            foreach (var item in _cache)
-            {
-                shaCache[item.Key] = item.Value.Sha;
-            }
-            var json = JsonConvert.SerializeObject(shaCache);
-            File.WriteAllText(_cacheShaFilePath, json);
-        }
-
-        private void LoadCacheFromFile()
+        // Load the cache from disk
+        private void LoadCache()
         {
             if (File.Exists(_cacheFilePath))
             {
                 var json = File.ReadAllText(_cacheFilePath);
-                var loadedCache = JsonConvert.DeserializeObject<Dictionary<string, CacheItem>>(json);
-
-                if (loadedCache != null)
-                {
-                    foreach (var item in loadedCache)
-                    {
-                        _cache[item.Key] = item.Value;
-                    }
-                }
+                _cacheContainer = JsonConvert.DeserializeObject<CacheContainer<T>>(json) ?? new CacheContainer<T>();
             }
-            LoadShaFromFile();
-        }
-
-        private void LoadShaFromFile()
-        {
-            if (File.Exists(_cacheShaFilePath))
+            else
             {
-                var json = File.ReadAllText(_cacheShaFilePath);
-                var shaCache = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
-
-                if (shaCache != null)
-                {
-                    foreach (var item in shaCache)
-                    {
-                        if (_cache.TryGetValue(item.Key, out var cacheItem))
-                        {
-                            cacheItem.Sha = item.Value;
-                            _cache[item.Key] = cacheItem;
-                        }
-                    }
-                }
+                _cacheContainer = new CacheContainer<T>();
             }
         }
 
-        private class CacheItem
+        // Save the cache to disk
+        private void SaveCache()
         {
-            public T Value { get; set; }
-            public string Sha { get; set; }
+            var json = JsonConvert.SerializeObject(_cacheContainer, Formatting.Indented);
+            File.WriteAllText(_cacheFilePath, json);
         }
+
+        // A container for the cache data and metadata
+        private class CacheContainer<U>
+        {
+            public Dictionary<string, CacheEntry<U>> Cache { get; set; } = [];
+        }
+
+        // A class representing a single cache entry with data and metadata
+        private class CacheEntry<U>
+        {
+            public U Data { get; set; }
+
+            public CacheMetadata Metadata { get; set; }
+        }
+    }
+
+    // Metadata class to store ETag and Last-Modified headers
+    public class CacheMetadata
+    {
+        public string ETag { get; set; }
+
+        public DateTimeOffset? LastModified { get; set; }
     }
 }

@@ -264,9 +264,9 @@ namespace ArisenStudio.Forms.Tools.PS3
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 353);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 346);
             this.barDockControlBottom.Manager = this.BarManagerStatus;
-            this.barDockControlBottom.Size = new System.Drawing.Size(630, 24);
+            this.barDockControlBottom.Size = new System.Drawing.Size(630, 31);
             // 
             // barDockControlLeft
             // 
@@ -274,7 +274,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.BarManagerStatus;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 353);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 346);
             // 
             // barDockControlRight
             // 
@@ -282,7 +282,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(630, 0);
             this.barDockControlRight.Manager = this.BarManagerStatus;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 353);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 346);
             // 
             // barHeaderItem1
             // 
@@ -300,8 +300,8 @@ namespace ArisenStudio.Forms.Tools.PS3
             // 
             this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
             this.Appearance.Options.UseForeColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(630, 377);
             this.Controls.Add(this.GridPackageFiles);

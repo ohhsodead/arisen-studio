@@ -46,8 +46,8 @@ namespace ArisenStudio.Controls
 
         private void DownloadItem_Load(object sender, EventArgs e)
         {
-            BackColor = Parent.BackColor;
-            ListBoxInstallFiles.BackColor = Parent.BackColor;
+            //BackColor = Parent.BackColor;
+            //ListBoxInstallFiles.BackColor = Parent.BackColor;
 
             LabelName.Text = DownloadFiles.Name;
             LabelFilesCount.Text = $"{DownloadFiles.InstallPaths.Count()} {(DownloadFiles.InstallPaths.Count() == 1 ? Language.GetString("LABEL_FILE") : Language.GetString("LABEL_FILES"))}";

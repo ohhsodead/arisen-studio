@@ -176,7 +176,7 @@ namespace ArisenStudio.Forms.Dialogs
                 modIds.AddRange(MainWindow.Database.GameModsPS3.Library.Select(x => x.Id));
                 modIds.AddRange(MainWindow.Database.HomebrewPS3.Library.Select(x => x.Id));
                 modIds.AddRange(MainWindow.Database.ResourcesPS3.Library.Select(x => x.Id));
-                modIds.AddRange(MainWindow.Database.HomebrewXbox.Library.Select(x => x.Id));
+                modIds.AddRange(MainWindow.Database.HomebrewX360.Library.Select(x => x.Id));
                 modIds.AddRange(MainWindow.Database.HomebrewPS4.Library.Select(x => x.Id));
 
                 CustomMod.Id = Extensions.StringExtensions.GetRandomExcept(1, 10000000, modIds);
@@ -184,7 +184,7 @@ namespace ArisenStudio.Forms.Dialogs
 
             if (ComboBoxCategory.SelectedItem.ToString().Length == 0)
             {
-                XtraMessageBox.Show(this, "You must choose a category.", Language.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                XtraMessageBox.Show(this, "You must choose a category/game.", Language.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             if (TextBoxName.Text.Length == 0)

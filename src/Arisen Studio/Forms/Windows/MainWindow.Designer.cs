@@ -72,6 +72,22 @@ namespace ArisenStudio.Forms.Windows
             DevExpress.XtraEditors.TileItemElement tileItemElement14 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement15 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement16 = new DevExpress.XtraEditors.TileItemElement();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.TileItemElement tileItemElement17 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement18 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement19 = new DevExpress.XtraEditors.TileItemElement();
@@ -116,27 +132,26 @@ namespace ArisenStudio.Forms.Windows
             DevExpress.XtraEditors.TileItemElement tileItemElement58 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement59 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement60 = new DevExpress.XtraEditors.TileItemElement();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             DevExpress.XtraEditors.TileItemElement tileItemElement61 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement62 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement63 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement64 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement65 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement66 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.PieSeriesView pieSeriesView2 = new DevExpress.XtraCharts.PieSeriesView();
-            DevExpress.XtraEditors.TileItemElement tileItemElement67 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement65 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipItem toolTipItem5 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.XtraEditors.TileItemElement tileItemElement68 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement66 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipItem toolTipItem6 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.XtraEditors.TileItemElement tileItemElement69 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement67 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.Utils.SuperToolTip superToolTip7 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipItem toolTipItem7 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.XtraEditors.TileItemElement tileItemElement70 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement68 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.Utils.SuperToolTip superToolTip8 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipItem toolTipItem8 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.XtraEditors.TileItemElement tileItemElement69 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement70 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement71 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement72 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement73 = new DevExpress.XtraEditors.TileItemElement();
@@ -176,8 +191,6 @@ namespace ArisenStudio.Forms.Windows
             DevExpress.XtraEditors.TileItemElement tileItemElement107 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement108 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement109 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement110 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement111 = new DevExpress.XtraEditors.TileItemElement();
             this.PageGameModsPS3 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.PanelGameGameMods = new System.Windows.Forms.Panel();
             this.GridControlGameModsPS3 = new DevExpress.XtraGrid.GridControl();
@@ -251,11 +264,12 @@ namespace ArisenStudio.Forms.Windows
             this.NavigationItemCustomMods = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.NavigationItemGameMods = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.NavigationItemHomebrew = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.NavigationItemTrainers = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.NavigationItemResources = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.NavigationItemPackages = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.NavigationItemGames = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.NavigationItemGameCheats = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.NavigationItemGameSaves = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.NavigationItemGameCheats = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.PanelLatestNews = new DevExpress.XtraEditors.PanelControl();
             this.ImageLatestNewsRefresh = new DevExpress.XtraEditors.SvgImageBox();
             this.PanelNewsItems = new DevExpress.XtraEditors.XtraScrollableControl();
@@ -275,6 +289,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelHeaderFavoriteMods = new DevExpress.XtraEditors.LabelControl();
             this.NavigationFrame = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.PageDashboard = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.TableDashboard3 = new DevExpress.Utils.Layout.TablePanel();
             this.PanelStatistics = new DevExpress.XtraEditors.PanelControl();
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.FlowPanelStatistics = new System.Windows.Forms.FlowLayoutPanel();
@@ -436,11 +451,11 @@ namespace ArisenStudio.Forms.Windows
             this.LabelSettingsAutoDetectGameRegions = new DevExpress.XtraEditors.LabelControl();
             this.ToggleSettingsAutoDetectGameTitles = new DevExpress.XtraEditors.ToggleSwitch();
             this.LabelSettingsShowGamesFromExternalDevices = new DevExpress.XtraEditors.LabelControl();
-            this.TabPageTransfer = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.TabPageMods = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.LabelSettingsForceInstallAnyRegions = new DevExpress.XtraEditors.LabelControl();
             this.ToggleSettingsForceInstallAnyRegions = new DevExpress.XtraEditors.ToggleSwitch();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.LabelSettingsInstallingUninstalling = new DevExpress.XtraEditors.LabelControl();
+            this.LabelSettingsTransferringFiles = new DevExpress.XtraEditors.LabelControl();
             this.ToggleSettingsInstallAppsToUsbDevice = new DevExpress.XtraEditors.ToggleSwitch();
             this.ToggleSettingsInstallResourcesToUsbDevice = new DevExpress.XtraEditors.ToggleSwitch();
             this.LabelSettingsAlwaysBackupGameFiles = new DevExpress.XtraEditors.LabelControl();
@@ -459,52 +474,128 @@ namespace ArisenStudio.Forms.Windows
             this.ToggleSettingsAlwaysBackupGameFiles = new DevExpress.XtraEditors.ToggleSwitch();
             this.LabelSettingsInstallModsToUsbDevice = new DevExpress.XtraEditors.LabelControl();
             this.TabPageFiles = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.TextBoxSettingsAuroraFolderPath = new DevExpress.XtraEditors.TextEdit();
+            this.TextBoxSettingsAuroraFolderPath = new DevExpress.XtraEditors.ButtonEdit();
+            this.RibbonControlMain = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.ButtonUpdate = new DevExpress.XtraBars.BarButtonItem();
+            this.skinPaletteDropDownButtonItem1 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
+            this.barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
+            this.ButtonConnectConsole = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonDisconnectConsole = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonScanXboxConsoles = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonEditProfiles = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonChangeProfile = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonAddNewProfile = new DevExpress.XtraBars.BarButtonItem();
+            this.StatusLabelHeaderStatus = new DevExpress.XtraBars.BarStaticItem();
+            this.StatusLabelStatus = new DevExpress.XtraBars.BarStaticItem();
+            this.StatusLabelHeaderIsConnected = new DevExpress.XtraBars.BarStaticItem();
+            this.ButtonToolsPsGameUpdates = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsPsBackupFilesManager = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsPsPackageManager = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsPsConsoleManager = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsPsGameRegions = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsPsBootPluginsEditor = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsXboxGameSaveResigner = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsXboxGamesLauncher = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsXboxModuleLoader = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsXboxXuidSpoofer = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsXboxDashlaunchEditor = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsPsPower = new DevExpress.XtraBars.BarSubItem();
+            this.ButtonToolsPsPowerShutdown = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsPsPowerRestart = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsPsPowerSoftReboot = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsPsPowerHardReboot = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsPsPowerQuickReboot = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsPsGames = new DevExpress.XtraBars.BarSubItem();
+            this.ButtonToolsPsGamesOpenGUI = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsPsGamesMountBD = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsPsGamesMountISO = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsPsGamesMountPSN = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsPsGamesUnmount = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsPsGamesLaunchGame = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsPsNotifyMessage = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsPsVirtualController = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsXboxPower = new DevExpress.XtraBars.BarSubItem();
+            this.ButtonToolsXboxPowerShutdown = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsXboxPowerSoftReboot = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsXboxPowerHardReboot = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsXboxTakeScreenshot = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsXboxConsoleManager = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsXboxNotifyMessage = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonDownloadsFolder = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonAdvancedSettings = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonDiscordPresence = new DevExpress.XtraBars.BarCheckItem();
+            this.ButtonInstallModsToUSB = new DevExpress.XtraBars.BarCheckItem();
+            this.ButtonHowToGuides = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonAbout = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonOpenLogFile = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonOpenLogFolder = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonRequestMods = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonSendFeedback = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsXboxHDKey = new DevExpress.XtraBars.BarButtonItem();
+            this.StatusLabelHeaderCurrentGame = new DevExpress.XtraBars.BarStaticItem();
+            this.StatusLabelCurrentGame = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
+            this.ButtonSetupWizard = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonLocalFilesOpen = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonLocalFilesDelete = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonLocalFilesRename = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonLocalFilesRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.MenuTopInfo = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsXboxTrainers = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsPsGameCheats = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
+            this.barCheckItem2 = new DevExpress.XtraBars.BarCheckItem();
+            this.RibbonPageHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.RibbonGroupConnection = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.RibbonGroupConnsoleProfiles = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.RibbonGroupQuickSettings = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.RibbonGroupHelp = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.RibbonPageTools = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.RibbonGroupModdingTools = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.RibbonGroupWebManCommands = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.RibbonGroupXbdmCommands = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.RibbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.TextBoxSettingsPackagesInstallPathPS4 = new DevExpress.XtraEditors.ButtonEdit();
+            this.TextBoxSettingsPackagesInstallPathPS3 = new DevExpress.XtraEditors.ButtonEdit();
+            this.TextBoxSettingsLaunchIniFilePath = new DevExpress.XtraEditors.ButtonEdit();
             this.LabelSettingsAuroraPath = new DevExpress.XtraEditors.LabelControl();
             this.SeparatorSettingsFiles1 = new DevExpress.XtraEditors.SeparatorControl();
             this.LabelSettingsFilesPS3 = new DevExpress.XtraEditors.LabelControl();
             this.LabelSettingsFilesPS4 = new DevExpress.XtraEditors.LabelControl();
-            this.TextBoxSettingsLaunchIniFilePath = new DevExpress.XtraEditors.TextEdit();
             this.LabelSettingsPackagesFilePathPS4 = new DevExpress.XtraEditors.LabelControl();
             this.LabelSettingsLaunchIniFilePath = new DevExpress.XtraEditors.LabelControl();
-            this.TextBoxSettingsPackagesInstallPathPS4 = new DevExpress.XtraEditors.TextEdit();
-            this.TextBoxSettingsPackagesInstallPathPS3 = new DevExpress.XtraEditors.TextEdit();
             this.SeparatorSettingsFiles2 = new DevExpress.XtraEditors.SeparatorControl();
             this.LabelSettingsPackagesFilePathPS3 = new DevExpress.XtraEditors.LabelControl();
             this.LabelSettingsFilesXbox = new DevExpress.XtraEditors.LabelControl();
             this.TabPageDownload = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.ButtonSettingsPathResources = new DevExpress.XtraEditors.SimpleButton();
+            this.TextBoxSettingsPathTemp = new DevExpress.XtraEditors.ButtonEdit();
+            this.TextBoxSettingsPathDownloads = new DevExpress.XtraEditors.ButtonEdit();
+            this.TextBoxSettingsPathAppData = new DevExpress.XtraEditors.ButtonEdit();
+            this.LabelSettingsAppData = new DevExpress.XtraEditors.LabelControl();
             this.LabelSettingsPathBaseDirectory = new DevExpress.XtraEditors.LabelControl();
-            this.LabelSettingsPathResources = new DevExpress.XtraEditors.LabelControl();
-            this.TextBoxSettingsPathBaseDirectory = new DevExpress.XtraEditors.TextEdit();
-            this.TextBoxSettingsPathResources = new DevExpress.XtraEditors.TextEdit();
-            this.TextBoxSettingsPathGameMods = new DevExpress.XtraEditors.TextEdit();
-            this.ButtonSettingsPathHomebrew = new DevExpress.XtraEditors.SimpleButton();
-            this.LabelSettingsPathGameMods = new DevExpress.XtraEditors.LabelControl();
-            this.LabelSettingsPathHomebrew = new DevExpress.XtraEditors.LabelControl();
-            this.ButtonSettingsPathBaseDirectory = new DevExpress.XtraEditors.SimpleButton();
-            this.TextBoxSettingsPathHomebrew = new DevExpress.XtraEditors.TextEdit();
-            this.ButtonSettingsPathGameMods = new DevExpress.XtraEditors.SimpleButton();
-            this.LabelSettingsDirectoriesMustBeWritable = new DevExpress.XtraEditors.LabelControl();
-            this.TextBoxSettingsPathPackages = new DevExpress.XtraEditors.TextEdit();
+            this.LabelSettingsPathTemp = new DevExpress.XtraEditors.LabelControl();
             this.LabelSettingsReferToBaseDirectory = new DevExpress.XtraEditors.LabelControl();
-            this.LabelSettingsPathPackages = new DevExpress.XtraEditors.LabelControl();
-            this.ButtonSettingsPathDownloads = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonSettingsPathPackages = new DevExpress.XtraEditors.SimpleButton();
             this.LabelSettingsPathDownloads = new DevExpress.XtraEditors.LabelControl();
-            this.TextBoxSettingsPathPlugins = new DevExpress.XtraEditors.TextEdit();
-            this.TextBoxSettingsPathDownloads = new DevExpress.XtraEditors.TextEdit();
-            this.LabelSettingsPathPlugins = new DevExpress.XtraEditors.LabelControl();
-            this.ButtonSettingsPathGameSaves = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonSettingsPathPlugins = new DevExpress.XtraEditors.SimpleButton();
-            this.LabelSettingsPathGameSaves = new DevExpress.XtraEditors.LabelControl();
-            this.TextBoxSettingsPathGameSaves = new DevExpress.XtraEditors.TextEdit();
             this.TabPageDiscord = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.LabelSettingsAlwaysShowPrecense = new DevExpress.XtraEditors.LabelControl();
             this.LabelSettingsRichPresence = new DevExpress.XtraEditors.LabelControl();
             this.ToggleSettingsAlwaysShowPresence = new DevExpress.XtraEditors.ToggleSwitch();
             this.ToggleSettingsShowCurrentGamePlaying = new DevExpress.XtraEditors.ToggleSwitch();
             this.LabelSettingsShowCurrentGamePlaying = new DevExpress.XtraEditors.LabelControl();
+            this.TabPageCache = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.ButtonSettingsClearCache = new DevExpress.XtraEditors.SimpleButton();
+            this.LabelSettingsLocalCache = new DevExpress.XtraEditors.LabelControl();
+            this.ToggleSettingsClearCacheOnClose = new DevExpress.XtraEditors.ToggleSwitch();
+            this.LabelSettingsClearCacheOnClose = new DevExpress.XtraEditors.LabelControl();
+            this.toggleSwitch24 = new DevExpress.XtraEditors.ToggleSwitch();
+            this.labelControl163 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelSettingsClearCache = new DevExpress.XtraEditors.LabelControl();
             this.PageGameSaves = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.PanelGameSaves = new System.Windows.Forms.Panel();
             this.GridControlGameSaves = new DevExpress.XtraGrid.GridControl();
@@ -552,7 +643,6 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemGameModsXboxSortOptions = new DevExpress.XtraEditors.TileItem();
             this.TileItemGameModsXboxDownload = new DevExpress.XtraEditors.TileItem();
             this.TileItemGameModsXboxShowDetails = new DevExpress.XtraEditors.TileItem();
-            this.tileItem8 = new DevExpress.XtraEditors.TileItem();
             this.PagePackagesPS3 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.PanelPackages = new System.Windows.Forms.Panel();
             this.GridControlPackages = new DevExpress.XtraGrid.GridControl();
@@ -796,12 +886,12 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem44 = new DevExpress.XtraEditors.TileItem();
             this.tileItem45 = new DevExpress.XtraEditors.TileItem();
             this.tileItem46 = new DevExpress.XtraEditors.TileItem();
-            this.PageTrainers = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.PageTrainersXbox = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.GridControlTrainers = new DevExpress.XtraGrid.GridControl();
             this.GridViewTrainers = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.PanelTrainersFilters = new System.Windows.Forms.Panel();
             this.ComboBoxTrainersFilterTitleId = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.ComboBoxTrainersFilterNumberCheats = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.ComboBoxTrainersFilterCount = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.separatorControl94 = new DevExpress.XtraEditors.SeparatorControl();
             this.separatorControl95 = new DevExpress.XtraEditors.SeparatorControl();
@@ -816,94 +906,11 @@ namespace ArisenStudio.Forms.Windows
             this.PanelTrainersActions = new DevExpress.XtraEditors.PanelControl();
             this.TileControlTrainers = new DevExpress.XtraEditors.TileControl();
             this.TileGroupTrainers = new DevExpress.XtraEditors.TileGroup();
-            this.TileItemTrainersSortOptions = new DevExpress.XtraEditors.TileItem();
-            this.tileItem4 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem6 = new DevExpress.XtraEditors.TileItem();
+            this.TileItemTrainerSortOptions = new DevExpress.XtraEditors.TileItem();
+            this.TileItemTrainerShowDetails = new DevExpress.XtraEditors.TileItem();
             this.ImageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.TimerLoadConsole = new System.Windows.Forms.Timer(this.components);
             this.panel12 = new System.Windows.Forms.Panel();
-            this.RibbonControlMain = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.skinPaletteDropDownButtonItem1 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
-            this.barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
-            this.ButtonConnectConsole = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonDisconnectConsole = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonScanXboxConsoles = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonEditProfiles = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonChangeProfile = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonAddNewProfile = new DevExpress.XtraBars.BarButtonItem();
-            this.StatusLabelHeaderStatus = new DevExpress.XtraBars.BarStaticItem();
-            this.StatusLabelStatus = new DevExpress.XtraBars.BarStaticItem();
-            this.StatusLabelHeaderIsConnected = new DevExpress.XtraBars.BarStaticItem();
-            this.ButtonToolsPsGameUpdates = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsPsBackupFilesManager = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsPsPackageManager = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsPsConsoleManager = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsPsGameRegions = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsPsBootPluginsEditor = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsXboxGameSaveResigner = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsXboxGamesLauncher = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsXboxModuleLoader = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsXboxXuidSpoofer = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsXboxDashlaunchEditor = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsPsPower = new DevExpress.XtraBars.BarSubItem();
-            this.ButtonToolsPsPowerShutdown = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsPsPowerRestart = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsPsPowerSoftReboot = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsPsPowerHardReboot = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsPsPowerQuickReboot = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsPsGames = new DevExpress.XtraBars.BarSubItem();
-            this.ButtonToolsPsGamesOpenGUI = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsPsGamesMountBD = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsPsGamesMountISO = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsPsGamesMountPSN = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsPsGamesUnmount = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsPsGamesLaunchGame = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsPsNotifyMessage = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsPsVirtualController = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsXboxPower = new DevExpress.XtraBars.BarSubItem();
-            this.ButtonToolsXboxPowerShutdown = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsXboxPowerSoftReboot = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsXboxPowerHardReboot = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsXboxTakeScreenshot = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsXboxConsoleManager = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsXboxNotifyMessage = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonDownloadsFolder = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonAdvancedSettings = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonDiscordPresence = new DevExpress.XtraBars.BarCheckItem();
-            this.ButtonInstallModsToUSB = new DevExpress.XtraBars.BarCheckItem();
-            this.ButtonHowToGuides = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonAbout = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonOpenLogFile = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonOpenLogFolder = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonRequestMods = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonSendFeedback = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsXboxHDKey = new DevExpress.XtraBars.BarButtonItem();
-            this.StatusLabelHeaderCurrentGame = new DevExpress.XtraBars.BarStaticItem();
-            this.StatusLabelCurrentGame = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
-            this.ButtonSetupWizard = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonLocalFilesOpen = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonLocalFilesDelete = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonLocalFilesRename = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonLocalFilesRefresh = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.MenuTopInfo = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsXboxTrainers = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsPsGameCheats = new DevExpress.XtraBars.BarButtonItem();
-            this.RibbonPageHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.RibbonGroupConnection = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.RibbonGroupConnsoleProfiles = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.RibbonGroupQuickSettings = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.RibbonGroupHelp = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.RibbonPageTools = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.RibbonGroupModdingTools = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.RibbonGroupWebManCommands = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.RibbonGroupXbdmCommands = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.RibbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.PanelNavigationMenu = new DevExpress.XtraEditors.PanelControl();
             this.PanelNavigationPages = new DevExpress.XtraEditors.PanelControl();
             this.TimerCurrentGame = new System.Windows.Forms.Timer(this.components);
@@ -1504,6 +1511,8 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.NavigationFrame)).BeginInit();
             this.NavigationFrame.SuspendLayout();
             this.PageDashboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TableDashboard3)).BeginInit();
+            this.TableDashboard3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelStatistics)).BeginInit();
             this.PanelStatistics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
@@ -1612,7 +1621,7 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsShowGamesFromExternalDevices.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsAutoDetectGameRegions.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsAutoDetectGameTitles.Properties)).BeginInit();
-            this.TabPageTransfer.SuspendLayout();
+            this.TabPageMods.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsForceInstallAnyRegions.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsInstallAppsToUsbDevice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsInstallResourcesToUsbDevice.Properties)).BeginInit();
@@ -1625,23 +1634,23 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsAlwaysBackupGameFiles.Properties)).BeginInit();
             this.TabPageFiles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsAuroraFolderPath.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SeparatorSettingsFiles1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsLaunchIniFilePath.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RibbonControlMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MenuTopInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPackagesInstallPathPS4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPackagesInstallPathPS3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsLaunchIniFilePath.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SeparatorSettingsFiles1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SeparatorSettingsFiles2)).BeginInit();
             this.TabPageDownload.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathBaseDirectory.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathResources.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathGameMods.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathHomebrew.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathPackages.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathPlugins.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathTemp.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathDownloads.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathGameSaves.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathAppData.Properties)).BeginInit();
             this.TabPageDiscord.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsAlwaysShowPresence.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsShowCurrentGamePlaying.Properties)).BeginInit();
+            this.TabPageCache.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsClearCacheOnClose.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch24.Properties)).BeginInit();
             this.PageGameSaves.SuspendLayout();
             this.PanelGameSaves.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlGameSaves)).BeginInit();
@@ -1823,12 +1832,12 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl88)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelHomebrewPS4Actions)).BeginInit();
             this.PanelHomebrewPS4Actions.SuspendLayout();
-            this.PageTrainers.SuspendLayout();
+            this.PageTrainersXbox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlTrainers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewTrainers)).BeginInit();
             this.PanelTrainersFilters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterTitleId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterNumberCheats.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterCount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl94)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl95)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterDashType.Properties)).BeginInit();
@@ -1839,8 +1848,6 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.PanelTrainersActions)).BeginInit();
             this.PanelTrainersActions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImageCollection)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RibbonControlMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MenuTopInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelNavigationMenu)).BeginInit();
             this.PanelNavigationMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelNavigationPages)).BeginInit();
@@ -3426,11 +3433,12 @@ namespace ArisenStudio.Forms.Windows
             this.NavigationItemCustomMods,
             this.NavigationItemGameMods,
             this.NavigationItemHomebrew,
+            this.NavigationItemTrainers,
             this.NavigationItemResources,
             this.NavigationItemPackages,
             this.NavigationItemGames,
-            this.NavigationItemGameCheats,
-            this.NavigationItemGameSaves});
+            this.NavigationItemGameSaves,
+            this.NavigationItemGameCheats});
             this.NavigationGroupLibrary.Expanded = true;
             this.NavigationGroupLibrary.HeaderIndent = 10;
             this.NavigationGroupLibrary.Height = 36;
@@ -3546,6 +3554,53 @@ namespace ArisenStudio.Forms.Windows
             this.NavigationItemHomebrew.Text = "Homebrew";
             this.NavigationItemHomebrew.Click += new System.EventHandler(this.NavigationItemHomebrew_Click);
             // 
+            // NavigationItemTrainers
+            // 
+            this.NavigationItemTrainers.Appearance.Default.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
+            this.NavigationItemTrainers.Appearance.Default.Options.UseFont = true;
+            this.NavigationItemTrainers.Appearance.Default.Options.UseTextOptions = true;
+            this.NavigationItemTrainers.Appearance.Default.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.NavigationItemTrainers.Appearance.Default.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
+            this.NavigationItemTrainers.Appearance.Default.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.NavigationItemTrainers.Appearance.Default.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.NavigationItemTrainers.Appearance.Disabled.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
+            this.NavigationItemTrainers.Appearance.Disabled.Options.UseFont = true;
+            this.NavigationItemTrainers.Appearance.Disabled.Options.UseTextOptions = true;
+            this.NavigationItemTrainers.Appearance.Disabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.NavigationItemTrainers.Appearance.Disabled.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
+            this.NavigationItemTrainers.Appearance.Disabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.NavigationItemTrainers.Appearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.NavigationItemTrainers.Appearance.Hovered.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
+            this.NavigationItemTrainers.Appearance.Hovered.Options.UseFont = true;
+            this.NavigationItemTrainers.Appearance.Hovered.Options.UseTextOptions = true;
+            this.NavigationItemTrainers.Appearance.Hovered.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.NavigationItemTrainers.Appearance.Hovered.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
+            this.NavigationItemTrainers.Appearance.Hovered.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.NavigationItemTrainers.Appearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.NavigationItemTrainers.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
+            this.NavigationItemTrainers.Appearance.Normal.Options.UseFont = true;
+            this.NavigationItemTrainers.Appearance.Normal.Options.UseTextOptions = true;
+            this.NavigationItemTrainers.Appearance.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.NavigationItemTrainers.Appearance.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
+            this.NavigationItemTrainers.Appearance.Normal.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.NavigationItemTrainers.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.NavigationItemTrainers.Appearance.Pressed.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
+            this.NavigationItemTrainers.Appearance.Pressed.Options.UseFont = true;
+            this.NavigationItemTrainers.Appearance.Pressed.Options.UseTextOptions = true;
+            this.NavigationItemTrainers.Appearance.Pressed.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.NavigationItemTrainers.Appearance.Pressed.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
+            this.NavigationItemTrainers.Appearance.Pressed.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.NavigationItemTrainers.Appearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.NavigationItemTrainers.HeaderIndent = 10;
+            this.NavigationItemTrainers.Height = 38;
+            this.NavigationItemTrainers.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.NavigationItemTrainers.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.trainers;
+            this.NavigationItemTrainers.ImageOptions.SvgImageSize = new System.Drawing.Size(20, 20);
+            this.NavigationItemTrainers.Name = "NavigationItemTrainers";
+            this.NavigationItemTrainers.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.NavigationItemTrainers.Text = "Trainers";
+            this.NavigationItemTrainers.Click += new System.EventHandler(this.NavigationItemTrainers_Click);
+            // 
             // NavigationItemResources
             // 
             this.NavigationItemResources.Appearance.Default.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
@@ -3574,8 +3629,7 @@ namespace ArisenStudio.Forms.Windows
             this.NavigationItemResources.HeaderIndent = 10;
             this.NavigationItemResources.Height = 38;
             this.NavigationItemResources.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.NavigationItemResources.ImageOptions.Image = global::ArisenStudio.Properties.Resources.resources;
-            this.NavigationItemResources.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_opened_box;
+            this.NavigationItemResources.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_anvil;
             this.NavigationItemResources.ImageOptions.SvgImageSize = new System.Drawing.Size(20, 20);
             this.NavigationItemResources.Name = "NavigationItemResources";
             this.NavigationItemResources.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -3610,7 +3664,7 @@ namespace ArisenStudio.Forms.Windows
             this.NavigationItemPackages.HeaderIndent = 10;
             this.NavigationItemPackages.Height = 38;
             this.NavigationItemPackages.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.NavigationItemPackages.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_anvil;
+            this.NavigationItemPackages.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_opened_box;
             this.NavigationItemPackages.ImageOptions.SvgImageSize = new System.Drawing.Size(20, 20);
             this.NavigationItemPackages.Name = "NavigationItemPackages";
             this.NavigationItemPackages.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -3664,6 +3718,41 @@ namespace ArisenStudio.Forms.Windows
             this.NavigationItemGames.Text = "Games";
             this.NavigationItemGames.Click += new System.EventHandler(this.NavigationItemGames_Click);
             // 
+            // NavigationItemGameSaves
+            // 
+            this.NavigationItemGameSaves.Appearance.Default.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
+            this.NavigationItemGameSaves.Appearance.Default.Options.UseFont = true;
+            this.NavigationItemGameSaves.Appearance.Default.Options.UseTextOptions = true;
+            this.NavigationItemGameSaves.Appearance.Default.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.NavigationItemGameSaves.Appearance.Default.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
+            this.NavigationItemGameSaves.Appearance.Default.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.NavigationItemGameSaves.Appearance.Default.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.NavigationItemGameSaves.Appearance.Disabled.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
+            this.NavigationItemGameSaves.Appearance.Disabled.Options.UseFont = true;
+            this.NavigationItemGameSaves.Appearance.Hovered.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
+            this.NavigationItemGameSaves.Appearance.Hovered.Options.UseFont = true;
+            this.NavigationItemGameSaves.Appearance.Hovered.Options.UseTextOptions = true;
+            this.NavigationItemGameSaves.Appearance.Hovered.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
+            this.NavigationItemGameSaves.Appearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.NavigationItemGameSaves.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
+            this.NavigationItemGameSaves.Appearance.Normal.Options.UseFont = true;
+            this.NavigationItemGameSaves.Appearance.Normal.Options.UseTextOptions = true;
+            this.NavigationItemGameSaves.Appearance.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.NavigationItemGameSaves.Appearance.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
+            this.NavigationItemGameSaves.Appearance.Normal.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.NavigationItemGameSaves.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.NavigationItemGameSaves.Appearance.Pressed.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
+            this.NavigationItemGameSaves.Appearance.Pressed.Options.UseFont = true;
+            this.NavigationItemGameSaves.HeaderIndent = 10;
+            this.NavigationItemGameSaves.Height = 38;
+            this.NavigationItemGameSaves.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.NavigationItemGameSaves.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_save;
+            this.NavigationItemGameSaves.ImageOptions.SvgImageSize = new System.Drawing.Size(20, 20);
+            this.NavigationItemGameSaves.Name = "NavigationItemGameSaves";
+            this.NavigationItemGameSaves.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.NavigationItemGameSaves.Text = "Game Saves";
+            this.NavigationItemGameSaves.Click += new System.EventHandler(this.NavigationItemGameSaves_Click);
+            // 
             // NavigationItemGameCheats
             // 
             this.NavigationItemGameCheats.Appearance.Default.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
@@ -3706,52 +3795,18 @@ namespace ArisenStudio.Forms.Windows
             this.NavigationItemGameCheats.Text = "Game Cheats";
             this.NavigationItemGameCheats.Click += new System.EventHandler(this.NavigationItemGameCheats_Click);
             // 
-            // NavigationItemGameSaves
-            // 
-            this.NavigationItemGameSaves.Appearance.Default.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.NavigationItemGameSaves.Appearance.Default.Options.UseFont = true;
-            this.NavigationItemGameSaves.Appearance.Default.Options.UseTextOptions = true;
-            this.NavigationItemGameSaves.Appearance.Default.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.NavigationItemGameSaves.Appearance.Default.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.NavigationItemGameSaves.Appearance.Default.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.NavigationItemGameSaves.Appearance.Default.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.NavigationItemGameSaves.Appearance.Disabled.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.NavigationItemGameSaves.Appearance.Disabled.Options.UseFont = true;
-            this.NavigationItemGameSaves.Appearance.Hovered.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.NavigationItemGameSaves.Appearance.Hovered.Options.UseFont = true;
-            this.NavigationItemGameSaves.Appearance.Hovered.Options.UseTextOptions = true;
-            this.NavigationItemGameSaves.Appearance.Hovered.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.NavigationItemGameSaves.Appearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.NavigationItemGameSaves.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.NavigationItemGameSaves.Appearance.Normal.Options.UseFont = true;
-            this.NavigationItemGameSaves.Appearance.Normal.Options.UseTextOptions = true;
-            this.NavigationItemGameSaves.Appearance.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.NavigationItemGameSaves.Appearance.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.NavigationItemGameSaves.Appearance.Normal.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.NavigationItemGameSaves.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.NavigationItemGameSaves.Appearance.Pressed.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.NavigationItemGameSaves.Appearance.Pressed.Options.UseFont = true;
-            this.NavigationItemGameSaves.HeaderIndent = 10;
-            this.NavigationItemGameSaves.Height = 38;
-            this.NavigationItemGameSaves.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.NavigationItemGameSaves.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_save;
-            this.NavigationItemGameSaves.ImageOptions.SvgImageSize = new System.Drawing.Size(20, 20);
-            this.NavigationItemGameSaves.Name = "NavigationItemGameSaves";
-            this.NavigationItemGameSaves.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.NavigationItemGameSaves.Text = "Game Saves";
-            this.NavigationItemGameSaves.Click += new System.EventHandler(this.NavigationItemGameSaves_Click);
-            // 
             // PanelLatestNews
             // 
-            this.PanelLatestNews.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TableDashboard3.SetColumn(this.PanelLatestNews, 0);
             this.PanelLatestNews.Controls.Add(this.ImageLatestNewsRefresh);
             this.PanelLatestNews.Controls.Add(this.PanelNewsItems);
             this.PanelLatestNews.Controls.Add(this.LabelHeaderLatestNews);
-            this.PanelLatestNews.Location = new System.Drawing.Point(0, 411);
-            this.PanelLatestNews.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
+            this.PanelLatestNews.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelLatestNews.Location = new System.Drawing.Point(0, 0);
+            this.PanelLatestNews.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.PanelLatestNews.Name = "PanelLatestNews";
-            this.PanelLatestNews.Size = new System.Drawing.Size(421, 350);
+            this.TableDashboard3.SetRow(this.PanelLatestNews, 0);
+            this.PanelLatestNews.Size = new System.Drawing.Size(425, 401);
             this.PanelLatestNews.TabIndex = 4;
             // 
             // ImageLatestNewsRefresh
@@ -3761,7 +3816,7 @@ namespace ArisenStudio.Forms.Windows
             this.ImageLatestNewsRefresh.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Lime;
             this.ImageLatestNewsRefresh.ItemAppearance.Normal.FillColor = System.Drawing.Color.White;
             this.ImageLatestNewsRefresh.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
-            this.ImageLatestNewsRefresh.Location = new System.Drawing.Point(392, 9);
+            this.ImageLatestNewsRefresh.Location = new System.Drawing.Point(397, 9);
             this.ImageLatestNewsRefresh.Name = "ImageLatestNewsRefresh";
             this.ImageLatestNewsRefresh.Size = new System.Drawing.Size(20, 20);
             this.ImageLatestNewsRefresh.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
@@ -3778,7 +3833,7 @@ namespace ArisenStudio.Forms.Windows
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelNewsItems.Location = new System.Drawing.Point(5, 37);
             this.PanelNewsItems.Name = "PanelNewsItems";
-            this.PanelNewsItems.Size = new System.Drawing.Size(413, 306);
+            this.PanelNewsItems.Size = new System.Drawing.Size(418, 357);
             this.PanelNewsItems.TabIndex = 1;
             // 
             // LabelHeaderLatestNews
@@ -3800,7 +3855,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelChangeLog.Controls.Add(this.PanelChangeLogText);
             this.PanelChangeLog.Controls.Add(this.LabelHeaderWhatsNew);
             this.PanelChangeLog.Controls.Add(this.separatorControl7);
-            this.PanelChangeLog.Location = new System.Drawing.Point(871, 822);
+            this.PanelChangeLog.Location = new System.Drawing.Point(869, 822);
             this.PanelChangeLog.Margin = new System.Windows.Forms.Padding(5);
             this.PanelChangeLog.MinimumSize = new System.Drawing.Size(416, 350);
             this.PanelChangeLog.Name = "PanelChangeLog";
@@ -3925,7 +3980,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelOurFavoriteMods.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.PanelOurFavoriteMods.Name = "PanelOurFavoriteMods";
             this.TableDashboard1.SetRow(this.PanelOurFavoriteMods, 1);
-            this.PanelOurFavoriteMods.Size = new System.Drawing.Size(861, 195);
+            this.PanelOurFavoriteMods.Size = new System.Drawing.Size(859, 195);
             this.PanelOurFavoriteMods.TabIndex = 2;
             // 
             // TileControlFavoriteMods
@@ -3946,7 +4001,7 @@ namespace ArisenStudio.Forms.Windows
             this.TileControlFavoriteMods.Name = "TileControlFavoriteMods";
             this.TileControlFavoriteMods.Padding = new System.Windows.Forms.Padding(14, 10, 10, 10);
             this.TileControlFavoriteMods.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
-            this.TileControlFavoriteMods.Size = new System.Drawing.Size(847, 135);
+            this.TileControlFavoriteMods.Size = new System.Drawing.Size(845, 135);
             this.TileControlFavoriteMods.TabIndex = 3;
             this.TileControlFavoriteMods.Text = "tileControl1";
             // 
@@ -4017,7 +4072,7 @@ namespace ArisenStudio.Forms.Windows
             this.NavigationFrame.Controls.Add(this.PageCustomMods);
             this.NavigationFrame.Controls.Add(this.PageHomebrewXbox);
             this.NavigationFrame.Controls.Add(this.PageHomebrewPS4);
-            this.NavigationFrame.Controls.Add(this.PageTrainers);
+            this.NavigationFrame.Controls.Add(this.PageTrainersXbox);
             this.NavigationFrame.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NavigationFrame.Location = new System.Drawing.Point(0, 0);
             this.NavigationFrame.LookAndFeel.SkinName = "Office 2019 Black";
@@ -4033,13 +4088,13 @@ namespace ArisenStudio.Forms.Windows
             this.PageGameModsXbox,
             this.PageHomebrewPS3,
             this.PageHomebrewXbox,
+            this.PageTrainersXbox,
             this.PageResourcesPS3,
             this.PagePackagesPS3,
             this.PageHomebrewPS4,
             this.PageGamesPS4,
             this.PageGameSaves,
             this.PageGameCheats,
-            this.PageTrainers,
             this.PageAbout});
             this.NavigationFrame.SelectedPage = this.PageDashboard;
             this.NavigationFrame.Size = new System.Drawing.Size(1288, 571);
@@ -4052,9 +4107,8 @@ namespace ArisenStudio.Forms.Windows
             // PageDashboard
             // 
             this.PageDashboard.Appearance.Options.UseFont = true;
-            this.PageDashboard.Controls.Add(this.PanelStatistics);
+            this.PageDashboard.Controls.Add(this.TableDashboard3);
             this.PageDashboard.Controls.Add(this.PanelChangeLog);
-            this.PageDashboard.Controls.Add(this.PanelLatestNews);
             this.PageDashboard.Controls.Add(this.PanelRecentlyUpdated);
             this.PageDashboard.Controls.Add(this.TableDashboard1);
             this.PageDashboard.Controls.Add(this.TableDashboard2);
@@ -4063,17 +4117,34 @@ namespace ArisenStudio.Forms.Windows
             this.PageDashboard.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.PageDashboard.Size = new System.Drawing.Size(1288, 571);
             // 
+            // TableDashboard3
+            // 
+            this.TableDashboard3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TableDashboard3.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            this.TableDashboard3.Controls.Add(this.PanelStatistics);
+            this.TableDashboard3.Controls.Add(this.PanelLatestNews);
+            this.TableDashboard3.Location = new System.Drawing.Point(0, 411);
+            this.TableDashboard3.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
+            this.TableDashboard3.Name = "TableDashboard3";
+            this.TableDashboard3.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            this.TableDashboard3.Size = new System.Drawing.Size(859, 401);
+            this.TableDashboard3.TabIndex = 15;
+            // 
             // PanelStatistics
             // 
-            this.PanelStatistics.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.PanelStatistics.AutoSize = true;
+            this.TableDashboard3.SetColumn(this.PanelStatistics, 1);
             this.PanelStatistics.Controls.Add(this.chartControl1);
             this.PanelStatistics.Controls.Add(this.FlowPanelStatistics);
             this.PanelStatistics.Controls.Add(this.LabelHeaderStatistics);
-            this.PanelStatistics.Location = new System.Drawing.Point(431, 411);
-            this.PanelStatistics.Margin = new System.Windows.Forms.Padding(5);
+            this.PanelStatistics.Location = new System.Drawing.Point(435, 0);
+            this.PanelStatistics.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.PanelStatistics.Name = "PanelStatistics";
-            this.PanelStatistics.Size = new System.Drawing.Size(430, 383);
+            this.TableDashboard3.SetRow(this.PanelStatistics, 0);
+            this.PanelStatistics.Size = new System.Drawing.Size(425, 401);
             this.PanelStatistics.TabIndex = 6;
             // 
             // chartControl1
@@ -4091,6 +4162,7 @@ namespace ArisenStudio.Forms.Windows
             this.chartControl1.SeriesTemplate.ShowInLegend = false;
             this.chartControl1.Size = new System.Drawing.Size(260, 200);
             this.chartControl1.TabIndex = 10;
+            this.chartControl1.Visible = false;
             // 
             // FlowPanelStatistics
             // 
@@ -4109,7 +4181,7 @@ namespace ArisenStudio.Forms.Windows
             this.FlowPanelStatistics.Location = new System.Drawing.Point(1, 36);
             this.FlowPanelStatistics.Name = "FlowPanelStatistics";
             this.FlowPanelStatistics.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.FlowPanelStatistics.Size = new System.Drawing.Size(424, 334);
+            this.FlowPanelStatistics.Size = new System.Drawing.Size(415, 334);
             this.FlowPanelStatistics.TabIndex = 9;
             // 
             // LabelStatsDownloads
@@ -4217,12 +4289,11 @@ namespace ArisenStudio.Forms.Windows
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelRecentlyUpdated.Controls.Add(this.BannerAdDashboard);
             this.PanelRecentlyUpdated.Controls.Add(this.LabelHeaderRecentlyUpdated);
-            this.PanelRecentlyUpdated.Location = new System.Drawing.Point(0, 412);
+            this.PanelRecentlyUpdated.Location = new System.Drawing.Point(0, 822);
             this.PanelRecentlyUpdated.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
             this.PanelRecentlyUpdated.Name = "PanelRecentlyUpdated";
-            this.PanelRecentlyUpdated.Size = new System.Drawing.Size(827, 194);
+            this.PanelRecentlyUpdated.Size = new System.Drawing.Size(859, 194);
             this.PanelRecentlyUpdated.TabIndex = 4;
-            this.PanelRecentlyUpdated.Visible = false;
             // 
             // BannerAdDashboard
             // 
@@ -4235,7 +4306,7 @@ namespace ArisenStudio.Forms.Windows
             this.BannerAdDashboard.HeightAd = 134;
             this.BannerAdDashboard.Location = new System.Drawing.Point(7, 44);
             this.BannerAdDashboard.Name = "BannerAdDashboard";
-            this.BannerAdDashboard.Size = new System.Drawing.Size(795, 134);
+            this.BannerAdDashboard.Size = new System.Drawing.Size(827, 134);
             this.BannerAdDashboard.TabIndex = 11;
             this.BannerAdDashboard.WidthAd = 802;
             // 
@@ -4263,7 +4334,7 @@ namespace ArisenStudio.Forms.Windows
             this.TableDashboard1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.TableDashboard1.Size = new System.Drawing.Size(861, 401);
+            this.TableDashboard1.Size = new System.Drawing.Size(859, 401);
             this.TableDashboard1.TabIndex = 13;
             // 
             // PanelOurFavoriteGames
@@ -4276,7 +4347,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelOurFavoriteGames.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.PanelOurFavoriteGames.Name = "PanelOurFavoriteGames";
             this.TableDashboard1.SetRow(this.PanelOurFavoriteGames, 0);
-            this.PanelOurFavoriteGames.Size = new System.Drawing.Size(861, 196);
+            this.PanelOurFavoriteGames.Size = new System.Drawing.Size(859, 196);
             this.PanelOurFavoriteGames.TabIndex = 12;
             // 
             // LabelHeaderFavoriteGames
@@ -4309,7 +4380,7 @@ namespace ArisenStudio.Forms.Windows
             this.TileControlFavoriteGames.Name = "TileControlFavoriteGames";
             this.TileControlFavoriteGames.Padding = new System.Windows.Forms.Padding(14, 10, 10, 10);
             this.TileControlFavoriteGames.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
-            this.TileControlFavoriteGames.Size = new System.Drawing.Size(847, 132);
+            this.TileControlFavoriteGames.Size = new System.Drawing.Size(845, 132);
             this.TileControlFavoriteGames.TabIndex = 1;
             this.TileControlFavoriteGames.Text = "tileControl1";
             // 
@@ -4361,7 +4432,7 @@ namespace ArisenStudio.Forms.Windows
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
             this.TableDashboard2.Controls.Add(this.PanelAnnouncements);
             this.TableDashboard2.Controls.Add(this.PanelCurrentPoll);
-            this.TableDashboard2.Location = new System.Drawing.Point(871, 0);
+            this.TableDashboard2.Location = new System.Drawing.Point(869, 0);
             this.TableDashboard2.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
             this.TableDashboard2.Name = "TableDashboard2";
             this.TableDashboard2.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
@@ -4439,7 +4510,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             // WebViewPoll
             // 
-            this.WebViewPoll.AllowExternalDrop = true;
+            this.WebViewPoll.AllowExternalDrop = false;
             this.WebViewPoll.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -4451,7 +4522,7 @@ namespace ArisenStudio.Forms.Windows
             this.WebViewPoll.Name = "WebViewPoll";
             this.WebViewPoll.Size = new System.Drawing.Size(402, 359);
             this.WebViewPoll.TabIndex = 7;
-            this.WebViewPoll.ZoomFactor = 0.79D;
+            this.WebViewPoll.ZoomFactor = 0.75D;
             // 
             // LabelHeaderCurrentPoll
             // 
@@ -6569,19 +6640,21 @@ namespace ArisenStudio.Forms.Windows
             this.TabControlSettings.AppearanceButton.Pressed.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
             this.TabControlSettings.AppearanceButton.Pressed.Options.UseFont = true;
             this.TabControlSettings.Controls.Add(this.TabPageInterface);
-            this.TabControlSettings.Controls.Add(this.TabPageTransfer);
+            this.TabControlSettings.Controls.Add(this.TabPageMods);
             this.TabControlSettings.Controls.Add(this.TabPageFiles);
             this.TabControlSettings.Controls.Add(this.TabPageDownload);
             this.TabControlSettings.Controls.Add(this.TabPageDiscord);
+            this.TabControlSettings.Controls.Add(this.TabPageCache);
             this.TabControlSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControlSettings.Location = new System.Drawing.Point(0, 0);
             this.TabControlSettings.Margin = new System.Windows.Forms.Padding(0);
             this.TabControlSettings.Name = "TabControlSettings";
             this.TabControlSettings.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.TabPageInterface,
-            this.TabPageTransfer,
+            this.TabPageMods,
             this.TabPageFiles,
             this.TabPageDownload,
+            this.TabPageCache,
             this.TabPageDiscord});
             this.TabControlSettings.RegularSize = new System.Drawing.Size(1288, 571);
             this.TabControlSettings.SelectedPage = this.TabPageInterface;
@@ -6619,14 +6692,15 @@ namespace ArisenStudio.Forms.Windows
             this.TabPageInterface.Controls.Add(this.ToggleSettingsAutoDetectGameTitles);
             this.TabPageInterface.Controls.Add(this.LabelSettingsShowGamesFromExternalDevices);
             this.TabPageInterface.Name = "TabPageInterface";
+            this.TabPageInterface.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
             this.TabPageInterface.Size = new System.Drawing.Size(1288, 533);
             // 
             // LabelSettingsAlwaysShowGamePlaying
             // 
             this.LabelSettingsAlwaysShowGamePlaying.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsAlwaysShowGamePlaying.Appearance.Options.UseFont = true;
-            this.LabelSettingsAlwaysShowGamePlaying.Location = new System.Drawing.Point(70, 249);
-            this.LabelSettingsAlwaysShowGamePlaying.Margin = new System.Windows.Forms.Padding(0, 6, 3, 6);
+            this.LabelSettingsAlwaysShowGamePlaying.Location = new System.Drawing.Point(60, 253);
+            this.LabelSettingsAlwaysShowGamePlaying.Margin = new System.Windows.Forms.Padding(0, 8, 0, 7);
             this.LabelSettingsAlwaysShowGamePlaying.Name = "LabelSettingsAlwaysShowGamePlaying";
             this.LabelSettingsAlwaysShowGamePlaying.Size = new System.Drawing.Size(184, 15);
             this.LabelSettingsAlwaysShowGamePlaying.TabIndex = 1221;
@@ -6637,7 +6711,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelSettingsLanguage.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelSettingsLanguage.Appearance.Options.UseFont = true;
             this.LabelSettingsLanguage.Location = new System.Drawing.Point(0, 16);
-            this.LabelSettingsLanguage.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
+            this.LabelSettingsLanguage.Margin = new System.Windows.Forms.Padding(3, 16, 3, 12);
             this.LabelSettingsLanguage.Name = "LabelSettingsLanguage";
             this.LabelSettingsLanguage.Size = new System.Drawing.Size(53, 15);
             this.LabelSettingsLanguage.TabIndex = 1175;
@@ -6645,23 +6719,23 @@ namespace ArisenStudio.Forms.Windows
             // 
             // ToggleSettingsAlwaysShowGamePlaying
             // 
-            this.ToggleSettingsAlwaysShowGamePlaying.Location = new System.Drawing.Point(0, 246);
-            this.ToggleSettingsAlwaysShowGamePlaying.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
+            this.ToggleSettingsAlwaysShowGamePlaying.Location = new System.Drawing.Point(0, 249);
+            this.ToggleSettingsAlwaysShowGamePlaying.Margin = new System.Windows.Forms.Padding(0, 3, 3, 8);
             this.ToggleSettingsAlwaysShowGamePlaying.Name = "ToggleSettingsAlwaysShowGamePlaying";
             this.ToggleSettingsAlwaysShowGamePlaying.Properties.AutoWidth = true;
             this.ToggleSettingsAlwaysShowGamePlaying.Properties.OffText = "Off";
             this.ToggleSettingsAlwaysShowGamePlaying.Properties.OnText = "On";
             this.ToggleSettingsAlwaysShowGamePlaying.Properties.ShowText = false;
             this.ToggleSettingsAlwaysShowGamePlaying.Size = new System.Drawing.Size(54, 24);
-            this.ToggleSettingsAlwaysShowGamePlaying.TabIndex = 1220;
+            this.ToggleSettingsAlwaysShowGamePlaying.TabIndex = 4;
             this.ToggleSettingsAlwaysShowGamePlaying.Toggled += new System.EventHandler(this.ToggleSettingsAlwaysShowGamePlaying_Toggled);
             // 
             // LabelSettingsCustomization
             // 
             this.LabelSettingsCustomization.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelSettingsCustomization.Appearance.Options.UseFont = true;
-            this.LabelSettingsCustomization.Location = new System.Drawing.Point(0, 111);
-            this.LabelSettingsCustomization.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
+            this.LabelSettingsCustomization.Location = new System.Drawing.Point(0, 115);
+            this.LabelSettingsCustomization.Margin = new System.Windows.Forms.Padding(3, 16, 3, 12);
             this.LabelSettingsCustomization.Name = "LabelSettingsCustomization";
             this.LabelSettingsCustomization.Size = new System.Drawing.Size(79, 15);
             this.LabelSettingsCustomization.TabIndex = 1171;
@@ -6669,32 +6743,34 @@ namespace ArisenStudio.Forms.Windows
             // 
             // LabelSettingsHelpTranslate
             // 
-            this.LabelSettingsHelpTranslate.Location = new System.Drawing.Point(0, 70);
+            this.LabelSettingsHelpTranslate.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelSettingsHelpTranslate.Appearance.Options.UseFont = true;
+            this.LabelSettingsHelpTranslate.Location = new System.Drawing.Point(0, 74);
             this.LabelSettingsHelpTranslate.Name = "LabelSettingsHelpTranslate";
-            this.LabelSettingsHelpTranslate.Size = new System.Drawing.Size(208, 13);
-            this.LabelSettingsHelpTranslate.TabIndex = 1219;
+            this.LabelSettingsHelpTranslate.Size = new System.Drawing.Size(211, 15);
+            this.LabelSettingsHelpTranslate.TabIndex = 1;
             this.LabelSettingsHelpTranslate.Text = "Help translate Arisen Studio on Crowdin";
             this.LabelSettingsHelpTranslate.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelSettingsHelpTranslate_HyperlinkClick);
             // 
             // ToggleSettingsUseFormattedFileSizes
             // 
             this.ToggleSettingsUseFormattedFileSizes.Location = new System.Drawing.Point(0, 145);
-            this.ToggleSettingsUseFormattedFileSizes.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
+            this.ToggleSettingsUseFormattedFileSizes.Margin = new System.Windows.Forms.Padding(0, 3, 3, 8);
             this.ToggleSettingsUseFormattedFileSizes.Name = "ToggleSettingsUseFormattedFileSizes";
             this.ToggleSettingsUseFormattedFileSizes.Properties.AutoWidth = true;
             this.ToggleSettingsUseFormattedFileSizes.Properties.OffText = "Off";
             this.ToggleSettingsUseFormattedFileSizes.Properties.OnText = "On";
             this.ToggleSettingsUseFormattedFileSizes.Properties.ShowText = false;
             this.ToggleSettingsUseFormattedFileSizes.Size = new System.Drawing.Size(54, 24);
-            this.ToggleSettingsUseFormattedFileSizes.TabIndex = 1176;
+            this.ToggleSettingsUseFormattedFileSizes.TabIndex = 2;
             this.ToggleSettingsUseFormattedFileSizes.Toggled += new System.EventHandler(this.ToggleSettingsUseFormattedFileSizes_Toggled);
             // 
             // LabelSettingsAutoLoadDirectoryListings
             // 
             this.LabelSettingsAutoLoadDirectoryListings.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsAutoLoadDirectoryListings.Appearance.Options.UseFont = true;
-            this.LabelSettingsAutoLoadDirectoryListings.Location = new System.Drawing.Point(70, 369);
-            this.LabelSettingsAutoLoadDirectoryListings.Margin = new System.Windows.Forms.Padding(0, 6, 3, 6);
+            this.LabelSettingsAutoLoadDirectoryListings.Location = new System.Drawing.Point(60, 373);
+            this.LabelSettingsAutoLoadDirectoryListings.Margin = new System.Windows.Forms.Padding(0, 8, 0, 7);
             this.LabelSettingsAutoLoadDirectoryListings.Name = "LabelSettingsAutoLoadDirectoryListings";
             this.LabelSettingsAutoLoadDirectoryListings.Size = new System.Drawing.Size(190, 15);
             this.LabelSettingsAutoLoadDirectoryListings.TabIndex = 1212;
@@ -6704,8 +6780,8 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.LabelSettingsUseFormattedFileSizes.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsUseFormattedFileSizes.Appearance.Options.UseFont = true;
-            this.LabelSettingsUseFormattedFileSizes.Location = new System.Drawing.Point(70, 148);
-            this.LabelSettingsUseFormattedFileSizes.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelSettingsUseFormattedFileSizes.Location = new System.Drawing.Point(60, 149);
+            this.LabelSettingsUseFormattedFileSizes.Margin = new System.Windows.Forms.Padding(0, 8, 0, 7);
             this.LabelSettingsUseFormattedFileSizes.Name = "LabelSettingsUseFormattedFileSizes";
             this.LabelSettingsUseFormattedFileSizes.Size = new System.Drawing.Size(191, 15);
             this.LabelSettingsUseFormattedFileSizes.TabIndex = 1177;
@@ -6713,25 +6789,26 @@ namespace ArisenStudio.Forms.Windows
             // 
             // ToggleSettingsAutoLoadDirectoryListings
             // 
-            this.ToggleSettingsAutoLoadDirectoryListings.Location = new System.Drawing.Point(0, 366);
-            this.ToggleSettingsAutoLoadDirectoryListings.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
+            this.ToggleSettingsAutoLoadDirectoryListings.Location = new System.Drawing.Point(0, 369);
+            this.ToggleSettingsAutoLoadDirectoryListings.Margin = new System.Windows.Forms.Padding(0, 3, 3, 8);
             this.ToggleSettingsAutoLoadDirectoryListings.Name = "ToggleSettingsAutoLoadDirectoryListings";
             this.ToggleSettingsAutoLoadDirectoryListings.Properties.AutoWidth = true;
             this.ToggleSettingsAutoLoadDirectoryListings.Properties.OffText = "Off";
             this.ToggleSettingsAutoLoadDirectoryListings.Properties.OnText = "On";
             this.ToggleSettingsAutoLoadDirectoryListings.Properties.ShowText = false;
             this.ToggleSettingsAutoLoadDirectoryListings.Size = new System.Drawing.Size(54, 24);
-            this.ToggleSettingsAutoLoadDirectoryListings.TabIndex = 1211;
+            this.ToggleSettingsAutoLoadDirectoryListings.TabIndex = 8;
             this.ToggleSettingsAutoLoadDirectoryListings.Toggled += new System.EventHandler(this.ToggleSettingsAutoLoadFileManagerListings_Toggled);
             // 
             // ComboBoxSettingsLanguages
             // 
             this.ComboBoxSettingsLanguages.EditValue = "English";
-            this.ComboBoxSettingsLanguages.Location = new System.Drawing.Point(0, 42);
+            this.ComboBoxSettingsLanguages.Location = new System.Drawing.Point(0, 46);
             this.ComboBoxSettingsLanguages.Name = "ComboBoxSettingsLanguages";
             this.ComboBoxSettingsLanguages.Properties.AllowFocused = false;
             this.ComboBoxSettingsLanguages.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.ComboBoxSettingsLanguages.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.ComboBoxSettingsLanguages.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ComboBoxSettingsLanguages.Properties.Appearance.Options.UseBackColor = true;
             this.ComboBoxSettingsLanguages.Properties.Appearance.Options.UseFont = true;
             this.ComboBoxSettingsLanguages.Properties.AutoComplete = false;
@@ -6742,16 +6819,16 @@ namespace ArisenStudio.Forms.Windows
             "English"});
             this.ComboBoxSettingsLanguages.Properties.NullValuePrompt = "Select...";
             this.ComboBoxSettingsLanguages.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ComboBoxSettingsLanguages.Size = new System.Drawing.Size(361, 22);
-            this.ComboBoxSettingsLanguages.TabIndex = 1178;
+            this.ComboBoxSettingsLanguages.Size = new System.Drawing.Size(275, 24);
+            this.ComboBoxSettingsLanguages.TabIndex = 0;
             this.ComboBoxSettingsLanguages.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSettingsLanguages_SelectedIndexChanged);
             // 
             // LabelSettingsRememberConsolePath
             // 
             this.LabelSettingsRememberConsolePath.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsRememberConsolePath.Appearance.Options.UseFont = true;
-            this.LabelSettingsRememberConsolePath.Location = new System.Drawing.Point(70, 429);
-            this.LabelSettingsRememberConsolePath.Margin = new System.Windows.Forms.Padding(0, 6, 3, 6);
+            this.LabelSettingsRememberConsolePath.Location = new System.Drawing.Point(60, 433);
+            this.LabelSettingsRememberConsolePath.Margin = new System.Windows.Forms.Padding(0, 8, 0, 7);
             this.LabelSettingsRememberConsolePath.Name = "LabelSettingsRememberConsolePath";
             this.LabelSettingsRememberConsolePath.Size = new System.Drawing.Size(200, 15);
             this.LabelSettingsRememberConsolePath.TabIndex = 1201;
@@ -6760,22 +6837,22 @@ namespace ArisenStudio.Forms.Windows
             // ToggleSettingsUseRelativeTimes
             // 
             this.ToggleSettingsUseRelativeTimes.Location = new System.Drawing.Point(0, 175);
-            this.ToggleSettingsUseRelativeTimes.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
+            this.ToggleSettingsUseRelativeTimes.Margin = new System.Windows.Forms.Padding(0, 3, 3, 8);
             this.ToggleSettingsUseRelativeTimes.Name = "ToggleSettingsUseRelativeTimes";
             this.ToggleSettingsUseRelativeTimes.Properties.AutoWidth = true;
             this.ToggleSettingsUseRelativeTimes.Properties.OffText = "Off";
             this.ToggleSettingsUseRelativeTimes.Properties.OnText = "On";
             this.ToggleSettingsUseRelativeTimes.Properties.ShowText = false;
             this.ToggleSettingsUseRelativeTimes.Size = new System.Drawing.Size(54, 24);
-            this.ToggleSettingsUseRelativeTimes.TabIndex = 1179;
+            this.ToggleSettingsUseRelativeTimes.TabIndex = 3;
             this.ToggleSettingsUseRelativeTimes.Toggled += new System.EventHandler(this.ToggleSettingsUseRelativeTimes_Toggled);
             // 
             // LabelSettingsRememberLocalPath
             // 
             this.LabelSettingsRememberLocalPath.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsRememberLocalPath.Appearance.Options.UseFont = true;
-            this.LabelSettingsRememberLocalPath.Location = new System.Drawing.Point(70, 399);
-            this.LabelSettingsRememberLocalPath.Margin = new System.Windows.Forms.Padding(0, 6, 3, 6);
+            this.LabelSettingsRememberLocalPath.Location = new System.Drawing.Point(60, 403);
+            this.LabelSettingsRememberLocalPath.Margin = new System.Windows.Forms.Padding(0, 8, 0, 7);
             this.LabelSettingsRememberLocalPath.Name = "LabelSettingsRememberLocalPath";
             this.LabelSettingsRememberLocalPath.Size = new System.Drawing.Size(184, 15);
             this.LabelSettingsRememberLocalPath.TabIndex = 1200;
@@ -6785,8 +6862,8 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.LabelSettingsUseRelativeTimes.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsUseRelativeTimes.Appearance.Options.UseFont = true;
-            this.LabelSettingsUseRelativeTimes.Location = new System.Drawing.Point(70, 179);
-            this.LabelSettingsUseRelativeTimes.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelSettingsUseRelativeTimes.Location = new System.Drawing.Point(60, 179);
+            this.LabelSettingsUseRelativeTimes.Margin = new System.Windows.Forms.Padding(0, 8, 0, 7);
             this.LabelSettingsUseRelativeTimes.Name = "LabelSettingsUseRelativeTimes";
             this.LabelSettingsUseRelativeTimes.Size = new System.Drawing.Size(208, 15);
             this.LabelSettingsUseRelativeTimes.TabIndex = 1180;
@@ -6794,15 +6871,15 @@ namespace ArisenStudio.Forms.Windows
             // 
             // ToggleSettingsRememberConsolePath
             // 
-            this.ToggleSettingsRememberConsolePath.Location = new System.Drawing.Point(0, 426);
-            this.ToggleSettingsRememberConsolePath.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
+            this.ToggleSettingsRememberConsolePath.Location = new System.Drawing.Point(0, 429);
+            this.ToggleSettingsRememberConsolePath.Margin = new System.Windows.Forms.Padding(0, 3, 3, 8);
             this.ToggleSettingsRememberConsolePath.Name = "ToggleSettingsRememberConsolePath";
             this.ToggleSettingsRememberConsolePath.Properties.AutoWidth = true;
             this.ToggleSettingsRememberConsolePath.Properties.OffText = "Off";
             this.ToggleSettingsRememberConsolePath.Properties.OnText = "On";
             this.ToggleSettingsRememberConsolePath.Properties.ShowText = false;
             this.ToggleSettingsRememberConsolePath.Size = new System.Drawing.Size(54, 24);
-            this.ToggleSettingsRememberConsolePath.TabIndex = 1199;
+            this.ToggleSettingsRememberConsolePath.TabIndex = 10;
             this.ToggleSettingsRememberConsolePath.Toggled += new System.EventHandler(this.ToggleSettingsRememberConsolePath_Toggled);
             // 
             // LabelSettingsAutomation
@@ -6810,7 +6887,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelSettingsAutomation.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelSettingsAutomation.Appearance.Options.UseFont = true;
             this.LabelSettingsAutomation.Location = new System.Drawing.Point(0, 219);
-            this.LabelSettingsAutomation.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
+            this.LabelSettingsAutomation.Margin = new System.Windows.Forms.Padding(3, 16, 3, 12);
             this.LabelSettingsAutomation.Name = "LabelSettingsAutomation";
             this.LabelSettingsAutomation.Size = new System.Drawing.Size(66, 15);
             this.LabelSettingsAutomation.TabIndex = 1187;
@@ -6818,36 +6895,36 @@ namespace ArisenStudio.Forms.Windows
             // 
             // ToggleSettingsRememberLocalPath
             // 
-            this.ToggleSettingsRememberLocalPath.Location = new System.Drawing.Point(0, 396);
-            this.ToggleSettingsRememberLocalPath.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
+            this.ToggleSettingsRememberLocalPath.Location = new System.Drawing.Point(0, 399);
+            this.ToggleSettingsRememberLocalPath.Margin = new System.Windows.Forms.Padding(0, 3, 3, 8);
             this.ToggleSettingsRememberLocalPath.Name = "ToggleSettingsRememberLocalPath";
             this.ToggleSettingsRememberLocalPath.Properties.AutoWidth = true;
             this.ToggleSettingsRememberLocalPath.Properties.OffText = "Off";
             this.ToggleSettingsRememberLocalPath.Properties.OnText = "On";
             this.ToggleSettingsRememberLocalPath.Properties.ShowText = false;
             this.ToggleSettingsRememberLocalPath.Size = new System.Drawing.Size(54, 24);
-            this.ToggleSettingsRememberLocalPath.TabIndex = 1198;
+            this.ToggleSettingsRememberLocalPath.TabIndex = 9;
             this.ToggleSettingsRememberLocalPath.Toggled += new System.EventHandler(this.ToggleSettingsRememberLocalPath_Toggled);
             // 
             // ToggleSettingsShowGamesFromExternalDevices
             // 
-            this.ToggleSettingsShowGamesFromExternalDevices.Location = new System.Drawing.Point(0, 276);
-            this.ToggleSettingsShowGamesFromExternalDevices.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
+            this.ToggleSettingsShowGamesFromExternalDevices.Location = new System.Drawing.Point(0, 279);
+            this.ToggleSettingsShowGamesFromExternalDevices.Margin = new System.Windows.Forms.Padding(0, 3, 3, 8);
             this.ToggleSettingsShowGamesFromExternalDevices.Name = "ToggleSettingsShowGamesFromExternalDevices";
             this.ToggleSettingsShowGamesFromExternalDevices.Properties.AutoWidth = true;
             this.ToggleSettingsShowGamesFromExternalDevices.Properties.OffText = "Off";
             this.ToggleSettingsShowGamesFromExternalDevices.Properties.OnText = "On";
             this.ToggleSettingsShowGamesFromExternalDevices.Properties.ShowText = false;
             this.ToggleSettingsShowGamesFromExternalDevices.Size = new System.Drawing.Size(54, 24);
-            this.ToggleSettingsShowGamesFromExternalDevices.TabIndex = 1188;
+            this.ToggleSettingsShowGamesFromExternalDevices.TabIndex = 5;
             this.ToggleSettingsShowGamesFromExternalDevices.Toggled += new System.EventHandler(this.ToggleSettingsShowGamesFromExternalDevices_Toggled);
             // 
             // LabelSettingsAutoDetectGameTitles
             // 
             this.LabelSettingsAutoDetectGameTitles.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsAutoDetectGameTitles.Appearance.Options.UseFont = true;
-            this.LabelSettingsAutoDetectGameTitles.Location = new System.Drawing.Point(70, 339);
-            this.LabelSettingsAutoDetectGameTitles.Margin = new System.Windows.Forms.Padding(0, 6, 3, 6);
+            this.LabelSettingsAutoDetectGameTitles.Location = new System.Drawing.Point(60, 343);
+            this.LabelSettingsAutoDetectGameTitles.Margin = new System.Windows.Forms.Padding(0, 8, 0, 7);
             this.LabelSettingsAutoDetectGameTitles.Name = "LabelSettingsAutoDetectGameTitles";
             this.LabelSettingsAutoDetectGameTitles.Size = new System.Drawing.Size(171, 15);
             this.LabelSettingsAutoDetectGameTitles.TabIndex = 1194;
@@ -6855,23 +6932,23 @@ namespace ArisenStudio.Forms.Windows
             // 
             // ToggleSettingsAutoDetectGameRegions
             // 
-            this.ToggleSettingsAutoDetectGameRegions.Location = new System.Drawing.Point(0, 306);
-            this.ToggleSettingsAutoDetectGameRegions.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
+            this.ToggleSettingsAutoDetectGameRegions.Location = new System.Drawing.Point(0, 309);
+            this.ToggleSettingsAutoDetectGameRegions.Margin = new System.Windows.Forms.Padding(0, 3, 3, 8);
             this.ToggleSettingsAutoDetectGameRegions.Name = "ToggleSettingsAutoDetectGameRegions";
             this.ToggleSettingsAutoDetectGameRegions.Properties.AutoWidth = true;
             this.ToggleSettingsAutoDetectGameRegions.Properties.OffText = "Off";
             this.ToggleSettingsAutoDetectGameRegions.Properties.OnText = "On";
             this.ToggleSettingsAutoDetectGameRegions.Properties.ShowText = false;
             this.ToggleSettingsAutoDetectGameRegions.Size = new System.Drawing.Size(54, 24);
-            this.ToggleSettingsAutoDetectGameRegions.TabIndex = 1189;
+            this.ToggleSettingsAutoDetectGameRegions.TabIndex = 6;
             this.ToggleSettingsAutoDetectGameRegions.Toggled += new System.EventHandler(this.ToggleSettingsAutoDetectGameRegions_Toggled);
             // 
             // LabelSettingsAutoDetectGameRegions
             // 
             this.LabelSettingsAutoDetectGameRegions.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsAutoDetectGameRegions.Appearance.Options.UseFont = true;
-            this.LabelSettingsAutoDetectGameRegions.Location = new System.Drawing.Point(70, 309);
-            this.LabelSettingsAutoDetectGameRegions.Margin = new System.Windows.Forms.Padding(0, 6, 3, 6);
+            this.LabelSettingsAutoDetectGameRegions.Location = new System.Drawing.Point(60, 313);
+            this.LabelSettingsAutoDetectGameRegions.Margin = new System.Windows.Forms.Padding(0, 8, 0, 7);
             this.LabelSettingsAutoDetectGameRegions.Name = "LabelSettingsAutoDetectGameRegions";
             this.LabelSettingsAutoDetectGameRegions.Size = new System.Drawing.Size(185, 15);
             this.LabelSettingsAutoDetectGameRegions.TabIndex = 1193;
@@ -6879,63 +6956,64 @@ namespace ArisenStudio.Forms.Windows
             // 
             // ToggleSettingsAutoDetectGameTitles
             // 
-            this.ToggleSettingsAutoDetectGameTitles.Location = new System.Drawing.Point(0, 336);
-            this.ToggleSettingsAutoDetectGameTitles.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
+            this.ToggleSettingsAutoDetectGameTitles.Location = new System.Drawing.Point(0, 339);
+            this.ToggleSettingsAutoDetectGameTitles.Margin = new System.Windows.Forms.Padding(0, 3, 3, 8);
             this.ToggleSettingsAutoDetectGameTitles.Name = "ToggleSettingsAutoDetectGameTitles";
             this.ToggleSettingsAutoDetectGameTitles.Properties.AutoWidth = true;
             this.ToggleSettingsAutoDetectGameTitles.Properties.OffText = "Off";
             this.ToggleSettingsAutoDetectGameTitles.Properties.OnText = "On";
             this.ToggleSettingsAutoDetectGameTitles.Properties.ShowText = false;
             this.ToggleSettingsAutoDetectGameTitles.Size = new System.Drawing.Size(54, 24);
-            this.ToggleSettingsAutoDetectGameTitles.TabIndex = 1190;
+            this.ToggleSettingsAutoDetectGameTitles.TabIndex = 7;
             this.ToggleSettingsAutoDetectGameTitles.Toggled += new System.EventHandler(this.ToggleSettingsAutoDetectGameTitles_Toggled);
             // 
             // LabelSettingsShowGamesFromExternalDevices
             // 
             this.LabelSettingsShowGamesFromExternalDevices.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsShowGamesFromExternalDevices.Appearance.Options.UseFont = true;
-            this.LabelSettingsShowGamesFromExternalDevices.Location = new System.Drawing.Point(70, 279);
-            this.LabelSettingsShowGamesFromExternalDevices.Margin = new System.Windows.Forms.Padding(0, 6, 3, 6);
+            this.LabelSettingsShowGamesFromExternalDevices.Location = new System.Drawing.Point(60, 283);
+            this.LabelSettingsShowGamesFromExternalDevices.Margin = new System.Windows.Forms.Padding(0, 8, 0, 7);
             this.LabelSettingsShowGamesFromExternalDevices.Name = "LabelSettingsShowGamesFromExternalDevices";
             this.LabelSettingsShowGamesFromExternalDevices.Size = new System.Drawing.Size(201, 15);
             this.LabelSettingsShowGamesFromExternalDevices.TabIndex = 1192;
             this.LabelSettingsShowGamesFromExternalDevices.Text = "Show games list from external devices";
             // 
-            // TabPageTransfer
+            // TabPageMods
             // 
-            this.TabPageTransfer.AutoScroll = true;
-            this.TabPageTransfer.Caption = "Transfer";
-            this.TabPageTransfer.Controls.Add(this.LabelSettingsForceInstallAnyRegions);
-            this.TabPageTransfer.Controls.Add(this.ToggleSettingsForceInstallAnyRegions);
-            this.TabPageTransfer.Controls.Add(this.labelControl18);
-            this.TabPageTransfer.Controls.Add(this.LabelSettingsInstallingUninstalling);
-            this.TabPageTransfer.Controls.Add(this.ToggleSettingsInstallAppsToUsbDevice);
-            this.TabPageTransfer.Controls.Add(this.ToggleSettingsInstallResourcesToUsbDevice);
-            this.TabPageTransfer.Controls.Add(this.LabelSettingsAlwaysBackupGameFiles);
-            this.TabPageTransfer.Controls.Add(this.ToggleSettingsInstallGameSavesToUsbDevice);
-            this.TabPageTransfer.Controls.Add(this.LabelSettingsCleanUpFilesAfterInstalling);
-            this.TabPageTransfer.Controls.Add(this.ToggleSettingsInstallHomebrewToUsbDevice);
-            this.TabPageTransfer.Controls.Add(this.LabelSettingsInstallPackagesToUsbDevice);
-            this.TabPageTransfer.Controls.Add(this.ToggleSettingsRememberGameRegions);
-            this.TabPageTransfer.Controls.Add(this.LabelSettingsInstallGameSavesToUsbDevice);
-            this.TabPageTransfer.Controls.Add(this.ToggleSettingsInstallPackagesToUsbDevice);
-            this.TabPageTransfer.Controls.Add(this.LabelSettingsInstallResourcesToUsbDevice);
-            this.TabPageTransfer.Controls.Add(this.ToggleSettingsCleanUpLocalFilesAfterInstalling);
-            this.TabPageTransfer.Controls.Add(this.LabelSettingsRememberGameRegions);
-            this.TabPageTransfer.Controls.Add(this.ToggleSettingsInstallModsToUsbDevice);
-            this.TabPageTransfer.Controls.Add(this.LabelSettingsInstallHomebrewToUsbDevice);
-            this.TabPageTransfer.Controls.Add(this.ToggleSettingsAlwaysBackupGameFiles);
-            this.TabPageTransfer.Controls.Add(this.LabelSettingsInstallModsToUsbDevice);
-            this.TabPageTransfer.Name = "TabPageTransfer";
-            this.TabPageTransfer.Size = new System.Drawing.Size(1288, 533);
+            this.TabPageMods.AutoScroll = true;
+            this.TabPageMods.Caption = "Mods";
+            this.TabPageMods.Controls.Add(this.LabelSettingsForceInstallAnyRegions);
+            this.TabPageMods.Controls.Add(this.ToggleSettingsForceInstallAnyRegions);
+            this.TabPageMods.Controls.Add(this.labelControl18);
+            this.TabPageMods.Controls.Add(this.LabelSettingsTransferringFiles);
+            this.TabPageMods.Controls.Add(this.ToggleSettingsInstallAppsToUsbDevice);
+            this.TabPageMods.Controls.Add(this.ToggleSettingsInstallResourcesToUsbDevice);
+            this.TabPageMods.Controls.Add(this.LabelSettingsAlwaysBackupGameFiles);
+            this.TabPageMods.Controls.Add(this.ToggleSettingsInstallGameSavesToUsbDevice);
+            this.TabPageMods.Controls.Add(this.LabelSettingsCleanUpFilesAfterInstalling);
+            this.TabPageMods.Controls.Add(this.ToggleSettingsInstallHomebrewToUsbDevice);
+            this.TabPageMods.Controls.Add(this.LabelSettingsInstallPackagesToUsbDevice);
+            this.TabPageMods.Controls.Add(this.ToggleSettingsRememberGameRegions);
+            this.TabPageMods.Controls.Add(this.LabelSettingsInstallGameSavesToUsbDevice);
+            this.TabPageMods.Controls.Add(this.ToggleSettingsInstallPackagesToUsbDevice);
+            this.TabPageMods.Controls.Add(this.LabelSettingsInstallResourcesToUsbDevice);
+            this.TabPageMods.Controls.Add(this.ToggleSettingsCleanUpLocalFilesAfterInstalling);
+            this.TabPageMods.Controls.Add(this.LabelSettingsRememberGameRegions);
+            this.TabPageMods.Controls.Add(this.ToggleSettingsInstallModsToUsbDevice);
+            this.TabPageMods.Controls.Add(this.LabelSettingsInstallHomebrewToUsbDevice);
+            this.TabPageMods.Controls.Add(this.ToggleSettingsAlwaysBackupGameFiles);
+            this.TabPageMods.Controls.Add(this.LabelSettingsInstallModsToUsbDevice);
+            this.TabPageMods.Name = "TabPageMods";
+            this.TabPageMods.Size = new System.Drawing.Size(1288, 533);
             // 
             // LabelSettingsForceInstallAnyRegions
             // 
+            this.LabelSettingsForceInstallAnyRegions.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsForceInstallAnyRegions.Appearance.Options.UseFont = true;
-            this.LabelSettingsForceInstallAnyRegions.Location = new System.Drawing.Point(60, 323);
-            this.LabelSettingsForceInstallAnyRegions.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelSettingsForceInstallAnyRegions.Location = new System.Drawing.Point(60, 320);
+            this.LabelSettingsForceInstallAnyRegions.Margin = new System.Windows.Forms.Padding(0, 8, 0, 7);
             this.LabelSettingsForceInstallAnyRegions.Name = "LabelSettingsForceInstallAnyRegions";
-            this.LabelSettingsForceInstallAnyRegions.Size = new System.Drawing.Size(180, 13);
+            this.LabelSettingsForceInstallAnyRegions.Size = new System.Drawing.Size(181, 15);
             this.LabelSettingsForceInstallAnyRegions.TabIndex = 1227;
             this.LabelSettingsForceInstallAnyRegions.Text = "Force install unsupported regions*";
             this.LabelSettingsForceInstallAnyRegions.ToolTip = "Warning: You may have issues trying to use mods that aren\'t supported by the game" +
@@ -6944,248 +7022,257 @@ namespace ArisenStudio.Forms.Windows
             // 
             // ToggleSettingsForceInstallAnyRegions
             // 
-            this.ToggleSettingsForceInstallAnyRegions.Location = new System.Drawing.Point(0, 320);
-            this.ToggleSettingsForceInstallAnyRegions.Margin = new System.Windows.Forms.Padding(14, 3, 3, 15);
+            this.ToggleSettingsForceInstallAnyRegions.Location = new System.Drawing.Point(0, 316);
+            this.ToggleSettingsForceInstallAnyRegions.Margin = new System.Windows.Forms.Padding(0, 3, 3, 15);
             this.ToggleSettingsForceInstallAnyRegions.Name = "ToggleSettingsForceInstallAnyRegions";
             this.ToggleSettingsForceInstallAnyRegions.Properties.AutoWidth = true;
             this.ToggleSettingsForceInstallAnyRegions.Properties.OffText = "Off";
             this.ToggleSettingsForceInstallAnyRegions.Properties.OnText = "On";
             this.ToggleSettingsForceInstallAnyRegions.Properties.ShowText = false;
             this.ToggleSettingsForceInstallAnyRegions.Size = new System.Drawing.Size(54, 24);
-            this.ToggleSettingsForceInstallAnyRegions.TabIndex = 1226;
+            this.ToggleSettingsForceInstallAnyRegions.TabIndex = 21;
             this.ToggleSettingsForceInstallAnyRegions.Toggled += new System.EventHandler(this.ToggleSettingsForceInstallAnyRegions_Toggled);
             // 
             // labelControl18
             // 
+            this.labelControl18.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.labelControl18.Appearance.Options.UseFont = true;
-            this.labelControl18.Location = new System.Drawing.Point(60, 174);
-            this.labelControl18.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.labelControl18.Location = new System.Drawing.Point(60, 170);
+            this.labelControl18.Margin = new System.Windows.Forms.Padding(0, 8, 0, 7);
             this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(197, 13);
+            this.labelControl18.Size = new System.Drawing.Size(203, 15);
             this.labelControl18.TabIndex = 1225;
             this.labelControl18.Text = "Install Applications to local USB device";
             // 
-            // LabelSettingsInstallingUninstalling
+            // LabelSettingsTransferringFiles
             // 
-            this.LabelSettingsInstallingUninstalling.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelSettingsInstallingUninstalling.Appearance.Options.UseFont = true;
-            this.LabelSettingsInstallingUninstalling.Location = new System.Drawing.Point(0, 16);
-            this.LabelSettingsInstallingUninstalling.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.LabelSettingsInstallingUninstalling.Name = "LabelSettingsInstallingUninstalling";
-            this.LabelSettingsInstallingUninstalling.Size = new System.Drawing.Size(96, 15);
-            this.LabelSettingsInstallingUninstalling.TabIndex = 1188;
-            this.LabelSettingsInstallingUninstalling.Text = "Transferring Files";
+            this.LabelSettingsTransferringFiles.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelSettingsTransferringFiles.Appearance.Options.UseFont = true;
+            this.LabelSettingsTransferringFiles.Location = new System.Drawing.Point(0, 16);
+            this.LabelSettingsTransferringFiles.Margin = new System.Windows.Forms.Padding(3, 16, 3, 12);
+            this.LabelSettingsTransferringFiles.Name = "LabelSettingsTransferringFiles";
+            this.LabelSettingsTransferringFiles.Size = new System.Drawing.Size(96, 15);
+            this.LabelSettingsTransferringFiles.TabIndex = 1188;
+            this.LabelSettingsTransferringFiles.Text = "Transferring Files";
             // 
             // ToggleSettingsInstallAppsToUsbDevice
             // 
-            this.ToggleSettingsInstallAppsToUsbDevice.Location = new System.Drawing.Point(0, 170);
-            this.ToggleSettingsInstallAppsToUsbDevice.Margin = new System.Windows.Forms.Padding(14, 3, 3, 15);
+            this.ToggleSettingsInstallAppsToUsbDevice.Location = new System.Drawing.Point(0, 166);
+            this.ToggleSettingsInstallAppsToUsbDevice.Margin = new System.Windows.Forms.Padding(0, 3, 3, 15);
             this.ToggleSettingsInstallAppsToUsbDevice.Name = "ToggleSettingsInstallAppsToUsbDevice";
             this.ToggleSettingsInstallAppsToUsbDevice.Properties.AutoWidth = true;
             this.ToggleSettingsInstallAppsToUsbDevice.Properties.OffText = "Off";
             this.ToggleSettingsInstallAppsToUsbDevice.Properties.OnText = "On";
             this.ToggleSettingsInstallAppsToUsbDevice.Properties.ShowText = false;
             this.ToggleSettingsInstallAppsToUsbDevice.Size = new System.Drawing.Size(54, 24);
-            this.ToggleSettingsInstallAppsToUsbDevice.TabIndex = 1224;
+            this.ToggleSettingsInstallAppsToUsbDevice.TabIndex = 16;
             // 
             // ToggleSettingsInstallResourcesToUsbDevice
             // 
-            this.ToggleSettingsInstallResourcesToUsbDevice.Location = new System.Drawing.Point(0, 110);
-            this.ToggleSettingsInstallResourcesToUsbDevice.Margin = new System.Windows.Forms.Padding(14, 3, 3, 15);
+            this.ToggleSettingsInstallResourcesToUsbDevice.Location = new System.Drawing.Point(0, 106);
+            this.ToggleSettingsInstallResourcesToUsbDevice.Margin = new System.Windows.Forms.Padding(0, 3, 3, 15);
             this.ToggleSettingsInstallResourcesToUsbDevice.Name = "ToggleSettingsInstallResourcesToUsbDevice";
             this.ToggleSettingsInstallResourcesToUsbDevice.Properties.AutoWidth = true;
             this.ToggleSettingsInstallResourcesToUsbDevice.Properties.OffText = "Off";
             this.ToggleSettingsInstallResourcesToUsbDevice.Properties.OnText = "On";
             this.ToggleSettingsInstallResourcesToUsbDevice.Properties.ShowText = false;
             this.ToggleSettingsInstallResourcesToUsbDevice.Size = new System.Drawing.Size(54, 24);
-            this.ToggleSettingsInstallResourcesToUsbDevice.TabIndex = 1217;
+            this.ToggleSettingsInstallResourcesToUsbDevice.TabIndex = 14;
             this.ToggleSettingsInstallResourcesToUsbDevice.Toggled += new System.EventHandler(this.ToggleSettingsInstallResourcesToUsbDevice_Toggled);
             // 
             // LabelSettingsAlwaysBackupGameFiles
             // 
+            this.LabelSettingsAlwaysBackupGameFiles.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsAlwaysBackupGameFiles.Appearance.Options.UseFont = true;
-            this.LabelSettingsAlwaysBackupGameFiles.Location = new System.Drawing.Point(60, 293);
-            this.LabelSettingsAlwaysBackupGameFiles.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelSettingsAlwaysBackupGameFiles.Location = new System.Drawing.Point(60, 290);
+            this.LabelSettingsAlwaysBackupGameFiles.Margin = new System.Windows.Forms.Padding(0, 8, 0, 7);
             this.LabelSettingsAlwaysBackupGameFiles.Name = "LabelSettingsAlwaysBackupGameFiles";
-            this.LabelSettingsAlwaysBackupGameFiles.Size = new System.Drawing.Size(214, 13);
+            this.LabelSettingsAlwaysBackupGameFiles.Size = new System.Drawing.Size(177, 15);
             this.LabelSettingsAlwaysBackupGameFiles.TabIndex = 1223;
-            this.LabelSettingsAlwaysBackupGameFiles.Text = "Always backup game files when installing";
+            this.LabelSettingsAlwaysBackupGameFiles.Text = "Always backup current game files";
             // 
             // ToggleSettingsInstallGameSavesToUsbDevice
             // 
-            this.ToggleSettingsInstallGameSavesToUsbDevice.Location = new System.Drawing.Point(0, 200);
-            this.ToggleSettingsInstallGameSavesToUsbDevice.Margin = new System.Windows.Forms.Padding(14, 3, 3, 15);
+            this.ToggleSettingsInstallGameSavesToUsbDevice.Location = new System.Drawing.Point(0, 196);
+            this.ToggleSettingsInstallGameSavesToUsbDevice.Margin = new System.Windows.Forms.Padding(0, 3, 3, 15);
             this.ToggleSettingsInstallGameSavesToUsbDevice.Name = "ToggleSettingsInstallGameSavesToUsbDevice";
             this.ToggleSettingsInstallGameSavesToUsbDevice.Properties.AutoWidth = true;
             this.ToggleSettingsInstallGameSavesToUsbDevice.Properties.OffText = "Off";
             this.ToggleSettingsInstallGameSavesToUsbDevice.Properties.OnText = "On";
             this.ToggleSettingsInstallGameSavesToUsbDevice.Properties.ShowText = false;
             this.ToggleSettingsInstallGameSavesToUsbDevice.Size = new System.Drawing.Size(54, 24);
-            this.ToggleSettingsInstallGameSavesToUsbDevice.TabIndex = 1204;
+            this.ToggleSettingsInstallGameSavesToUsbDevice.TabIndex = 17;
             this.ToggleSettingsInstallGameSavesToUsbDevice.Toggled += new System.EventHandler(this.ToggleSettingsInstallGameSavesToUsbDevice_Toggled);
             // 
             // LabelSettingsCleanUpFilesAfterInstalling
             // 
+            this.LabelSettingsCleanUpFilesAfterInstalling.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsCleanUpFilesAfterInstalling.Appearance.Options.UseFont = true;
-            this.LabelSettingsCleanUpFilesAfterInstalling.Location = new System.Drawing.Point(60, 233);
-            this.LabelSettingsCleanUpFilesAfterInstalling.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelSettingsCleanUpFilesAfterInstalling.Location = new System.Drawing.Point(60, 230);
+            this.LabelSettingsCleanUpFilesAfterInstalling.Margin = new System.Windows.Forms.Padding(0, 8, 0, 7);
             this.LabelSettingsCleanUpFilesAfterInstalling.Name = "LabelSettingsCleanUpFilesAfterInstalling";
-            this.LabelSettingsCleanUpFilesAfterInstalling.Size = new System.Drawing.Size(206, 13);
+            this.LabelSettingsCleanUpFilesAfterInstalling.Size = new System.Drawing.Size(210, 15);
             this.LabelSettingsCleanUpFilesAfterInstalling.TabIndex = 1221;
             this.LabelSettingsCleanUpFilesAfterInstalling.Text = "Clean up local files after installing mods";
             // 
             // ToggleSettingsInstallHomebrewToUsbDevice
             // 
-            this.ToggleSettingsInstallHomebrewToUsbDevice.Location = new System.Drawing.Point(0, 80);
-            this.ToggleSettingsInstallHomebrewToUsbDevice.Margin = new System.Windows.Forms.Padding(14, 3, 3, 15);
+            this.ToggleSettingsInstallHomebrewToUsbDevice.Location = new System.Drawing.Point(0, 76);
+            this.ToggleSettingsInstallHomebrewToUsbDevice.Margin = new System.Windows.Forms.Padding(0, 3, 3, 15);
             this.ToggleSettingsInstallHomebrewToUsbDevice.Name = "ToggleSettingsInstallHomebrewToUsbDevice";
             this.ToggleSettingsInstallHomebrewToUsbDevice.Properties.AutoWidth = true;
             this.ToggleSettingsInstallHomebrewToUsbDevice.Properties.OffText = "Off";
             this.ToggleSettingsInstallHomebrewToUsbDevice.Properties.OnText = "On";
             this.ToggleSettingsInstallHomebrewToUsbDevice.Properties.ShowText = false;
             this.ToggleSettingsInstallHomebrewToUsbDevice.Size = new System.Drawing.Size(54, 24);
-            this.ToggleSettingsInstallHomebrewToUsbDevice.TabIndex = 1215;
+            this.ToggleSettingsInstallHomebrewToUsbDevice.TabIndex = 13;
             this.ToggleSettingsInstallHomebrewToUsbDevice.Toggled += new System.EventHandler(this.ToggleSettingsInstallHomebrewToUsbDevice_Toggled);
             // 
             // LabelSettingsInstallPackagesToUsbDevice
             // 
+            this.LabelSettingsInstallPackagesToUsbDevice.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsInstallPackagesToUsbDevice.Appearance.Options.UseFont = true;
-            this.LabelSettingsInstallPackagesToUsbDevice.Location = new System.Drawing.Point(60, 144);
-            this.LabelSettingsInstallPackagesToUsbDevice.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelSettingsInstallPackagesToUsbDevice.Location = new System.Drawing.Point(60, 140);
+            this.LabelSettingsInstallPackagesToUsbDevice.Margin = new System.Windows.Forms.Padding(0, 8, 0, 7);
             this.LabelSettingsInstallPackagesToUsbDevice.Name = "LabelSettingsInstallPackagesToUsbDevice";
-            this.LabelSettingsInstallPackagesToUsbDevice.Size = new System.Drawing.Size(180, 13);
+            this.LabelSettingsInstallPackagesToUsbDevice.Size = new System.Drawing.Size(186, 15);
             this.LabelSettingsInstallPackagesToUsbDevice.TabIndex = 1207;
             this.LabelSettingsInstallPackagesToUsbDevice.Text = "Install Packages to local USB device";
             // 
             // ToggleSettingsRememberGameRegions
             // 
-            this.ToggleSettingsRememberGameRegions.Location = new System.Drawing.Point(0, 260);
-            this.ToggleSettingsRememberGameRegions.Margin = new System.Windows.Forms.Padding(14, 3, 3, 15);
+            this.ToggleSettingsRememberGameRegions.Location = new System.Drawing.Point(0, 256);
+            this.ToggleSettingsRememberGameRegions.Margin = new System.Windows.Forms.Padding(0, 3, 3, 15);
             this.ToggleSettingsRememberGameRegions.Name = "ToggleSettingsRememberGameRegions";
             this.ToggleSettingsRememberGameRegions.Properties.AutoWidth = true;
             this.ToggleSettingsRememberGameRegions.Properties.OffText = "Off";
             this.ToggleSettingsRememberGameRegions.Properties.OnText = "On";
             this.ToggleSettingsRememberGameRegions.Properties.ShowText = false;
             this.ToggleSettingsRememberGameRegions.Size = new System.Drawing.Size(54, 24);
-            this.ToggleSettingsRememberGameRegions.TabIndex = 1191;
+            this.ToggleSettingsRememberGameRegions.TabIndex = 19;
             this.ToggleSettingsRememberGameRegions.Toggled += new System.EventHandler(this.ToggleSettingsRememberGameRegions_Toggled);
             // 
             // LabelSettingsInstallGameSavesToUsbDevice
             // 
+            this.LabelSettingsInstallGameSavesToUsbDevice.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsInstallGameSavesToUsbDevice.Appearance.Options.UseFont = true;
-            this.LabelSettingsInstallGameSavesToUsbDevice.Location = new System.Drawing.Point(60, 204);
-            this.LabelSettingsInstallGameSavesToUsbDevice.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelSettingsInstallGameSavesToUsbDevice.Location = new System.Drawing.Point(60, 200);
+            this.LabelSettingsInstallGameSavesToUsbDevice.Margin = new System.Windows.Forms.Padding(0, 8, 0, 7);
             this.LabelSettingsInstallGameSavesToUsbDevice.Name = "LabelSettingsInstallGameSavesToUsbDevice";
-            this.LabelSettingsInstallGameSavesToUsbDevice.Size = new System.Drawing.Size(193, 13);
+            this.LabelSettingsInstallGameSavesToUsbDevice.Size = new System.Drawing.Size(200, 15);
             this.LabelSettingsInstallGameSavesToUsbDevice.TabIndex = 1205;
             this.LabelSettingsInstallGameSavesToUsbDevice.Text = "Install Game Saves to local USB device";
             // 
             // ToggleSettingsInstallPackagesToUsbDevice
             // 
-            this.ToggleSettingsInstallPackagesToUsbDevice.Location = new System.Drawing.Point(0, 140);
-            this.ToggleSettingsInstallPackagesToUsbDevice.Margin = new System.Windows.Forms.Padding(14, 3, 3, 15);
+            this.ToggleSettingsInstallPackagesToUsbDevice.Location = new System.Drawing.Point(0, 136);
+            this.ToggleSettingsInstallPackagesToUsbDevice.Margin = new System.Windows.Forms.Padding(0, 3, 3, 15);
             this.ToggleSettingsInstallPackagesToUsbDevice.Name = "ToggleSettingsInstallPackagesToUsbDevice";
             this.ToggleSettingsInstallPackagesToUsbDevice.Properties.AutoWidth = true;
             this.ToggleSettingsInstallPackagesToUsbDevice.Properties.OffText = "Off";
             this.ToggleSettingsInstallPackagesToUsbDevice.Properties.OnText = "On";
             this.ToggleSettingsInstallPackagesToUsbDevice.Properties.ShowText = false;
             this.ToggleSettingsInstallPackagesToUsbDevice.Size = new System.Drawing.Size(54, 24);
-            this.ToggleSettingsInstallPackagesToUsbDevice.TabIndex = 1206;
+            this.ToggleSettingsInstallPackagesToUsbDevice.TabIndex = 15;
             this.ToggleSettingsInstallPackagesToUsbDevice.Toggled += new System.EventHandler(this.ToggleSettingsInstallPackagesToUsbDevice_Toggled);
             // 
             // LabelSettingsInstallResourcesToUsbDevice
             // 
+            this.LabelSettingsInstallResourcesToUsbDevice.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsInstallResourcesToUsbDevice.Appearance.Options.UseFont = true;
-            this.LabelSettingsInstallResourcesToUsbDevice.Location = new System.Drawing.Point(60, 112);
-            this.LabelSettingsInstallResourcesToUsbDevice.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelSettingsInstallResourcesToUsbDevice.Location = new System.Drawing.Point(60, 110);
+            this.LabelSettingsInstallResourcesToUsbDevice.Margin = new System.Windows.Forms.Padding(0, 8, 0, 7);
             this.LabelSettingsInstallResourcesToUsbDevice.Name = "LabelSettingsInstallResourcesToUsbDevice";
-            this.LabelSettingsInstallResourcesToUsbDevice.Size = new System.Drawing.Size(185, 13);
+            this.LabelSettingsInstallResourcesToUsbDevice.Size = new System.Drawing.Size(190, 15);
             this.LabelSettingsInstallResourcesToUsbDevice.TabIndex = 1218;
             this.LabelSettingsInstallResourcesToUsbDevice.Text = "Install Resources to local USB device";
             // 
             // ToggleSettingsCleanUpLocalFilesAfterInstalling
             // 
-            this.ToggleSettingsCleanUpLocalFilesAfterInstalling.Location = new System.Drawing.Point(0, 230);
-            this.ToggleSettingsCleanUpLocalFilesAfterInstalling.Margin = new System.Windows.Forms.Padding(14, 3, 3, 15);
+            this.ToggleSettingsCleanUpLocalFilesAfterInstalling.Location = new System.Drawing.Point(0, 226);
+            this.ToggleSettingsCleanUpLocalFilesAfterInstalling.Margin = new System.Windows.Forms.Padding(0, 3, 3, 15);
             this.ToggleSettingsCleanUpLocalFilesAfterInstalling.Name = "ToggleSettingsCleanUpLocalFilesAfterInstalling";
             this.ToggleSettingsCleanUpLocalFilesAfterInstalling.Properties.AutoWidth = true;
             this.ToggleSettingsCleanUpLocalFilesAfterInstalling.Properties.OffText = "Off";
             this.ToggleSettingsCleanUpLocalFilesAfterInstalling.Properties.OnText = "On";
             this.ToggleSettingsCleanUpLocalFilesAfterInstalling.Properties.ShowText = false;
             this.ToggleSettingsCleanUpLocalFilesAfterInstalling.Size = new System.Drawing.Size(54, 24);
-            this.ToggleSettingsCleanUpLocalFilesAfterInstalling.TabIndex = 1220;
+            this.ToggleSettingsCleanUpLocalFilesAfterInstalling.TabIndex = 18;
             this.ToggleSettingsCleanUpLocalFilesAfterInstalling.Toggled += new System.EventHandler(this.ToggleSettingsCleanUpLocalFilesAfterInstalling_Toggled);
             // 
             // LabelSettingsRememberGameRegions
             // 
+            this.LabelSettingsRememberGameRegions.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsRememberGameRegions.Appearance.Options.UseFont = true;
-            this.LabelSettingsRememberGameRegions.Location = new System.Drawing.Point(60, 263);
-            this.LabelSettingsRememberGameRegions.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelSettingsRememberGameRegions.Location = new System.Drawing.Point(60, 260);
+            this.LabelSettingsRememberGameRegions.Margin = new System.Windows.Forms.Padding(0, 8, 0, 7);
             this.LabelSettingsRememberGameRegions.Name = "LabelSettingsRememberGameRegions";
-            this.LabelSettingsRememberGameRegions.Size = new System.Drawing.Size(210, 13);
+            this.LabelSettingsRememberGameRegions.Size = new System.Drawing.Size(216, 15);
             this.LabelSettingsRememberGameRegions.TabIndex = 1195;
             this.LabelSettingsRememberGameRegions.Text = "Remember game regions when installing";
             // 
             // ToggleSettingsInstallModsToUsbDevice
             // 
-            this.ToggleSettingsInstallModsToUsbDevice.Location = new System.Drawing.Point(0, 50);
-            this.ToggleSettingsInstallModsToUsbDevice.Margin = new System.Windows.Forms.Padding(14, 3, 3, 15);
+            this.ToggleSettingsInstallModsToUsbDevice.Location = new System.Drawing.Point(0, 46);
+            this.ToggleSettingsInstallModsToUsbDevice.Margin = new System.Windows.Forms.Padding(0, 3, 3, 15);
             this.ToggleSettingsInstallModsToUsbDevice.Name = "ToggleSettingsInstallModsToUsbDevice";
             this.ToggleSettingsInstallModsToUsbDevice.Properties.AutoWidth = true;
             this.ToggleSettingsInstallModsToUsbDevice.Properties.OffText = "Off";
             this.ToggleSettingsInstallModsToUsbDevice.Properties.OnText = "On";
             this.ToggleSettingsInstallModsToUsbDevice.Properties.ShowText = false;
             this.ToggleSettingsInstallModsToUsbDevice.Size = new System.Drawing.Size(54, 24);
-            this.ToggleSettingsInstallModsToUsbDevice.TabIndex = 1202;
+            this.ToggleSettingsInstallModsToUsbDevice.TabIndex = 12;
             this.ToggleSettingsInstallModsToUsbDevice.Toggled += new System.EventHandler(this.ToggleSettingsInstallModsToUsbDevice_Toggled);
             // 
             // LabelSettingsInstallHomebrewToUsbDevice
             // 
+            this.LabelSettingsInstallHomebrewToUsbDevice.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsInstallHomebrewToUsbDevice.Appearance.Options.UseFont = true;
-            this.LabelSettingsInstallHomebrewToUsbDevice.Location = new System.Drawing.Point(60, 82);
-            this.LabelSettingsInstallHomebrewToUsbDevice.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelSettingsInstallHomebrewToUsbDevice.Location = new System.Drawing.Point(60, 80);
+            this.LabelSettingsInstallHomebrewToUsbDevice.Margin = new System.Windows.Forms.Padding(0, 8, 0, 7);
             this.LabelSettingsInstallHomebrewToUsbDevice.Name = "LabelSettingsInstallHomebrewToUsbDevice";
-            this.LabelSettingsInstallHomebrewToUsbDevice.Size = new System.Drawing.Size(189, 13);
+            this.LabelSettingsInstallHomebrewToUsbDevice.Size = new System.Drawing.Size(196, 15);
             this.LabelSettingsInstallHomebrewToUsbDevice.TabIndex = 1216;
             this.LabelSettingsInstallHomebrewToUsbDevice.Text = "Install Homebrew to local USB device";
             // 
             // ToggleSettingsAlwaysBackupGameFiles
             // 
-            this.ToggleSettingsAlwaysBackupGameFiles.Location = new System.Drawing.Point(0, 290);
-            this.ToggleSettingsAlwaysBackupGameFiles.Margin = new System.Windows.Forms.Padding(14, 3, 3, 15);
+            this.ToggleSettingsAlwaysBackupGameFiles.Location = new System.Drawing.Point(0, 286);
+            this.ToggleSettingsAlwaysBackupGameFiles.Margin = new System.Windows.Forms.Padding(0, 3, 3, 15);
             this.ToggleSettingsAlwaysBackupGameFiles.Name = "ToggleSettingsAlwaysBackupGameFiles";
             this.ToggleSettingsAlwaysBackupGameFiles.Properties.AutoWidth = true;
             this.ToggleSettingsAlwaysBackupGameFiles.Properties.OffText = "Off";
             this.ToggleSettingsAlwaysBackupGameFiles.Properties.OnText = "On";
             this.ToggleSettingsAlwaysBackupGameFiles.Properties.ShowText = false;
             this.ToggleSettingsAlwaysBackupGameFiles.Size = new System.Drawing.Size(54, 24);
-            this.ToggleSettingsAlwaysBackupGameFiles.TabIndex = 1222;
+            this.ToggleSettingsAlwaysBackupGameFiles.TabIndex = 20;
             this.ToggleSettingsAlwaysBackupGameFiles.Toggled += new System.EventHandler(this.ToggleSettingsAlwaysBackupGameFiles_Toggled);
             // 
             // LabelSettingsInstallModsToUsbDevice
             // 
+            this.LabelSettingsInstallModsToUsbDevice.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsInstallModsToUsbDevice.Appearance.Options.UseFont = true;
-            this.LabelSettingsInstallModsToUsbDevice.Location = new System.Drawing.Point(60, 52);
-            this.LabelSettingsInstallModsToUsbDevice.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelSettingsInstallModsToUsbDevice.Location = new System.Drawing.Point(60, 50);
+            this.LabelSettingsInstallModsToUsbDevice.Margin = new System.Windows.Forms.Padding(0, 8, 0, 7);
             this.LabelSettingsInstallModsToUsbDevice.Name = "LabelSettingsInstallModsToUsbDevice";
-            this.LabelSettingsInstallModsToUsbDevice.Size = new System.Drawing.Size(236, 13);
+            this.LabelSettingsInstallModsToUsbDevice.Size = new System.Drawing.Size(167, 15);
             this.LabelSettingsInstallModsToUsbDevice.TabIndex = 1203;
-            this.LabelSettingsInstallModsToUsbDevice.Text = "Install Game Mods/Plugins to local USB device";
+            this.LabelSettingsInstallModsToUsbDevice.Text = "Install Mods to local USB device";
             // 
             // TabPageFiles
             // 
             this.TabPageFiles.AutoScroll = true;
-            this.TabPageFiles.Caption = "Files";
+            this.TabPageFiles.Caption = "Console";
             this.TabPageFiles.Controls.Add(this.TextBoxSettingsAuroraFolderPath);
+            this.TabPageFiles.Controls.Add(this.TextBoxSettingsPackagesInstallPathPS4);
+            this.TabPageFiles.Controls.Add(this.TextBoxSettingsPackagesInstallPathPS3);
+            this.TabPageFiles.Controls.Add(this.TextBoxSettingsLaunchIniFilePath);
             this.TabPageFiles.Controls.Add(this.LabelSettingsAuroraPath);
             this.TabPageFiles.Controls.Add(this.SeparatorSettingsFiles1);
             this.TabPageFiles.Controls.Add(this.LabelSettingsFilesPS3);
             this.TabPageFiles.Controls.Add(this.LabelSettingsFilesPS4);
-            this.TabPageFiles.Controls.Add(this.TextBoxSettingsLaunchIniFilePath);
             this.TabPageFiles.Controls.Add(this.LabelSettingsPackagesFilePathPS4);
             this.TabPageFiles.Controls.Add(this.LabelSettingsLaunchIniFilePath);
-            this.TabPageFiles.Controls.Add(this.TextBoxSettingsPackagesInstallPathPS4);
-            this.TabPageFiles.Controls.Add(this.TextBoxSettingsPackagesInstallPathPS3);
             this.TabPageFiles.Controls.Add(this.SeparatorSettingsFiles2);
             this.TabPageFiles.Controls.Add(this.LabelSettingsPackagesFilePathPS3);
             this.TabPageFiles.Controls.Add(this.LabelSettingsFilesXbox);
@@ -7194,29 +7281,1011 @@ namespace ArisenStudio.Forms.Windows
             // 
             // TextBoxSettingsAuroraFolderPath
             // 
-            this.TextBoxSettingsAuroraFolderPath.Location = new System.Drawing.Point(0, 391);
-            this.TextBoxSettingsAuroraFolderPath.Margin = new System.Windows.Forms.Padding(3, 3, 3, 8);
+            this.TextBoxSettingsAuroraFolderPath.Location = new System.Drawing.Point(0, 397);
+            this.TextBoxSettingsAuroraFolderPath.Margin = new System.Windows.Forms.Padding(0, 5, 3, 8);
+            this.TextBoxSettingsAuroraFolderPath.MenuManager = this.RibbonControlMain;
             this.TextBoxSettingsAuroraFolderPath.Name = "TextBoxSettingsAuroraFolderPath";
-            this.TextBoxSettingsAuroraFolderPath.Size = new System.Drawing.Size(701, 22);
-            this.TextBoxSettingsAuroraFolderPath.TabIndex = 1182;
-            this.TextBoxSettingsAuroraFolderPath.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSettingsAuroraFolderPath_KeyDown);
+            this.TextBoxSettingsAuroraFolderPath.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxSettingsAuroraFolderPath.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxSettingsAuroraFolderPath.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK)});
+            this.TextBoxSettingsAuroraFolderPath.Size = new System.Drawing.Size(423, 24);
+            this.TextBoxSettingsAuroraFolderPath.TabIndex = 26;
+            this.TextBoxSettingsAuroraFolderPath.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.TextBoxSettingsAuroraFolderPath_ButtonClick);
+            // 
+            // RibbonControlMain
+            // 
+            this.RibbonControlMain.AllowKeyTips = false;
+            this.RibbonControlMain.AllowMinimizeRibbon = false;
+            this.RibbonControlMain.ApplicationButtonImageOptions.SvgImageSize = new System.Drawing.Size(100, 100);
+            this.RibbonControlMain.ApplicationButtonText = "User Name";
+            this.RibbonControlMain.AutoSizeItems = true;
+            this.RibbonControlMain.CaptionBarItemLinks.Add(this.ButtonUpdate);
+            this.RibbonControlMain.ExpandCollapseItem.AllowDrawArrow = false;
+            this.RibbonControlMain.ExpandCollapseItem.AllowDrawArrowInMenu = false;
+            this.RibbonControlMain.ExpandCollapseItem.Id = 0;
+            this.RibbonControlMain.ExpandCollapseItem.VisibleInSearchMenu = false;
+            this.RibbonControlMain.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.RibbonControlMain.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ButtonUpdate,
+            this.RibbonControlMain.ExpandCollapseItem,
+            this.skinPaletteDropDownButtonItem1,
+            this.barCheckItem1,
+            this.ButtonConnectConsole,
+            this.ButtonDisconnectConsole,
+            this.ButtonScanXboxConsoles,
+            this.ButtonEditProfiles,
+            this.ButtonChangeProfile,
+            this.ButtonAddNewProfile,
+            this.StatusLabelHeaderStatus,
+            this.StatusLabelStatus,
+            this.StatusLabelHeaderIsConnected,
+            this.ButtonToolsPsGameUpdates,
+            this.ButtonToolsPsBackupFilesManager,
+            this.ButtonToolsPsPackageManager,
+            this.ButtonToolsPsConsoleManager,
+            this.ButtonToolsPsGameRegions,
+            this.ButtonToolsPsBootPluginsEditor,
+            this.ButtonToolsXboxGameSaveResigner,
+            this.ButtonToolsXboxGamesLauncher,
+            this.ButtonToolsXboxModuleLoader,
+            this.ButtonToolsXboxXuidSpoofer,
+            this.ButtonToolsXboxDashlaunchEditor,
+            this.ButtonToolsPsPower,
+            this.ButtonToolsPsPowerShutdown,
+            this.ButtonToolsPsPowerRestart,
+            this.ButtonToolsPsPowerSoftReboot,
+            this.ButtonToolsPsPowerHardReboot,
+            this.ButtonToolsPsPowerQuickReboot,
+            this.ButtonToolsPsGames,
+            this.ButtonToolsPsNotifyMessage,
+            this.ButtonToolsPsVirtualController,
+            this.ButtonToolsPsGamesMountBD,
+            this.ButtonToolsPsGamesMountISO,
+            this.ButtonToolsPsGamesMountPSN,
+            this.ButtonToolsPsGamesUnmount,
+            this.ButtonToolsXboxPower,
+            this.ButtonToolsXboxTakeScreenshot,
+            this.ButtonToolsXboxConsoleManager,
+            this.ButtonToolsXboxPowerShutdown,
+            this.ButtonToolsXboxPowerSoftReboot,
+            this.ButtonToolsXboxPowerHardReboot,
+            this.ButtonToolsXboxNotifyMessage,
+            this.ButtonDownloadsFolder,
+            this.ButtonAdvancedSettings,
+            this.ButtonDiscordPresence,
+            this.ButtonInstallModsToUSB,
+            this.ButtonHowToGuides,
+            this.ButtonAbout,
+            this.ButtonOpenLogFile,
+            this.ButtonOpenLogFolder,
+            this.ButtonRequestMods,
+            this.ButtonSendFeedback,
+            this.ButtonToolsXboxHDKey,
+            this.StatusLabelHeaderCurrentGame,
+            this.StatusLabelCurrentGame,
+            this.ButtonToolsPsGamesLaunchGame,
+            this.ButtonToolsPsGamesOpenGUI,
+            this.barStaticItem3,
+            this.ButtonSetupWizard,
+            this.ButtonLocalFilesOpen,
+            this.ButtonLocalFilesDelete,
+            this.ButtonLocalFilesRename,
+            this.ButtonLocalFilesRefresh,
+            this.barButtonItem1,
+            this.barButtonItem10,
+            this.barButtonItem11,
+            this.barButtonItem12,
+            this.barButtonItem13,
+            this.ButtonToolsXboxTrainers,
+            this.ButtonToolsPsGameCheats,
+            this.barButtonItem14,
+            this.barButtonItem15,
+            this.barCheckItem2});
+            this.RibbonControlMain.Location = new System.Drawing.Point(0, 0);
+            this.RibbonControlMain.MaxItemId = 97;
+            this.RibbonControlMain.Name = "RibbonControlMain";
+            this.RibbonControlMain.OptionsStubGlyphs.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.RibbonControlMain.OptionsStubGlyphs.UseFont = true;
+            this.RibbonControlMain.PageHeaderItemLinks.Add(this.barButtonItem1);
+            this.RibbonControlMain.PageHeaderItemLinks.Add(this.barButtonItem14);
+            this.RibbonControlMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.RibbonPageHome,
+            this.RibbonPageTools});
+            this.RibbonControlMain.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
+            this.RibbonControlMain.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
+            this.RibbonControlMain.ShowItemCaptionsInCaptionBar = true;
+            this.RibbonControlMain.ShowItemCaptionsInPageHeader = true;
+            this.RibbonControlMain.ShowItemCaptionsInQAT = true;
+            this.RibbonControlMain.ShowMoreCommandsButton = DevExpress.Utils.DefaultBoolean.False;
+            this.RibbonControlMain.ShowToolbarCustomizeItem = false;
+            this.RibbonControlMain.Size = new System.Drawing.Size(1498, 168);
+            this.RibbonControlMain.StatusBar = this.RibbonStatusBar;
+            this.RibbonControlMain.Toolbar.ShowCustomizeItem = false;
+            this.RibbonControlMain.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
+            this.RibbonControlMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RibbonControl1_MouseDown);
+            // 
+            // ButtonUpdate
+            // 
+            this.ButtonUpdate.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonUpdate.Caption = "New Update Available";
+            this.ButtonUpdate.Id = 91;
+            this.ButtonUpdate.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonUpdate.ImageOptions.AllowStubGlyph = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonUpdate.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.available_update;
+            this.ButtonUpdate.ItemAppearance.Disabled.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonUpdate.ItemAppearance.Disabled.Options.UseFont = true;
+            this.ButtonUpdate.ItemAppearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonUpdate.ItemAppearance.Hovered.Options.UseFont = true;
+            this.ButtonUpdate.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonUpdate.ItemAppearance.Normal.Options.UseFont = true;
+            this.ButtonUpdate.ItemAppearance.Pressed.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonUpdate.ItemAppearance.Pressed.Options.UseFont = true;
+            this.ButtonUpdate.ItemInMenuAppearance.Disabled.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ButtonUpdate.ItemInMenuAppearance.Disabled.Options.UseBackColor = true;
+            this.ButtonUpdate.ItemInMenuAppearance.Hovered.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ButtonUpdate.ItemInMenuAppearance.Hovered.Options.UseBackColor = true;
+            this.ButtonUpdate.ItemInMenuAppearance.Normal.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ButtonUpdate.ItemInMenuAppearance.Normal.Options.UseBackColor = true;
+            this.ButtonUpdate.ItemInMenuAppearance.Pressed.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ButtonUpdate.ItemInMenuAppearance.Pressed.Options.UseBackColor = true;
+            this.ButtonUpdate.Name = "ButtonUpdate";
+            this.ButtonUpdate.VisibleInSearchMenu = false;
+            this.ButtonUpdate.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonUpdate_ItemClick);
+            // 
+            // skinPaletteDropDownButtonItem1
+            // 
+            this.skinPaletteDropDownButtonItem1.Id = 77;
+            this.skinPaletteDropDownButtonItem1.Name = "skinPaletteDropDownButtonItem1";
+            // 
+            // barCheckItem1
+            // 
+            this.barCheckItem1.Caption = "barCheckItem1";
+            this.barCheckItem1.Id = 79;
+            this.barCheckItem1.Name = "barCheckItem1";
+            // 
+            // ButtonConnectConsole
+            // 
+            this.ButtonConnectConsole.Caption = "Connect Console";
+            this.ButtonConnectConsole.Id = 1;
+            this.ButtonConnectConsole.ImageOptions.Image = global::ArisenStudio.Properties.Resources.connect;
+            this.ButtonConnectConsole.LargeWidth = 74;
+            this.ButtonConnectConsole.Name = "ButtonConnectConsole";
+            this.ButtonConnectConsole.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonConnectConsole.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonConnectConsole_ItemClick);
+            // 
+            // ButtonDisconnectConsole
+            // 
+            this.ButtonDisconnectConsole.Caption = "Disconnect Console";
+            this.ButtonDisconnectConsole.Enabled = false;
+            this.ButtonDisconnectConsole.Id = 2;
+            this.ButtonDisconnectConsole.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonDisconnectConsole.ImageOptions.Image = global::ArisenStudio.Properties.Resources.disconnect;
+            this.ButtonDisconnectConsole.LargeWidth = 74;
+            this.ButtonDisconnectConsole.Name = "ButtonDisconnectConsole";
+            this.ButtonDisconnectConsole.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonDisconnectConsole.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonDisconnectConsole_ItemClick);
+            // 
+            // ButtonScanXboxConsoles
+            // 
+            this.ButtonScanXboxConsoles.Caption = "Scan Xbox Consoles";
+            this.ButtonScanXboxConsoles.Id = 4;
+            this.ButtonScanXboxConsoles.ImageOptions.Image = global::ArisenStudio.Properties.Resources.search_profiles;
+            this.ButtonScanXboxConsoles.LargeWidth = 74;
+            this.ButtonScanXboxConsoles.Name = "ButtonScanXboxConsoles";
+            this.ButtonScanXboxConsoles.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonScanXboxConsoles.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonScanXboxConsoles_ItemClick);
+            // 
+            // ButtonEditProfiles
+            // 
+            this.ButtonEditProfiles.Caption = "Edit Profiles";
+            this.ButtonEditProfiles.Id = 5;
+            this.ButtonEditProfiles.ImageOptions.Image = global::ArisenStudio.Properties.Resources.edit_profile;
+            this.ButtonEditProfiles.LargeWidth = 74;
+            this.ButtonEditProfiles.Name = "ButtonEditProfiles";
+            this.ButtonEditProfiles.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonEditProfiles.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonEditConsoles_ItemClick);
+            // 
+            // ButtonChangeProfile
+            // 
+            this.ButtonChangeProfile.Caption = "Change Profile";
+            this.ButtonChangeProfile.Id = 6;
+            this.ButtonChangeProfile.ImageOptions.Image = global::ArisenStudio.Properties.Resources.change_profile;
+            this.ButtonChangeProfile.LargeWidth = 74;
+            this.ButtonChangeProfile.Name = "ButtonChangeProfile";
+            this.ButtonChangeProfile.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonChangeProfile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonChangeProfile_ItemClick);
+            // 
+            // ButtonAddNewProfile
+            // 
+            this.ButtonAddNewProfile.Caption = "Add New Profile";
+            this.ButtonAddNewProfile.Id = 7;
+            this.ButtonAddNewProfile.ImageOptions.Image = global::ArisenStudio.Properties.Resources.new_profile;
+            this.ButtonAddNewProfile.LargeWidth = 74;
+            this.ButtonAddNewProfile.Name = "ButtonAddNewProfile";
+            this.ButtonAddNewProfile.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonAddNewProfile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonAddNewProfile_ItemClick);
+            // 
+            // StatusLabelHeaderStatus
+            // 
+            this.StatusLabelHeaderStatus.AllowFocus = DevExpress.Utils.DefaultBoolean.False;
+            this.StatusLabelHeaderStatus.Caption = "Status:";
+            this.StatusLabelHeaderStatus.Id = 9;
+            this.StatusLabelHeaderStatus.ItemAppearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.StatusLabelHeaderStatus.ItemAppearance.Hovered.Options.UseFont = true;
+            this.StatusLabelHeaderStatus.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.StatusLabelHeaderStatus.ItemAppearance.Normal.Options.UseFont = true;
+            this.StatusLabelHeaderStatus.ItemAppearance.Pressed.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.StatusLabelHeaderStatus.ItemAppearance.Pressed.Options.UseFont = true;
+            this.StatusLabelHeaderStatus.Name = "StatusLabelHeaderStatus";
+            // 
+            // StatusLabelStatus
+            // 
+            this.StatusLabelStatus.AllowFocus = DevExpress.Utils.DefaultBoolean.False;
+            this.StatusLabelStatus.Caption = "Status";
+            this.StatusLabelStatus.Id = 10;
+            this.StatusLabelStatus.Name = "StatusLabelStatus";
+            // 
+            // StatusLabelHeaderIsConnected
+            // 
+            this.StatusLabelHeaderIsConnected.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.StatusLabelHeaderIsConnected.AllowFocus = DevExpress.Utils.DefaultBoolean.False;
+            this.StatusLabelHeaderIsConnected.Caption = "Not Connected";
+            this.StatusLabelHeaderIsConnected.Id = 11;
+            this.StatusLabelHeaderIsConnected.ItemAppearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.StatusLabelHeaderIsConnected.ItemAppearance.Hovered.Options.UseFont = true;
+            this.StatusLabelHeaderIsConnected.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.StatusLabelHeaderIsConnected.ItemAppearance.Normal.Options.UseFont = true;
+            this.StatusLabelHeaderIsConnected.Name = "StatusLabelHeaderIsConnected";
+            // 
+            // ButtonToolsPsGameUpdates
+            // 
+            this.ButtonToolsPsGameUpdates.Caption = "Game Updates";
+            this.ButtonToolsPsGameUpdates.Id = 12;
+            this.ButtonToolsPsGameUpdates.ImageOptions.Image = global::ArisenStudio.Properties.Resources.game_patch;
+            this.ButtonToolsPsGameUpdates.LargeWidth = 74;
+            this.ButtonToolsPsGameUpdates.Name = "ButtonToolsPsGameUpdates";
+            this.ButtonToolsPsGameUpdates.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonToolsPsGameUpdates.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsGameUpdates_ItemClick);
+            // 
+            // ButtonToolsPsBackupFilesManager
+            // 
+            this.ButtonToolsPsBackupFilesManager.Caption = "Backup Files Managers";
+            this.ButtonToolsPsBackupFilesManager.Id = 13;
+            this.ButtonToolsPsBackupFilesManager.ImageOptions.Image = global::ArisenStudio.Properties.Resources.backup_files;
+            this.ButtonToolsPsBackupFilesManager.LargeWidth = 74;
+            this.ButtonToolsPsBackupFilesManager.Name = "ButtonToolsPsBackupFilesManager";
+            this.ButtonToolsPsBackupFilesManager.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonToolsPsBackupFilesManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsBackupFilesManager_ItemClick);
+            // 
+            // ButtonToolsPsPackageManager
+            // 
+            this.ButtonToolsPsPackageManager.Caption = "Package Manager";
+            this.ButtonToolsPsPackageManager.Id = 14;
+            this.ButtonToolsPsPackageManager.ImageOptions.Image = global::ArisenStudio.Properties.Resources.package_manager;
+            this.ButtonToolsPsPackageManager.LargeWidth = 74;
+            this.ButtonToolsPsPackageManager.Name = "ButtonToolsPsPackageManager";
+            this.ButtonToolsPsPackageManager.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonToolsPsPackageManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsPackageManager_ItemClick);
+            // 
+            // ButtonToolsPsConsoleManager
+            // 
+            this.ButtonToolsPsConsoleManager.Caption = "Console Manager";
+            this.ButtonToolsPsConsoleManager.Id = 15;
+            this.ButtonToolsPsConsoleManager.ImageOptions.Image = global::ArisenStudio.Properties.Resources.console_manager;
+            this.ButtonToolsPsConsoleManager.LargeWidth = 74;
+            this.ButtonToolsPsConsoleManager.Name = "ButtonToolsPsConsoleManager";
+            this.ButtonToolsPsConsoleManager.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonToolsPsConsoleManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsConsoleManager_ItemClick);
+            // 
+            // ButtonToolsPsGameRegions
+            // 
+            this.ButtonToolsPsGameRegions.Caption = "Game Regions";
+            this.ButtonToolsPsGameRegions.Id = 16;
+            this.ButtonToolsPsGameRegions.ImageOptions.Image = global::ArisenStudio.Properties.Resources.globe;
+            this.ButtonToolsPsGameRegions.LargeWidth = 74;
+            this.ButtonToolsPsGameRegions.Name = "ButtonToolsPsGameRegions";
+            this.ButtonToolsPsGameRegions.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonToolsPsGameRegions.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsGameRegions_ItemClick);
+            // 
+            // ButtonToolsPsBootPluginsEditor
+            // 
+            this.ButtonToolsPsBootPluginsEditor.Caption = "Boot Plugins Editor";
+            this.ButtonToolsPsBootPluginsEditor.Id = 17;
+            this.ButtonToolsPsBootPluginsEditor.ImageOptions.Image = global::ArisenStudio.Properties.Resources.boot_plugins_editor;
+            this.ButtonToolsPsBootPluginsEditor.Name = "ButtonToolsPsBootPluginsEditor";
+            this.ButtonToolsPsBootPluginsEditor.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonToolsPsBootPluginsEditor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsBootPluginsEditor_ItemClick);
+            // 
+            // ButtonToolsXboxGameSaveResigner
+            // 
+            this.ButtonToolsXboxGameSaveResigner.Caption = "Game Save Resigner";
+            this.ButtonToolsXboxGameSaveResigner.Id = 18;
+            this.ButtonToolsXboxGameSaveResigner.ImageOptions.Image = global::ArisenStudio.Properties.Resources.edit_save;
+            this.ButtonToolsXboxGameSaveResigner.LargeWidth = 74;
+            this.ButtonToolsXboxGameSaveResigner.Name = "ButtonToolsXboxGameSaveResigner";
+            this.ButtonToolsXboxGameSaveResigner.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonToolsXboxGameSaveResigner.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxGameSaveResigner_ItemClick);
+            // 
+            // ButtonToolsXboxGamesLauncher
+            // 
+            this.ButtonToolsXboxGamesLauncher.Caption = "Games Launcher";
+            this.ButtonToolsXboxGamesLauncher.Id = 19;
+            this.ButtonToolsXboxGamesLauncher.ImageOptions.Image = global::ArisenStudio.Properties.Resources.file_launch;
+            this.ButtonToolsXboxGamesLauncher.Name = "ButtonToolsXboxGamesLauncher";
+            this.ButtonToolsXboxGamesLauncher.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonToolsXboxGamesLauncher.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxGamesLauncher_ItemClick);
+            // 
+            // ButtonToolsXboxModuleLoader
+            // 
+            this.ButtonToolsXboxModuleLoader.Caption = "Module Loader";
+            this.ButtonToolsXboxModuleLoader.Id = 20;
+            this.ButtonToolsXboxModuleLoader.ImageOptions.Image = global::ArisenStudio.Properties.Resources.modules;
+            this.ButtonToolsXboxModuleLoader.LargeWidth = 74;
+            this.ButtonToolsXboxModuleLoader.Name = "ButtonToolsXboxModuleLoader";
+            this.ButtonToolsXboxModuleLoader.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonToolsXboxModuleLoader.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxModuleLoader_ItemClick);
+            // 
+            // ButtonToolsXboxXuidSpoofer
+            // 
+            this.ButtonToolsXboxXuidSpoofer.Caption = "XUID Spoofer";
+            this.ButtonToolsXboxXuidSpoofer.Id = 21;
+            this.ButtonToolsXboxXuidSpoofer.ImageOptions.Image = global::ArisenStudio.Properties.Resources.spoofer;
+            this.ButtonToolsXboxXuidSpoofer.LargeWidth = 74;
+            this.ButtonToolsXboxXuidSpoofer.Name = "ButtonToolsXboxXuidSpoofer";
+            this.ButtonToolsXboxXuidSpoofer.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonToolsXboxXuidSpoofer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxXuidSpoofer_ItemClick);
+            // 
+            // ButtonToolsXboxDashlaunchEditor
+            // 
+            this.ButtonToolsXboxDashlaunchEditor.Caption = "Dashlaunch Editor";
+            this.ButtonToolsXboxDashlaunchEditor.Id = 22;
+            this.ButtonToolsXboxDashlaunchEditor.ImageOptions.Image = global::ArisenStudio.Properties.Resources.file_editor;
+            this.ButtonToolsXboxDashlaunchEditor.LargeWidth = 74;
+            this.ButtonToolsXboxDashlaunchEditor.Name = "ButtonToolsXboxDashlaunchEditor";
+            this.ButtonToolsXboxDashlaunchEditor.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonToolsXboxDashlaunchEditor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxDashlaunchEditor_ItemClick);
+            // 
+            // ButtonToolsPsPower
+            // 
+            this.ButtonToolsPsPower.Caption = "Power";
+            this.ButtonToolsPsPower.DrawMenuSideStrip = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonToolsPsPower.Id = 25;
+            this.ButtonToolsPsPower.ImageOptions.Image = global::ArisenStudio.Properties.Resources.shutdown;
+            this.ButtonToolsPsPower.LargeWidth = 74;
+            this.ButtonToolsPsPower.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsPsPowerShutdown),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsPsPowerRestart),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsPsPowerSoftReboot, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsPsPowerHardReboot),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsPsPowerQuickReboot)});
+            this.ButtonToolsPsPower.Name = "ButtonToolsPsPower";
+            this.ButtonToolsPsPower.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // ButtonToolsPsPowerShutdown
+            // 
+            this.ButtonToolsPsPowerShutdown.Caption = "Shutdown";
+            this.ButtonToolsPsPowerShutdown.Id = 26;
+            this.ButtonToolsPsPowerShutdown.Name = "ButtonToolsPsPowerShutdown";
+            this.ButtonToolsPsPowerShutdown.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsPowerShutdown_ItemClick);
+            // 
+            // ButtonToolsPsPowerRestart
+            // 
+            this.ButtonToolsPsPowerRestart.Caption = "Restart";
+            this.ButtonToolsPsPowerRestart.Id = 27;
+            this.ButtonToolsPsPowerRestart.Name = "ButtonToolsPsPowerRestart";
+            this.ButtonToolsPsPowerRestart.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsPowerRestart_ItemClick);
+            // 
+            // ButtonToolsPsPowerSoftReboot
+            // 
+            this.ButtonToolsPsPowerSoftReboot.Caption = "Soft Reboot";
+            this.ButtonToolsPsPowerSoftReboot.Id = 28;
+            this.ButtonToolsPsPowerSoftReboot.Name = "ButtonToolsPsPowerSoftReboot";
+            this.ButtonToolsPsPowerSoftReboot.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsPowerSoftReboot_ItemClick);
+            // 
+            // ButtonToolsPsPowerHardReboot
+            // 
+            this.ButtonToolsPsPowerHardReboot.Caption = "Hard Reboot";
+            this.ButtonToolsPsPowerHardReboot.Id = 29;
+            this.ButtonToolsPsPowerHardReboot.Name = "ButtonToolsPsPowerHardReboot";
+            this.ButtonToolsPsPowerHardReboot.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsPowerHardReboot_ItemClick);
+            // 
+            // ButtonToolsPsPowerQuickReboot
+            // 
+            this.ButtonToolsPsPowerQuickReboot.Caption = "Quick Reboot";
+            this.ButtonToolsPsPowerQuickReboot.Id = 30;
+            this.ButtonToolsPsPowerQuickReboot.Name = "ButtonToolsPsPowerQuickReboot";
+            this.ButtonToolsPsPowerQuickReboot.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsPowerQuickReboot_ItemClick);
+            // 
+            // ButtonToolsPsGames
+            // 
+            this.ButtonToolsPsGames.Caption = "Games";
+            this.ButtonToolsPsGames.DrawMenuSideStrip = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonToolsPsGames.Id = 31;
+            this.ButtonToolsPsGames.ImageOptions.Image = global::ArisenStudio.Properties.Resources.games_folder;
+            this.ButtonToolsPsGames.LargeWidth = 74;
+            this.ButtonToolsPsGames.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsPsGamesOpenGUI),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsPsGamesMountBD, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsPsGamesMountISO),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsPsGamesMountPSN),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsPsGamesUnmount),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsPsGamesLaunchGame, true)});
+            this.ButtonToolsPsGames.Name = "ButtonToolsPsGames";
+            this.ButtonToolsPsGames.OptionsMultiColumn.ItemIndent = 0;
+            this.ButtonToolsPsGames.OptionsMultiColumn.TextHorizontalAlignment = DevExpress.Utils.Drawing.ItemHorizontalAlignment.Right;
+            this.ButtonToolsPsGames.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // ButtonToolsPsGamesOpenGUI
+            // 
+            this.ButtonToolsPsGamesOpenGUI.Caption = "Launcher (GUI)";
+            this.ButtonToolsPsGamesOpenGUI.Id = 71;
+            this.ButtonToolsPsGamesOpenGUI.Name = "ButtonToolsPsGamesOpenGUI";
+            this.ButtonToolsPsGamesOpenGUI.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsGamesOpenGUI_ItemClick);
+            // 
+            // ButtonToolsPsGamesMountBD
+            // 
+            this.ButtonToolsPsGamesMountBD.Caption = "Mount BD";
+            this.ButtonToolsPsGamesMountBD.Id = 34;
+            this.ButtonToolsPsGamesMountBD.Name = "ButtonToolsPsGamesMountBD";
+            this.ButtonToolsPsGamesMountBD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsGamesMountBD_ItemClick);
+            // 
+            // ButtonToolsPsGamesMountISO
+            // 
+            this.ButtonToolsPsGamesMountISO.Caption = "Mount ISO";
+            this.ButtonToolsPsGamesMountISO.Id = 35;
+            this.ButtonToolsPsGamesMountISO.Name = "ButtonToolsPsGamesMountISO";
+            this.ButtonToolsPsGamesMountISO.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsGamesMountISO_ItemClick);
+            // 
+            // ButtonToolsPsGamesMountPSN
+            // 
+            this.ButtonToolsPsGamesMountPSN.Caption = "Mount PSN";
+            this.ButtonToolsPsGamesMountPSN.Id = 36;
+            this.ButtonToolsPsGamesMountPSN.Name = "ButtonToolsPsGamesMountPSN";
+            this.ButtonToolsPsGamesMountPSN.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsGamesMountPSN_ItemClick);
+            // 
+            // ButtonToolsPsGamesUnmount
+            // 
+            this.ButtonToolsPsGamesUnmount.Caption = "Unmount";
+            this.ButtonToolsPsGamesUnmount.Id = 37;
+            this.ButtonToolsPsGamesUnmount.Name = "ButtonToolsPsGamesUnmount";
+            this.ButtonToolsPsGamesUnmount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsGamesUnmount_ItemClick);
+            // 
+            // ButtonToolsPsGamesLaunchGame
+            // 
+            this.ButtonToolsPsGamesLaunchGame.Caption = "Launch";
+            this.ButtonToolsPsGamesLaunchGame.Id = 70;
+            this.ButtonToolsPsGamesLaunchGame.Name = "ButtonToolsPsGamesLaunchGame";
+            this.ButtonToolsPsGamesLaunchGame.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsGamesStartGame_ItemClick);
+            // 
+            // ButtonToolsPsNotifyMessage
+            // 
+            this.ButtonToolsPsNotifyMessage.Caption = "Notify Message";
+            this.ButtonToolsPsNotifyMessage.Id = 32;
+            this.ButtonToolsPsNotifyMessage.ImageOptions.Image = global::ArisenStudio.Properties.Resources.notify;
+            this.ButtonToolsPsNotifyMessage.LargeWidth = 74;
+            this.ButtonToolsPsNotifyMessage.Name = "ButtonToolsPsNotifyMessage";
+            this.ButtonToolsPsNotifyMessage.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonToolsPsNotifyMessage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsNotifyMessage_ItemClick);
+            // 
+            // ButtonToolsPsVirtualController
+            // 
+            this.ButtonToolsPsVirtualController.Caption = "Virtual Controller";
+            this.ButtonToolsPsVirtualController.Id = 33;
+            this.ButtonToolsPsVirtualController.ImageOptions.Image = global::ArisenStudio.Properties.Resources.game_controller;
+            this.ButtonToolsPsVirtualController.LargeWidth = 74;
+            this.ButtonToolsPsVirtualController.Name = "ButtonToolsPsVirtualController";
+            this.ButtonToolsPsVirtualController.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonToolsPsVirtualController.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsVirtualController_ItemClick);
+            // 
+            // ButtonToolsXboxPower
+            // 
+            this.ButtonToolsXboxPower.Caption = "Power";
+            this.ButtonToolsXboxPower.DrawMenuSideStrip = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonToolsXboxPower.Id = 39;
+            this.ButtonToolsXboxPower.ImageOptions.Image = global::ArisenStudio.Properties.Resources.shutdown;
+            this.ButtonToolsXboxPower.LargeWidth = 74;
+            this.ButtonToolsXboxPower.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsXboxPowerShutdown),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsXboxPowerSoftReboot),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsXboxPowerHardReboot)});
+            this.ButtonToolsXboxPower.Name = "ButtonToolsXboxPower";
+            this.ButtonToolsXboxPower.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // ButtonToolsXboxPowerShutdown
+            // 
+            this.ButtonToolsXboxPowerShutdown.Caption = "Shutdown";
+            this.ButtonToolsXboxPowerShutdown.Id = 42;
+            this.ButtonToolsXboxPowerShutdown.Name = "ButtonToolsXboxPowerShutdown";
+            this.ButtonToolsXboxPowerShutdown.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxPowerShutdown_ItemClick);
+            // 
+            // ButtonToolsXboxPowerSoftReboot
+            // 
+            this.ButtonToolsXboxPowerSoftReboot.Caption = "Soft Reboot";
+            this.ButtonToolsXboxPowerSoftReboot.Id = 43;
+            this.ButtonToolsXboxPowerSoftReboot.Name = "ButtonToolsXboxPowerSoftReboot";
+            this.ButtonToolsXboxPowerSoftReboot.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxPowerSoftReboot_ItemClick);
+            // 
+            // ButtonToolsXboxPowerHardReboot
+            // 
+            this.ButtonToolsXboxPowerHardReboot.Caption = "Hard Reboot";
+            this.ButtonToolsXboxPowerHardReboot.Id = 44;
+            this.ButtonToolsXboxPowerHardReboot.Name = "ButtonToolsXboxPowerHardReboot";
+            this.ButtonToolsXboxPowerHardReboot.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxPowerHardReboot_ItemClick);
+            // 
+            // ButtonToolsXboxTakeScreenshot
+            // 
+            this.ButtonToolsXboxTakeScreenshot.Caption = "Take Screenshot";
+            this.ButtonToolsXboxTakeScreenshot.Id = 40;
+            this.ButtonToolsXboxTakeScreenshot.ImageOptions.Image = global::ArisenStudio.Properties.Resources.capture;
+            this.ButtonToolsXboxTakeScreenshot.LargeWidth = 74;
+            this.ButtonToolsXboxTakeScreenshot.Name = "ButtonToolsXboxTakeScreenshot";
+            this.ButtonToolsXboxTakeScreenshot.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonToolsXboxTakeScreenshot.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxTakeScreenshot_ItemClick);
+            // 
+            // ButtonToolsXboxConsoleManager
+            // 
+            this.ButtonToolsXboxConsoleManager.Caption = "Console Manager";
+            this.ButtonToolsXboxConsoleManager.Id = 41;
+            this.ButtonToolsXboxConsoleManager.ImageOptions.Image = global::ArisenStudio.Properties.Resources.console_manager;
+            this.ButtonToolsXboxConsoleManager.LargeWidth = 74;
+            this.ButtonToolsXboxConsoleManager.Name = "ButtonToolsXboxConsoleManager";
+            this.ButtonToolsXboxConsoleManager.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonToolsXboxConsoleManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxConsoleManager_ItemClick);
+            // 
+            // ButtonToolsXboxNotifyMessage
+            // 
+            this.ButtonToolsXboxNotifyMessage.Caption = "Notify Message";
+            this.ButtonToolsXboxNotifyMessage.Id = 46;
+            this.ButtonToolsXboxNotifyMessage.ImageOptions.Image = global::ArisenStudio.Properties.Resources.notify;
+            this.ButtonToolsXboxNotifyMessage.LargeWidth = 74;
+            this.ButtonToolsXboxNotifyMessage.Name = "ButtonToolsXboxNotifyMessage";
+            this.ButtonToolsXboxNotifyMessage.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonToolsXboxNotifyMessage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxNotifyMessage_ItemClick);
+            // 
+            // ButtonDownloadsFolder
+            // 
+            this.ButtonDownloadsFolder.Caption = "Downloads Folder";
+            this.ButtonDownloadsFolder.Id = 47;
+            this.ButtonDownloadsFolder.ImageOptions.Image = global::ArisenStudio.Properties.Resources.downloads_folder;
+            this.ButtonDownloadsFolder.LargeWidth = 74;
+            this.ButtonDownloadsFolder.Name = "ButtonDownloadsFolder";
+            this.ButtonDownloadsFolder.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonDownloadsFolder.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonDownloadsFolder_ItemClick);
+            // 
+            // ButtonAdvancedSettings
+            // 
+            this.ButtonAdvancedSettings.Caption = "Advanced Settings";
+            this.ButtonAdvancedSettings.Id = 57;
+            this.ButtonAdvancedSettings.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.viewsettings;
+            this.ButtonAdvancedSettings.LargeWidth = 74;
+            this.ButtonAdvancedSettings.Name = "ButtonAdvancedSettings";
+            this.ButtonAdvancedSettings.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonAdvancedSettings.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonAdvancedSettings_ItemClick);
+            // 
+            // ButtonDiscordPresence
+            // 
+            this.ButtonDiscordPresence.Caption = "Discord Presence";
+            this.ButtonDiscordPresence.Id = 58;
+            this.ButtonDiscordPresence.ImageOptions.Image = global::ArisenStudio.Properties.Resources.discord_status1;
+            this.ButtonDiscordPresence.LargeWidth = 74;
+            this.ButtonDiscordPresence.Name = "ButtonDiscordPresence";
+            this.ButtonDiscordPresence.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonDiscordPresence.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonDiscordPresence_CheckedChanged);
+            // 
+            // ButtonInstallModsToUSB
+            // 
+            this.ButtonInstallModsToUSB.Caption = "Install Mods\r\nto USB";
+            this.ButtonInstallModsToUSB.Id = 59;
+            this.ButtonInstallModsToUSB.ImageOptions.Image = global::ArisenStudio.Properties.Resources.usb_connection;
+            this.ButtonInstallModsToUSB.LargeWidth = 74;
+            this.ButtonInstallModsToUSB.Name = "ButtonInstallModsToUSB";
+            this.ButtonInstallModsToUSB.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonInstallModsToUSB.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonInstallModsToUSB_CheckedChanged);
+            // 
+            // ButtonHowToGuides
+            // 
+            this.ButtonHowToGuides.Caption = "How-To Guides";
+            this.ButtonHowToGuides.Id = 60;
+            this.ButtonHowToGuides.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.actions_question1;
+            this.ButtonHowToGuides.LargeWidth = 74;
+            this.ButtonHowToGuides.Name = "ButtonHowToGuides";
+            this.ButtonHowToGuides.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonHowToGuides.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonHowToGuides_ItemClick);
+            // 
+            // ButtonAbout
+            // 
+            this.ButtonAbout.Caption = "About";
+            this.ButtonAbout.Id = 61;
+            this.ButtonAbout.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.about;
+            this.ButtonAbout.LargeWidth = 74;
+            this.ButtonAbout.Name = "ButtonAbout";
+            this.ButtonAbout.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonAbout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonAbout_ItemClick);
+            // 
+            // ButtonOpenLogFile
+            // 
+            this.ButtonOpenLogFile.Caption = "Open Log File";
+            this.ButtonOpenLogFile.Id = 62;
+            this.ButtonOpenLogFile.ImageOptions.Image = global::ArisenStudio.Properties.Resources.log_file;
+            this.ButtonOpenLogFile.LargeWidth = 74;
+            this.ButtonOpenLogFile.Name = "ButtonOpenLogFile";
+            this.ButtonOpenLogFile.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonOpenLogFile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonOpenLogFile_ItemClick);
+            // 
+            // ButtonOpenLogFolder
+            // 
+            this.ButtonOpenLogFolder.Caption = "Open Log Folder";
+            this.ButtonOpenLogFolder.Id = 63;
+            this.ButtonOpenLogFolder.ImageOptions.Image = global::ArisenStudio.Properties.Resources.file_folder;
+            this.ButtonOpenLogFolder.LargeWidth = 74;
+            this.ButtonOpenLogFolder.Name = "ButtonOpenLogFolder";
+            this.ButtonOpenLogFolder.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonOpenLogFolder.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonOpenLogFolder_ItemClick);
+            // 
+            // ButtonRequestMods
+            // 
+            this.ButtonRequestMods.Caption = "Request Mods";
+            this.ButtonRequestMods.Id = 64;
+            this.ButtonRequestMods.ImageOptions.Image = global::ArisenStudio.Properties.Resources.form;
+            this.ButtonRequestMods.LargeWidth = 74;
+            this.ButtonRequestMods.Name = "ButtonRequestMods";
+            this.ButtonRequestMods.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonRequestMods.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonRequestMods_ItemClick);
+            // 
+            // ButtonSendFeedback
+            // 
+            this.ButtonSendFeedback.Caption = "Send Feedback";
+            this.ButtonSendFeedback.Id = 65;
+            this.ButtonSendFeedback.ImageOptions.Image = global::ArisenStudio.Properties.Resources.send_feedback;
+            this.ButtonSendFeedback.LargeWidth = 74;
+            this.ButtonSendFeedback.Name = "ButtonSendFeedback";
+            this.ButtonSendFeedback.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonSendFeedback.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonSendFeedback_ItemClick);
+            // 
+            // ButtonToolsXboxHDKey
+            // 
+            this.ButtonToolsXboxHDKey.Caption = "Xbox HD Key";
+            this.ButtonToolsXboxHDKey.Id = 66;
+            this.ButtonToolsXboxHDKey.ImageOptions.Image = global::ArisenStudio.Properties.Resources.key;
+            this.ButtonToolsXboxHDKey.LargeWidth = 74;
+            this.ButtonToolsXboxHDKey.Name = "ButtonToolsXboxHDKey";
+            this.ButtonToolsXboxHDKey.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonToolsXboxHDKey.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxHDKey_ItemClick);
+            // 
+            // StatusLabelHeaderCurrentGame
+            // 
+            this.StatusLabelHeaderCurrentGame.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.StatusLabelHeaderCurrentGame.AllowFocus = DevExpress.Utils.DefaultBoolean.False;
+            this.StatusLabelHeaderCurrentGame.Caption = "Current Game:";
+            this.StatusLabelHeaderCurrentGame.Id = 68;
+            this.StatusLabelHeaderCurrentGame.ItemAppearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.StatusLabelHeaderCurrentGame.ItemAppearance.Hovered.Options.UseFont = true;
+            this.StatusLabelHeaderCurrentGame.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.StatusLabelHeaderCurrentGame.ItemAppearance.Normal.Options.UseFont = true;
+            this.StatusLabelHeaderCurrentGame.Name = "StatusLabelHeaderCurrentGame";
+            this.StatusLabelHeaderCurrentGame.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            // 
+            // StatusLabelCurrentGame
+            // 
+            this.StatusLabelCurrentGame.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.StatusLabelCurrentGame.AllowFocus = DevExpress.Utils.DefaultBoolean.False;
+            this.StatusLabelCurrentGame.Caption = "n/a";
+            this.StatusLabelCurrentGame.Id = 69;
+            this.StatusLabelCurrentGame.ItemAppearance.Normal.Options.UseFont = true;
+            this.StatusLabelCurrentGame.Name = "StatusLabelCurrentGame";
+            this.StatusLabelCurrentGame.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            // 
+            // barStaticItem3
+            // 
+            this.barStaticItem3.Caption = "barStaticItem3";
+            this.barStaticItem3.Id = 74;
+            this.barStaticItem3.Name = "barStaticItem3";
+            // 
+            // ButtonSetupWizard
+            // 
+            this.ButtonSetupWizard.Caption = "Setup Wizard";
+            this.ButtonSetupWizard.Id = 76;
+            this.ButtonSetupWizard.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_project_setup;
+            this.ButtonSetupWizard.LargeWidth = 74;
+            this.ButtonSetupWizard.Name = "ButtonSetupWizard";
+            this.ButtonSetupWizard.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonSetupWizard.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonSetupWizard_ItemClick);
+            // 
+            // ButtonLocalFilesOpen
+            // 
+            this.ButtonLocalFilesOpen.Caption = "Open";
+            this.ButtonLocalFilesOpen.Id = 80;
+            this.ButtonLocalFilesOpen.Name = "ButtonLocalFilesOpen";
+            // 
+            // ButtonLocalFilesDelete
+            // 
+            this.ButtonLocalFilesDelete.Caption = "Delete";
+            this.ButtonLocalFilesDelete.Id = 81;
+            this.ButtonLocalFilesDelete.Name = "ButtonLocalFilesDelete";
+            // 
+            // ButtonLocalFilesRename
+            // 
+            this.ButtonLocalFilesRename.Caption = "Rename";
+            this.ButtonLocalFilesRename.Id = 82;
+            this.ButtonLocalFilesRename.Name = "ButtonLocalFilesRename";
+            // 
+            // ButtonLocalFilesRefresh
+            // 
+            this.ButtonLocalFilesRefresh.Caption = "Refresh";
+            this.ButtonLocalFilesRefresh.Id = 83;
+            this.ButtonLocalFilesRefresh.Name = "ButtonLocalFilesRefresh";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.ActAsDropDown = true;
+            this.barButtonItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barButtonItem1.AllowDrawArrow = false;
+            this.barButtonItem1.AllowDrawArrowInMenu = false;
+            this.barButtonItem1.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.barButtonItem1.DropDownControl = this.MenuTopInfo;
+            this.barButtonItem1.Id = 84;
+            this.barButtonItem1.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.dots_vertical;
+            this.barButtonItem1.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            // 
+            // MenuTopInfo
+            // 
+            this.MenuTopInfo.ItemLinks.Add(this.barButtonItem12);
+            this.MenuTopInfo.ItemLinks.Add(this.barButtonItem10);
+            this.MenuTopInfo.ItemLinks.Add(this.barButtonItem11);
+            this.MenuTopInfo.ItemLinks.Add(this.barButtonItem13);
+            this.MenuTopInfo.Name = "MenuTopInfo";
+            this.MenuTopInfo.Ribbon = this.RibbonControlMain;
+            // 
+            // barButtonItem12
+            // 
+            this.barButtonItem12.Caption = "Submit Request";
+            this.barButtonItem12.Id = 87;
+            this.barButtonItem12.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.barButtonItem12.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem12.ImageOptions.SvgImage")));
+            this.barButtonItem12.Name = "barButtonItem12";
+            // 
+            // barButtonItem10
+            // 
+            this.barButtonItem10.Caption = "Send Feedback";
+            this.barButtonItem10.Id = 85;
+            this.barButtonItem10.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.barButtonItem10.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.bug;
+            this.barButtonItem10.Name = "barButtonItem10";
+            // 
+            // barButtonItem11
+            // 
+            this.barButtonItem11.Caption = "Open Log Folder";
+            this.barButtonItem11.Id = 86;
+            this.barButtonItem11.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.barButtonItem11.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_opened_folder;
+            this.barButtonItem11.Name = "barButtonItem11";
+            // 
+            // barButtonItem13
+            // 
+            this.barButtonItem13.Caption = "About";
+            this.barButtonItem13.Id = 88;
+            this.barButtonItem13.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.barButtonItem13.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.about;
+            this.barButtonItem13.Name = "barButtonItem13";
+            // 
+            // ButtonToolsXboxTrainers
+            // 
+            this.ButtonToolsXboxTrainers.Caption = "Aurora Trainers";
+            this.ButtonToolsXboxTrainers.Id = 89;
+            this.ButtonToolsXboxTrainers.LargeWidth = 74;
+            this.ButtonToolsXboxTrainers.Name = "ButtonToolsXboxTrainers";
+            this.ButtonToolsXboxTrainers.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // ButtonToolsPsGameCheats
+            // 
+            this.ButtonToolsPsGameCheats.Caption = "Game Cheats";
+            this.ButtonToolsPsGameCheats.Id = 90;
+            this.ButtonToolsPsGameCheats.LargeWidth = 74;
+            this.ButtonToolsPsGameCheats.Name = "ButtonToolsPsGameCheats";
+            this.ButtonToolsPsGameCheats.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barButtonItem14
+            // 
+            this.barButtonItem14.Caption = "New Update Available";
+            this.barButtonItem14.CloseSubMenuOnClickMode = DevExpress.Utils.DefaultBoolean.True;
+            this.barButtonItem14.Id = 94;
+            this.barButtonItem14.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.barButtonItem14.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.available_update;
+            this.barButtonItem14.ItemAppearance.Disabled.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.barButtonItem14.ItemAppearance.Disabled.Options.UseFont = true;
+            this.barButtonItem14.ItemAppearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.barButtonItem14.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barButtonItem14.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.barButtonItem14.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem14.ItemAppearance.Pressed.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.barButtonItem14.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barButtonItem14.Name = "barButtonItem14";
+            this.barButtonItem14.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            // 
+            // barButtonItem15
+            // 
+            this.barButtonItem15.Caption = "Download Update";
+            this.barButtonItem15.Id = 95;
+            this.barButtonItem15.Name = "barButtonItem15";
+            // 
+            // barCheckItem2
+            // 
+            this.barCheckItem2.Caption = "Update";
+            this.barCheckItem2.Id = 96;
+            this.barCheckItem2.Name = "barCheckItem2";
+            // 
+            // RibbonPageHome
+            // 
+            this.RibbonPageHome.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.RibbonGroupConnection,
+            this.RibbonGroupConnsoleProfiles,
+            this.RibbonGroupQuickSettings,
+            this.RibbonGroupHelp});
+            this.RibbonPageHome.Name = "RibbonPageHome";
+            this.RibbonPageHome.Text = "Home";
+            // 
+            // RibbonGroupConnection
+            // 
+            this.RibbonGroupConnection.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.True;
+            this.RibbonGroupConnection.ItemLinks.Add(this.ButtonConnectConsole);
+            this.RibbonGroupConnection.ItemLinks.Add(this.ButtonDisconnectConsole);
+            this.RibbonGroupConnection.ItemsLayout = DevExpress.XtraBars.Ribbon.RibbonPageGroupItemsLayout.OneRow;
+            this.RibbonGroupConnection.Name = "RibbonGroupConnection";
+            this.RibbonGroupConnection.Text = "Connection";
+            // 
+            // RibbonGroupConnsoleProfiles
+            // 
+            this.RibbonGroupConnsoleProfiles.ItemLinks.Add(this.ButtonAddNewProfile);
+            this.RibbonGroupConnsoleProfiles.ItemLinks.Add(this.ButtonScanXboxConsoles);
+            this.RibbonGroupConnsoleProfiles.ItemLinks.Add(this.ButtonEditProfiles);
+            this.RibbonGroupConnsoleProfiles.ItemLinks.Add(this.ButtonChangeProfile);
+            this.RibbonGroupConnsoleProfiles.ItemsLayout = DevExpress.XtraBars.Ribbon.RibbonPageGroupItemsLayout.OneRow;
+            this.RibbonGroupConnsoleProfiles.Name = "RibbonGroupConnsoleProfiles";
+            this.RibbonGroupConnsoleProfiles.Text = "Console Profiles";
+            // 
+            // RibbonGroupQuickSettings
+            // 
+            this.RibbonGroupQuickSettings.ItemLinks.Add(this.ButtonHowToGuides);
+            this.RibbonGroupQuickSettings.ItemLinks.Add(this.ButtonSetupWizard);
+            this.RibbonGroupQuickSettings.ItemLinks.Add(this.ButtonDownloadsFolder);
+            this.RibbonGroupQuickSettings.ItemLinks.Add(this.ButtonDiscordPresence);
+            this.RibbonGroupQuickSettings.ItemLinks.Add(this.ButtonInstallModsToUSB);
+            this.RibbonGroupQuickSettings.ItemLinks.Add(this.ButtonAdvancedSettings);
+            this.RibbonGroupQuickSettings.Name = "RibbonGroupQuickSettings";
+            this.RibbonGroupQuickSettings.Text = "Quick Settings";
+            // 
+            // RibbonGroupHelp
+            // 
+            this.RibbonGroupHelp.ItemLinks.Add(this.ButtonAbout);
+            this.RibbonGroupHelp.ItemLinks.Add(this.ButtonOpenLogFile);
+            this.RibbonGroupHelp.ItemLinks.Add(this.ButtonOpenLogFolder);
+            this.RibbonGroupHelp.ItemLinks.Add(this.ButtonRequestMods);
+            this.RibbonGroupHelp.ItemLinks.Add(this.ButtonSendFeedback);
+            this.RibbonGroupHelp.Name = "RibbonGroupHelp";
+            this.RibbonGroupHelp.Text = "Help";
+            // 
+            // RibbonPageTools
+            // 
+            this.RibbonPageTools.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.RibbonGroupModdingTools,
+            this.RibbonGroupWebManCommands,
+            this.RibbonGroupXbdmCommands});
+            this.RibbonPageTools.Name = "RibbonPageTools";
+            this.RibbonPageTools.Text = "Tools";
+            // 
+            // RibbonGroupModdingTools
+            // 
+            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsPsGameUpdates);
+            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsPsBackupFilesManager);
+            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsPsPackageManager);
+            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsPsConsoleManager);
+            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsPsGameRegions);
+            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsPsBootPluginsEditor);
+            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsXboxGameSaveResigner);
+            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsXboxHDKey);
+            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsXboxGamesLauncher);
+            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsXboxModuleLoader);
+            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsXboxXuidSpoofer);
+            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsXboxDashlaunchEditor);
+            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsXboxTrainers);
+            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsPsGameCheats);
+            this.RibbonGroupModdingTools.Name = "RibbonGroupModdingTools";
+            this.RibbonGroupModdingTools.Text = "Modding Tools";
+            // 
+            // RibbonGroupWebManCommands
+            // 
+            this.RibbonGroupWebManCommands.ItemLinks.Add(this.ButtonToolsPsPower);
+            this.RibbonGroupWebManCommands.ItemLinks.Add(this.ButtonToolsPsGames);
+            this.RibbonGroupWebManCommands.ItemLinks.Add(this.ButtonToolsPsNotifyMessage);
+            this.RibbonGroupWebManCommands.ItemLinks.Add(this.ButtonToolsPsVirtualController);
+            this.RibbonGroupWebManCommands.Name = "RibbonGroupWebManCommands";
+            this.RibbonGroupWebManCommands.Text = "webMAN Commands";
+            // 
+            // RibbonGroupXbdmCommands
+            // 
+            this.RibbonGroupXbdmCommands.ItemLinks.Add(this.ButtonToolsXboxPower);
+            this.RibbonGroupXbdmCommands.ItemLinks.Add(this.ButtonToolsXboxTakeScreenshot);
+            this.RibbonGroupXbdmCommands.ItemLinks.Add(this.ButtonToolsXboxConsoleManager);
+            this.RibbonGroupXbdmCommands.ItemLinks.Add(this.ButtonToolsXboxNotifyMessage);
+            this.RibbonGroupXbdmCommands.Name = "RibbonGroupXbdmCommands";
+            this.RibbonGroupXbdmCommands.Text = "XBDM Commands";
+            // 
+            // RibbonStatusBar
+            // 
+            this.RibbonStatusBar.ItemLinks.Add(this.StatusLabelHeaderStatus);
+            this.RibbonStatusBar.ItemLinks.Add(this.StatusLabelStatus);
+            this.RibbonStatusBar.ItemLinks.Add(this.StatusLabelHeaderIsConnected);
+            this.RibbonStatusBar.ItemLinks.Add(this.StatusLabelHeaderCurrentGame, true);
+            this.RibbonStatusBar.ItemLinks.Add(this.StatusLabelCurrentGame);
+            this.RibbonStatusBar.Location = new System.Drawing.Point(0, 762);
+            this.RibbonStatusBar.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.RibbonStatusBar.Name = "RibbonStatusBar";
+            this.RibbonStatusBar.Ribbon = this.RibbonControlMain;
+            this.RibbonStatusBar.ShowSizeGrip = false;
+            this.RibbonStatusBar.Size = new System.Drawing.Size(1498, 31);
+            // 
+            // TextBoxSettingsPackagesInstallPathPS4
+            // 
+            this.TextBoxSettingsPackagesInstallPathPS4.Location = new System.Drawing.Point(0, 205);
+            this.TextBoxSettingsPackagesInstallPathPS4.Margin = new System.Windows.Forms.Padding(0, 5, 3, 10);
+            this.TextBoxSettingsPackagesInstallPathPS4.MenuManager = this.RibbonControlMain;
+            this.TextBoxSettingsPackagesInstallPathPS4.Name = "TextBoxSettingsPackagesInstallPathPS4";
+            this.TextBoxSettingsPackagesInstallPathPS4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxSettingsPackagesInstallPathPS4.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxSettingsPackagesInstallPathPS4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK)});
+            this.TextBoxSettingsPackagesInstallPathPS4.Size = new System.Drawing.Size(423, 24);
+            this.TextBoxSettingsPackagesInstallPathPS4.TabIndex = 24;
+            this.TextBoxSettingsPackagesInstallPathPS4.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.TextBoxSettingsPackagesInstallPathPS4_ButtonClick);
+            // 
+            // TextBoxSettingsPackagesInstallPathPS3
+            // 
+            this.TextBoxSettingsPackagesInstallPathPS3.Location = new System.Drawing.Point(0, 74);
+            this.TextBoxSettingsPackagesInstallPathPS3.Margin = new System.Windows.Forms.Padding(0, 5, 3, 10);
+            this.TextBoxSettingsPackagesInstallPathPS3.MenuManager = this.RibbonControlMain;
+            this.TextBoxSettingsPackagesInstallPathPS3.Name = "TextBoxSettingsPackagesInstallPathPS3";
+            this.TextBoxSettingsPackagesInstallPathPS3.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxSettingsPackagesInstallPathPS3.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxSettingsPackagesInstallPathPS3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK)});
+            this.TextBoxSettingsPackagesInstallPathPS3.Size = new System.Drawing.Size(423, 24);
+            this.TextBoxSettingsPackagesInstallPathPS3.TabIndex = 23;
+            this.TextBoxSettingsPackagesInstallPathPS3.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.TextBoxSettingsPackagesInstallPathPS3_ButtonClick);
+            // 
+            // TextBoxSettingsLaunchIniFilePath
+            // 
+            this.TextBoxSettingsLaunchIniFilePath.Location = new System.Drawing.Point(0, 338);
+            this.TextBoxSettingsLaunchIniFilePath.Margin = new System.Windows.Forms.Padding(0, 5, 3, 8);
+            this.TextBoxSettingsLaunchIniFilePath.MenuManager = this.RibbonControlMain;
+            this.TextBoxSettingsLaunchIniFilePath.Name = "TextBoxSettingsLaunchIniFilePath";
+            this.TextBoxSettingsLaunchIniFilePath.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxSettingsLaunchIniFilePath.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxSettingsLaunchIniFilePath.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK)});
+            this.TextBoxSettingsLaunchIniFilePath.Size = new System.Drawing.Size(423, 24);
+            this.TextBoxSettingsLaunchIniFilePath.TabIndex = 25;
+            this.TextBoxSettingsLaunchIniFilePath.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.TextBoxSettingsLaunchIniFilePath_ButtonClick);
             // 
             // LabelSettingsAuroraPath
             // 
+            this.LabelSettingsAuroraPath.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsAuroraPath.Appearance.Options.UseFont = true;
-            this.LabelSettingsAuroraPath.Location = new System.Drawing.Point(0, 369);
-            this.LabelSettingsAuroraPath.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.LabelSettingsAuroraPath.Location = new System.Drawing.Point(0, 373);
+            this.LabelSettingsAuroraPath.Margin = new System.Windows.Forms.Padding(0, 3, 3, 4);
             this.LabelSettingsAuroraPath.Name = "LabelSettingsAuroraPath";
-            this.LabelSettingsAuroraPath.Size = new System.Drawing.Size(61, 13);
+            this.LabelSettingsAuroraPath.Size = new System.Drawing.Size(99, 15);
             this.LabelSettingsAuroraPath.TabIndex = 1183;
-            this.LabelSettingsAuroraPath.Text = "Aurora Path";
+            this.LabelSettingsAuroraPath.Text = "Aurora Folder Path";
             // 
             // SeparatorSettingsFiles1
             // 
             this.SeparatorSettingsFiles1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SeparatorSettingsFiles1.LineColor = System.Drawing.Color.Gray;
-            this.SeparatorSettingsFiles1.Location = new System.Drawing.Point(0, 102);
+            this.SeparatorSettingsFiles1.Location = new System.Drawing.Point(0, 111);
             this.SeparatorSettingsFiles1.Name = "SeparatorSettingsFiles1";
             this.SeparatorSettingsFiles1.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.SeparatorSettingsFiles1.Size = new System.Drawing.Size(1288, 24);
@@ -7227,7 +8296,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelSettingsFilesPS3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelSettingsFilesPS3.Appearance.Options.UseFont = true;
             this.LabelSettingsFilesPS3.Location = new System.Drawing.Point(0, 16);
-            this.LabelSettingsFilesPS3.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
+            this.LabelSettingsFilesPS3.Margin = new System.Windows.Forms.Padding(3, 16, 3, 12);
             this.LabelSettingsFilesPS3.Name = "LabelSettingsFilesPS3";
             this.LabelSettingsFilesPS3.Size = new System.Drawing.Size(72, 15);
             this.LabelSettingsFilesPS3.TabIndex = 1173;
@@ -7237,64 +8306,41 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.LabelSettingsFilesPS4.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelSettingsFilesPS4.Appearance.Options.UseFont = true;
-            this.LabelSettingsFilesPS4.Location = new System.Drawing.Point(0, 145);
-            this.LabelSettingsFilesPS4.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
+            this.LabelSettingsFilesPS4.Location = new System.Drawing.Point(0, 148);
+            this.LabelSettingsFilesPS4.Margin = new System.Windows.Forms.Padding(3, 10, 3, 12);
             this.LabelSettingsFilesPS4.Name = "LabelSettingsFilesPS4";
             this.LabelSettingsFilesPS4.Size = new System.Drawing.Size(72, 15);
             this.LabelSettingsFilesPS4.TabIndex = 1180;
             this.LabelSettingsFilesPS4.Text = "PlayStation 4";
             // 
-            // TextBoxSettingsLaunchIniFilePath
-            // 
-            this.TextBoxSettingsLaunchIniFilePath.Location = new System.Drawing.Point(0, 329);
-            this.TextBoxSettingsLaunchIniFilePath.Margin = new System.Windows.Forms.Padding(3, 3, 3, 8);
-            this.TextBoxSettingsLaunchIniFilePath.Name = "TextBoxSettingsLaunchIniFilePath";
-            this.TextBoxSettingsLaunchIniFilePath.Size = new System.Drawing.Size(701, 22);
-            this.TextBoxSettingsLaunchIniFilePath.TabIndex = 1171;
-            this.TextBoxSettingsLaunchIniFilePath.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSettingsLaunchIniFilePath_KeyDown);
-            // 
             // LabelSettingsPackagesFilePathPS4
             // 
+            this.LabelSettingsPackagesFilePathPS4.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsPackagesFilePathPS4.Appearance.Options.UseFont = true;
-            this.LabelSettingsPackagesFilePathPS4.Location = new System.Drawing.Point(0, 178);
+            this.LabelSettingsPackagesFilePathPS4.Location = new System.Drawing.Point(0, 181);
+            this.LabelSettingsPackagesFilePathPS4.Margin = new System.Windows.Forms.Padding(0, 3, 3, 4);
             this.LabelSettingsPackagesFilePathPS4.Name = "LabelSettingsPackagesFilePathPS4";
-            this.LabelSettingsPackagesFilePathPS4.Size = new System.Drawing.Size(128, 13);
+            this.LabelSettingsPackagesFilePathPS4.Size = new System.Drawing.Size(131, 15);
             this.LabelSettingsPackagesFilePathPS4.TabIndex = 1179;
             this.LabelSettingsPackagesFilePathPS4.Text = "Packages File Install Path";
             // 
             // LabelSettingsLaunchIniFilePath
             // 
+            this.LabelSettingsLaunchIniFilePath.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsLaunchIniFilePath.Appearance.Options.UseFont = true;
-            this.LabelSettingsLaunchIniFilePath.Location = new System.Drawing.Point(0, 307);
+            this.LabelSettingsLaunchIniFilePath.Location = new System.Drawing.Point(0, 314);
+            this.LabelSettingsLaunchIniFilePath.Margin = new System.Windows.Forms.Padding(0, 3, 3, 4);
             this.LabelSettingsLaunchIniFilePath.Name = "LabelSettingsLaunchIniFilePath";
-            this.LabelSettingsLaunchIniFilePath.Size = new System.Drawing.Size(98, 13);
+            this.LabelSettingsLaunchIniFilePath.Size = new System.Drawing.Size(100, 15);
             this.LabelSettingsLaunchIniFilePath.TabIndex = 1172;
             this.LabelSettingsLaunchIniFilePath.Text = "launch.ini File Path";
-            // 
-            // TextBoxSettingsPackagesInstallPathPS4
-            // 
-            this.TextBoxSettingsPackagesInstallPathPS4.Location = new System.Drawing.Point(0, 200);
-            this.TextBoxSettingsPackagesInstallPathPS4.Margin = new System.Windows.Forms.Padding(3, 3, 3, 8);
-            this.TextBoxSettingsPackagesInstallPathPS4.Name = "TextBoxSettingsPackagesInstallPathPS4";
-            this.TextBoxSettingsPackagesInstallPathPS4.Size = new System.Drawing.Size(701, 22);
-            this.TextBoxSettingsPackagesInstallPathPS4.TabIndex = 1178;
-            this.TextBoxSettingsPackagesInstallPathPS4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSettingsPackagesInstallPathPS4_KeyDown);
-            // 
-            // TextBoxSettingsPackagesInstallPathPS3
-            // 
-            this.TextBoxSettingsPackagesInstallPathPS3.Location = new System.Drawing.Point(0, 71);
-            this.TextBoxSettingsPackagesInstallPathPS3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 8);
-            this.TextBoxSettingsPackagesInstallPathPS3.Name = "TextBoxSettingsPackagesInstallPathPS3";
-            this.TextBoxSettingsPackagesInstallPathPS3.Size = new System.Drawing.Size(701, 22);
-            this.TextBoxSettingsPackagesInstallPathPS3.TabIndex = 1174;
-            this.TextBoxSettingsPackagesInstallPathPS3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSettingsPackagesFilePathPS3_KeyDown);
             // 
             // SeparatorSettingsFiles2
             // 
             this.SeparatorSettingsFiles2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SeparatorSettingsFiles2.LineColor = System.Drawing.Color.Gray;
-            this.SeparatorSettingsFiles2.Location = new System.Drawing.Point(0, 231);
+            this.SeparatorSettingsFiles2.Location = new System.Drawing.Point(0, 242);
             this.SeparatorSettingsFiles2.Name = "SeparatorSettingsFiles2";
             this.SeparatorSettingsFiles2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.SeparatorSettingsFiles2.Size = new System.Drawing.Size(1288, 24);
@@ -7302,10 +8348,12 @@ namespace ArisenStudio.Forms.Windows
             // 
             // LabelSettingsPackagesFilePathPS3
             // 
+            this.LabelSettingsPackagesFilePathPS3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsPackagesFilePathPS3.Appearance.Options.UseFont = true;
-            this.LabelSettingsPackagesFilePathPS3.Location = new System.Drawing.Point(0, 49);
+            this.LabelSettingsPackagesFilePathPS3.Location = new System.Drawing.Point(0, 50);
+            this.LabelSettingsPackagesFilePathPS3.Margin = new System.Windows.Forms.Padding(0, 3, 3, 4);
             this.LabelSettingsPackagesFilePathPS3.Name = "LabelSettingsPackagesFilePathPS3";
-            this.LabelSettingsPackagesFilePathPS3.Size = new System.Drawing.Size(128, 13);
+            this.LabelSettingsPackagesFilePathPS3.Size = new System.Drawing.Size(131, 15);
             this.LabelSettingsPackagesFilePathPS3.TabIndex = 1175;
             this.LabelSettingsPackagesFilePathPS3.Text = "Packages File Install Path";
             // 
@@ -7313,8 +8361,8 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.LabelSettingsFilesXbox.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelSettingsFilesXbox.Appearance.Options.UseFont = true;
-            this.LabelSettingsFilesXbox.Location = new System.Drawing.Point(0, 274);
-            this.LabelSettingsFilesXbox.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
+            this.LabelSettingsFilesXbox.Location = new System.Drawing.Point(0, 281);
+            this.LabelSettingsFilesXbox.Margin = new System.Windows.Forms.Padding(3, 12, 3, 12);
             this.LabelSettingsFilesXbox.Name = "LabelSettingsFilesXbox";
             this.LabelSettingsFilesXbox.Size = new System.Drawing.Size(53, 15);
             this.LabelSettingsFilesXbox.TabIndex = 1176;
@@ -7323,308 +8371,138 @@ namespace ArisenStudio.Forms.Windows
             // TabPageDownload
             // 
             this.TabPageDownload.AutoScroll = true;
-            this.TabPageDownload.Caption = "Download";
-            this.TabPageDownload.Controls.Add(this.ButtonSettingsPathResources);
-            this.TabPageDownload.Controls.Add(this.LabelSettingsPathBaseDirectory);
-            this.TabPageDownload.Controls.Add(this.LabelSettingsPathResources);
-            this.TabPageDownload.Controls.Add(this.TextBoxSettingsPathBaseDirectory);
-            this.TabPageDownload.Controls.Add(this.TextBoxSettingsPathResources);
-            this.TabPageDownload.Controls.Add(this.TextBoxSettingsPathGameMods);
-            this.TabPageDownload.Controls.Add(this.ButtonSettingsPathHomebrew);
-            this.TabPageDownload.Controls.Add(this.LabelSettingsPathGameMods);
-            this.TabPageDownload.Controls.Add(this.LabelSettingsPathHomebrew);
-            this.TabPageDownload.Controls.Add(this.ButtonSettingsPathBaseDirectory);
-            this.TabPageDownload.Controls.Add(this.TextBoxSettingsPathHomebrew);
-            this.TabPageDownload.Controls.Add(this.ButtonSettingsPathGameMods);
-            this.TabPageDownload.Controls.Add(this.LabelSettingsDirectoriesMustBeWritable);
-            this.TabPageDownload.Controls.Add(this.TextBoxSettingsPathPackages);
-            this.TabPageDownload.Controls.Add(this.LabelSettingsReferToBaseDirectory);
-            this.TabPageDownload.Controls.Add(this.LabelSettingsPathPackages);
-            this.TabPageDownload.Controls.Add(this.ButtonSettingsPathDownloads);
-            this.TabPageDownload.Controls.Add(this.ButtonSettingsPathPackages);
-            this.TabPageDownload.Controls.Add(this.LabelSettingsPathDownloads);
-            this.TabPageDownload.Controls.Add(this.TextBoxSettingsPathPlugins);
+            this.TabPageDownload.Caption = "Downloads";
+            this.TabPageDownload.Controls.Add(this.TextBoxSettingsPathTemp);
             this.TabPageDownload.Controls.Add(this.TextBoxSettingsPathDownloads);
-            this.TabPageDownload.Controls.Add(this.LabelSettingsPathPlugins);
-            this.TabPageDownload.Controls.Add(this.ButtonSettingsPathGameSaves);
-            this.TabPageDownload.Controls.Add(this.ButtonSettingsPathPlugins);
-            this.TabPageDownload.Controls.Add(this.LabelSettingsPathGameSaves);
-            this.TabPageDownload.Controls.Add(this.TextBoxSettingsPathGameSaves);
+            this.TabPageDownload.Controls.Add(this.TextBoxSettingsPathAppData);
+            this.TabPageDownload.Controls.Add(this.LabelSettingsAppData);
+            this.TabPageDownload.Controls.Add(this.LabelSettingsPathBaseDirectory);
+            this.TabPageDownload.Controls.Add(this.LabelSettingsPathTemp);
+            this.TabPageDownload.Controls.Add(this.LabelSettingsReferToBaseDirectory);
+            this.TabPageDownload.Controls.Add(this.LabelSettingsPathDownloads);
             this.TabPageDownload.Name = "TabPageDownload";
+            this.TabPageDownload.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
             this.TabPageDownload.Size = new System.Drawing.Size(1288, 533);
             // 
-            // ButtonSettingsPathResources
+            // TextBoxSettingsPathTemp
             // 
-            this.ButtonSettingsPathResources.Location = new System.Drawing.Point(732, 350);
-            this.ButtonSettingsPathResources.Name = "ButtonSettingsPathResources";
-            this.ButtonSettingsPathResources.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonSettingsPathResources.Size = new System.Drawing.Size(40, 20);
-            this.ButtonSettingsPathResources.TabIndex = 1207;
-            this.ButtonSettingsPathResources.Text = "...";
-            this.ButtonSettingsPathResources.Click += new System.EventHandler(this.ButtonSettingsPathResources_Click);
+            this.TextBoxSettingsPathTemp.Location = new System.Drawing.Point(0, 192);
+            this.TextBoxSettingsPathTemp.Margin = new System.Windows.Forms.Padding(0, 5, 3, 8);
+            this.TextBoxSettingsPathTemp.MenuManager = this.RibbonControlMain;
+            this.TextBoxSettingsPathTemp.Name = "TextBoxSettingsPathTemp";
+            this.TextBoxSettingsPathTemp.Properties.AllowButtonNavigation = DevExpress.Utils.DefaultBoolean.True;
+            this.TextBoxSettingsPathTemp.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxSettingsPathTemp.Properties.Appearance.Options.UseFont = true;
+            editorButtonImageOptions1.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            editorButtonImageOptions1.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            editorButtonImageOptions1.ImageToTextIndent = 0;
+            editorButtonImageOptions1.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            editorButtonImageOptions1.SvgImage = global::ArisenStudio.Properties.Resources.icons8_opened_folder;
+            editorButtonImageOptions1.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.TextBoxSettingsPathTemp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "Browse", null, null, DevExpress.Utils.ToolTipAnchor.Cursor)});
+            this.TextBoxSettingsPathTemp.Size = new System.Drawing.Size(726, 24);
+            this.TextBoxSettingsPathTemp.TabIndex = 30;
+            this.TextBoxSettingsPathTemp.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.TextBoxSettingsPathTemp_ButtonClick);
+            // 
+            // TextBoxSettingsPathDownloads
+            // 
+            this.TextBoxSettingsPathDownloads.Location = new System.Drawing.Point(0, 133);
+            this.TextBoxSettingsPathDownloads.Margin = new System.Windows.Forms.Padding(0, 5, 3, 8);
+            this.TextBoxSettingsPathDownloads.MenuManager = this.RibbonControlMain;
+            this.TextBoxSettingsPathDownloads.Name = "TextBoxSettingsPathDownloads";
+            this.TextBoxSettingsPathDownloads.Properties.AllowButtonNavigation = DevExpress.Utils.DefaultBoolean.True;
+            this.TextBoxSettingsPathDownloads.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxSettingsPathDownloads.Properties.Appearance.Options.UseFont = true;
+            editorButtonImageOptions2.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            editorButtonImageOptions2.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            editorButtonImageOptions2.ImageToTextIndent = 0;
+            editorButtonImageOptions2.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            editorButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions2.SvgImage")));
+            editorButtonImageOptions2.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.TextBoxSettingsPathDownloads.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "Browse", null, null, DevExpress.Utils.ToolTipAnchor.Cursor)});
+            this.TextBoxSettingsPathDownloads.Size = new System.Drawing.Size(726, 24);
+            this.TextBoxSettingsPathDownloads.TabIndex = 29;
+            this.TextBoxSettingsPathDownloads.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.TextBoxSettingsPathDownloads_ButtonClick);
+            // 
+            // TextBoxSettingsPathAppData
+            // 
+            this.TextBoxSettingsPathAppData.Location = new System.Drawing.Point(0, 74);
+            this.TextBoxSettingsPathAppData.Margin = new System.Windows.Forms.Padding(0, 5, 3, 8);
+            this.TextBoxSettingsPathAppData.MenuManager = this.RibbonControlMain;
+            this.TextBoxSettingsPathAppData.Name = "TextBoxSettingsPathAppData";
+            this.TextBoxSettingsPathAppData.Properties.AllowButtonNavigation = DevExpress.Utils.DefaultBoolean.True;
+            this.TextBoxSettingsPathAppData.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxSettingsPathAppData.Properties.Appearance.Options.UseFont = true;
+            editorButtonImageOptions3.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            editorButtonImageOptions3.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            editorButtonImageOptions3.ImageToTextIndent = 0;
+            editorButtonImageOptions3.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            editorButtonImageOptions3.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions3.SvgImage")));
+            editorButtonImageOptions3.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.TextBoxSettingsPathAppData.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "Browse", null, null, DevExpress.Utils.ToolTipAnchor.Cursor)});
+            this.TextBoxSettingsPathAppData.Size = new System.Drawing.Size(726, 24);
+            this.TextBoxSettingsPathAppData.TabIndex = 28;
+            this.TextBoxSettingsPathAppData.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.TextBoxSettingsPathAppData_ButtonClick);
+            // 
+            // LabelSettingsAppData
+            // 
+            this.LabelSettingsAppData.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelSettingsAppData.Appearance.Options.UseFont = true;
+            this.LabelSettingsAppData.Location = new System.Drawing.Point(0, 50);
+            this.LabelSettingsAppData.Margin = new System.Windows.Forms.Padding(0, 3, 3, 4);
+            this.LabelSettingsAppData.Name = "LabelSettingsAppData";
+            this.LabelSettingsAppData.Size = new System.Drawing.Size(49, 15);
+            this.LabelSettingsAppData.TabIndex = 1208;
+            this.LabelSettingsAppData.Text = "App Data";
             // 
             // LabelSettingsPathBaseDirectory
             // 
             this.LabelSettingsPathBaseDirectory.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelSettingsPathBaseDirectory.Appearance.Options.UseFont = true;
             this.LabelSettingsPathBaseDirectory.Location = new System.Drawing.Point(0, 16);
-            this.LabelSettingsPathBaseDirectory.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
+            this.LabelSettingsPathBaseDirectory.Margin = new System.Windows.Forms.Padding(0, 3, 3, 4);
             this.LabelSettingsPathBaseDirectory.Name = "LabelSettingsPathBaseDirectory";
-            this.LabelSettingsPathBaseDirectory.Size = new System.Drawing.Size(82, 15);
+            this.LabelSettingsPathBaseDirectory.Size = new System.Drawing.Size(52, 15);
             this.LabelSettingsPathBaseDirectory.TabIndex = 1179;
-            this.LabelSettingsPathBaseDirectory.Text = "Base Directory";
+            this.LabelSettingsPathBaseDirectory.Text = "Locations";
             // 
-            // LabelSettingsPathResources
+            // LabelSettingsPathTemp
             // 
-            this.LabelSettingsPathResources.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelSettingsPathResources.Appearance.Options.UseFont = true;
-            this.LabelSettingsPathResources.Location = new System.Drawing.Point(0, 316);
-            this.LabelSettingsPathResources.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.LabelSettingsPathResources.Name = "LabelSettingsPathResources";
-            this.LabelSettingsPathResources.Size = new System.Drawing.Size(57, 15);
-            this.LabelSettingsPathResources.TabIndex = 1205;
-            this.LabelSettingsPathResources.Text = "Resources";
-            // 
-            // TextBoxSettingsPathBaseDirectory
-            // 
-            this.TextBoxSettingsPathBaseDirectory.EditValue = "";
-            this.TextBoxSettingsPathBaseDirectory.Location = new System.Drawing.Point(0, 50);
-            this.TextBoxSettingsPathBaseDirectory.Name = "TextBoxSettingsPathBaseDirectory";
-            this.TextBoxSettingsPathBaseDirectory.Properties.MaxLength = 256;
-            this.TextBoxSettingsPathBaseDirectory.Size = new System.Drawing.Size(726, 22);
-            this.TextBoxSettingsPathBaseDirectory.TabIndex = 1181;
-            this.TextBoxSettingsPathBaseDirectory.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPathBaseDirectory_EditValueChanged);
-            this.TextBoxSettingsPathBaseDirectory.Leave += new System.EventHandler(this.TextBoxSettingsPathBaseDirectory_Leave);
-            // 
-            // TextBoxSettingsPathResources
-            // 
-            this.TextBoxSettingsPathResources.EditValue = "";
-            this.TextBoxSettingsPathResources.Location = new System.Drawing.Point(0, 350);
-            this.TextBoxSettingsPathResources.Name = "TextBoxSettingsPathResources";
-            this.TextBoxSettingsPathResources.Properties.MaxLength = 256;
-            this.TextBoxSettingsPathResources.Size = new System.Drawing.Size(726, 22);
-            this.TextBoxSettingsPathResources.TabIndex = 1206;
-            this.TextBoxSettingsPathResources.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPathResources_EditValueChanged);
-            this.TextBoxSettingsPathResources.Leave += new System.EventHandler(this.TextBoxSettingsPathResources_Leave);
-            // 
-            // TextBoxSettingsPathGameMods
-            // 
-            this.TextBoxSettingsPathGameMods.EditValue = "";
-            this.TextBoxSettingsPathGameMods.Location = new System.Drawing.Point(0, 200);
-            this.TextBoxSettingsPathGameMods.Name = "TextBoxSettingsPathGameMods";
-            this.TextBoxSettingsPathGameMods.Properties.MaxLength = 256;
-            this.TextBoxSettingsPathGameMods.Size = new System.Drawing.Size(726, 22);
-            this.TextBoxSettingsPathGameMods.TabIndex = 1185;
-            this.TextBoxSettingsPathGameMods.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPathGameMods_EditValueChanged);
-            this.TextBoxSettingsPathGameMods.Leave += new System.EventHandler(this.TextBoxSettingsPathGameMods_Leave);
-            // 
-            // ButtonSettingsPathHomebrew
-            // 
-            this.ButtonSettingsPathHomebrew.Location = new System.Drawing.Point(732, 275);
-            this.ButtonSettingsPathHomebrew.Name = "ButtonSettingsPathHomebrew";
-            this.ButtonSettingsPathHomebrew.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonSettingsPathHomebrew.Size = new System.Drawing.Size(40, 20);
-            this.ButtonSettingsPathHomebrew.TabIndex = 1204;
-            this.ButtonSettingsPathHomebrew.Text = "...";
-            this.ButtonSettingsPathHomebrew.Click += new System.EventHandler(this.ButtonSettingsPathHomebrew_Click);
-            // 
-            // LabelSettingsPathGameMods
-            // 
-            this.LabelSettingsPathGameMods.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelSettingsPathGameMods.Appearance.Options.UseFont = true;
-            this.LabelSettingsPathGameMods.Location = new System.Drawing.Point(0, 166);
-            this.LabelSettingsPathGameMods.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.LabelSettingsPathGameMods.Name = "LabelSettingsPathGameMods";
-            this.LabelSettingsPathGameMods.Size = new System.Drawing.Size(66, 15);
-            this.LabelSettingsPathGameMods.TabIndex = 1184;
-            this.LabelSettingsPathGameMods.Text = "Game Mods";
-            // 
-            // LabelSettingsPathHomebrew
-            // 
-            this.LabelSettingsPathHomebrew.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelSettingsPathHomebrew.Appearance.Options.UseFont = true;
-            this.LabelSettingsPathHomebrew.Location = new System.Drawing.Point(0, 241);
-            this.LabelSettingsPathHomebrew.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.LabelSettingsPathHomebrew.Name = "LabelSettingsPathHomebrew";
-            this.LabelSettingsPathHomebrew.Size = new System.Drawing.Size(63, 15);
-            this.LabelSettingsPathHomebrew.TabIndex = 1202;
-            this.LabelSettingsPathHomebrew.Text = "Homebrew";
-            // 
-            // ButtonSettingsPathBaseDirectory
-            // 
-            this.ButtonSettingsPathBaseDirectory.Location = new System.Drawing.Point(732, 50);
-            this.ButtonSettingsPathBaseDirectory.Name = "ButtonSettingsPathBaseDirectory";
-            this.ButtonSettingsPathBaseDirectory.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonSettingsPathBaseDirectory.Size = new System.Drawing.Size(40, 20);
-            this.ButtonSettingsPathBaseDirectory.TabIndex = 1186;
-            this.ButtonSettingsPathBaseDirectory.Text = "...";
-            this.ButtonSettingsPathBaseDirectory.Click += new System.EventHandler(this.ButtonSettingsPathBaseDirectory_Click);
-            // 
-            // TextBoxSettingsPathHomebrew
-            // 
-            this.TextBoxSettingsPathHomebrew.EditValue = "";
-            this.TextBoxSettingsPathHomebrew.Location = new System.Drawing.Point(0, 275);
-            this.TextBoxSettingsPathHomebrew.Name = "TextBoxSettingsPathHomebrew";
-            this.TextBoxSettingsPathHomebrew.Properties.MaxLength = 256;
-            this.TextBoxSettingsPathHomebrew.Size = new System.Drawing.Size(726, 22);
-            this.TextBoxSettingsPathHomebrew.TabIndex = 1203;
-            this.TextBoxSettingsPathHomebrew.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPathHomebrew_EditValueChanged);
-            this.TextBoxSettingsPathHomebrew.Leave += new System.EventHandler(this.TextBoxSettingsPathHomebrew_Leave);
-            // 
-            // ButtonSettingsPathGameMods
-            // 
-            this.ButtonSettingsPathGameMods.Location = new System.Drawing.Point(732, 200);
-            this.ButtonSettingsPathGameMods.Name = "ButtonSettingsPathGameMods";
-            this.ButtonSettingsPathGameMods.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonSettingsPathGameMods.Size = new System.Drawing.Size(40, 20);
-            this.ButtonSettingsPathGameMods.TabIndex = 1187;
-            this.ButtonSettingsPathGameMods.Text = "...";
-            this.ButtonSettingsPathGameMods.Click += new System.EventHandler(this.ButtonSettingsPathGameMods_Click);
-            // 
-            // LabelSettingsDirectoriesMustBeWritable
-            // 
-            this.LabelSettingsDirectoriesMustBeWritable.Appearance.Options.UseFont = true;
-            this.LabelSettingsDirectoriesMustBeWritable.Location = new System.Drawing.Point(0, 627);
-            this.LabelSettingsDirectoriesMustBeWritable.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.LabelSettingsDirectoriesMustBeWritable.Name = "LabelSettingsDirectoriesMustBeWritable";
-            this.LabelSettingsDirectoriesMustBeWritable.Size = new System.Drawing.Size(162, 13);
-            this.LabelSettingsDirectoriesMustBeWritable.TabIndex = 1201;
-            this.LabelSettingsDirectoriesMustBeWritable.Text = "All directories must be writable.";
-            // 
-            // TextBoxSettingsPathPackages
-            // 
-            this.TextBoxSettingsPathPackages.EditValue = "";
-            this.TextBoxSettingsPathPackages.Location = new System.Drawing.Point(0, 425);
-            this.TextBoxSettingsPathPackages.Name = "TextBoxSettingsPathPackages";
-            this.TextBoxSettingsPathPackages.Properties.MaxLength = 256;
-            this.TextBoxSettingsPathPackages.Size = new System.Drawing.Size(726, 22);
-            this.TextBoxSettingsPathPackages.TabIndex = 1189;
-            this.TextBoxSettingsPathPackages.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPathPackages_EditValueChanged);
-            this.TextBoxSettingsPathPackages.Leave += new System.EventHandler(this.TextBoxSettingsPathPackages_Leave);
+            this.LabelSettingsPathTemp.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelSettingsPathTemp.Appearance.Options.UseFont = true;
+            this.LabelSettingsPathTemp.Location = new System.Drawing.Point(0, 168);
+            this.LabelSettingsPathTemp.Margin = new System.Windows.Forms.Padding(0, 3, 3, 4);
+            this.LabelSettingsPathTemp.Name = "LabelSettingsPathTemp";
+            this.LabelSettingsPathTemp.Size = new System.Drawing.Size(66, 15);
+            this.LabelSettingsPathTemp.TabIndex = 1184;
+            this.LabelSettingsPathTemp.Text = "Temp Folder";
             // 
             // LabelSettingsReferToBaseDirectory
             // 
+            this.LabelSettingsReferToBaseDirectory.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsReferToBaseDirectory.Appearance.Options.UseFont = true;
-            this.LabelSettingsReferToBaseDirectory.Location = new System.Drawing.Point(0, 606);
-            this.LabelSettingsReferToBaseDirectory.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.LabelSettingsReferToBaseDirectory.Location = new System.Drawing.Point(0, 232);
+            this.LabelSettingsReferToBaseDirectory.Margin = new System.Windows.Forms.Padding(0, 8, 3, 3);
             this.LabelSettingsReferToBaseDirectory.Name = "LabelSettingsReferToBaseDirectory";
-            this.LabelSettingsReferToBaseDirectory.Size = new System.Drawing.Size(241, 13);
+            this.LabelSettingsReferToBaseDirectory.Size = new System.Drawing.Size(265, 75);
             this.LabelSettingsReferToBaseDirectory.TabIndex = 1200;
-            this.LabelSettingsReferToBaseDirectory.Text = "Use %BASE_DIR% to refer to the Base Directory.";
-            // 
-            // LabelSettingsPathPackages
-            // 
-            this.LabelSettingsPathPackages.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelSettingsPathPackages.Appearance.Options.UseFont = true;
-            this.LabelSettingsPathPackages.Location = new System.Drawing.Point(0, 391);
-            this.LabelSettingsPathPackages.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.LabelSettingsPathPackages.Name = "LabelSettingsPathPackages";
-            this.LabelSettingsPathPackages.Size = new System.Drawing.Size(51, 15);
-            this.LabelSettingsPathPackages.TabIndex = 1188;
-            this.LabelSettingsPathPackages.Text = "Packages";
-            // 
-            // ButtonSettingsPathDownloads
-            // 
-            this.ButtonSettingsPathDownloads.Location = new System.Drawing.Point(732, 125);
-            this.ButtonSettingsPathDownloads.Name = "ButtonSettingsPathDownloads";
-            this.ButtonSettingsPathDownloads.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonSettingsPathDownloads.Size = new System.Drawing.Size(40, 20);
-            this.ButtonSettingsPathDownloads.TabIndex = 1199;
-            this.ButtonSettingsPathDownloads.Text = "...";
-            this.ButtonSettingsPathDownloads.Click += new System.EventHandler(this.ButtonSettingsPathDownloads_Click);
-            // 
-            // ButtonSettingsPathPackages
-            // 
-            this.ButtonSettingsPathPackages.Location = new System.Drawing.Point(732, 425);
-            this.ButtonSettingsPathPackages.Name = "ButtonSettingsPathPackages";
-            this.ButtonSettingsPathPackages.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonSettingsPathPackages.Size = new System.Drawing.Size(40, 20);
-            this.ButtonSettingsPathPackages.TabIndex = 1190;
-            this.ButtonSettingsPathPackages.Text = "...";
-            this.ButtonSettingsPathPackages.Click += new System.EventHandler(this.ButtonSettingsPathPackages_Click);
+            this.LabelSettingsReferToBaseDirectory.Text = "Use %APPDATA% to refer to the Base Directory.\r\nUse %PLATFORM% to refer to the Pla" +
+    "tform.\r\nUse %CATEGORY% to refer to the Category Name.\r\n\r\nAll directories must be" +
+    " writable.";
             // 
             // LabelSettingsPathDownloads
             // 
-            this.LabelSettingsPathDownloads.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelSettingsPathDownloads.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSettingsPathDownloads.Appearance.Options.UseFont = true;
-            this.LabelSettingsPathDownloads.Location = new System.Drawing.Point(0, 91);
-            this.LabelSettingsPathDownloads.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
+            this.LabelSettingsPathDownloads.Location = new System.Drawing.Point(0, 109);
+            this.LabelSettingsPathDownloads.Margin = new System.Windows.Forms.Padding(0, 3, 3, 4);
             this.LabelSettingsPathDownloads.Name = "LabelSettingsPathDownloads";
-            this.LabelSettingsPathDownloads.Size = new System.Drawing.Size(61, 15);
+            this.LabelSettingsPathDownloads.Size = new System.Drawing.Size(59, 15);
             this.LabelSettingsPathDownloads.TabIndex = 1197;
             this.LabelSettingsPathDownloads.Text = "Downloads";
-            // 
-            // TextBoxSettingsPathPlugins
-            // 
-            this.TextBoxSettingsPathPlugins.EditValue = "";
-            this.TextBoxSettingsPathPlugins.Location = new System.Drawing.Point(0, 500);
-            this.TextBoxSettingsPathPlugins.Name = "TextBoxSettingsPathPlugins";
-            this.TextBoxSettingsPathPlugins.Properties.MaxLength = 256;
-            this.TextBoxSettingsPathPlugins.Size = new System.Drawing.Size(726, 22);
-            this.TextBoxSettingsPathPlugins.TabIndex = 1192;
-            // 
-            // TextBoxSettingsPathDownloads
-            // 
-            this.TextBoxSettingsPathDownloads.EditValue = "";
-            this.TextBoxSettingsPathDownloads.Location = new System.Drawing.Point(0, 125);
-            this.TextBoxSettingsPathDownloads.Name = "TextBoxSettingsPathDownloads";
-            this.TextBoxSettingsPathDownloads.Properties.MaxLength = 256;
-            this.TextBoxSettingsPathDownloads.Size = new System.Drawing.Size(726, 22);
-            this.TextBoxSettingsPathDownloads.TabIndex = 1198;
-            this.TextBoxSettingsPathDownloads.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPathDownloads_EditValueChanged);
-            this.TextBoxSettingsPathDownloads.Leave += new System.EventHandler(this.TextBoxSettingsPathDownloads_Leave);
-            // 
-            // LabelSettingsPathPlugins
-            // 
-            this.LabelSettingsPathPlugins.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelSettingsPathPlugins.Appearance.Options.UseFont = true;
-            this.LabelSettingsPathPlugins.Location = new System.Drawing.Point(0, 466);
-            this.LabelSettingsPathPlugins.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.LabelSettingsPathPlugins.Name = "LabelSettingsPathPlugins";
-            this.LabelSettingsPathPlugins.Size = new System.Drawing.Size(39, 15);
-            this.LabelSettingsPathPlugins.TabIndex = 1191;
-            this.LabelSettingsPathPlugins.Text = "Plugins";
-            // 
-            // ButtonSettingsPathGameSaves
-            // 
-            this.ButtonSettingsPathGameSaves.Location = new System.Drawing.Point(732, 575);
-            this.ButtonSettingsPathGameSaves.Name = "ButtonSettingsPathGameSaves";
-            this.ButtonSettingsPathGameSaves.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonSettingsPathGameSaves.Size = new System.Drawing.Size(40, 20);
-            this.ButtonSettingsPathGameSaves.TabIndex = 1196;
-            this.ButtonSettingsPathGameSaves.Text = "...";
-            this.ButtonSettingsPathGameSaves.Click += new System.EventHandler(this.ButtonSettingsPathGameSaves_Click);
-            // 
-            // ButtonSettingsPathPlugins
-            // 
-            this.ButtonSettingsPathPlugins.Location = new System.Drawing.Point(732, 500);
-            this.ButtonSettingsPathPlugins.Name = "ButtonSettingsPathPlugins";
-            this.ButtonSettingsPathPlugins.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonSettingsPathPlugins.Size = new System.Drawing.Size(40, 20);
-            this.ButtonSettingsPathPlugins.TabIndex = 1193;
-            this.ButtonSettingsPathPlugins.Text = "...";
-            // 
-            // LabelSettingsPathGameSaves
-            // 
-            this.LabelSettingsPathGameSaves.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelSettingsPathGameSaves.Appearance.Options.UseFont = true;
-            this.LabelSettingsPathGameSaves.Location = new System.Drawing.Point(0, 541);
-            this.LabelSettingsPathGameSaves.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.LabelSettingsPathGameSaves.Name = "LabelSettingsPathGameSaves";
-            this.LabelSettingsPathGameSaves.Size = new System.Drawing.Size(68, 15);
-            this.LabelSettingsPathGameSaves.TabIndex = 1194;
-            this.LabelSettingsPathGameSaves.Text = "Game Saves";
-            // 
-            // TextBoxSettingsPathGameSaves
-            // 
-            this.TextBoxSettingsPathGameSaves.EditValue = "";
-            this.TextBoxSettingsPathGameSaves.Location = new System.Drawing.Point(0, 575);
-            this.TextBoxSettingsPathGameSaves.Name = "TextBoxSettingsPathGameSaves";
-            this.TextBoxSettingsPathGameSaves.Properties.MaxLength = 256;
-            this.TextBoxSettingsPathGameSaves.Size = new System.Drawing.Size(726, 22);
-            this.TextBoxSettingsPathGameSaves.TabIndex = 1195;
-            this.TextBoxSettingsPathGameSaves.EditValueChanged += new System.EventHandler(this.TextBoxSettingsPathGameSaves_EditValueChanged);
-            this.TextBoxSettingsPathGameSaves.Leave += new System.EventHandler(this.TextBoxSettingsPathGameSaves_Leave);
             // 
             // TabPageDiscord
             // 
@@ -7641,7 +8519,7 @@ namespace ArisenStudio.Forms.Windows
             // LabelSettingsAlwaysShowPrecense
             // 
             this.LabelSettingsAlwaysShowPrecense.Appearance.Options.UseFont = true;
-            this.LabelSettingsAlwaysShowPrecense.Location = new System.Drawing.Point(60, 52);
+            this.LabelSettingsAlwaysShowPrecense.Location = new System.Drawing.Point(60, 50);
             this.LabelSettingsAlwaysShowPrecense.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelSettingsAlwaysShowPrecense.Name = "LabelSettingsAlwaysShowPrecense";
             this.LabelSettingsAlwaysShowPrecense.Size = new System.Drawing.Size(205, 13);
@@ -7653,7 +8531,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelSettingsRichPresence.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelSettingsRichPresence.Appearance.Options.UseFont = true;
             this.LabelSettingsRichPresence.Location = new System.Drawing.Point(0, 16);
-            this.LabelSettingsRichPresence.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
+            this.LabelSettingsRichPresence.Margin = new System.Windows.Forms.Padding(3, 16, 3, 12);
             this.LabelSettingsRichPresence.Name = "LabelSettingsRichPresence";
             this.LabelSettingsRichPresence.Size = new System.Drawing.Size(78, 15);
             this.LabelSettingsRichPresence.TabIndex = 1180;
@@ -7661,7 +8539,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             // ToggleSettingsAlwaysShowPresence
             // 
-            this.ToggleSettingsAlwaysShowPresence.Location = new System.Drawing.Point(0, 50);
+            this.ToggleSettingsAlwaysShowPresence.Location = new System.Drawing.Point(0, 46);
             this.ToggleSettingsAlwaysShowPresence.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
             this.ToggleSettingsAlwaysShowPresence.Name = "ToggleSettingsAlwaysShowPresence";
             this.ToggleSettingsAlwaysShowPresence.Properties.AutoWidth = true;
@@ -7669,12 +8547,12 @@ namespace ArisenStudio.Forms.Windows
             this.ToggleSettingsAlwaysShowPresence.Properties.OnText = "On";
             this.ToggleSettingsAlwaysShowPresence.Properties.ShowText = false;
             this.ToggleSettingsAlwaysShowPresence.Size = new System.Drawing.Size(54, 24);
-            this.ToggleSettingsAlwaysShowPresence.TabIndex = 1183;
+            this.ToggleSettingsAlwaysShowPresence.TabIndex = 34;
             this.ToggleSettingsAlwaysShowPresence.Toggled += new System.EventHandler(this.ToggleSettingsAlwaysShowPresence_Toggled);
             // 
             // ToggleSettingsShowCurrentGamePlaying
             // 
-            this.ToggleSettingsShowCurrentGamePlaying.Location = new System.Drawing.Point(0, 80);
+            this.ToggleSettingsShowCurrentGamePlaying.Location = new System.Drawing.Point(0, 76);
             this.ToggleSettingsShowCurrentGamePlaying.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
             this.ToggleSettingsShowCurrentGamePlaying.Name = "ToggleSettingsShowCurrentGamePlaying";
             this.ToggleSettingsShowCurrentGamePlaying.Properties.AutoWidth = true;
@@ -7682,18 +8560,115 @@ namespace ArisenStudio.Forms.Windows
             this.ToggleSettingsShowCurrentGamePlaying.Properties.OnText = "On";
             this.ToggleSettingsShowCurrentGamePlaying.Properties.ShowText = false;
             this.ToggleSettingsShowCurrentGamePlaying.Size = new System.Drawing.Size(54, 24);
-            this.ToggleSettingsShowCurrentGamePlaying.TabIndex = 1181;
+            this.ToggleSettingsShowCurrentGamePlaying.TabIndex = 35;
             this.ToggleSettingsShowCurrentGamePlaying.Toggled += new System.EventHandler(this.ToggleSettingsShowCurrentGamePlaying_Toggled);
             // 
             // LabelSettingsShowCurrentGamePlaying
             // 
             this.LabelSettingsShowCurrentGamePlaying.Appearance.Options.UseFont = true;
-            this.LabelSettingsShowCurrentGamePlaying.Location = new System.Drawing.Point(60, 82);
+            this.LabelSettingsShowCurrentGamePlaying.Location = new System.Drawing.Point(60, 80);
             this.LabelSettingsShowCurrentGamePlaying.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelSettingsShowCurrentGamePlaying.Name = "LabelSettingsShowCurrentGamePlaying";
             this.LabelSettingsShowCurrentGamePlaying.Size = new System.Drawing.Size(161, 13);
             this.LabelSettingsShowCurrentGamePlaying.TabIndex = 1182;
             this.LabelSettingsShowCurrentGamePlaying.Text = "Show the current game playing";
+            // 
+            // TabPageCache
+            // 
+            this.TabPageCache.AutoScroll = true;
+            this.TabPageCache.Caption = "Cache";
+            this.TabPageCache.Controls.Add(this.ButtonSettingsClearCache);
+            this.TabPageCache.Controls.Add(this.LabelSettingsLocalCache);
+            this.TabPageCache.Controls.Add(this.ToggleSettingsClearCacheOnClose);
+            this.TabPageCache.Controls.Add(this.LabelSettingsClearCacheOnClose);
+            this.TabPageCache.Controls.Add(this.toggleSwitch24);
+            this.TabPageCache.Controls.Add(this.labelControl163);
+            this.TabPageCache.Controls.Add(this.LabelSettingsClearCache);
+            this.TabPageCache.Name = "TabPageCache";
+            this.TabPageCache.Size = new System.Drawing.Size(1288, 533);
+            // 
+            // ButtonSettingsClearCache
+            // 
+            this.ButtonSettingsClearCache.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonSettingsClearCache.Appearance.Options.UseFont = true;
+            this.ButtonSettingsClearCache.AutoSize = true;
+            this.ButtonSettingsClearCache.Location = new System.Drawing.Point(0, 149);
+            this.ButtonSettingsClearCache.MinimumSize = new System.Drawing.Size(0, 24);
+            this.ButtonSettingsClearCache.Name = "ButtonSettingsClearCache";
+            this.ButtonSettingsClearCache.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonSettingsClearCache.Size = new System.Drawing.Size(96, 24);
+            this.ButtonSettingsClearCache.TabIndex = 33;
+            this.ButtonSettingsClearCache.Text = "Clear && Restart";
+            this.ButtonSettingsClearCache.Click += new System.EventHandler(this.ButtonSettingsClearCache_Click);
+            // 
+            // LabelSettingsLocalCache
+            // 
+            this.LabelSettingsLocalCache.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelSettingsLocalCache.Appearance.Options.UseFont = true;
+            this.LabelSettingsLocalCache.Location = new System.Drawing.Point(0, 16);
+            this.LabelSettingsLocalCache.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
+            this.LabelSettingsLocalCache.Name = "LabelSettingsLocalCache";
+            this.LabelSettingsLocalCache.Size = new System.Drawing.Size(64, 15);
+            this.LabelSettingsLocalCache.TabIndex = 1223;
+            this.LabelSettingsLocalCache.Text = "Local Cache";
+            // 
+            // ToggleSettingsClearCacheOnClose
+            // 
+            this.ToggleSettingsClearCacheOnClose.Location = new System.Drawing.Point(0, 46);
+            this.ToggleSettingsClearCacheOnClose.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
+            this.ToggleSettingsClearCacheOnClose.Name = "ToggleSettingsClearCacheOnClose";
+            this.ToggleSettingsClearCacheOnClose.Properties.AutoWidth = true;
+            this.ToggleSettingsClearCacheOnClose.Properties.OffText = "Off";
+            this.ToggleSettingsClearCacheOnClose.Properties.OnText = "On";
+            this.ToggleSettingsClearCacheOnClose.Properties.ShowText = false;
+            this.ToggleSettingsClearCacheOnClose.Size = new System.Drawing.Size(54, 24);
+            this.ToggleSettingsClearCacheOnClose.TabIndex = 31;
+            this.ToggleSettingsClearCacheOnClose.Toggled += new System.EventHandler(this.ToggleSettingsClearCacheOnClose_Toggled);
+            // 
+            // LabelSettingsClearCacheOnClose
+            // 
+            this.LabelSettingsClearCacheOnClose.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelSettingsClearCacheOnClose.Appearance.Options.UseFont = true;
+            this.LabelSettingsClearCacheOnClose.Location = new System.Drawing.Point(60, 50);
+            this.LabelSettingsClearCacheOnClose.Margin = new System.Windows.Forms.Padding(0, 8, 0, 7);
+            this.LabelSettingsClearCacheOnClose.Name = "LabelSettingsClearCacheOnClose";
+            this.LabelSettingsClearCacheOnClose.Size = new System.Drawing.Size(136, 15);
+            this.LabelSettingsClearCacheOnClose.TabIndex = 1225;
+            this.LabelSettingsClearCacheOnClose.Text = "Clear local cache on close";
+            // 
+            // toggleSwitch24
+            // 
+            this.toggleSwitch24.Location = new System.Drawing.Point(0, 76);
+            this.toggleSwitch24.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
+            this.toggleSwitch24.Name = "toggleSwitch24";
+            this.toggleSwitch24.Properties.AutoWidth = true;
+            this.toggleSwitch24.Properties.OffText = "Off";
+            this.toggleSwitch24.Properties.OnText = "On";
+            this.toggleSwitch24.Properties.ShowText = false;
+            this.toggleSwitch24.Size = new System.Drawing.Size(54, 24);
+            this.toggleSwitch24.TabIndex = 32;
+            // 
+            // labelControl163
+            // 
+            this.labelControl163.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.labelControl163.Appearance.Options.UseFont = true;
+            this.labelControl163.Location = new System.Drawing.Point(60, 80);
+            this.labelControl163.Margin = new System.Windows.Forms.Padding(0, 8, 0, 7);
+            this.labelControl163.Name = "labelControl163";
+            this.labelControl163.Size = new System.Drawing.Size(78, 15);
+            this.labelControl163.TabIndex = 1228;
+            this.labelControl163.Text = "Placeholder #1";
+            // 
+            // LabelSettingsClearCache
+            // 
+            this.LabelSettingsClearCache.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelSettingsClearCache.Appearance.Options.UseFont = true;
+            this.LabelSettingsClearCache.Location = new System.Drawing.Point(0, 120);
+            this.LabelSettingsClearCache.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
+            this.LabelSettingsClearCache.Name = "LabelSettingsClearCache";
+            this.LabelSettingsClearCache.Size = new System.Drawing.Size(64, 15);
+            this.LabelSettingsClearCache.TabIndex = 1229;
+            this.LabelSettingsClearCache.Text = "Clear Cache";
             // 
             // PageGameSaves
             // 
@@ -8469,7 +9444,6 @@ namespace ArisenStudio.Forms.Windows
             this.TileGroupPlugins.Items.Add(this.TileItemGameModsXboxSortOptions);
             this.TileGroupPlugins.Items.Add(this.TileItemGameModsXboxDownload);
             this.TileGroupPlugins.Items.Add(this.TileItemGameModsXboxShowDetails);
-            this.TileGroupPlugins.Items.Add(this.tileItem8);
             this.TileGroupPlugins.Name = "TileGroupPlugins";
             this.TileGroupPlugins.Text = "Plugins Actions";
             // 
@@ -8548,20 +9522,6 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemGameModsXboxShowDetails.Name = "TileItemGameModsXboxShowDetails";
             this.TileItemGameModsXboxShowDetails.Padding = new System.Windows.Forms.Padding(0);
             this.TileItemGameModsXboxShowDetails.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.TileItemGameModsXboxShowDetails_ItemClick);
-            // 
-            // tileItem8
-            // 
-            this.tileItem8.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement24.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement24.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement24.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement24.Text = "";
-            this.tileItem8.Elements.Add(tileItemElement24);
-            this.tileItem8.Enabled = false;
-            this.tileItem8.Id = 8;
-            this.tileItem8.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem8.Name = "tileItem8";
-            this.tileItem8.Padding = new System.Windows.Forms.Padding(0);
             // 
             // PagePackagesPS3
             // 
@@ -9153,12 +10113,12 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemPackagesSortOptions.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemPackagesSortOptions.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemPackagesSortOptions.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement25.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement25.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement25.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement25.Text = "";
-            tileItemElement25.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemPackagesSortOptions.Elements.Add(tileItemElement25);
+            tileItemElement24.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
+            tileItemElement24.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement24.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement24.Text = "";
+            tileItemElement24.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemPackagesSortOptions.Elements.Add(tileItemElement24);
             this.TileItemPackagesSortOptions.Id = 1;
             this.TileItemPackagesSortOptions.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemPackagesSortOptions.Name = "TileItemPackagesSortOptions";
@@ -9173,11 +10133,11 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemPackagesInstall.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
             this.TileItemPackagesInstall.AppearanceItem.Normal.Options.UseBackColor = true;
             this.TileItemPackagesInstall.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement26.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_install;
-            tileItemElement26.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement26.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement26.Text = "";
-            this.TileItemPackagesInstall.Elements.Add(tileItemElement26);
+            tileItemElement25.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_install;
+            tileItemElement25.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement25.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement25.Text = "";
+            this.TileItemPackagesInstall.Elements.Add(tileItemElement25);
             this.TileItemPackagesInstall.Enabled = false;
             this.TileItemPackagesInstall.Id = 10;
             this.TileItemPackagesInstall.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -9190,11 +10150,11 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemPackagesDownload.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
             this.TileItemPackagesDownload.AppearanceItem.Normal.Options.UseBackColor = true;
             this.TileItemPackagesDownload.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement27.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
-            tileItemElement27.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement27.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement27.Text = "";
-            this.TileItemPackagesDownload.Elements.Add(tileItemElement27);
+            tileItemElement26.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
+            tileItemElement26.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement26.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement26.Text = "";
+            this.TileItemPackagesDownload.Elements.Add(tileItemElement26);
             this.TileItemPackagesDownload.Enabled = false;
             this.TileItemPackagesDownload.Id = 8;
             this.TileItemPackagesDownload.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -9207,11 +10167,11 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemPackagesShowDetails.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
             this.TileItemPackagesShowDetails.AppearanceItem.Normal.Options.UseBackColor = true;
             this.TileItemPackagesShowDetails.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement28.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement28.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement28.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement28.Text = "";
-            this.TileItemPackagesShowDetails.Elements.Add(tileItemElement28);
+            tileItemElement27.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
+            tileItemElement27.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement27.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement27.Text = "";
+            this.TileItemPackagesShowDetails.Elements.Add(tileItemElement27);
             this.TileItemPackagesShowDetails.Enabled = false;
             this.TileItemPackagesShowDetails.Id = 9;
             this.TileItemPackagesShowDetails.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -9702,15 +10662,15 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemResourcesShowFavorites.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemResourcesShowFavorites.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemResourcesShowFavorites.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement29.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement29.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement29.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement29.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
-            tileItemElement29.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement29.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement29.Text = "";
-            tileItemElement29.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemResourcesShowFavorites.Elements.Add(tileItemElement29);
+            tileItemElement28.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement28.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileItemElement28.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement28.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
+            tileItemElement28.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement28.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement28.Text = "";
+            tileItemElement28.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemResourcesShowFavorites.Elements.Add(tileItemElement28);
             this.TileItemResourcesShowFavorites.Id = 2;
             this.TileItemResourcesShowFavorites.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemResourcesShowFavorites.Name = "TileItemResourcesShowFavorites";
@@ -9727,13 +10687,13 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemResourcesSortOptions.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemResourcesSortOptions.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemResourcesSortOptions.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement30.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement30.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement30.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement30.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement30.Text = "";
-            tileItemElement30.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemResourcesSortOptions.Elements.Add(tileItemElement30);
+            tileItemElement29.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement29.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
+            tileItemElement29.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement29.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement29.Text = "";
+            tileItemElement29.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemResourcesSortOptions.Elements.Add(tileItemElement29);
             this.TileItemResourcesSortOptions.Id = 1;
             this.TileItemResourcesSortOptions.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemResourcesSortOptions.Name = "TileItemResourcesSortOptions";
@@ -9748,11 +10708,11 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemResourcesDownload.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
             this.TileItemResourcesDownload.AppearanceItem.Normal.Options.UseForeColor = true;
             this.TileItemResourcesDownload.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement31.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
-            tileItemElement31.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement31.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement31.Text = "";
-            this.TileItemResourcesDownload.Elements.Add(tileItemElement31);
+            tileItemElement30.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
+            tileItemElement30.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement30.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement30.Text = "";
+            this.TileItemResourcesDownload.Elements.Add(tileItemElement30);
             this.TileItemResourcesDownload.Enabled = false;
             this.TileItemResourcesDownload.Id = 6;
             this.TileItemResourcesDownload.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -9768,11 +10728,11 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemResourcesShowDetails.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
             this.TileItemResourcesShowDetails.AppearanceItem.Normal.Options.UseForeColor = true;
             this.TileItemResourcesShowDetails.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement32.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement32.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement32.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement32.Text = "";
-            this.TileItemResourcesShowDetails.Elements.Add(tileItemElement32);
+            tileItemElement31.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
+            tileItemElement31.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement31.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement31.Text = "";
+            this.TileItemResourcesShowDetails.Elements.Add(tileItemElement31);
             this.TileItemResourcesShowDetails.Enabled = false;
             this.TileItemResourcesShowDetails.Id = 7;
             this.TileItemResourcesShowDetails.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -10209,13 +11169,13 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemHomebrewShowFavorites.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemHomebrewShowFavorites.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemHomebrewShowFavorites.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement33.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement33.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
-            tileItemElement33.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement33.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement33.Text = "";
-            tileItemElement33.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemHomebrewShowFavorites.Elements.Add(tileItemElement33);
+            tileItemElement32.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement32.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
+            tileItemElement32.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement32.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement32.Text = "";
+            tileItemElement32.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemHomebrewShowFavorites.Elements.Add(tileItemElement32);
             this.TileItemHomebrewShowFavorites.Id = 6;
             this.TileItemHomebrewShowFavorites.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemHomebrewShowFavorites.Name = "TileItemHomebrewShowFavorites";
@@ -10233,13 +11193,13 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemHomebrewSortOptions.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemHomebrewSortOptions.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemHomebrewSortOptions.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement34.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement34.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement34.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement34.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement34.Text = "";
-            tileItemElement34.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemHomebrewSortOptions.Elements.Add(tileItemElement34);
+            tileItemElement33.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement33.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
+            tileItemElement33.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement33.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement33.Text = "";
+            tileItemElement33.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemHomebrewSortOptions.Elements.Add(tileItemElement33);
             this.TileItemHomebrewSortOptions.Id = 1;
             this.TileItemHomebrewSortOptions.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemHomebrewSortOptions.Name = "TileItemHomebrewSortOptions";
@@ -10256,12 +11216,12 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemHomebrewAddFavorite.AppearanceItem.Normal.Options.UseBackColor = true;
             this.TileItemHomebrewAddFavorite.AppearanceItem.Normal.Options.UseForeColor = true;
             this.TileItemHomebrewAddFavorite.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement35.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement35.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_add_favorite;
-            tileItemElement35.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement35.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement35.Text = "";
-            this.TileItemHomebrewAddFavorite.Elements.Add(tileItemElement35);
+            tileItemElement34.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement34.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_add_favorite;
+            tileItemElement34.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement34.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement34.Text = "";
+            this.TileItemHomebrewAddFavorite.Elements.Add(tileItemElement34);
             this.TileItemHomebrewAddFavorite.Enabled = false;
             this.TileItemHomebrewAddFavorite.Id = 9;
             this.TileItemHomebrewAddFavorite.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -10279,12 +11239,12 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemHomebrewDownload.AppearanceItem.Normal.Options.UseBackColor = true;
             this.TileItemHomebrewDownload.AppearanceItem.Normal.Options.UseForeColor = true;
             this.TileItemHomebrewDownload.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement36.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement36.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
-            tileItemElement36.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement36.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement36.Text = "";
-            this.TileItemHomebrewDownload.Elements.Add(tileItemElement36);
+            tileItemElement35.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement35.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
+            tileItemElement35.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement35.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement35.Text = "";
+            this.TileItemHomebrewDownload.Elements.Add(tileItemElement35);
             this.TileItemHomebrewDownload.Enabled = false;
             this.TileItemHomebrewDownload.Id = 7;
             this.TileItemHomebrewDownload.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -10302,12 +11262,12 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemHomebrewShowDetails.AppearanceItem.Normal.Options.UseBackColor = true;
             this.TileItemHomebrewShowDetails.AppearanceItem.Normal.Options.UseForeColor = true;
             this.TileItemHomebrewShowDetails.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement37.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement37.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement37.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement37.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement37.Text = "";
-            this.TileItemHomebrewShowDetails.Elements.Add(tileItemElement37);
+            tileItemElement36.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement36.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
+            tileItemElement36.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement36.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement36.Text = "";
+            this.TileItemHomebrewShowDetails.Elements.Add(tileItemElement36);
             this.TileItemHomebrewShowDetails.Enabled = false;
             this.TileItemHomebrewShowDetails.Id = 8;
             this.TileItemHomebrewShowDetails.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -10626,6 +11586,9 @@ namespace ArisenStudio.Forms.Windows
             this.GridViewGameCheats.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.False;
             this.GridViewGameCheats.RowHeight = 30;
             this.GridViewGameCheats.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            this.GridViewGameCheats.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewGameCheats_RowClick);
+            this.GridViewGameCheats.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridViewGameCheats_FocusedRowChanged);
+            this.GridViewGameCheats.DoubleClick += new System.EventHandler(this.GridViewGameCheats_DoubleClick);
             // 
             // PanelFiltersCheats
             // 
@@ -10922,12 +11885,12 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemCheatsSort.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemCheatsSort.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemCheatsSort.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement38.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement38.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            tileItemElement38.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement38.Text = "";
-            tileItemElement38.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemCheatsSort.Elements.Add(tileItemElement38);
+            tileItemElement37.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
+            tileItemElement37.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
+            tileItemElement37.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement37.Text = "";
+            tileItemElement37.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemCheatsSort.Elements.Add(tileItemElement37);
             this.TileItemCheatsSort.Id = 1;
             this.TileItemCheatsSort.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemCheatsSort.Name = "TileItemCheatsSort";
@@ -11356,15 +12319,15 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemGamesFavorites.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemGamesFavorites.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemGamesFavorites.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement39.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement39.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement39.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement39.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement39.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
-            tileItemElement39.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement39.Text = "";
-            tileItemElement39.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemGamesFavorites.Elements.Add(tileItemElement39);
+            tileItemElement38.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement38.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileItemElement38.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement38.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement38.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
+            tileItemElement38.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement38.Text = "";
+            tileItemElement38.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemGamesFavorites.Elements.Add(tileItemElement38);
             this.TileItemGamesFavorites.Id = 2;
             this.TileItemGamesFavorites.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemGamesFavorites.Name = "TileItemGamesFavorites";
@@ -11380,14 +12343,14 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemGamesSort.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemGamesSort.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemGamesSort.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement40.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement40.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement40.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement40.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            tileItemElement40.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement40.Text = "";
-            tileItemElement40.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemGamesSort.Elements.Add(tileItemElement40);
+            tileItemElement39.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement39.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement39.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
+            tileItemElement39.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
+            tileItemElement39.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement39.Text = "";
+            tileItemElement39.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemGamesSort.Elements.Add(tileItemElement39);
             this.TileItemGamesSort.Id = 1;
             this.TileItemGamesSort.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemGamesSort.Name = "TileItemGamesSort";
@@ -11397,11 +12360,11 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.TileItemGamesDownload.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.TileItemGamesDownload.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement41.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
-            tileItemElement41.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement41.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement41.Text = "";
-            this.TileItemGamesDownload.Elements.Add(tileItemElement41);
+            tileItemElement40.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
+            tileItemElement40.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement40.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement40.Text = "";
+            this.TileItemGamesDownload.Elements.Add(tileItemElement40);
             this.TileItemGamesDownload.Enabled = false;
             this.TileItemGamesDownload.Id = 6;
             this.TileItemGamesDownload.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -11413,11 +12376,11 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.TileItemGamesShowDetails.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.TileItemGamesShowDetails.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement42.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement42.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement42.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement42.Text = "";
-            this.TileItemGamesShowDetails.Elements.Add(tileItemElement42);
+            tileItemElement41.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
+            tileItemElement41.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement41.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement41.Text = "";
+            this.TileItemGamesShowDetails.Elements.Add(tileItemElement41);
             this.TileItemGamesShowDetails.Enabled = false;
             this.TileItemGamesShowDetails.Id = 7;
             this.TileItemGamesShowDetails.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -11958,14 +12921,14 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemCustomSort.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemCustomSort.AppearanceItem.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
             this.TileItemCustomSort.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement43.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement43.ImageOptions.ImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement43.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.None;
-            tileItemElement43.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement43.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement43.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement43.Text = "";
-            this.TileItemCustomSort.Elements.Add(tileItemElement43);
+            tileItemElement42.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement42.ImageOptions.ImageSize = new System.Drawing.Size(24, 24);
+            tileItemElement42.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.None;
+            tileItemElement42.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement42.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
+            tileItemElement42.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement42.Text = "";
+            this.TileItemCustomSort.Elements.Add(tileItemElement42);
             this.TileItemCustomSort.Id = 1;
             this.TileItemCustomSort.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemCustomSort.Name = "TileItemCustomSort";
@@ -11981,13 +12944,13 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemCustomAdd.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
             this.TileItemCustomAdd.AppearanceItem.Normal.Options.UseBackColor = true;
             this.TileItemCustomAdd.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement44.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement44.ImageOptions.ImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement44.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.None;
-            tileItemElement44.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement44.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_add_new;
-            tileItemElement44.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            this.TileItemCustomAdd.Elements.Add(tileItemElement44);
+            tileItemElement43.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement43.ImageOptions.ImageSize = new System.Drawing.Size(24, 24);
+            tileItemElement43.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.None;
+            tileItemElement43.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement43.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_add_new;
+            tileItemElement43.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            this.TileItemCustomAdd.Elements.Add(tileItemElement43);
             this.TileItemCustomAdd.Id = 2;
             this.TileItemCustomAdd.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemCustomAdd.Name = "TileItemCustomAdd";
@@ -12004,12 +12967,12 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemCustomEdit.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
             this.TileItemCustomEdit.AppearanceItem.Normal.Options.UseBackColor = true;
             this.TileItemCustomEdit.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement45.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement45.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement45.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_edit_details;
-            tileItemElement45.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement45.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            this.TileItemCustomEdit.Elements.Add(tileItemElement45);
+            tileItemElement44.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement44.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement44.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_edit_details;
+            tileItemElement44.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement44.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
+            this.TileItemCustomEdit.Elements.Add(tileItemElement44);
             this.TileItemCustomEdit.Enabled = false;
             this.TileItemCustomEdit.Id = 3;
             this.TileItemCustomEdit.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -12027,11 +12990,11 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemCustomDelete.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
             this.TileItemCustomDelete.AppearanceItem.Normal.Options.UseBackColor = true;
             this.TileItemCustomDelete.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement46.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement46.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.delete;
-            tileItemElement46.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement46.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            this.TileItemCustomDelete.Elements.Add(tileItemElement46);
+            tileItemElement45.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement45.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.delete;
+            tileItemElement45.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement45.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
+            this.TileItemCustomDelete.Elements.Add(tileItemElement45);
             this.TileItemCustomDelete.Enabled = false;
             this.TileItemCustomDelete.Id = 4;
             this.TileItemCustomDelete.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -12047,12 +13010,12 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemCustomShowDetails.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
             this.TileItemCustomShowDetails.AppearanceItem.Normal.Options.UseBackColor = true;
             this.TileItemCustomShowDetails.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement47.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement47.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement47.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement47.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement47.Text = "";
-            this.TileItemCustomShowDetails.Elements.Add(tileItemElement47);
+            tileItemElement46.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement46.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
+            tileItemElement46.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement46.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
+            tileItemElement46.Text = "";
+            this.TileItemCustomShowDetails.Elements.Add(tileItemElement46);
             this.TileItemCustomShowDetails.Enabled = false;
             this.TileItemCustomShowDetails.Id = 10;
             this.TileItemCustomShowDetails.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -12070,12 +13033,12 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemCustomInstall.AppearanceItem.Normal.Options.UseBackColor = true;
             this.TileItemCustomInstall.AppearanceItem.Normal.Options.UseForeColor = true;
             this.TileItemCustomInstall.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement48.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement48.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_install;
-            tileItemElement48.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement48.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement48.Text = "";
-            this.TileItemCustomInstall.Elements.Add(tileItemElement48);
+            tileItemElement47.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement47.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_install;
+            tileItemElement47.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement47.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
+            tileItemElement47.Text = "";
+            this.TileItemCustomInstall.Elements.Add(tileItemElement47);
             this.TileItemCustomInstall.Enabled = false;
             this.TileItemCustomInstall.Id = 11;
             this.TileItemCustomInstall.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -12091,12 +13054,12 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemCustomUninstall.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
             this.TileItemCustomUninstall.AppearanceItem.Normal.Options.UseBackColor = true;
             this.TileItemCustomUninstall.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement49.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement49.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_uninstall;
-            tileItemElement49.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement49.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement49.Text = "";
-            this.TileItemCustomUninstall.Elements.Add(tileItemElement49);
+            tileItemElement48.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement48.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_uninstall;
+            tileItemElement48.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement48.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
+            tileItemElement48.Text = "";
+            this.TileItemCustomUninstall.Elements.Add(tileItemElement48);
             this.TileItemCustomUninstall.Enabled = false;
             this.TileItemCustomUninstall.Id = 12;
             this.TileItemCustomUninstall.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -12157,6 +13120,9 @@ namespace ArisenStudio.Forms.Windows
             this.GridViewHomebrewXbox.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.False;
             this.GridViewHomebrewXbox.RowHeight = 30;
             this.GridViewHomebrewXbox.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            this.GridViewHomebrewXbox.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewHomebrewXbox_RowClick);
+            this.GridViewHomebrewXbox.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridViewHomebrewXbox_FocusedRowChanged);
+            this.GridViewHomebrewXbox.DoubleClick += new System.EventHandler(this.GridViewHomebrewXbox_DoubleClick);
             // 
             // PanelHomebrewXboxFilters
             // 
@@ -12510,17 +13476,18 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemHomebrewXboxShowFavorites.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemHomebrewXboxShowFavorites.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemHomebrewXboxShowFavorites.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement50.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement50.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
-            tileItemElement50.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement50.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement50.Text = "";
-            tileItemElement50.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemHomebrewXboxShowFavorites.Elements.Add(tileItemElement50);
+            tileItemElement49.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement49.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
+            tileItemElement49.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement49.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement49.Text = "";
+            tileItemElement49.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemHomebrewXboxShowFavorites.Elements.Add(tileItemElement49);
             this.TileItemHomebrewXboxShowFavorites.Id = 6;
             this.TileItemHomebrewXboxShowFavorites.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemHomebrewXboxShowFavorites.Name = "TileItemHomebrewXboxShowFavorites";
             this.TileItemHomebrewXboxShowFavorites.Padding = new System.Windows.Forms.Padding(0);
+            this.TileItemHomebrewXboxShowFavorites.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.TileItemHomebrewXboxShowFavorites_ItemClick);
             // 
             // TileItemHomebrewXboxSort
             // 
@@ -12534,17 +13501,18 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemHomebrewXboxSort.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemHomebrewXboxSort.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemHomebrewXboxSort.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement51.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement51.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement51.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement51.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement51.Text = "";
-            tileItemElement51.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemHomebrewXboxSort.Elements.Add(tileItemElement51);
+            tileItemElement50.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement50.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
+            tileItemElement50.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement50.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement50.Text = "";
+            tileItemElement50.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemHomebrewXboxSort.Elements.Add(tileItemElement50);
             this.TileItemHomebrewXboxSort.Id = 1;
             this.TileItemHomebrewXboxSort.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemHomebrewXboxSort.Name = "TileItemHomebrewXboxSort";
             this.TileItemHomebrewXboxSort.Padding = new System.Windows.Forms.Padding(0);
+            this.TileItemHomebrewXboxSort.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.TileItemHomebrewXboxSort_ItemClick);
             // 
             // TileItemHomebrewXboxDownload
             // 
@@ -12556,17 +13524,18 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemHomebrewXboxDownload.AppearanceItem.Normal.Options.UseBackColor = true;
             this.TileItemHomebrewXboxDownload.AppearanceItem.Normal.Options.UseForeColor = true;
             this.TileItemHomebrewXboxDownload.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement52.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement52.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
-            tileItemElement52.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement52.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement52.Text = "";
-            this.TileItemHomebrewXboxDownload.Elements.Add(tileItemElement52);
+            tileItemElement51.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement51.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
+            tileItemElement51.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement51.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement51.Text = "";
+            this.TileItemHomebrewXboxDownload.Elements.Add(tileItemElement51);
             this.TileItemHomebrewXboxDownload.Enabled = false;
             this.TileItemHomebrewXboxDownload.Id = 7;
             this.TileItemHomebrewXboxDownload.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemHomebrewXboxDownload.Name = "TileItemHomebrewXboxDownload";
             this.TileItemHomebrewXboxDownload.Padding = new System.Windows.Forms.Padding(0);
+            this.TileItemHomebrewXboxDownload.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.TileItemHomebrewXboxDownload_ItemClick);
             // 
             // TileItemHomebrewXboxShowDetails
             // 
@@ -12578,17 +13547,18 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemHomebrewXboxShowDetails.AppearanceItem.Normal.Options.UseBackColor = true;
             this.TileItemHomebrewXboxShowDetails.AppearanceItem.Normal.Options.UseForeColor = true;
             this.TileItemHomebrewXboxShowDetails.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement53.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement53.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement53.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement53.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement53.Text = "";
-            this.TileItemHomebrewXboxShowDetails.Elements.Add(tileItemElement53);
+            tileItemElement52.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement52.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
+            tileItemElement52.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement52.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement52.Text = "";
+            this.TileItemHomebrewXboxShowDetails.Elements.Add(tileItemElement52);
             this.TileItemHomebrewXboxShowDetails.Enabled = false;
             this.TileItemHomebrewXboxShowDetails.Id = 8;
             this.TileItemHomebrewXboxShowDetails.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemHomebrewXboxShowDetails.Name = "TileItemHomebrewXboxShowDetails";
             this.TileItemHomebrewXboxShowDetails.Padding = new System.Windows.Forms.Padding(0);
+            this.TileItemHomebrewXboxShowDetails.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.TileItemHomebrewXboxShowDetails_ItemClick);
             // 
             // PageHomebrewPS4
             // 
@@ -13007,15 +13977,15 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem5.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.tileItem5.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem5.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement54.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement54.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement54.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement54.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement54.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
-            tileItemElement54.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement54.Text = "";
-            tileItemElement54.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem5.Elements.Add(tileItemElement54);
+            tileItemElement53.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement53.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileItemElement53.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement53.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement53.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
+            tileItemElement53.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement53.Text = "";
+            tileItemElement53.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem5.Elements.Add(tileItemElement53);
             this.tileItem5.Id = 2;
             this.tileItem5.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.tileItem5.Name = "tileItem5";
@@ -13031,14 +14001,14 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem44.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.tileItem44.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem44.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement55.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement55.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement55.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement55.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            tileItemElement55.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement55.Text = "";
-            tileItemElement55.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem44.Elements.Add(tileItemElement55);
+            tileItemElement54.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement54.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement54.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
+            tileItemElement54.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
+            tileItemElement54.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement54.Text = "";
+            tileItemElement54.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem44.Elements.Add(tileItemElement54);
             this.tileItem44.Id = 1;
             this.tileItem44.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.tileItem44.Name = "tileItem44";
@@ -13048,11 +14018,11 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.tileItem45.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.tileItem45.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement56.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
-            tileItemElement56.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement56.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement56.Text = "";
-            this.tileItem45.Elements.Add(tileItemElement56);
+            tileItemElement55.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
+            tileItemElement55.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement55.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement55.Text = "";
+            this.tileItem45.Elements.Add(tileItemElement55);
             this.tileItem45.Enabled = false;
             this.tileItem45.Id = 6;
             this.tileItem45.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -13063,24 +14033,24 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.tileItem46.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.tileItem46.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement57.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement57.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement57.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement57.Text = "";
-            this.tileItem46.Elements.Add(tileItemElement57);
+            tileItemElement56.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
+            tileItemElement56.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement56.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement56.Text = "";
+            this.tileItem46.Elements.Add(tileItemElement56);
             this.tileItem46.Enabled = false;
             this.tileItem46.Id = 7;
             this.tileItem46.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.tileItem46.Name = "tileItem46";
             this.tileItem46.Padding = new System.Windows.Forms.Padding(0);
             // 
-            // PageTrainers
+            // PageTrainersXbox
             // 
-            this.PageTrainers.Controls.Add(this.GridControlTrainers);
-            this.PageTrainers.Controls.Add(this.PanelTrainersFilters);
-            this.PageTrainers.Controls.Add(this.PanelTrainersActions);
-            this.PageTrainers.Name = "PageTrainers";
-            this.PageTrainers.Size = new System.Drawing.Size(1288, 571);
+            this.PageTrainersXbox.Controls.Add(this.GridControlTrainers);
+            this.PageTrainersXbox.Controls.Add(this.PanelTrainersFilters);
+            this.PageTrainersXbox.Controls.Add(this.PanelTrainersActions);
+            this.PageTrainersXbox.Name = "PageTrainersXbox";
+            this.PageTrainersXbox.Size = new System.Drawing.Size(1288, 571);
             // 
             // GridControlTrainers
             // 
@@ -13129,12 +14099,15 @@ namespace ArisenStudio.Forms.Windows
             this.GridViewTrainers.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.False;
             this.GridViewTrainers.RowHeight = 30;
             this.GridViewTrainers.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            this.GridViewTrainers.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewTrainers_RowClick);
+            this.GridViewTrainers.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridViewTrainers_FocusedRowChanged);
+            this.GridViewTrainers.DoubleClick += new System.EventHandler(this.GridViewTrainers_DoubleClick);
             // 
             // PanelTrainersFilters
             // 
             this.PanelTrainersFilters.BackColor = System.Drawing.Color.Transparent;
             this.PanelTrainersFilters.Controls.Add(this.ComboBoxTrainersFilterTitleId);
-            this.PanelTrainersFilters.Controls.Add(this.ComboBoxTrainersFilterNumberCheats);
+            this.PanelTrainersFilters.Controls.Add(this.ComboBoxTrainersFilterCount);
             this.PanelTrainersFilters.Controls.Add(this.labelControl14);
             this.PanelTrainersFilters.Controls.Add(this.separatorControl94);
             this.PanelTrainersFilters.Controls.Add(this.separatorControl95);
@@ -13172,27 +14145,29 @@ namespace ArisenStudio.Forms.Windows
             this.ComboBoxTrainersFilterTitleId.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ComboBoxTrainersFilterTitleId.Size = new System.Drawing.Size(131, 30);
             this.ComboBoxTrainersFilterTitleId.TabIndex = 1227;
+            this.ComboBoxTrainersFilterTitleId.SelectedIndexChanged += new System.EventHandler(this.ComboBoxTrainersFilterTitleId_SelectedIndexChanged);
             // 
-            // ComboBoxTrainersFilterNumberCheats
+            // ComboBoxTrainersFilterCount
             // 
-            this.ComboBoxTrainersFilterNumberCheats.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxTrainersFilterNumberCheats.Location = new System.Drawing.Point(1190, 34);
-            this.ComboBoxTrainersFilterNumberCheats.Name = "ComboBoxTrainersFilterNumberCheats";
-            this.ComboBoxTrainersFilterNumberCheats.Properties.AllowFocused = false;
-            this.ComboBoxTrainersFilterNumberCheats.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.ComboBoxTrainersFilterNumberCheats.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.ComboBoxTrainersFilterNumberCheats.Properties.Appearance.Options.UseFont = true;
-            this.ComboBoxTrainersFilterNumberCheats.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.ComboBoxTrainersFilterNumberCheats.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.ComboBoxTrainersFilterNumberCheats.Properties.AutoComplete = false;
-            this.ComboBoxTrainersFilterNumberCheats.Properties.AutoHeight = false;
-            this.ComboBoxTrainersFilterNumberCheats.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.ComboBoxTrainersFilterCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxTrainersFilterCount.Location = new System.Drawing.Point(1190, 34);
+            this.ComboBoxTrainersFilterCount.Name = "ComboBoxTrainersFilterCount";
+            this.ComboBoxTrainersFilterCount.Properties.AllowFocused = false;
+            this.ComboBoxTrainersFilterCount.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.ComboBoxTrainersFilterCount.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.ComboBoxTrainersFilterCount.Properties.Appearance.Options.UseFont = true;
+            this.ComboBoxTrainersFilterCount.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.ComboBoxTrainersFilterCount.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.ComboBoxTrainersFilterCount.Properties.AutoComplete = false;
+            this.ComboBoxTrainersFilterCount.Properties.AutoHeight = false;
+            this.ComboBoxTrainersFilterCount.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ComboBoxTrainersFilterNumberCheats.Properties.DropDownRows = 12;
-            this.ComboBoxTrainersFilterNumberCheats.Properties.NullValuePrompt = "Select...";
-            this.ComboBoxTrainersFilterNumberCheats.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ComboBoxTrainersFilterNumberCheats.Size = new System.Drawing.Size(84, 30);
-            this.ComboBoxTrainersFilterNumberCheats.TabIndex = 1225;
+            this.ComboBoxTrainersFilterCount.Properties.DropDownRows = 12;
+            this.ComboBoxTrainersFilterCount.Properties.NullValuePrompt = "Select...";
+            this.ComboBoxTrainersFilterCount.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.ComboBoxTrainersFilterCount.Size = new System.Drawing.Size(84, 30);
+            this.ComboBoxTrainersFilterCount.TabIndex = 1225;
+            this.ComboBoxTrainersFilterCount.SelectedIndexChanged += new System.EventHandler(this.ComboBoxTrainersFilterCount_SelectedIndexChanged);
             // 
             // labelControl14
             // 
@@ -13261,6 +14236,7 @@ namespace ArisenStudio.Forms.Windows
             this.ComboBoxTrainersFilterDashType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ComboBoxTrainersFilterDashType.Size = new System.Drawing.Size(113, 30);
             this.ComboBoxTrainersFilterDashType.TabIndex = 1218;
+            this.ComboBoxTrainersFilterDashType.SelectedIndexChanged += new System.EventHandler(this.ComboBoxTrainersFilterDashType_SelectedIndexChanged);
             // 
             // labelControl50
             // 
@@ -13341,6 +14317,7 @@ namespace ArisenStudio.Forms.Windows
             this.ComboBoxTrainersFilterGame.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ComboBoxTrainersFilterGame.Size = new System.Drawing.Size(856, 30);
             this.ComboBoxTrainersFilterGame.TabIndex = 1170;
+            this.ComboBoxTrainersFilterGame.SelectedIndexChanged += new System.EventHandler(this.ComboBoxTrainersFilterGame_SelectedIndexChanged);
             // 
             // labelControl10
             // 
@@ -13426,65 +14403,49 @@ namespace ArisenStudio.Forms.Windows
             // 
             // TileGroupTrainers
             // 
-            this.TileGroupTrainers.Items.Add(this.TileItemTrainersSortOptions);
-            this.TileGroupTrainers.Items.Add(this.tileItem4);
-            this.TileGroupTrainers.Items.Add(this.tileItem6);
+            this.TileGroupTrainers.Items.Add(this.TileItemTrainerSortOptions);
+            this.TileGroupTrainers.Items.Add(this.TileItemTrainerShowDetails);
             this.TileGroupTrainers.Name = "TileGroupTrainers";
             this.TileGroupTrainers.Text = "Game Saves Actions";
             // 
-            // TileItemTrainersSortOptions
+            // TileItemTrainerSortOptions
             // 
-            this.TileItemTrainersSortOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.TileItemTrainersSortOptions.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.TileItemTrainersSortOptions.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.TileItemTrainersSortOptions.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.TileItemTrainersSortOptions.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.TileItemTrainersSortOptions.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.TileItemTrainersSortOptions.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.TileItemTrainersSortOptions.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.TileItemTrainersSortOptions.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.TileItemTrainersSortOptions.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement58.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement58.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
+            this.TileItemTrainerSortOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.TileItemTrainerSortOptions.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.TileItemTrainerSortOptions.AppearanceItem.Disabled.Options.UseForeColor = true;
+            this.TileItemTrainerSortOptions.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
+            this.TileItemTrainerSortOptions.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
+            this.TileItemTrainerSortOptions.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.TileItemTrainerSortOptions.AppearanceItem.Normal.Options.UseForeColor = true;
+            this.TileItemTrainerSortOptions.AppearanceItem.Normal.Options.UseTextOptions = true;
+            this.TileItemTrainerSortOptions.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TileItemTrainerSortOptions.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
+            tileItemElement57.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement57.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
+            tileItemElement57.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement57.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement57.Text = "";
+            tileItemElement57.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.TileItemTrainerSortOptions.Elements.Add(tileItemElement57);
+            this.TileItemTrainerSortOptions.Id = 1;
+            this.TileItemTrainerSortOptions.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
+            this.TileItemTrainerSortOptions.Name = "TileItemTrainerSortOptions";
+            this.TileItemTrainerSortOptions.Padding = new System.Windows.Forms.Padding(0);
+            // 
+            // TileItemTrainerShowDetails
+            // 
+            this.TileItemTrainerShowDetails.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.TileItemTrainerShowDetails.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
+            tileItemElement58.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
             tileItemElement58.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
             tileItemElement58.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
             tileItemElement58.Text = "";
-            tileItemElement58.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.TileItemTrainersSortOptions.Elements.Add(tileItemElement58);
-            this.TileItemTrainersSortOptions.Id = 1;
-            this.TileItemTrainersSortOptions.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.TileItemTrainersSortOptions.Name = "TileItemTrainersSortOptions";
-            this.TileItemTrainersSortOptions.Padding = new System.Windows.Forms.Padding(0);
-            // 
-            // tileItem4
-            // 
-            this.tileItem4.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem4.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement59.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
-            tileItemElement59.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement59.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement59.Text = "";
-            this.tileItem4.Elements.Add(tileItemElement59);
-            this.tileItem4.Enabled = false;
-            this.tileItem4.Id = 6;
-            this.tileItem4.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem4.Name = "tileItem4";
-            this.tileItem4.Padding = new System.Windows.Forms.Padding(0);
-            // 
-            // tileItem6
-            // 
-            this.tileItem6.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem6.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement60.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement60.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement60.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement60.Text = "";
-            this.tileItem6.Elements.Add(tileItemElement60);
-            this.tileItem6.Enabled = false;
-            this.tileItem6.Id = 7;
-            this.tileItem6.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem6.Name = "tileItem6";
-            this.tileItem6.Padding = new System.Windows.Forms.Padding(0);
+            this.TileItemTrainerShowDetails.Elements.Add(tileItemElement58);
+            this.TileItemTrainerShowDetails.Enabled = false;
+            this.TileItemTrainerShowDetails.Id = 7;
+            this.TileItemTrainerShowDetails.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
+            this.TileItemTrainerShowDetails.Name = "TileItemTrainerShowDetails";
+            this.TileItemTrainerShowDetails.Padding = new System.Windows.Forms.Padding(0);
             // 
             // ImageCollection
             // 
@@ -13506,873 +14467,6 @@ namespace ArisenStudio.Forms.Windows
             this.panel12.Size = new System.Drawing.Size(200, 100);
             this.panel12.TabIndex = 0;
             // 
-            // RibbonControlMain
-            // 
-            this.RibbonControlMain.AllowKeyTips = false;
-            this.RibbonControlMain.AllowMinimizeRibbon = false;
-            this.RibbonControlMain.ApplicationButtonImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.stop;
-            this.RibbonControlMain.ApplicationButtonImageOptions.SvgImageSize = new System.Drawing.Size(100, 100);
-            this.RibbonControlMain.ApplicationButtonText = "User Name";
-            this.RibbonControlMain.ExpandCollapseItem.AllowDrawArrow = false;
-            this.RibbonControlMain.ExpandCollapseItem.AllowDrawArrowInMenu = false;
-            this.RibbonControlMain.ExpandCollapseItem.Id = 0;
-            this.RibbonControlMain.ExpandCollapseItem.VisibleInSearchMenu = false;
-            this.RibbonControlMain.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RibbonControlMain.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.RibbonControlMain.ExpandCollapseItem,
-            this.skinPaletteDropDownButtonItem1,
-            this.barCheckItem1,
-            this.ButtonConnectConsole,
-            this.ButtonDisconnectConsole,
-            this.ButtonScanXboxConsoles,
-            this.ButtonEditProfiles,
-            this.ButtonChangeProfile,
-            this.ButtonAddNewProfile,
-            this.StatusLabelHeaderStatus,
-            this.StatusLabelStatus,
-            this.StatusLabelHeaderIsConnected,
-            this.ButtonToolsPsGameUpdates,
-            this.ButtonToolsPsBackupFilesManager,
-            this.ButtonToolsPsPackageManager,
-            this.ButtonToolsPsConsoleManager,
-            this.ButtonToolsPsGameRegions,
-            this.ButtonToolsPsBootPluginsEditor,
-            this.ButtonToolsXboxGameSaveResigner,
-            this.ButtonToolsXboxGamesLauncher,
-            this.ButtonToolsXboxModuleLoader,
-            this.ButtonToolsXboxXuidSpoofer,
-            this.ButtonToolsXboxDashlaunchEditor,
-            this.ButtonToolsPsPower,
-            this.ButtonToolsPsPowerShutdown,
-            this.ButtonToolsPsPowerRestart,
-            this.ButtonToolsPsPowerSoftReboot,
-            this.ButtonToolsPsPowerHardReboot,
-            this.ButtonToolsPsPowerQuickReboot,
-            this.ButtonToolsPsGames,
-            this.ButtonToolsPsNotifyMessage,
-            this.ButtonToolsPsVirtualController,
-            this.ButtonToolsPsGamesMountBD,
-            this.ButtonToolsPsGamesMountISO,
-            this.ButtonToolsPsGamesMountPSN,
-            this.ButtonToolsPsGamesUnmount,
-            this.ButtonToolsXboxPower,
-            this.ButtonToolsXboxTakeScreenshot,
-            this.ButtonToolsXboxConsoleManager,
-            this.ButtonToolsXboxPowerShutdown,
-            this.ButtonToolsXboxPowerSoftReboot,
-            this.ButtonToolsXboxPowerHardReboot,
-            this.ButtonToolsXboxNotifyMessage,
-            this.ButtonDownloadsFolder,
-            this.ButtonAdvancedSettings,
-            this.ButtonDiscordPresence,
-            this.ButtonInstallModsToUSB,
-            this.ButtonHowToGuides,
-            this.ButtonAbout,
-            this.ButtonOpenLogFile,
-            this.ButtonOpenLogFolder,
-            this.ButtonRequestMods,
-            this.ButtonSendFeedback,
-            this.ButtonToolsXboxHDKey,
-            this.StatusLabelHeaderCurrentGame,
-            this.StatusLabelCurrentGame,
-            this.ButtonToolsPsGamesLaunchGame,
-            this.ButtonToolsPsGamesOpenGUI,
-            this.barStaticItem3,
-            this.ButtonSetupWizard,
-            this.ButtonLocalFilesOpen,
-            this.ButtonLocalFilesDelete,
-            this.ButtonLocalFilesRename,
-            this.ButtonLocalFilesRefresh,
-            this.barButtonItem1,
-            this.barButtonItem10,
-            this.barButtonItem11,
-            this.barButtonItem12,
-            this.barButtonItem13,
-            this.ButtonToolsXboxTrainers,
-            this.ButtonToolsPsGameCheats});
-            this.RibbonControlMain.Location = new System.Drawing.Point(0, 0);
-            this.RibbonControlMain.MaxItemId = 91;
-            this.RibbonControlMain.Name = "RibbonControlMain";
-            this.RibbonControlMain.OptionsStubGlyphs.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.RibbonControlMain.OptionsStubGlyphs.UseFont = true;
-            this.RibbonControlMain.PageHeaderItemLinks.Add(this.barButtonItem1);
-            this.RibbonControlMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.RibbonPageHome,
-            this.RibbonPageTools});
-            this.RibbonControlMain.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
-            this.RibbonControlMain.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
-            this.RibbonControlMain.ShowMoreCommandsButton = DevExpress.Utils.DefaultBoolean.False;
-            this.RibbonControlMain.ShowToolbarCustomizeItem = false;
-            this.RibbonControlMain.Size = new System.Drawing.Size(1498, 168);
-            this.RibbonControlMain.StatusBar = this.RibbonStatusBar;
-            this.RibbonControlMain.Toolbar.ShowCustomizeItem = false;
-            this.RibbonControlMain.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
-            this.RibbonControlMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RibbonControl1_MouseDown);
-            // 
-            // skinPaletteDropDownButtonItem1
-            // 
-            this.skinPaletteDropDownButtonItem1.Id = 77;
-            this.skinPaletteDropDownButtonItem1.Name = "skinPaletteDropDownButtonItem1";
-            // 
-            // barCheckItem1
-            // 
-            this.barCheckItem1.Caption = "barCheckItem1";
-            this.barCheckItem1.Id = 79;
-            this.barCheckItem1.Name = "barCheckItem1";
-            // 
-            // ButtonConnectConsole
-            // 
-            this.ButtonConnectConsole.Caption = "Connect Console";
-            this.ButtonConnectConsole.Id = 1;
-            this.ButtonConnectConsole.ImageOptions.Image = global::ArisenStudio.Properties.Resources.connect;
-            this.ButtonConnectConsole.LargeWidth = 74;
-            this.ButtonConnectConsole.Name = "ButtonConnectConsole";
-            this.ButtonConnectConsole.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonConnectConsole.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonConnectConsole_ItemClick);
-            // 
-            // ButtonDisconnectConsole
-            // 
-            this.ButtonDisconnectConsole.Caption = "Disconnect Console";
-            this.ButtonDisconnectConsole.Enabled = false;
-            this.ButtonDisconnectConsole.Id = 2;
-            this.ButtonDisconnectConsole.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ButtonDisconnectConsole.ImageOptions.Image = global::ArisenStudio.Properties.Resources.disconnect;
-            this.ButtonDisconnectConsole.LargeWidth = 74;
-            this.ButtonDisconnectConsole.Name = "ButtonDisconnectConsole";
-            this.ButtonDisconnectConsole.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonDisconnectConsole.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonDisconnectConsole_ItemClick);
-            // 
-            // ButtonScanXboxConsoles
-            // 
-            this.ButtonScanXboxConsoles.Caption = "Scan Xbox Consoles";
-            this.ButtonScanXboxConsoles.Id = 4;
-            this.ButtonScanXboxConsoles.ImageOptions.Image = global::ArisenStudio.Properties.Resources.search_profiles;
-            this.ButtonScanXboxConsoles.LargeWidth = 74;
-            this.ButtonScanXboxConsoles.Name = "ButtonScanXboxConsoles";
-            this.ButtonScanXboxConsoles.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonScanXboxConsoles.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonScanXboxConsoles_ItemClick);
-            // 
-            // ButtonEditProfiles
-            // 
-            this.ButtonEditProfiles.Caption = "Edit Profiles";
-            this.ButtonEditProfiles.Id = 5;
-            this.ButtonEditProfiles.ImageOptions.Image = global::ArisenStudio.Properties.Resources.edit_profile;
-            this.ButtonEditProfiles.LargeWidth = 74;
-            this.ButtonEditProfiles.Name = "ButtonEditProfiles";
-            this.ButtonEditProfiles.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonEditProfiles.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonEditConsoles_ItemClick);
-            // 
-            // ButtonChangeProfile
-            // 
-            this.ButtonChangeProfile.Caption = "Change Profile";
-            this.ButtonChangeProfile.Id = 6;
-            this.ButtonChangeProfile.ImageOptions.Image = global::ArisenStudio.Properties.Resources.change_profile;
-            this.ButtonChangeProfile.LargeWidth = 74;
-            this.ButtonChangeProfile.Name = "ButtonChangeProfile";
-            this.ButtonChangeProfile.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonChangeProfile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonChangeProfile_ItemClick);
-            // 
-            // ButtonAddNewProfile
-            // 
-            this.ButtonAddNewProfile.Caption = "Add New Profile";
-            this.ButtonAddNewProfile.Id = 7;
-            this.ButtonAddNewProfile.ImageOptions.Image = global::ArisenStudio.Properties.Resources.new_profile;
-            this.ButtonAddNewProfile.LargeWidth = 74;
-            this.ButtonAddNewProfile.Name = "ButtonAddNewProfile";
-            this.ButtonAddNewProfile.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonAddNewProfile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonAddNewProfile_ItemClick);
-            // 
-            // StatusLabelHeaderStatus
-            // 
-            this.StatusLabelHeaderStatus.AllowFocus = DevExpress.Utils.DefaultBoolean.False;
-            this.StatusLabelHeaderStatus.Caption = "Status:";
-            this.StatusLabelHeaderStatus.Id = 9;
-            this.StatusLabelHeaderStatus.ItemAppearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.StatusLabelHeaderStatus.ItemAppearance.Hovered.Options.UseFont = true;
-            this.StatusLabelHeaderStatus.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.StatusLabelHeaderStatus.ItemAppearance.Normal.Options.UseFont = true;
-            this.StatusLabelHeaderStatus.ItemAppearance.Pressed.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.StatusLabelHeaderStatus.ItemAppearance.Pressed.Options.UseFont = true;
-            this.StatusLabelHeaderStatus.Name = "StatusLabelHeaderStatus";
-            // 
-            // StatusLabelStatus
-            // 
-            this.StatusLabelStatus.AllowFocus = DevExpress.Utils.DefaultBoolean.False;
-            this.StatusLabelStatus.Caption = "Status";
-            this.StatusLabelStatus.Id = 10;
-            this.StatusLabelStatus.Name = "StatusLabelStatus";
-            // 
-            // StatusLabelHeaderIsConnected
-            // 
-            this.StatusLabelHeaderIsConnected.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.StatusLabelHeaderIsConnected.AllowFocus = DevExpress.Utils.DefaultBoolean.False;
-            this.StatusLabelHeaderIsConnected.Caption = "Not Connected";
-            this.StatusLabelHeaderIsConnected.Id = 11;
-            this.StatusLabelHeaderIsConnected.ItemAppearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.StatusLabelHeaderIsConnected.ItemAppearance.Hovered.Options.UseFont = true;
-            this.StatusLabelHeaderIsConnected.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.StatusLabelHeaderIsConnected.ItemAppearance.Normal.Options.UseFont = true;
-            this.StatusLabelHeaderIsConnected.Name = "StatusLabelHeaderIsConnected";
-            // 
-            // ButtonToolsPsGameUpdates
-            // 
-            this.ButtonToolsPsGameUpdates.Caption = "Game Updates";
-            this.ButtonToolsPsGameUpdates.Id = 12;
-            this.ButtonToolsPsGameUpdates.ImageOptions.Image = global::ArisenStudio.Properties.Resources.game_patch;
-            this.ButtonToolsPsGameUpdates.LargeWidth = 74;
-            this.ButtonToolsPsGameUpdates.Name = "ButtonToolsPsGameUpdates";
-            this.ButtonToolsPsGameUpdates.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonToolsPsGameUpdates.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsGameUpdates_ItemClick);
-            // 
-            // ButtonToolsPsBackupFilesManager
-            // 
-            this.ButtonToolsPsBackupFilesManager.Caption = "Backup Files Managers";
-            this.ButtonToolsPsBackupFilesManager.Id = 13;
-            this.ButtonToolsPsBackupFilesManager.ImageOptions.Image = global::ArisenStudio.Properties.Resources.backup_files;
-            this.ButtonToolsPsBackupFilesManager.LargeWidth = 74;
-            this.ButtonToolsPsBackupFilesManager.Name = "ButtonToolsPsBackupFilesManager";
-            this.ButtonToolsPsBackupFilesManager.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonToolsPsBackupFilesManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsBackupFilesManager_ItemClick);
-            // 
-            // ButtonToolsPsPackageManager
-            // 
-            this.ButtonToolsPsPackageManager.Caption = "Package Manager";
-            this.ButtonToolsPsPackageManager.Id = 14;
-            this.ButtonToolsPsPackageManager.ImageOptions.Image = global::ArisenStudio.Properties.Resources.package_manager;
-            this.ButtonToolsPsPackageManager.LargeWidth = 74;
-            this.ButtonToolsPsPackageManager.Name = "ButtonToolsPsPackageManager";
-            this.ButtonToolsPsPackageManager.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonToolsPsPackageManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsPackageManager_ItemClick);
-            // 
-            // ButtonToolsPsConsoleManager
-            // 
-            this.ButtonToolsPsConsoleManager.Caption = "Console Manager";
-            this.ButtonToolsPsConsoleManager.Id = 15;
-            this.ButtonToolsPsConsoleManager.ImageOptions.Image = global::ArisenStudio.Properties.Resources.console_manager;
-            this.ButtonToolsPsConsoleManager.LargeWidth = 74;
-            this.ButtonToolsPsConsoleManager.Name = "ButtonToolsPsConsoleManager";
-            this.ButtonToolsPsConsoleManager.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonToolsPsConsoleManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsConsoleManager_ItemClick);
-            // 
-            // ButtonToolsPsGameRegions
-            // 
-            this.ButtonToolsPsGameRegions.Caption = "Game Regions";
-            this.ButtonToolsPsGameRegions.Id = 16;
-            this.ButtonToolsPsGameRegions.ImageOptions.Image = global::ArisenStudio.Properties.Resources.globe;
-            this.ButtonToolsPsGameRegions.LargeWidth = 74;
-            this.ButtonToolsPsGameRegions.Name = "ButtonToolsPsGameRegions";
-            this.ButtonToolsPsGameRegions.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonToolsPsGameRegions.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsGameRegions_ItemClick);
-            // 
-            // ButtonToolsPsBootPluginsEditor
-            // 
-            this.ButtonToolsPsBootPluginsEditor.Caption = "Boot Plugins Editor";
-            this.ButtonToolsPsBootPluginsEditor.Id = 17;
-            this.ButtonToolsPsBootPluginsEditor.ImageOptions.Image = global::ArisenStudio.Properties.Resources.boot_plugins_editor;
-            this.ButtonToolsPsBootPluginsEditor.Name = "ButtonToolsPsBootPluginsEditor";
-            this.ButtonToolsPsBootPluginsEditor.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonToolsPsBootPluginsEditor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsBootPluginsEditor_ItemClick);
-            // 
-            // ButtonToolsXboxGameSaveResigner
-            // 
-            this.ButtonToolsXboxGameSaveResigner.Caption = "Game Save Resigner";
-            this.ButtonToolsXboxGameSaveResigner.Id = 18;
-            this.ButtonToolsXboxGameSaveResigner.ImageOptions.Image = global::ArisenStudio.Properties.Resources.edit_save;
-            this.ButtonToolsXboxGameSaveResigner.LargeWidth = 74;
-            this.ButtonToolsXboxGameSaveResigner.Name = "ButtonToolsXboxGameSaveResigner";
-            this.ButtonToolsXboxGameSaveResigner.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonToolsXboxGameSaveResigner.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxGameSaveResigner_ItemClick);
-            // 
-            // ButtonToolsXboxGamesLauncher
-            // 
-            this.ButtonToolsXboxGamesLauncher.Caption = "Games Launcher";
-            this.ButtonToolsXboxGamesLauncher.Id = 19;
-            this.ButtonToolsXboxGamesLauncher.ImageOptions.Image = global::ArisenStudio.Properties.Resources.file_launch;
-            this.ButtonToolsXboxGamesLauncher.Name = "ButtonToolsXboxGamesLauncher";
-            this.ButtonToolsXboxGamesLauncher.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonToolsXboxGamesLauncher.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxGamesLauncher_ItemClick);
-            // 
-            // ButtonToolsXboxModuleLoader
-            // 
-            this.ButtonToolsXboxModuleLoader.Caption = "Module Loader";
-            this.ButtonToolsXboxModuleLoader.Id = 20;
-            this.ButtonToolsXboxModuleLoader.ImageOptions.Image = global::ArisenStudio.Properties.Resources.modules;
-            this.ButtonToolsXboxModuleLoader.LargeWidth = 74;
-            this.ButtonToolsXboxModuleLoader.Name = "ButtonToolsXboxModuleLoader";
-            this.ButtonToolsXboxModuleLoader.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonToolsXboxModuleLoader.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxModuleLoader_ItemClick);
-            // 
-            // ButtonToolsXboxXuidSpoofer
-            // 
-            this.ButtonToolsXboxXuidSpoofer.Caption = "XUID Spoofer";
-            this.ButtonToolsXboxXuidSpoofer.Id = 21;
-            this.ButtonToolsXboxXuidSpoofer.ImageOptions.Image = global::ArisenStudio.Properties.Resources.spoofer;
-            this.ButtonToolsXboxXuidSpoofer.LargeWidth = 74;
-            this.ButtonToolsXboxXuidSpoofer.Name = "ButtonToolsXboxXuidSpoofer";
-            this.ButtonToolsXboxXuidSpoofer.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonToolsXboxXuidSpoofer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxXuidSpoofer_ItemClick);
-            // 
-            // ButtonToolsXboxDashlaunchEditor
-            // 
-            this.ButtonToolsXboxDashlaunchEditor.Caption = "Dashlaunch Editor";
-            this.ButtonToolsXboxDashlaunchEditor.Id = 22;
-            this.ButtonToolsXboxDashlaunchEditor.ImageOptions.Image = global::ArisenStudio.Properties.Resources.file_editor;
-            this.ButtonToolsXboxDashlaunchEditor.LargeWidth = 74;
-            this.ButtonToolsXboxDashlaunchEditor.Name = "ButtonToolsXboxDashlaunchEditor";
-            this.ButtonToolsXboxDashlaunchEditor.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonToolsXboxDashlaunchEditor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxDashlaunchEditor_ItemClick);
-            // 
-            // ButtonToolsPsPower
-            // 
-            this.ButtonToolsPsPower.Caption = "Power";
-            this.ButtonToolsPsPower.DrawMenuSideStrip = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonToolsPsPower.Id = 25;
-            this.ButtonToolsPsPower.ImageOptions.Image = global::ArisenStudio.Properties.Resources.shutdown;
-            this.ButtonToolsPsPower.LargeWidth = 74;
-            this.ButtonToolsPsPower.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsPsPowerShutdown),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsPsPowerRestart),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsPsPowerSoftReboot, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsPsPowerHardReboot),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsPsPowerQuickReboot)});
-            this.ButtonToolsPsPower.Name = "ButtonToolsPsPower";
-            this.ButtonToolsPsPower.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            // 
-            // ButtonToolsPsPowerShutdown
-            // 
-            this.ButtonToolsPsPowerShutdown.Caption = "Shutdown";
-            this.ButtonToolsPsPowerShutdown.Id = 26;
-            this.ButtonToolsPsPowerShutdown.Name = "ButtonToolsPsPowerShutdown";
-            this.ButtonToolsPsPowerShutdown.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsPowerShutdown_ItemClick);
-            // 
-            // ButtonToolsPsPowerRestart
-            // 
-            this.ButtonToolsPsPowerRestart.Caption = "Restart";
-            this.ButtonToolsPsPowerRestart.Id = 27;
-            this.ButtonToolsPsPowerRestart.Name = "ButtonToolsPsPowerRestart";
-            this.ButtonToolsPsPowerRestart.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsPowerRestart_ItemClick);
-            // 
-            // ButtonToolsPsPowerSoftReboot
-            // 
-            this.ButtonToolsPsPowerSoftReboot.Caption = "Soft Reboot";
-            this.ButtonToolsPsPowerSoftReboot.Id = 28;
-            this.ButtonToolsPsPowerSoftReboot.Name = "ButtonToolsPsPowerSoftReboot";
-            this.ButtonToolsPsPowerSoftReboot.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsPowerSoftReboot_ItemClick);
-            // 
-            // ButtonToolsPsPowerHardReboot
-            // 
-            this.ButtonToolsPsPowerHardReboot.Caption = "Hard Reboot";
-            this.ButtonToolsPsPowerHardReboot.Id = 29;
-            this.ButtonToolsPsPowerHardReboot.Name = "ButtonToolsPsPowerHardReboot";
-            this.ButtonToolsPsPowerHardReboot.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsPowerHardReboot_ItemClick);
-            // 
-            // ButtonToolsPsPowerQuickReboot
-            // 
-            this.ButtonToolsPsPowerQuickReboot.Caption = "Quick Reboot";
-            this.ButtonToolsPsPowerQuickReboot.Id = 30;
-            this.ButtonToolsPsPowerQuickReboot.Name = "ButtonToolsPsPowerQuickReboot";
-            this.ButtonToolsPsPowerQuickReboot.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsPowerQuickReboot_ItemClick);
-            // 
-            // ButtonToolsPsGames
-            // 
-            this.ButtonToolsPsGames.Caption = "Games";
-            this.ButtonToolsPsGames.DrawMenuSideStrip = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonToolsPsGames.Id = 31;
-            this.ButtonToolsPsGames.ImageOptions.Image = global::ArisenStudio.Properties.Resources.games_folder;
-            this.ButtonToolsPsGames.LargeWidth = 74;
-            this.ButtonToolsPsGames.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsPsGamesOpenGUI),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsPsGamesMountBD, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsPsGamesMountISO),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsPsGamesMountPSN),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsPsGamesUnmount),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsPsGamesLaunchGame, true)});
-            this.ButtonToolsPsGames.Name = "ButtonToolsPsGames";
-            this.ButtonToolsPsGames.OptionsMultiColumn.ItemIndent = 0;
-            this.ButtonToolsPsGames.OptionsMultiColumn.TextHorizontalAlignment = DevExpress.Utils.Drawing.ItemHorizontalAlignment.Right;
-            this.ButtonToolsPsGames.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            // 
-            // ButtonToolsPsGamesOpenGUI
-            // 
-            this.ButtonToolsPsGamesOpenGUI.Caption = "Launcher (GUI)";
-            this.ButtonToolsPsGamesOpenGUI.Id = 71;
-            this.ButtonToolsPsGamesOpenGUI.Name = "ButtonToolsPsGamesOpenGUI";
-            this.ButtonToolsPsGamesOpenGUI.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsGamesOpenGUI_ItemClick);
-            // 
-            // ButtonToolsPsGamesMountBD
-            // 
-            this.ButtonToolsPsGamesMountBD.Caption = "Mount BD";
-            this.ButtonToolsPsGamesMountBD.Id = 34;
-            this.ButtonToolsPsGamesMountBD.Name = "ButtonToolsPsGamesMountBD";
-            this.ButtonToolsPsGamesMountBD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsGamesMountBD_ItemClick);
-            // 
-            // ButtonToolsPsGamesMountISO
-            // 
-            this.ButtonToolsPsGamesMountISO.Caption = "Mount ISO";
-            this.ButtonToolsPsGamesMountISO.Id = 35;
-            this.ButtonToolsPsGamesMountISO.Name = "ButtonToolsPsGamesMountISO";
-            this.ButtonToolsPsGamesMountISO.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsGamesMountISO_ItemClick);
-            // 
-            // ButtonToolsPsGamesMountPSN
-            // 
-            this.ButtonToolsPsGamesMountPSN.Caption = "Mount PSN";
-            this.ButtonToolsPsGamesMountPSN.Id = 36;
-            this.ButtonToolsPsGamesMountPSN.Name = "ButtonToolsPsGamesMountPSN";
-            this.ButtonToolsPsGamesMountPSN.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsGamesMountPSN_ItemClick);
-            // 
-            // ButtonToolsPsGamesUnmount
-            // 
-            this.ButtonToolsPsGamesUnmount.Caption = "Unmount";
-            this.ButtonToolsPsGamesUnmount.Id = 37;
-            this.ButtonToolsPsGamesUnmount.Name = "ButtonToolsPsGamesUnmount";
-            this.ButtonToolsPsGamesUnmount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsGamesUnmount_ItemClick);
-            // 
-            // ButtonToolsPsGamesLaunchGame
-            // 
-            this.ButtonToolsPsGamesLaunchGame.Caption = "Launch";
-            this.ButtonToolsPsGamesLaunchGame.Id = 70;
-            this.ButtonToolsPsGamesLaunchGame.Name = "ButtonToolsPsGamesLaunchGame";
-            this.ButtonToolsPsGamesLaunchGame.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsGamesStartGame_ItemClick);
-            // 
-            // ButtonToolsPsNotifyMessage
-            // 
-            this.ButtonToolsPsNotifyMessage.Caption = "Notify Message";
-            this.ButtonToolsPsNotifyMessage.Id = 32;
-            this.ButtonToolsPsNotifyMessage.ImageOptions.Image = global::ArisenStudio.Properties.Resources.notify;
-            this.ButtonToolsPsNotifyMessage.LargeWidth = 74;
-            this.ButtonToolsPsNotifyMessage.Name = "ButtonToolsPsNotifyMessage";
-            this.ButtonToolsPsNotifyMessage.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonToolsPsNotifyMessage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsNotifyMessage_ItemClick);
-            // 
-            // ButtonToolsPsVirtualController
-            // 
-            this.ButtonToolsPsVirtualController.Caption = "Virtual Controller";
-            this.ButtonToolsPsVirtualController.Id = 33;
-            this.ButtonToolsPsVirtualController.ImageOptions.Image = global::ArisenStudio.Properties.Resources.game_controller;
-            this.ButtonToolsPsVirtualController.LargeWidth = 74;
-            this.ButtonToolsPsVirtualController.Name = "ButtonToolsPsVirtualController";
-            this.ButtonToolsPsVirtualController.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonToolsPsVirtualController.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsVirtualController_ItemClick);
-            // 
-            // ButtonToolsXboxPower
-            // 
-            this.ButtonToolsXboxPower.Caption = "Power";
-            this.ButtonToolsXboxPower.DrawMenuSideStrip = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonToolsXboxPower.Id = 39;
-            this.ButtonToolsXboxPower.ImageOptions.Image = global::ArisenStudio.Properties.Resources.shutdown;
-            this.ButtonToolsXboxPower.LargeWidth = 74;
-            this.ButtonToolsXboxPower.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsXboxPowerShutdown),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsXboxPowerSoftReboot),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ButtonToolsXboxPowerHardReboot)});
-            this.ButtonToolsXboxPower.Name = "ButtonToolsXboxPower";
-            this.ButtonToolsXboxPower.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            // 
-            // ButtonToolsXboxPowerShutdown
-            // 
-            this.ButtonToolsXboxPowerShutdown.Caption = "Shutdown";
-            this.ButtonToolsXboxPowerShutdown.Id = 42;
-            this.ButtonToolsXboxPowerShutdown.Name = "ButtonToolsXboxPowerShutdown";
-            this.ButtonToolsXboxPowerShutdown.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxPowerShutdown_ItemClick);
-            // 
-            // ButtonToolsXboxPowerSoftReboot
-            // 
-            this.ButtonToolsXboxPowerSoftReboot.Caption = "Soft Reboot";
-            this.ButtonToolsXboxPowerSoftReboot.Id = 43;
-            this.ButtonToolsXboxPowerSoftReboot.Name = "ButtonToolsXboxPowerSoftReboot";
-            this.ButtonToolsXboxPowerSoftReboot.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxPowerSoftReboot_ItemClick);
-            // 
-            // ButtonToolsXboxPowerHardReboot
-            // 
-            this.ButtonToolsXboxPowerHardReboot.Caption = "Hard Reboot";
-            this.ButtonToolsXboxPowerHardReboot.Id = 44;
-            this.ButtonToolsXboxPowerHardReboot.Name = "ButtonToolsXboxPowerHardReboot";
-            this.ButtonToolsXboxPowerHardReboot.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxPowerHardReboot_ItemClick);
-            // 
-            // ButtonToolsXboxTakeScreenshot
-            // 
-            this.ButtonToolsXboxTakeScreenshot.Caption = "Take Screenshot";
-            this.ButtonToolsXboxTakeScreenshot.Id = 40;
-            this.ButtonToolsXboxTakeScreenshot.ImageOptions.Image = global::ArisenStudio.Properties.Resources.capture;
-            this.ButtonToolsXboxTakeScreenshot.LargeWidth = 74;
-            this.ButtonToolsXboxTakeScreenshot.Name = "ButtonToolsXboxTakeScreenshot";
-            this.ButtonToolsXboxTakeScreenshot.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonToolsXboxTakeScreenshot.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxTakeScreenshot_ItemClick);
-            // 
-            // ButtonToolsXboxConsoleManager
-            // 
-            this.ButtonToolsXboxConsoleManager.Caption = "Console Manager";
-            this.ButtonToolsXboxConsoleManager.Id = 41;
-            this.ButtonToolsXboxConsoleManager.ImageOptions.Image = global::ArisenStudio.Properties.Resources.console_manager;
-            this.ButtonToolsXboxConsoleManager.LargeWidth = 74;
-            this.ButtonToolsXboxConsoleManager.Name = "ButtonToolsXboxConsoleManager";
-            this.ButtonToolsXboxConsoleManager.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonToolsXboxConsoleManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxConsoleManager_ItemClick);
-            // 
-            // ButtonToolsXboxNotifyMessage
-            // 
-            this.ButtonToolsXboxNotifyMessage.Caption = "Notify Message";
-            this.ButtonToolsXboxNotifyMessage.Id = 46;
-            this.ButtonToolsXboxNotifyMessage.ImageOptions.Image = global::ArisenStudio.Properties.Resources.notify;
-            this.ButtonToolsXboxNotifyMessage.LargeWidth = 74;
-            this.ButtonToolsXboxNotifyMessage.Name = "ButtonToolsXboxNotifyMessage";
-            this.ButtonToolsXboxNotifyMessage.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonToolsXboxNotifyMessage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxNotifyMessage_ItemClick);
-            // 
-            // ButtonDownloadsFolder
-            // 
-            this.ButtonDownloadsFolder.Caption = "Downloads Folder";
-            this.ButtonDownloadsFolder.Id = 47;
-            this.ButtonDownloadsFolder.ImageOptions.Image = global::ArisenStudio.Properties.Resources.downloads_folder;
-            this.ButtonDownloadsFolder.LargeWidth = 74;
-            this.ButtonDownloadsFolder.Name = "ButtonDownloadsFolder";
-            this.ButtonDownloadsFolder.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonDownloadsFolder.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonDownloadsFolder_ItemClick);
-            // 
-            // ButtonAdvancedSettings
-            // 
-            this.ButtonAdvancedSettings.Caption = "Advanced Settings";
-            this.ButtonAdvancedSettings.Id = 57;
-            this.ButtonAdvancedSettings.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.viewsettings;
-            this.ButtonAdvancedSettings.LargeWidth = 74;
-            this.ButtonAdvancedSettings.Name = "ButtonAdvancedSettings";
-            this.ButtonAdvancedSettings.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonAdvancedSettings.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonAdvancedSettings_ItemClick);
-            // 
-            // ButtonDiscordPresence
-            // 
-            this.ButtonDiscordPresence.Caption = "Discord Presence";
-            this.ButtonDiscordPresence.Id = 58;
-            this.ButtonDiscordPresence.ImageOptions.Image = global::ArisenStudio.Properties.Resources.discord_status1;
-            this.ButtonDiscordPresence.LargeWidth = 74;
-            this.ButtonDiscordPresence.Name = "ButtonDiscordPresence";
-            this.ButtonDiscordPresence.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonDiscordPresence.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonDiscordPresence_CheckedChanged);
-            // 
-            // ButtonInstallModsToUSB
-            // 
-            this.ButtonInstallModsToUSB.Caption = "Install Mods\r\nto USB";
-            this.ButtonInstallModsToUSB.Id = 59;
-            this.ButtonInstallModsToUSB.ImageOptions.Image = global::ArisenStudio.Properties.Resources.usb_connection;
-            this.ButtonInstallModsToUSB.LargeWidth = 74;
-            this.ButtonInstallModsToUSB.Name = "ButtonInstallModsToUSB";
-            this.ButtonInstallModsToUSB.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonInstallModsToUSB.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonInstallModsToUSB_CheckedChanged);
-            // 
-            // ButtonHowToGuides
-            // 
-            this.ButtonHowToGuides.Caption = "How-To Guides";
-            this.ButtonHowToGuides.Id = 60;
-            this.ButtonHowToGuides.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.actions_question1;
-            this.ButtonHowToGuides.LargeWidth = 74;
-            this.ButtonHowToGuides.Name = "ButtonHowToGuides";
-            this.ButtonHowToGuides.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonHowToGuides.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonHowToGuides_ItemClick);
-            // 
-            // ButtonAbout
-            // 
-            this.ButtonAbout.Caption = "About";
-            this.ButtonAbout.Id = 61;
-            this.ButtonAbout.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.about;
-            this.ButtonAbout.LargeWidth = 74;
-            this.ButtonAbout.Name = "ButtonAbout";
-            this.ButtonAbout.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonAbout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonAbout_ItemClick);
-            // 
-            // ButtonOpenLogFile
-            // 
-            this.ButtonOpenLogFile.Caption = "Open Log File";
-            this.ButtonOpenLogFile.Id = 62;
-            this.ButtonOpenLogFile.ImageOptions.Image = global::ArisenStudio.Properties.Resources.log_file;
-            this.ButtonOpenLogFile.LargeWidth = 74;
-            this.ButtonOpenLogFile.Name = "ButtonOpenLogFile";
-            this.ButtonOpenLogFile.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonOpenLogFile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonOpenLogFile_ItemClick);
-            // 
-            // ButtonOpenLogFolder
-            // 
-            this.ButtonOpenLogFolder.Caption = "Open Log Folder";
-            this.ButtonOpenLogFolder.Id = 63;
-            this.ButtonOpenLogFolder.ImageOptions.Image = global::ArisenStudio.Properties.Resources.file_folder;
-            this.ButtonOpenLogFolder.LargeWidth = 74;
-            this.ButtonOpenLogFolder.Name = "ButtonOpenLogFolder";
-            this.ButtonOpenLogFolder.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonOpenLogFolder.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonOpenLogFolder_ItemClick);
-            // 
-            // ButtonRequestMods
-            // 
-            this.ButtonRequestMods.Caption = "Request Mods";
-            this.ButtonRequestMods.Id = 64;
-            this.ButtonRequestMods.ImageOptions.Image = global::ArisenStudio.Properties.Resources.form;
-            this.ButtonRequestMods.LargeWidth = 74;
-            this.ButtonRequestMods.Name = "ButtonRequestMods";
-            this.ButtonRequestMods.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonRequestMods.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonRequestMods_ItemClick);
-            // 
-            // ButtonSendFeedback
-            // 
-            this.ButtonSendFeedback.Caption = "Send Feedback";
-            this.ButtonSendFeedback.Id = 65;
-            this.ButtonSendFeedback.ImageOptions.Image = global::ArisenStudio.Properties.Resources.send_feedback;
-            this.ButtonSendFeedback.LargeWidth = 74;
-            this.ButtonSendFeedback.Name = "ButtonSendFeedback";
-            this.ButtonSendFeedback.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonSendFeedback.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonSendFeedback_ItemClick);
-            // 
-            // ButtonToolsXboxHDKey
-            // 
-            this.ButtonToolsXboxHDKey.Caption = "Xbox HD Key";
-            this.ButtonToolsXboxHDKey.Id = 66;
-            this.ButtonToolsXboxHDKey.ImageOptions.Image = global::ArisenStudio.Properties.Resources.key;
-            this.ButtonToolsXboxHDKey.LargeWidth = 74;
-            this.ButtonToolsXboxHDKey.Name = "ButtonToolsXboxHDKey";
-            this.ButtonToolsXboxHDKey.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonToolsXboxHDKey.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxHDKey_ItemClick);
-            // 
-            // StatusLabelHeaderCurrentGame
-            // 
-            this.StatusLabelHeaderCurrentGame.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.StatusLabelHeaderCurrentGame.AllowFocus = DevExpress.Utils.DefaultBoolean.False;
-            this.StatusLabelHeaderCurrentGame.Caption = "Current Game:";
-            this.StatusLabelHeaderCurrentGame.Id = 68;
-            this.StatusLabelHeaderCurrentGame.ItemAppearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.StatusLabelHeaderCurrentGame.ItemAppearance.Hovered.Options.UseFont = true;
-            this.StatusLabelHeaderCurrentGame.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.StatusLabelHeaderCurrentGame.ItemAppearance.Normal.Options.UseFont = true;
-            this.StatusLabelHeaderCurrentGame.Name = "StatusLabelHeaderCurrentGame";
-            this.StatusLabelHeaderCurrentGame.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            // 
-            // StatusLabelCurrentGame
-            // 
-            this.StatusLabelCurrentGame.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.StatusLabelCurrentGame.AllowFocus = DevExpress.Utils.DefaultBoolean.False;
-            this.StatusLabelCurrentGame.Caption = "n/a";
-            this.StatusLabelCurrentGame.Id = 69;
-            this.StatusLabelCurrentGame.ItemAppearance.Normal.Options.UseFont = true;
-            this.StatusLabelCurrentGame.Name = "StatusLabelCurrentGame";
-            this.StatusLabelCurrentGame.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            // 
-            // barStaticItem3
-            // 
-            this.barStaticItem3.Caption = "barStaticItem3";
-            this.barStaticItem3.Id = 74;
-            this.barStaticItem3.Name = "barStaticItem3";
-            // 
-            // ButtonSetupWizard
-            // 
-            this.ButtonSetupWizard.Caption = "Setup Wizard";
-            this.ButtonSetupWizard.Id = 76;
-            this.ButtonSetupWizard.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_project_setup;
-            this.ButtonSetupWizard.LargeWidth = 74;
-            this.ButtonSetupWizard.Name = "ButtonSetupWizard";
-            this.ButtonSetupWizard.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonSetupWizard.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonSetupWizard_ItemClick);
-            // 
-            // ButtonLocalFilesOpen
-            // 
-            this.ButtonLocalFilesOpen.Caption = "Open";
-            this.ButtonLocalFilesOpen.Id = 80;
-            this.ButtonLocalFilesOpen.Name = "ButtonLocalFilesOpen";
-            // 
-            // ButtonLocalFilesDelete
-            // 
-            this.ButtonLocalFilesDelete.Caption = "Delete";
-            this.ButtonLocalFilesDelete.Id = 81;
-            this.ButtonLocalFilesDelete.Name = "ButtonLocalFilesDelete";
-            // 
-            // ButtonLocalFilesRename
-            // 
-            this.ButtonLocalFilesRename.Caption = "Rename";
-            this.ButtonLocalFilesRename.Id = 82;
-            this.ButtonLocalFilesRename.Name = "ButtonLocalFilesRename";
-            // 
-            // ButtonLocalFilesRefresh
-            // 
-            this.ButtonLocalFilesRefresh.Caption = "Refresh";
-            this.ButtonLocalFilesRefresh.Id = 83;
-            this.ButtonLocalFilesRefresh.Name = "ButtonLocalFilesRefresh";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.ActAsDropDown = true;
-            this.barButtonItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barButtonItem1.AllowDrawArrow = false;
-            this.barButtonItem1.AllowDrawArrowInMenu = false;
-            this.barButtonItem1.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.barButtonItem1.DropDownControl = this.MenuTopInfo;
-            this.barButtonItem1.Id = 84;
-            this.barButtonItem1.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.dots_vertical;
-            this.barButtonItem1.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            // 
-            // MenuTopInfo
-            // 
-            this.MenuTopInfo.ItemLinks.Add(this.barButtonItem12);
-            this.MenuTopInfo.ItemLinks.Add(this.barButtonItem10);
-            this.MenuTopInfo.ItemLinks.Add(this.barButtonItem11);
-            this.MenuTopInfo.ItemLinks.Add(this.barButtonItem13);
-            this.MenuTopInfo.Name = "MenuTopInfo";
-            this.MenuTopInfo.Ribbon = this.RibbonControlMain;
-            // 
-            // barButtonItem12
-            // 
-            this.barButtonItem12.Caption = "Submit Request";
-            this.barButtonItem12.Id = 87;
-            this.barButtonItem12.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.barButtonItem12.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem12.ImageOptions.SvgImage")));
-            this.barButtonItem12.Name = "barButtonItem12";
-            // 
-            // barButtonItem10
-            // 
-            this.barButtonItem10.Caption = "Send Feedback";
-            this.barButtonItem10.Id = 85;
-            this.barButtonItem10.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.barButtonItem10.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.bug;
-            this.barButtonItem10.Name = "barButtonItem10";
-            // 
-            // barButtonItem11
-            // 
-            this.barButtonItem11.Caption = "Open Log Folder";
-            this.barButtonItem11.Id = 86;
-            this.barButtonItem11.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.barButtonItem11.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_opened_folder;
-            this.barButtonItem11.Name = "barButtonItem11";
-            // 
-            // barButtonItem13
-            // 
-            this.barButtonItem13.Caption = "About";
-            this.barButtonItem13.Id = 88;
-            this.barButtonItem13.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.barButtonItem13.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.about;
-            this.barButtonItem13.Name = "barButtonItem13";
-            // 
-            // ButtonToolsXboxTrainers
-            // 
-            this.ButtonToolsXboxTrainers.Caption = "Aurora Trainers";
-            this.ButtonToolsXboxTrainers.Id = 89;
-            this.ButtonToolsXboxTrainers.LargeWidth = 74;
-            this.ButtonToolsXboxTrainers.Name = "ButtonToolsXboxTrainers";
-            this.ButtonToolsXboxTrainers.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            // 
-            // ButtonToolsPsGameCheats
-            // 
-            this.ButtonToolsPsGameCheats.Caption = "Game Cheats";
-            this.ButtonToolsPsGameCheats.Id = 90;
-            this.ButtonToolsPsGameCheats.LargeWidth = 74;
-            this.ButtonToolsPsGameCheats.Name = "ButtonToolsPsGameCheats";
-            this.ButtonToolsPsGameCheats.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            // 
-            // RibbonPageHome
-            // 
-            this.RibbonPageHome.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.RibbonGroupConnection,
-            this.RibbonGroupConnsoleProfiles,
-            this.RibbonGroupQuickSettings,
-            this.RibbonGroupHelp});
-            this.RibbonPageHome.Name = "RibbonPageHome";
-            this.RibbonPageHome.Text = "Home";
-            // 
-            // RibbonGroupConnection
-            // 
-            this.RibbonGroupConnection.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.True;
-            this.RibbonGroupConnection.ItemLinks.Add(this.ButtonConnectConsole);
-            this.RibbonGroupConnection.ItemLinks.Add(this.ButtonDisconnectConsole);
-            this.RibbonGroupConnection.ItemsLayout = DevExpress.XtraBars.Ribbon.RibbonPageGroupItemsLayout.OneRow;
-            this.RibbonGroupConnection.Name = "RibbonGroupConnection";
-            this.RibbonGroupConnection.Text = "Connection";
-            // 
-            // RibbonGroupConnsoleProfiles
-            // 
-            this.RibbonGroupConnsoleProfiles.ItemLinks.Add(this.ButtonAddNewProfile);
-            this.RibbonGroupConnsoleProfiles.ItemLinks.Add(this.ButtonScanXboxConsoles);
-            this.RibbonGroupConnsoleProfiles.ItemLinks.Add(this.ButtonEditProfiles);
-            this.RibbonGroupConnsoleProfiles.ItemLinks.Add(this.ButtonChangeProfile);
-            this.RibbonGroupConnsoleProfiles.ItemsLayout = DevExpress.XtraBars.Ribbon.RibbonPageGroupItemsLayout.OneRow;
-            this.RibbonGroupConnsoleProfiles.Name = "RibbonGroupConnsoleProfiles";
-            this.RibbonGroupConnsoleProfiles.Text = "Console Profiles";
-            // 
-            // RibbonGroupQuickSettings
-            // 
-            this.RibbonGroupQuickSettings.ItemLinks.Add(this.ButtonHowToGuides);
-            this.RibbonGroupQuickSettings.ItemLinks.Add(this.ButtonSetupWizard);
-            this.RibbonGroupQuickSettings.ItemLinks.Add(this.ButtonDownloadsFolder);
-            this.RibbonGroupQuickSettings.ItemLinks.Add(this.ButtonDiscordPresence);
-            this.RibbonGroupQuickSettings.ItemLinks.Add(this.ButtonInstallModsToUSB);
-            this.RibbonGroupQuickSettings.ItemLinks.Add(this.ButtonAdvancedSettings);
-            this.RibbonGroupQuickSettings.Name = "RibbonGroupQuickSettings";
-            this.RibbonGroupQuickSettings.Text = "Quick Settings";
-            // 
-            // RibbonGroupHelp
-            // 
-            this.RibbonGroupHelp.ItemLinks.Add(this.ButtonAbout);
-            this.RibbonGroupHelp.ItemLinks.Add(this.ButtonOpenLogFile);
-            this.RibbonGroupHelp.ItemLinks.Add(this.ButtonOpenLogFolder);
-            this.RibbonGroupHelp.ItemLinks.Add(this.ButtonRequestMods);
-            this.RibbonGroupHelp.ItemLinks.Add(this.ButtonSendFeedback);
-            this.RibbonGroupHelp.Name = "RibbonGroupHelp";
-            this.RibbonGroupHelp.Text = "Help";
-            // 
-            // RibbonPageTools
-            // 
-            this.RibbonPageTools.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.RibbonGroupModdingTools,
-            this.RibbonGroupWebManCommands,
-            this.RibbonGroupXbdmCommands});
-            this.RibbonPageTools.Name = "RibbonPageTools";
-            this.RibbonPageTools.Text = "Tools";
-            // 
-            // RibbonGroupModdingTools
-            // 
-            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsPsGameUpdates);
-            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsPsBackupFilesManager);
-            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsPsPackageManager);
-            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsPsConsoleManager);
-            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsPsGameRegions);
-            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsPsBootPluginsEditor);
-            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsXboxGameSaveResigner);
-            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsXboxHDKey);
-            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsXboxGamesLauncher);
-            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsXboxModuleLoader);
-            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsXboxXuidSpoofer);
-            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsXboxDashlaunchEditor);
-            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsXboxTrainers);
-            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsPsGameCheats);
-            this.RibbonGroupModdingTools.Name = "RibbonGroupModdingTools";
-            this.RibbonGroupModdingTools.Text = "Modding Tools";
-            // 
-            // RibbonGroupWebManCommands
-            // 
-            this.RibbonGroupWebManCommands.ItemLinks.Add(this.ButtonToolsPsPower);
-            this.RibbonGroupWebManCommands.ItemLinks.Add(this.ButtonToolsPsGames);
-            this.RibbonGroupWebManCommands.ItemLinks.Add(this.ButtonToolsPsNotifyMessage);
-            this.RibbonGroupWebManCommands.ItemLinks.Add(this.ButtonToolsPsVirtualController);
-            this.RibbonGroupWebManCommands.Name = "RibbonGroupWebManCommands";
-            this.RibbonGroupWebManCommands.Text = "webMAN Commands";
-            // 
-            // RibbonGroupXbdmCommands
-            // 
-            this.RibbonGroupXbdmCommands.ItemLinks.Add(this.ButtonToolsXboxPower);
-            this.RibbonGroupXbdmCommands.ItemLinks.Add(this.ButtonToolsXboxTakeScreenshot);
-            this.RibbonGroupXbdmCommands.ItemLinks.Add(this.ButtonToolsXboxConsoleManager);
-            this.RibbonGroupXbdmCommands.ItemLinks.Add(this.ButtonToolsXboxNotifyMessage);
-            this.RibbonGroupXbdmCommands.Name = "RibbonGroupXbdmCommands";
-            this.RibbonGroupXbdmCommands.Text = "XBDM Commands";
-            // 
-            // RibbonStatusBar
-            // 
-            this.RibbonStatusBar.ItemLinks.Add(this.StatusLabelHeaderStatus);
-            this.RibbonStatusBar.ItemLinks.Add(this.StatusLabelStatus);
-            this.RibbonStatusBar.ItemLinks.Add(this.StatusLabelHeaderIsConnected);
-            this.RibbonStatusBar.ItemLinks.Add(this.StatusLabelHeaderCurrentGame, true);
-            this.RibbonStatusBar.ItemLinks.Add(this.StatusLabelCurrentGame);
-            this.RibbonStatusBar.Location = new System.Drawing.Point(0, 762);
-            this.RibbonStatusBar.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.RibbonStatusBar.Name = "RibbonStatusBar";
-            this.RibbonStatusBar.Ribbon = this.RibbonControlMain;
-            this.RibbonStatusBar.ShowSizeGrip = false;
-            this.RibbonStatusBar.Size = new System.Drawing.Size(1498, 31);
-            // 
             // PanelNavigationMenu
             // 
             this.PanelNavigationMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -14380,7 +14474,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelNavigationMenu.Appearance.Options.UseFont = true;
             this.PanelNavigationMenu.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.PanelNavigationMenu.Controls.Add(this.NavigationMenu);
-            this.PanelNavigationMenu.Location = new System.Drawing.Point(-12, 185);
+            this.PanelNavigationMenu.Location = new System.Drawing.Point(-10, 185);
             this.PanelNavigationMenu.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.PanelNavigationMenu.Name = "PanelNavigationMenu";
             this.PanelNavigationMenu.Size = new System.Drawing.Size(208, 575);
@@ -14414,14 +14508,14 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem1.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.tileItem1.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem1.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement61.ImageOptions.ImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement61.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement61.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement61.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement61.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            tileItemElement61.Text = "";
-            tileItemElement61.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem1.Elements.Add(tileItemElement61);
+            tileItemElement59.ImageOptions.ImageSize = new System.Drawing.Size(24, 24);
+            tileItemElement59.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement59.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement59.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
+            tileItemElement59.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
+            tileItemElement59.Text = "";
+            tileItemElement59.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem1.Elements.Add(tileItemElement59);
             this.tileItem1.Id = 1;
             this.tileItem1.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.tileItem1.Name = "tileItem1";
@@ -14437,15 +14531,15 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem2.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.tileItem2.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem2.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement62.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement62.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement62.ImageOptions.ImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement62.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement62.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement62.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
-            tileItemElement62.Text = "";
-            tileItemElement62.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem2.Elements.Add(tileItemElement62);
+            tileItemElement60.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement60.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileItemElement60.ImageOptions.ImageSize = new System.Drawing.Size(24, 24);
+            tileItemElement60.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement60.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement60.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
+            tileItemElement60.Text = "";
+            tileItemElement60.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem2.Elements.Add(tileItemElement60);
             this.tileItem2.Id = 2;
             this.tileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.tileItem2.Name = "tileItem2";
@@ -15034,22 +15128,22 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem9.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem9.AppearanceItem.Normal.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.tileItem9.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement63.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            tileItemElement63.Appearance.Normal.Options.UseFont = true;
-            tileItemElement63.Appearance.Normal.Options.UseTextOptions = true;
-            tileItemElement63.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            tileItemElement63.Text = "Call of Duty: Black Ops";
-            tileItemElement63.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement64.AnchorAlignment = DevExpress.Utils.AnchorAlignment.Bottom;
-            tileItemElement64.AnchorElementIndex = 0;
-            tileItemElement64.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            tileItemElement64.Appearance.Normal.Options.UseFont = true;
-            tileItemElement64.Appearance.Normal.Options.UseTextOptions = true;
-            tileItemElement64.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            tileItemElement64.Text = "Infracted Menu";
-            tileItemElement64.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            this.tileItem9.Elements.Add(tileItemElement63);
-            this.tileItem9.Elements.Add(tileItemElement64);
+            tileItemElement61.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
+            tileItemElement61.Appearance.Normal.Options.UseFont = true;
+            tileItemElement61.Appearance.Normal.Options.UseTextOptions = true;
+            tileItemElement61.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            tileItemElement61.Text = "Call of Duty: Black Ops";
+            tileItemElement61.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement62.AnchorAlignment = DevExpress.Utils.AnchorAlignment.Bottom;
+            tileItemElement62.AnchorElementIndex = 0;
+            tileItemElement62.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            tileItemElement62.Appearance.Normal.Options.UseFont = true;
+            tileItemElement62.Appearance.Normal.Options.UseTextOptions = true;
+            tileItemElement62.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            tileItemElement62.Text = "Infracted Menu";
+            tileItemElement62.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            this.tileItem9.Elements.Add(tileItemElement61);
+            this.tileItem9.Elements.Add(tileItemElement62);
             this.tileItem9.Id = 11;
             this.tileItem9.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem9.Name = "tileItem9";
@@ -15298,26 +15392,26 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem10.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem10.AppearanceItem.Normal.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.tileItem10.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement65.AnchorAlignment = DevExpress.Utils.AnchorAlignment.Top;
-            tileItemElement65.AnchorElementIndex = 1;
-            tileItemElement65.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            tileItemElement65.Appearance.Normal.Options.UseFont = true;
-            tileItemElement65.Appearance.Normal.Options.UseTextOptions = true;
-            tileItemElement65.Appearance.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            tileItemElement65.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            tileItemElement65.StretchHorizontal = true;
-            tileItemElement65.Text = "Game Title";
-            tileItemElement65.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            tileItemElement66.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            tileItemElement66.Appearance.Normal.Options.UseFont = true;
-            tileItemElement66.Appearance.Normal.Options.UseTextOptions = true;
-            tileItemElement66.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            tileItemElement66.ColumnIndex = 1;
-            tileItemElement66.RowIndex = 1;
-            tileItemElement66.Text = "Total Mods";
-            tileItemElement66.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.tileItem10.Elements.Add(tileItemElement65);
-            this.tileItem10.Elements.Add(tileItemElement66);
+            tileItemElement63.AnchorAlignment = DevExpress.Utils.AnchorAlignment.Top;
+            tileItemElement63.AnchorElementIndex = 1;
+            tileItemElement63.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            tileItemElement63.Appearance.Normal.Options.UseFont = true;
+            tileItemElement63.Appearance.Normal.Options.UseTextOptions = true;
+            tileItemElement63.Appearance.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
+            tileItemElement63.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            tileItemElement63.StretchHorizontal = true;
+            tileItemElement63.Text = "Game Title";
+            tileItemElement63.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            tileItemElement64.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            tileItemElement64.Appearance.Normal.Options.UseFont = true;
+            tileItemElement64.Appearance.Normal.Options.UseTextOptions = true;
+            tileItemElement64.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            tileItemElement64.ColumnIndex = 1;
+            tileItemElement64.RowIndex = 1;
+            tileItemElement64.Text = "Total Mods";
+            tileItemElement64.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            this.tileItem10.Elements.Add(tileItemElement63);
+            this.tileItem10.Elements.Add(tileItemElement64);
             this.tileItem10.Id = 11;
             this.tileItem10.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem10.Name = "tileItem10";
@@ -15988,14 +16082,14 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem11.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.tileItem11.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem11.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement67.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement67.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement67.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_opened_folder;
-            tileItemElement67.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement67.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement67.Text = "";
-            tileItemElement67.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem11.Elements.Add(tileItemElement67);
+            tileItemElement65.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement65.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement65.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_opened_folder;
+            tileItemElement65.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement65.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
+            tileItemElement65.Text = "";
+            tileItemElement65.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem11.Elements.Add(tileItemElement65);
             this.tileItem11.Id = 0;
             this.tileItem11.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.tileItem11.Name = "tileItem11";
@@ -16014,15 +16108,15 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem12.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.tileItem12.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem12.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement68.ImageOptions.Image = global::ArisenStudio.Properties.Resources.icons8_preview_file_24;
-            tileItemElement68.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement68.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement68.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_open_archive;
-            tileItemElement68.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement68.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement68.Text = "";
-            tileItemElement68.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem12.Elements.Add(tileItemElement68);
+            tileItemElement66.ImageOptions.Image = global::ArisenStudio.Properties.Resources.icons8_preview_file_24;
+            tileItemElement66.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement66.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement66.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_open_archive;
+            tileItemElement66.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement66.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
+            tileItemElement66.Text = "";
+            tileItemElement66.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem12.Elements.Add(tileItemElement66);
             this.tileItem12.Enabled = false;
             this.tileItem12.Id = 0;
             this.tileItem12.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -16045,14 +16139,14 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem13.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.tileItem13.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem13.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement69.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement69.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement69.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_delete;
-            tileItemElement69.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement69.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement69.Text = "";
-            tileItemElement69.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem13.Elements.Add(tileItemElement69);
+            tileItemElement67.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement67.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement67.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_delete;
+            tileItemElement67.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement67.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
+            tileItemElement67.Text = "";
+            tileItemElement67.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem13.Elements.Add(tileItemElement67);
             this.tileItem13.Enabled = false;
             this.tileItem13.Id = 2;
             this.tileItem13.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -16074,14 +16168,14 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem14.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.tileItem14.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem14.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement70.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement70.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement70.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement70.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement70.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement70.Text = "";
-            tileItemElement70.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem14.Elements.Add(tileItemElement70);
+            tileItemElement68.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement68.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement68.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
+            tileItemElement68.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement68.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
+            tileItemElement68.Text = "";
+            tileItemElement68.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem14.Elements.Add(tileItemElement68);
             this.tileItem14.Enabled = false;
             this.tileItem14.Id = 8;
             this.tileItem14.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -16789,15 +16883,15 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem15.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.tileItem15.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem15.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement71.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement71.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement71.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement71.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_delete;
-            tileItemElement71.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement71.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement71.Text = "";
-            tileItemElement71.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem15.Elements.Add(tileItemElement71);
+            tileItemElement69.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement69.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement69.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement69.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_delete;
+            tileItemElement69.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement69.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
+            tileItemElement69.Text = "";
+            tileItemElement69.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem15.Elements.Add(tileItemElement69);
             this.tileItem15.Enabled = false;
             this.tileItem15.Id = 5;
             this.tileItem15.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -16818,15 +16912,15 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem16.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.tileItem16.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem16.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement72.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement72.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement72.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement72.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_uninstall;
-            tileItemElement72.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement72.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement72.Text = "";
-            tileItemElement72.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem16.Elements.Add(tileItemElement72);
+            tileItemElement70.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement70.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement70.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement70.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_uninstall;
+            tileItemElement70.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement70.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
+            tileItemElement70.Text = "";
+            tileItemElement70.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem16.Elements.Add(tileItemElement70);
             this.tileItem16.Enabled = false;
             this.tileItem16.Id = 2;
             this.tileItem16.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -16847,15 +16941,15 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem17.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.tileItem17.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem17.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement73.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement73.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement73.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement73.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement73.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement73.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement73.Text = "";
-            tileItemElement73.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem17.Elements.Add(tileItemElement73);
+            tileItemElement71.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement71.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement71.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement71.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
+            tileItemElement71.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement71.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
+            tileItemElement71.Text = "";
+            tileItemElement71.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem17.Elements.Add(tileItemElement71);
             this.tileItem17.Enabled = false;
             this.tileItem17.Id = 3;
             this.tileItem17.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -18469,14 +18563,14 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem18.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem18.AppearanceItem.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
             this.tileItem18.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement74.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement74.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement74.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement74.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
-            tileItemElement74.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement74.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement74.Text = "";
-            this.tileItem18.Elements.Add(tileItemElement74);
+            tileItemElement72.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement72.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement72.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement72.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
+            tileItemElement72.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement72.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement72.Text = "";
+            this.tileItem18.Elements.Add(tileItemElement72);
             this.tileItem18.Id = 6;
             this.tileItem18.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.tileItem18.Name = "tileItem18";
@@ -18495,13 +18589,13 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem19.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem19.AppearanceItem.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
             this.tileItem19.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement75.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement75.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement75.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement75.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement75.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement75.Text = "";
-            this.tileItem19.Elements.Add(tileItemElement75);
+            tileItemElement73.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement73.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement73.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
+            tileItemElement73.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement73.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement73.Text = "";
+            this.tileItem19.Elements.Add(tileItemElement73);
             this.tileItem19.Id = 1;
             this.tileItem19.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.tileItem19.Name = "tileItem19";
@@ -18517,12 +18611,12 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem20.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem20.AppearanceItem.Normal.Options.UseForeColor = true;
             this.tileItem20.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement76.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement76.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_add_favorite;
-            tileItemElement76.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement76.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement76.Text = "";
-            this.tileItem20.Elements.Add(tileItemElement76);
+            tileItemElement74.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement74.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_add_favorite;
+            tileItemElement74.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement74.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement74.Text = "";
+            this.tileItem20.Elements.Add(tileItemElement74);
             this.tileItem20.Enabled = false;
             this.tileItem20.Id = 9;
             this.tileItem20.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -18539,13 +18633,13 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem21.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem21.AppearanceItem.Normal.Options.UseForeColor = true;
             this.tileItem21.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement77.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement77.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement77.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
-            tileItemElement77.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement77.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement77.Text = "";
-            this.tileItem21.Elements.Add(tileItemElement77);
+            tileItemElement75.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement75.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement75.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
+            tileItemElement75.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement75.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement75.Text = "";
+            this.tileItem21.Elements.Add(tileItemElement75);
             this.tileItem21.Enabled = false;
             this.tileItem21.Id = 7;
             this.tileItem21.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -18562,13 +18656,13 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem22.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem22.AppearanceItem.Normal.Options.UseForeColor = true;
             this.tileItem22.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement78.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement78.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement78.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement78.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement78.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement78.Text = "";
-            this.tileItem22.Elements.Add(tileItemElement78);
+            tileItemElement76.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement76.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement76.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
+            tileItemElement76.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement76.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement76.Text = "";
+            this.tileItem22.Elements.Add(tileItemElement76);
             this.tileItem22.Enabled = false;
             this.tileItem22.Id = 8;
             this.tileItem22.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -18937,13 +19031,13 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem23.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.tileItem23.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem23.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement79.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement79.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement79.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement79.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement79.Text = "";
-            tileItemElement79.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem23.Elements.Add(tileItemElement79);
+            tileItemElement77.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement77.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
+            tileItemElement77.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement77.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement77.Text = "";
+            tileItemElement77.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem23.Elements.Add(tileItemElement77);
             this.tileItem23.Id = 1;
             this.tileItem23.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.tileItem23.Name = "tileItem23";
@@ -18953,11 +19047,11 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.tileItem24.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.tileItem24.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement80.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
-            tileItemElement80.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement80.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement80.Text = "";
-            this.tileItem24.Elements.Add(tileItemElement80);
+            tileItemElement78.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
+            tileItemElement78.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement78.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement78.Text = "";
+            this.tileItem24.Elements.Add(tileItemElement78);
             this.tileItem24.Enabled = false;
             this.tileItem24.Id = 6;
             this.tileItem24.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -18968,11 +19062,11 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.tileItem25.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.tileItem25.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement81.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement81.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement81.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement81.Text = "";
-            this.tileItem25.Elements.Add(tileItemElement81);
+            tileItemElement79.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
+            tileItemElement79.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement79.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement79.Text = "";
+            this.tileItem25.Elements.Add(tileItemElement79);
             this.tileItem25.Enabled = false;
             this.tileItem25.Id = 7;
             this.tileItem25.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -19346,12 +19440,12 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem26.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.tileItem26.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem26.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement82.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
-            tileItemElement82.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement82.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement82.Text = "";
-            tileItemElement82.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem26.Elements.Add(tileItemElement82);
+            tileItemElement80.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
+            tileItemElement80.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement80.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement80.Text = "";
+            tileItemElement80.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem26.Elements.Add(tileItemElement80);
             this.tileItem26.Id = 2;
             this.tileItem26.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.tileItem26.Name = "tileItem26";
@@ -19367,12 +19461,12 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem27.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.tileItem27.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem27.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement83.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement83.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement83.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement83.Text = "";
-            tileItemElement83.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem27.Elements.Add(tileItemElement83);
+            tileItemElement81.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
+            tileItemElement81.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement81.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement81.Text = "";
+            tileItemElement81.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem27.Elements.Add(tileItemElement81);
             this.tileItem27.Id = 1;
             this.tileItem27.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.tileItem27.Name = "tileItem27";
@@ -19381,12 +19475,12 @@ namespace ArisenStudio.Forms.Windows
             // tileItem28
             // 
             this.tileItem28.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement84.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement84.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
-            tileItemElement84.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement84.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement84.Text = "";
-            this.tileItem28.Elements.Add(tileItemElement84);
+            tileItemElement82.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement82.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
+            tileItemElement82.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement82.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement82.Text = "";
+            this.tileItem28.Elements.Add(tileItemElement82);
             this.tileItem28.Enabled = false;
             this.tileItem28.Id = 6;
             this.tileItem28.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -19396,12 +19490,12 @@ namespace ArisenStudio.Forms.Windows
             // tileItem29
             // 
             this.tileItem29.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement85.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement85.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement85.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement85.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement85.Text = "";
-            this.tileItem29.Elements.Add(tileItemElement85);
+            tileItemElement83.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement83.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
+            tileItemElement83.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement83.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement83.Text = "";
+            this.tileItem29.Elements.Add(tileItemElement83);
             this.tileItem29.Enabled = false;
             this.tileItem29.Id = 7;
             this.tileItem29.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -19411,11 +19505,11 @@ namespace ArisenStudio.Forms.Windows
             // tileItem30
             // 
             this.tileItem30.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement86.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement86.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement86.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement86.Text = "";
-            this.tileItem30.Elements.Add(tileItemElement86);
+            tileItemElement84.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement84.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement84.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement84.Text = "";
+            this.tileItem30.Elements.Add(tileItemElement84);
             this.tileItem30.Enabled = false;
             this.tileItem30.Id = 8;
             this.tileItem30.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -20002,12 +20096,12 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem31.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.tileItem31.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem31.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement87.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement87.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement87.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement87.Text = "";
-            tileItemElement87.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem31.Elements.Add(tileItemElement87);
+            tileItemElement85.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
+            tileItemElement85.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement85.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement85.Text = "";
+            tileItemElement85.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem31.Elements.Add(tileItemElement85);
             this.tileItem31.Id = 1;
             this.tileItem31.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.tileItem31.Name = "tileItem31";
@@ -20021,11 +20115,11 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem32.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
             this.tileItem32.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem32.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement88.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_install;
-            tileItemElement88.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement88.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement88.Text = "";
-            this.tileItem32.Elements.Add(tileItemElement88);
+            tileItemElement86.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_install;
+            tileItemElement86.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement86.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement86.Text = "";
+            this.tileItem32.Elements.Add(tileItemElement86);
             this.tileItem32.Enabled = false;
             this.tileItem32.Id = 10;
             this.tileItem32.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -20037,11 +20131,11 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem33.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
             this.tileItem33.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem33.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement89.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
-            tileItemElement89.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement89.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement89.Text = "";
-            this.tileItem33.Elements.Add(tileItemElement89);
+            tileItemElement87.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
+            tileItemElement87.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement87.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement87.Text = "";
+            this.tileItem33.Elements.Add(tileItemElement87);
             this.tileItem33.Enabled = false;
             this.tileItem33.Id = 8;
             this.tileItem33.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -20053,11 +20147,11 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem34.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
             this.tileItem34.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem34.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement90.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement90.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement90.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement90.Text = "";
-            this.tileItem34.Elements.Add(tileItemElement90);
+            tileItemElement88.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
+            tileItemElement88.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement88.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement88.Text = "";
+            this.tileItem34.Elements.Add(tileItemElement88);
             this.tileItem34.Enabled = false;
             this.tileItem34.Id = 9;
             this.tileItem34.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -20538,15 +20632,15 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem35.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.tileItem35.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem35.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement91.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement91.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement91.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement91.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
-            tileItemElement91.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement91.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement91.Text = "";
-            tileItemElement91.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem35.Elements.Add(tileItemElement91);
+            tileItemElement89.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement89.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileItemElement89.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement89.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
+            tileItemElement89.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement89.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement89.Text = "";
+            tileItemElement89.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem35.Elements.Add(tileItemElement89);
             this.tileItem35.Id = 2;
             this.tileItem35.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.tileItem35.Name = "tileItem35";
@@ -20562,13 +20656,13 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem36.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.tileItem36.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem36.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement92.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement92.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement92.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement92.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement92.Text = "";
-            tileItemElement92.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem36.Elements.Add(tileItemElement92);
+            tileItemElement90.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement90.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
+            tileItemElement90.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement90.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement90.Text = "";
+            tileItemElement90.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem36.Elements.Add(tileItemElement90);
             this.tileItem36.Id = 1;
             this.tileItem36.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.tileItem36.Name = "tileItem36";
@@ -20582,11 +20676,11 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem37.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
             this.tileItem37.AppearanceItem.Normal.Options.UseForeColor = true;
             this.tileItem37.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement93.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
-            tileItemElement93.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement93.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement93.Text = "";
-            this.tileItem37.Elements.Add(tileItemElement93);
+            tileItemElement91.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
+            tileItemElement91.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement91.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement91.Text = "";
+            this.tileItem37.Elements.Add(tileItemElement91);
             this.tileItem37.Enabled = false;
             this.tileItem37.Id = 6;
             this.tileItem37.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -20601,11 +20695,11 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem38.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
             this.tileItem38.AppearanceItem.Normal.Options.UseForeColor = true;
             this.tileItem38.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement94.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement94.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement94.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement94.Text = "";
-            this.tileItem38.Elements.Add(tileItemElement94);
+            tileItemElement92.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
+            tileItemElement92.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement92.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement92.Text = "";
+            this.tileItem38.Elements.Add(tileItemElement92);
             this.tileItem38.Enabled = false;
             this.tileItem38.Id = 7;
             this.tileItem38.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -21031,13 +21125,13 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem39.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.tileItem39.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem39.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement95.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement95.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
-            tileItemElement95.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement95.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement95.Text = "";
-            tileItemElement95.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem39.Elements.Add(tileItemElement95);
+            tileItemElement93.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement93.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
+            tileItemElement93.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement93.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement93.Text = "";
+            tileItemElement93.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem39.Elements.Add(tileItemElement93);
             this.tileItem39.Id = 6;
             this.tileItem39.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.tileItem39.Name = "tileItem39";
@@ -21055,13 +21149,13 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem40.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.tileItem40.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem40.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement96.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement96.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement96.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement96.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement96.Text = "";
-            tileItemElement96.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem40.Elements.Add(tileItemElement96);
+            tileItemElement94.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement94.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
+            tileItemElement94.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement94.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement94.Text = "";
+            tileItemElement94.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem40.Elements.Add(tileItemElement94);
             this.tileItem40.Id = 1;
             this.tileItem40.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.tileItem40.Name = "tileItem40";
@@ -21077,12 +21171,12 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem41.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem41.AppearanceItem.Normal.Options.UseForeColor = true;
             this.tileItem41.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement97.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement97.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_add_favorite;
-            tileItemElement97.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement97.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement97.Text = "";
-            this.tileItem41.Elements.Add(tileItemElement97);
+            tileItemElement95.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement95.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_add_favorite;
+            tileItemElement95.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement95.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement95.Text = "";
+            this.tileItem41.Elements.Add(tileItemElement95);
             this.tileItem41.Enabled = false;
             this.tileItem41.Id = 9;
             this.tileItem41.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -21099,12 +21193,12 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem42.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem42.AppearanceItem.Normal.Options.UseForeColor = true;
             this.tileItem42.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement98.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement98.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
-            tileItemElement98.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement98.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement98.Text = "";
-            this.tileItem42.Elements.Add(tileItemElement98);
+            tileItemElement96.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement96.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
+            tileItemElement96.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement96.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement96.Text = "";
+            this.tileItem42.Elements.Add(tileItemElement96);
             this.tileItem42.Enabled = false;
             this.tileItem42.Id = 7;
             this.tileItem42.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -21121,12 +21215,12 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem43.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem43.AppearanceItem.Normal.Options.UseForeColor = true;
             this.tileItem43.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement99.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement99.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement99.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement99.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement99.Text = "";
-            this.tileItem43.Elements.Add(tileItemElement99);
+            tileItemElement97.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement97.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
+            tileItemElement97.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement97.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement97.Text = "";
+            this.tileItem43.Elements.Add(tileItemElement97);
             this.tileItem43.Enabled = false;
             this.tileItem43.Id = 8;
             this.tileItem43.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -22136,12 +22230,12 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem48.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.tileItem48.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem48.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement100.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement100.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            tileItemElement100.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement100.Text = "";
-            tileItemElement100.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem48.Elements.Add(tileItemElement100);
+            tileItemElement98.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
+            tileItemElement98.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
+            tileItemElement98.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement98.Text = "";
+            tileItemElement98.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem48.Elements.Add(tileItemElement98);
             this.tileItem48.Id = 1;
             this.tileItem48.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.tileItem48.Name = "tileItem48";
@@ -23076,15 +23170,15 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem53.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tileItem53.AppearanceItem.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
             this.tileItem53.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement101.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement101.ImageOptions.ImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement101.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.None;
-            tileItemElement101.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement101.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement101.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement101.Text = "";
-            tileItemElement101.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem53.Elements.Add(tileItemElement101);
+            tileItemElement99.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement99.ImageOptions.ImageSize = new System.Drawing.Size(24, 24);
+            tileItemElement99.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.None;
+            tileItemElement99.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement99.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
+            tileItemElement99.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement99.Text = "";
+            tileItemElement99.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem53.Elements.Add(tileItemElement99);
             this.tileItem53.Id = 1;
             this.tileItem53.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.tileItem53.Name = "tileItem53";
@@ -23100,13 +23194,13 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem54.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
             this.tileItem54.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem54.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement102.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement102.ImageOptions.ImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement102.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.None;
-            tileItemElement102.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement102.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_add_new;
-            tileItemElement102.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            this.tileItem54.Elements.Add(tileItemElement102);
+            tileItemElement100.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement100.ImageOptions.ImageSize = new System.Drawing.Size(24, 24);
+            tileItemElement100.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.None;
+            tileItemElement100.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement100.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_add_new;
+            tileItemElement100.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            this.tileItem54.Elements.Add(tileItemElement100);
             this.tileItem54.Enabled = false;
             this.tileItem54.Id = 2;
             this.tileItem54.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -23123,12 +23217,12 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem55.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
             this.tileItem55.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem55.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement103.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement103.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement103.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_edit_details;
-            tileItemElement103.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement103.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            this.tileItem55.Elements.Add(tileItemElement103);
+            tileItemElement101.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement101.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement101.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_edit_details;
+            tileItemElement101.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement101.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
+            this.tileItem55.Elements.Add(tileItemElement101);
             this.tileItem55.Enabled = false;
             this.tileItem55.Id = 3;
             this.tileItem55.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -23145,11 +23239,11 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem56.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
             this.tileItem56.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem56.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement104.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement104.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.delete;
-            tileItemElement104.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement104.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            this.tileItem56.Elements.Add(tileItemElement104);
+            tileItemElement102.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement102.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.delete;
+            tileItemElement102.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement102.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
+            this.tileItem56.Elements.Add(tileItemElement102);
             this.tileItem56.Enabled = false;
             this.tileItem56.Id = 4;
             this.tileItem56.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -23164,12 +23258,12 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem57.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
             this.tileItem57.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem57.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement105.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement105.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement105.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement105.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement105.Text = "";
-            this.tileItem57.Elements.Add(tileItemElement105);
+            tileItemElement103.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement103.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
+            tileItemElement103.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement103.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
+            tileItemElement103.Text = "";
+            this.tileItem57.Elements.Add(tileItemElement103);
             this.tileItem57.Enabled = false;
             this.tileItem57.Id = 10;
             this.tileItem57.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -23186,12 +23280,12 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem58.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem58.AppearanceItem.Normal.Options.UseForeColor = true;
             this.tileItem58.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement106.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement106.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_install;
-            tileItemElement106.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement106.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement106.Text = "";
-            this.tileItem58.Elements.Add(tileItemElement106);
+            tileItemElement104.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement104.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_install;
+            tileItemElement104.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement104.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
+            tileItemElement104.Text = "";
+            this.tileItem58.Elements.Add(tileItemElement104);
             this.tileItem58.Enabled = false;
             this.tileItem58.Id = 11;
             this.tileItem58.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -23206,12 +23300,12 @@ namespace ArisenStudio.Forms.Windows
             this.tileItem59.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
             this.tileItem59.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem59.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement107.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement107.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_uninstall;
-            tileItemElement107.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement107.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement107.Text = "";
-            this.tileItem59.Elements.Add(tileItemElement107);
+            tileItemElement105.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement105.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_uninstall;
+            tileItemElement105.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement105.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
+            tileItemElement105.Text = "";
+            this.tileItem59.Elements.Add(tileItemElement105);
             this.tileItem59.Enabled = false;
             this.tileItem59.Id = 12;
             this.tileItem59.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -23578,11 +23672,11 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.TileItemHomebrewPS4ShowDetails.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.TileItemHomebrewPS4ShowDetails.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement108.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement108.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement108.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement108.Text = "";
-            this.TileItemHomebrewPS4ShowDetails.Elements.Add(tileItemElement108);
+            tileItemElement106.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
+            tileItemElement106.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement106.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement106.Text = "";
+            this.TileItemHomebrewPS4ShowDetails.Elements.Add(tileItemElement106);
             this.TileItemHomebrewPS4ShowDetails.Enabled = false;
             this.TileItemHomebrewPS4ShowDetails.Id = 7;
             this.TileItemHomebrewPS4ShowDetails.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -23594,11 +23688,11 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.TileItemHomebrewPS4Download.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.TileItemHomebrewPS4Download.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement109.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
-            tileItemElement109.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement109.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement109.Text = "";
-            this.TileItemHomebrewPS4Download.Elements.Add(tileItemElement109);
+            tileItemElement107.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
+            tileItemElement107.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement107.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement107.Text = "";
+            this.TileItemHomebrewPS4Download.Elements.Add(tileItemElement107);
             this.TileItemHomebrewPS4Download.Enabled = false;
             this.TileItemHomebrewPS4Download.Id = 6;
             this.TileItemHomebrewPS4Download.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -23616,13 +23710,13 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemHomebrewPS4SortOptions.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemHomebrewPS4SortOptions.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemHomebrewPS4SortOptions.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement110.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement110.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement110.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement110.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement110.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement110.Text = "";
-            this.TileItemHomebrewPS4SortOptions.Elements.Add(tileItemElement110);
+            tileItemElement108.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement108.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement108.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
+            tileItemElement108.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement108.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement108.Text = "";
+            this.TileItemHomebrewPS4SortOptions.Elements.Add(tileItemElement108);
             this.TileItemHomebrewPS4SortOptions.Id = 1;
             this.TileItemHomebrewPS4SortOptions.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemHomebrewPS4SortOptions.Name = "TileItemHomebrewPS4SortOptions";
@@ -23639,14 +23733,14 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemHomebrewPS4ShowFavorites.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemHomebrewPS4ShowFavorites.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemHomebrewPS4ShowFavorites.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement111.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement111.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement111.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement111.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
-            tileItemElement111.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement111.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement111.Text = "";
-            this.TileItemHomebrewPS4ShowFavorites.Elements.Add(tileItemElement111);
+            tileItemElement109.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement109.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileItemElement109.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement109.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
+            tileItemElement109.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement109.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement109.Text = "";
+            this.TileItemHomebrewPS4ShowFavorites.Elements.Add(tileItemElement109);
             this.TileItemHomebrewPS4ShowFavorites.Id = 2;
             this.TileItemHomebrewPS4ShowFavorites.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemHomebrewPS4ShowFavorites.Name = "TileItemHomebrewPS4ShowFavorites";
@@ -23748,6 +23842,7 @@ namespace ArisenStudio.Forms.Windows
             this.Controls.Add(this.barDockControl4);
             this.Controls.Add(this.barDockControl2);
             this.Controls.Add(this.barDockControl1);
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.False;
             this.IconOptions.Image = global::ArisenStudio.Properties.Resources.arisenstudio;
             this.Margin = new System.Windows.Forms.Padding(5);
@@ -23798,7 +23893,8 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.NavigationFrame)).EndInit();
             this.NavigationFrame.ResumeLayout(false);
             this.PageDashboard.ResumeLayout(false);
-            this.PageDashboard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TableDashboard3)).EndInit();
+            this.TableDashboard3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PanelStatistics)).EndInit();
             this.PanelStatistics.ResumeLayout(false);
             this.PanelStatistics.PerformLayout();
@@ -23920,8 +24016,8 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsShowGamesFromExternalDevices.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsAutoDetectGameRegions.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsAutoDetectGameTitles.Properties)).EndInit();
-            this.TabPageTransfer.ResumeLayout(false);
-            this.TabPageTransfer.PerformLayout();
+            this.TabPageMods.ResumeLayout(false);
+            this.TabPageMods.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsForceInstallAnyRegions.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsInstallAppsToUsbDevice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsInstallResourcesToUsbDevice.Properties)).EndInit();
@@ -23935,25 +24031,26 @@ namespace ArisenStudio.Forms.Windows
             this.TabPageFiles.ResumeLayout(false);
             this.TabPageFiles.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsAuroraFolderPath.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SeparatorSettingsFiles1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsLaunchIniFilePath.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RibbonControlMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MenuTopInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPackagesInstallPathPS4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPackagesInstallPathPS3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsLaunchIniFilePath.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SeparatorSettingsFiles1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SeparatorSettingsFiles2)).EndInit();
             this.TabPageDownload.ResumeLayout(false);
             this.TabPageDownload.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathBaseDirectory.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathResources.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathGameMods.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathHomebrew.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathPackages.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathPlugins.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathTemp.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathDownloads.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathGameSaves.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxSettingsPathAppData.Properties)).EndInit();
             this.TabPageDiscord.ResumeLayout(false);
             this.TabPageDiscord.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsAlwaysShowPresence.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsShowCurrentGamePlaying.Properties)).EndInit();
+            this.TabPageCache.ResumeLayout(false);
+            this.TabPageCache.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsClearCacheOnClose.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch24.Properties)).EndInit();
             this.PageGameSaves.ResumeLayout(false);
             this.PanelGameSaves.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridControlGameSaves)).EndInit();
@@ -24146,13 +24243,13 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl88)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelHomebrewPS4Actions)).EndInit();
             this.PanelHomebrewPS4Actions.ResumeLayout(false);
-            this.PageTrainers.ResumeLayout(false);
+            this.PageTrainersXbox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridControlTrainers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewTrainers)).EndInit();
             this.PanelTrainersFilters.ResumeLayout(false);
             this.PanelTrainersFilters.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterTitleId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterNumberCheats.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterCount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl94)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl95)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxTrainersFilterDashType.Properties)).EndInit();
@@ -24163,8 +24260,6 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.PanelTrainersActions)).EndInit();
             this.PanelTrainersActions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ImageCollection)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RibbonControlMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MenuTopInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelNavigationMenu)).EndInit();
             this.PanelNavigationMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PanelNavigationPages)).EndInit();
@@ -24597,7 +24692,6 @@ namespace ArisenStudio.Forms.Windows
         private LabelControl LabelSettingsLanguage;
         private LabelControl LabelSettingsCustomization;
         private LabelControl LabelSettingsLaunchIniFilePath;
-        private TextEdit TextBoxSettingsLaunchIniFilePath;
         private ToggleSwitch ToggleSettingsUseFormattedFileSizes;
         private LabelControl LabelSettingsRememberGameRegions;
         private LabelControl LabelSettingsAutoDetectGameTitles;
@@ -24644,7 +24738,6 @@ namespace ArisenStudio.Forms.Windows
         private ComboBoxEdit ComboBoxFilterPackagesCategories;
         private LabelControl LabelPackagesFilterCategory;
         private LabelControl LabelSettingsPathBaseDirectory;
-        private TextEdit TextBoxSettingsPathBaseDirectory;
         private Panel PanelPlugins;
         private GridControl GridControlGameModsXbox;
         private GridView GridViewGameModsXbox;
@@ -24664,7 +24757,6 @@ namespace ArisenStudio.Forms.Windows
         private SeparatorControl SeparatorSettingsFiles2;
         private LabelControl LabelSettingsFilesXbox;
         private LabelControl LabelSettingsPackagesFilePathPS3;
-        private TextEdit TextBoxSettingsPackagesInstallPathPS3;
         private LabelControl LabelSettingsFilesPS3;
         private LabelControl LabelPackagesFilterFileSize;
         private PictureEdit ImagePackagesFilterDateTypeBack;
@@ -24776,24 +24868,9 @@ namespace ArisenStudio.Forms.Windows
         private ToggleSwitch ToggleSettingsShowCurrentGamePlaying;
         private LabelControl LabelSettingsRichPresence;
         private SimpleButton ButtonChangeLogPrevious;
-        private SimpleButton ButtonSettingsPathBaseDirectory;
-        private LabelControl LabelSettingsPathGameMods;
-        private TextEdit TextBoxSettingsPathGameMods;
-        private SimpleButton ButtonSettingsPathGameMods;
-        private SimpleButton ButtonSettingsPathPackages;
-        private LabelControl LabelSettingsPathPackages;
-        private TextEdit TextBoxSettingsPathPackages;
-        private SimpleButton ButtonSettingsPathPlugins;
-        private LabelControl LabelSettingsPathPlugins;
-        private TextEdit TextBoxSettingsPathPlugins;
-        private SimpleButton ButtonSettingsPathGameSaves;
-        private LabelControl LabelSettingsPathGameSaves;
-        private TextEdit TextBoxSettingsPathGameSaves;
+        private LabelControl LabelSettingsPathTemp;
         private HyperlinkLabelControl LabelSettingsHelpTranslate;
-        private SimpleButton ButtonSettingsPathDownloads;
         private LabelControl LabelSettingsPathDownloads;
-        private TextEdit TextBoxSettingsPathDownloads;
-        private LabelControl LabelSettingsDirectoriesMustBeWritable;
         private LabelControl LabelSettingsReferToBaseDirectory;
         private LabelControl LabelSettingsCleanUpFilesAfterInstalling;
         private ToggleSwitch ToggleSettingsCleanUpLocalFilesAfterInstalling;
@@ -24801,13 +24878,7 @@ namespace ArisenStudio.Forms.Windows
         private LabelControl LabelAboutTitle;
         private ToggleSwitch ToggleSettingsAlwaysBackupGameFiles;
         private LabelControl LabelSettingsAlwaysBackupGameFiles;
-        private LabelControl LabelSettingsInstallingUninstalling;
-        private SimpleButton ButtonSettingsPathResources;
-        private LabelControl LabelSettingsPathResources;
-        private TextEdit TextBoxSettingsPathResources;
-        private SimpleButton ButtonSettingsPathHomebrew;
-        private LabelControl LabelSettingsPathHomebrew;
-        private TextEdit TextBoxSettingsPathHomebrew;
+        private LabelControl LabelSettingsTransferringFiles;
         private LabelControl LabelSettingsAlwaysShowPrecense;
         private ToggleSwitch ToggleSettingsAlwaysShowPresence;
         private FlowLayoutPanel FlowPanelStatistics;
@@ -25041,7 +25112,6 @@ namespace ArisenStudio.Forms.Windows
         private SeparatorControl SeparatorSettingsFiles1;
         private LabelControl LabelSettingsFilesPS4;
         private LabelControl LabelSettingsPackagesFilePathPS4;
-        private TextEdit TextBoxSettingsPackagesInstallPathPS4;
         private SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem1;
         private BarCheckItem barCheckItem1;
         private DevExpress.XtraBars.Navigation.NavigationPage PageGameCheats;
@@ -25148,7 +25218,6 @@ namespace ArisenStudio.Forms.Windows
         private TileItem TileItemPackagesInstall;
         private TileItem TileItemGameModsXboxDownload;
         private TileItem TileItemGameModsXboxShowDetails;
-        private TileItem tileItem8;
         private TileItem TileItemGamesDownload;
         private TileItem TileItemGamesShowDetails;
         private TileItem TileItemGameSavesDownload;
@@ -25157,7 +25226,7 @@ namespace ArisenStudio.Forms.Windows
         private TileItem TileItemResourcesShowDetails;
         private DevExpress.XtraBars.Navigation.TabPane TabControlSettings;
         private DevExpress.XtraBars.Navigation.TabNavigationPage TabPageInterface;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage TabPageTransfer;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage TabPageMods;
         private DevExpress.XtraBars.Navigation.TabNavigationPage TabPageFiles;
         private DevExpress.XtraBars.Navigation.TabNavigationPage TabPageDownload;
         private DevExpress.XtraBars.Navigation.TabNavigationPage TabPageDiscord;
@@ -25792,7 +25861,7 @@ namespace ArisenStudio.Forms.Windows
         private TablePanel TableDashboard2;
         private BarButtonItem ButtonToolsXboxTrainers;
         private BarButtonItem ButtonToolsPsGameCheats;
-        private DevExpress.XtraBars.Navigation.NavigationPage PageTrainers;
+        private DevExpress.XtraBars.Navigation.NavigationPage PageTrainersXbox;
         private GridControl GridControlTrainers;
         private GridView GridViewTrainers;
         private Panel PanelTrainersFilters;
@@ -25805,16 +25874,15 @@ namespace ArisenStudio.Forms.Windows
         private PanelControl PanelTrainersActions;
         private TileControl TileControlTrainers;
         private TileGroup TileGroupTrainers;
-        private TileItem TileItemTrainersSortOptions;
-        private TileItem tileItem4;
-        private TileItem tileItem6;
+        private TileItem TileItemTrainerSortOptions;
+        private TileItem TileItemTrainerShowDetails;
         private ComboBoxEdit ComboBoxGameCheatsFilterNumberCheats;
         private LabelControl labelControl9;
         private SeparatorControl separatorControl93;
         private SeparatorControl SeparatorCheats3;
         private ComboBoxEdit ComboBoxGameCheatsFilterVersion;
         private LabelControl labelControl3;
-        private ComboBoxEdit ComboBoxTrainersFilterNumberCheats;
+        private ComboBoxEdit ComboBoxTrainersFilterCount;
         private LabelControl labelControl14;
         private SeparatorControl separatorControl94;
         private SeparatorControl separatorControl95;
@@ -25823,7 +25891,28 @@ namespace ArisenStudio.Forms.Windows
         private ComboBoxEdit ComboBoxTrainersFilterTitleId;
         private LabelControl LabelSettingsForceInstallAnyRegions;
         private ToggleSwitch ToggleSettingsForceInstallAnyRegions;
-        private TextEdit TextBoxSettingsAuroraFolderPath;
         private LabelControl LabelSettingsAuroraPath;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage TabPageCache;
+        private SimpleButton ButtonSettingsClearCache;
+        private LabelControl LabelSettingsLocalCache;
+        private ToggleSwitch ToggleSettingsClearCacheOnClose;
+        private LabelControl LabelSettingsClearCacheOnClose;
+        private ToggleSwitch toggleSwitch24;
+        private LabelControl labelControl163;
+        private LabelControl LabelSettingsClearCache;
+        private ButtonEdit TextBoxSettingsLaunchIniFilePath;
+        private ButtonEdit TextBoxSettingsAuroraFolderPath;
+        private ButtonEdit TextBoxSettingsPackagesInstallPathPS4;
+        private ButtonEdit TextBoxSettingsPackagesInstallPathPS3;
+        private LabelControl LabelSettingsAppData;
+        private ButtonEdit TextBoxSettingsPathAppData;
+        private ButtonEdit TextBoxSettingsPathTemp;
+        private ButtonEdit TextBoxSettingsPathDownloads;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement NavigationItemTrainers;
+        private TablePanel TableDashboard3;
+        private BarButtonItem ButtonUpdate;
+        private BarButtonItem barButtonItem14;
+        private BarButtonItem barButtonItem15;
+        private BarCheckItem barCheckItem2;
     }
 }

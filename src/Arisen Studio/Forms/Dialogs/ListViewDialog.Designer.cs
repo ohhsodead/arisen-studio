@@ -56,11 +56,11 @@ namespace ArisenStudio.Forms.Dialogs
             // GridControlListItems
             // 
             this.GridControlListItems.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridControlListItems.Location = new System.Drawing.Point(0, 25);
+            this.GridControlListItems.Location = new System.Drawing.Point(2, 22);
             this.GridControlListItems.MainView = this.GridViewListItems;
             this.GridControlListItems.Margin = new System.Windows.Forms.Padding(0);
             this.GridControlListItems.Name = "GridControlListItems";
-            this.GridControlListItems.Size = new System.Drawing.Size(174, 192);
+            this.GridControlListItems.Size = new System.Drawing.Size(170, 193);
             this.GridControlListItems.TabIndex = 1;
             this.GridControlListItems.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewListItems});
@@ -91,8 +91,8 @@ namespace ArisenStudio.Forms.Dialogs
             // ListViewDialog
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(198, 241);
             this.Controls.Add(this.GroupListItems);
             this.DoubleBuffered = true;

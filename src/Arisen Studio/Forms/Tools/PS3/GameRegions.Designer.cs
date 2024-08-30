@@ -119,7 +119,6 @@ namespace ArisenStudio.Forms.Tools.PS3
             // 
             this.GridGameRegions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GridGameRegions.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.GridGameRegions.Location = new System.Drawing.Point(13, 12);
             this.GridGameRegions.MainView = this.GridViewGameRegions;
             this.GridGameRegions.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -192,7 +191,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.ComboBoxGameTitle.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ComboBoxGameTitle.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ComboBoxGameTitle.Size = new System.Drawing.Size(276, 22);
+            this.ComboBoxGameTitle.Size = new System.Drawing.Size(276, 24);
             this.ComboBoxGameTitle.TabIndex = 3;
             this.ComboBoxGameTitle.SelectedIndexChanged += new System.EventHandler(this.ComboBoxGameTitle_SelectedIndexChanged);
             // 
@@ -223,7 +222,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.ComboBoxGameRegion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ComboBoxGameRegion.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ComboBoxGameRegion.Size = new System.Drawing.Size(130, 22);
+            this.ComboBoxGameRegion.Size = new System.Drawing.Size(130, 24);
             this.ComboBoxGameRegion.TabIndex = 4;
             this.ComboBoxGameRegion.SelectedIndexChanged += new System.EventHandler(this.ComboBoxGameRegion_SelectedIndexChanged);
             // 
@@ -350,8 +349,8 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
             this.Appearance.Options.UseFont = true;
             this.Appearance.Options.UseForeColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(438, 426);
             this.Controls.Add(this.PanelButtonsGameRegions);

@@ -1,9 +1,9 @@
-﻿using System.ComponentModel;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
+using System.ComponentModel;
 
 namespace ArisenStudio.Forms.Dialogs
 {
-    partial class LoginDialog
+    partial class EditLoginDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -31,14 +31,14 @@ namespace ArisenStudio.Forms.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginDialog));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditLoginDialog));
             this.LabelUsername = new DevExpress.XtraEditors.LabelControl();
             this.LabelPassword = new DevExpress.XtraEditors.LabelControl();
             this.TextBoxUsername = new DevExpress.XtraEditors.TextEdit();
             this.TextBoxPassword = new DevExpress.XtraEditors.TextEdit();
             this.ButtonUseDefault = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonCancel = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonOK = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonSave = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxUsername.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxPassword.Properties)).BeginInit();
             this.SuspendLayout();
@@ -105,25 +105,25 @@ namespace ArisenStudio.Forms.Dialogs
             this.ButtonCancel.TabIndex = 3;
             this.ButtonCancel.Text = "Cancel";
             // 
-            // ButtonOK
+            // ButtonSave
             // 
-            this.ButtonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.ButtonOK.Enabled = false;
-            this.ButtonOK.Location = new System.Drawing.Point(288, 80);
-            this.ButtonOK.Name = "ButtonOK";
-            this.ButtonOK.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonOK.Size = new System.Drawing.Size(84, 23);
-            this.ButtonOK.TabIndex = 4;
-            this.ButtonOK.Text = "OK";
+            this.ButtonSave.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.ButtonSave.Enabled = false;
+            this.ButtonSave.Location = new System.Drawing.Point(288, 80);
+            this.ButtonSave.Name = "ButtonSave";
+            this.ButtonSave.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonSave.Size = new System.Drawing.Size(84, 23);
+            this.ButtonSave.TabIndex = 4;
+            this.ButtonSave.Text = "Save";
             // 
-            // LoginDialog
+            // EditLoginDialog
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(384, 117);
-            this.Controls.Add(this.ButtonOK);
+            this.Controls.Add(this.ButtonSave);
             this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.ButtonUseDefault);
             this.Controls.Add(this.TextBoxPassword);
@@ -133,17 +133,17 @@ namespace ArisenStudio.Forms.Dialogs
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
-            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("LoginDialog.IconOptions.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("EditLoginDialog.IconOptions.Icon")));
             this.IconOptions.Image = global::ArisenStudio.Properties.Resources.arisenstudio;
             this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "LoginDialog";
+            this.Name = "EditLoginDialog";
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Login Details";
-            this.Load += new System.EventHandler(this.LoginDialog_Load);
+            this.Text = "Edit Login Credentials";
+            this.Load += new System.EventHandler(this.EditLoginDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxUsername.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxPassword.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -156,7 +156,7 @@ namespace ArisenStudio.Forms.Dialogs
         private LabelControl LabelPassword;
         public SimpleButton ButtonUseDefault;
         public SimpleButton ButtonCancel;
-        public SimpleButton ButtonOK;
+        public SimpleButton ButtonSave;
         public TextEdit TextBoxUsername;
         public TextEdit TextBoxPassword;
     }

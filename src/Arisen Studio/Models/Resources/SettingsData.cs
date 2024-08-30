@@ -47,9 +47,13 @@ namespace ArisenStudio.Models.Resources
 
         public string LocalPathPS3 { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
+        public string LocalPathPS4 { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
         public string LocalPathXbox { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
         public string ConsolePathPS3 { get; set; } = "/dev_hdd0/";
+
+        public string ConsolePathPS4 { get; set; } = "/dev_hdd0/";
 
         public string ConsolePathXbox { get; set; } = @"HDD:\";
 
@@ -95,26 +99,15 @@ namespace ArisenStudio.Models.Resources
 
         // Paths
 
-        public string PathBaseDirectory { get; set; } = $@"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}\Arisen Studio\";
+        public string PathAppData { get; set; } = $@"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}\Arisen Studio\";
 
-        public string PathDownloads { get; set; } = @"%BASE_DIR%\Downloads\";
+        public string PathDownloads { get; set; } = @"%APPDATA%\Downloads\";
 
-        public string PathGameMods { get; set; } = @"%BASE_DIR%\Game Mods\";
+        public string PathTemp { get; set; } = @"%APPDATA%\Temp\";
 
-        public string PathHomebrew { get; set; } = @"%BASE_DIR%\Homebrew\";
+        // Cache
 
-        public string PathResources { get; set; } = @"%BASE_DIR%\Resources\";
-
-        public string PathPackages { get; set; } = @"%BASE_DIR%\Packages\";
-
-        public string PathPlugins { get; set; } = @"%BASE_DIR%\Plugins\";
-
-        public string PathGameSaves { get; set; } = @"%BASE_DIR%\Game Saves\";
-
-        public string GetFullPath(string path)
-        {
-            return path.Replace(@"%BASE_DIR%", PathBaseDirectory);
-        }
+        public bool ClearCacheOnClose { get; set; } = false;
 
         // Custom Mods
 

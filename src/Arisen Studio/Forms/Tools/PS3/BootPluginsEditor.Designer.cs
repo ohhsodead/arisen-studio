@@ -138,8 +138,8 @@ namespace ArisenStudio.Forms.Tools.PS3
             // 
             // BootPluginsEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(452, 345);
             this.Controls.Add(this.PanelButtons);
             this.Controls.Add(this.GridBootPlugins);

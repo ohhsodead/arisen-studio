@@ -188,7 +188,7 @@ namespace ArisenStudio.Forms.Tools.PS3
         {
             string packageFile = PackageFilesPath + "/" + GridViewPackageFiles.GetRowCellValue(GridViewPackageFiles.FocusedRowHandle, GridViewPackageFiles.Columns[0]);
             string fileName = Path.GetFileName(packageFile);
-            string folderPath = IoExtensions.GetFullPath(Settings.PathBaseDirectory, Settings.PathDownloads);
+            string folderPath = Settings.PathDownloads.GetFullPath(Settings.PathAppData);
 
             switch (string.IsNullOrWhiteSpace(folderPath))
             {

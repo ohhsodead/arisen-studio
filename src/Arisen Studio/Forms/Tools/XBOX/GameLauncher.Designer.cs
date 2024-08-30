@@ -56,9 +56,9 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.ListBoxGames.Appearance.Options.UseFont = true;
             this.ListBoxGames.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.ListBoxGames.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListBoxGames.Location = new System.Drawing.Point(2, 21);
+            this.ListBoxGames.Location = new System.Drawing.Point(2, 22);
             this.ListBoxGames.Name = "ListBoxGames";
-            this.ListBoxGames.Size = new System.Drawing.Size(280, 290);
+            this.ListBoxGames.Size = new System.Drawing.Size(280, 289);
             this.ListBoxGames.TabIndex = 0;
             this.ListBoxGames.SelectedIndexChanged += new System.EventHandler(this.ListBoxGames_SelectedIndexChanged);
             // 
@@ -170,8 +170,8 @@ namespace ArisenStudio.Forms.Tools.XBOX
             // GameLauncher
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(308, 367);
             this.Controls.Add(this.PanelButtonsLeft);
             this.Controls.Add(this.PanelButtonsRight);
@@ -185,7 +185,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(310, 400);
+            this.MinimumSize = new System.Drawing.Size(310, 397);
             this.Name = "GameLauncher";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

@@ -44,18 +44,10 @@ namespace ArisenStudio.Forms.Dialogs.Details
             StatContentId.Value = PackageItem.ContentId;
             StatSha256.Value = PackageItem.IsSha256Missing ? Language.GetString("DATA_MISSING") : PackageItem.Sha256;
 
-            ButtonInstall.Text = Language.GetString("LABEL_INSTALL_FILE");
-            ButtonDownload.Text = Language.GetString("LABEL_DOWNLOAD_FILE");
+            ButtonDownload.Text = Language.GetString("LABEL_DOWNLOAD");
+            ButtonInstall.Text = Language.GetString("LABEL_INSTALL");
 
-            ButtonInstall.Enabled = MainWindow.IsConsoleConnected;
-
-            if (!MainWindow.IsConsoleConnected)
-            {
-                if (!MainWindow.Settings.InstallPackagesToUsbDevice)
-                {
-                    ButtonInstall.Visible = false;
-                }
-            }
+            ButtonInstall.Enabled = MainWindow.IsConsoleConnected || MainWindow.Settings.InstallPackagesToUsbDevice;
         }
 
         private void ImageClose_Click(object sender, EventArgs e)

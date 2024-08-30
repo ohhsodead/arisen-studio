@@ -13,6 +13,8 @@ using System.Text;
 using System.Windows.Forms;
 using ArisenStudio.Models.Resources;
 using System.Drawing;
+using Humanizer;
+using DevExpress.XtraCharts.Native;
 
 namespace ArisenStudio.Forms.Dialogs.Details
 {
@@ -23,14 +25,21 @@ namespace ArisenStudio.Forms.Dialogs.Details
             InitializeComponent();
         }
 
+        public SettingsData Settings = MainWindow.Settings;
+
         public ResourceManager Language = MainWindow.ResourceLanguage;
 
-        public static ConsoleProfile ConsoleProfile = MainWindow.ConsoleProfile;
+        public GitHubData Database = MainWindow.Database;
 
-        public TrainerItem TrainerItem = null;
+        public ConsoleProfile ConsoleProfile = MainWindow.ConsoleProfile;
+
+        public TrainerGameData TrainerGameData = null;
+
+        public TrainerItem SelectedTrainerItem = null;
 
         private DataTable DataTableCheats { get; } = DataExtensions.CreateDataTable(
             [
+                new("Url", typeof(string)),
                 new("Name", typeof(string)),
                 new("Type", typeof(string)),
                 new("Last Updated", typeof(string)),
@@ -42,29 +51,49 @@ namespace ArisenStudio.Forms.Dialogs.Details
             try
             {
                 // Display details in UI
-                LabelGame.Text = MainWindow.Database.TitleIdsX360.GetTitleFromTitleId(TrainerItem.TitleId);
-                LabelTitleId.Text = "(" + TrainerItem.TitleId + ")";
+                LabelGame.Text = MainWindow.Database.TitleIdsX360.GetTitleFromTitleId(TrainerGameData.TitleId);
+                LabelTitleId.Text = "(" + TrainerGameData.TitleId + ")";
 
                 DataTableCheats.Rows.Clear();
 
-                foreach (Trainer trainer in TrainerItem.Trainers)
+                foreach (TrainerItem trainer in TrainerGameData.Trainers)
                 {
                     DataTableCheats.Rows.Add(
+                        trainer.Url,
                         trainer.Name,
                         trainer.Type,
-                        trainer.LastUpdated,
+                        Settings.UseRelativeTimes ? trainer.LastUpdated.Humanize() : trainer.LastUpdated,
                         trainer.InstallPaths.Count());
                 }
 
-                GridControlCheats.DataSource = DataTableCheats;
+                GridControlTrainers.DataSource = DataTableCheats;
 
-                ButtonInstallTrainer.Text = Language.GetString("LABEL_APPLY_CHEAT");
+                GridViewTrainers.Columns[0].Visible = false;
+
+                //GridViewTrainers.Columns[1].MinWidth = 112;
+                //GridViewTrainers.Columns[1].MaxWidth = 112;
+
+                GridViewTrainers.Columns[2].MinWidth = 82;
+                GridViewTrainers.Columns[2].MaxWidth = 82;
+
+                GridViewTrainers.Columns[3].MinWidth = 124;
+                GridViewTrainers.Columns[3].MaxWidth = 124;
+
+                GridViewTrainers.Columns[4].MinWidth = 92;
+                GridViewTrainers.Columns[4].MaxWidth = 92;
+
+                SelectedTrainerItem = TrainerGameData.Trainers[0];
+
+                ButtonDownload.Text = Language.GetString("LABEL_DOWNLOAD");
+                ButtonInstall.Text = Language.GetString("LABEL_INSTALL");
                 ButtonReportIssue.Text = Language.GetString("LABEL_REPORT_ISSUE");
+
+                ButtonInstall.Enabled = MainWindow.IsConsoleConnected || MainWindow.Settings.InstallGameModsToUsbDevice;
             }
             catch (Exception ex)
             {
-                Program.Log.Error("Unable to load game cheats.", ex);
-                XtraMessageBox.Show(this, string.Format("Unable to load game cheats. Error: {0}", ex.Message), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Program.Log.Error("Unable to load trainers cheats.", ex);
+                XtraMessageBox.Show(this, string.Format("Unable to load game trainers. Error: {0}", ex.Message), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
             }
         }
@@ -76,36 +105,30 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         private void GridViewCheats_RowClick(object sender, RowClickEventArgs e)
         {
-            SelectedCheatItem = GameCheatItem.Cheats[e.RowHandle];
+            var selectedRow = (string)GridViewTrainers.GetRowCellValue(e.RowHandle, GridViewTrainers.Columns[0]);
+            SelectedTrainerItem = Database.TrainersX360.GetTrainerByUrl(selectedRow);
         }
 
         private void GridViewCheats_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            ButtonInstallTrainer.Enabled = GridViewCheats.SelectedRowsCount > 0;
+            ButtonInstall.Enabled = GridViewTrainers.SelectedRowsCount > 0;
+        }
+
+        private void ButtonDownload_Click(object sender, EventArgs e)
+        {
+            DialogExtensions.ShowTransferFilesDialog(this, TransferType.DownloadTrainer, TrainerGameData, SelectedTrainerItem);
         }
 
         private void ButtonInstallTrainer_Click(object sender, EventArgs e)
         {
-            if (!ContainsUnimplementedOpcodes())
+            try
             {
-                string lastReturn = "00000000";
-
-                foreach (Offsets cheat in SelectedCheatItem.Offsets)
-                {
-                    lastReturn = ApplyCheat(cheat, lastReturn);
-                }
-
-                XtraMessageBox.Show(this, Language.GetString("CHEAT_APPLIED"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogExtensions.ShowTransferFilesDialog(this, TransferType.InstallTrainer, TrainerGameData, SelectedTrainerItem);
             }
-            else
+            catch (Exception ex)
             {
-                XtraMessageBox.Show(this, Language.GetString("CHEAT_NOT_SUPPORTED"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                XtraMessageBox.Show(this, "Unable to install trainer. Error: " + ex.Message, Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-        }
-
-        private bool ContainsUnimplementedOpcodes()
-        {
-            return SelectedCheatItem.Offsets.Any(x => x.ContainsUnimplementedOpcodes());
         }
 
         private void ButtonReport_Click(object sender, EventArgs e)
@@ -115,25 +138,25 @@ namespace ArisenStudio.Forms.Dialogs.Details
                 .AppendLine("Click the 'Submit' button to open a new issue which can help us fix any problems.");
 
             XtraMessageBox.Show(message.ToString(), "Opening GitHub Issues", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            GitHubTemplates.OpenReportTemplateGameCheat(GameCheatItem, SelectedCheatItem, SelectedCheatItem.Offsets[GridViewCheats.FocusedRowHandle]);
+            //GitHubTemplates.OpenReportTemplateGameCheat(GameCheatItem, SelectedCheatItem, SelectedCheatItem.Offsets[GridViewTrainers.FocusedRowHandle]);
         }
 
         private string ApplyCheat(Offsets offsets, string lastReturn)
         {
             try
             {
-                if (offsets.Opcode == "00002000")
-                {
-                    uint offset = Convert.ToUInt32(offsets.Offset, 16);
-                    uint value = Convert.ToUInt32(offsets.Value, 16);
+                //if (offsets.Opcode == "00002000")
+                //{
+                //    uint offset = Convert.ToUInt32(offsets.Offset, 16);
+                //    uint value = Convert.ToUInt32(offsets.Value, 16);
 
-                    if ((int)offset == 0)
-                    {
-                        offset = Convert.ToUInt32(lastReturn, 16);
-                    }
+                //    if ((int)offset == 0)
+                //    {
+                //        offset = Convert.ToUInt32(lastReturn, 16);
+                //    }
 
-                    PS3.PS3MAPI.Extension.WriteInt32(offset, (int)value);
-                }
+                //    PS3.PS3MAPI.Extension.WriteInt32(offset, (int)value);
+                //}
             }
             catch (Exception ex)
             {
@@ -149,7 +172,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
             using Pen pen = new(Color.Transparent, 0);
-            e.Graphics.DrawPath(pen, GraphicExtensions.GetRoundedRectanglePath(ClientRectangle, 4));
+            e.Graphics.DrawPath(pen, GraphicExtensions.GetRoundedRectanglePath(ClientRectangle, 6));
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
@@ -158,7 +181,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
             using Brush brush = new SolidBrush(BackColor);
-            e.Graphics.FillPath(brush, GraphicExtensions.GetRoundedRectanglePath(ClientRectangle, 4));
+            e.Graphics.FillPath(brush, GraphicExtensions.GetRoundedRectanglePath(ClientRectangle, 6));
         }
 
         private const int WmHscroll = 0x114;

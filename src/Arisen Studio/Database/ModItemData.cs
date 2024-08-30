@@ -2,6 +2,7 @@
 using ArisenStudio.Forms.Windows;
 using ArisenStudio.Models.Database;
 using ArisenStudio.Models.Resources;
+using Humanizer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -265,28 +266,28 @@ namespace ArisenStudio.Database
         /// Get the directory for extracting modded files.
         /// </summary>
         /// <returns> </returns>
-        public string DownloadDataDirectory(DownloadFiles downloadFiles)
+        public string DownloadDataDirectory(DownloadFiles downloadFiles, Category category)
         {
-            return $@"{MainWindow.Settings.PathGameMods.GetFullPath(MainWindow.Settings.PathBaseDirectory)}\{Platform}\{Name.RemoveInvalidChars()}\{CreatedBy.RemoveInvalidChars()}\{downloadFiles.Name.RemoveInvalidChars()}{GetVersion(downloadFiles)}-{Id}\";
+            return $@"{MainWindow.Settings.PathDownloads.GetFullPath(MainWindow.Settings.PathAppData)}\{Platform.Humanize()}\{category.CategoryType.Humanize()}\{category.Title.RemoveSpecialCharacters()}\{Name.RemoveInvalidChars()}\{CreatedBy.RemoveInvalidChars()}\{downloadFiles.Name.RemoveInvalidChars()}{GetVersion(downloadFiles)}-{Id}\";
         }
 
         /// <summary>
         /// Get the downloaded mods archive file path.
         /// </summary>
         /// <returns> Mods Archive File Path </returns>
-        public string ArchiveZipFile(DownloadFiles downloadFiles)
+        public string ArchiveZipFile(DownloadFiles downloadFiles, Category category)
         {
-            return $@"{MainWindow.Settings.PathGameMods.GetFullPath(MainWindow.Settings.PathBaseDirectory)}\{Platform}\{Name.RemoveInvalidChars()}\{CreatedBy.RemoveInvalidChars()}\{downloadFiles.Name.RemoveInvalidChars()}{GetVersion(downloadFiles)}-{Id}.zip";
+            return $@"{MainWindow.Settings.PathDownloads.GetFullPath(MainWindow.Settings.PathAppData)}\{Platform.Humanize()}\{category.CategoryType.Humanize()}\{category.Title.RemoveSpecialCharacters()}\{Name.RemoveInvalidChars()}\{CreatedBy.RemoveInvalidChars()}\{downloadFiles.Name.RemoveInvalidChars()}{GetVersion(downloadFiles)}-{Id}.zip";
         }
 
         /// <summary>
         /// Download the modded files archive and extracts all files to <see cref="DownloadDataDirectory" />.
         /// </summary>
         /// <param name="downloadFiles"> </param>
-        public void DownloadInstallFiles(DownloadFiles downloadFiles)
+        public void DownloadInstallFiles(DownloadFiles downloadFiles, Category category)
         {
-            string archivePath = DownloadDataDirectory(downloadFiles);
-            string archiveFilePath = ArchiveZipFile(downloadFiles);
+            string archivePath = DownloadDataDirectory(downloadFiles, category);
+            string archiveFilePath = ArchiveZipFile(downloadFiles, category);
 
             if (Directory.Exists(archivePath))
             {
@@ -302,10 +303,10 @@ namespace ArisenStudio.Database
                 Directory.CreateDirectory(archivePath);
             }
 
-            if (!Directory.Exists(Path.GetDirectoryName(archiveFilePath)))
-            {
-                Directory.CreateDirectory(archiveFilePath);
-            }
+            //if (!Directory.Exists(Path.GetDirectoryName(archiveFilePath)))
+            //{
+            //    Directory.CreateDirectory(archiveFilePath);
+            //}
 
             if (File.Exists(archiveFilePath))
             {

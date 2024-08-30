@@ -229,7 +229,7 @@ namespace ArisenStudio.Controls
             // 
             // DownloadAppFileItem
             // 
-            this.Appearance.BackColor = System.Drawing.Color.Black;
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
