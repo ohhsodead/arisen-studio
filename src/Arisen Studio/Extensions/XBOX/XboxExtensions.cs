@@ -163,6 +163,127 @@ namespace ArisenStudio.Extensions
             }
         }
 
+        //public static void CreateDirectoryRecursive(this IXboxConsole xboxConsole, string path)
+        //{
+        //    Program.Log.Info($"Creating console directory path recursively: {path}");
+
+        //    string[] directories = path.Split('\\');
+        //    string currentPath = string.Empty;
+
+        //    foreach (var directory in directories)
+        //    {
+        //        if (string.IsNullOrEmpty(directory))
+        //            continue;
+
+        //        currentPath += "\\" + directory;
+
+        //        try
+        //        {
+        //            if (!currentPath.ContainsIgnoreCase("\\Hdd:"))
+        //            {
+        //                // Check if the directory exists
+        //                if (!DirectoryExists(xboxConsole, currentPath))
+        //                {
+        //                    // Create the directory if it doesn't exist
+        //                    xboxConsole.MakeDirectory(currentPath);
+        //                }
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            Program.Log.Error($"Failed to create directory '{currentPath}': {ex.Message}", ex);
+        //            break;
+        //        }
+        //    }
+
+        //    Program.Log.Info($"All directories have been created on the console.");
+        //}
+
+        public static void CreateDirectoryRecursive(this IXboxConsole xboxConsole, string path)
+        {
+            Program.Log.Info($"Creating console directory path recursively: {path}");
+
+            // Normalize path to use Xbox format
+            path = path.Replace("Hdd:\\", @"\Hdd:\");  // Ensures consistency in path format
+
+            // Split the path into individual directories
+            string[] directories = path.Split('\\');
+            string currentPath = string.Empty;
+
+            // Start creating directories after the root
+            for (int i = 0; i < directories.Length; i++)
+            {
+                string directory = directories[i];
+
+                if (string.IsNullOrEmpty(directory))
+                    continue;
+
+                // Skip the root ("Hdd:")
+                if (directory.EndsWith(":"))
+                {
+                    currentPath = directory;  // Initialize with root (e.g., "Hdd:")
+                    continue;
+                }
+
+                // Append the next directory to the path
+                currentPath += "\\" + directory;
+
+                try
+                {
+                    // Check if the directory exists
+                    if (!DirectoryExists(xboxConsole, currentPath))
+                    {
+                        // Create the directory if it doesn't exist
+                        xboxConsole.MakeDirectory(currentPath);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Program.Log.Error($"Failed to create directory '{currentPath}': {ex.Message}");
+                    break;
+                }
+            }
+
+            Program.Log.Info($"All directories have been created on the console.");
+        }
+
+        public static bool DirectoryExists(this IXboxConsole xboxConsole, string path)
+        {
+            // This is a placeholder for a method that checks if the directory exists.
+            // In the XDevKit API, there is no direct method like `Directory.Exists` in .NET, 
+            // so you would need to use another method, such as trying to list files or handling exceptions.
+
+            try
+            {
+                Program.Log.Info($"Checking if directory exists: {path}");
+
+                // Attempt to list the files in the directory
+                xboxConsole.DirectoryFiles(path);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // If an exception is thrown, assume the directory does not exist
+                Program.Log.Error($"Failed to check directory, assuming it doesn't exist. Error: {ex.Message}", ex);
+                return false;
+            }
+        }
+
+        public static string GetParentFolder(string filePath)
+        {
+            // Find the last occurrence of the backslash character
+            int lastSlashIndex = filePath.LastIndexOf('\\');
+
+            if (lastSlashIndex > 0)
+            {
+                // Extract the substring up to (but not including) the last backslash
+                return filePath.Substring(0, lastSlashIndex);
+            }
+
+            // If there's no backslash, return an empty string (or handle as needed)
+            return string.Empty;
+        }
+
         public static bool PathExists(string path, string dirName)
         {
             IXboxFiles xboxDirectories = MainWindow.XboxConsole.DirectoryFiles(path);

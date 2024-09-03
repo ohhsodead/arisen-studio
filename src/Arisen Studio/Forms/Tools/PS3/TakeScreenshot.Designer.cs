@@ -35,14 +35,14 @@ namespace ArisenStudio.Forms.Tools.PS3
         /// </summary>
         private void InitializeComponent()
         {
-            this.ButtonTakeScreenshot = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonDeleteScreenshot = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonCaptureImage = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonDeleteImage = new DevExpress.XtraEditors.SimpleButton();
             this.PanelButtons = new DevExpress.Utils.Layout.StackPanel();
-            this.ButtonOpenFilePath = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonNewImage = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonOpenFolder = new DevExpress.XtraEditors.SimpleButton();
             this.TextBoxFileName = new DevExpress.XtraEditors.TextEdit();
             this.ImageScreenshot = new System.Windows.Forms.PictureBox();
             this.CheckBoxUploadToImgur = new DevExpress.XtraEditors.CheckEdit();
-            this.ButtonNewScreenshot = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.PanelButtons)).BeginInit();
             this.PanelButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxFileName.Properties)).BeginInit();
@@ -50,78 +50,98 @@ namespace ArisenStudio.Forms.Tools.PS3
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxUploadToImgur.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // ButtonTakeScreenshot
+            // ButtonCaptureImage
             // 
-            this.ButtonTakeScreenshot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ButtonTakeScreenshot.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonTakeScreenshot.Appearance.Options.UseFont = true;
-            this.ButtonTakeScreenshot.AutoSize = true;
-            this.ButtonTakeScreenshot.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.ButtonTakeScreenshot.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.ButtonTakeScreenshot.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonTakeScreenshot.Location = new System.Drawing.Point(0, 0);
-            this.ButtonTakeScreenshot.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.ButtonTakeScreenshot.MinimumSize = new System.Drawing.Size(0, 24);
-            this.ButtonTakeScreenshot.Name = "ButtonTakeScreenshot";
-            this.ButtonTakeScreenshot.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.ButtonTakeScreenshot.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonTakeScreenshot.Size = new System.Drawing.Size(112, 24);
-            this.ButtonTakeScreenshot.TabIndex = 3;
-            this.ButtonTakeScreenshot.Text = "Take Screenshot";
-            this.ButtonTakeScreenshot.Click += new System.EventHandler(this.ButtonTakeScreenshot_Click);
+            this.ButtonCaptureImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ButtonCaptureImage.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonCaptureImage.Appearance.Options.UseFont = true;
+            this.ButtonCaptureImage.AutoSize = true;
+            this.ButtonCaptureImage.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonCaptureImage.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.ButtonCaptureImage.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.ButtonCaptureImage.Location = new System.Drawing.Point(0, 0);
+            this.ButtonCaptureImage.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.ButtonCaptureImage.MinimumSize = new System.Drawing.Size(0, 24);
+            this.ButtonCaptureImage.Name = "ButtonCaptureImage";
+            this.ButtonCaptureImage.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.ButtonCaptureImage.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonCaptureImage.Size = new System.Drawing.Size(105, 24);
+            this.ButtonCaptureImage.TabIndex = 3;
+            this.ButtonCaptureImage.Text = "Capture Image";
+            this.ButtonCaptureImage.Click += new System.EventHandler(this.ButtonTakeScreenshot_Click);
             // 
-            // ButtonDeleteScreenshot
+            // ButtonDeleteImage
             // 
-            this.ButtonDeleteScreenshot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ButtonDeleteScreenshot.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonDeleteScreenshot.Appearance.Options.UseFont = true;
-            this.ButtonDeleteScreenshot.AutoSize = true;
-            this.ButtonDeleteScreenshot.Enabled = false;
-            this.ButtonDeleteScreenshot.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.ButtonDeleteScreenshot.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.ButtonDeleteScreenshot.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonDeleteScreenshot.Location = new System.Drawing.Point(118, 0);
-            this.ButtonDeleteScreenshot.MinimumSize = new System.Drawing.Size(0, 24);
-            this.ButtonDeleteScreenshot.Name = "ButtonDeleteScreenshot";
-            this.ButtonDeleteScreenshot.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.ButtonDeleteScreenshot.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonDeleteScreenshot.Size = new System.Drawing.Size(121, 24);
-            this.ButtonDeleteScreenshot.TabIndex = 4;
-            this.ButtonDeleteScreenshot.Text = "Delete Screenshot";
-            this.ButtonDeleteScreenshot.Click += new System.EventHandler(this.ButtonDeleteScreenshot_Click);
+            this.ButtonDeleteImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ButtonDeleteImage.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonDeleteImage.Appearance.Options.UseFont = true;
+            this.ButtonDeleteImage.AutoSize = true;
+            this.ButtonDeleteImage.Enabled = false;
+            this.ButtonDeleteImage.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonDeleteImage.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.ButtonDeleteImage.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.ButtonDeleteImage.Location = new System.Drawing.Point(111, 0);
+            this.ButtonDeleteImage.MinimumSize = new System.Drawing.Size(0, 24);
+            this.ButtonDeleteImage.Name = "ButtonDeleteImage";
+            this.ButtonDeleteImage.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.ButtonDeleteImage.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonDeleteImage.Size = new System.Drawing.Size(96, 24);
+            this.ButtonDeleteImage.TabIndex = 4;
+            this.ButtonDeleteImage.Text = "Delete Image";
+            this.ButtonDeleteImage.Click += new System.EventHandler(this.ButtonDeleteScreenshot_Click);
             // 
             // PanelButtons
             // 
             this.PanelButtons.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PanelButtons.Controls.Add(this.ButtonTakeScreenshot);
-            this.PanelButtons.Controls.Add(this.ButtonDeleteScreenshot);
-            this.PanelButtons.Controls.Add(this.ButtonNewScreenshot);
-            this.PanelButtons.Controls.Add(this.ButtonOpenFilePath);
+            this.PanelButtons.Controls.Add(this.ButtonCaptureImage);
+            this.PanelButtons.Controls.Add(this.ButtonDeleteImage);
+            this.PanelButtons.Controls.Add(this.ButtonNewImage);
+            this.PanelButtons.Controls.Add(this.ButtonOpenFolder);
             this.PanelButtons.Location = new System.Drawing.Point(12, 350);
             this.PanelButtons.Name = "PanelButtons";
             this.PanelButtons.Size = new System.Drawing.Size(496, 24);
             this.PanelButtons.TabIndex = 1182;
             // 
-            // ButtonOpenFilePath
+            // ButtonNewImage
             // 
-            this.ButtonOpenFilePath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ButtonOpenFilePath.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonOpenFilePath.Appearance.Options.UseFont = true;
-            this.ButtonOpenFilePath.AutoSize = true;
-            this.ButtonOpenFilePath.Enabled = false;
-            this.ButtonOpenFilePath.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.ButtonOpenFilePath.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.ButtonOpenFilePath.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonOpenFilePath.Location = new System.Drawing.Point(338, 0);
-            this.ButtonOpenFilePath.MinimumSize = new System.Drawing.Size(0, 24);
-            this.ButtonOpenFilePath.Name = "ButtonOpenFilePath";
-            this.ButtonOpenFilePath.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.ButtonOpenFilePath.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonOpenFilePath.Size = new System.Drawing.Size(104, 24);
-            this.ButtonOpenFilePath.TabIndex = 5;
-            this.ButtonOpenFilePath.Text = "Open File Path";
-            this.ButtonOpenFilePath.Click += new System.EventHandler(this.ButtonOpenFilePath_Click);
+            this.ButtonNewImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ButtonNewImage.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonNewImage.Appearance.Options.UseFont = true;
+            this.ButtonNewImage.AutoSize = true;
+            this.ButtonNewImage.Enabled = false;
+            this.ButtonNewImage.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonNewImage.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.ButtonNewImage.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.ButtonNewImage.Location = new System.Drawing.Point(213, 0);
+            this.ButtonNewImage.MinimumSize = new System.Drawing.Size(0, 24);
+            this.ButtonNewImage.Name = "ButtonNewImage";
+            this.ButtonNewImage.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.ButtonNewImage.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonNewImage.Size = new System.Drawing.Size(87, 24);
+            this.ButtonNewImage.TabIndex = 7;
+            this.ButtonNewImage.Text = "New Image";
+            this.ButtonNewImage.Click += new System.EventHandler(this.ButtonNewScreenshot_Click);
+            // 
+            // ButtonOpenFolder
+            // 
+            this.ButtonOpenFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ButtonOpenFolder.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonOpenFolder.Appearance.Options.UseFont = true;
+            this.ButtonOpenFolder.AutoSize = true;
+            this.ButtonOpenFolder.Enabled = false;
+            this.ButtonOpenFolder.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonOpenFolder.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.ButtonOpenFolder.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.ButtonOpenFolder.Location = new System.Drawing.Point(306, 0);
+            this.ButtonOpenFolder.MinimumSize = new System.Drawing.Size(0, 24);
+            this.ButtonOpenFolder.Name = "ButtonOpenFolder";
+            this.ButtonOpenFolder.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.ButtonOpenFolder.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonOpenFolder.Size = new System.Drawing.Size(92, 24);
+            this.ButtonOpenFolder.TabIndex = 5;
+            this.ButtonOpenFolder.Text = "Open Folder";
+            this.ButtonOpenFolder.Click += new System.EventHandler(this.ButtonOpenFilePath_Click);
             // 
             // TextBoxFileName
             // 
@@ -162,26 +182,6 @@ namespace ArisenStudio.Forms.Tools.PS3
             this.CheckBoxUploadToImgur.ToolTip = "if set to true, this will block the console from resolving LIVE related dns\r\nif n" +
     "ot set this value will be TRUE";
             // 
-            // ButtonNewScreenshot
-            // 
-            this.ButtonNewScreenshot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ButtonNewScreenshot.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonNewScreenshot.Appearance.Options.UseFont = true;
-            this.ButtonNewScreenshot.AutoSize = true;
-            this.ButtonNewScreenshot.Enabled = false;
-            this.ButtonNewScreenshot.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.ButtonNewScreenshot.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.ButtonNewScreenshot.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonNewScreenshot.Location = new System.Drawing.Point(245, 0);
-            this.ButtonNewScreenshot.MinimumSize = new System.Drawing.Size(0, 24);
-            this.ButtonNewScreenshot.Name = "ButtonNewScreenshot";
-            this.ButtonNewScreenshot.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.ButtonNewScreenshot.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonNewScreenshot.Size = new System.Drawing.Size(87, 24);
-            this.ButtonNewScreenshot.TabIndex = 7;
-            this.ButtonNewScreenshot.Text = "New Image";
-            this.ButtonNewScreenshot.Click += new System.EventHandler(this.ButtonNewScreenshot_Click);
-            // 
             // TakeScreenshot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -214,13 +214,13 @@ namespace ArisenStudio.Forms.Tools.PS3
         }
 
         #endregion
-        private SimpleButton ButtonDeleteScreenshot;
-        private SimpleButton ButtonTakeScreenshot;
+        private SimpleButton ButtonDeleteImage;
+        private SimpleButton ButtonCaptureImage;
         private StackPanel PanelButtons;
         private TextEdit TextBoxFileName;
         private System.Windows.Forms.PictureBox ImageScreenshot;
         private CheckEdit CheckBoxUploadToImgur;
-        private SimpleButton ButtonOpenFilePath;
-        private SimpleButton ButtonNewScreenshot;
+        private SimpleButton ButtonOpenFolder;
+        private SimpleButton ButtonNewImage;
     }
 }

@@ -7,7 +7,6 @@ using ArisenStudio.Extensions;
 using ArisenStudio.Forms.Windows;
 using ArisenStudio.Models.Database;
 using ArisenStudio.Models.Resources;
-using ArisenStudio.Templates;
 using System;
 using System.Diagnostics;
 using System.Globalization;

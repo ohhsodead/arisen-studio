@@ -39,21 +39,10 @@ namespace ArisenStudio.Forms.Tools.PS3
         {
             Text = Language.GetString("TAKE_SCREENSHOT");
 
-            ButtonTakeScreenshot.Text = Language.GetString("TAKE_SCREENSHOT");
-            ButtonDeleteScreenshot.Text = Language.GetString("LABEL_CANCEL");
-
-            //try
-            //{
-            //    SetStatus("Connecting to console via PS3Manager API");
-            //    //Ps3.PS3MAPI.ConnectTarget(Profile.Address);
-            //    SetStatus("Successfully connected to console.");
-            //}
-            //catch (Exception ex)
-            //{
-            //    SetStatus("Screenshot (PS3): " + "Unable to connect to console.", ex);
-            //    XtraMessageBox.Show(this, "Unable to connect to console", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    Close();
-            //}
+            ButtonCaptureImage.Text = Language.GetString("CAPTURE_IMAGE");
+            ButtonDeleteImage.Text = Language.GetString("DELETE_IMAGE");
+            ButtonNewImage.Text = Language.GetString("NEW_IMAGE");
+            ButtonOpenFolder.Text = Language.GetString("OPEN_FOLDER");
         }
 
         private string LocalFilePath = null;
@@ -128,9 +117,9 @@ namespace ArisenStudio.Forms.Tools.PS3
                 File.Delete(LocalFilePath);
                 TextBoxFileName.Text = "";
                 ImageScreenshot.Image = null;
-                ButtonDeleteScreenshot.Enabled = false;
-                ButtonNewScreenshot.Enabled = false;
-                ButtonOpenFilePath.Enabled = false;
+                ButtonDeleteImage.Enabled = false;
+                ButtonNewImage.Enabled = false;
+                ButtonOpenFolder.Enabled = false;
                 Program.Log.Info($"Deleted screenshot file: {LocalFilePath}");
             }
         }
@@ -142,9 +131,9 @@ namespace ArisenStudio.Forms.Tools.PS3
                 LocalFilePath = "";
                 TextBoxFileName.Text = "";
                 ImageScreenshot.Image = null;
-                ButtonDeleteScreenshot.Enabled = false;
-                ButtonNewScreenshot.Enabled = false;
-                ButtonOpenFilePath.Enabled = false;
+                ButtonDeleteImage.Enabled = false;
+                ButtonNewImage.Enabled = false;
+                ButtonOpenFolder.Enabled = false;
                 Program.Log.Info($"Cleared current screenshot.");
             }
         }

@@ -279,27 +279,57 @@ namespace ArisenStudio.Forms.Dialogs
             {
                 if (ConsoleProfile.Platform == Platform.XBOX360)
                 {
+                    TextBoxAddress.Text = Language.GetString("LABEL_DEFAULT_PROFILE");
                     LabelAddress.Enabled = false;
                     TextBoxAddress.Enabled = false;
                 }
                 else
                 {
+                    TextBoxAddress.Text = ConsoleProfile.Address;
                     LabelAddress.Enabled = true;
                     TextBoxAddress.Enabled = true;
                 }
             }
             else
             {
+                TextBoxAddress.Text = ConsoleProfile.Address;
                 LabelAddress.Enabled = true;
-                TextBoxAddress.Enabled = true;
+                ButtonEditLoginDetails.Enabled = true;
             }
 
             //LabelAddress.Enabled = CheckBoxDefaultLogin.Checked && ConsoleProfile.Platform != Platform.XBOX360;
             //TextBoxAddress.Enabled = CheckBoxDefaultLogin.Checked && ConsoleProfile.Platform != Platform.XBOX360;
 
             //TextBoxConsoleAddress.Text = ConsoleProfile.Platform == ConsolePlatform.PS3 ? ConsoleProfile.Address : "Default";
-            TextBoxAddress.Text = CheckBoxDefaultLogin.Checked ? Language.GetString("LABEL_DEFAULT_PROFILE") : ConsoleProfile.Address;
-            ButtonEditLoginDetails.Enabled = !CheckBoxDefaultLogin.Checked;
+            //if (ConsoleProfile.Platform == Platform.PS3)
+            //{
+            //    if (CheckBoxDefaultLogin.Checked)
+            //    {
+            //        TextBoxAddress.Text = ConsoleProfile.Address;
+            //        ButtonEditLoginDetails.Enabled = true;
+            //    }
+            //    else
+            //    {
+            //        TextBoxAddress.Text = ConsoleProfile.Address;
+            //        ButtonEditLoginDetails.Enabled = true;
+            //    }
+            //}
+            //else
+            //{
+            //    if (CheckBoxDefaultLogin.Checked)
+            //    {
+            //        TextBoxAddress.Text = Language.GetString("LABEL_DEFAULT_PROFILE");
+            //        ButtonEditLoginDetails.Enabled = false;
+            //    }
+            //    else
+            //    {
+            //        TextBoxAddress.Text = ConsoleProfile.Address;
+            //        ButtonEditLoginDetails.Enabled = true;
+            //    }
+            //}
+
+            //TextBoxAddress.Text = CheckBoxDefaultLogin.Checked ? Language.GetString("LABEL_DEFAULT_PROFILE") : ConsoleProfile.Address;
+            //ButtonEditLoginDetails.Enabled = !CheckBoxDefaultLogin.Checked;
         }
 
         private void CheckBoxDefaultLogin_Properties_EditValueChanging(object sender, ChangingEventArgs e)

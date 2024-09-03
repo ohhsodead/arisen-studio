@@ -45,7 +45,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.PanelActions = new DevExpress.Utils.Layout.StackPanel();
             this.ButtonDownload = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonInstall = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonReportIssue = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonHelp = new DevExpress.XtraEditors.SimpleButton();
             this.PanelDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlTrainers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewTrainers)).BeginInit();
@@ -222,7 +222,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             // 
             this.PanelActions.Controls.Add(this.ButtonDownload);
             this.PanelActions.Controls.Add(this.ButtonInstall);
-            this.PanelActions.Controls.Add(this.ButtonReportIssue);
+            this.PanelActions.Controls.Add(this.ButtonHelp);
             this.PanelActions.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelActions.Location = new System.Drawing.Point(0, 406);
             this.PanelActions.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -279,29 +279,28 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonInstall.Text = "Install";
             this.ButtonInstall.Click += new System.EventHandler(this.ButtonInstallTrainer_Click);
             // 
-            // ButtonReportIssue
+            // ButtonHelp
             // 
-            this.ButtonReportIssue.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ButtonReportIssue.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.ButtonReportIssue.Appearance.Options.UseFont = true;
-            this.ButtonReportIssue.Appearance.Options.UseForeColor = true;
-            this.ButtonReportIssue.AutoSize = true;
-            this.ButtonReportIssue.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ButtonReportIssue.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.ButtonReportIssue.ImageOptions.ImageToTextIndent = 6;
-            this.ButtonReportIssue.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.ButtonReportIssue.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonReportIssue.ImageOptions.SvgImage")));
-            this.ButtonReportIssue.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonReportIssue.Location = new System.Drawing.Point(231, 11);
-            this.ButtonReportIssue.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ButtonReportIssue.MinimumSize = new System.Drawing.Size(0, 28);
-            this.ButtonReportIssue.Name = "ButtonReportIssue";
-            this.ButtonReportIssue.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
-            this.ButtonReportIssue.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonReportIssue.Size = new System.Drawing.Size(127, 28);
-            this.ButtonReportIssue.TabIndex = 1177;
-            this.ButtonReportIssue.Text = "Report Issue";
-            this.ButtonReportIssue.Click += new System.EventHandler(this.ButtonReport_Click);
+            this.ButtonHelp.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ButtonHelp.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.ButtonHelp.Appearance.Options.UseFont = true;
+            this.ButtonHelp.Appearance.Options.UseForeColor = true;
+            this.ButtonHelp.AutoSize = true;
+            this.ButtonHelp.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonHelp.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonHelp.ImageOptions.ImageToTextIndent = 4;
+            this.ButtonHelp.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonHelp.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonHelp.ImageOptions.SvgImage")));
+            this.ButtonHelp.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.ButtonHelp.Location = new System.Drawing.Point(231, 11);
+            this.ButtonHelp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ButtonHelp.MinimumSize = new System.Drawing.Size(0, 28);
+            this.ButtonHelp.Name = "ButtonHelp";
+            this.ButtonHelp.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
+            this.ButtonHelp.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonHelp.Size = new System.Drawing.Size(152, 28);
+            this.ButtonHelp.TabIndex = 1181;
+            this.ButtonHelp.Text = "Help && Support";
             // 
             // GameTrainersDialog
             // 
@@ -353,7 +352,6 @@ namespace ArisenStudio.Forms.Dialogs.Details
         private XtraScrollableControl PanelDetails;
         private DevExpress.Utils.Layout.StackPanel PanelActions;
         private SimpleButton ButtonInstall;
-        private SimpleButton ButtonReportIssue;
         private LabelControl LabelGame;
         private PanelControl PanelHeader;
         private SvgImageBox ImageClose;
@@ -364,5 +362,6 @@ namespace ArisenStudio.Forms.Dialogs.Details
         private LabelControl LabelTitleId;
         private SimpleButton ButtonDownload;
         private LabelControl labelControl1;
+        private SimpleButton ButtonHelp;
     }
 }

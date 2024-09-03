@@ -322,8 +322,8 @@ namespace ArisenStudio.Forms.Dialogs
             this.ImageInfoDefaultCredentials.SvgImage = global::ArisenStudio.Properties.Resources.icons8_info;
             this.ImageInfoDefaultCredentials.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
             this.ImageInfoDefaultCredentials.TabIndex = 1156;
-            this.ImageInfoDefaultCredentials.ToolTip = "Connects without actively controlling the console. Ideal for monitoring purposes." +
-    "";
+            this.ImageInfoDefaultCredentials.ToolTip = "PS3: Uses the default login and password.\\nXbox 360: It will use the default cons" +
+    "ole from Neighborhood.";
             this.ImageInfoDefaultCredentials.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Cursor;
             this.ImageInfoDefaultCredentials.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.ImageInfoDefaultCredentials.ToolTipTitle = "Default Credentials";

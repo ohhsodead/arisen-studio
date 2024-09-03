@@ -33,8 +33,10 @@ namespace ArisenStudio.Forms.Tools.XBOX
         {
             Text = Language.GetString("TAKE_SCREENSHOT");
 
-            ButtonTakeScreenshot.Text = Language.GetString("TAKE_SCREENSHOT");
-            ButtonDeleteScreenshot.Text = Language.GetString("LABEL_CANCEL");
+            ButtonCaptureImage.Text = Language.GetString("CAPTURE_IMAGE");
+            ButtonDeleteImage.Text = Language.GetString("DELETE_IMAGE");
+            ButtonNewImage.Text = Language.GetString("NEW_IMAGE");
+            ButtonOpenFolder.Text = Language.GetString("OPEN_FOLDER");
         }
 
         private string LocalFilePath;
@@ -56,15 +58,23 @@ namespace ArisenStudio.Forms.Tools.XBOX
                     fileName = Path.GetFileNameWithoutExtension(fileName);
                 }
 
+                if (!Directory.Exists(filePath))
+                {
+                    Directory.CreateDirectory(filePath);
+                }
+
                 fileName = fileName.RemoveInvalidChars();
 
                 string fileLocation = filePath + fileName + ".bmp";
 
+                Program.Log.Info("Local File Path: " +  fileLocation);
+
                 XboxConsole.ScreenShot(fileLocation);
                 ImageScreenshot.Image = new Bitmap(fileLocation);
                 LocalFilePath = fileLocation;
-                ButtonDeleteScreenshot.Enabled = true;
-                ButtonOpenFilePath.Enabled = true;
+                ButtonDeleteImage.Enabled = true;
+                ButtonNewImage.Enabled = true;
+                ButtonOpenFolder.Enabled = true;
 
                 Program.Log.Info($"Screenshot file saved to path: {filePath}");
 
@@ -90,9 +100,9 @@ namespace ArisenStudio.Forms.Tools.XBOX
                 File.Delete(LocalFilePath);
                 TextBoxFileName.Text = "";
                 ImageScreenshot.Image = null;
-                ButtonDeleteScreenshot.Enabled = false;
-                ButtonNewScreenshot.Enabled = false;
-                ButtonOpenFilePath.Enabled = false;
+                ButtonDeleteImage.Enabled = false;
+                ButtonNewImage.Enabled = false;
+                ButtonOpenFolder.Enabled = false;
                 Program.Log.Info($"Deleted screenshot file: {LocalFilePath}");
             }
         }
@@ -104,9 +114,9 @@ namespace ArisenStudio.Forms.Tools.XBOX
                 LocalFilePath = "";
                 TextBoxFileName.Text = "";
                 ImageScreenshot.Image = null;
-                ButtonDeleteScreenshot.Enabled = false;
-                ButtonNewScreenshot.Enabled = false;
-                ButtonOpenFilePath.Enabled = false;
+                ButtonDeleteImage.Enabled = false;
+                ButtonNewImage.Enabled = false;
+                ButtonOpenFolder.Enabled = false;
                 Program.Log.Info($"Cleared current screenshot.");
             }
         }

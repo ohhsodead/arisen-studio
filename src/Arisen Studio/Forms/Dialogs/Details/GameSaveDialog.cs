@@ -6,7 +6,6 @@ using ArisenStudio.Extensions;
 using ArisenStudio.Forms.Windows;
 using ArisenStudio.Models.Database;
 using ArisenStudio.Models.Resources;
-using ArisenStudio.Templates;
 using System;
 using System.Diagnostics;
 using System.Globalization;
@@ -155,8 +154,6 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         private void ButtonReportIssue_Click(object sender, EventArgs e)
         {
-            _ = XtraMessageBox.Show(Language.GetString("REDIRECT_TO_GITHUB_ISSUES"), Language.GetString("REDIRECTING"), MessageBoxButtons.OK, MessageBoxIcon.Information);
-            GitHubTemplates.OpenReportTemplateGameSave(Categories.GetCategoryById(GameSaveItem.CategoryId), GameSaveItem);
         }
 
         protected override void OnPaint(PaintEventArgs e)

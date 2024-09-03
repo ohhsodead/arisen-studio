@@ -16,6 +16,7 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using FluentFTP.Exceptions;
 using DevExpress.XtraLayout.Customization;
+using XDevkit;
 
 namespace ArisenStudio.Forms.Dialogs
 {
@@ -60,7 +61,6 @@ namespace ArisenStudio.Forms.Dialogs
 
         private void TransferDialog_Load(object sender, EventArgs e)
         {
-            // Call the asynchronous method from a Task
             _ = LoadTransferFilesAsync();
         }
 
@@ -678,89 +678,394 @@ namespace ArisenStudio.Forms.Dialogs
         {
             progress.Report(0);
 
-            UpdateStatus(Language.GetString("PREPARING_INSTALL"));
-                Program.Log.Info(string.Format("{0} ({1})" + modItem.Name, modItem.Id));
+            UpdateStatus(string.Format(Language.GetString("PREPARING_INSTALL") + " : {0} ({1})", modItem.Name, modItem.CategoryId));
 
-                await Task.Run(async () =>
+            await Task.Run(() =>
+            {
+                UpdateStatus(Language.GetString("GETTING_DOWNLOAD_FILES"));
+
+                DownloadFiles downloadFiles;
+
+                if (DownloadFiles == null)
                 {
-                    UpdateStatus(Language.GetString("GETTING_DOWNLOAD_FILES"));
+                    downloadFiles = modItem.GetDownloadFiles(this);
+                }
+                else
+                {
+                    downloadFiles = DownloadFiles;
+                }
 
-                    DownloadFiles downloadFiles;
+                progress.Report(10);
 
-                    if (DownloadFiles == null)
-                    {
-                        downloadFiles = modItem.GetDownloadFiles(this);
-                    }
-                    else
-                    {
-                        downloadFiles = DownloadFiles;
-                    }
+                if (downloadFiles == null)
+                {
+                    UpdateStatus(string.Join(" ", Language.GetString("NO_DOWNLOAD_FILES_SELECTED"), Language.GetString("INSTALL_CANCELED")));
+                    progress.Report(0);
+                    return;
+                }
 
-                    if (downloadFiles == null)
+                progress.Report(20);
+
+                int indexFiles = 1;
+                int totalFiles = downloadFiles.InstallPaths.Count;
+
+                UpdateStatus(Language.GetString("DOWNLOADING_EXTRACTING_ARCHIVE"));
+                modItem.DownloadInstallFiles(downloadFiles, Category);
+
+                progress.Report(40);
+
+                if (Settings.InstallGameModsToUsbDevice)
+                {
+                    UpdateStatus(Language.GetString("GETTING_USB_DEVICE"));
+
+                    List<ListItem> localUsbDevices = UsbExtensions.GetLocalUsbDevices();
+
+                    if (localUsbDevices.Count < 1)
                     {
-                        UpdateStatus(string.Join(" ", Language.GetString("NO_DOWNLOAD_FILES_SELECTED"), Language.GetString("INSTALL_CANCELED")));
+                        _ = GetDialogResult(Language.GetString("INSERT_USB_DEVICE"), Language.GetString("NO_USB_DEVICES"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        UpdateStatus(string.Join(" ", Language.GetString("NO_USB_DEVICES_CONNECTED"), Language.GetString("INSTALL_CANCELED")));
                         progress.Report(0);
                         return;
                     }
 
-                    progress.Report(20);
+                    ListItem selectedUsbDevice = DialogExtensions.ShowListViewDialog(this, Language.GetString("USB_DEVICES"), localUsbDevices);
 
-                    int indexFiles = 1;
-                    int totalFiles = downloadFiles.InstallPaths.Count;
-
-                    UpdateStatus(Language.GetString("DOWNLOADING_EXTRACTING_ARCHIVE"));
-                    modItem.DownloadInstallFiles(downloadFiles, Category);
-
-                    progress.Report(40);
-
-                    if (Settings.InstallGameModsToUsbDevice)
+                    if (selectedUsbDevice == null)
                     {
-                        UpdateStatus(Language.GetString("GETTING_USB_DEVICE"));
+                        UpdateStatus(string.Join(" ", Language.GetString("NO_USB_DEVICE_SELECTED"), Language.GetString("INSTALL_CANCELED")));
+                    }
+                    else
+                    {
+                        string installPath = $@"{selectedUsbDevice.Value}Mods\{Category.Title.RemoveInvalidChars()}\{modItem.Name.RemoveInvalidChars()}\";
+                        LocalPath = installPath;
 
-                        List<ListItem> localUsbDevices = UsbExtensions.GetLocalUsbDevices();
-
-                        if (localUsbDevices.Count < 1)
+                        try
                         {
-                            _ = GetDialogResult(Language.GetString("INSERT_USB_DEVICE"), Language.GetString("NO_USB_DEVICES"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            UpdateStatus(string.Join(" ", Language.GetString("NO_USB_DEVICES_CONNECTED"), Language.GetString("INSTALL_CANCELED")));
+                            _ = Directory.CreateDirectory(installPath);
+
+                            progress.Report(60);
+
+                            foreach (string installFilePath in downloadFiles.InstallPaths)
+                            {
+                                // Install files
+                                foreach (string localFilePath in Directory.GetFiles(modItem.DownloadDataDirectory(downloadFiles, Category), "*.*", SearchOption.AllDirectories))
+                                {
+                                    string localFileName = Path.GetFileName(localFilePath);
+
+                                    string parentFolderPath = Path.GetDirectoryName(installPath).Replace(@"\", "/");
+
+                                    // Check whether install file matches the specified install file
+                                    if (installFilePath.EndsWith(localFileName))
+                                    {
+                                        UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), $"{localFileName} ({indexFiles}/{totalFiles})", parentFolderPath));
+                                        File.Copy(localFilePath, installPath + Path.GetFileName(localFilePath), true);
+                                        UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
+
+                                        indexFiles++;
+                                    }
+                                }
+                            }
+
+                            progress.Report(90);
+
+                            if (Settings.CleanUpLocalFilesAfterInstalling)
+                            {
+                                try
+                                {
+                                    UpdateStatus(Language.GetString("CLEANING_INSTALL_FILES"));
+
+                                    Directory.Delete(modItem.DownloadDataDirectory(downloadFiles, Category), true);
+                                    File.Delete(modItem.ArchiveZipFile(downloadFiles, Category));
+                                }
+                                catch { }
+                            }
+
+                            IsSuccessful = true;
+
+                            progress.Report(100);
+
+                            UpdateStatus(string.Format(Language.GetString("FILES_INSTALL_SUCCESS"), indexFiles - 1));
+                        }
+                        catch (WebException ex)
+                        {
                             progress.Report(0);
-                            return;
+                            UpdateStatus(string.Format(Language.GetString("FILES_INSTALL_ERROR"), ex.Message), ex);
                         }
-
-                        ListItem selectedUsbDevice = DialogExtensions.ShowListViewDialog(this, Language.GetString("USB_DEVICES"), localUsbDevices);
-
-                        if (selectedUsbDevice == null)
+                        catch (Exception ex)
                         {
-                            UpdateStatus(string.Join(" ", Language.GetString("NO_USB_DEVICE_SELECTED"), Language.GetString("INSTALL_CANCELED")));
+                            progress.Report(0);
+                            UpdateStatus(string.Format(Language.GetString("FILES_INSTALL_ERROR"), ex.Message), ex);
                         }
-                        else
-                        {
-                            string installPath = $@"{selectedUsbDevice.Value}Mods\{Category.Title.RemoveInvalidChars()}\{modItem.Name.RemoveInvalidChars()}\";
-                            LocalPath = installPath;
+                    }
 
+                    return;
+                }
+
+                // Check whether this mod is already installed
+                bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, modItem.CategoryId, modItem.Id, false) != null;
+
+                if (isInstalled)
+                {
+                    if (GetDialogResult(string.Format(Language.GetString("REINSTALL_FILES"), $"{modItem.Name} v{modItem.Version}", Category.Title), Language.GetString("OVERWRITE_MODS"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                    {
+                        UpdateStatus(Language.GetString("INSTALL_CANCELED"));
+                        progress.Report(0);
+                        return;
+                    }
+                }
+
+                switch (ConsoleProfile.Platform)
+                {
+                    case Platform.PS3:
+                        {
                             try
                             {
-                                _ = Directory.CreateDirectory(installPath);
+                                // Checks whether a mod is already installed and skip backing up game files
+                                InstalledModInfo installedModInfo = MainWindow.ConsoleProfile != null ? Settings.GetInstalledMods(ConsoleProfile, ModItem.CategoryId) : null;
+
+                                if (installedModInfo != null)
+                                {
+                                    ModItemData installedModItem = MainWindow.Database.GetModItem(installedModInfo.Platform, MainWindow.Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId).CategoryType, installedModInfo.ModId);
+
+                                    if (GetDialogResult(string.Format(Language.GetString("ANOTHER_MOD_INSTALLED"), $"{installedModItem.Name} v{installedModItem.Version}", Category.Title), Language.GetString("OVERWRITE_MODS"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                                    {
+                                        UninstallMods(MainWindow.Database.GetModItem(installedModInfo.Platform, MainWindow.Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId).CategoryType, installedModInfo.ModId), progress, ((DownloadFiles)installedModInfo.DownloadFiles).Region);
+
+                                        if (InvokeRequired)
+                                        {
+                                            _ = Invoke(new Action(() =>
+                                            {
+                                                LabelModName.Text = $"{Category.Title}\n{ModItem.Name}".Replace("&", "&&");
+                                            }));
+                                        }
+                                        else
+                                        {
+                                            LabelModName.Text = $"{Category.Title}\n{ModItem.Name}".Replace("&", "&&");
+                                        }
+                                    }
+                                }
+
+                                progress.Report(50);
+
+                                if (downloadFiles.InstallsToRebugFolder)
+                                {
+                                    // Check whether mods are being installed to the firmware folder and let the user
+                                    // know if they want to cancel
+
+                                    if (GetDialogResult(Language.GetString("NOTICE_INSTALL_REBUG_FILES"), Language.GetString("IMPORTANT_MESSAGE"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                                    {
+                                        UpdateStatus(Language.GetString("INSTALL_CANCELED"));
+                                        progress.Report(0);
+                                        return;
+                                    }
+                                }
+                                string gameRegion = string.Empty;
+                                if (downloadFiles.RequiresGameRegion)
+                                {
+                                    // Check whether a game region must be provided to install
+
+                                    UpdateStatus(Language.GetString("GETTING_GAME_REGION"));
+
+                                    gameRegion = Category.GetGameRegion(this, modItem.CategoryId);
+
+                                    if (string.IsNullOrEmpty(gameRegion))
+                                    {
+                                        UpdateStatus(string.Join(" ", Language.GetString("NO_GAME_REGION_SELECTED"), Language.GetString("INSTALL_CANCELED")));
+                                        progress.Report(0);
+                                        return;
+                                    }
+
+                                    if (modItem.IsAnyRegion && !Category.Regions.Any(x => x.EqualsIgnoreCase(gameRegion)))
+                                    {
+                                        UpdateStatus(string.Join(" ", Language.GetString("NOT_SUPPORTED_GAME_REGION"), Language.GetString("INSTALL_CANCELED")));
+                                        progress.Report(0);
+                                        return;
+                                    }
+
+                                    // Check whether the game update for this region exists
+                                    if (!FtpExtensions.GetFolderNames("/dev_hdd0/game/").Any(x => x.Name.ContainsIgnoreCase(gameRegion)))
+                                    {
+                                        UpdateStatus(string.Join(" ", Language.GetString("NO_GAME_REGION_FOUND"), Language.GetString("INSTALL_CANCELED")));
+                                        _ = GetDialogResult(Language.GetString("NO_GAME_REGION_FOLDER_FOUND"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        progress.Report(0);
+                                        return;
+                                    }
+
+                                    switch (Settings.RememberGameRegions)
+                                    {
+                                        case true:
+                                            Settings.UpdateGameRegion(modItem.CategoryId, gameRegion);
+                                            break;
+                                    }
+
+                                    UpdateStatus(string.Format(Language.GetString("FOUND_GAME_REGION"), gameRegion));
+                                }
+                                else
+                                {
+                                    gameRegion = string.Empty;
+                                }
+
+                                progress.Report(55);
+
+                                string userId = string.Empty;
+                                if (downloadFiles.RequiresUserId)
+                                {
+                                    // Check whether a user id must be provided and prompts the user to choose one
+
+                                    UpdateStatus(Language.GetString("GETTING_USER_PROFILE"));
+
+                                    userId = FtpExtensions.GetUserProfileId(this);
+
+                                    if (string.IsNullOrEmpty(userId))
+                                    {
+                                        UpdateStatus(string.Join(" ", Language.GetString("NO_USER_PROFILE_SELECTED"), Language.GetString("INSTALL_CANCELED")));
+                                        progress.Report(0);
+                                        return;
+                                    }
+
+                                    UpdateStatus(string.Format(Language.GetString("FOUND_USER_PROFILE"), userId));
+                                }
+                                else
+                                {
+                                    userId = string.Empty;
+                                }
+
+                                string usbDevice = string.Empty;
+
+                                // If it's a game save then alert the user that a USB device must be connected to console.
+                                if (downloadFiles.RequiresUsbDevice)
+                                {
+                                    if (GetDialogResult(Language.GetString("INSERT_USB_DEVICE_TO_CONSOLE"), Language.GetString("INSTALL_FILES_TO_USB_DEVICE"), MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                                    {
+                                        UpdateStatus(Language.GetString("GETTING_USB_DEVICE"));
+
+                                        usbDevice = FtpExtensions.GetUsbPath();
+
+                                        if (string.IsNullOrEmpty(usbDevice))
+                                        {
+                                            UpdateStatus(string.Join(" ", Language.GetString("NO_USB_DEVICES_CONNECTED"), Language.GetString("INSTALL_CANCELED")));
+                                            progress.Report(0);
+                                            return;
+                                        }
+
+                                        UpdateStatus(string.Format(Language.GetString("FOUND_USB_DEVICE"), usbDevice));
+                                    }
+                                    else
+                                    {
+                                        usbDevice = string.Empty;
+                                    }
+                                }
+                                else
+                                {
+                                    usbDevice = string.Empty;
+                                }
 
                                 progress.Report(60);
+
+                                UpdateStatus(Language.GetString("STARTING_INSTALL"));
+
+                                bool askedToBackupFiles = false;
+                                bool shouldBackupFiles = false;
 
                                 foreach (string installFilePath in downloadFiles.InstallPaths)
                                 {
                                     // Install files
                                     foreach (string localFilePath in Directory.GetFiles(modItem.DownloadDataDirectory(downloadFiles, Category), "*.*", SearchOption.AllDirectories))
                                     {
-                                        string localFileName = Path.GetFileName(localFilePath);
+                                        string installFileName = Path.GetFileName(localFilePath);
+
+                                        string installPath = installFilePath
+                                        .Replace("{REGION}", gameRegion)
+                                        .Replace("{USERID}", userId)
+                                        .Replace("{USBDEV}", usbDevice);
 
                                         string parentFolderPath = Path.GetDirectoryName(installPath).Replace(@"\", "/");
 
                                         // Check whether install file matches the specified install file
-                                        if (installFilePath.EndsWith(localFileName))
+                                        if (installPath.EndsWith(installFileName))
                                         {
-                                            UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), $"{localFileName} ({indexFiles}/{totalFiles})", parentFolderPath));
-                                            File.Copy(localFilePath, installPath + Path.GetFileName(localFilePath), true);
-                                            UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
+                                            // Check whether this file is installed to a game folder
+                                            if (installPath.Contains("dev_hdd0/game/"))
+                                            {
+                                                // Get the backup details for this game file if one has been created
+                                                BackupFile backupFile = MainWindow.BackupFiles.GetGameFileBackup(ConsoleProfile.Platform, modItem.CategoryId, installFileName, installPath);
 
-                                            indexFiles++;
+                                                if (backupFile == null)
+                                                {
+                                                    if (Settings.AlwaysBackupGameFiles)
+                                                    {
+                                                        shouldBackupFiles = true;
+                                                    }
+                                                    else
+                                                    {
+                                                        // Alert the user there is no backup for this file and ask the if one should be created
+                                                        if (!askedToBackupFiles)
+                                                        {
+                                                            if (GetDialogResult(Language.GetString("BACKUP_GAME_FILES"), Language.GetString("BACKUP_FILES"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                                            {
+                                                                askedToBackupFiles = true;
+                                                                shouldBackupFiles = true;
+                                                            }
+                                                            else
+                                                            {
+                                                                askedToBackupFiles = true;
+                                                                shouldBackupFiles = false;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                if (shouldBackupFiles)
+                                                {
+                                                    if (backupFile == null)
+                                                    {
+                                                        UpdateStatus(string.Format(Language.GetString("FILE_BACKUP_CREATING"), installFileName));
+                                                        MainWindow.BackupFiles.CreateBackupFile(ModItem, installFileName, installPath);
+                                                        UpdateStatus(Language.GetString("FILE_BACKUP_CREATED"));
+                                                    }
+                                                    else
+                                                    {
+                                                        if (!File.Exists(backupFile.LocalPath))
+                                                        {
+                                                            UpdateStatus(string.Format(Language.GetString("FILE_BACKUP_CREATING"), installFileName));
+                                                            _ = MainWindow.FtpClient.DownloadFile(backupFile.LocalPath, backupFile.InstallPath);
+
+                                                            backupFile.LocalPath = Path.Combine(MainWindow.BackupFiles.GetGameBackupFolder(modItem), installFileName);
+                                                            backupFile.InstallPath = installPath;
+
+                                                            UpdateStatus(Language.GetString("FILE_BACKUP_CREATED"));
+                                                        }
+
+                                                        MainWindow.BackupFiles.UpdateBackupFile(MainWindow.BackupFiles.BackupFiles.IndexOf(backupFile), backupFile);
+                                                    }
+                                                }
+
+                                                UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), $"{installFileName} ({indexFiles}/{totalFiles})", parentFolderPath));
+                                                _ = FtpExtensions.UploadFile(localFilePath, installPath);
+                                                UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
+
+                                                indexFiles++;
+                                            }
+                                            // Check whether file is installed to a USB device
+                                            else if (installFilePath.Contains("{USBDEV}"))
+                                            {
+                                                if (!string.IsNullOrEmpty(usbDevice))
+                                                {
+                                                    UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), $"{installFileName} ({indexFiles}/{totalFiles})", parentFolderPath));
+                                                    _ = FtpExtensions.UploadFile(localFilePath, installPath);
+                                                    UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
+
+                                                    indexFiles++;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), $"{installFileName} ({indexFiles}/{totalFiles})", parentFolderPath));
+                                                _ = FtpExtensions.UploadFile(localFilePath, installPath);
+                                                UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
+
+                                                indexFiles++;
+                                            }
                                         }
                                     }
                                 }
@@ -775,15 +1080,28 @@ namespace ArisenStudio.Forms.Dialogs
 
                                         Directory.Delete(modItem.DownloadDataDirectory(downloadFiles, Category), true);
                                         File.Delete(modItem.ArchiveZipFile(downloadFiles, Category));
+                                        progress.Report(95);
                                     }
                                     catch { }
                                 }
 
-                                IsSuccessful = true;
-
                                 progress.Report(100);
 
-                                UpdateStatus(string.Format(Language.GetString("FILES_INSTALL_SUCCESS"), indexFiles - 1));
+                                IsSuccessful = true;
+
+                                Settings.UpdateInstalledMods(ConsoleProfile, Category.Id, Category.CategoryType, modItem.Id, indexFiles - 1, DateTime.Now, downloadFiles);
+
+                                if (MainWindow.IsWebManInstalled)
+                                {
+                                    WebManExtensions.NotifyPopup(MainWindow.ConsoleProfile.Address, $"{Category.Title}\nInstalled {downloadFiles.Name} ({indexFiles - 1} files)");
+                                }
+
+                                UpdateStatus(string.Format(Language.GetString("FILES_INSTALL_SUCCESS"), indexFiles - 1) + $" {(Category.CategoryType == CategoryType.Game ? Language.GetString("READY_TO_START_GAME") : string.Empty)}");
+                            }
+                            catch (FtpCommandException ex)
+                            {
+                                progress.Report(0);
+                                UpdateStatus(string.Format(Language.GetString("FILES_INSTALL_ERROR"), ex.Message), ex);
                             }
                             catch (WebException ex)
                             {
@@ -797,352 +1115,47 @@ namespace ArisenStudio.Forms.Dialogs
                             }
                         }
 
-                        return;
-                    }
-
-                    // Check whether this mod is already installed
-                    bool isInstalled = ConsoleProfile != null && Settings.GetInstalledMods(ConsoleProfile, modItem.CategoryId, modItem.Id, false) != null;
-
-                    if (isInstalled)
-                    {
-                        if (GetDialogResult(string.Format(Language.GetString("REINSTALL_FILES"), $"{modItem.Name} v{modItem.Version}", Category.Title), Language.GetString("OVERWRITE_MODS"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                        break;
+                    case Platform.XBOX360:
                         {
-                            UpdateStatus(Language.GetString("INSTALL_CANCELED"));
-                            progress.Report(0);
-                            return;
-                        }
-                    }
-
-                    switch (ConsoleProfile.Platform)
-                    {
-                        case Platform.PS3:
+                            try
                             {
-                                try
+                                UpdateStatus(Language.GetString("STARTING_INSTALL"));
+
+                                foreach (string installFilePath in downloadFiles.InstallPaths)
                                 {
-                                    // Checks whether a mod is already installed and skip backing up game files
-                                    InstalledModInfo installedModInfo = MainWindow.ConsoleProfile != null ? Settings.GetInstalledMods(ConsoleProfile, ModItem.CategoryId) : null;
-
-                                    if (installedModInfo != null)
+                                    // Install files
+                                    foreach (string localFilePath in Directory.GetFiles(modItem.DownloadDataDirectory(downloadFiles, Category), "*.*", SearchOption.AllDirectories))
                                     {
-                                        ModItemData installedModItem = MainWindow.Database.GetModItem(installedModInfo.Platform, MainWindow.Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId).CategoryType, installedModInfo.ModId);
+                                        string installPath = installFilePath
+                                        .Replace("{CATEGORYID}", modItem.CategoryId.ToUpper());
 
-                                        if (GetDialogResult(string.Format(Language.GetString("ANOTHER_MOD_INSTALLED"), $"{installedModItem.Name} v{installedModItem.Version}", Category.Title), Language.GetString("OVERWRITE_MODS"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                                        string installFileName = Path.GetFileName(installFilePath);
+
+                                        installPath = installPath.Replace("\\\\", "\\");
+
+                                        // Check whether install file matches the specified install file
+                                        if (string.Equals(installFileName, Path.GetFileName(localFilePath), StringComparison.OrdinalIgnoreCase))
                                         {
-                                            await UninstallMods(MainWindow.Database.GetModItem(installedModInfo.Platform, MainWindow.Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId).CategoryType, installedModInfo.ModId), progress, ((DownloadFiles)installedModInfo.DownloadFiles).Region);
+                                            UpdateStatus($"Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {installPath}");
 
-                                            if (InvokeRequired)
+                                            /* Local Parent Folder Name */
+                                            //int lastSlashIndex = localFilePath.Replace("\\\\", "\\").LastIndexOf('\\');
+                                            //int secondLastSlashIndex = localFilePath.Replace("\\\\", "\\").LastIndexOf('\\', lastSlashIndex - 1);
+                                            //string parentFolder = localFilePath.Replace("\\\\", "\\").Substring(secondLastSlashIndex + 1, lastSlashIndex - secondLastSlashIndex - 1);
+                                            /* Local Parent Folder Name */
+
+                                            string installFileParentPath = XboxExtensions.GetParentFolder(installPath.Replace("\\\\", "\\"));
+
+                                            Program.Log.Info("Local File Path: " + localFilePath.Replace("\\\\", "\\").Replace("\\\\", "\\"));
+                                            Program.Log.Info("Install Parent Path: " + installFileParentPath);
+                                            Program.Log.Info("Install File Path: " + installPath);
+
+                                            if (File.Exists(localFilePath))
                                             {
-                                                _ = Invoke(new Action(() =>
-                                                {
-                                                    LabelModName.Text = $"{Category.Title}\n{ModItem.Name}".Replace("&", "&&");
-                                                }));
-                                            }
-                                            else
-                                            {
-                                                LabelModName.Text = $"{Category.Title}\n{ModItem.Name}".Replace("&", "&&");
-                                            }
-                                        }
-                                    }
+                                                UpdateStatus($"Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {installPath}");
 
-                                    progress.Report(50);
-
-                                    if (downloadFiles.InstallsToRebugFolder)
-                                    {
-                                        // Check whether mods are being installed to the firmware folder and let the user
-                                        // know if they want to cancel
-
-                                        if (GetDialogResult(Language.GetString("NOTICE_INSTALL_REBUG_FILES"), Language.GetString("IMPORTANT_MESSAGE"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
-                                        {
-                                            UpdateStatus(Language.GetString("INSTALL_CANCELED"));
-                                            progress.Report(0);
-                                            return;
-                                        }
-                                    }
-                                    string gameRegion = string.Empty;
-                                    if (downloadFiles.RequiresGameRegion)
-                                    {
-                                        // Check whether a game region must be provided to install
-
-                                        UpdateStatus(Language.GetString("GETTING_GAME_REGION"));
-
-                                        gameRegion = Category.GetGameRegion(this, modItem.CategoryId);
-
-                                        if (string.IsNullOrEmpty(gameRegion))
-                                        {
-                                            UpdateStatus(string.Join(" ", Language.GetString("NO_GAME_REGION_SELECTED"), Language.GetString("INSTALL_CANCELED")));
-                                            progress.Report(0);
-                                            return;
-                                        }
-
-                                        if (modItem.IsAnyRegion && !Category.Regions.Any(x => x.EqualsIgnoreCase(gameRegion)))
-                                        {
-                                            UpdateStatus(string.Join(" ", Language.GetString("NOT_SUPPORTED_GAME_REGION"), Language.GetString("INSTALL_CANCELED")));
-                                            progress.Report(0);
-                                            return;
-                                        }
-
-                                        // Check whether the game update for this region exists
-                                        if (!FtpExtensions.GetFolderNames("/dev_hdd0/game/").Any(x => x.Name.ContainsIgnoreCase(gameRegion)))
-                                        {
-                                            UpdateStatus(string.Join(" ", Language.GetString("NO_GAME_REGION_FOUND"), Language.GetString("INSTALL_CANCELED")));
-                                            _ = GetDialogResult(Language.GetString("NO_GAME_REGION_FOLDER_FOUND"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                            progress.Report(0);
-                                            return;
-                                        }
-
-                                        switch (Settings.RememberGameRegions)
-                                        {
-                                            case true:
-                                                Settings.UpdateGameRegion(modItem.CategoryId, gameRegion);
-                                                break;
-                                        }
-
-                                        UpdateStatus(string.Format(Language.GetString("FOUND_GAME_REGION"), gameRegion));
-                                    }
-                                    else
-                                    {
-                                        gameRegion = string.Empty;
-                                    }
-
-                                    progress.Report(55);
-
-                                    string userId = string.Empty;
-                                    if (downloadFiles.RequiresUserId)
-                                    {
-                                        // Check whether a user id must be provided and prompts the user to choose one
-
-                                        UpdateStatus(Language.GetString("GETTING_USER_PROFILE"));
-
-                                        userId = FtpExtensions.GetUserProfileId(this);
-
-                                        if (string.IsNullOrEmpty(userId))
-                                        {
-                                            UpdateStatus(string.Join(" ", Language.GetString("NO_USER_PROFILE_SELECTED"), Language.GetString("INSTALL_CANCELED")));
-                                            progress.Report(0);
-                                            return;
-                                        }
-
-                                        UpdateStatus(string.Format(Language.GetString("FOUND_USER_PROFILE"), userId));
-                                    }
-                                    else
-                                    {
-                                        userId = string.Empty;
-                                    }
-
-                                    string usbDevice = string.Empty;
-
-                                    // If it's a game save then alert the user that a USB device must be connected to console.
-                                    if (downloadFiles.RequiresUsbDevice)
-                                    {
-                                        if (GetDialogResult(Language.GetString("INSERT_USB_DEVICE_TO_CONSOLE"), Language.GetString("INSTALL_FILES_TO_USB_DEVICE"), MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                                        {
-                                            UpdateStatus(Language.GetString("GETTING_USB_DEVICE"));
-
-                                            usbDevice = FtpExtensions.GetUsbPath();
-
-                                            if (string.IsNullOrEmpty(usbDevice))
-                                            {
-                                                UpdateStatus(string.Join(" ", Language.GetString("NO_USB_DEVICES_CONNECTED"), Language.GetString("INSTALL_CANCELED")));
-                                                progress.Report(0);
-                                                return;
-                                            }
-
-                                            UpdateStatus(string.Format(Language.GetString("FOUND_USB_DEVICE"), usbDevice));
-                                        }
-                                        else
-                                        {
-                                            usbDevice = string.Empty;
-                                        }
-                                    }
-                                    else
-                                    {
-                                        usbDevice = string.Empty;
-                                    }
-
-                                    progress.Report(60);
-
-                                    UpdateStatus(Language.GetString("STARTING_INSTALL"));
-
-                                    bool askedToBackupFiles = false;
-                                    bool shouldBackupFiles = false;
-
-                                    foreach (string installFilePath in downloadFiles.InstallPaths)
-                                    {
-                                        // Install files
-                                        foreach (string localFilePath in Directory.GetFiles(modItem.DownloadDataDirectory(downloadFiles, Category), "*.*", SearchOption.AllDirectories))
-                                        {
-                                            string installFileName = Path.GetFileName(localFilePath);
-
-                                            string installPath = installFilePath
-                                            .Replace("{REGION}", gameRegion)
-                                            .Replace("{USERID}", userId)
-                                            .Replace("{USBDEV}", usbDevice);
-
-                                            string parentFolderPath = Path.GetDirectoryName(installPath).Replace(@"\", "/");
-
-                                            // Check whether install file matches the specified install file
-                                            if (installPath.EndsWith(installFileName))
-                                            {
-                                                // Check whether this file is installed to a game folder
-                                                if (installPath.Contains("dev_hdd0/game/"))
-                                                {
-                                                    // Get the backup details for this game file if one has been created
-                                                    BackupFile backupFile = MainWindow.BackupFiles.GetGameFileBackup(ConsoleProfile.Platform, modItem.CategoryId, installFileName, installPath);
-
-                                                    if (backupFile == null)
-                                                    {
-                                                        if (Settings.AlwaysBackupGameFiles)
-                                                        {
-                                                            shouldBackupFiles = true;
-                                                        }
-                                                        else
-                                                        {
-                                                            // Alert the user there is no backup for this file and ask the if one should be created
-                                                            if (!askedToBackupFiles)
-                                                            {
-                                                                if (GetDialogResult(Language.GetString("BACKUP_GAME_FILES"), Language.GetString("BACKUP_FILES"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                                                                {
-                                                                    askedToBackupFiles = true;
-                                                                    shouldBackupFiles = true;
-                                                                }
-                                                                else
-                                                                {
-                                                                    askedToBackupFiles = true;
-                                                                    shouldBackupFiles = false;
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-
-                                                    if (shouldBackupFiles)
-                                                    {
-                                                        if (backupFile == null)
-                                                        {
-                                                            UpdateStatus(string.Format(Language.GetString("FILE_BACKUP_CREATING"), installFileName));
-                                                            MainWindow.BackupFiles.CreateBackupFile(ModItem, installFileName, installPath);
-                                                            UpdateStatus(Language.GetString("FILE_BACKUP_CREATED"));
-                                                        }
-                                                        else
-                                                        {
-                                                            if (!File.Exists(backupFile.LocalPath))
-                                                            {
-                                                                UpdateStatus(string.Format(Language.GetString("FILE_BACKUP_CREATING"), installFileName));
-                                                                _ = MainWindow.FtpClient.DownloadFile(backupFile.LocalPath, backupFile.InstallPath);
-
-                                                                backupFile.LocalPath = Path.Combine(MainWindow.BackupFiles.GetGameBackupFolder(modItem), installFileName);
-                                                                backupFile.InstallPath = installPath;
-
-                                                                UpdateStatus(Language.GetString("FILE_BACKUP_CREATED"));
-                                                            }
-
-                                                            MainWindow.BackupFiles.UpdateBackupFile(MainWindow.BackupFiles.BackupFiles.IndexOf(backupFile), backupFile);
-                                                        }
-                                                    }
-
-                                                    UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), $"{installFileName} ({indexFiles}/{totalFiles})", parentFolderPath));
-                                                    _ = FtpExtensions.UploadFile(localFilePath, installPath);
-                                                    UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
-
-                                                    indexFiles++;
-                                                }
-                                                // Check whether file is installed to a USB device
-                                                else if (installFilePath.Contains("{USBDEV}"))
-                                                {
-                                                    if (!string.IsNullOrEmpty(usbDevice))
-                                                    {
-                                                        UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), $"{installFileName} ({indexFiles}/{totalFiles})", parentFolderPath));
-                                                        _ = FtpExtensions.UploadFile(localFilePath, installPath);
-                                                        UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
-
-                                                        indexFiles++;
-                                                    }
-                                                }
-                                                else
-                                                {
-                                                    UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), $"{installFileName} ({indexFiles}/{totalFiles})", parentFolderPath));
-                                                    _ = FtpExtensions.UploadFile(localFilePath, installPath);
-                                                    UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
-
-                                                    indexFiles++;
-                                                }
-                                            }
-                                        }
-                                    }
-
-                                    progress.Report(90);
-
-                                    if (Settings.CleanUpLocalFilesAfterInstalling)
-                                    {
-                                        try
-                                        {
-                                            UpdateStatus(Language.GetString("CLEANING_INSTALL_FILES"));
-
-                                            Directory.Delete(modItem.DownloadDataDirectory(downloadFiles, Category), true);
-                                            File.Delete(modItem.ArchiveZipFile(downloadFiles, Category));
-                                            progress.Report(95);
-                                        }
-                                        catch { }
-                                    }
-
-                                    progress.Report(100);
-
-                                    IsSuccessful = true;
-
-                                    Settings.UpdateInstalledMods(ConsoleProfile, Category.Id, Category.CategoryType, modItem.Id, indexFiles - 1, DateTime.Now, downloadFiles);
-
-                                    if (MainWindow.IsWebManInstalled)
-                                    {
-                                        WebManExtensions.NotifyPopup(MainWindow.ConsoleProfile.Address, $"{Category.Title}\nInstalled {downloadFiles.Name} ({indexFiles - 1} files)");
-                                    }
-
-                                    UpdateStatus(string.Format(Language.GetString("FILES_INSTALL_SUCCESS"), indexFiles - 1) + $" {(Category.CategoryType == CategoryType.Game ? Language.GetString("READY_TO_START_GAME") : string.Empty)}");
-                                }
-                                catch (FtpCommandException ex)
-                                {
-                                    progress.Report(0);
-                                    UpdateStatus(string.Format(Language.GetString("FILES_INSTALL_ERROR"), ex.Message), ex);
-                                }
-                                catch (WebException ex)
-                                {
-                                    progress.Report(0);
-                                    UpdateStatus(string.Format(Language.GetString("FILES_INSTALL_ERROR"), ex.Message), ex);
-                                }
-                                catch (Exception ex)
-                                {
-                                    progress.Report(0);
-                                    UpdateStatus(string.Format(Language.GetString("FILES_INSTALL_ERROR"), ex.Message), ex);
-                                }
-                            }
-
-                            break;
-                        case Platform.XBOX360:
-                            {
-                                try
-                                {
-                                    UpdateStatus(Language.GetString("STARTING_INSTALL"));
-
-                                    foreach (string installFilePath in downloadFiles.InstallPaths)
-                                    {
-                                        // Install files
-                                        foreach (string localFilePath in Directory.GetFiles(modItem.DownloadDataDirectory(downloadFiles, Category), "*.*", SearchOption.AllDirectories))
-                                        {
-                                            string installFileName = Path.GetFileName(installFilePath);
-
-                                            string installPath = installFilePath
-                                            .Replace("{CATEGORYID}", modItem.CategoryId.ToUpper());
-
-                                            string parentFolderPath = Path.GetDirectoryName(installFilePath) + @"\";
-
-                                            // Check whether install file matches the specified install file
-                                            if (string.Equals(installFileName, Path.GetFileName(localFilePath), StringComparison.OrdinalIgnoreCase))
-                                            {
-                                                UpdateStatus($"Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {parentFolderPath}");
-
-                                                if (!XboxExtensions.PathExists(@"Hdd:\", "ArisenStudio"))
-                                                    MainWindow.XboxConsole.MakeDirectory(@"Hdd:\ArisenStudio\");
-
-                                                if (!XboxExtensions.PathExists(@"Hdd:\ArisenStudio\", modItem.CategoryId.ToUpper()))
-                                                    MainWindow.XboxConsole.MakeDirectory(@"Hdd:\ArisenStudio\" + modItem.CategoryId.ToUpper() + @"\");
+                                                MainWindow.XboxConsole.CreateDirectoryRecursive(installFileParentPath);
 
                                                 MainWindow.XboxConsole.SendFile(localFilePath.Replace("\\\\", "\\").Replace("\\\\", "\\"), installPath);
 
@@ -1150,49 +1163,56 @@ namespace ArisenStudio.Forms.Dialogs
 
                                                 indexFiles++;
                                             }
+                                            else
+                                            {
+                                                progress.Report(0);
+                                                UpdateStatus(string.Format(Language.GetString("FILES_INSTALL_ERROR"), "Local File Doesn't Exist"));
+                                            }
+
                                         }
                                     }
+                                }
 
-                                    progress.Report(80);
+                                progress.Report(80);
 
-                                    if (Settings.CleanUpLocalFilesAfterInstalling)
+                                if (Settings.CleanUpLocalFilesAfterInstalling)
+                                {
+                                    try
                                     {
-                                        try
-                                        {
-                                            UpdateStatus(Language.GetString("CLEANING_INSTALL_FILES"));
+                                        UpdateStatus(Language.GetString("CLEANING_INSTALL_FILES"));
 
-                                            Directory.Delete(modItem.DownloadDataDirectory(downloadFiles, Category), true);
-                                            File.Delete(modItem.ArchiveZipFile(downloadFiles, Category));
-                                            progress.Report(95);
-                                        }
-                                        catch { }
+                                        Directory.Delete(modItem.DownloadDataDirectory(downloadFiles, Category), true);
+                                        File.Delete(modItem.ArchiveZipFile(downloadFiles, Category));
+                                        progress.Report(95);
                                     }
-
-                                    IsSuccessful = true;
-
-                                    // Update installed mods
-                                    Settings.UpdateInstalledMods(ConsoleProfile, Category.Id, Category.CategoryType, modItem.Id, indexFiles - 1, DateTime.Now, downloadFiles);
-
-                                    progress.Report(100);
-
-                                    // Log status
-                                    UpdateStatus(string.Format(Language.GetString("FILES_INSTALL_SUCCESS"), indexFiles - 1) + $" {(Category.CategoryType == CategoryType.Game ? Language.GetString("READY_TO_START_GAME") : string.Empty)}");
-                                }
-                                catch (WebException ex)
-                                {
-                                    progress.Report(0);
-                                    UpdateStatus(string.Format(Language.GetString("FILES_INSTALL_ERROR"), ex.Message), ex);
-                                }
-                                catch (Exception ex)
-                                {
-                                    progress.Report(0);
-                                    UpdateStatus(string.Format(Language.GetString("FILES_INSTALL_ERROR"), ex.Message), ex);
+                                    catch { }
                                 }
 
-                                break;
+                                IsSuccessful = true;
+
+                                // Update installed mods
+                                Settings.UpdateInstalledMods(ConsoleProfile, Category.Id, Category.CategoryType, modItem.Id, indexFiles - 1, DateTime.Now, downloadFiles);
+
+                                progress.Report(100);
+
+                                // Log status
+                                UpdateStatus(string.Format(Language.GetString("FILES_INSTALL_SUCCESS"), indexFiles - 1) + $" {(Category.CategoryType == CategoryType.Game ? Language.GetString("READY_TO_START_GAME") : string.Empty)}");
                             }
-                    }
-                });
+                            catch (WebException ex)
+                            {
+                                progress.Report(0);
+                                UpdateStatus(string.Format(Language.GetString("FILES_INSTALL_ERROR"), ex.Message), ex);
+                            }
+                            catch (Exception ex)
+                            {
+                                progress.Report(0);
+                                UpdateStatus(string.Format(Language.GetString("FILES_INSTALL_ERROR"), ex.Message), ex);
+                            }
+
+                            break;
+                        }
+                }
+            });
         }
 
         /// <summary>
@@ -1542,7 +1562,7 @@ namespace ArisenStudio.Forms.Dialogs
 
             await Task.Run(() =>
             {
-                UpdateStatus(Language.GetString("PREPARING_DOWNLOAD"));
+                UpdateStatus(string.Format(Language.GetString("PREPARING_DOWNLOAD") + " : {0} ({1})", modItem.Name, modItem.CategoryId));
 
                 DownloadFiles downloadFiles;
 
@@ -1559,8 +1579,8 @@ namespace ArisenStudio.Forms.Dialogs
 
                 if (downloadFiles == null)
                 {
-                    UpdateStatus(string.Join(" ", Language.GetString("NO_DOWNLOAD_FILES_SELECTED"), Language.GetString("DOWNLOAD_CANCELED")));
                     progress.Report(0);
+                    UpdateStatus(string.Join(" ", Language.GetString("NO_DOWNLOAD_FILES_SELECTED"), Language.GetString("DOWNLOAD_CANCELED")));
                     return;
                 }
 
@@ -1576,6 +1596,41 @@ namespace ArisenStudio.Forms.Dialogs
                 progress.Report(100);
 
                 IsSuccessful = true;
+
+                //UpdateStatus(Language.GetString("PREPARING_DOWNLOAD"));
+
+                //DownloadFiles downloadFiles;
+
+                //if (DownloadFiles == null)
+                //{
+                //    downloadFiles = modItem.GetDownloadFiles(this);
+                //}
+                //else
+                //{
+                //    downloadFiles = DownloadFiles;
+                //}
+
+                //progress.Report(40);
+
+                //if (downloadFiles == null)
+                //{
+                //    UpdateStatus(string.Join(" ", Language.GetString("NO_DOWNLOAD_FILES_SELECTED"), Language.GetString("DOWNLOAD_CANCELED")));
+                //    progress.Report(0);
+                //    return;
+                //}
+
+                //UpdateStatus(Language.GetString("ARCHIVE_DOWNLOADING"));
+                //modItem.DownloadInstallFiles(downloadFiles, Category);
+
+                //progress.Report(75);
+
+                //UpdateStatus(Language.GetString("ARCHIVE_DOWNLOAD_SUCCESS"));
+
+                //LocalPath = Path.GetDirectoryName(modItem.ArchiveZipFile(downloadFiles, Category));
+
+                //progress.Report(100);
+
+                //IsSuccessful = true;
             });
         }
 
@@ -2767,6 +2822,8 @@ namespace ArisenStudio.Forms.Dialogs
 
                             string installFileName = Path.GetFileName(installPath);
 
+                            installPath = installPath.Replace("\\\\", "\\");
+
                             // Check whether install file matches the specified install file
                             if (string.Equals(installFileName, Path.GetFileName(localFilePath), StringComparison.OrdinalIgnoreCase))
                             {
@@ -2777,6 +2834,8 @@ namespace ArisenStudio.Forms.Dialogs
                                 //int secondLastSlashIndex = localFilePath.Replace("\\\\", "\\").LastIndexOf('\\', lastSlashIndex - 1);
                                 //string parentFolder = localFilePath.Replace("\\\\", "\\").Substring(secondLastSlashIndex + 1, lastSlashIndex - secondLastSlashIndex - 1);
                                 /* Local Parent Folder Name */
+
+                                string installFileParentPath = XboxExtensions.GetParentFolder(installPath.Replace("\\\\", "\\"));
 
                                 /* Parent Folder Name & Path Leading to Parent Folder */
                                 string auroraParentFolder = string.Empty;
@@ -2792,8 +2851,8 @@ namespace ArisenStudio.Forms.Dialogs
 
                                     auroraParentFolderPath = normalizedPath.Substring(0, lastSlashIndex) + "\\";
 
-                                    Program.Log.Info("Aurora Parent folder: " + auroraParentFolder);
-                                    Program.Log.Info("Aurora Path leading up to the parent folder: " + auroraParentFolderPath);
+                                    //Program.Log.Info("Aurora Parent folder: " + auroraParentFolder);
+                                    //Program.Log.Info("Aurora Path leading up to the parent folder: " + auroraParentFolderPath);
                                 }
                                 else
                                 {
@@ -2814,6 +2873,7 @@ namespace ArisenStudio.Forms.Dialogs
                                 /* Parent Folder Name & Path Leading to Parent Folder */
 
                                 Program.Log.Info("Local File Path: " + localFilePath.Replace("\\\\", "\\").Replace("\\\\", "\\"));
+                                Program.Log.Info("Console File Parent Path: " + installFileParentPath);
                                 Program.Log.Info("Console File Path: " + installPath);
                                 Program.Log.Info("Aurora Parent Directory: " + auroraParentFolderPath);
                                 Program.Log.Info("Aurora Parent Folder: " + auroraParentFolder);
@@ -2827,11 +2887,27 @@ namespace ArisenStudio.Forms.Dialogs
                                         return;
                                     }
 
-                                    MainWindow.XboxConsole.SendFile(localFilePath.Replace("\\\\", "\\").Replace("\\\\", "\\"), installPath);
+                                    if (File.Exists(localFilePath))
+                                    {
+                                        MainWindow.XboxConsole.CreateDirectoryRecursive(installFileParentPath);
 
-                                    UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
+                                        MainWindow.XboxConsole.SendFile(localFilePath.Replace("\\\\", "\\").Replace("\\\\", "\\"), installPath);
 
-                                    indexFiles++;
+                                        UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
+
+                                        indexFiles++;
+                                    }
+                                    else
+                                    {
+                                        progress.Report(0);
+                                        UpdateStatus(string.Format(Language.GetString("FILES_INSTALL_ERROR"), "Local File Doesn't Exist"));
+                                    }
+
+                                    //if (!XboxExtensions.PathExists(@"Hdd:\", "ArisenStudio"))
+                                    //    MainWindow.XboxConsole.MakeDirectory(@"Hdd:\ArisenStudio\");
+
+                                    //if (!XboxExtensions.PathExists(@"Hdd:\ArisenStudio\", modItem.CategoryId.ToUpper()))
+                                    //    MainWindow.XboxConsole.MakeDirectory(@"Hdd:\ArisenStudio\" + modItem.CategoryId.ToUpper() + @"\");
                                 }
                                 else
                                 {

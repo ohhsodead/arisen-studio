@@ -47,15 +47,24 @@ namespace ArisenStudio.Forms.Tools.XBOX
         {
             try
             {
+                System.Threading.Thread.Sleep(1000);
                 LabelIPAddress.Text = Xbox.IPAddress.ToString();
+                System.Threading.Thread.Sleep(1000);
                 LabelCPUKey.Text = Xbox.GetCPUKey().ToString();
+                System.Threading.Thread.Sleep(1000);
                 LabelKernel.Text = Xbox.GetKernalVersion().ToString();
+                System.Threading.Thread.Sleep(1000);
                 LabelTitleID.Text = Xbox.XamGetCurrentTitleId().ToString();
+                System.Threading.Thread.Sleep(1000);
 
                 LabelTempCPU.Text = Xbox.GetTemperature(JRPC.TemperatureType.CPU) + " °C";
+                System.Threading.Thread.Sleep(1000);
                 LabelTempGPU.Text = Xbox.GetTemperature(JRPC.TemperatureType.GPU) + " °C";
+                System.Threading.Thread.Sleep(1000);
                 LabelTempRAM.Text = Xbox.GetTemperature(JRPC.TemperatureType.EDRAM) + " °C";
+                System.Threading.Thread.Sleep(1000);
                 LabelTempMB.Text = Xbox.GetTemperature(JRPC.TemperatureType.MotherBoard) + " °C";
+                System.Threading.Thread.Sleep(1000);
 
                 TextBoxXboxName.Text = Xbox.Name;
 

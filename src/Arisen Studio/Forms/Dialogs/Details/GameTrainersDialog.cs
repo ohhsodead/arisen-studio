@@ -4,7 +4,6 @@ using DevExpress.XtraGrid.Views.Grid;
 using ArisenStudio.Database;
 using ArisenStudio.Extensions;
 using ArisenStudio.Forms.Windows;
-using ArisenStudio.Templates;
 using System;
 using System.Data;
 using System.Linq;
@@ -86,7 +85,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
                 ButtonDownload.Text = Language.GetString("LABEL_DOWNLOAD");
                 ButtonInstall.Text = Language.GetString("LABEL_INSTALL");
-                ButtonReportIssue.Text = Language.GetString("LABEL_REPORT_ISSUE");
+                ButtonHelp.Text = Language.GetString("LABEL_HELP_SUPPORT");
 
                 ButtonInstall.Enabled = MainWindow.IsConsoleConnected || MainWindow.Settings.InstallGameModsToUsbDevice;
             }
@@ -133,37 +132,6 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         private void ButtonReport_Click(object sender, EventArgs e)
         {
-            StringBuilder message = new StringBuilder()
-                .Append("You will now be redirected to our GitHub Issues page for ArisenStudio. All details will be automatically filled for you. Please provide information about the issue to help us fix your problem.\n")
-                .AppendLine("Click the 'Submit' button to open a new issue which can help us fix any problems.");
-
-            _ = XtraMessageBox.Show(message.ToString(), "Opening GitHub Issues", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //GitHubTemplates.OpenReportTemplateGameCheat(GameCheatItem, SelectedCheatItem, SelectedCheatItem.Offsets[GridViewTrainers.FocusedRowHandle]);
-        }
-
-        private string ApplyCheat(Offsets offsets, string lastReturn)
-        {
-            try
-            {
-                //if (offsets.Opcode == "00002000")
-                //{
-                //    uint offset = Convert.ToUInt32(offsets.Offset, 16);
-                //    uint value = Convert.ToUInt32(offsets.Value, 16);
-
-                //    if ((int)offset == 0)
-                //    {
-                //        offset = Convert.ToUInt32(lastReturn, 16);
-                //    }
-
-                //    PS3.PS3MAPI.Extension.WriteInt32(offset, (int)value);
-                //}
-            }
-            catch (Exception ex)
-            {
-                _ = XtraMessageBox.Show(this, string.Format(Language.GetString("CHEAT_NOT_APPLIED"), ex.Message), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-
-            return "00000000";
         }
 
         protected override void OnPaint(PaintEventArgs e)

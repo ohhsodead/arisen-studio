@@ -7,7 +7,6 @@ using ArisenStudio.Extensions;
 using ArisenStudio.Forms.Windows;
 using ArisenStudio.Models.Database;
 using ArisenStudio.Models.Resources;
-using ArisenStudio.Templates;
 using System;
 using System.Diagnostics;
 using System.Globalization;
@@ -16,6 +15,7 @@ using System.Resources;
 using System.Windows.Forms;
 using ScrollOrientation = DevExpress.XtraEditors.ScrollOrientation;
 using System.Drawing;
+using ArisenStudio.Constants;
 
 namespace ArisenStudio.Forms.Dialogs.Details
 {
@@ -132,8 +132,6 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         private void ButtonReport_Click(object sender, EventArgs e)
         {
-            _ = XtraMessageBox.Show(Language.GetString("REDIRECT_TO_GITHUB_ISSUES"), Language.GetString("REDIRECTING"), MessageBoxButtons.OK, MessageBoxIcon.Information);
-            GitHubTemplates.OpenReportTemplateApps(Categories.GetCategoryById(AppItem.CategoryId), AppItem);
         }
 
         private void ButtonFavorite_Click(object sender, EventArgs e)

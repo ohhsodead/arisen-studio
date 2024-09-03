@@ -268,7 +268,7 @@ namespace ArisenStudio.Database
         /// <returns> </returns>
         public string DownloadDataDirectory(DownloadFiles downloadFiles, Category category)
         {
-            return $@"{MainWindow.Settings.PathDownloads.GetFullPath(MainWindow.Settings.PathAppData)}\{Platform.Humanize()}\{category.CategoryType.Humanize()}\{category.Title.RemoveSpecialCharacters()}\{Name.RemoveInvalidChars()}\{CreatedBy.RemoveInvalidChars()}\{downloadFiles.Name.RemoveInvalidChars()}{GetVersion(downloadFiles)}-{Id}\";
+            return $@"{MainWindow.Settings.PathDownloads.GetFullPath(MainWindow.Settings.PathAppData)}\{GetPlatform().Humanize()}\{category.CategoryType.Humanize().RemoveInvalidChars()}\{category.Title.RemoveInvalidChars()}\{Name.RemoveInvalidChars()}\{downloadFiles.Name.RemoveInvalidChars()}{GetVersion(downloadFiles)}-{Id}\";
         }
 
         /// <summary>
@@ -277,7 +277,7 @@ namespace ArisenStudio.Database
         /// <returns> Mods Archive File Path </returns>
         public string ArchiveZipFile(DownloadFiles downloadFiles, Category category)
         {
-            return $@"{MainWindow.Settings.PathDownloads.GetFullPath(MainWindow.Settings.PathAppData)}\{Platform.Humanize()}\{category.CategoryType.Humanize()}\{category.Title.RemoveSpecialCharacters()}\{Name.RemoveInvalidChars()}\{CreatedBy.RemoveInvalidChars()}\{downloadFiles.Name.RemoveInvalidChars()}{GetVersion(downloadFiles)}-{Id}.zip";
+            return $@"{MainWindow.Settings.PathDownloads.GetFullPath(MainWindow.Settings.PathAppData)}\{GetPlatform().Humanize()}\{category.CategoryType.Humanize().RemoveInvalidChars()}\{category.Title.RemoveInvalidChars()}\{Name.RemoveInvalidChars()}\{downloadFiles.Name.RemoveInvalidChars()}{GetVersion(downloadFiles)}-{Id}.zip";
         }
 
         /// <summary>

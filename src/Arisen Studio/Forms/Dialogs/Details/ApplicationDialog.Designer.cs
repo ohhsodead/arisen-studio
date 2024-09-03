@@ -83,7 +83,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.PanelAppsDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelAppsDetails.Location = new System.Drawing.Point(0, 80);
             this.PanelAppsDetails.Name = "PanelAppsDetails";
-            this.PanelAppsDetails.Size = new System.Drawing.Size(800, 472);
+            this.PanelAppsDetails.Size = new System.Drawing.Size(800, 476);
             this.PanelAppsDetails.TabIndex = 1;
             // 
             // TablePanelStats
@@ -221,9 +221,9 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TabPane.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.TabDescription,
             this.TabDownloads});
-            this.TabPane.RegularSize = new System.Drawing.Size(770, 340);
+            this.TabPane.RegularSize = new System.Drawing.Size(770, 344);
             this.TabPane.SelectedPage = this.TabDescription;
-            this.TabPane.Size = new System.Drawing.Size(770, 340);
+            this.TabPane.Size = new System.Drawing.Size(770, 344);
             this.TabPane.TabIndex = 1203;
             this.TabPane.Text = "TabPane";
             this.TabPane.TransitionAnimationProperties.FrameCount = 900;
@@ -235,7 +235,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TabDescription.Caption = "Description";
             this.TabDescription.Controls.Add(this.LabelDescription);
             this.TabDescription.Name = "TabDescription";
-            this.TabDescription.Size = new System.Drawing.Size(770, 304);
+            this.TabDescription.Size = new System.Drawing.Size(770, 308);
             this.TabDescription.Scroll += new DevExpress.XtraEditors.XtraScrollEventHandler(this.TabDescription_Scroll);
             // 
             // LabelDescription
@@ -387,9 +387,9 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.PanelAppsItemActions.Controls.Add(this.ButtonReport);
             this.PanelAppsItemActions.Controls.Add(this.simpleButton1);
             this.PanelAppsItemActions.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelAppsItemActions.Location = new System.Drawing.Point(0, 552);
+            this.PanelAppsItemActions.Location = new System.Drawing.Point(0, 556);
             this.PanelAppsItemActions.Name = "PanelAppsItemActions";
-            this.PanelAppsItemActions.Size = new System.Drawing.Size(800, 54);
+            this.PanelAppsItemActions.Size = new System.Drawing.Size(800, 50);
             this.PanelAppsItemActions.TabIndex = 1175;
             // 
             // ButtonDownload
@@ -405,7 +405,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonDownload.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.ButtonDownload.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
             this.ButtonDownload.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonDownload.Location = new System.Drawing.Point(12, 12);
+            this.ButtonDownload.Location = new System.Drawing.Point(12, 10);
             this.ButtonDownload.Margin = new System.Windows.Forms.Padding(12, 3, 4, 3);
             this.ButtonDownload.MinimumSize = new System.Drawing.Size(0, 30);
             this.ButtonDownload.Name = "ButtonDownload";
@@ -430,7 +430,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonInstall.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.ButtonInstall.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.install_svg;
             this.ButtonInstall.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonInstall.Location = new System.Drawing.Point(133, 12);
+            this.ButtonInstall.Location = new System.Drawing.Point(133, 10);
             this.ButtonInstall.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ButtonInstall.MinimumSize = new System.Drawing.Size(0, 30);
             this.ButtonInstall.Name = "ButtonInstall";
@@ -454,7 +454,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonFavorite.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.ButtonFavorite.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonFavorite.ImageOptions.SvgImage")));
             this.ButtonFavorite.ImageOptions.SvgImageSize = new System.Drawing.Size(17, 17);
-            this.ButtonFavorite.Location = new System.Drawing.Point(231, 12);
+            this.ButtonFavorite.Location = new System.Drawing.Point(231, 10);
             this.ButtonFavorite.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ButtonFavorite.MinimumSize = new System.Drawing.Size(0, 30);
             this.ButtonFavorite.Name = "ButtonFavorite";
@@ -478,7 +478,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonReport.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.ButtonReport.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonReport.ImageOptions.SvgImage")));
             this.ButtonReport.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonReport.Location = new System.Drawing.Point(388, 12);
+            this.ButtonReport.Location = new System.Drawing.Point(388, 10);
             this.ButtonReport.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ButtonReport.MinimumSize = new System.Drawing.Size(0, 30);
             this.ButtonReport.Name = "ButtonReport";
@@ -502,7 +502,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
             this.simpleButton1.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.simpleButton1.Location = new System.Drawing.Point(523, 12);
+            this.simpleButton1.Location = new System.Drawing.Point(523, 10);
             this.simpleButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.simpleButton1.MinimumSize = new System.Drawing.Size(0, 30);
             this.simpleButton1.Name = "simpleButton1";

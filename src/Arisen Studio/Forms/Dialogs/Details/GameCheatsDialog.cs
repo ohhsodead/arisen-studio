@@ -4,7 +4,6 @@ using DevExpress.XtraGrid.Views.Grid;
 using ArisenStudio.Database;
 using ArisenStudio.Extensions;
 using ArisenStudio.Forms.Windows;
-using ArisenStudio.Templates;
 using PS3Lib;
 using System;
 using System.Data;
@@ -115,12 +114,6 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         private void ButtonReport_Click(object sender, EventArgs e)
         {
-            StringBuilder message = new StringBuilder()
-                .Append("You will now be redirected to our GitHub Issues page for ArisenStudio. All details will be automatically filled for you. Please provide information about the issue to help us fix your problem.\n")
-                .AppendLine("Click the 'Submit' button to open a new issue which can help us fix any problems.");
-
-            _ = XtraMessageBox.Show(message.ToString(), "Opening GitHub Issues", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            GitHubTemplates.OpenReportTemplateGameCheat(GameCheatItem, SelectedCheatItem, SelectedCheatItem.Offsets[GridViewCheats.FocusedRowHandle]);
         }
 
         private string ApplyCheat(Offsets offsets, string lastReturn)
