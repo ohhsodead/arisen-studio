@@ -21,7 +21,7 @@ namespace ArisenStudio.Io
             foreach (string file in files)
             {
                 FileInfo fileInfo = new(file);
-                zipArchive.CreateEntryFromFile(fileInfo.FullName, fileInfo.Name);
+                _ = zipArchive.CreateEntryFromFile(fileInfo.FullName, fileInfo.Name);
             }
         }
     }

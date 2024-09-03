@@ -1,6 +1,7 @@
 ﻿using ArisenStudio.Properties;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Resources;
@@ -108,7 +109,7 @@ namespace ArisenStudio.Extensions
             StringBuilder sbBytes = new(stringBytes.Length * 2);
             foreach (byte b in stringBytes)
             {
-                sbBytes.Append($"{b:X2}");
+                _ = sbBytes.Append($"{b:X2}");
             }
             return sbBytes.ToString();
         }
@@ -141,6 +142,16 @@ namespace ArisenStudio.Extensions
                         select x).Select<int, byte>(selector).ToArray<byte>();
             }
             catch (Exception) { return new byte[1]; }
+        }
+
+        public static string ValueToHex(long Value) { return string.Format("0x{0:X}", Value); }
+
+        public static string ValueToHex(ulong Value) { return string.Format("0x{0:X}", Value); }
+
+        public static ulong ValueFromHex(string Value)
+        {
+            if (Value.StartsWith("0x", StringComparison.OrdinalIgnoreCase)) Value = Value.Substring(2);
+            return ulong.Parse(Value, NumberStyles.HexNumber);
         }
 
         public static string UIntToIp(uint input)

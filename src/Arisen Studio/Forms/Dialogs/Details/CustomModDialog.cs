@@ -115,7 +115,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         private void LabelDescription_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
         {
-            Process.Start(e.Link);
+            _ = Process.Start(e.Link);
         }
 
         private void ButtonInstallMod_Click(object sender, EventArgs e)

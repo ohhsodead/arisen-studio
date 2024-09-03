@@ -64,7 +64,7 @@ namespace ArisenStudio.Models.Database
             {
                 foreach (Patch item in list.Patch)
                 {
-                    set.Add(item.Name);
+                    _ = set.Add(item.Name);
                 }
             }
             return set.Count;

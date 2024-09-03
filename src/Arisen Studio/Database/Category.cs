@@ -61,7 +61,7 @@ namespace ArisenStudio.Database
                     return region;
                 }
 
-                XtraMessageBox.Show(owner,
+                _ = XtraMessageBox.Show(owner,
                     "Could not find any regions on your console for this game title. You must install the game update for this title first.", "No Game Update",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 

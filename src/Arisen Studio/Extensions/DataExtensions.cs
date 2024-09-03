@@ -3,12 +3,37 @@ using ArisenStudio.Models.Resources;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 
 namespace ArisenStudio.Extensions
 {
     internal class DataExtensions
     {
+        public static byte[] GetData(byte[] Source, int Offset, int Count)
+        {
+            var dest = new byte[Count];
+            Buffer.BlockCopy(Source, Offset, dest, 0, Count);
+            return dest;
+        }
+
+        public static double ComputePercentage(long Current, long Total) { return (double)Current * 100 / Total; }
+
+        public static string ByteArrayToString(byte[] ByteArray) { return BitConverter.ToString(ByteArray).Replace("-", string.Empty); }
+
+        public static byte[] ReadAllBytes(Stream Stream)
+        {
+            Stream.Position = 0;
+            var stream = Stream as MemoryStream;
+            if (stream != null) return stream.ToArray();
+            using (var ms = new MemoryStream())
+            {
+                Stream.CopyTo(ms, 0x2000);
+                ms.Flush();
+                return ms.ToArray();
+            }
+        }
+
         /// <summary>
         /// Create and return a new DataTable with the specified columns and rows.
         /// </summary>

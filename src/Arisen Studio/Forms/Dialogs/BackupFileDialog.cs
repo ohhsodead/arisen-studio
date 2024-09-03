@@ -39,13 +39,13 @@ namespace ArisenStudio.Forms.Dialogs
             if (string.IsNullOrWhiteSpace(TextBoxInstallPathLocal.Text) ||
                 TextBoxInstallPathLocal.Text.IndexOfAny(Path.GetInvalidPathChars()) != -1)
             {
-                XtraMessageBox.Show("You must include a local file path for the game file backup.", "Empty Local Path", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                _ = XtraMessageBox.Show("You must include a local file path for the game file backup.", "Empty Local Path", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(TextBoxInstallPathConsole.Text))
             {
-                XtraMessageBox.Show(
+                _ = XtraMessageBox.Show(
                     "You must include a console path for for the game file backup. This is where the file will be restored at on the console.",
                     "Empty Console Path",
                     MessageBoxButtons.OK,

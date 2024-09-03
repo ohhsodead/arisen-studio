@@ -62,7 +62,7 @@ namespace ArisenStudio.Controls
 
             foreach (string installFile in DownloadFiles.InstallPaths)
             {
-                ListBoxInstallFiles.Items.Add(installFile);
+                _ = ListBoxInstallFiles.Items.Add(installFile);
             }
 
             int totalHeight = DownloadFiles.InstallPaths.Count() * 38;
@@ -137,7 +137,7 @@ namespace ArisenStudio.Controls
         private void ImageCopyLink_Click(object sender, EventArgs e)
         {
             System.Windows.Clipboard.SetText(DownloadFiles.Url);
-            XtraMessageBox.Show(this, Language.GetString("COPIED_LINK"), Language.GetString("LABEL_COPIED"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            _ = XtraMessageBox.Show(this, Language.GetString("COPIED_LINK"), Language.GetString("LABEL_COPIED"), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         bool isExpanded = false;

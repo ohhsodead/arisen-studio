@@ -85,7 +85,7 @@ namespace ArisenStudio.Forms.Tools.PS3
 
                 foreach (FtpListItem package in PackageFiles)
                 {
-                    DataTablePackages.Rows.Add(package.Name,
+                    _ = DataTablePackages.Rows.Add(package.Name,
                         MainWindow.Settings.UseRelativeTimes ? package.Modified.Humanize() : package.Modified.ToString("MM/dd/yyyy", CultureInfo.CurrentCulture),
                         MainWindow.Settings.UseFormattedFileSizes ? package.Size.Bytes().Humanize("#") : package.Size + " " + Language.GetString("LABEL_BYTES"));
                 }
@@ -114,7 +114,7 @@ namespace ArisenStudio.Forms.Tools.PS3
                 GridViewPackageFiles.HideLoadingPanel();
 
                 UpdateStatus(string.Format(Language.GetString("FETCHING_LISTING_ERROR"), PackageFilesPath, ex.Message), ex);
-                XtraMessageBox.Show(string.Format(Language.GetString("FETCHING_LISTING_ERROR"), PackageFilesPath, ex.Message));
+                _ = XtraMessageBox.Show(string.Format(Language.GetString("FETCHING_LISTING_ERROR"), PackageFilesPath, ex.Message));
                 Close();
             }
         }
@@ -144,12 +144,12 @@ namespace ArisenStudio.Forms.Tools.PS3
 
                         if (FtpClient.FileExists(installFilePath))
                         {
-                            XtraMessageBox.Show("Package file with this name already exists on your console.", "Package File Exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            _ = XtraMessageBox.Show("Package file with this name already exists on your console.", "Package File Exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             return;
                         }
 
                         UpdateStatus(string.Format(Language.GetString("FILE_INSTALLING"), fileName));
-                        FtpExtensions.UploadFile(localFilePath, installFilePath);
+                        _ = FtpExtensions.UploadFile(localFilePath, installFilePath);
                         UpdateStatus("Successfully installed file.");
                         LoadPackages();
                         break;
@@ -194,7 +194,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             {
                 case false:
                     UpdateStatus("Downloading file: " + fileName);
-                    FtpClient.DownloadFile(Path.Combine(folderPath, fileName), packageFile);
+                    _ = FtpClient.DownloadFile(Path.Combine(folderPath, fileName), packageFile);
                     UpdateStatus("Successfully downloaded file.");
                     break;
             }

@@ -97,12 +97,12 @@ namespace ArisenStudio.Extensions
                     }
                 }
 
-                XtraMessageBox.Show(owner, $"A total of {count} consoles were added to your profiles.", MainWindow.ResourceLanguage.GetString("XBOX_CONSOLES"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _ = XtraMessageBox.Show(owner, $"A total of {count} consoles were added to your profiles.", MainWindow.ResourceLanguage.GetString("XBOX_CONSOLES"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 MainWindow.Window.SetStatus("Unable to scan for Xbox consoles.", ex);
-                XtraMessageBox.Show(owner, $"Unable to scan for Xbox consoles.\n\nError: {ex.Message}", MainWindow.ResourceLanguage.GetString("XBOX_CONSOLES"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = XtraMessageBox.Show(owner, $"Unable to scan for Xbox consoles.\n\nError: {ex.Message}", MainWindow.ResourceLanguage.GetString("XBOX_CONSOLES"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -117,7 +117,7 @@ namespace ArisenStudio.Extensions
             {
                 if (file.IsDirectory)
                 {
-                    MessageBox.Show(file.Name);
+                    _ = MessageBox.Show(file.Name);
 
                     if (!file.Name.Contains("0000000000000000"))
                     {

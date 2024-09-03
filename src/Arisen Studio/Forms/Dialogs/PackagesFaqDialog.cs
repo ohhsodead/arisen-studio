@@ -27,7 +27,7 @@ namespace ArisenStudio.Forms.Dialogs
 
             ButtonClose.Text = Language.GetString("LABEL_OK");
 
-            ButtonClose.Focus();
+            _ = ButtonClose.Focus();
         }
 
         private void ButtonClose_Click(object sender, EventArgs e)

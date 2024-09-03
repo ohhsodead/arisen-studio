@@ -59,7 +59,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
 
                 foreach (IXboxModule module in DebugTarget.Modules)
                 {
-                    Modules.Rows.Add(module.ModuleInfo.Name, Settings.UseFormattedFileSizes ? module.ModuleInfo.Size.Bytes().Humanize("#.##") : module.ModuleInfo.Size + " " + Language.GetString("LABEL_BYTES"));
+                    _ = Modules.Rows.Add(module.ModuleInfo.Name, Settings.UseFormattedFileSizes ? module.ModuleInfo.Size.Bytes().Humanize("#.##") : module.ModuleInfo.Size + " " + Language.GetString("LABEL_BYTES"));
                 }
 
                 GridBootModules.DataSource = Modules;
@@ -70,7 +70,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             catch (Exception ex)
             {
                 Program.Log.Error(ex, $"Unable to load modules. Error: {ex.Message}");
-                XtraMessageBox.Show(this, $"Unable to load modules.\n\nError: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = XtraMessageBox.Show(this, $"Unable to load modules.\n\nError: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
             }
         }
@@ -98,17 +98,17 @@ namespace ArisenStudio.Forms.Tools.XBOX
             try
             {
                 object[] arguments = [ComboBoxDrives.Text + TextBoxModuleName.Text, 8, 0, 0];
-                XboxExtensions.Call<uint>(XboxConsole, "xboxkrnl.exe", 0x199, arguments);
+                _ = XboxExtensions.Call<uint>(XboxConsole, "xboxkrnl.exe", 0x199, arguments);
 
                 //XboxExtensions.Call<uint>(XboxConsole, "xboxkrnl.exe", 409, new object[] { moduleName, 8, 0, 0 });
 
                 Program.Log.Info("Module {0} has been loaded.", ComboBoxDrives.Text + TextBoxModuleName.Text);
-                XtraMessageBox.Show(this, Language.GetString("MODULE_LOAD_SUCCESS"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _ = XtraMessageBox.Show(this, Language.GetString("MODULE_LOAD_SUCCESS"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 Program.Log.Error(ex, "Unable to unload module.");
-                XtraMessageBox.Show(this, string.Format(Language.GetString("MODULE_LOAD_ERROR"), ex.Message), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = XtraMessageBox.Show(this, string.Format(Language.GetString("MODULE_LOAD_ERROR"), ex.Message), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -143,18 +143,18 @@ namespace ArisenStudio.Forms.Tools.XBOX
                     LoadModules();
 
                     Program.Log.Info("Module has been unloaded.");
-                    XtraMessageBox.Show(this, Language.GetString("MODULE_UNLOAD_SUCCESS"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _ = XtraMessageBox.Show(this, Language.GetString("MODULE_UNLOAD_SUCCESS"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     Program.Log.Error("Unable to unload module.");
-                    XtraMessageBox.Show(this, Language.GetString("MODULE_UNLOAD_ERROR"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _ = XtraMessageBox.Show(this, Language.GetString("MODULE_UNLOAD_ERROR"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
                 Program.Log.Error(ex, "Unable to unload module.");
-                XtraMessageBox.Show(this, string.Format(Language.GetString("MODULE_UNLOAD_ERROR"), ex.Message), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = XtraMessageBox.Show(this, string.Format(Language.GetString("MODULE_UNLOAD_ERROR"), ex.Message), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -41,16 +41,16 @@ namespace ArisenStudio.Forms.Tools.PS3
             GridBackupFiles.DataSource = null;
 
             DataTable dt = new();
-            dt.Columns.Add(Language.GetString("LABEL_GAME_TITLE"), typeof(string));
-            dt.Columns.Add(Language.GetString("LABEL_FILE_NAME"), typeof(string));
-            dt.Columns.Add(Language.GetString("LABEL_FILE_SIZE"), typeof(string));
-            dt.Columns.Add(Language.GetString("LABEL_CREATED_ON"), typeof(string));
+            _ = dt.Columns.Add(Language.GetString("LABEL_GAME_TITLE"), typeof(string));
+            _ = dt.Columns.Add(Language.GetString("LABEL_FILE_NAME"), typeof(string));
+            _ = dt.Columns.Add(Language.GetString("LABEL_FILE_SIZE"), typeof(string));
+            _ = dt.Columns.Add(Language.GetString("LABEL_CREATED_ON"), typeof(string));
 
             foreach (BackupFile backupFile in MainWindow.BackupFiles.BackupFiles)
             {
                 long fileBytes = File.Exists(backupFile.LocalPath) ? new FileInfo(backupFile.LocalPath).Length : 0;
 
-                dt.Rows.Add(MainWindow.Database.CategoriesData.GetCategoryById(backupFile.CategoryId).Title,
+                _ = dt.Rows.Add(MainWindow.Database.CategoriesData.GetCategoryById(backupFile.CategoryId).Title,
                     backupFile.FileName,
                     File.Exists(backupFile.LocalPath)
                         ? MainWindow.Settings.UseFormattedFileSizes ? fileBytes.Bytes().Humanize() : fileBytes + " " + Language.GetString("LABEL_BYTES")
@@ -91,7 +91,7 @@ namespace ArisenStudio.Forms.Tools.PS3
 
                         if (!File.Exists(backupFile.LocalPath))
                         {
-                            XtraMessageBox.Show($"Local file: {backupFile.FileName} for game: {category.Title} can't be found at path: {backupFile.LocalPath}.\n\nIf you have moved this file then edit the backup and choose the locate the file, otherwise re-install your game update and backup the orginal game file again.", "No Local File");
+                            _ = XtraMessageBox.Show($"Local file: {backupFile.FileName} for game: {category.Title} can't be found at path: {backupFile.LocalPath}.\n\nIf you have moved this file then edit the backup and choose the locate the file, otherwise re-install your game update and backup the orginal game file again.", "No Local File");
                         }
                     }
                     catch
@@ -162,13 +162,13 @@ namespace ArisenStudio.Forms.Tools.PS3
         {
             try
             {
-                MainWindow.FtpClient.DownloadFile(backupFile.LocalPath, backupFile.InstallPath);
-                XtraMessageBox.Show(this, $"Successfully backed up file {backupFile.FileName} from {backupFile.InstallPath}.", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _ = MainWindow.FtpClient.DownloadFile(backupFile.LocalPath, backupFile.InstallPath);
+                _ = XtraMessageBox.Show(this, $"Successfully backed up file {backupFile.FileName} from {backupFile.InstallPath}.", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 Program.Log.Error(ex, $"Unable to backup game file. Error: {ex.Message}");
-                XtraMessageBox.Show(this, "There was a problem downloading the file. Make sure the file exists on your console.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = XtraMessageBox.Show(this, "There was a problem downloading the file. Make sure the file exists on your console.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -181,17 +181,17 @@ namespace ArisenStudio.Forms.Tools.PS3
             {
                 if (!File.Exists(backupFile.LocalPath))
                 {
-                    XtraMessageBox.Show(this, "This file backup doesn't exist on your computer. If your game doesn't have mods installed, then I would suggest you backup the original files.", "No File Found");
+                    _ = XtraMessageBox.Show(this, "This file backup doesn't exist on your computer. If your game doesn't have mods installed, then I would suggest you backup the original files.", "No File Found");
                     return;
                 }
 
-                FtpExtensions.UploadFile(backupFile.LocalPath, backupFile.InstallPath);
-                XtraMessageBox.Show($"Successfully restored file: {backupFile.FileName} to path: {backupFile.InstallPath}", Language.GetString("SUCCESS"));
+                _ = FtpExtensions.UploadFile(backupFile.LocalPath, backupFile.InstallPath);
+                _ = XtraMessageBox.Show($"Successfully restored file: {backupFile.FileName} to path: {backupFile.InstallPath}", Language.GetString("SUCCESS"));
             }
             catch (Exception ex)
             {
                 Program.Log.Error(ex, "There was an issue attempting to restore file.");
-                XtraMessageBox.Show(this, "There was an issue restoring this file. Make sure the file exists on your computer and try again.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = XtraMessageBox.Show(this, "There was an issue restoring this file. Make sure the file exists on your computer and try again.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

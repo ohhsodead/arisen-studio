@@ -90,7 +90,7 @@ namespace ArisenStudio.Controls
         private void ImageCopyLink_Click(object sender, EventArgs e)
         {
             System.Windows.Clipboard.SetText(AppItemFile.GetFileUrl(AppItemData.TitleId));
-            XtraMessageBox.Show(this, Language.GetString("COPIED_LINK"), Language.GetString("LABEL_COPIED"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            _ = XtraMessageBox.Show(this, Language.GetString("COPIED_LINK"), Language.GetString("LABEL_COPIED"), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private const int WmHscroll = 0x114;

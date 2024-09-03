@@ -103,7 +103,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         private void LabelDescription_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
         {
-            Process.Start(e.Link);
+            _ = Process.Start(e.Link);
         }
 
         private void TabDescription_Scroll(object sender, XtraScrollEventArgs e)
@@ -134,7 +134,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         private void ButtonReport_Click(object sender, EventArgs e)
         {
-            XtraMessageBox.Show(Language.GetString("REDIRECT_TO_GITHUB_ISSUES"), Language.GetString("REDIRECTING"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            _ = XtraMessageBox.Show(Language.GetString("REDIRECT_TO_GITHUB_ISSUES"), Language.GetString("REDIRECTING"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             GitHubTemplates.OpenReportTemplate(Categories.GetCategoryById(ModItem.CategoryId), ModItem);
         }
 
@@ -142,7 +142,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
         {
             if (IsFavorite)
             {
-                Settings.FavoriteMods.RemoveAll(x => x.CategoryType == CategoryType && x.CategoryId == ModItem.CategoryId && x.ModId == ModItem.Id && x.Platform == ModItem.GetPlatform());
+                _ = Settings.FavoriteMods.RemoveAll(x => x.CategoryType == CategoryType && x.CategoryId == ModItem.CategoryId && x.ModId == ModItem.Id && x.Platform == ModItem.GetPlatform());
                 ButtonFavorite.Text = Language.GetString("LABEL_ADD_TO_FAVORITES");
                 IsFavorite = false;
             }

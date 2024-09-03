@@ -24,7 +24,7 @@ namespace ArisenStudio.Models.Resources
         {
             string gameBackupFolder = GetGameBackupFolder(modItem);
 
-            Directory.CreateDirectory(gameBackupFolder);
+            _ = Directory.CreateDirectory(gameBackupFolder);
 
             BackupFile backupFile = new()
             {
@@ -36,7 +36,7 @@ namespace ArisenStudio.Models.Resources
                 CreatedDate = DateTime.Now
             };
 
-            MainWindow.FtpClient.DownloadFile(backupFile.LocalPath, backupFile.InstallPath);
+            _ = MainWindow.FtpClient.DownloadFile(backupFile.LocalPath, backupFile.InstallPath);
             BackupFiles.Add(backupFile);
         }
 
@@ -50,7 +50,7 @@ namespace ArisenStudio.Models.Resources
         {
             string gameBackupFolder = GetGameBackupFolder(customItem);
 
-            Directory.CreateDirectory(gameBackupFolder);
+            _ = Directory.CreateDirectory(gameBackupFolder);
 
             BackupFile backupFile = new()
             {
@@ -62,7 +62,7 @@ namespace ArisenStudio.Models.Resources
                 CreatedDate = DateTime.Now
             };
 
-            MainWindow.FtpClient.DownloadFile(backupFile.LocalPath, backupFile.InstallPath);
+            _ = MainWindow.FtpClient.DownloadFile(backupFile.LocalPath, backupFile.InstallPath);
             BackupFiles.Add(backupFile);
         }
 

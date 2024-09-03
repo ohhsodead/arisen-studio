@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ArisenStudio.Models.Release_Data;
 using XDevkit;
-using JRPC_Client;
+//using JRPC_Client;
 
 namespace ArisenStudio.Forms.Dialogs
 {

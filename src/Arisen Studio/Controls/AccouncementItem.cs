@@ -28,7 +28,7 @@ namespace ArisenStudio.Controls
 
         private void LabelMessage_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
         {
-            Process.Start(e.Link);
+            _ = Process.Start(e.Link);
         }
 
         private void ImageDismiss_Click(object sender, EventArgs e)

@@ -36,7 +36,7 @@ namespace ArisenStudio.Forms.Tools.PS3
 
             foreach (Category category in Database.CategoriesData.GetCategoriesByType(CategoryType.Game))
             {
-                ComboBoxGameTitle.Properties.Items.Add(category.Title);
+                _ = ComboBoxGameTitle.Properties.Items.Add(category.Title);
             }
 
             LoadSavedGameRegions();
@@ -54,7 +54,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             {
                 foreach (GameRegion gameRegion in Settings.GameRegionsPs3)
                 {
-                    gameRegions.Rows.Add(Database.CategoriesData.GetCategoryById(gameRegion.GameId).Title,
+                    _ = gameRegions.Rows.Add(Database.CategoriesData.GetCategoryById(gameRegion.GameId).Title,
                         gameRegion.Region);
                 }
 
@@ -118,7 +118,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             {
                 Settings.GameRegionsPs3.RemoveAt(GridViewGameRegions.FocusedRowHandle);
                 LoadSavedGameRegions();
-                XtraMessageBox.Show("Saved game region has now been deleted.", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _ = XtraMessageBox.Show("Saved game region has now been deleted.", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -129,7 +129,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             {
                 Settings.GameRegionsPs3.Clear();
                 LoadSavedGameRegions();
-                XtraMessageBox.Show("All saved game regions have now been deleted.", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _ = XtraMessageBox.Show("All saved game regions have now been deleted.", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -144,7 +144,7 @@ namespace ArisenStudio.Forms.Tools.PS3
 
                 foreach (string gameRegion in Database.CategoriesData.GetCategoryById(gameId).Regions)
                 {
-                    ComboBoxGameRegion.Properties.Items.Add(gameRegion);
+                    _ = ComboBoxGameRegion.Properties.Items.Add(gameRegion);
                 }
             }
 
@@ -156,14 +156,14 @@ namespace ArisenStudio.Forms.Tools.PS3
             switch (ComboBoxGameTitle.SelectedIndex)
             {
                 case -1:
-                    XtraMessageBox.Show("You must first specify a game title.", "No Game Title", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    _ = XtraMessageBox.Show("You must first specify a game title.", "No Game Title", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
             }
 
             switch (ComboBoxGameRegion.SelectedIndex)
             {
                 case -1:
-                    XtraMessageBox.Show("You must specify a game region for this game title.", "No Game Region", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    _ = XtraMessageBox.Show("You must specify a game region for this game title.", "No Game Region", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
             }
 
@@ -191,14 +191,14 @@ namespace ArisenStudio.Forms.Tools.PS3
                 }
                 else
                 {
-                    XtraMessageBox.Show(
+                    _ = XtraMessageBox.Show(
                         $"Game Region: {gameRegion} is not supported for Game Title: {gameTitle}\n\nPlease change it to one that's supported for this game.",
                         "Invalid Region", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
             }
 
-            XtraMessageBox.Show("All game regions have now been saved.", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            _ = XtraMessageBox.Show("All game regions have now been saved.", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             Close();
         }
 

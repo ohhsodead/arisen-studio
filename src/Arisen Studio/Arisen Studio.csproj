@@ -101,8 +101,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\References\ISOLib.dll</HintPath>
     </Reference>
-    <Reference Include="JRPC">
-      <HintPath>..\..\..\..\Resources\xdevkit + jrpc\JRPC.dll</HintPath>
+    <Reference Include="JRPC, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\JRPC.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualBasic" />
@@ -194,6 +195,12 @@
     <Compile Include="Extensions\PS4\PS4Extensions.cs" />
     <Compile Include="Extensions\UsbExtensions.cs" />
     <Compile Include="Extensions\XBOX\XboxExtensions.cs" />
+    <Compile Include="Forms\Dialogs\EasterEgg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\EasterEgg.Designer.cs">
+      <DependentUpon>EasterEgg.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Dialogs\Details\GameTrainersDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -346,11 +353,23 @@
     <Compile Include="Forms\Tools\PS3\BootPluginsEditor.Designer.cs">
       <DependentUpon>BootPluginsEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Tools\PS3\TakeScreenshot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tools\PS3\TakeScreenshot.Designer.cs">
+      <DependentUpon>TakeScreenshot.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Tools\XBOX\ConsoleManager.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Tools\XBOX\ConsoleManager.Designer.cs">
       <DependentUpon>ConsoleManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tools\XBOX\ConsoleInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tools\XBOX\ConsoleInfo.Designer.cs">
+      <DependentUpon>ConsoleInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tools\XBOX\XboxHDKey.cs">
       <SubType>Form</SubType>
@@ -491,7 +510,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Templates\GitHubTemplates.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Controls\ChangeLogItem.resx">
       <DependentUpon>ChangeLogItem.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -514,6 +537,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\StatItem.resx">
       <DependentUpon>StatItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\EasterEgg.resx">
+      <DependentUpon>EasterEgg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\Details\GameTrainersDialog.resx">
       <DependentUpon>GameTrainersDialog.cs</DependentUpon>
@@ -599,8 +625,15 @@
       <DependentUpon>BootPluginsEditor.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tools\PS3\TakeScreenshot.resx">
+      <DependentUpon>TakeScreenshot.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\XBOX\ConsoleManager.resx">
       <DependentUpon>ConsoleManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tools\XBOX\ConsoleInfo.resx">
+      <DependentUpon>ConsoleInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\XBOX\XboxHDKey.resx">
       <DependentUpon>XboxHDKey.cs</DependentUpon>
@@ -672,6 +705,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Resources\launch.ini" />
   </ItemGroup>
   <ItemGroup>

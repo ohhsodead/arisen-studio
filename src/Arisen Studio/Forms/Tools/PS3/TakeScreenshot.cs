@@ -11,8 +11,10 @@ using System.Drawing;
 using Imgur.API.Authentication;
 using System.Windows.Media.Imaging;
 using System.Diagnostics;
+using PS3Lib;
+using FluentFTP;
 
-namespace ArisenStudio.Forms.Tools.XBOX
+namespace ArisenStudio.Forms.Tools.PS3
 {
     public partial class TakeScreenshot : XtraForm
     {
@@ -25,9 +27,13 @@ namespace ArisenStudio.Forms.Tools.XBOX
 
         public static SettingsData Settings = MainWindow.Settings;
 
-        public static IXboxConsole XboxConsole { get; } = MainWindow.XboxConsole;
+        public ConsoleProfile Profile = MainWindow.ConsoleProfile;
 
-        private ApiClient ImgurClient { get; } = new("f123f19ee8fa247");
+        public FtpClient FtpClient = MainWindow.FtpClient;
+
+        //private PS3API Ps3 = new(SelectAPI.PS3Manager);
+
+        private ApiClient ImgurClient = new("f123f19ee8fa247");
 
         private void TakeScreenshot_Load(object sender, EventArgs e)
         {
@@ -35,16 +41,30 @@ namespace ArisenStudio.Forms.Tools.XBOX
 
             ButtonTakeScreenshot.Text = Language.GetString("TAKE_SCREENSHOT");
             ButtonDeleteScreenshot.Text = Language.GetString("LABEL_CANCEL");
+
+            //try
+            //{
+            //    SetStatus("Connecting to console via PS3Manager API");
+            //    //Ps3.PS3MAPI.ConnectTarget(Profile.Address);
+            //    SetStatus("Successfully connected to console.");
+            //}
+            //catch (Exception ex)
+            //{
+            //    SetStatus("Screenshot (PS3): " + "Unable to connect to console.", ex);
+            //    XtraMessageBox.Show(this, "Unable to connect to console", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    Close();
+            //}
         }
 
-        private string LocalFilePath;
+        private string LocalFilePath = null;
+        private string ConsoleFilePath = null;
 
         private void ButtonTakeScreenshot_Click(object sender, EventArgs e)
         {
             try
             {
-                string filePath = Path.Combine(Settings.PathAppData, "Screenshots", "Xbox") + @"\";
-                string fileName = TextBoxFileName.Text;
+                string filePath = Path.Combine(Settings.PathAppData, "Screenshots", "PS3") + @"\";
+                string fileName = TextBoxFileName.Text.Trim(' ', '.');
 
                 if (TextBoxFileName.Text.IsNullOrWhiteSpace())
                 {
@@ -60,11 +80,29 @@ namespace ArisenStudio.Forms.Tools.XBOX
 
                 string fileLocation = filePath + fileName + ".bmp";
 
-                XboxConsole.ScreenShot(fileLocation);
-                ImageScreenshot.Image = new Bitmap(fileLocation);
+                string consolePath = $"/dev_hdd0/dev_hdd0/tmp/screenshots/";
+                string consolePathUrl = $"http://{Profile.Address}{consolePath}{fileName}.bmp";
+
+                WebManExtensions.Screenshot(Profile.Address, consolePath + fileName + ".bmp");
+
+                //HttpExtensions.DownloadFile($"http://{ip}{consoleFilePath}", localFilePath);
+
+                if (FtpExtensions.FileExists($"http://{Profile.Address}{consolePath}{fileName}.bmp"))
+                {
+                    _ = FtpClient.DownloadFile(fileLocation, consolePathUrl, FtpLocalExists.Overwrite);
+                }
+
+                try
+                {
+                    ImageScreenshot.Image = HttpExtensions.GetImageFromUrl(consolePathUrl);
+                }
+                catch
+                {
+                    ImageScreenshot.Image = new Bitmap(fileLocation);
+                }
+
                 LocalFilePath = fileLocation;
-                ButtonDeleteScreenshot.Enabled = true;
-                ButtonOpenFilePath.Enabled = true;
+                ConsoleFilePath = consolePathUrl;
 
                 Program.Log.Info($"Screenshot file saved to path: {filePath}");
 
@@ -117,6 +155,11 @@ namespace ArisenStudio.Forms.Tools.XBOX
             {
                 _ = Process.Start("explorer.exe", "/select, " + LocalFilePath);
             }
+        }
+
+        public void DownloadScreenshot(string ip, string filePath, string localPath)
+        {
+            HttpExtensions.DownloadFile($"http://{Profile.Address}/{filePath}", localPath);
         }
 
         private async void UploadImage(BitmapSource bitmap, ApiClient apiClient)

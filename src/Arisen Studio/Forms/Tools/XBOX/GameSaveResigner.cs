@@ -76,7 +76,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
                     {
                         BarButtonItem menuItem = new() { Caption = usbDevice.Name, Name = usbDevice.Name };
                         menuItem.ItemClick += MenuItemDevice_ItemClick;
-                        MenuItemSaveToDevice.Links.Add(menuItem);
+                        _ = MenuItemSaveToDevice.Links.Add(menuItem);
                     }
 
                     MenuItemNoDeviceFound.Enabled = false;
@@ -111,7 +111,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
                 LoadFile();
 
                 UpdateStatus($"Successfully loaded game save.");
-                XtraMessageBox.Show(this, "Successfully loaded game save!", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _ = XtraMessageBox.Show(this, "Successfully loaded game save!", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -148,11 +148,11 @@ namespace ArisenStudio.Forms.Tools.XBOX
 
                 if (fileInfo.Length <= 12000)
                 {
-                    ImagePackage.LoadAsync(fileName);
+                    _ = ImagePackage.LoadAsync(fileName);
                 }
                 else
                 {
-                    XtraMessageBox.Show(this, Language.GetString("LABEL_IMAGE_SIZE_TOO_BIG"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _ = XtraMessageBox.Show(this, Language.GetString("LABEL_IMAGE_SIZE_TOO_BIG"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -177,7 +177,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
                         string localProfilePath = Path.Combine(UserFolders.XboxProfiles, Path.GetFileName(fileName) + @"\");
                         string localProfileFilePath = Path.Combine(UserFolders.XboxProfiles, Path.GetFileName(fileName) + @"\" + Path.GetFileName(fileName));
 
-                        Directory.CreateDirectory(localProfilePath);
+                        _ = Directory.CreateDirectory(localProfilePath);
                         File.Copy(fileName, localProfileFilePath + DateTime.Now.ToString("yyyyMMddHHmmss") + ".bak");
                     }
 
@@ -187,7 +187,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             catch (Exception ex)
             {
                 UpdateStatus($"Unable to load profile details.", ex);
-                XtraMessageBox.Show(this, $"Unable to load profile details. Error Message: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = XtraMessageBox.Show(this, $"Unable to load profile details. Error Message: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -213,7 +213,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
 
                     if (profile == null)
                     {
-                        XtraMessageBox.Show(this, $"You don't have any profiles saved or none was selected.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        _ = XtraMessageBox.Show(this, $"You don't have any profiles saved or none was selected.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
@@ -222,7 +222,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
                 }
                 else
                 {
-                    XtraMessageBox.Show(this, $"You haven't saved any profiled.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _ = XtraMessageBox.Show(this, $"You haven't saved any profiled.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -238,7 +238,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
                     string localProfilePath = Path.Combine(UserFolders.XboxProfiles, selectedProfile.Name + @"\");
                     string localProfileFilePath = Path.Combine(UserFolders.XboxProfiles, selectedProfile.Name + @"\" + selectedProfile.Name);
 
-                    Directory.CreateDirectory(localProfilePath);
+                    _ = Directory.CreateDirectory(localProfilePath);
 
                     MainWindow.XboxConsole.ReceiveFile(localProfileFilePath, selectedProfile.Value);
 
@@ -247,13 +247,13 @@ namespace ArisenStudio.Forms.Tools.XBOX
                 else
                 {
                     UpdateStatus("No profiles were found or you didn't select one.");
-                    XtraMessageBox.Show(this, "No profiles were found or you didn't select one.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _ = XtraMessageBox.Show(this, "No profiles were found or you didn't select one.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
                 UpdateStatus($"Unable to find profile files on console.", ex);
-                XtraMessageBox.Show(this, $"Unable to find profile files on console. Error Message: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = XtraMessageBox.Show(this, $"Unable to find profile files on console. Error Message: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -291,7 +291,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
                 PackageGameSavePath = string.Empty;
 
                 UpdateStatus($"Unable to parse game save file.", ex);
-                XtraMessageBox.Show(this, $"Unable to parse game save file. Error Message: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = XtraMessageBox.Show(this, $"Unable to parse game save file. Error Message: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -305,12 +305,12 @@ namespace ArisenStudio.Forms.Tools.XBOX
                 TextBoxConsoleId.Text = PackageProfle.HeaderData.ConsoleID;
 
                 UpdateStatus($"Successfully loaded profile file.");
-                XtraMessageBox.Show(this, "Successfully loaded profile!", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _ = XtraMessageBox.Show(this, "Successfully loaded profile!", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 UpdateStatus($"Unable to load profile.", ex);
-                XtraMessageBox.Show(this, $"Unable to load profile. Error Message: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = XtraMessageBox.Show(this, $"Unable to load profile. Error Message: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -336,19 +336,19 @@ namespace ArisenStudio.Forms.Tools.XBOX
                 PackageGameSave.Finish();
 
                 UpdateStatus("Successfully saved and resigned game save.");
-                XtraMessageBox.Show(this, "Successfully saved and resigned game save!", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _ = XtraMessageBox.Show(this, "Successfully saved and resigned game save!", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 UpdateStatus("Unable to save or resign game save.", ex);
-                XtraMessageBox.Show(this, $"Unable to save or resign game save file.\n\nError Message: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = XtraMessageBox.Show(this, $"Unable to save or resign game save file.\n\nError Message: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void BackupFile()
         {
             UpdateStatus($"Creating backup of file: {Path.GetFileName(PackageGameSavePath)}");
-            new FileInfo(PackageGameSavePath).CopyTo($"{PackageGameSavePath}.bak");
+            _ = new FileInfo(PackageGameSavePath).CopyTo($"{PackageGameSavePath}.bak");
             UpdateStatus($"Successfully created backup file.");
         }
 
@@ -361,7 +361,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
         {
             if (InvokeRequired)
             {
-                BeginInvoke((MethodInvoker)delegate
+                _ = BeginInvoke((MethodInvoker)delegate
                 {
                     LabelStatus.Caption = status;
                 });

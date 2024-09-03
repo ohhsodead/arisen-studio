@@ -130,12 +130,12 @@ namespace ArisenStudio.Database
 
             if (!Directory.Exists(folderPath))
             {
-                Directory.CreateDirectory(folderPath);
+                _ = Directory.CreateDirectory(folderPath);
             }
 
             if (!Directory.Exists(Path.GetDirectoryName(folderPath)))
             {
-                Directory.CreateDirectory(folderPath);
+                _ = Directory.CreateDirectory(folderPath);
             }
 
             if (File.Exists(filePath))

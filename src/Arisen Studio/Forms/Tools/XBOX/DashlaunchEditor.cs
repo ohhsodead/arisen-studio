@@ -79,8 +79,8 @@ namespace ArisenStudio.Forms.Tools.XBOX
         {
             try
             {
-                Directory.CreateDirectory(LocalLaunchBackupFileDirectory);
-                Directory.CreateDirectory(LocalLaunchFileDirectory);
+                _ = Directory.CreateDirectory(LocalLaunchBackupFileDirectory);
+                _ = Directory.CreateDirectory(LocalLaunchFileDirectory);
 
                 XboxConsole.ReceiveFile(LocalLaunchBackupFilePath, ConsoleLaunchFilePath);
                 XboxConsole.ReceiveFile(LocalLaunchFilePath, ConsoleLaunchFilePath);
@@ -91,7 +91,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
 
                 foreach (SectionData section in LaunchFileData.Sections)
                 {
-                    ComboBoxSections.Properties.Items.Add(section.SectionName);
+                    _ = ComboBoxSections.Properties.Items.Add(section.SectionName);
                 }
 
                 ComboBoxSections.SelectedItem = "Plugins";
@@ -99,7 +99,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             catch (Exception ex)
             {
                 Program.Log.Error(ex, string.Format("Unable to load the launch.ini file. Error: {0}", ex.Message));
-                XtraMessageBox.Show(this, string.Format("Unable to load the launch.ini file. Edit the file path in Settings to your correct file location.\n\nError Message: {0}", ex.Message), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = XtraMessageBox.Show(this, string.Format("Unable to load the launch.ini file. Edit the file path in Settings to your correct file location.\n\nError Message: {0}", ex.Message), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
             }
         }
@@ -122,7 +122,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
                 {
                     foreach (KeyData key in section.Keys)
                     {
-                        DataTableFileSections.Rows.Add(key.KeyName, key.Value);
+                        _ = DataTableFileSections.Rows.Add(key.KeyName, key.Value);
                     }
                 }
             }
@@ -226,7 +226,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             }
             else
             {
-                XtraMessageBox.Show(this, Language.GetString("CREATE_BACKUP_FILE"), Language.GetString("NO_BACKUP_FILE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                _ = XtraMessageBox.Show(this, Language.GetString("CREATE_BACKUP_FILE"), Language.GetString("NO_BACKUP_FILE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -237,12 +237,12 @@ namespace ArisenStudio.Forms.Tools.XBOX
                 FileIniDataParser iniFileData = new();
                 iniFileData.WriteFile(LocalLaunchFilePath, LaunchFileData);
                 XboxConsole.SendFile(LocalLaunchFilePath, ConsoleLaunchFilePath);
-                XtraMessageBox.Show(this, Language.GetString("LAUNCH_FILE_SAVED"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _ = XtraMessageBox.Show(this, Language.GetString("LAUNCH_FILE_SAVED"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 Program.Log.Error(ex, $"Unable to save or upload launch.ini file. Error: {ex.Message}");
-                XtraMessageBox.Show(this, string.Format(Language.GetString("FILE_SAVE_ERROR"), ex.Message), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = XtraMessageBox.Show(this, string.Format(Language.GetString("FILE_SAVE_ERROR"), ex.Message), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

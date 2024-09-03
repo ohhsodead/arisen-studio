@@ -88,7 +88,7 @@ public class GameSaveItemData
 
         if (!Directory.Exists(archivePath))
         {
-            Directory.CreateDirectory(archivePath);
+            _ = Directory.CreateDirectory(archivePath);
         }
 
         if (File.Exists(archiveFilePath))

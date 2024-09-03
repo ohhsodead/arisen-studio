@@ -34,7 +34,7 @@ namespace ArisenStudio.Forms.Dialogs
 
             if (XtraMessageBox.Show(this, "It looks like the form is taking a while to load. Do you want to load it in your web browser?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Process.Start(FormUrl);
+                _ = Process.Start(FormUrl);
             }
         }
 
@@ -45,7 +45,7 @@ namespace ArisenStudio.Forms.Dialogs
 
         private void ButtonOpenLink_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Process.Start(Urls.ProjectRequestForm);
+            _ = Process.Start(Urls.ProjectRequestForm);
         }
 
         private void WebView_NavigationStarting(object sender, CoreWebView2NavigationStartingEventArgs e)

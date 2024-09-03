@@ -30,7 +30,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             {
                 SetStatus(Language.GetString("CONNECTING_TO_CONSOLE"));
 
-                Ps3.PS3MAPI.ConnectTarget(MainWindow.ConsoleProfile.Address);
+                _ = Ps3.PS3MAPI.ConnectTarget(MainWindow.ConsoleProfile.Address);
 
                 if (Ps3.PS3MAPI.IsConnected())
                 {
@@ -40,14 +40,14 @@ namespace ArisenStudio.Forms.Tools.PS3
                 else
                 {
                     SetStatus("Console Manager: " + Language.GetString("UNABLE_TO_CONNECT"));
-                    XtraMessageBox.Show(this, Language.GetString("UNABLE_TO_CONNECT"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _ = XtraMessageBox.Show(this, Language.GetString("UNABLE_TO_CONNECT"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Close();
                 }
             }
             catch (Exception ex)
             {
                 SetStatus("Console Manager: " + Language.GetString("UNABLE_TO_CONNECT"), ex);
-                XtraMessageBox.Show(this, Language.GetString("UNABLE_TO_CONNECT"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = XtraMessageBox.Show(this, Language.GetString("UNABLE_TO_CONNECT"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
             }
         }
@@ -58,7 +58,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             {
                 if (Ps3.PS3MAPI.IsConnected())
                 {
-                    Ps3.PS3MAPI.DisconnectTarget();
+                    _ = Ps3.PS3MAPI.DisconnectTarget();
                 }
             }
             catch { }
@@ -73,7 +73,7 @@ namespace ArisenStudio.Forms.Tools.PS3
         {
             try
             {
-                Ps3.PS3MAPI.GetTemperatureCelcius(out uint tempCell, out uint tempRsx);
+                _ = Ps3.PS3MAPI.GetTemperatureCelcius(out uint tempCell, out uint tempRsx);
 
                 LabelTempCELL.Text = Convert.ToString(tempCell) + " °C";
                 LabelTempRSX.Text = Convert.ToString(tempRsx) + " °C";
@@ -87,32 +87,32 @@ namespace ArisenStudio.Forms.Tools.PS3
             catch (Exception ex)
             {
                 SetStatus($"Unable to fetch console details.", ex);
-                XtraMessageBox.Show(this, $"Unable to fetch console details.\n\nError Message: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = XtraMessageBox.Show(this, $"Unable to fetch console details.\n\nError Message: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void ButtonSetLEDs_Click(object sender, EventArgs e)
         {
-            Ps3.PS3MAPI.SetConsoleLed(PS3ManagerAPI.PS3MAPI.PS3_CMD.LedColor.Green, (PS3ManagerAPI.PS3MAPI.PS3_CMD.LedMode)RadioGroupLEDsGreen.SelectedIndex);
-            Ps3.PS3MAPI.SetConsoleLed(PS3ManagerAPI.PS3MAPI.PS3_CMD.LedColor.Red, (PS3ManagerAPI.PS3MAPI.PS3_CMD.LedMode)RadioGroupLEDsRed.SelectedIndex);
+            _ = Ps3.PS3MAPI.SetConsoleLed(PS3ManagerAPI.PS3MAPI.PS3_CMD.LedColor.Green, (PS3ManagerAPI.PS3MAPI.PS3_CMD.LedMode)RadioGroupLEDsGreen.SelectedIndex);
+            _ = Ps3.PS3MAPI.SetConsoleLed(PS3ManagerAPI.PS3MAPI.PS3_CMD.LedColor.Red, (PS3ManagerAPI.PS3MAPI.PS3_CMD.LedMode)RadioGroupLEDsRed.SelectedIndex);
             SetStatus("Console LEDs have been set.");
         }
 
         private void ButtonRingBuzzer_Click(object sender, EventArgs e)
         {
-            Ps3.PS3MAPI.RingBuzzer((PS3ManagerAPI.PS3MAPI.PS3_CMD.BuzzerMode)RadioGroupBuzzerMode.SelectedIndex);
+            _ = Ps3.PS3MAPI.RingBuzzer((PS3ManagerAPI.PS3MAPI.PS3_CMD.BuzzerMode)RadioGroupBuzzerMode.SelectedIndex);
             SetStatus("Ring buzzer set.");
         }
 
         private void ButtonSetIDPS_Click(object sender, EventArgs e)
         {
-            Ps3.PS3MAPI.SetConsoleID(TextBoxIDPS.Text);
+            _ = Ps3.PS3MAPI.SetConsoleID(TextBoxIDPS.Text);
             SetStatus("IDPS has been set.");
         }
 
         private void ButtonSetPSID_Click(object sender, EventArgs e)
         {
-            Ps3.PS3MAPI.SetPSID(TextBoxPSID.Text);
+            _ = Ps3.PS3MAPI.SetPSID(TextBoxPSID.Text);
             SetStatus("PSID has been set.");
         }
 
@@ -125,7 +125,7 @@ namespace ArisenStudio.Forms.Tools.PS3
         {
             if (InvokeRequired)
             {
-                BeginInvoke((MethodInvoker)delegate
+                _ = BeginInvoke((MethodInvoker)delegate
                 {
                     LabelStatus.Caption = status;
                 });

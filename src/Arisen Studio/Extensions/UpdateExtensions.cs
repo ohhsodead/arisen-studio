@@ -100,7 +100,7 @@ namespace ArisenStudio.Extensions
 
                     if (args.Mandatory.Value)
                     {
-                        XtraMessageBox.Show(MainWindow.Window, $"A new version of Arisen Studio is available: {AllReleases[0].Name}. " +
+                        _ = XtraMessageBox.Show(MainWindow.Window, $"A new version of Arisen Studio is available: {AllReleases[0].Name}. " +
                             $"This update is required and includes important fixes and improvements. You need to install it to keep using the app.\n\n" +
                             $"Would you like to download and install it now?", @"Update Available", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         UpdateApplication(); break;
@@ -118,11 +118,11 @@ namespace ArisenStudio.Extensions
                     break;
                 case WebException:
                     MainWindow.Window.SetStatus($"Unable to check for a new application version at the moment. Error: {args.Error.Message}", args.Error);
-                    XtraMessageBox.Show(MainWindow.Window, @"There is a problem reaching update server. Please check your internet connection and try again later.", @"Update Check Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _ = XtraMessageBox.Show(MainWindow.Window, @"There is a problem reaching update server. Please check your internet connection and try again later.", @"Update Check Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 default:
                     MainWindow.Window.SetStatus($"Unable to check for a new application version at the moment. Error: {args.Error.Message}", args.Error);
-                    XtraMessageBox.Show(MainWindow.Window, args.Error.Message, args.Error.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _ = XtraMessageBox.Show(MainWindow.Window, args.Error.Message, args.Error.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
         }
@@ -154,6 +154,8 @@ namespace ArisenStudio.Extensions
                             @"Update Available",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
+
+                        UpdateApplication();
                     }
                     else
                     {
@@ -181,7 +183,7 @@ namespace ArisenStudio.Extensions
                         catch (Exception ex)
                         {
                             MainWindow.Window.SetStatus($"Unable to download new version at the moment. Error: {ex.Message}", ex);
-                            XtraMessageBox.Show(MainWindow.Window, $@"There is a problem reaching update server. " +
+                            _ = XtraMessageBox.Show(MainWindow.Window, $@"There is a problem reaching update server. " +
                                 "Please check your internet connection and try again later.\n\nError: {ex.Message}",
                                 @"Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -198,7 +200,7 @@ namespace ArisenStudio.Extensions
                 if (args.Error is WebException)
                 {
                     MainWindow.Window.SetStatus($"Unable to check application version at this current time. Error: {args.Error.Message}", args.Error);
-                    XtraMessageBox.Show(MainWindow.Window, @"There is a problem reaching update server. " +
+                    _ = XtraMessageBox.Show(MainWindow.Window, @"There is a problem reaching update server. " +
                         "Please check your internet connection and try again later.",
                         @"Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -206,7 +208,7 @@ namespace ArisenStudio.Extensions
                 {
                     MainWindow.Window.SetStatus($"Unable to check application for a new version." +
                         $"Error Message: {args.Error.Message}", args.Error);
-                    XtraMessageBox.Show(MainWindow.Window, args.Error.Message,
+                    _ = XtraMessageBox.Show(MainWindow.Window, args.Error.Message,
                         args.Error.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -236,22 +238,22 @@ namespace ArisenStudio.Extensions
                     }
                     catch (Exception ex)
                     {
-                        XtraMessageBox.Show(MainWindow.Window, ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        _ = XtraMessageBox.Show(MainWindow.Window, ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                     break;
                 case WebException:
                     MainWindow.Window.SetStatus($"Unable to download new version at the moment. Error: {args.Error.Message}", args.Error);
-                    XtraMessageBox.Show(MainWindow.Window, @"There is a problem reaching update server. " + 
-                        "Please check your internet connection and try again later.", 
+                    _ = XtraMessageBox.Show(MainWindow.Window, @"There is a problem reaching update server. " +
+                        "Please check your internet connection and try again later.",
                         @"Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 default:
                     MainWindow.Window.SetStatus($"Unable to check for a new application version at the moment." +
                         $" Error: {args.Error.Message}", args.Error);
-                    XtraMessageBox.Show(MainWindow.Window, 
-                        args.Error.Message, 
-                        args.Error.GetType().ToString(), 
+                    _ = XtraMessageBox.Show(MainWindow.Window,
+                        args.Error.Message,
+                        args.Error.GetType().ToString(),
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }

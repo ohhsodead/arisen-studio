@@ -86,7 +86,7 @@ namespace ArisenStudio.Forms.Dialogs
 
             foreach (ConsoleProfile console in MainWindow.Settings.ConsoleProfiles)
             {
-                if (!console.Name.EqualsIgnoreCase(TextBoxProfileName.Text))
+                if (!console.Name.EqualsIgnoreCase(TextBoxProfileName.Text.Trim()))
                 {
                     if (console.IsDefault)
                     {
@@ -172,7 +172,7 @@ namespace ArisenStudio.Forms.Dialogs
 
         private void NewProfileDialog_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            Process.Start(Urls.ProjectWebsite + "help");
+            _ = Process.Start(Urls.ProjectWebsite + "help");
         }
 
         private void ComboBoxPlatformType_SelectedIndexChanged(object sender, EventArgs e)
@@ -311,7 +311,7 @@ namespace ArisenStudio.Forms.Dialogs
                     if (consoleProfile.UseDefaultLogin)
                     {
                         e.Cancel = true;
-                        XtraMessageBox.Show(this, string.Format(Language.GetString("DEFAULT_CONSOLE_ALREADY_EXISTS"), consoleProfile.Name), Language.GetString("LABEL_DEFAULT_CONSOLE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        _ = XtraMessageBox.Show(this, string.Format(Language.GetString("DEFAULT_CONSOLE_ALREADY_EXISTS"), consoleProfile.Name), Language.GetString("LABEL_DEFAULT_CONSOLE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                 }
@@ -358,7 +358,7 @@ namespace ArisenStudio.Forms.Dialogs
 
             foreach (ConsoleProfile console in MainWindow.Settings.ConsoleProfiles)
             {
-                if (!console.Name.EqualsIgnoreCase(TextBoxProfileName.Text))
+                if (!console.Name.EqualsIgnoreCase(TextBoxProfileName.Text.Trim()))
                 {
                     if (console.IsDefault)
                     {
@@ -369,7 +369,7 @@ namespace ArisenStudio.Forms.Dialogs
 
             if (!CheckBoxDefaultProfile.Checked && defaults == 0)
             {
-                XtraMessageBox.Show(this, Language.GetString("MUST_HAVE_DEFAULT_CONSOLE"), Language.GetString("LABEL_DEFAULT_CONSOLE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                _ = XtraMessageBox.Show(this, Language.GetString("MUST_HAVE_DEFAULT_CONSOLE"), Language.GetString("LABEL_DEFAULT_CONSOLE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 CheckBoxDefaultProfile.Checked = true;
                 return;
             }
@@ -381,7 +381,7 @@ namespace ArisenStudio.Forms.Dialogs
         {
             foreach (ConsoleProfile consoleProfile in MainWindow.Settings.ConsoleProfiles)
             {
-                if (!consoleProfile.Name.EqualsIgnoreCase(TextBoxProfileName.Text))
+                if (!consoleProfile.Name.EqualsIgnoreCase(TextBoxProfileName.Text.Trim()))
                 {
                     if (consoleProfile.IsDefault)
                     {
@@ -406,15 +406,15 @@ namespace ArisenStudio.Forms.Dialogs
 
         private void ButtonSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(TextBoxProfileName.Text))
+            if (string.IsNullOrWhiteSpace(TextBoxProfileName.Text.Trim()))
             {
-                XtraMessageBox.Show(this, Language.GetString("MISSING_PROFILE_NAME"), Language.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                _ = XtraMessageBox.Show(this, Language.GetString("MISSING_PROFILE_NAME"), Language.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(TextBoxAddress.Text))
+            if (string.IsNullOrWhiteSpace(TextBoxAddress.Text.Trim()))
             {
-                XtraMessageBox.Show(this, ConsoleProfile.Platform == Platform.PS3 ? Language.GetString("MISSING_IP_ADDRESS") : Language.GetString("MISSING_IP_OR_NAME"), Language.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                _ = XtraMessageBox.Show(this, ConsoleProfile.Platform == Platform.PS3 ? Language.GetString("MISSING_IP_ADDRESS") : Language.GetString("MISSING_IP_OR_NAME"), Language.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -442,7 +442,7 @@ namespace ArisenStudio.Forms.Dialogs
             }
             else
             {
-                isAddressValid = ConsoleProfile.Platform == Platform.XBOX360 ? true : IPAddress.TryParse(TextBoxAddress.Text, out _);
+                isAddressValid = ConsoleProfile.Platform == Platform.XBOX360 ? true : IPAddress.TryParse(TextBoxAddress.Text.Trim(), out _);
             }
 
             switch (isAddressValid)
@@ -451,25 +451,25 @@ namespace ArisenStudio.Forms.Dialogs
                     {
                         switch (IsEditingProfile)
                         {
-                            case true when ConsoleProfile.Name != TextBoxProfileName.Text && ProfileExists(TextBoxProfileName.Text):
-                                XtraMessageBox.Show(this, Language.GetString("PROFILE_NAME_EXISTS"), Language.GetString("LABEL_PROFILE_DETAILS"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            case true when ConsoleProfile.Name != TextBoxProfileName.Text.Trim() && ProfileExists(TextBoxProfileName.Text.Trim()):
+                                _ = XtraMessageBox.Show(this, Language.GetString("PROFILE_NAME_EXISTS"), Language.GetString("LABEL_PROFILE_DETAILS"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 break;
                             case true:
-                                ConsoleProfile.Name = TextBoxProfileName.Text;
-                                ConsoleProfile.Address = TextBoxAddress.Text;
+                                ConsoleProfile.Name = TextBoxProfileName.Text.Trim();
+                                ConsoleProfile.Address = TextBoxAddress.Text.Trim();
                                 DialogResult = DialogResult.OK;
                                 break;
                             default:
                                 {
-                                    if (ProfileExists(TextBoxProfileName.Text))
+                                    if (ProfileExists(TextBoxProfileName.Text.Trim()))
                                     {
-                                        XtraMessageBox.Show(this, Language.GetString("PROFILE_NAME_EXISTS"), Language.GetString("LABEL_PROFILE_DETAILS"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        _ = XtraMessageBox.Show(this, Language.GetString("PROFILE_NAME_EXISTS"), Language.GetString("LABEL_PROFILE_DETAILS"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                     }
                                     else
                                     {
                                         ConsoleProfile.Id = DataExtensions.GenerateUniqueId();
-                                        ConsoleProfile.Name = TextBoxProfileName.Text;
-                                        ConsoleProfile.Address = TextBoxAddress.Text;
+                                        ConsoleProfile.Name = TextBoxProfileName.Text.Trim();
+                                        ConsoleProfile.Address = TextBoxAddress.Text.Trim();
                                         DialogResult = DialogResult.OK;
                                     }
 
@@ -480,7 +480,7 @@ namespace ArisenStudio.Forms.Dialogs
                         break;
                     }
                 default:
-                    XtraMessageBox.Show(this, Language.GetString("INCORRECT_IP_FORMAT"), Language.GetString("INVALID_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    _ = XtraMessageBox.Show(this, Language.GetString("INCORRECT_IP_FORMAT"), Language.GetString("INVALID_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     break;
             }
         }

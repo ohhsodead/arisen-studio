@@ -120,11 +120,11 @@ namespace ArisenStudio.Controls
         {
             if (LocalFileInfo != null && LocalFileInfo.Exists)
             {
-                Process.Start(LocalFileInfo.DirectoryName);
+                _ = Process.Start(LocalFileInfo.DirectoryName);
             }
             else
             {
-                XtraMessageBox.Show(this, Language.GetString("FILE_UPLOAD_NOT_FOUND"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                _ = XtraMessageBox.Show(this, Language.GetString("FILE_UPLOAD_NOT_FOUND"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

@@ -37,7 +37,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
 
             foreach (ListItem game in MainWindow.Settings.GameFilesXbox)
             {
-                ListBoxGames.Items.Add(game.Name);
+                _ = ListBoxGames.Items.Add(game.Name);
             }
 
             UpdateStatus("Successfully fetched games.");
@@ -57,7 +57,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             if (!newName.IsNullOrWhiteSpace())
             {
                 MainWindow.Settings.GameFilesXbox[ListBoxGames.SelectedIndex].Name = newName;
-                XtraMessageBox.Show(this, Language.GetString("FILE_RENAMED_SUCCESS"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _ = XtraMessageBox.Show(this, Language.GetString("FILE_RENAMED_SUCCESS"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadGames();
             }
         }
@@ -72,12 +72,12 @@ namespace ArisenStudio.Forms.Tools.XBOX
                 XboxConsole.LaunchXex(gameItem.Value, gameItem.Value);
 
                 UpdateStatus("Successfully launched game.");
-                XtraMessageBox.Show(this, Language.GetString("SUCCESS_LAUNCHED_GAME"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _ = XtraMessageBox.Show(this, Language.GetString("SUCCESS_LAUNCHED_GAME"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 UpdateStatus("Unable to launch game file. Error: " + ex.Message, ex);
-                XtraMessageBox.Show(this, string.Format(Language.GetString("ERROR_LAUNCHING_GAME"), ex.Message), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = XtraMessageBox.Show(this, string.Format(Language.GetString("ERROR_LAUNCHING_GAME"), ex.Message), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -58,7 +58,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             {
                 if (string.IsNullOrWhiteSpace(TextBoxTitleID.Text))
                 {
-                    XtraMessageBox.Show(Language.GetString("YOU_MUST_ENTER_TITLE_ID"), Language.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    _ = XtraMessageBox.Show(Language.GetString("YOU_MUST_ENTER_TITLE_ID"), Language.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
 
@@ -68,7 +68,7 @@ namespace ArisenStudio.Forms.Tools.PS3
 
                 if (gameUpdates == null)
                 {
-                    XtraMessageBox.Show(Language.GetString("INVALID_TITLE_ID"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _ = XtraMessageBox.Show(Language.GetString("INVALID_TITLE_ID"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -79,7 +79,7 @@ namespace ArisenStudio.Forms.Tools.PS3
 
                     foreach (Models.Game_Updates.Package update in gameUpdates.Tag.Package)
                     {
-                        GameUpdateFiles.Rows.Add(
+                        _ = GameUpdateFiles.Rows.Add(
                             update.Url,
                             update.Sha1Sum,
                             Path.GetFileName(new Uri(update.Url).LocalPath),
@@ -108,7 +108,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             catch (Exception ex)
             {
                 SetStatus(string.Format(Language.GetString("ERROR_OCCURRED"), ex.Message));
-                XtraMessageBox.Show(this, string.Format(Language.GetString("ERROR_OCCURRED"), ex.Message), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error, DefaultBoolean.True);
+                _ = XtraMessageBox.Show(this, string.Format(Language.GetString("ERROR_OCCURRED"), ex.Message), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error, DefaultBoolean.True);
             }
         }
 
@@ -146,13 +146,13 @@ namespace ArisenStudio.Forms.Tools.PS3
                 HttpExtensions.DownloadFile(updateUrl, filePath);
 
                 SetStatus(string.Format(Language.GetString("FILE_INSTALLING"), fileName));
-                FtpExtensions.UploadFile(filePath, MainWindow.Settings.PackageInstallPathPS3 + fileName);
+                _ = FtpExtensions.UploadFile(filePath, MainWindow.Settings.PackageInstallPathPS3 + fileName);
                 SetStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
-                XtraMessageBox.Show(Language.GetString("FILE_INSTALL_SUCCESS"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _ = XtraMessageBox.Show(Language.GetString("FILE_INSTALL_SUCCESS"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                XtraMessageBox.Show(Language.GetString("YOU_MUST_BE_CONNECTED_TO_USE_FEATURE"), Language.GetString("NOT_CONNECTED"));
+                _ = XtraMessageBox.Show(Language.GetString("YOU_MUST_BE_CONNECTED_TO_USE_FEATURE"), Language.GetString("NOT_CONNECTED"));
             }
         }
 
@@ -167,7 +167,7 @@ namespace ArisenStudio.Forms.Tools.PS3
                 SetStatus(string.Format(Language.GetString("FILE_DOWNLOADING"), fileName));
                 HttpExtensions.DownloadFile(updateUrl, folderPath + "/" + fileName);
                 SetStatus(Language.GetString("FILE_DOWNLOAD_SUCCESS"));
-                XtraMessageBox.Show(Language.GetString("FILE_DOWNLOAD_SUCCESS"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _ = XtraMessageBox.Show(Language.GetString("FILE_DOWNLOAD_SUCCESS"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -175,14 +175,14 @@ namespace ArisenStudio.Forms.Tools.PS3
         {
             string updateUrl = GridViewGameUpdates.GetRowCellDisplayText(GridViewGameUpdates.FocusedRowHandle, GridViewGameUpdates.Columns[0]);
             Clipboard.SetText(updateUrl);
-            XtraMessageBox.Show(Language.GetString("COPIED_URL"), Language.GetString("LABEL_COPIED"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            _ = XtraMessageBox.Show(Language.GetString("COPIED_URL"), Language.GetString("LABEL_COPIED"), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ButtonCopySHA1ToClipboard_Click(object sender, EventArgs e)
         {
             string updateSha1 = GridViewGameUpdates.GetRowCellDisplayText(GridViewGameUpdates.FocusedRowHandle, GridViewGameUpdates.Columns[1]);
             Clipboard.SetText(updateSha1);
-            XtraMessageBox.Show(Language.GetString("COPIED_SHA1"), Language.GetString("LABEL_COPIED"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            _ = XtraMessageBox.Show(Language.GetString("COPIED_SHA1"), Language.GetString("LABEL_COPIED"), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         /// <summary>

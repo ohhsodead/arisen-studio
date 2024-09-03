@@ -69,7 +69,7 @@ namespace ArisenStudio.Forms.Dialogs
 
             foreach (var category in MainWindow.Database.CategoriesData.Categories.Distinct())
             {
-                ComboBoxCategory.Properties.Items.Add(category.Title);
+                _ = ComboBoxCategory.Properties.Items.Add(category.Title);
             }
 
             foreach (var modTypes in MainWindow.Database.GameModsPS3.Library.Select(x => x.ModTypes.Distinct()).Distinct())
@@ -80,7 +80,7 @@ namespace ArisenStudio.Forms.Dialogs
                 //}
             }
 
-            ComboBoxModType.Properties.Items.Add("XEX");
+            _ = ComboBoxModType.Properties.Items.Add("XEX");
 
             //LabelUserPass.Visible = CustomItem.Platform == Platform.PS3 | CustomItem.Platform == Platform.PS4;
             //ButtonChangeLoginDetails.Visible = CustomItem.Platform == Platform.PS3 | CustomItem.Platform == Platform.PS4;
@@ -104,7 +104,7 @@ namespace ArisenStudio.Forms.Dialogs
 
             foreach (ListItem file in CustomMod.Files)
             {
-                DataTableFiles.Rows.Add(
+                _ = DataTableFiles.Rows.Add(
                     file.Name,
                     file.Value);
             }
@@ -122,28 +122,28 @@ namespace ArisenStudio.Forms.Dialogs
             {
                 foreach (var category in MainWindow.Database.CategoriesData.GetCategoriesByType(CategoryType.Game))
                 {
-                    ComboBoxCategory.Properties.Items.Add(category.Title);
+                    _ = ComboBoxCategory.Properties.Items.Add(category.Title);
                 }
             }
             else if (ComboBoxCategoryType.SelectedIndex == 1)
             {
                 foreach (var category in MainWindow.Database.CategoriesData.GetCategoriesByType(CategoryType.Homebrew))
                 {
-                    ComboBoxCategory.Properties.Items.Add(category.Title);
+                    _ = ComboBoxCategory.Properties.Items.Add(category.Title);
                 }
             }
             else if (ComboBoxCategoryType.SelectedIndex == 2)
             {
                 foreach (var category in MainWindow.Database.CategoriesData.GetCategoriesByType(CategoryType.Package))
                 {
-                    ComboBoxCategory.Properties.Items.Add(category.Title);
+                    _ = ComboBoxCategory.Properties.Items.Add(category.Title);
                 }
             }
             else if (ComboBoxCategoryType.SelectedIndex == 3)
             {
                 foreach (var category in MainWindow.Database.CategoriesData.GetCategoriesByType(CategoryType.Resource))
                 {
-                    ComboBoxCategory.Properties.Items.Add(category.Title);
+                    _ = ComboBoxCategory.Properties.Items.Add(category.Title);
                 }
             }
             //else if (ComboBoxCategoryType.SelectedIndex == 4)
@@ -164,7 +164,7 @@ namespace ArisenStudio.Forms.Dialogs
 
         private void ButtonHelp_Click(object sender, EventArgs e)
         {
-            XtraMessageBox.Show(this, "Each row contains the files that are installed on your console for the mods to work. First, browse or enter the path to the file on your computer in the first column. Next, enter the path of where you want the file to be on your console, including the file name.", Language.GetString("INSTALLATION_FILES"), MessageBoxButtons.OK, MessageBoxIcon.Question);
+            _ = XtraMessageBox.Show(this, "Each row contains the files that are installed on your console for the mods to work. First, browse or enter the path to the file on your computer in the first column. Next, enter the path of where you want the file to be on your console, including the file name.", Language.GetString("INSTALLATION_FILES"), MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
         private void ButtonSave_Click(object sender, EventArgs e)
@@ -184,22 +184,22 @@ namespace ArisenStudio.Forms.Dialogs
 
             if (ComboBoxCategory.SelectedItem.ToString().Length == 0)
             {
-                XtraMessageBox.Show(this, "You must choose a category/game.", Language.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                _ = XtraMessageBox.Show(this, "You must choose a category/game.", Language.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             if (TextBoxName.Text.Length == 0)
             {
-                XtraMessageBox.Show(this, "You must enter a name.", Language.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                _ = XtraMessageBox.Show(this, "You must enter a name.", Language.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             if (ComboBoxModType.SelectedItem.ToString().Length == 0)
             {
-                XtraMessageBox.Show(this, "You must choose a mod type.", Language.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                _ = XtraMessageBox.Show(this, "You must choose a mod type.", Language.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             if (TextBoxVersion.Text.Length == 0)
             {
-                XtraMessageBox.Show(this, "You must enter a version. Enter '1.0' if it doesn't have one.", Language.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                _ = XtraMessageBox.Show(this, "You must enter a version. Enter '1.0' if it doesn't have one.", Language.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             if (TextBoxDescription.Text.Length == 0)
@@ -209,7 +209,7 @@ namespace ArisenStudio.Forms.Dialogs
 
             if (GridViewFiles.RowCount == 0)
             {
-                XtraMessageBox.Show(this, "You must have at least one file.", "No Files", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                _ = XtraMessageBox.Show(this, "You must have at least one file.", "No Files", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             for (int i = 0; i < GridViewFiles.RowCount; i++)

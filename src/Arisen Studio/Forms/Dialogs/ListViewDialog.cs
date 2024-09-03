@@ -32,7 +32,7 @@ namespace ArisenStudio.Forms.Dialogs
             {
                 foreach (ListItem item in Items)
                 {
-                    dataTable.Rows.Add(item.Value, item.Name);
+                    _ = dataTable.Rows.Add(item.Value, item.Name);
                 }
 
                 GridControlListItems.DataSource = dataTable;

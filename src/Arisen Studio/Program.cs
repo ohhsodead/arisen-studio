@@ -51,7 +51,7 @@ namespace ArisenStudio
             // Define the console target
             ConsoleTarget consoleTarget = new("console")
             {
-                Layout = "${longdate} [${level:uppercase=true}] ${logger} ${message} ${exception:format=ToString}"
+                Layout = "${longdate} [${level:uppercase=true}] ${message} ${exception:format=ToString}"
             };
 
             // Define the file target with archiving
@@ -63,7 +63,7 @@ namespace ArisenStudio
                 MaxArchiveFiles = 7,
                 EnableArchiveFileCompression = true,
                 CreateDirs = true,
-                Layout = "${longdate} [${level:uppercase=true}] ${logger} ${message} ${exception:format=ToString}"
+                Layout = "${longdate} [${level:uppercase=true}] ${message} ${exception:format=ToString}"
             };
 
             // Define the rolling file target (size-based)
@@ -72,19 +72,11 @@ namespace ArisenStudio
                 FileName = UserFolders.Logs + "rolling-app.log",
                 ArchiveFileName = UserFolders.Logs + "rolling-app-{#}.log",
                 ArchiveAboveSize = 10485760, // 10 MB
-                Layout = "${longdate} [${level:uppercase=true}] ${logger} ${message} ${exception:format=ToString}"
-            };
-
-            // Define the network target
-            NetworkTarget networkTarget = new("network")
-            {
-                Name = "network",
-                Address = "tcp://localhost:5151",
-                Layout = "${longdate} [${level:uppercase=true}] ${logger} ${message} ${exception:format=ToString}"
+                Layout = "${longdate} [${level:uppercase=true}] ${message} ${exception:format=ToString}"
             };
 
             // Define and add targets to the configuration
-            Target[] targets = [consoleTarget, fileTarget, rollingFileTarget, networkTarget];
+            Target[] targets = [consoleTarget, fileTarget, rollingFileTarget];
             foreach (Target target in targets)
             {
                 config.AddTarget(target);
@@ -94,19 +86,12 @@ namespace ArisenStudio
             config.AddRule(LogLevel.Debug, LogLevel.Fatal, consoleTarget);
             config.AddRule(LogLevel.Debug, LogLevel.Fatal, fileTarget);
             config.AddRule(LogLevel.Debug, LogLevel.Fatal, rollingFileTarget);
-            config.AddRule(LogLevel.Fatal, LogLevel.Fatal, networkTarget);
 
             // Apply configuration
             LogManager.Configuration = config;
 
             // Get logger instance and test logging
-            Logger logger = LogManager.GetCurrentClassLogger();
-
-            logger.Info("This is an informational message.");
-            logger.Error("This is an error message.");
-            logger.Warn("This is a warning message.");
-            logger.Debug("This is a debug message.");
-            logger.Trace("This is a trace message.");
+            //Logger logger = LogManager.GetCurrentClassLogger();
 
             // Keep the console window open for debugging
             //Console.WriteLine("Logging is configured. Press any key to exit...");

@@ -300,7 +300,7 @@ namespace ArisenStudio.Database
 
             if (!Directory.Exists(archivePath))
             {
-                Directory.CreateDirectory(archivePath);
+                _ = Directory.CreateDirectory(archivePath);
             }
 
             //if (!Directory.Exists(Path.GetDirectoryName(archiveFilePath)))

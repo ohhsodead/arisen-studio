@@ -171,11 +171,11 @@ namespace ArisenStudio.Forms.Dialogs
                 // Update UI elements after completion
                 if (InvokeRequired)
                 {
-                    BeginInvoke(new Action(() =>
+                    _ = BeginInvoke(new Action(() =>
                     {
                         ButtonCancel.Text = Language.GetString("LABEL_CLOSE");
                         ButtonCancel.Visible = true;
-                        ButtonCancel.Focus();
+                        _ = ButtonCancel.Focus();
 
                         ButtonOpenFolder.Visible = !LocalPath.IsNullOrEmpty() && Directory.Exists(LocalPath) && IsSuccessful;
                     }));
@@ -184,7 +184,7 @@ namespace ArisenStudio.Forms.Dialogs
                 {
                     ButtonCancel.Text = Language.GetString("LABEL_CLOSE");
                     ButtonCancel.Visible = true;
-                    ButtonCancel.Focus();
+                    _ = ButtonCancel.Focus();
 
                     ButtonOpenFolder.Visible = !LocalPath.IsNullOrEmpty() && Directory.Exists(LocalPath) && IsSuccessful;
                 }
@@ -228,7 +228,7 @@ namespace ArisenStudio.Forms.Dialogs
                         if (!File.Exists(file.Name))
                         {
                             UpdateStatus(Language.GetString("INSTALL_CANCELED"));
-                            GetDialogResult(string.Format(Language.GetString("FILES_INSTALL_ERROR"), Language.GetString("FILE_UPLOAD_NOT_FOUND")), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            _ = GetDialogResult(string.Format(Language.GetString("FILES_INSTALL_ERROR"), Language.GetString("FILE_UPLOAD_NOT_FOUND")), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             return;
                         }
                     }
@@ -267,7 +267,7 @@ namespace ArisenStudio.Forms.Dialogs
 
                                                 if (InvokeRequired)
                                                 {
-                                                    Invoke(new Action(() =>
+                                                    _ = Invoke(new Action(() =>
                                                     {
                                                         LabelModName.Text = $"{Category.Title}\n{customItem.Name}".Replace("&", "&&");
                                                     }));
@@ -291,7 +291,7 @@ namespace ArisenStudio.Forms.Dialogs
 
                                                     if (InvokeRequired)
                                                     {
-                                                        Invoke(new Action(() =>
+                                                        _ = Invoke(new Action(() =>
                                                         {
                                                             LabelModName.Text = $"{Category.Title}\n{customItem.Name}".Replace("&", "&&");
                                                         }));
@@ -362,7 +362,7 @@ namespace ArisenStudio.Forms.Dialogs
                                                     if (!File.Exists(backupFile.LocalPath))
                                                     {
                                                         UpdateStatus(string.Format(Language.GetString("FILE_BACKUP_CREATING"), installFileName));
-                                                        MainWindow.FtpClient.DownloadFile(backupFile.LocalPath, backupFile.InstallPath);
+                                                        _ = MainWindow.FtpClient.DownloadFile(backupFile.LocalPath, backupFile.InstallPath);
 
                                                         backupFile.LocalPath = Path.Combine(MainWindow.BackupFiles.GetGameBackupFolder(customItem), installFileName);
                                                         backupFile.InstallPath = installPath;
@@ -375,7 +375,7 @@ namespace ArisenStudio.Forms.Dialogs
                                             }
 
                                             UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), $"{installFileName} ({indexFiles}/{totalFiles})", parentFolderPath));
-                                            FtpExtensions.UploadFile(installFile.Name, installPath);
+                                            _ = FtpExtensions.UploadFile(installFile.Name, installPath);
                                             UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
 
                                             indexFiles++;
@@ -383,7 +383,7 @@ namespace ArisenStudio.Forms.Dialogs
                                         else
                                         {
                                             UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), $"{installFileName} ({indexFiles}/{totalFiles})", parentFolderPath));
-                                            FtpExtensions.UploadFile(installFile.Name, installPath);
+                                            _ = FtpExtensions.UploadFile(installFile.Name, installPath);
                                             UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
 
                                             indexFiles++;
@@ -486,7 +486,7 @@ namespace ArisenStudio.Forms.Dialogs
 
                     if (InvokeRequired)
                     {
-                        Invoke(new Action(() =>
+                        _ = Invoke(new Action(() =>
                         {
                             LabelModName.Text = $"{Category.Title}\n{customItem.Name}".Replace("&", "&&");
                         }));
@@ -545,18 +545,18 @@ namespace ArisenStudio.Forms.Dialogs
                                                 {
                                                     // Install the backup file to the original game file path
                                                     UpdateStatus(string.Format(Language.GetString("INSTALLING_BACKUP_FILE_LOCATION"), $"{Path.GetFileName(installPath)} ({indexFiles}/{totalFiles})", parentFolderPath));
-                                                    FtpExtensions.UploadFile(backupFile.LocalPath, installPath);
+                                                    _ = FtpExtensions.UploadFile(backupFile.LocalPath, installPath);
                                                     UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
                                                     indexFiles++;
                                                 }
                                                 else
                                                 {
-                                                    GetDialogResult(string.Format(Language.GetString("CANT_FIND_BACKUP_FILE"), Path.GetFileName(installPath)), Language.GetString("NO_BACKUP_FILE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                                    _ = GetDialogResult(string.Format(Language.GetString("CANT_FIND_BACKUP_FILE"), Path.GetFileName(installPath)), Language.GetString("NO_BACKUP_FILE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                                 }
                                             }
                                             else
                                             {
-                                                GetDialogResult(string.Format(Language.GetString("NO_BACKUP_FILE"), Path.GetFileName(installPath)), Language.GetString("NO_BACKUP_FILE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                                _ = GetDialogResult(string.Format(Language.GetString("NO_BACKUP_FILE"), Path.GetFileName(installPath)), Language.GetString("NO_BACKUP_FILE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                             }
                                         }
                                         else
@@ -721,7 +721,7 @@ namespace ArisenStudio.Forms.Dialogs
 
                         if (localUsbDevices.Count < 1)
                         {
-                            GetDialogResult(Language.GetString("INSERT_USB_DEVICE"), Language.GetString("NO_USB_DEVICES"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            _ = GetDialogResult(Language.GetString("INSERT_USB_DEVICE"), Language.GetString("NO_USB_DEVICES"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             UpdateStatus(string.Join(" ", Language.GetString("NO_USB_DEVICES_CONNECTED"), Language.GetString("INSTALL_CANCELED")));
                             progress.Report(0);
                             return;
@@ -740,7 +740,7 @@ namespace ArisenStudio.Forms.Dialogs
 
                             try
                             {
-                                Directory.CreateDirectory(installPath);
+                                _ = Directory.CreateDirectory(installPath);
 
                                 progress.Report(60);
 
@@ -832,7 +832,7 @@ namespace ArisenStudio.Forms.Dialogs
 
                                             if (InvokeRequired)
                                             {
-                                                Invoke(new Action(() =>
+                                                _ = Invoke(new Action(() =>
                                                 {
                                                     LabelModName.Text = $"{Category.Title}\n{ModItem.Name}".Replace("&", "&&");
                                                 }));
@@ -885,7 +885,7 @@ namespace ArisenStudio.Forms.Dialogs
                                         if (!FtpExtensions.GetFolderNames("/dev_hdd0/game/").Any(x => x.Name.ContainsIgnoreCase(gameRegion)))
                                         {
                                             UpdateStatus(string.Join(" ", Language.GetString("NO_GAME_REGION_FOUND"), Language.GetString("INSTALL_CANCELED")));
-                                            GetDialogResult(Language.GetString("NO_GAME_REGION_FOLDER_FOUND"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            _ = GetDialogResult(Language.GetString("NO_GAME_REGION_FOLDER_FOUND"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                             progress.Report(0);
                                             return;
                                         }
@@ -1027,7 +1027,7 @@ namespace ArisenStudio.Forms.Dialogs
                                                             if (!File.Exists(backupFile.LocalPath))
                                                             {
                                                                 UpdateStatus(string.Format(Language.GetString("FILE_BACKUP_CREATING"), installFileName));
-                                                                MainWindow.FtpClient.DownloadFile(backupFile.LocalPath, backupFile.InstallPath);
+                                                                _ = MainWindow.FtpClient.DownloadFile(backupFile.LocalPath, backupFile.InstallPath);
 
                                                                 backupFile.LocalPath = Path.Combine(MainWindow.BackupFiles.GetGameBackupFolder(modItem), installFileName);
                                                                 backupFile.InstallPath = installPath;
@@ -1040,7 +1040,7 @@ namespace ArisenStudio.Forms.Dialogs
                                                     }
 
                                                     UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), $"{installFileName} ({indexFiles}/{totalFiles})", parentFolderPath));
-                                                    FtpExtensions.UploadFile(localFilePath, installPath);
+                                                    _ = FtpExtensions.UploadFile(localFilePath, installPath);
                                                     UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
 
                                                     indexFiles++;
@@ -1051,7 +1051,7 @@ namespace ArisenStudio.Forms.Dialogs
                                                     if (!string.IsNullOrEmpty(usbDevice))
                                                     {
                                                         UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), $"{installFileName} ({indexFiles}/{totalFiles})", parentFolderPath));
-                                                        FtpExtensions.UploadFile(localFilePath, installPath);
+                                                        _ = FtpExtensions.UploadFile(localFilePath, installPath);
                                                         UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
 
                                                         indexFiles++;
@@ -1060,7 +1060,7 @@ namespace ArisenStudio.Forms.Dialogs
                                                 else
                                                 {
                                                     UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), $"{installFileName} ({indexFiles}/{totalFiles})", parentFolderPath));
-                                                    FtpExtensions.UploadFile(localFilePath, installPath);
+                                                    _ = FtpExtensions.UploadFile(localFilePath, installPath);
                                                     UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
 
                                                     indexFiles++;
@@ -1210,7 +1210,7 @@ namespace ArisenStudio.Forms.Dialogs
 
                     if (InvokeRequired)
                     {
-                        Invoke(new Action(() =>
+                        _ = Invoke(new Action(() =>
                         {
                             LabelModName.Text = $"{Category.Title}\n{modItem.Name}".Replace("&", "&&");
                         }));
@@ -1261,7 +1261,7 @@ namespace ArisenStudio.Forms.Dialogs
                                 {
                                     // Alerts the user that uninstalling files from dev_rebug folders isn't allowed
                                     case true:
-                                        GetDialogResult(Language.GetString("CANT_UNINSTALL_CFW_FILES"), Language.GetString("FORBIDDEN"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        _ = GetDialogResult(Language.GetString("CANT_UNINSTALL_CFW_FILES"), Language.GetString("FORBIDDEN"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                         UpdateStatus(Language.GetString("INSTALL_CANCELED"));
                                         progress.Report(0);
                                         return;
@@ -1395,18 +1395,18 @@ namespace ArisenStudio.Forms.Dialogs
                                                 {
                                                     // Install the backup file to the original game file path
                                                     UpdateStatus(string.Format(Language.GetString("INSTALLING_BACKUP_FILE_LOCATION"), $"{Path.GetFileName(installPath)} ({indexFiles}/{totalFiles})", parentFolderPath));
-                                                    FtpExtensions.UploadFile(backupFile.LocalPath, installPath);
+                                                    _ = FtpExtensions.UploadFile(backupFile.LocalPath, installPath);
                                                     UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
                                                     indexFiles++;
                                                 }
                                                 else
                                                 {
-                                                    GetDialogResult(string.Format(Language.GetString("CANT_FIND_BACKUP_FILE"), Path.GetFileName(installPath)), Language.GetString("NO_BACKUP_FILE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                                    _ = GetDialogResult(string.Format(Language.GetString("CANT_FIND_BACKUP_FILE"), Path.GetFileName(installPath)), Language.GetString("NO_BACKUP_FILE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                                 }
                                             }
                                             else
                                             {
-                                                GetDialogResult(string.Format(Language.GetString("NO_BACKUP_FILE"), Path.GetFileName(installPath)), Language.GetString("NO_BACKUP_FILE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                                _ = GetDialogResult(string.Format(Language.GetString("NO_BACKUP_FILE"), Path.GetFileName(installPath)), Language.GetString("NO_BACKUP_FILE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                             }
                                         }
                                         else if (installFilePath.Contains("{USBDEV}"))
@@ -1608,7 +1608,7 @@ namespace ArisenStudio.Forms.Dialogs
                 try
                 {
                     string downloadPath = $@"{Settings.PathDownloads.GetFullPath(Settings.PathAppData)}\{PackageItem.Name.RemoveInvalidChars()}\";
-                    Directory.CreateDirectory(downloadPath);
+                    _ = Directory.CreateDirectory(downloadPath);
 
                     string localFilePathPkg = $@"{downloadPath}\{PackageItem.Name.RemoveInvalidChars()}.pkg";
                     string localFilePathRap = $@"{downloadPath}\{PackageItem.ContentId.RemoveInvalidChars()}.rap";
@@ -1635,14 +1635,14 @@ namespace ArisenStudio.Forms.Dialogs
                     string parentInstallFolderRap = Path.GetDirectoryName(packageItem.InstallFilePathRap).Replace(@"\", "/");
 
                     UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), packageItem.Name + ".pkg", parentInstallFolderPkg));
-                    FtpExtensions.UploadFile(localFilePathPkg, packageItem.InstallFilePathPkg);
+                    _ = FtpExtensions.UploadFile(localFilePathPkg, packageItem.InstallFilePathPkg);
                     UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
                     progress.Report(60);
 
                     if (includeRap)
                     {
                         UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), packageItem.ContentId + ".rap", parentInstallFolderRap));
-                        FtpExtensions.UploadFile(localFilePathRap, packageItem.InstallFilePathRap);
+                        _ = FtpExtensions.UploadFile(localFilePathRap, packageItem.InstallFilePathRap);
                         UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
                         progress.Report(80);
                     }
@@ -1758,7 +1758,7 @@ namespace ArisenStudio.Forms.Dialogs
 
                     if (!Directory.Exists(downloadFolder))
                     {
-                        Directory.CreateDirectory(downloadFolder);
+                        _ = Directory.CreateDirectory(downloadFolder);
                     }
 
                     string downloadLocationPkg = Path.Combine(downloadFolder, packageItem.Name.RemoveInvalidChars() + ".pkg");
@@ -1844,7 +1844,7 @@ namespace ArisenStudio.Forms.Dialogs
 
                     if (localUsbDevices.Count < 1)
                     {
-                        GetDialogResult(Language.GetString("INSERT_USB_DEVICE"), Language.GetString("NO_USB_DEVICES"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        _ = GetDialogResult(Language.GetString("INSERT_USB_DEVICE"), Language.GetString("NO_USB_DEVICES"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         UpdateStatus(string.Join(" ", Language.GetString("NO_USB_DEVICES_CONNECTED"), Language.GetString("INSTALL_CANCELED")));
                         progress.Report(0);
                         return;
@@ -1865,7 +1865,7 @@ namespace ArisenStudio.Forms.Dialogs
                         {
                             progress.Report(40);
 
-                            Directory.CreateDirectory(installPath);
+                            _ = Directory.CreateDirectory(installPath);
 
                             foreach (string localFilePath in Directory.GetFiles(appItem.DownloadFilesDirectory(downloadFiles), "*.*", SearchOption.AllDirectories))
                             {
@@ -1945,7 +1945,7 @@ namespace ArisenStudio.Forms.Dialogs
 
                                         if (InvokeRequired)
                                         {
-                                            Invoke(new Action(() =>
+                                            _ = Invoke(new Action(() =>
                                             {
                                                 LabelModName.Text = $"{Category.Title}\n{ModItem.Name}".Replace("&", "&&");
                                             }));
@@ -1972,7 +1972,7 @@ namespace ArisenStudio.Forms.Dialogs
                                 string parentFolderPath = Path.GetDirectoryName(installPath).Replace(@"\", "/");
 
                                 UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), $"{installFileName} ({indexFiles}/{totalFiles})", parentFolderPath));
-                                FtpExtensions.UploadFile(localFilePath, installPath);
+                                _ = FtpExtensions.UploadFile(localFilePath, installPath);
                                 UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
 
                                 progress.Report(80);
@@ -2108,7 +2108,7 @@ namespace ArisenStudio.Forms.Dialogs
 
                     if (InvokeRequired)
                     {
-                        Invoke(new Action(() =>
+                        _ = Invoke(new Action(() =>
                         {
                             LabelModName.Text = $"{Category.Title}\n{appItem.Name}".Replace("&", "&&");
                         }));
@@ -2175,18 +2175,18 @@ namespace ArisenStudio.Forms.Dialogs
                                             {
                                                 // Install the backup file to the original game file path
                                                 UpdateStatus(string.Format(Language.GetString("INSTALLING_BACKUP_FILE_LOCATION"), $"{Path.GetFileName(installPath)} ({indexFiles}/{totalFiles})", parentFolderPath));
-                                                FtpExtensions.UploadFile(backupFile.LocalPath, installPath);
+                                                _ = FtpExtensions.UploadFile(backupFile.LocalPath, installPath);
                                                 UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
                                                 indexFiles++;
                                             }
                                             else
                                             {
-                                                GetDialogResult(string.Format(Language.GetString("CANT_FIND_BACKUP_FILE"), Path.GetFileName(installPath)), Language.GetString("NO_BACKUP_FILE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                                _ = GetDialogResult(string.Format(Language.GetString("CANT_FIND_BACKUP_FILE"), Path.GetFileName(installPath)), Language.GetString("NO_BACKUP_FILE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                             }
                                         }
                                         else
                                         {
-                                            GetDialogResult(string.Format(Language.GetString("NO_BACKUP_FILE"), Path.GetFileName(installPath)), Language.GetString("NO_BACKUP_FILE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            _ = GetDialogResult(string.Format(Language.GetString("NO_BACKUP_FILE"), Path.GetFileName(installPath)), Language.GetString("NO_BACKUP_FILE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                         }
                                     }
                                     else
@@ -2342,7 +2342,7 @@ namespace ArisenStudio.Forms.Dialogs
 
                     if (localUsbDevices.Count < 1)
                     {
-                        GetDialogResult(Language.GetString("INSERT_USB_DEVICE"), Language.GetString("NO_USB_DEVICES"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        _ = GetDialogResult(Language.GetString("INSERT_USB_DEVICE"), Language.GetString("NO_USB_DEVICES"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         UpdateStatus(string.Join(" ", Language.GetString("NO_USB_DEVICES_CONNECTED"), Language.GetString("INSTALL_CANCELED")));
                         progress.Report(0);
                         return;
@@ -2362,7 +2362,7 @@ namespace ArisenStudio.Forms.Dialogs
 
                         try
                         {
-                            Directory.CreateDirectory(installPath);
+                            _ = Directory.CreateDirectory(installPath);
 
                             foreach (string installFilePath in downloadFiles.InstallPaths)
                             {
@@ -2474,7 +2474,7 @@ namespace ArisenStudio.Forms.Dialogs
                                         if (installPath.EndsWith(localFileName))
                                         {
                                             UpdateStatus(string.Format(Language.GetString("FILE_INSTALL_LOCATION"), $"{localFileName} ({indexFiles}/{totalFiles})", parentFolderPath));
-                                            FtpExtensions.UploadFile(localFilePath, installPath);
+                                            _ = FtpExtensions.UploadFile(localFilePath, installPath);
                                             UpdateStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
 
                                             indexFiles++;
@@ -2658,7 +2658,7 @@ namespace ArisenStudio.Forms.Dialogs
                 int indexFiles = 1;
                 int totalFiles = TrainerItem.InstallPaths.Count();
 
-                UpdateStatus(Language.GetString("DOWNLOADING_EXTRACTING_ARCHIVE"));
+                UpdateStatus(Language.GetString("ARCHIVE_DOWNLOADING_EXTRACTING_ARCHIVE"));
                 TrainerGame.DownloadInstallFiles(TrainerItem);
 
                 progress.Report(30);
@@ -2671,7 +2671,7 @@ namespace ArisenStudio.Forms.Dialogs
 
                     if (localUsbDevices.Count < 1)
                     {
-                        GetDialogResult(Language.GetString("INSERT_USB_DEVICE"), Language.GetString("NO_USB_DEVICES"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        _ = GetDialogResult(Language.GetString("INSERT_USB_DEVICE"), Language.GetString("NO_USB_DEVICES"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         UpdateStatus(string.Join(" ", Language.GetString("NO_USB_DEVICES_CONNECTED"), Language.GetString("INSTALL_CANCELED")));
                         progress.Report(0);
                         return;
@@ -2692,7 +2692,7 @@ namespace ArisenStudio.Forms.Dialogs
                         {
                             progress.Report(60);
 
-                            Directory.CreateDirectory(installPath);
+                            _ = Directory.CreateDirectory(installPath);
 
                             foreach (string installFilePath in TrainerItem.InstallPaths)
                             {
@@ -2767,29 +2767,62 @@ namespace ArisenStudio.Forms.Dialogs
 
                             string installFileName = Path.GetFileName(installPath);
 
-                            string parentFolderPath = Path.GetDirectoryName(installFilePath) + @"\";
-
                             // Check whether install file matches the specified install file
                             if (string.Equals(installFileName, Path.GetFileName(localFilePath), StringComparison.OrdinalIgnoreCase))
                             {
                                 UpdateStatus($"Installing file: {installFileName} ({indexFiles}/{totalFiles}) to {installPath}");
 
-                                int lastSlash = installPath.TrimEnd('\\').LastIndexOf("\\");
-                                string pathNoFileName = installPath.Substring(lastSlash, installPath.Length - lastSlash + 1);
-                                int lastSlashNoFileName = pathNoFileName.TrimEnd('\\').LastIndexOf("\\");
-                                string parentDirectory = pathNoFileName.TrimEnd('\\').Substring(lastSlashNoFileName, pathNoFileName.TrimEnd('\\').Length - lastSlashNoFileName + 1);
-                                string parentFolder = pathNoFileName.TrimEnd('\\').Substring(0, lastSlashNoFileName);
+                                /* Local Parent Folder Name */
+                                //int lastSlashIndex = localFilePath.Replace("\\\\", "\\").LastIndexOf('\\');
+                                //int secondLastSlashIndex = localFilePath.Replace("\\\\", "\\").LastIndexOf('\\', lastSlashIndex - 1);
+                                //string parentFolder = localFilePath.Replace("\\\\", "\\").Substring(secondLastSlashIndex + 1, lastSlashIndex - secondLastSlashIndex - 1);
+                                /* Local Parent Folder Name */
+
+                                /* Parent Folder Name & Path Leading to Parent Folder */
+                                string auroraParentFolder = string.Empty;
+                                string auroraParentFolderPath = string.Empty;
+
+                                string normalizedPath = Settings.AuroraFolderPath.TrimEnd('\\', '/');
+
+                                int lastSlashIndex = normalizedPath.LastIndexOf('\\');
+
+                                if (lastSlashIndex >= 0)
+                                {
+                                    auroraParentFolder = normalizedPath.Substring(lastSlashIndex + 1);
+
+                                    auroraParentFolderPath = normalizedPath.Substring(0, lastSlashIndex) + "\\";
+
+                                    Program.Log.Info("Aurora Parent folder: " + auroraParentFolder);
+                                    Program.Log.Info("Aurora Path leading up to the parent folder: " + auroraParentFolderPath);
+                                }
+                                else
+                                {
+                                    Program.Log.Error("Invalid Aurora Path");
+                                }
+
+                                //string auroraDirectoryPath = Path.GetDirectoryName(Settings.AuroraFolderPath.TrimEnd('\\'));
+                                //DirectoryInfo auroraDirectoryInfo = new(auroraDirectoryPath);
+                                //string auroraParentFolder = auroraDirectoryInfo.Name;
+                                //string auroraParentFolderPath = auroraDirectoryInfo.Parent.FullName;
+                                /* Parent Folder Name & Path Leading to Parent Folder */
+
+                                /* Parent Folder Name & Path Leading to Parent Folder */
+                                //string installDirectoryPath = Path.GetDirectoryName(installPath);
+                                //DirectoryInfo installDirectoryInfo = new(installDirectoryPath);
+                                //string installParentFolder = installDirectoryInfo.Name;
+                                //string installParentFolderPath = installDirectoryInfo.Parent.FullName;
+                                /* Parent Folder Name & Path Leading to Parent Folder */
 
                                 Program.Log.Info("Local File Path: " + localFilePath.Replace("\\\\", "\\").Replace("\\\\", "\\"));
                                 Program.Log.Info("Console File Path: " + installPath);
-                                Program.Log.Info("Parent Directory: " + parentDirectory);
-                                Program.Log.Info("Parent Folder: " + parentFolder);
+                                Program.Log.Info("Aurora Parent Directory: " + auroraParentFolderPath);
+                                Program.Log.Info("Aurora Parent Folder: " + auroraParentFolder);
 
                                 if (TrainerItem.GetType() == TrainerType.Aurora)
                                 {
-                                    if (!XboxExtensions.PathExists(parentDirectory, parentFolder))
+                                    if (!XboxExtensions.PathExists(auroraParentFolderPath, auroraParentFolder))
                                     {
-                                        GetDialogResult(string.Format(Language.GetString("AURORA_PATH_DOESNT_EXIST"), Settings.AuroraFolderPath), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        _ = GetDialogResult(string.Format(Language.GetString("AURORA_PATH_DOESNT_EXIST"), Settings.AuroraFolderPath), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                         UpdateStatus(Language.GetString("INSTALL_CANCELED"));
                                         return;
                                     }
@@ -2891,7 +2924,7 @@ namespace ArisenStudio.Forms.Dialogs
 
         private void ButtonOpenPath_Click(object sender, EventArgs e)
         {
-            Process.Start(LocalPath);
+            _ = Process.Start(LocalPath);
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)
@@ -2903,7 +2936,7 @@ namespace ArisenStudio.Forms.Dialogs
         {
             if (LabelStatus.InvokeRequired)
             {
-                LabelStatus.BeginInvoke((MethodInvoker)delegate
+                _ = LabelStatus.BeginInvoke((MethodInvoker)delegate
                 {
                     LabelStatus.Text = status;
                 });

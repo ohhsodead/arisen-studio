@@ -311,7 +311,7 @@ namespace ArisenStudio.Forms.Dialogs
             {
                 if (MainWindow.IsConsoleConnected && MainWindow.ConsoleProfile == ConsoleProfile)
                 {
-                    XtraMessageBox.Show(this, "You can't edit the details while you're connected to it.", "Connected Console", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    _ = XtraMessageBox.Show(this, "You can't edit the details while you're connected to it.", "Connected Console", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
 
@@ -339,7 +339,7 @@ namespace ArisenStudio.Forms.Dialogs
             catch (Exception ex)
             {
                 Program.Log.Error(ex, "Error editing console.");
-                XtraMessageBox.Show(this, "Error editing console.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                _ = XtraMessageBox.Show(this, "Error editing console.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -349,11 +349,11 @@ namespace ArisenStudio.Forms.Dialogs
             {
                 if (MainWindow.IsConsoleConnected && MainWindow.ConsoleProfile == ConsoleProfile)
                 {
-                    XtraMessageBox.Show(this, "You can't edit the details while you're connected to it.", "Connected Console", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    _ = XtraMessageBox.Show(this, "You can't edit the details while you're connected to it.", "Connected Console", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
 
-                Settings.ConsoleProfiles.Remove(ConsoleProfile);
+                _ = Settings.ConsoleProfiles.Remove(ConsoleProfile);
                 SelectedItem = null;
                 LoadConsoles();
             }

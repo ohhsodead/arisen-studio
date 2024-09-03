@@ -1,34 +1,27 @@
-﻿using DevExpress.Utils;
-using DevExpress.XtraEditors;
-using Humanizer;
-using ArisenStudio.Forms.Windows;
-using System;
-using System.Diagnostics;
-using System.Globalization;
+﻿using DevExpress.XtraEditors;
 using ArisenStudio.Extensions;
-using System.Drawing;
+using System;
 using System.Windows.Forms;
+using System.Drawing;
+using System.Diagnostics;
 
-namespace ArisenStudio.Controls
+namespace ArisenStudio.Forms.Dialogs
 {
-    public partial class ChangeLogItem : XtraUserControl
+    public partial class EasterEgg : XtraForm
     {
-        public ChangeLogItem(string version, string changeLog, DateTime timeStamp)
+        public EasterEgg()
         {
             InitializeComponent();
-            LabelVersion.Text = version;
-            LabelChangeLog.Text = changeLog;
-            LabelTimeStamp.Text = MainWindow.Settings.UseRelativeTimes ? timeStamp.Humanize() : timeStamp.ToString("MM/dd/yyyy", CultureInfo.CurrentCulture);
         }
 
-        private void ChangeLogItem_Load(object sender, EventArgs e)
+        private void EasterEgg_Load(object sender, EventArgs e)
         {
-
+            _ = ImageEasterEgg.LoadAsync("https://arisen.studio/images/slots-event.gif");
         }
 
-        private void LabelMessage_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
+        private void ImageEasterEgg_Click(object sender, EventArgs e)
         {
-            _ = Process.Start(e.Link);
+            _ = Process.Start("https://arisen.studio/images/slots-event.gif");
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -47,6 +40,17 @@ namespace ArisenStudio.Controls
 
             using Brush brush = new SolidBrush(BackColor);
             e.Graphics.FillPath(brush, GraphicExtensions.GetRoundedRectanglePath(ClientRectangle, 4));
+        }
+
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            if (ModifierKeys == Keys.None && keyData == Keys.Escape)
+            {
+                Close();
+                return true;
+            }
+
+            return base.ProcessDialogKey(keyData);
         }
     }
 }

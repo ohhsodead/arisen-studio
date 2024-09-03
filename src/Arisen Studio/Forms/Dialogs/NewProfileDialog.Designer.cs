@@ -174,7 +174,6 @@ namespace ArisenStudio.Forms.Dialogs
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxAddress.Location = new System.Drawing.Point(124, 103);
             this.TextBoxAddress.Name = "TextBoxAddress";
-            this.TextBoxAddress.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.TextBoxAddress.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxAddress.Properties.Appearance.ForeColor = System.Drawing.Color.White;
             this.TextBoxAddress.Properties.Appearance.Options.UseFont = true;
@@ -193,8 +192,11 @@ namespace ArisenStudio.Forms.Dialogs
             this.TextBoxProfileName.Name = "TextBoxProfileName";
             this.TextBoxProfileName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxProfileName.Properties.Appearance.Options.UseFont = true;
+            this.TextBoxProfileName.Properties.NullValuePrompt = "Choose your profile name";
             this.TextBoxProfileName.Size = new System.Drawing.Size(240, 24);
             this.TextBoxProfileName.TabIndex = 0;
+            this.TextBoxProfileName.ToolTip = "Enter a unique name for your profile.";
+            this.TextBoxProfileName.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Cursor;
             // 
             // CheckBoxDefaultLogin
             // 
@@ -307,12 +309,14 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             // ImageInfoDefaultCredentials
             // 
+            this.ImageInfoDefaultCredentials.AllowHtmlTextInToolTips = DevExpress.Utils.DefaultBoolean.True;
             this.ImageInfoDefaultCredentials.ContextButtonOptions.AllowGlyphSkinning = true;
-            this.ImageInfoDefaultCredentials.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ImageInfoDefaultCredentials.Cursor = System.Windows.Forms.Cursors.Default;
             this.ImageInfoDefaultCredentials.ItemAppearance.Disabled.FillColor = System.Drawing.Color.DimGray;
             this.ImageInfoDefaultCredentials.ItemAppearance.Normal.FillColor = System.Drawing.Color.White;
             this.ImageInfoDefaultCredentials.Location = new System.Drawing.Point(248, 34);
             this.ImageInfoDefaultCredentials.Name = "ImageInfoDefaultCredentials";
+            this.ImageInfoDefaultCredentials.ShowToolTips = DevExpress.Utils.DefaultBoolean.True;
             this.ImageInfoDefaultCredentials.Size = new System.Drawing.Size(18, 18);
             this.ImageInfoDefaultCredentials.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
             this.ImageInfoDefaultCredentials.SvgImage = global::ArisenStudio.Properties.Resources.icons8_info;
@@ -321,16 +325,18 @@ namespace ArisenStudio.Forms.Dialogs
             this.ImageInfoDefaultCredentials.ToolTip = "Connects without actively controlling the console. Ideal for monitoring purposes." +
     "";
             this.ImageInfoDefaultCredentials.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Cursor;
-            this.ImageInfoDefaultCredentials.ToolTipTitle = "Passive Mode";
+            this.ImageInfoDefaultCredentials.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.ImageInfoDefaultCredentials.ToolTipTitle = "Default Credentials";
             // 
             // ImageInfoPassive
             // 
             this.ImageInfoPassive.ContextButtonOptions.AllowGlyphSkinning = true;
-            this.ImageInfoPassive.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ImageInfoPassive.Cursor = System.Windows.Forms.Cursors.Default;
             this.ImageInfoPassive.ItemAppearance.Disabled.FillColor = System.Drawing.Color.DimGray;
             this.ImageInfoPassive.ItemAppearance.Normal.FillColor = System.Drawing.Color.White;
             this.ImageInfoPassive.Location = new System.Drawing.Point(221, 106);
             this.ImageInfoPassive.Name = "ImageInfoPassive";
+            this.ImageInfoPassive.ShowToolTips = DevExpress.Utils.DefaultBoolean.True;
             this.ImageInfoPassive.Size = new System.Drawing.Size(18, 18);
             this.ImageInfoPassive.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
             this.ImageInfoPassive.SvgImage = global::ArisenStudio.Properties.Resources.icons8_info;
@@ -339,6 +345,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.ImageInfoPassive.ToolTip = "Connects without actively controlling the console. Ideal for monitoring purposes." +
     "";
             this.ImageInfoPassive.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Cursor;
+            this.ImageInfoPassive.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.ImageInfoPassive.ToolTipTitle = "Passive Mode";
             // 
             // NewProfileDialog

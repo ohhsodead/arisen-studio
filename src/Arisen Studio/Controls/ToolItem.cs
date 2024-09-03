@@ -98,7 +98,7 @@ namespace ArisenStudio.Controls
 
         private void ButtonLaunch_Click(object sender, EventArgs e)
         {
-            ToolForm.ShowDialog(this);
+            _ = ToolForm.ShowDialog(this);
         }
 
         private void PanelControls_EnabledChanged(object sender, EventArgs e)

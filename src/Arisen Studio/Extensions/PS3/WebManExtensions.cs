@@ -1,4 +1,5 @@
-﻿using HtmlAgilityPack;
+﻿using FluentFTP.Helpers;
+using HtmlAgilityPack;
 using System;
 using System.IO;
 using System.Net;
@@ -65,7 +66,7 @@ namespace ArisenStudio.Extensions
                 using (Stream dataStream = response.GetResponseStream())
                 {
                     StreamReader read = new(dataStream);
-                    read.ReadToEnd();
+                    _ = read.ReadToEnd();
                 }
 
                 response.Close();
@@ -134,6 +135,67 @@ namespace ArisenStudio.Extensions
                 return string.Empty;
             }
         }
+
+        /// <summary>
+        /// Returns whther user is in game by checking the current TitleId
+        /// </summary>
+        /// <param name="ip"></param>
+        /// <returns></returns>
+        public static bool IsInGame(string ip)
+        {
+            string game = GetGame(ip);
+
+            return !(game == "XMB Menu" || string.IsNullOrEmpty(game));
+        }
+
+        #region XMB
+
+        public static void OpenBrowser(string ip, string url)
+        {
+            HandleRequest(ip, $"browser.ps3?{url}");
+        }
+
+        /// <summary>
+        /// Enable ingame screenshot (same as R2+◯)
+        /// </summary>
+        /// <param name="ip"></param>
+        public static void EnableInGameScreenshot(string ip)
+        {
+            HandleRequest(ip, $"xmb.ps3$ingame_screenshot");
+        }
+
+        /// <summary>
+        /// Takes a screenshot and previews it on the console.
+        /// </summary>
+        /// <param name="ip"></param>
+        public static void ScreenshotShow(string ip)
+        {
+            HandleRequest(ip, $"xmb.ps3$screenshot?show");
+        }
+
+        /// <summary>
+        /// Capture XMB screen and save it to the specified path on the console.
+        /// </summary>
+        /// <param name="ip"></param>
+        /// <param name="consoleFilePath"></param>
+        public static void Screenshot(string ip, string consoleFilePath, bool downloadFile = true, string localFilePath = "")
+        {
+            if (IsInGame(ip))
+            {
+                EnableInGameScreenshot(ip);
+            }
+
+            HandleRequest(ip, $"xmb.ps3$screenshot{consoleFilePath}");
+
+            System.Threading.Thread.Sleep(750);
+
+            if (downloadFile)
+            {
+                HttpExtensions.DownloadFile($"http://{ip}{consoleFilePath}", localFilePath);
+            }
+        }
+
+        #endregion
 
         #region Mount Game
 

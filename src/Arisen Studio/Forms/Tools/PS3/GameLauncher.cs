@@ -4,6 +4,7 @@ using PS3Lib;
 using System;
 using System.Resources;
 using System.Windows.Forms;
+using ArisenStudio.Models.Resources;
 
 namespace ArisenStudio.Forms.Tools.PS3
 {
@@ -16,7 +17,7 @@ namespace ArisenStudio.Forms.Tools.PS3
 
         public ResourceManager Language = MainWindow.ResourceLanguage;
 
-        private PS3API Ps3 { get; } = new(SelectAPI.PS3Manager);
+        public ConsoleProfile Profile = MainWindow.ConsoleProfile;
 
         private void GameLauncher_Load(object sender, EventArgs e)
         {
@@ -31,7 +32,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             catch (Exception ex)
             {
                 SetStatus("Game Launcher (PS3): " + "Unable to load games", ex);
-                XtraMessageBox.Show(this, "Unable to load games", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = XtraMessageBox.Show(this, "Unable to load games", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
             }
         }
@@ -45,9 +46,9 @@ namespace ArisenStudio.Forms.Tools.PS3
 
                 try
                 {
-                    await WebViewGames.ExecuteScriptAsync("document.getElementById('iwrap').style.display = 'none';");
-                    await WebViewGames.ExecuteScriptAsync("document.getElementById('search').style.display = 'none';");
-                    await WebViewGames.ExecuteScriptAsync("document.getElementById('menu-icon').style.display = 'none';");
+                    _ = await WebViewGames.ExecuteScriptAsync("document.getElementById('iwrap').style.display = 'none';");
+                    _ = await WebViewGames.ExecuteScriptAsync("document.getElementById('search').style.display = 'none';");
+                    _ = await WebViewGames.ExecuteScriptAsync("document.getElementById('menu-icon').style.display = 'none';");
                 }
                 catch { }
 
@@ -98,7 +99,7 @@ namespace ArisenStudio.Forms.Tools.PS3
         {
             if (InvokeRequired)
             {
-                BeginInvoke((MethodInvoker)delegate
+                _ = BeginInvoke((MethodInvoker)delegate
                 {
                     LabelStatus.Caption = status;
                 });

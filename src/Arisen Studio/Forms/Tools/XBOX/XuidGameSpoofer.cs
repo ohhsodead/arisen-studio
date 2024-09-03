@@ -67,7 +67,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
 
                 if (result == "ERROR")
                 {
-                    XtraMessageBox.Show(this, Language.GetString("YOU_MUST_BE_CONNECTED_TO_USE_FEATURE"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _ = XtraMessageBox.Show(this, Language.GetString("YOU_MUST_BE_CONNECTED_TO_USE_FEATURE"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (result != "")
                 {
@@ -75,7 +75,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
                 }
                 else
                 {
-                    XtraMessageBox.Show(this, Language.GetString("XUID_GET_ERROR"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _ = XtraMessageBox.Show(this, Language.GetString("XUID_GET_ERROR"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -86,11 +86,11 @@ namespace ArisenStudio.Forms.Tools.XBOX
 
             if (success)
             {
-                XtraMessageBox.Show(this, Language.GetString("XUID_SET_SUCCESS"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _ = XtraMessageBox.Show(this, Language.GetString("XUID_SET_SUCCESS"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                XtraMessageBox.Show(this, Language.GetString("XUID_SET_ERROR"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _ = XtraMessageBox.Show(this, Language.GetString("XUID_SET_ERROR"), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -142,7 +142,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
         {
             if (address == 0xEE || address == 0xDE)
             {
-                XtraMessageBox.Show(this, string.Format("{0}", address == 0xDE ? Language.GetString("GAME_NOT_SUPPORTED") : (address == 0xDEAD ? Language.GetString("YOU_MUST_BE_CONNECTED_TO_USE_FEATURE") : Language.GetString("XUID_SET_ERROR"))), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = XtraMessageBox.Show(this, string.Format("{0}", address == 0xDE ? Language.GetString("GAME_NOT_SUPPORTED") : (address == 0xDEAD ? Language.GetString("YOU_MUST_BE_CONNECTED_TO_USE_FEATURE") : Language.GetString("XUID_SET_ERROR"))), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 

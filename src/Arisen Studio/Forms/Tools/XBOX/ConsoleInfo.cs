@@ -9,9 +9,9 @@ using ArisenStudio.Extensions;
 
 namespace ArisenStudio.Forms.Tools.XBOX
 {
-    public partial class ConsoleManager : XtraForm
+    public partial class ConsoleInfo : XtraForm
     {
-        public ConsoleManager()
+        public ConsoleInfo()
         {
             InitializeComponent();
         }
@@ -20,7 +20,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
 
         private IXboxConsole Xbox { get; } = MainWindow.XboxConsole;
 
-        private void ConsoleManager_Load(object sender, EventArgs e)
+        private void ConsoleInfo_Load(object sender, EventArgs e)
         {
             Text = Language.GetString("CONSOLE_MANAGER");
 
@@ -48,7 +48,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             try
             {
                 LabelIPAddress.Text = Xbox.IPAddress.ToString();
-                LabelCPUKey.Text = Xbox.GetCPUKey();
+                LabelCPUKey.Text = Xbox.GetCPUKey().ToString();
                 LabelKernel.Text = Xbox.GetKernalVersion().ToString();
                 LabelTitleID.Text = Xbox.XamGetCurrentTitleId().ToString();
 

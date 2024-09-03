@@ -5,7 +5,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 
-namespace ArisenStudio.Forms.Tools.XBOX
+namespace ArisenStudio.Forms.Tools.PS3
 {
     partial class TakeScreenshot
     {
@@ -38,11 +38,11 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.ButtonTakeScreenshot = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonDeleteScreenshot = new DevExpress.XtraEditors.SimpleButton();
             this.PanelButtons = new DevExpress.Utils.Layout.StackPanel();
-            this.ButtonNewScreenshot = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonOpenFilePath = new DevExpress.XtraEditors.SimpleButton();
             this.TextBoxFileName = new DevExpress.XtraEditors.TextEdit();
             this.ImageScreenshot = new System.Windows.Forms.PictureBox();
             this.CheckBoxUploadToImgur = new DevExpress.XtraEditors.CheckEdit();
+            this.ButtonNewScreenshot = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.PanelButtons)).BeginInit();
             this.PanelButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxFileName.Properties)).BeginInit();
@@ -65,9 +65,9 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.ButtonTakeScreenshot.Name = "ButtonTakeScreenshot";
             this.ButtonTakeScreenshot.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ButtonTakeScreenshot.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonTakeScreenshot.Size = new System.Drawing.Size(105, 24);
+            this.ButtonTakeScreenshot.Size = new System.Drawing.Size(112, 24);
             this.ButtonTakeScreenshot.TabIndex = 3;
-            this.ButtonTakeScreenshot.Text = "Capture Image";
+            this.ButtonTakeScreenshot.Text = "Take Screenshot";
             this.ButtonTakeScreenshot.Click += new System.EventHandler(this.ButtonTakeScreenshot_Click);
             // 
             // ButtonDeleteScreenshot
@@ -80,14 +80,14 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.ButtonDeleteScreenshot.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.ButtonDeleteScreenshot.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.ButtonDeleteScreenshot.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonDeleteScreenshot.Location = new System.Drawing.Point(111, 0);
+            this.ButtonDeleteScreenshot.Location = new System.Drawing.Point(118, 0);
             this.ButtonDeleteScreenshot.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonDeleteScreenshot.Name = "ButtonDeleteScreenshot";
             this.ButtonDeleteScreenshot.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ButtonDeleteScreenshot.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonDeleteScreenshot.Size = new System.Drawing.Size(96, 24);
+            this.ButtonDeleteScreenshot.Size = new System.Drawing.Size(121, 24);
             this.ButtonDeleteScreenshot.TabIndex = 4;
-            this.ButtonDeleteScreenshot.Text = "Delete Image";
+            this.ButtonDeleteScreenshot.Text = "Delete Screenshot";
             this.ButtonDeleteScreenshot.Click += new System.EventHandler(this.ButtonDeleteScreenshot_Click);
             // 
             // PanelButtons
@@ -103,26 +103,6 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.PanelButtons.Size = new System.Drawing.Size(496, 24);
             this.PanelButtons.TabIndex = 1182;
             // 
-            // ButtonNewScreenshot
-            // 
-            this.ButtonNewScreenshot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ButtonNewScreenshot.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonNewScreenshot.Appearance.Options.UseFont = true;
-            this.ButtonNewScreenshot.AutoSize = true;
-            this.ButtonNewScreenshot.Enabled = false;
-            this.ButtonNewScreenshot.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.ButtonNewScreenshot.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.ButtonNewScreenshot.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonNewScreenshot.Location = new System.Drawing.Point(213, 0);
-            this.ButtonNewScreenshot.MinimumSize = new System.Drawing.Size(0, 24);
-            this.ButtonNewScreenshot.Name = "ButtonNewScreenshot";
-            this.ButtonNewScreenshot.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.ButtonNewScreenshot.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonNewScreenshot.Size = new System.Drawing.Size(87, 24);
-            this.ButtonNewScreenshot.TabIndex = 6;
-            this.ButtonNewScreenshot.Text = "New Image";
-            this.ButtonNewScreenshot.Click += new System.EventHandler(this.ButtonNewScreenshot_Click);
-            // 
             // ButtonOpenFilePath
             // 
             this.ButtonOpenFilePath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -133,7 +113,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.ButtonOpenFilePath.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.ButtonOpenFilePath.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.ButtonOpenFilePath.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonOpenFilePath.Location = new System.Drawing.Point(306, 0);
+            this.ButtonOpenFilePath.Location = new System.Drawing.Point(338, 0);
             this.ButtonOpenFilePath.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonOpenFilePath.Name = "ButtonOpenFilePath";
             this.ButtonOpenFilePath.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
@@ -181,6 +161,26 @@ namespace ArisenStudio.Forms.Tools.XBOX
             this.CheckBoxUploadToImgur.TabIndex = 1;
             this.CheckBoxUploadToImgur.ToolTip = "if set to true, this will block the console from resolving LIVE related dns\r\nif n" +
     "ot set this value will be TRUE";
+            // 
+            // ButtonNewScreenshot
+            // 
+            this.ButtonNewScreenshot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ButtonNewScreenshot.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonNewScreenshot.Appearance.Options.UseFont = true;
+            this.ButtonNewScreenshot.AutoSize = true;
+            this.ButtonNewScreenshot.Enabled = false;
+            this.ButtonNewScreenshot.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonNewScreenshot.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.ButtonNewScreenshot.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.ButtonNewScreenshot.Location = new System.Drawing.Point(245, 0);
+            this.ButtonNewScreenshot.MinimumSize = new System.Drawing.Size(0, 24);
+            this.ButtonNewScreenshot.Name = "ButtonNewScreenshot";
+            this.ButtonNewScreenshot.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.ButtonNewScreenshot.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonNewScreenshot.Size = new System.Drawing.Size(87, 24);
+            this.ButtonNewScreenshot.TabIndex = 7;
+            this.ButtonNewScreenshot.Text = "New Image";
+            this.ButtonNewScreenshot.Click += new System.EventHandler(this.ButtonNewScreenshot_Click);
             // 
             // TakeScreenshot
             // 

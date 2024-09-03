@@ -13,7 +13,7 @@ using System.Resources;
 using System.Text;
 using System.Windows.Forms;
 using XDevkit;
-using JRPC_Client;
+//using JRPC_Client;
 
 namespace ArisenStudio.Forms.Dialogs.Details
 {
@@ -39,11 +39,11 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         private void GamePatchesDialog_Load(object sender, EventArgs e)
         {
-            if (!JRPC.Connect(MainWindow.XboxConsole, out _))
-            {
-                XtraMessageBox.Show(this, "You must have JRPC2 module set as a plugin on your console.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Close();
-            }
+            //if (!JRPC.Connect(MainWindow.XboxConsole, out _))
+            //{
+            //    XtraMessageBox.Show(this, "You must have JRPC2 module set as a plugin on your console.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    Close();
+            //}
 
             DataTablePatch.Rows.Clear();
 
@@ -53,7 +53,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
             foreach (Patch patch in GamePatchItem.Patch)
             {
-                DataTablePatch.Rows.Add(patch.Name, patch.Author);
+                _ = DataTablePatch.Rows.Add(patch.Name, patch.Author);
             }
 
             GridControlCheats.DataSource = DataTablePatch;
@@ -92,7 +92,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             {
                 if (SelectedPatchItem == null)
                 {
-                    XtraMessageBox.Show(this, "SelectedPatchItem is null", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _ = XtraMessageBox.Show(this, "SelectedPatchItem is null", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -141,13 +141,13 @@ namespace ArisenStudio.Forms.Dialogs.Details
                         }
                     }
 
-                    XtraMessageBox.Show(this, Language.GetString("CHEAT_APPLIED"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _ = XtraMessageBox.Show(this, Language.GetString("CHEAT_APPLIED"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
                 Program.Log.Error("Unable to apply cheat for Xbox 360. Error: " + ex.Message, ex);
-                XtraMessageBox.Show(this, string.Format(Language.GetString("CHEAT_NOT_APPLIED"), ex.Message), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                _ = XtraMessageBox.Show(this, string.Format(Language.GetString("CHEAT_NOT_APPLIED"), ex.Message), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             //if (!IsEnabled(SelectedPatchItem))
@@ -166,7 +166,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
                 .Append("You will now be redirected to our GitHub Issues page for ArisenStudio. All details will be automatically filled for you. Please provide information about the issue to help us fix your problem.\n")
                 .AppendLine("Click the 'Submit' button to open a new issue which can help us fix any problems.");
 
-            XtraMessageBox.Show(message.ToString(), "Opening GitHub Issues", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            _ = XtraMessageBox.Show(message.ToString(), "Opening GitHub Issues", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //GitHubTemplates.OpenReportTemplateGameCheat(GameCheatItem, SelectedCheatItem, SelectedCheatItem.Offsets[GridViewCheats.FocusedRowHandle]);
         }
 

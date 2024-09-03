@@ -64,7 +64,7 @@ namespace ArisenStudio.Models.Database
             {
                 foreach (Cheats item in list.Cheats)
                 {
-                    set.Add(item.Name);
+                    _ = set.Add(item.Name);
                 }
             }
             return set.Count;

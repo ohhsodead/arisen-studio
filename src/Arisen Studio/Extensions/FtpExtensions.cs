@@ -38,7 +38,7 @@ namespace ArisenStudio.Extensions
 
             if (!DirectoryExists(consolePath))
             {
-                CreateDirectory(consolePath);
+                _ = CreateDirectory(consolePath);
             }
 
             //if (!ftpConnection.DirectoryExists(path))
@@ -160,7 +160,7 @@ namespace ArisenStudio.Extensions
         public static void DownloadDirectory(string consolePath, string localPath)
         {
             FtpClient ftpClient = MainWindow.FtpClient;
-            ftpClient.DownloadDirectory(localPath, consolePath, FtpFolderSyncMode.Update, FtpLocalExists.Overwrite);
+            _ = ftpClient.DownloadDirectory(localPath, consolePath, FtpFolderSyncMode.Update, FtpLocalExists.Overwrite);
         }
 
         /// <summary>
@@ -240,7 +240,7 @@ namespace ArisenStudio.Extensions
 
             if (userId.IsNullOrWhiteSpace())
             {
-                XtraMessageBox.Show(owner, "The comment file does not exist on your console. You can create one by editing the profile comment on your console.", "No Comment File", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                _ = XtraMessageBox.Show(owner, "The comment file does not exist on your console. You can create one by editing the profile comment on your console.", "No Comment File", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -248,12 +248,12 @@ namespace ArisenStudio.Extensions
 
             if (!ftpClient.FileExists(commentFilePath))
             {
-                XtraMessageBox.Show(owner, "The comment file does not exist on your console. You can create one by editing the profile comment on your console.", "No Comment File", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                _ = XtraMessageBox.Show(owner, "The comment file does not exist on your console. You can create one by editing the profile comment on your console.", "No Comment File", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
             MemoryStream memoryStream = new();
-            ftpClient.DownloadStream(memoryStream, commentFilePath);
+            _ = ftpClient.DownloadStream(memoryStream, commentFilePath);
 
             using StreamReader streamReader = new(memoryStream);
 
@@ -292,7 +292,7 @@ namespace ArisenStudio.Extensions
             switch (newProfileComment)
             {
                 case null:
-                    XtraMessageBox.Show(owner, "Profile comment file must be equal to or less than 64 bytes.", MainWindow.ResourceLanguage.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    _ = XtraMessageBox.Show(owner, "Profile comment file must be equal to or less than 64 bytes.", MainWindow.ResourceLanguage.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
             }
 
@@ -309,13 +309,13 @@ namespace ArisenStudio.Extensions
 
             if (commentBytes.Length > 64)
             {
-                XtraMessageBox.Show(owner, "Profile comment file must be equal or less than 64 bytes.", "Maximum Bytes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                _ = XtraMessageBox.Show(owner, "Profile comment file must be equal or less than 64 bytes.", "Maximum Bytes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 MainWindow.Window.SetStatus("Profile comment file must be equal or less than 64 bytes.");
                 return;
             }
 
             //UploadFile(newProfileComment, commentFilePath);
-            ftpClient.UploadBytes(commentBytes, commentFilePath);
+            _ = ftpClient.UploadBytes(commentBytes, commentFilePath);
             MainWindow.Window.SetStatus("Successfully edited profile comment.");
         }
 
@@ -419,7 +419,7 @@ namespace ArisenStudio.Extensions
                     }
             }
 
-            XtraMessageBox.Show(owner,
+            _ = XtraMessageBox.Show(owner,
                 "Could not find any users. Make sure there is at least one user profile on the console.",
                 "No Users Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return null;
@@ -464,7 +464,7 @@ namespace ArisenStudio.Extensions
                 }
             }
 
-            XtraMessageBox.Show(MainWindow.Window, "There is no USB device connected to the console.", MainWindow.ResourceLanguage.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            _ = XtraMessageBox.Show(MainWindow.Window, "There is no USB device connected to the console.", MainWindow.ResourceLanguage.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             return null;
         }
 

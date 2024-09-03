@@ -78,21 +78,21 @@ namespace ArisenStudio.Forms.Tools.PS3
                 if (!FtpClient.FileExists(ConsoleBootPluginsFilePath))
                 {
                     Program.Log.Error("Unable to load the boot_plugins.txt file. It doesn't exist on the console.");
-                    XtraMessageBox.Show(this, $"Unable to find the boot_plugins.txt file on your console.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _ = XtraMessageBox.Show(this, $"Unable to find the boot_plugins.txt file on your console.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Close();
                 }
 
-                Directory.CreateDirectory(LocalBootPluginsFileBackupDirectory);
-                Directory.CreateDirectory(LocalBootPluginsFileDirectory);
+                _ = Directory.CreateDirectory(LocalBootPluginsFileBackupDirectory);
+                _ = Directory.CreateDirectory(LocalBootPluginsFileDirectory);
 
-                FtpClient.DownloadFile(LocalBootPluginsFileBackupDirectory, ConsoleBootPluginsFilePath);
-                FtpClient.DownloadFile(LocalBootPluginsFileDirectory, ConsoleBootPluginsFilePath);
+                _ = FtpClient.DownloadFile(LocalBootPluginsFileBackupDirectory, ConsoleBootPluginsFilePath);
+                _ = FtpClient.DownloadFile(LocalBootPluginsFileDirectory, ConsoleBootPluginsFilePath);
 
                 GridBootPlugins.DataSource = null;
 
                 foreach (string line in File.ReadLines(LocalBootPluginsFilePath))
                 {
-                    BootPlugins.Rows.Add(line);
+                    _ = BootPlugins.Rows.Add(line);
                 }
 
                 GridBootPlugins.DataSource = BootPlugins;
@@ -102,7 +102,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             catch (Exception ex)
             {
                 Program.Log.Error(ex, $"Unable to load the boot_plugins.txt file. Error: {ex.Message}");
-                XtraMessageBox.Show(this, $"Unable to load the boot_plugins.txt file. Edit the file path in Settings to your correct file location.\n\nError Message: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = XtraMessageBox.Show(this, $"Unable to load the boot_plugins.txt file. Edit the file path in Settings to your correct file location.\n\nError Message: {ex.Message}", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
             }
         }
@@ -122,7 +122,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             if (XtraMessageBox.Show(this, Language.GetString("RESTORE_DEFAULT_FILE"), Language.GetString("CONFIRM"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 File.WriteAllText("boot_plugins.txt", string.Empty);
-                FtpExtensions.UploadFile("boot_plugins.txt", ConsoleBootPluginsFilePath);
+                _ = FtpExtensions.UploadFile("boot_plugins.txt", ConsoleBootPluginsFilePath);
                 LoadBootPluginsData();
             }
         }
@@ -133,13 +133,13 @@ namespace ArisenStudio.Forms.Tools.PS3
             {
                 if (XtraMessageBox.Show(this, Language.GetString("RESTORE_BACKUP_FILE"), Language.GetString("CONFIRM"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    FtpExtensions.UploadFile(LocalBootPluginsBackupFilePath, ConsoleBootPluginsFilePath);
+                    _ = FtpExtensions.UploadFile(LocalBootPluginsBackupFilePath, ConsoleBootPluginsFilePath);
                     LoadBootPluginsData();
                 }
             }
             else
             {
-                XtraMessageBox.Show(this, Language.GetString("CREATE_BACKUP_FILE"), Language.GetString("NO_BACKUP_FILE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                _ = XtraMessageBox.Show(this, Language.GetString("CREATE_BACKUP_FILE"), Language.GetString("NO_BACKUP_FILE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -155,13 +155,13 @@ namespace ArisenStudio.Forms.Tools.PS3
                     }
                 }
 
-                FtpExtensions.UploadFile(LocalBootPluginsFilePath, ConsoleBootPluginsFilePath);
-                XtraMessageBox.Show(this, Language.GetString("BOOT_PLUGINS_FILE_SAVED"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _ = FtpExtensions.UploadFile(LocalBootPluginsFilePath, ConsoleBootPluginsFilePath);
+                _ = XtraMessageBox.Show(this, Language.GetString("BOOT_PLUGINS_FILE_SAVED"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 Program.Log.Error(ex, $"Unable to save or upload the boot_plugins.txt file. Error: {ex.Message}");
-                XtraMessageBox.Show(this, string.Format(Language.GetString("FILE_SAVE_ERROR"), ex.Message), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = XtraMessageBox.Show(this, string.Format(Language.GetString("FILE_SAVE_ERROR"), ex.Message), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -47,7 +47,7 @@ namespace ArisenStudio.Extensions
                 Owner = owner
             };
 
-            detailsDialog.ShowDialog();
+            _ = detailsDialog.ShowDialog();
 
             // Get rid of the overlay form  
             overlayForm.Dispose();
@@ -117,7 +117,7 @@ namespace ArisenStudio.Extensions
 
             overlayForm.Show(owner);
 
-            detailsDialog.ShowDialog();
+            _ = detailsDialog.ShowDialog();
 
             overlayForm.Dispose();
         }
@@ -157,7 +157,7 @@ namespace ArisenStudio.Extensions
 
             overlayForm.Show(owner);
 
-            detailsDialog.ShowDialog();
+            _ = detailsDialog.ShowDialog();
 
             overlayForm.Dispose();
         }
@@ -183,7 +183,7 @@ namespace ArisenStudio.Extensions
 
             overlayForm.Show(owner);
 
-            detailsDialog.ShowDialog();
+            _ = detailsDialog.ShowDialog();
 
             overlayForm.Dispose();
         }
@@ -207,7 +207,7 @@ namespace ArisenStudio.Extensions
             overlayForm.Show(owner);
 
             detailsDialog.Owner = owner;
-            detailsDialog.ShowDialog();
+            _ = detailsDialog.ShowDialog();
 
             overlayForm.Dispose();
         }
@@ -231,7 +231,7 @@ namespace ArisenStudio.Extensions
             overlayForm.Show(owner);
 
             cheatsDialog.Owner = owner;
-            cheatsDialog.ShowDialog();
+            _ = cheatsDialog.ShowDialog();
 
             overlayForm.Dispose();
         }
@@ -255,7 +255,7 @@ namespace ArisenStudio.Extensions
             overlayForm.Show(owner);
 
             patchesDialog.Owner = owner;
-            patchesDialog.ShowDialog();
+            _ = patchesDialog.ShowDialog();
             
             overlayForm.Dispose();
         }
@@ -279,7 +279,7 @@ namespace ArisenStudio.Extensions
             overlayForm.Show(owner);
 
             gameTrainersDialog.Owner = owner;
-            gameTrainersDialog.ShowDialog();
+            _ = gameTrainersDialog.ShowDialog();
 
             overlayForm.Dispose();
         }
@@ -299,7 +299,7 @@ namespace ArisenStudio.Extensions
             dataViewDialog.MaximumSize = new Size(dataViewDialog.MaximumSize.Width, owner.Height + 100);
             dataViewDialog.Size = new Size(dataViewDialog.Width, dataViewDialog.Height + 15);
             dataViewDialog.Owner = owner;
-            dataViewDialog.ShowDialog(owner);
+            _ = dataViewDialog.ShowDialog(owner);
         }
 
         public static ListItem ShowListViewDialog(Form owner, string title, List<ListItem> items)
@@ -313,12 +313,12 @@ namespace ArisenStudio.Extensions
 
             MethodInvoker dialog = new(() =>
             {
-                listViewDialog.ShowDialog();
+                _ = listViewDialog.ShowDialog();
             });
 
             if (owner.InvokeRequired)
             {
-                owner.Invoke(dialog);
+                _ = owner.Invoke(dialog);
             }
             else
             {
@@ -446,7 +446,7 @@ namespace ArisenStudio.Extensions
             };
 
             transferDialog.Owner = owner;
-            transferDialog.ShowDialog();
+            _ = transferDialog.ShowDialog();
         }
 
         /// <summary>
@@ -470,7 +470,7 @@ namespace ArisenStudio.Extensions
             };
 
             transferDialog.Owner = owner;
-            transferDialog.ShowDialog();
+            _ = transferDialog.ShowDialog();
         }
 
         /// <summary>
@@ -492,7 +492,7 @@ namespace ArisenStudio.Extensions
             };
 
             transferDialog.Owner = owner;
-            transferDialog.ShowDialog();
+            _ = transferDialog.ShowDialog();
         }
 
         /// <summary>
@@ -510,7 +510,7 @@ namespace ArisenStudio.Extensions
             };
 
             transferDialog.Owner = owner;
-            transferDialog.ShowDialog();
+            _ = transferDialog.ShowDialog();
         }
 
         /// <summary>
@@ -531,7 +531,7 @@ namespace ArisenStudio.Extensions
             };
 
             transferDialog.Owner = owner;
-            transferDialog.ShowDialog();
+            _ = transferDialog.ShowDialog();
         }
 
         public static void ShowTransferGameSavesDialog(Form owner, TransferType transferType, Category category, GameSaveItemData gameSaveItem, DownloadFiles downloadFiles = null)
@@ -545,7 +545,7 @@ namespace ArisenStudio.Extensions
             };
 
             transferDialog.Owner = owner;
-            transferDialog.ShowDialog();
+            _ = transferDialog.ShowDialog();
         }
 
         public static DialogResult ShowCustomMessageBox(Form owner, string caption, string text, DialogResult[] results, Icon icon, string cancelButton = "Cancel", string abortButton = "Abort", string okButton = "OK", string yesButton = "Yes", string noButton = "No", string retryButton = "Retry")
@@ -619,7 +619,7 @@ namespace ArisenStudio.Extensions
         public static void ShowEditConnectionsDialog(Form owner, bool isEditing)
         {
             using ConnectionsDialog connectConsole = new() { IsEditing = isEditing };
-            connectConsole.ShowDialog(owner);
+            _ = connectConsole.ShowDialog(owner);
         }
 
         public static ConsoleProfile ShowNewConnectionWindow(Form owner, ConsoleProfile consoleProfile, bool isEditing, bool createDefaultIfNull = false)
@@ -665,7 +665,7 @@ namespace ArisenStudio.Extensions
         public static void ShowNewCustomModsDialog(Form owner, CustomItemData customItem = null, bool isEditing = false)
         {
             using NewCustomDialog customDialog = new() { IsEditing = isEditing, CustomMod = customItem };
-            customDialog.ShowDialog(owner);
+            _ = customDialog.ShowDialog(owner);
         }
 
         public static string ShowFolderBrowseDialog(Form owner, string description)
@@ -697,7 +697,7 @@ namespace ArisenStudio.Extensions
         public static void ShowPackagesFaqDialog(Form owner)
         {
             using PackagesFaqDialog packagesFaqDialog = new();
-            packagesFaqDialog.ShowDialog(owner);
+            _ = packagesFaqDialog.ShowDialog(owner);
         }
 
         public static void ShowWhatsNewDialog(Form owner, Models.Release_Data.GitHubReleaseData gitHubData)
@@ -719,21 +719,22 @@ namespace ArisenStudio.Extensions
         public static void ShowRequestModsDialog(Form owner)
         {
             using RequestModsDialog requestModsDialog = new();
-            requestModsDialog.ShowDialog(owner);
+            _ = requestModsDialog.ShowDialog(owner);
         }
 
         public static void ShowSetupWizardDialog(Form owner)
         {
             using SetupWizardDialog setupWizardDialog = new();
-            setupWizardDialog.ShowDialog(owner);
+            _ = setupWizardDialog.ShowDialog(owner);
         }
 
         #region PS3 Tools
 
         public static void ShowGameBackupFileManager(Form owner)
         {
+            Program.Log.Info("Opening Backup Files (PS3) dialog...");
             using BackupFilesManager backupFiles = new();
-            backupFiles.ShowDialog(owner);
+            _ = backupFiles.ShowDialog(owner);
         }
 
         public static BackupFile ShowBackupFileDetails(Form owner, BackupFile backupFile)
@@ -744,32 +745,44 @@ namespace ArisenStudio.Extensions
 
         public static void ShowPs3ConsoleManager(Form owner)
         {
+            Program.Log.Info("Opening Console Manager (PS3) dialog...");
             using Forms.Tools.PS3.ConsoleManager consoleManager = new();
-            consoleManager.ShowDialog(owner);
+            _ = consoleManager.ShowDialog(owner);
         }
 
         public static void ShowGameUpdatesFinder(Form owner)
         {
+            Program.Log.Info("Opening Game Updates Finder (PS3) dialog...");
             using GameUpdatesFinder gameUpdatesFinder = new();
-            gameUpdatesFinder.ShowDialog(owner);
+            _ = gameUpdatesFinder.ShowDialog(owner);
         }
 
         public static void ShowPackageManager(Form owner)
         {
+            Program.Log.Info("Opening Package Manager (PS3) dialog...");
             using PackageFilesManager packageManager = new();
-            packageManager.ShowDialog(owner);
+            _ = packageManager.ShowDialog(owner);
         }
 
         public static void ShowBootPluginsEditor(Form owner)
         {
+            Program.Log.Info("Opening Boot Plugins Editor (PS3) dialog...");
             using BootPluginsEditor bootPluginsEditor = new();
-            bootPluginsEditor.ShowDialog(owner);
+            _ = bootPluginsEditor.ShowDialog(owner);
+        }
+
+        public static void ShowPs3TakeScreenshot(Form owner)
+        {
+            Program.Log.Info("Opening Screenshot Tool (PS3) dialog...");
+            using Forms.Tools.PS3.TakeScreenshot takeScreenshot = new();
+            _ = takeScreenshot.ShowDialog(owner);
         }
 
         public static void ShowGameCheats(Form owner)
         {
+            Program.Log.Info("Opening Game Cheats (PS3) dialog...");
             using GameCheatsDialog gameCheatsDialog = new();
-            gameCheatsDialog.ShowDialog(owner);
+            _ = gameCheatsDialog.ShowDialog(owner);
         }
 
         #endregion
@@ -778,50 +791,58 @@ namespace ArisenStudio.Extensions
 
         public static void ShowXboxGameSaveResigner(Form owner)
         {
+            Program.Log.Info("Opening Game Save Resigner (XBOX) dialog...");
             using GameSaveResigner gameSaveResigner = new();
-            gameSaveResigner.ShowDialog(owner);
+            _ = gameSaveResigner.ShowDialog(owner);
         }
 
         public static void ShowXboxGameLauncher(Form owner)
         {
+            Program.Log.Info("Opening Game Launcher (XBOX) dialog...");
             using Forms.Tools.XBOX.GameLauncher gameLauncher = new();
-            gameLauncher.ShowDialog(owner);
+            _ = gameLauncher.ShowDialog(owner);
         }
 
         public static void ShowXboxModuleLoader(Form owner)
         {
+            Program.Log.Info("Opening Module Loader (XBOX) dialog...");
             using ModuleLoader moduleLoader = new();
-            moduleLoader.ShowDialog(owner);
+            _ = moduleLoader.ShowDialog(owner);
         }
 
         public static void ShowXboxXuidGameSpoofer(Form owner)
         {
+            Program.Log.Info("Opening XUID Game Spoofer (XBOX) dialog...");
             using XuidGameSpoofer xuidGameSpoofer = new();
-            xuidGameSpoofer.ShowDialog(owner);
+            _ = xuidGameSpoofer.ShowDialog(owner);
         }
 
-        public static void ShowTakeScreenshot(Form owner)
+        public static void ShowXboxTakeScreenshot(Form owner)
         {
-            using TakeScreenshot takeScreenshot = new();
-            takeScreenshot.ShowDialog(owner);
+            Program.Log.Info("Opening Screenshot Tool (XBOX) dialog...");
+            using Forms.Tools.XBOX.TakeScreenshot takeScreenshot = new();
+            _ = takeScreenshot.ShowDialog(owner);
         }
 
         public static void ShowXboxConsoleManager(Form owner)
         {
-            using Forms.Tools.XBOX.ConsoleManager consoleManager = new();
-            consoleManager.ShowDialog(owner);
+            Program.Log.Info("Opening Console Manager (XBOX) dialog...");
+            using ConsoleInfo consoleManager = new();
+            _ = consoleManager.ShowDialog(owner);
         }
 
         public static void ShowXboxDashlaunchEditor(Form owner)
         {
+            Program.Log.Info("Opening Dashlaunch Editor (XBOX) dialog...");
             using DashlaunchEditor pluginsEditor = new();
-            pluginsEditor.ShowDialog(owner);
+            _ = pluginsEditor.ShowDialog(owner);
         }
 
         public static void ShowXboxHDKey(Form owner)
         {
+            Program.Log.Info("Opening Xbox HD Key (XBOX) dialog...");
             using XboxHDKey xboxHDKey = new();
-            xboxHDKey.ShowDialog(owner);
+            _ = xboxHDKey.ShowDialog(owner);
         }
 
         #endregion
@@ -831,9 +852,16 @@ namespace ArisenStudio.Extensions
         public static void ShowGameRegionsDialog(Form owner)
         {
             using GameRegions gameRegionsDialog = new();
-            gameRegionsDialog.ShowDialog(owner);
+            _ = gameRegionsDialog.ShowDialog(owner);
         }
 
         #endregion
+
+        public static void ShowEasterEgg(Form owner)
+        {
+            Program.Log.Info("User found the easter egg!!!");
+            using EasterEgg easterEgg = new();
+            _ = easterEgg.ShowDialog(owner);
+        }
     }
 }

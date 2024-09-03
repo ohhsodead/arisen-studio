@@ -124,7 +124,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         private void LabelDescription_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
         {
-            Process.Start(e.Link);
+            _ = Process.Start(e.Link);
         }
 
         private void ButtonDownload_Click(object sender, EventArgs e)
@@ -141,7 +141,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
         {
             if (IsFavorite)
             {
-                MainWindow.Settings.FavoriteGameSaves.RemoveAll(x => x.CategoryType == CategoryType && x.CategoryId == GameSaveItem.CategoryId && x.ModId == GameSaveItem.Id && x.Platform == GameSaveItem.GetPlatform());
+                _ = MainWindow.Settings.FavoriteGameSaves.RemoveAll(x => x.CategoryType == CategoryType && x.CategoryId == GameSaveItem.CategoryId && x.ModId == GameSaveItem.Id && x.Platform == GameSaveItem.GetPlatform());
                 ButtonFavorite.Text = Language.GetString("LABEL_ADD_TO_FAVORITES");
                 IsFavorite = false;
             }
@@ -155,7 +155,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         private void ButtonReportIssue_Click(object sender, EventArgs e)
         {
-            XtraMessageBox.Show(Language.GetString("REDIRECT_TO_GITHUB_ISSUES"), Language.GetString("REDIRECTING"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            _ = XtraMessageBox.Show(Language.GetString("REDIRECT_TO_GITHUB_ISSUES"), Language.GetString("REDIRECTING"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             GitHubTemplates.OpenReportTemplateGameSave(Categories.GetCategoryById(GameSaveItem.CategoryId), GameSaveItem);
         }
 

@@ -18,6 +18,11 @@
         internal const string ProjectRequestForm = "https://arisen.studio/submit";
 
         /// <summary>
+        /// Direct link to the request mods form on the project website.
+        /// </summary>
+        internal const string ProjectReportIssue = "https://arisen.studio/report";
+
+        /// <summary>
         /// Direct link to the project's Discord Server.
         /// </summary>
         internal const string DiscordServer = "https://discord.gg/FTCS3Xu";
@@ -58,6 +63,11 @@
         internal const string StatsData = "https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/stats/stats.json";
 
         /// <summary>
+        /// Direct link to the list of Categories database file.
+        /// </summary>
+        internal const string CategoriesData = "https://db.arisen.studio/data/categories.json";
+
+        /// <summary>
         /// Direct link to the current list of Favorite Games database file.
         /// </summary>
         internal const string FavoriteGamesData = "https://db.arisen.studio/data/favorite-games.json";
@@ -66,11 +76,6 @@
         /// Direct link to the current list of Favorite Mods database file.
         /// </summary>
         internal const string FavoriteModsData = "https://db.arisen.studio/data/favorite-mods.json";
-
-        /// <summary>
-        /// Direct link to the list of Categories database file.
-        /// </summary>
-        internal const string CategoriesData = "https://db.arisen.studio/data/categories.json";
 
         /// <summary>
         /// Direct link to the Game Saves database file for PS3 and Xbox 360.

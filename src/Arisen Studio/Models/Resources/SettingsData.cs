@@ -1,18 +1,18 @@
 ﻿using ArisenStudio.Database;
 using ArisenStudio.Extensions;
-using ArisenStudio.Forms.Windows;
 using ArisenStudio.Models.Database;
 using Humanizer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using static DevExpress.Utils.Drawing.Helpers.NativeMethods;
 
 namespace ArisenStudio.Models.Resources
 {
     public class SettingsData
     {
+        public bool DeleteOldSettingsAfterUpdate { get; set; } = false;
+
         public FormWindowState WindowState { get; set; } = FormWindowState.Normal;
 
         public List<ConsoleProfile> ConsoleProfiles { get; set; } = [];
@@ -136,7 +136,7 @@ namespace ArisenStudio.Models.Resources
         {
             if (FavoriteMods.Contains(favoriteItem))
             {
-                FavoriteMods.RemoveAll(x => x == favoriteItem);
+                _ = FavoriteMods.RemoveAll(x => x == favoriteItem);
             }
             else
             {
@@ -155,7 +155,7 @@ namespace ArisenStudio.Models.Resources
         {
             if (FavoriteGameSaves.Contains(favoriteItem))
             {
-                FavoriteGameSaves.RemoveAll(x => x == favoriteItem);
+                _ = FavoriteGameSaves.RemoveAll(x => x == favoriteItem);
             }
             else
             {
@@ -248,7 +248,7 @@ namespace ArisenStudio.Models.Resources
         /// <param name="isCustom"> </param>
         public void RemoveInstalledMods(ConsoleProfile consoleProfile, string categoryId, int modId, bool isCustom)
         {
-            consoleProfile.InstalledMods.RemoveAll(x => x.CategoryId.EqualsIgnoreCase(categoryId) && x.ModId.Equals(modId) && x.IsCustom == isCustom);
+            _ = consoleProfile.InstalledMods.RemoveAll(x => x.CategoryId.EqualsIgnoreCase(categoryId) && x.ModId.Equals(modId) && x.IsCustom == isCustom);
         }
 
         /// <summary>
@@ -329,7 +329,7 @@ namespace ArisenStudio.Models.Resources
         /// <param name="modId"> </param>
         public void RemoveInstalledPackage(PackageItemData package)
         {
-            InstalledPackages.RemoveAll(x => x.Category.Equals(package.Category) && x.Url.Equals(package.Url));
+            _ = InstalledPackages.RemoveAll(x => x.Category.Equals(package.Category) && x.Url.Equals(package.Url));
         }
 
         /// <summary>

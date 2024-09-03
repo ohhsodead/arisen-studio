@@ -78,7 +78,7 @@ namespace ArisenStudio.Extensions
         /// <param name="filePath"> </param>
         public static void DownloadFile(string url, string filePath)
         {
-            Directory.CreateDirectory(Path.GetDirectoryName(filePath));
+            _ = Directory.CreateDirectory(Path.GetDirectoryName(filePath));
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.Tls13;
             ServicePointManager.ServerCertificateValidationCallback = (_, _, _, _) => true;
 

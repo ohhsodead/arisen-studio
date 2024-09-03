@@ -15,13 +15,13 @@ namespace ArisenStudio.Extensions
             string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string directoryPath = Path.Combine(appDataPath, "Arisen Studio", "Cache");
 
-            Directory.CreateDirectory(directoryPath);
+            _ = Directory.CreateDirectory(directoryPath);
 
             // Ensure the directory exists
             var directory = Path.GetDirectoryName(directoryPath);
             if (!Directory.Exists(directory))
             {
-                Directory.CreateDirectory(directory);
+                _ = Directory.CreateDirectory(directory);
             }
 
             _cacheFilePath = Path.Combine(directoryPath, cacheFileName);

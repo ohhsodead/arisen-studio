@@ -40,15 +40,15 @@ namespace ArisenStudio.Forms.Tools.XBOX
 
                 if (result == IMPORT_RESULT.ERROR_FILE_ACCESS)
                 {
-                    XtraMessageBox.Show(this, "Failed to access or read keyvault file.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _ = XtraMessageBox.Show(this, "Failed to access or read keyvault file.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (result == IMPORT_RESULT.ERROR_FILE_SIZE)
                 {
-                    XtraMessageBox.Show(this, "Selected file is not a valid keyvault file.\n\nInvalid size", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _ = XtraMessageBox.Show(this, "Selected file is not a valid keyvault file.\n\nInvalid size", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (result == IMPORT_RESULT.ERROR_BAD_REGION)
                 {
-                    XtraMessageBox.Show(this, "Selected file is not a valid keyvault file.\n\nInvalid region. Supplied keyvault file must be decrypted", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _ = XtraMessageBox.Show(this, "Selected file is not a valid keyvault file.\n\nInvalid region. Supplied keyvault file must be decrypted", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -74,11 +74,11 @@ namespace ArisenStudio.Forms.Tools.XBOX
                         StringBuilder output = new();
                         if (save_serials)
                         {
-                            output.AppendLine($"Console serial: {TextBoxConsoleSerial.Text}");
-                            output.AppendLine($"Motherboard serial: {TextBoxMotherboardSerial.Text.ToUpperInvariant()}");
-                            output.AppendLine();
+                            _ = output.AppendLine($"Console serial: {TextBoxConsoleSerial.Text}");
+                            _ = output.AppendLine($"Motherboard serial: {TextBoxMotherboardSerial.Text.ToUpperInvariant()}");
+                            _ = output.AppendLine();
                         }
-                        output.Append($"XboxHDKey: {TextBoxXboxHDKey.Text}");
+                        _ = output.Append($"XboxHDKey: {TextBoxXboxHDKey.Text}");
 
                         string fileName = DialogExtensions.ShowSaveFileDialog(this, "Save File", "Text file (*.txt)|*.txt|All files (*.*)|*.*");
 
@@ -92,7 +92,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
                         }
 
                         Program.Log.Info("Successfully created XboxHDKey file.");
-                        XtraMessageBox.Show("Successfully created XboxHDKey file.", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        _ = XtraMessageBox.Show("Successfully created XboxHDKey file.", Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -109,13 +109,13 @@ namespace ArisenStudio.Forms.Tools.XBOX
                 else
                 {
                     Program.Log.Error("Invalid console serial value.");
-                    XtraMessageBox.Show(this, "Invalid console serial value.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _ = XtraMessageBox.Show(this, "Invalid console serial value.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
                 Program.Log.Error("Invalid console serial value.");
-                XtraMessageBox.Show(this, "Invalid console serial value.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = XtraMessageBox.Show(this, "Invalid console serial value.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -130,13 +130,13 @@ namespace ArisenStudio.Forms.Tools.XBOX
                 else
                 {
                     Program.Log.Error("Invalid motherboard serial value.");
-                    XtraMessageBox.Show(this, "Invalid motherboard serial value.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _ = XtraMessageBox.Show(this, "Invalid motherboard serial value.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
                 Program.Log.Error("Invalid motherboard serial value.");
-                XtraMessageBox.Show(this, "Invalid motherboard serial value.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = XtraMessageBox.Show(this, "Invalid motherboard serial value.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
