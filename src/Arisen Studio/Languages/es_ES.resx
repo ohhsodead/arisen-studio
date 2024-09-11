@@ -272,7 +272,9 @@ Este archivo no puede desinstalado para evitar que falten archivos del juego, po
     <value>Administrador de la consola</value>
   </data>
   <data name="CONSOLE_NAME_ALREADY_EXISTS" xml:space="preserve">
-    <value>El nombre de consola '{0}' ya existe en tu lista de perfiles. \n\n¿Todavía quieres añadirlo?</value>
+    <value>El nombre de consola '{0}' ya existe en tu lista de perfiles.
+
+¿Todavía quieres añadirlo?</value>
   </data>
   <data name="CONSOLE_PROFILES" xml:space="preserve">
     <value>Perfiles de la consola</value>
@@ -390,9 +392,9 @@ Este archivo no puede desinstalado para evitar que falten archivos del juego, po
     <value>Incapaz de iniciar el archivo de juego. Error: {0}</value>
   </data>
   <data name="ERROR_OCCURRED" xml:space="preserve">
-    <value>Un error ocurrió: {0}
+    <value>Ocurrió un error: {0}
 
-Por favor, inténtalo más tarde. Si el problema persiste &lt;a href="https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&amp;labels=&amp;template=bug_report.md"&gt;abre un nuevo problema&lt;/a&gt; en nuestro seguimiento de GitHub.</value>
+Por favor, inténtalo más tarde. Si el problema persiste, puedes reportarlo en &lt;a href="https://github.com/ohhsodead/arisen-studio/issues/new?labels=bug&amp;template=bug.yml"&gt;abriendo un nuevo problema&lt;/a&gt; en nuestro seguimiento de GitHub.</value>
   </data>
   <data name="EXTRACT_IMAGE" xml:space="preserve">
     <value>Extraer imagen</value>
@@ -720,6 +722,7 @@ PaquetePSN : Ejecuta PaquetePSN y presiona R1. Debería mostrar una lista de los
   </data>
   <data name="INSERT_USB_DEVICE_TO_CONSOLE" xml:space="preserve">
     <value>Uno o más archivos necesitan ser instalados en un dispositivo USB que esté conectado a tu consola.
+
 Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De lo contrario, haz clic en 'No' para ignorar estos archivos.</value>
   </data>
   <data name="INSTALLED" xml:space="preserve">
@@ -777,7 +780,7 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
     <value>Interfaz</value>
   </data>
   <data name="INVALID_INPUT" xml:space="preserve">
-    <value>Entrada Inválida</value>
+    <value>Entrada inválida</value>
   </data>
   <data name="INVALID_TITLE_ID" xml:space="preserve">
     <value>ID inválido o no pudo ser encontrado. ¿Estás seguro de que este es un título ID válido de PS3?</value>
@@ -829,7 +832,7 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
     <value>Categoría</value>
   </data>
   <data name="LABEL_CATEGORY_TYPE" xml:space="preserve">
-    <value>Tipo de Categoría</value>
+    <value>Tipo de categoría</value>
   </data>
   <data name="LABEL_CHANGE" xml:space="preserve">
     <value>Cambiar</value>
@@ -838,16 +841,16 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
     <value>Trucos</value>
   </data>
   <data name="LABEL_CHOOSE_FILE" xml:space="preserve">
-    <value>Elegir Archivo</value>
+    <value>Elegir archivo</value>
   </data>
   <data name="LABEL_CLOSE" xml:space="preserve">
     <value>Cerrar</value>
   </data>
   <data name="LABEL_PROFILE_DETAILS" xml:space="preserve">
-    <value>Detalles del Perfil</value>
+    <value>Detalles del perfil</value>
   </data>
   <data name="LABEL_PROFILE_NAME" xml:space="preserve">
-    <value>Nombre de Perfil</value>
+    <value>Nombre de perfil</value>
   </data>
   <data name="LABEL_CONTENT_ID" xml:space="preserve">
     <value>ID del contenido</value>
@@ -922,7 +925,7 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
     <value>Editar</value>
   </data>
   <data name="LABEL_EDIT_PROFILE_DETAILS" xml:space="preserve">
-    <value>Editar los Detalles de Perfil</value>
+    <value>Editar los detalles del perfil</value>
     <comment>Displays in the title of the dialog popup.</comment>
   </data>
   <data name="LABEL_EDIT_NAME" xml:space="preserve">
@@ -1028,7 +1031,7 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
     <value>Cargar módulo</value>
   </data>
   <data name="LABEL_LOCAL_FILE" xml:space="preserve">
-    <value>Código de Módulo</value>
+    <value>Archivo local</value>
   </data>
   <data name="LABEL_LOGIN" xml:space="preserve">
     <value>Iniciar sesión</value>
@@ -1049,7 +1052,7 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
     <value>Módulos</value>
   </data>
   <data name="LABEL_MOD_DETAILS" xml:space="preserve">
-    <value>Detalles del Mod</value>
+    <value>Detalles del mod</value>
   </data>
   <data name="LABEL_MOD_TYPE" xml:space="preserve">
     <value>Tipo de mod</value>
@@ -1058,7 +1061,7 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
     <value>Nombre</value>
   </data>
   <data name="LABEL_NEW_PROFILE_DETAILS" xml:space="preserve">
-    <value>Añadir Detalles del Perfil</value>
+    <value>Nuevos detalles del perfil</value>
     <comment>Displays in the title of the dialog popup.</comment>
   </data>
   <data name="LABEL_NEW_FOLDER" xml:space="preserve">
@@ -1139,7 +1142,7 @@ Puedes añadirlos usando el administrador de archivos.</value>
     <value>Restaurar copia de seguridad</value>
   </data>
   <data name="LABEL_RESTORE_DEFAULT" xml:space="preserve">
-    <value>Restaurar valores predeterminados</value>
+    <value>Restaurar a predeterminado</value>
   </data>
   <data name="LABEL_RESTORE_FILE" xml:space="preserve">
     <value>Restaurar archivo</value>
@@ -1232,7 +1235,7 @@ Puedes añadirlos usando el administrador de archivos.</value>
     <value>Nombre de usuario</value>
   </data>
   <data name="LABEL_USE_DEFAULT" xml:space="preserve">
-    <value>Usar por defecto</value>
+    <value>Usar predeterminado</value>
   </data>
   <data name="LABEL_VERSION" xml:space="preserve">
     <value>Versión</value>
@@ -1268,13 +1271,13 @@ Puedes añadirlos usando el administrador de archivos.</value>
     <value>FALTA</value>
   </data>
   <data name="MISSING_PROFILE_NAME" xml:space="preserve">
-    <value>Debe introducir un nombre de perfil.</value>
+    <value>Debes introducir un nombre de perfil.</value>
   </data>
   <data name="MISSING_IP_ADDRESS" xml:space="preserve">
-    <value>Debe introducir una dirección IP.</value>
+    <value>Debes introducir una dirección IP.</value>
   </data>
   <data name="MISSING_IP_OR_NAME" xml:space="preserve">
-    <value>Debe introducir una dirección IP o nombre de la consola.</value>
+    <value>Debes introducir una dirección IP o nombre de la consola.</value>
   </data>
   <data name="MODDING_TOOLS" xml:space="preserve">
     <value>Herramientas de modding</value>
@@ -1481,10 +1484,10 @@ Instala los mods correctos para este juego o elige una región de juego diferent
     <value>Opciones</value>
   </data>
   <data name="OUR_FAVORITE_APPS" xml:space="preserve">
-    <value>Nuestras Aplicaciones Favoritas</value>
+    <value>Nuestras aplicaciones favoritas</value>
   </data>
   <data name="OUR_FAVORITE_CATEGORIES" xml:space="preserve">
-    <value>Nuestras Categorías Favoritas</value>
+    <value>Nuestras categorías favoritas</value>
   </data>
   <data name="OUR_FAVORITE_GAMES" xml:space="preserve">
     <value>Nuestros juegos favoritos</value>
@@ -1532,7 +1535,7 @@ Instala los mods correctos para este juego o elige una región de juego diferent
     <value>Editar perfil</value>
   </data>
   <data name="PROFILE_NAME_EXISTS" xml:space="preserve">
-    <value>Un perfil con ese nombre ya existe. Elija otro nombre o edite el perfil existente.</value>
+    <value>Un perfil de consola ya existe con este nombre. Por favor, elige otro diferente o renombra el existente.</value>
   </data>
   <data name="QUICK_REBOOT" xml:space="preserve">
     <value>Reinicio rápido</value>
@@ -1585,6 +1588,7 @@ Haz clic en el botón 'Enviar' para abrir un nuevo problema que puede ayudarnos 
     <value>Los archivos se han instalado en un dispositivo USB conectado a tu consola. Puedes desinstalarlos ahora o eliminarlos manualmente.
 
 Si deseas desinstalar los archivos ahora, conecta el mismo dispositivo USB en el que instalaste los mods en el mismo puerto de tu consola y haz clic en 'Sí' para continuar.
+
 Si no deseas desinstalar los archivos, haz clic en 'No' y se ignorarán todos estos archivos.</value>
   </data>
   <data name="RESTART" xml:space="preserve">
@@ -1600,7 +1604,7 @@ Si no deseas desinstalar los archivos, haz clic en 'No' y se ignorarán todos es
     <value>¿Realmente quieres restaurar el archivo de copia de seguridad? Todos los cambios se perderán.</value>
   </data>
   <data name="RESTORE_DEFAULT_FILE" xml:space="preserve">
-    <value>¿Realmente quieres restaurar al archivo por defecto? Todos los cambios se perderán.</value>
+    <value>¿Realmente quieres restaurar al archivo predeterminado? Todos los cambios se perderán.</value>
   </data>
   <data name="RICH_PRESENCE" xml:space="preserve">
     <value>Rich Presence</value>
@@ -1627,7 +1631,7 @@ Si no deseas desinstalar los archivos, haz clic en 'No' y se ignorarán todos es
     <value>¡Has terminado la configuración!</value>
   </data>
   <data name="SETUP_WIZARD" xml:space="preserve">
-    <value>Asistente de instalación</value>
+    <value>Configurar Wizard</value>
   </data>
   <data name="SHOW_CURRENT_GAME_PLAYING" xml:space="preserve">
     <value>Mostrar el juego al que se juega actualmente</value>
@@ -1706,7 +1710,7 @@ Si no deseas desinstalar los archivos, haz clic en 'No' y se ignorarán todos es
     <value>Desinstalando</value>
   </data>
   <data name="UNINSTALLING_FILES" xml:space="preserve">
-    <value>Desinstalando Archivos</value>
+    <value>Desinstalando archivos</value>
   </data>
   <data name="UNINSTALLING_MODS" xml:space="preserve">
     <value>Desinstalando mods</value>
@@ -1798,26 +1802,113 @@ Si no deseas desinstalar los archivos, haz clic en 'No' y se ignorarán todos es
     <value>Debes introducir un título ID.</value>
   </data>
   <data name="LABEL_SAVE" xml:space="preserve">
-    <value>Salva</value>
+    <value>Guardar</value>
     <comment>Save Profile</comment>
   </data>
   <data name="LABEL_PASSIVE_MODE" xml:space="preserve">
-    <value>Modo Pasivo</value>
+    <value>Modo pasivo</value>
     <comment>Passive Connection FTP</comment>
   </data>
   <data name="LABEL_DEFAULT_CREDENTIALS" xml:space="preserve">
-    <value>Credenciales por Defecto</value>
+    <value>Credenciales predeterminadas</value>
     <comment>Use Default Connection Details</comment>
   </data>
   <data name="LABEL_DEFAULT_PROFILE" xml:space="preserve">
-    <value>Perfil Predeterminado</value>
+    <value>Perfil predeterminado</value>
     <comment>Set as default profile for startup</comment>
   </data>
   <data name="MUST_HAVE_DEFAULT_CONSOLE" xml:space="preserve">
-    <value>Debe tener al menos un perfil establecido como predeterminado.</value>
+    <value>Debes tener al menos un perfil establecido como tu predeterminado.</value>
   </data>
   <data name="LABEL_INSTALL_IGNORE_REGIONS" xml:space="preserve">
     <value>Forzar la instalación de regiones no soportadas*</value>
     <comment>Mods that aren't supported will still be installed</comment>
+  </data>
+  <data name="INSTALLING_TRAINER" xml:space="preserve">
+    <value>Instalando Trainer</value>
+  </data>
+  <data name="DOWNLOADING_TRAINER" xml:space="preserve">
+    <value>Descargando Trainer</value>
+  </data>
+  <data name="UNINSTALLING_TRAINER" xml:space="preserve">
+    <value>Desinstalando Trainer</value>
+  </data>
+  <data name="AURORA_PATH_DOESNT_EXIST" xml:space="preserve">
+    <value>Tu carpeta de Aurora es inválida o no existe en tu consola. Comprueba Ajustes para asegurarte de que es correcta y prueba a instalar de nuevo.
+
+Ruta de Aurora: {0}</value>
+  </data>
+  <data name="LOCAL_CACHE" xml:space="preserve">
+    <value>Caché local</value>
+  </data>
+  <data name="CLEAR_CACHE" xml:space="preserve">
+    <value>Borrar caché</value>
+  </data>
+  <data name="CLEAR_CACHE_RESTART" xml:space="preserve">
+    <value>Borrar y reiniciar</value>
+  </data>
+  <data name="CLEAR_LOCAL_CACHE_ON_CLOSE" xml:space="preserve">
+    <value>Borrar la caché local al cerrar</value>
+  </data>
+  <data name="ALWAYS_BACKUP_GAME_FILES" xml:space="preserve">
+    <value>Siempre hacer una copia de seguridad de los archivos de juego actuales</value>
+  </data>
+  <data name="LABEL_APP_DATA" xml:space="preserve">
+    <value>Datos de la app</value>
+  </data>
+  <data name="LABEL_TEMP_FOLDER" xml:space="preserve">
+    <value>Carpeta temporal</value>
+  </data>
+  <data name="YES" xml:space="preserve">
+    <value>Sí</value>
+  </data>
+  <data name="NO" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="LABEL_EDIT_LOGIN_CREDENTIALS" xml:space="preserve">
+    <value>Editar las credenciales de inicio de sesión</value>
+  </data>
+  <data name="PROFILE_INFO" xml:space="preserve">
+    <value>Información de perfil</value>
+  </data>
+  <data name="LABEL_DOWNLOAD_LATEST" xml:space="preserve">
+    <value>Descargar el último</value>
+    <comment>Download the mods latest version</comment>
+  </data>
+  <data name="LABEL_INSTALL_LATEST" xml:space="preserve">
+    <value>Instalar el último</value>
+    <comment>Download the mods latest version</comment>
+  </data>
+  <data name="LABEL_HELP_SUPPORT" xml:space="preserve">
+    <value>Ayuda y soporte</value>
+  </data>
+  <data name="CAPTURE_IMAGE" xml:space="preserve">
+    <value>Capturar imagen</value>
+  </data>
+  <data name="NEW_IMAGE" xml:space="preserve">
+    <value>Nueva imagen</value>
+  </data>
+  <data name="DELETE_IMAGE" xml:space="preserve">
+    <value>Eliminar imagen</value>
+  </data>
+  <data name="TOTAL_ADDED_PROFILES" xml:space="preserve">
+    <value>Un total de {0} consolas fueron añadidas a tus perfiles.</value>
+  </data>
+  <data name="EDIT_PROFILE_ERROR" xml:space="preserve">
+    <value>No puedes editar los detalles mientras estás conectado a él.</value>
+  </data>
+  <data name="LABEL_EXCLAMATION" xml:space="preserve">
+    <value>Exclamación</value>
+  </data>
+  <data name="NEIGHBORHOOD_EDITOR" xml:space="preserve">
+    <value>Editor de Neighborhood</value>
+  </data>
+  <data name="LABEL_SERVER_MAINTENANCE" xml:space="preserve">
+    <value>Mantenimiento de servidor</value>
+  </data>
+  <data name="LABEL_SERVER_MAINTENANCE_MESSAGE" xml:space="preserve">
+    <value>Parece que actualmente nuestros servidores están bajo mantenimiento. Por favor, inténtalo de nuevo en un rato.
+
+Si este problema persiste después de 30 minutos, por favor, contacta con nuestro equipo de soporte para reportarlo. ¡Gracias por tu paciencia y comprensión!</value>
   </data>
 </root>
