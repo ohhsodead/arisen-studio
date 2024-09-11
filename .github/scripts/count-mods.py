@@ -36,7 +36,7 @@ if __name__ == "__main__":
         "https://db.arisen.studio/data/ps3/homebrew.json",
         "https://db.arisen.studio/data/ps3/resources.json",
         "https://db.arisen.studio/data/ps4/homebrew.json",
-        "https://db.arisen.studio/data/xbox360/game-mods.json"
+        "https://db.arisen.studio/data/xbox360/game-mods.json",
         "https://db.arisen.studio/data/xbox360/homebrew.json"
     ]
     
