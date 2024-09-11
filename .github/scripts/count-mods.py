@@ -57,7 +57,7 @@ if __name__ == "__main__":
     }
     
     os.makedirs('.github/badges', exist_ok=True)
-    badge_path = '.github/badges/mod-count-badge.json'
+    badge_path = '.github/badges/count-mods-badge.json'
     with open(badge_path, 'w') as f:
         json.dump(badge_data, f)
     
