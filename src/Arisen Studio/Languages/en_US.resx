@@ -1892,4 +1892,24 @@ Aurora Path: {0}</value>
   <data name="DELETE_IMAGE" xml:space="preserve">
     <value>Delete Image</value>
   </data>
+  <data name="TOTAL_ADDED_PROFILES" xml:space="preserve">
+    <value>A total of {0} consoles were added to your profiles.</value>
+  </data>
+  <data name="EDIT_PROFILE_ERROR" xml:space="preserve">
+    <value>You can't edit the details while you're connected to it.</value>
+  </data>
+  <data name="LABEL_EXCLAMATION" xml:space="preserve">
+    <value>Exclamation</value>
+  </data>
+  <data name="NEIGHBORHOOD_EDITOR" xml:space="preserve">
+    <value>Neighborhood Editor</value>
+  </data>
+  <data name="LABEL_SERVER_MAINTENANCE" xml:space="preserve">
+    <value>Server Maintenance</value>
+  </data>
+  <data name="LABEL_SERVER_MAINTENANCE_MESSAGE" xml:space="preserve">
+    <value>It looks like our servers are currently undergoing maintenance. Please try again in a little while.
+
+If this issue persists after 30 minutes, please contact our support team to report the problem. Thank you for your patience and understanding!</value>
+  </data>
 </root>
