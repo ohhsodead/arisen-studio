@@ -2,15 +2,12 @@ import json
 import os
 import requests
 
-# Replace 'ohhsodead' and 'arisen-studio' with the appropriate values
-OWNER = 'ohhsodead'
-REPO = 'arisen-studio'
 TOKEN = os.getenv('GITHUB_TOKEN')
 
 # GitHub API URL for repository releases
-releases_url = f'https://api.github.com/repos/{OWNER}/{REPO}/releases'
-mod_count_url = 'https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/.github/badges/mod-count-badge.json'
-package_count_url = 'https://raw.githubusercontent.com/ohhsodead/arisen-studio-database/main/.github/badges/package-count-badge.json'
+releases_url = f'https://api.github.com/repos/ohhsodead/arisen-studio/releases'
+mod_count_url = 'https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/badges/count-mods-badge.json'
+package_count_url = 'https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/badges/count-pkgs-badge.json'
 
 headers = {
     'Authorization': f'token {TOKEN}'
