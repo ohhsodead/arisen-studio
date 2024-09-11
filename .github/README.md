@@ -113,7 +113,7 @@ If you are already familiar with the Crowdin platform and want to contribute you
 
 ## Requesting Mods
 
-I know that not all mods aren't on our database, but if you [open an issue](https://github.com/ohhsodead/arisen-studio-database/issues/new?&labels=request&template=mod_request.yml&title=%5BRequest%5D%3A+) with the details then we can get them added for you!
+I know that not all mods aren't on our database, but if you [open an issue](https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&labels=mod+request&projects=&template=mod-request.yml&title=%5BMod+Request%5D%3A+) with the details then we can get them added for you!
 
 ## Credits & Libraries
 
