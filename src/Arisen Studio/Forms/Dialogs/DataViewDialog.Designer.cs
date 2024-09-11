@@ -72,6 +72,7 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             // LabelBody
             // 
+            this.LabelBody.AllowHtmlString = true;
             this.LabelBody.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.LabelBody.Appearance.Options.UseFont = true;
             this.LabelBody.Location = new System.Drawing.Point(3, 25);
@@ -80,6 +81,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.LabelBody.Size = new System.Drawing.Size(27, 15);
             this.LabelBody.TabIndex = 1169;
             this.LabelBody.Text = "Body";
+            this.LabelBody.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelBody_HyperlinkClick);
             // 
             // DataViewDialog
             // 

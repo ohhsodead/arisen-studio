@@ -157,7 +157,7 @@ namespace ArisenStudio.Forms.Tools.PS3
 
             try
             {
-                string link = await ImgurUploader.Upload(bitmap, apiClient);
+                string link = await ImgurUploader.Upload(bitmap, Path.GetFileNameWithoutExtension(LocalFilePath), apiClient);
 
                 if (link == "Error")
                 {

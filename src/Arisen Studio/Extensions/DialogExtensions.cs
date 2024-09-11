@@ -53,7 +53,7 @@ namespace ArisenStudio.Extensions
             overlayForm.Dispose();
         }
 
-        public static void ShowItemDetailsDialog(Form owner, CategoriesData categories, ModItemData modItem, AppItemData appItem = null)
+        public static void ShowItemDetailsDialog(Form owner, CategoriesData categories, ModItemData modItem)
         {
             XtraForm detailsDialog = new()
             {
@@ -92,10 +92,8 @@ namespace ArisenStudio.Extensions
                 case Platform.XBOX360:
                     detailsDialog = new HomebrewXboxDialog
                     {
-                        //CategoryType = CategoryType.Homebrew,
                         CategoryType = modItem.GetCategoryType(categories),
                         ModItem = modItem
-
                     };
                     break;
 
@@ -122,7 +120,7 @@ namespace ArisenStudio.Extensions
             overlayForm.Dispose();
         }
 
-        public static void ShowItemDetailsDialog(Form owner, CategoriesData categories, AppItemData appItem)
+        public static void ShowItemAppDetailsDialog(Form owner, AppItemData appItem)
         {
             XtraForm detailsDialog = new()
             {
@@ -256,7 +254,7 @@ namespace ArisenStudio.Extensions
 
             patchesDialog.Owner = owner;
             _ = patchesDialog.ShowDialog();
-            
+
             overlayForm.Dispose();
         }
 
@@ -824,11 +822,11 @@ namespace ArisenStudio.Extensions
             _ = takeScreenshot.ShowDialog(owner);
         }
 
-        public static void ShowXboxConsoleManager(Form owner)
+        public static void ShowXboxNeighborhoodEditor(Form owner)
         {
-            Program.Log.Info("Opening Console Manager (XBOX) dialog...");
-            using ConsoleInfo consoleManager = new();
-            _ = consoleManager.ShowDialog(owner);
+            Program.Log.Info("Opening Neighborhood Editor (XBOX) dialog...");
+            using NeighborhoodEditor neighborhoodEditor = new();
+            _ = neighborhoodEditor.ShowDialog(owner);
         }
 
         public static void ShowXboxDashlaunchEditor(Form owner)

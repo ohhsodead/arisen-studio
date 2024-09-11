@@ -24,7 +24,7 @@ namespace ArisenStudio.Extensions
             {
                 if (MainWindow.Settings.ConsoleProfiles.Exists(x => x.Platform == Platform.XBOX360 && x.Name.Equals(console.Name)))
                 {
-                    if (XtraMessageBox.Show(owner, string.Format(MainWindow.ResourceLanguage.GetString("CONSOLE_NAME_ALREADY_EXISTS"), console.Name), MainWindow.ResourceLanguage.GetString("DUPLICATE_NAME"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    if (XtraMessageBox.Show(owner, string.Format(MainWindow.ResourceLanguage.GetString("CONSOLE_NAME_ALREADY_EXISTS"), console.Name), MainWindow.ResourceLanguage.GetString("DUPLICATE_NAME"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                     {
                         consoles.Add(
                             new()

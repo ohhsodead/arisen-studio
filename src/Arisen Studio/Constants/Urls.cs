@@ -10,22 +10,32 @@
         /// <summary>
         /// Link to help page on the official project website.
         /// </summary>
-        internal const string ProjectHelp = "https://arisen.studio/help";
+        internal const string WebsiteHelp = "https://arisen.studio/help";
 
         /// <summary>
         /// Direct link to the request mods form on the project website.
         /// </summary>
-        internal const string ProjectRequestForm = "https://arisen.studio/submit";
+        internal const string RequestForm = "https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&labels=mod+request&projects=&template=mod-request.yml&title=%5BMod+Request%5D%3A+"; //"https://arisen.studio/submit";
 
         /// <summary>
         /// Direct link to the request mods form on the project website.
         /// </summary>
-        internal const string ProjectReportIssue = "https://arisen.studio/report";
+        internal const string ReportIssue = "https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&labels=bug&projects=&template=bug.yml&title=%5BBug%5D%3A+"; //"https://arisen.studio/report";
 
         /// <summary>
         /// Direct link to the project's Discord Server.
         /// </summary>
         internal const string DiscordServer = "https://discord.gg/FTCS3Xu";
+
+        /// <summary>
+        /// Direct link to the donation page on PayPal.
+        /// </summary>
+        internal const string DonationPayPal = "https://paypal.com/donate/?business=8KX4YQ46ZNNDJ";
+
+        /// <summary>
+        /// Direct link to the test file hosted on @Goldug's server for Arisen.
+        /// </summary>
+        internal const string StatusCheck = "https://db.arisen.studio/app/status.txt";
 
         /// <summary>
         /// Direct link to the update data file hosted @Goldug's server for Arisen.
@@ -46,11 +56,6 @@
         /// Direct link to the project repo hosted on GitHub.
         /// </summary>
         internal const string GitHubRepo = "https://github.com/ohhsodead/arisen-studio/";
-
-        /// <summary>
-        /// Direct link to the database files hosted on GitHub.
-        /// </summary>
-        internal const string GitHubDatabase = "https://github.com/ohhsodead/arisen-studio-database/";
 
         /// <summary>
         /// Direct link to the releases information via GitHub API.

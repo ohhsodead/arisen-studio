@@ -53,8 +53,6 @@ namespace ArisenStudio.Forms.Windows
             DevExpress.Utils.Animation.Transition transition3 = new DevExpress.Utils.Animation.Transition();
             DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
             DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement10 = new DevExpress.XtraEditors.TileItemElement();
@@ -136,8 +134,8 @@ namespace ArisenStudio.Forms.Windows
             DevExpress.XtraEditors.TileItemElement tileItemElement62 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement63 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement64 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView2 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
             DevExpress.XtraEditors.TileItemElement tileItemElement65 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipItem toolTipItem5 = new DevExpress.Utils.ToolTipItem();
@@ -291,7 +289,6 @@ namespace ArisenStudio.Forms.Windows
             this.PageDashboard = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.TableDashboard3 = new DevExpress.Utils.Layout.TablePanel();
             this.PanelStatistics = new DevExpress.XtraEditors.PanelControl();
-            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.FlowPanelStatistics = new System.Windows.Forms.FlowLayoutPanel();
             this.LabelStatsDownloads = new DevExpress.XtraEditors.LabelControl();
             this.LabelStatsHeaderPlayStation3 = new DevExpress.XtraEditors.LabelControl();
@@ -302,8 +299,8 @@ namespace ArisenStudio.Forms.Windows
             this.LabelStatsXbox360 = new DevExpress.XtraEditors.LabelControl();
             this.LabelStatsLastUpdated = new DevExpress.XtraEditors.LabelControl();
             this.LabelHeaderStatistics = new DevExpress.XtraEditors.LabelControl();
-            this.PanelRecentlyUpdated = new DevExpress.XtraEditors.PanelControl();
-            this.BannerAdDashboard = new AdsJumboWinForm.BannerAds();
+            this.PanelAdPlacement = new DevExpress.XtraEditors.PanelControl();
+            this.WebViewAdBanner = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.LabelHeaderRecentlyUpdated = new DevExpress.XtraEditors.LabelControl();
             this.TableDashboard1 = new DevExpress.Utils.Layout.TablePanel();
             this.PanelOurFavoriteGames = new DevExpress.XtraEditors.PanelControl();
@@ -519,7 +516,7 @@ namespace ArisenStudio.Forms.Windows
             this.ButtonToolsXboxPowerSoftReboot = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonToolsXboxPowerHardReboot = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonToolsXboxTakeScreenshot = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonToolsXboxConsoleManager = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonToolsXboxNeighborhoodEditor = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonToolsXboxNotifyMessage = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonDownloadsFolder = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonAdvancedSettings = new DevExpress.XtraBars.BarButtonItem();
@@ -551,6 +548,7 @@ namespace ArisenStudio.Forms.Windows
             this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.barCheckItem2 = new DevExpress.XtraBars.BarCheckItem();
+            this.ButtonToolsPsScreenshot = new DevExpress.XtraBars.BarButtonItem();
             this.RibbonPageHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.RibbonGroupConnection = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.RibbonGroupConnsoleProfiles = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -593,9 +591,6 @@ namespace ArisenStudio.Forms.Windows
             this.LabelSettingsLocalCache = new DevExpress.XtraEditors.LabelControl();
             this.ToggleSettingsClearCacheOnClose = new DevExpress.XtraEditors.ToggleSwitch();
             this.LabelSettingsClearCacheOnClose = new DevExpress.XtraEditors.LabelControl();
-            this.toggleSwitch24 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl163 = new DevExpress.XtraEditors.LabelControl();
-            this.LabelSettingsClearCache = new DevExpress.XtraEditors.LabelControl();
             this.PageGameSaves = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.PanelGameSaves = new System.Windows.Forms.Panel();
             this.GridControlGameSaves = new DevExpress.XtraGrid.GridControl();
@@ -1073,7 +1068,7 @@ namespace ArisenStudio.Forms.Windows
             this.labelControl52 = new DevExpress.XtraEditors.LabelControl();
             this.toggleSwitch1 = new DevExpress.XtraEditors.ToggleSwitch();
             this.labelControl53 = new DevExpress.XtraEditors.LabelControl();
-            this.hyperlinkLabelControl1 = new DevExpress.XtraEditors.HyperlinkLabelControl();
+            this.LabelHelpTranslateCrowdin = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.toggleSwitch2 = new DevExpress.XtraEditors.ToggleSwitch();
             this.labelControl54 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl55 = new DevExpress.XtraEditors.LabelControl();
@@ -1477,7 +1472,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGameModsXboxVersion = new DevExpress.XtraEditors.LabelControl();
             this.LabelGameModsXboxStatus = new DevExpress.XtraEditors.LabelControl();
             this.LabelGameModsXboxCategory = new DevExpress.XtraEditors.LabelControl();
-            this.ButtonToolsPsScreenshot = new DevExpress.XtraBars.BarButtonItem();
+            this.LabelDonatePayPal = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.PageGameModsPS3.SuspendLayout();
             this.PanelGameGameMods.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlGameModsPS3)).BeginInit();
@@ -1516,12 +1511,10 @@ namespace ArisenStudio.Forms.Windows
             this.TableDashboard3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelStatistics)).BeginInit();
             this.PanelStatistics.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
             this.FlowPanelStatistics.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PanelRecentlyUpdated)).BeginInit();
-            this.PanelRecentlyUpdated.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PanelAdPlacement)).BeginInit();
+            this.PanelAdPlacement.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WebViewAdBanner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TableDashboard1)).BeginInit();
             this.TableDashboard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelOurFavoriteGames)).BeginInit();
@@ -1651,7 +1644,6 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsShowCurrentGamePlaying.Properties)).BeginInit();
             this.TabPageCache.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsClearCacheOnClose.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch24.Properties)).BeginInit();
             this.PageGameSaves.SuspendLayout();
             this.PanelGameSaves.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlGameSaves)).BeginInit();
@@ -1882,8 +1874,8 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).BeginInit();
             this.panelControl10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
             this.navigationPage2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -2187,7 +2179,6 @@ namespace ArisenStudio.Forms.Windows
             // PageGameModsPS3
             // 
             this.PageGameModsPS3.Appearance.Options.UseFont = true;
-            this.PageGameModsPS3.Caption = "PageGameModsPS3";
             this.PageGameModsPS3.Controls.Add(this.PanelGameGameMods);
             this.PageGameModsPS3.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.PageGameModsPS3.Name = "PageGameModsPS3";
@@ -2254,7 +2245,6 @@ namespace ArisenStudio.Forms.Windows
             this.GridViewGameModsPS3.RowHeight = 30;
             this.GridViewGameModsPS3.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.GridViewGameModsPS3.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewGameModsPS3_RowClick);
-            this.GridViewGameModsPS3.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.GridViewGameMods_CustomDrawCell);
             this.GridViewGameModsPS3.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridViewGameModsPS3_FocusedRowChanged);
             this.GridViewGameModsPS3.DoubleClick += new System.EventHandler(this.GridViewGameModsPS3_DoubleClick);
             // 
@@ -3808,7 +3798,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelLatestNews.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.PanelLatestNews.Name = "PanelLatestNews";
             this.TableDashboard3.SetRow(this.PanelLatestNews, 0);
-            this.PanelLatestNews.Size = new System.Drawing.Size(425, 401);
+            this.PanelLatestNews.Size = new System.Drawing.Size(536, 401);
             this.PanelLatestNews.TabIndex = 4;
             // 
             // ImageLatestNewsRefresh
@@ -3818,7 +3808,7 @@ namespace ArisenStudio.Forms.Windows
             this.ImageLatestNewsRefresh.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Lime;
             this.ImageLatestNewsRefresh.ItemAppearance.Normal.FillColor = System.Drawing.Color.White;
             this.ImageLatestNewsRefresh.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
-            this.ImageLatestNewsRefresh.Location = new System.Drawing.Point(397, 9);
+            this.ImageLatestNewsRefresh.Location = new System.Drawing.Point(508, 9);
             this.ImageLatestNewsRefresh.Name = "ImageLatestNewsRefresh";
             this.ImageLatestNewsRefresh.Size = new System.Drawing.Size(20, 20);
             this.ImageLatestNewsRefresh.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
@@ -3835,7 +3825,7 @@ namespace ArisenStudio.Forms.Windows
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelNewsItems.Location = new System.Drawing.Point(5, 37);
             this.PanelNewsItems.Name = "PanelNewsItems";
-            this.PanelNewsItems.Size = new System.Drawing.Size(418, 357);
+            this.PanelNewsItems.Size = new System.Drawing.Size(529, 357);
             this.PanelNewsItems.TabIndex = 1;
             // 
             // LabelHeaderLatestNews
@@ -4109,10 +4099,9 @@ namespace ArisenStudio.Forms.Windows
             // PageDashboard
             // 
             this.PageDashboard.Appearance.Options.UseFont = true;
-            this.PageDashboard.Caption = "PageDashboard";
             this.PageDashboard.Controls.Add(this.TableDashboard3);
             this.PageDashboard.Controls.Add(this.PanelChangeLog);
-            this.PageDashboard.Controls.Add(this.PanelRecentlyUpdated);
+            this.PageDashboard.Controls.Add(this.PanelAdPlacement);
             this.PageDashboard.Controls.Add(this.TableDashboard1);
             this.PageDashboard.Controls.Add(this.TableDashboard2);
             this.PageDashboard.Font = new System.Drawing.Font("Segoe UI", 9.25F);
@@ -4125,7 +4114,7 @@ namespace ArisenStudio.Forms.Windows
             this.TableDashboard3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TableDashboard3.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 85F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
             this.TableDashboard3.Controls.Add(this.PanelStatistics);
             this.TableDashboard3.Controls.Add(this.PanelLatestNews);
@@ -4140,32 +4129,14 @@ namespace ArisenStudio.Forms.Windows
             // PanelStatistics
             // 
             this.TableDashboard3.SetColumn(this.PanelStatistics, 1);
-            this.PanelStatistics.Controls.Add(this.chartControl1);
             this.PanelStatistics.Controls.Add(this.FlowPanelStatistics);
             this.PanelStatistics.Controls.Add(this.LabelHeaderStatistics);
-            this.PanelStatistics.Location = new System.Drawing.Point(435, 0);
+            this.PanelStatistics.Location = new System.Drawing.Point(546, 0);
             this.PanelStatistics.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.PanelStatistics.Name = "PanelStatistics";
             this.TableDashboard3.SetRow(this.PanelStatistics, 0);
-            this.PanelStatistics.Size = new System.Drawing.Size(425, 401);
+            this.PanelStatistics.Size = new System.Drawing.Size(313, 401);
             this.PanelStatistics.TabIndex = 6;
-            // 
-            // chartControl1
-            // 
-            this.chartControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.chartControl1.BorderOptions.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            this.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            this.chartControl1.Location = new System.Drawing.Point(153, 37);
-            this.chartControl1.Name = "chartControl1";
-            series1.Name = "Series 1";
-            series1.SeriesID = 1;
-            series1.View = pieSeriesView1;
-            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
-            this.chartControl1.SeriesTemplate.ShowInLegend = false;
-            this.chartControl1.Size = new System.Drawing.Size(260, 200);
-            this.chartControl1.TabIndex = 10;
-            this.chartControl1.Visible = false;
             // 
             // FlowPanelStatistics
             // 
@@ -4184,7 +4155,7 @@ namespace ArisenStudio.Forms.Windows
             this.FlowPanelStatistics.Location = new System.Drawing.Point(1, 36);
             this.FlowPanelStatistics.Name = "FlowPanelStatistics";
             this.FlowPanelStatistics.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.FlowPanelStatistics.Size = new System.Drawing.Size(415, 334);
+            this.FlowPanelStatistics.Size = new System.Drawing.Size(303, 334);
             this.FlowPanelStatistics.TabIndex = 9;
             // 
             // LabelStatsDownloads
@@ -4286,32 +4257,32 @@ namespace ArisenStudio.Forms.Windows
             this.LabelHeaderStatistics.TabIndex = 0;
             this.LabelHeaderStatistics.Text = "Statistics";
             // 
-            // PanelRecentlyUpdated
+            // PanelAdPlacement
             // 
-            this.PanelRecentlyUpdated.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.PanelAdPlacement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PanelRecentlyUpdated.Controls.Add(this.BannerAdDashboard);
-            this.PanelRecentlyUpdated.Controls.Add(this.LabelHeaderRecentlyUpdated);
-            this.PanelRecentlyUpdated.Location = new System.Drawing.Point(0, 822);
-            this.PanelRecentlyUpdated.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
-            this.PanelRecentlyUpdated.Name = "PanelRecentlyUpdated";
-            this.PanelRecentlyUpdated.Size = new System.Drawing.Size(859, 194);
-            this.PanelRecentlyUpdated.TabIndex = 4;
+            this.PanelAdPlacement.Controls.Add(this.WebViewAdBanner);
+            this.PanelAdPlacement.Controls.Add(this.LabelHeaderRecentlyUpdated);
+            this.PanelAdPlacement.Location = new System.Drawing.Point(0, 822);
+            this.PanelAdPlacement.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
+            this.PanelAdPlacement.Name = "PanelAdPlacement";
+            this.PanelAdPlacement.Size = new System.Drawing.Size(859, 194);
+            this.PanelAdPlacement.TabIndex = 4;
             // 
-            // BannerAdDashboard
+            // WebViewAdBanner
             // 
-            this.BannerAdDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.WebViewAdBanner.AllowExternalDrop = false;
+            this.WebViewAdBanner.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.BannerAdDashboard.ApplicationId = "33krwjd74qn6";
-            this.BannerAdDashboard.BackColor = System.Drawing.Color.White;
-            this.BannerAdDashboard.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.BannerAdDashboard.HeightAd = 134;
-            this.BannerAdDashboard.Location = new System.Drawing.Point(7, 44);
-            this.BannerAdDashboard.Name = "BannerAdDashboard";
-            this.BannerAdDashboard.Size = new System.Drawing.Size(827, 134);
-            this.BannerAdDashboard.TabIndex = 11;
-            this.BannerAdDashboard.WidthAd = 802;
+            this.WebViewAdBanner.CreationProperties = null;
+            this.WebViewAdBanner.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.WebViewAdBanner.ForeColor = System.Drawing.Color.White;
+            this.WebViewAdBanner.Location = new System.Drawing.Point(5, 44);
+            this.WebViewAdBanner.Name = "WebViewAdBanner";
+            this.WebViewAdBanner.Size = new System.Drawing.Size(845, 136);
+            this.WebViewAdBanner.TabIndex = 12;
+            this.WebViewAdBanner.ZoomFactor = 1D;
             // 
             // LabelHeaderRecentlyUpdated
             // 
@@ -4540,7 +4511,6 @@ namespace ArisenStudio.Forms.Windows
             // PageDownloads
             // 
             this.PageDownloads.Appearance.Options.UseFont = true;
-            this.PageDownloads.Caption = "PageDownloads";
             this.PageDownloads.Controls.Add(this.PanelDownloads);
             this.PageDownloads.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.PageDownloads.Name = "PageDownloads";
@@ -4606,7 +4576,6 @@ namespace ArisenStudio.Forms.Windows
             this.GridViewDownloads.RowHeight = 30;
             this.GridViewDownloads.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.GridViewDownloads.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewDownloads_RowClick);
-            this.GridViewDownloads.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.GridViewDownloads_CustomDrawCell);
             this.GridViewDownloads.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridViewDownloads_FocusedRowChanged);
             this.GridViewDownloads.DoubleClick += new System.EventHandler(this.GridViewDownloads_DoubleClick);
             // 
@@ -5268,7 +5237,6 @@ namespace ArisenStudio.Forms.Windows
             // PageInstalledFiles
             // 
             this.PageInstalledFiles.Appearance.Options.UseFont = true;
-            this.PageInstalledFiles.Caption = "PageInstalledFiles";
             this.PageInstalledFiles.Controls.Add(this.PanelInstalledMods);
             this.PageInstalledFiles.Controls.Add(this.PanelInstalledFilesActions);
             this.PageInstalledFiles.Font = new System.Drawing.Font("Segoe UI", 9.25F);
@@ -5336,7 +5304,6 @@ namespace ArisenStudio.Forms.Windows
             this.GridViewInstalledFiles.RowHeight = 30;
             this.GridViewInstalledFiles.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.GridViewInstalledFiles.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewInstalledMods_RowClick);
-            this.GridViewInstalledFiles.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.GridViewInstalledMods_CustomDrawCell);
             // 
             // PanelInstalledFilesFilters
             // 
@@ -6053,7 +6020,6 @@ namespace ArisenStudio.Forms.Windows
             // PageFileManager
             // 
             this.PageFileManager.Appearance.Options.UseFont = true;
-            this.PageFileManager.Caption = "PageFileManager";
             this.PageFileManager.Controls.Add(this.PanelFileManager);
             this.PageFileManager.Font = new System.Drawing.Font("Segoe UI", 10.25F);
             this.PageFileManager.Name = "PageFileManager";
@@ -6627,7 +6593,6 @@ namespace ArisenStudio.Forms.Windows
             // PageSettings
             // 
             this.PageSettings.Appearance.Options.UseFont = true;
-            this.PageSettings.Caption = "PageSettings";
             this.PageSettings.Controls.Add(this.TabControlSettings);
             this.PageSettings.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.PageSettings.Name = "PageSettings";
@@ -7353,7 +7318,7 @@ namespace ArisenStudio.Forms.Windows
             this.ButtonToolsPsGamesUnmount,
             this.ButtonToolsXboxPower,
             this.ButtonToolsXboxTakeScreenshot,
-            this.ButtonToolsXboxConsoleManager,
+            this.ButtonToolsXboxNeighborhoodEditor,
             this.ButtonToolsXboxPowerShutdown,
             this.ButtonToolsXboxPowerSoftReboot,
             this.ButtonToolsXboxPowerHardReboot,
@@ -7396,7 +7361,6 @@ namespace ArisenStudio.Forms.Windows
             this.RibbonControlMain.OptionsStubGlyphs.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.RibbonControlMain.OptionsStubGlyphs.UseFont = true;
             this.RibbonControlMain.PageHeaderItemLinks.Add(this.barButtonItem1);
-            this.RibbonControlMain.PageHeaderItemLinks.Add(this.barButtonItem14);
             this.RibbonControlMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.RibbonPageHome,
             this.RibbonPageTools});
@@ -7831,15 +7795,15 @@ namespace ArisenStudio.Forms.Windows
             this.ButtonToolsXboxTakeScreenshot.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.ButtonToolsXboxTakeScreenshot.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxTakeScreenshot_ItemClick);
             // 
-            // ButtonToolsXboxConsoleManager
+            // ButtonToolsXboxNeighborhoodEditor
             // 
-            this.ButtonToolsXboxConsoleManager.Caption = "Console Manager";
-            this.ButtonToolsXboxConsoleManager.Id = 41;
-            this.ButtonToolsXboxConsoleManager.ImageOptions.Image = global::ArisenStudio.Properties.Resources.console_manager;
-            this.ButtonToolsXboxConsoleManager.LargeWidth = 74;
-            this.ButtonToolsXboxConsoleManager.Name = "ButtonToolsXboxConsoleManager";
-            this.ButtonToolsXboxConsoleManager.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonToolsXboxConsoleManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxConsoleManager_ItemClick);
+            this.ButtonToolsXboxNeighborhoodEditor.Caption = "Neighborhood Editor";
+            this.ButtonToolsXboxNeighborhoodEditor.Id = 41;
+            this.ButtonToolsXboxNeighborhoodEditor.ImageOptions.Image = global::ArisenStudio.Properties.Resources.console_manager;
+            this.ButtonToolsXboxNeighborhoodEditor.LargeWidth = 74;
+            this.ButtonToolsXboxNeighborhoodEditor.Name = "ButtonToolsXboxNeighborhoodEditor";
+            this.ButtonToolsXboxNeighborhoodEditor.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonToolsXboxNeighborhoodEditor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsXboxNeighborhoodEditor_ItemClick);
             // 
             // ButtonToolsXboxNotifyMessage
             // 
@@ -8125,6 +8089,16 @@ namespace ArisenStudio.Forms.Windows
             this.barCheckItem2.Id = 96;
             this.barCheckItem2.Name = "barCheckItem2";
             // 
+            // ButtonToolsPsScreenshot
+            // 
+            this.ButtonToolsPsScreenshot.Caption = "Sceenshot Tool";
+            this.ButtonToolsPsScreenshot.Id = 97;
+            this.ButtonToolsPsScreenshot.ImageOptions.Image = global::ArisenStudio.Properties.Resources.capture;
+            this.ButtonToolsPsScreenshot.LargeWidth = 74;
+            this.ButtonToolsPsScreenshot.Name = "ButtonToolsPsScreenshot";
+            this.ButtonToolsPsScreenshot.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonToolsPsScreenshot.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsScreenshot_ItemClick);
+            // 
             // RibbonPageHome
             // 
             this.RibbonPageHome.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -8198,8 +8172,6 @@ namespace ArisenStudio.Forms.Windows
             this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsXboxModuleLoader);
             this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsXboxXuidSpoofer);
             this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsXboxDashlaunchEditor);
-            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsXboxTrainers);
-            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonToolsPsGameCheats);
             this.RibbonGroupModdingTools.Name = "RibbonGroupModdingTools";
             this.RibbonGroupModdingTools.Text = "Modding Tools";
             // 
@@ -8217,7 +8189,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.RibbonGroupXbdmCommands.ItemLinks.Add(this.ButtonToolsXboxPower);
             this.RibbonGroupXbdmCommands.ItemLinks.Add(this.ButtonToolsXboxTakeScreenshot);
-            this.RibbonGroupXbdmCommands.ItemLinks.Add(this.ButtonToolsXboxConsoleManager);
+            this.RibbonGroupXbdmCommands.ItemLinks.Add(this.ButtonToolsXboxNeighborhoodEditor);
             this.RibbonGroupXbdmCommands.ItemLinks.Add(this.ButtonToolsXboxNotifyMessage);
             this.RibbonGroupXbdmCommands.Name = "RibbonGroupXbdmCommands";
             this.RibbonGroupXbdmCommands.Text = "XBDM Commands";
@@ -8590,9 +8562,6 @@ namespace ArisenStudio.Forms.Windows
             this.TabPageCache.Controls.Add(this.LabelSettingsLocalCache);
             this.TabPageCache.Controls.Add(this.ToggleSettingsClearCacheOnClose);
             this.TabPageCache.Controls.Add(this.LabelSettingsClearCacheOnClose);
-            this.TabPageCache.Controls.Add(this.toggleSwitch24);
-            this.TabPageCache.Controls.Add(this.labelControl163);
-            this.TabPageCache.Controls.Add(this.LabelSettingsClearCache);
             this.TabPageCache.Name = "TabPageCache";
             this.TabPageCache.Size = new System.Drawing.Size(1288, 533);
             // 
@@ -8601,7 +8570,7 @@ namespace ArisenStudio.Forms.Windows
             this.ButtonSettingsClearCache.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonSettingsClearCache.Appearance.Options.UseFont = true;
             this.ButtonSettingsClearCache.AutoSize = true;
-            this.ButtonSettingsClearCache.Location = new System.Drawing.Point(0, 149);
+            this.ButtonSettingsClearCache.Location = new System.Drawing.Point(0, 78);
             this.ButtonSettingsClearCache.MinimumSize = new System.Drawing.Size(0, 24);
             this.ButtonSettingsClearCache.Name = "ButtonSettingsClearCache";
             this.ButtonSettingsClearCache.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
@@ -8645,44 +8614,9 @@ namespace ArisenStudio.Forms.Windows
             this.LabelSettingsClearCacheOnClose.TabIndex = 1225;
             this.LabelSettingsClearCacheOnClose.Text = "Clear local cache on close";
             // 
-            // toggleSwitch24
-            // 
-            this.toggleSwitch24.Location = new System.Drawing.Point(0, 76);
-            this.toggleSwitch24.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
-            this.toggleSwitch24.Name = "toggleSwitch24";
-            this.toggleSwitch24.Properties.AutoWidth = true;
-            this.toggleSwitch24.Properties.OffText = "Off";
-            this.toggleSwitch24.Properties.OnText = "On";
-            this.toggleSwitch24.Properties.ShowText = false;
-            this.toggleSwitch24.Size = new System.Drawing.Size(54, 24);
-            this.toggleSwitch24.TabIndex = 32;
-            // 
-            // labelControl163
-            // 
-            this.labelControl163.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.labelControl163.Appearance.Options.UseFont = true;
-            this.labelControl163.Location = new System.Drawing.Point(60, 80);
-            this.labelControl163.Margin = new System.Windows.Forms.Padding(0, 8, 0, 7);
-            this.labelControl163.Name = "labelControl163";
-            this.labelControl163.Size = new System.Drawing.Size(78, 15);
-            this.labelControl163.TabIndex = 1228;
-            this.labelControl163.Text = "Placeholder #1";
-            // 
-            // LabelSettingsClearCache
-            // 
-            this.LabelSettingsClearCache.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelSettingsClearCache.Appearance.Options.UseFont = true;
-            this.LabelSettingsClearCache.Location = new System.Drawing.Point(0, 120);
-            this.LabelSettingsClearCache.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.LabelSettingsClearCache.Name = "LabelSettingsClearCache";
-            this.LabelSettingsClearCache.Size = new System.Drawing.Size(64, 15);
-            this.LabelSettingsClearCache.TabIndex = 1229;
-            this.LabelSettingsClearCache.Text = "Clear Cache";
-            // 
             // PageGameSaves
             // 
             this.PageGameSaves.Appearance.Options.UseFont = true;
-            this.PageGameSaves.Caption = "PageGameSaves";
             this.PageGameSaves.Controls.Add(this.PanelGameSaves);
             this.PageGameSaves.Controls.Add(this.PanelGameSavesActions);
             this.PageGameSaves.Font = new System.Drawing.Font("Segoe UI", 9.25F);
@@ -8750,7 +8684,7 @@ namespace ArisenStudio.Forms.Windows
             this.GridViewGameSaves.RowHeight = 30;
             this.GridViewGameSaves.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.GridViewGameSaves.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewGameSaves_RowClick);
-            this.GridViewGameSaves.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.GridViewGameSaves_CustomDrawCell);
+            this.GridViewGameSaves.DoubleClick += new System.EventHandler(this.GridViewGameSaves_DoubleClick);
             // 
             // PanelGameSavesFilters
             // 
@@ -9097,7 +9031,6 @@ namespace ArisenStudio.Forms.Windows
             // PageGameModsXbox
             // 
             this.PageGameModsXbox.Appearance.Options.UseFont = true;
-            this.PageGameModsXbox.Caption = "PageGameModsXbox";
             this.PageGameModsXbox.Controls.Add(this.PanelPlugins);
             this.PageGameModsXbox.Controls.Add(this.PanelPluginsActions);
             this.PageGameModsXbox.Font = new System.Drawing.Font("Segoe UI", 9.25F);
@@ -9165,7 +9098,7 @@ namespace ArisenStudio.Forms.Windows
             this.GridViewGameModsXbox.RowHeight = 30;
             this.GridViewGameModsXbox.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.GridViewGameModsXbox.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewGameModsXbox_RowClick);
-            this.GridViewGameModsXbox.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.GridViewGameMods_CustomDrawCell);
+            this.GridViewGameModsXbox.DoubleClick += new System.EventHandler(this.GridViewGameModsXbox_DoubleClick);
             // 
             // PanelGameModsXbox
             // 
@@ -9537,7 +9470,6 @@ namespace ArisenStudio.Forms.Windows
             // PagePackagesPS3
             // 
             this.PagePackagesPS3.Appearance.Options.UseFont = true;
-            this.PagePackagesPS3.Caption = "PagePackagesPS3";
             this.PagePackagesPS3.Controls.Add(this.PanelPackages);
             this.PagePackagesPS3.Controls.Add(this.PanelPackagesActions);
             this.PagePackagesPS3.Font = new System.Drawing.Font("Segoe UI", 9.25F);
@@ -9600,7 +9532,7 @@ namespace ArisenStudio.Forms.Windows
             this.GridViewPackages.RowHeight = 30;
             this.GridViewPackages.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.GridViewPackages.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewPackages_RowClick);
-            this.GridViewPackages.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.GridViewPackages_CustomDrawCell);
+            this.GridViewPackages.DoubleClick += new System.EventHandler(this.GridViewPackages_DoubleClick);
             // 
             // PanelPackagesFilters
             // 
@@ -10194,7 +10126,6 @@ namespace ArisenStudio.Forms.Windows
             // PageResourcesPS3
             // 
             this.PageResourcesPS3.Appearance.Options.UseFont = true;
-            this.PageResourcesPS3.Caption = "PageResourcesPS3";
             this.PageResourcesPS3.Controls.Add(this.PanelResources);
             this.PageResourcesPS3.Controls.Add(this.PanelResourcesActions);
             this.PageResourcesPS3.Font = new System.Drawing.Font("Segoe UI", 9.25F);
@@ -10259,7 +10190,7 @@ namespace ArisenStudio.Forms.Windows
             this.GridViewResources.RowHeight = 30;
             this.GridViewResources.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.GridViewResources.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewResources_RowClick);
-            this.GridViewResources.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.GridViewResources_CustomDrawCell);
+            this.GridViewResources.DoubleClick += new System.EventHandler(this.GridViewResources_DoubleClick);
             // 
             // PanelResourcesFilters
             // 
@@ -10756,7 +10687,6 @@ namespace ArisenStudio.Forms.Windows
             // PageHomebrewPS3
             // 
             this.PageHomebrewPS3.Appearance.Options.UseFont = true;
-            this.PageHomebrewPS3.Caption = "PageHomebrewPS3";
             this.PageHomebrewPS3.Controls.Add(this.PanelHomebrew);
             this.PageHomebrewPS3.Controls.Add(this.PanelHomebrewActions);
             this.PageHomebrewPS3.Font = new System.Drawing.Font("Segoe UI", 9.25F);
@@ -10821,7 +10751,6 @@ namespace ArisenStudio.Forms.Windows
             this.GridViewHomebrewPS3.RowHeight = 30;
             this.GridViewHomebrewPS3.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.GridViewHomebrewPS3.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewHomebrew_RowClick);
-            this.GridViewHomebrewPS3.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.GridViewHomebrew_CustomDrawCell);
             this.GridViewHomebrewPS3.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridViewHomebrew_FocusedRowChanged);
             this.GridViewHomebrewPS3.DoubleClick += new System.EventHandler(this.GridViewHomebrew_DoubleClick);
             // 
@@ -11292,7 +11221,7 @@ namespace ArisenStudio.Forms.Windows
             // PageAbout
             // 
             this.PageAbout.AutoScroll = true;
-            this.PageAbout.Caption = "PageAbout";
+            this.PageAbout.Controls.Add(this.LabelDonatePayPal);
             this.PageAbout.Controls.Add(this.LabelHeaderAboutCredits);
             this.PageAbout.Controls.Add(this.LabelAboutVersion);
             this.PageAbout.Controls.Add(this.ImageLogo);
@@ -11475,7 +11404,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelCreditsTranslators.Location = new System.Drawing.Point(0, 555);
             this.LabelCreditsTranslators.Name = "LabelCreditsTranslators";
             this.LabelCreditsTranslators.Padding = new System.Windows.Forms.Padding(12, 3, 0, 12);
-            this.LabelCreditsTranslators.Size = new System.Drawing.Size(1264, 100);
+            this.LabelCreditsTranslators.Size = new System.Drawing.Size(1247, 100);
             this.LabelCreditsTranslators.TabIndex = 18;
             this.LabelCreditsTranslators.Text = resources.GetString("LabelCreditsTranslators.Text");
             // 
@@ -11488,7 +11417,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelHeaderTranslators.Location = new System.Drawing.Point(0, 527);
             this.LabelHeaderTranslators.Name = "LabelHeaderTranslators";
             this.LabelHeaderTranslators.Padding = new System.Windows.Forms.Padding(12, 6, 0, 3);
-            this.LabelHeaderTranslators.Size = new System.Drawing.Size(1264, 28);
+            this.LabelHeaderTranslators.Size = new System.Drawing.Size(1247, 28);
             this.LabelHeaderTranslators.TabIndex = 17;
             this.LabelHeaderTranslators.Text = "Translators";
             // 
@@ -11502,7 +11431,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelCreditsContributors.Location = new System.Drawing.Point(0, 354);
             this.LabelCreditsContributors.Name = "LabelCreditsContributors";
             this.LabelCreditsContributors.Padding = new System.Windows.Forms.Padding(12, 3, 0, 0);
-            this.LabelCreditsContributors.Size = new System.Drawing.Size(1264, 173);
+            this.LabelCreditsContributors.Size = new System.Drawing.Size(1247, 173);
             this.LabelCreditsContributors.TabIndex = 16;
             this.LabelCreditsContributors.Text = resources.GetString("LabelCreditsContributors.Text");
             // 
@@ -11515,7 +11444,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelAboutHeaderContributors.Location = new System.Drawing.Point(0, 326);
             this.LabelAboutHeaderContributors.Name = "LabelAboutHeaderContributors";
             this.LabelAboutHeaderContributors.Padding = new System.Windows.Forms.Padding(12, 6, 0, 3);
-            this.LabelAboutHeaderContributors.Size = new System.Drawing.Size(1264, 28);
+            this.LabelAboutHeaderContributors.Size = new System.Drawing.Size(1247, 28);
             this.LabelAboutHeaderContributors.TabIndex = 15;
             this.LabelAboutHeaderContributors.Text = "Contributors";
             // 
@@ -11530,7 +11459,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelCreditsLibraries.Location = new System.Drawing.Point(0, 34);
             this.LabelCreditsLibraries.Name = "LabelCreditsLibraries";
             this.LabelCreditsLibraries.Padding = new System.Windows.Forms.Padding(12, 3, 0, 0);
-            this.LabelCreditsLibraries.Size = new System.Drawing.Size(1264, 292);
+            this.LabelCreditsLibraries.Size = new System.Drawing.Size(1247, 292);
             this.LabelCreditsLibraries.TabIndex = 14;
             this.LabelCreditsLibraries.Text = resources.GetString("LabelCreditsLibraries.Text");
             // 
@@ -11543,13 +11472,12 @@ namespace ArisenStudio.Forms.Windows
             this.LabelHeaderLibraries.Location = new System.Drawing.Point(0, 0);
             this.LabelHeaderLibraries.Name = "LabelHeaderLibraries";
             this.LabelHeaderLibraries.Padding = new System.Windows.Forms.Padding(12, 12, 0, 3);
-            this.LabelHeaderLibraries.Size = new System.Drawing.Size(1264, 34);
+            this.LabelHeaderLibraries.Size = new System.Drawing.Size(1247, 34);
             this.LabelHeaderLibraries.TabIndex = 13;
             this.LabelHeaderLibraries.Text = "Third-Party Libraries";
             // 
             // PageGameCheats
             // 
-            this.PageGameCheats.Caption = "PageGameCheats";
             this.PageGameCheats.Controls.Add(this.GridControlGameCheats);
             this.PageGameCheats.Controls.Add(this.PanelFiltersCheats);
             this.PageGameCheats.Controls.Add(this.PanelCheatsActions);
@@ -11915,7 +11843,6 @@ namespace ArisenStudio.Forms.Windows
             // 
             // PageGamesPS4
             // 
-            this.PageGamesPS4.Caption = "PageGamesPS4";
             this.PageGamesPS4.Controls.Add(this.GridControlGames);
             this.PageGamesPS4.Controls.Add(this.PanelFiltersGames);
             this.PageGamesPS4.Controls.Add(this.PanelGamesActions);
@@ -12408,7 +12335,6 @@ namespace ArisenStudio.Forms.Windows
             // 
             // PageCustomMods
             // 
-            this.PageCustomMods.Caption = "PageCustomMods";
             this.PageCustomMods.Controls.Add(this.GridControlCustomMods);
             this.PageCustomMods.Controls.Add(this.PanelFiltersCustomMods);
             this.PageCustomMods.Controls.Add(this.PanelCustomModsActions);
@@ -13088,7 +13014,6 @@ namespace ArisenStudio.Forms.Windows
             // 
             // PageHomebrewXbox
             // 
-            this.PageHomebrewXbox.Caption = "PageHomebrewXbox";
             this.PageHomebrewXbox.Controls.Add(this.GridControlHomebrewXbox);
             this.PageHomebrewXbox.Controls.Add(this.PanelHomebrewXboxFilters);
             this.PageHomebrewXbox.Controls.Add(this.PanelHomebrewXboxActions);
@@ -13582,7 +13507,6 @@ namespace ArisenStudio.Forms.Windows
             // 
             // PageHomebrewPS4
             // 
-            this.PageHomebrewPS4.Caption = "PageHomebrewPS4";
             this.PageHomebrewPS4.Controls.Add(this.GridControlHomebrewPS4);
             this.PageHomebrewPS4.Controls.Add(this.PanelHomebrewFiltersPS4);
             this.PageHomebrewPS4.Controls.Add(this.PanelHomebrewPS4Actions);
@@ -14067,7 +13991,6 @@ namespace ArisenStudio.Forms.Windows
             // 
             // PageTrainersXbox
             // 
-            this.PageTrainersXbox.Caption = "PageTrainersXbox";
             this.PageTrainersXbox.Controls.Add(this.GridControlTrainers);
             this.PageTrainersXbox.Controls.Add(this.PanelTrainersFilters);
             this.PageTrainersXbox.Controls.Add(this.PanelTrainersActions);
@@ -14868,7 +14791,6 @@ namespace ArisenStudio.Forms.Windows
             // navigationPage1
             // 
             this.navigationPage1.Appearance.Options.UseFont = true;
-            this.navigationPage1.Caption = "navigationPage1";
             this.navigationPage1.Controls.Add(this.panelControl3);
             this.navigationPage1.Controls.Add(this.panelControl4);
             this.navigationPage1.Controls.Add(this.panelControl5);
@@ -15478,11 +15400,11 @@ namespace ArisenStudio.Forms.Windows
             this.chartControl2.Location = new System.Drawing.Point(12, 44);
             this.chartControl2.Name = "chartControl2";
             this.chartControl2.PaletteName = "Office 2013";
-            series2.Name = "Series 1";
-            series2.SeriesID = 1;
-            series2.View = pieSeriesView2;
+            series1.Name = "Series 1";
+            series1.SeriesID = 1;
+            series1.View = pieSeriesView1;
             this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series2};
+        series1};
             this.chartControl2.SeriesTemplate.ShowInLegend = false;
             this.chartControl2.Size = new System.Drawing.Size(300, 200);
             this.chartControl2.TabIndex = 10;
@@ -15501,7 +15423,6 @@ namespace ArisenStudio.Forms.Windows
             // navigationPage2
             // 
             this.navigationPage2.Appearance.Options.UseFont = true;
-            this.navigationPage2.Caption = "navigationPage2";
             this.navigationPage2.Controls.Add(this.panel1);
             this.navigationPage2.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.navigationPage2.Name = "navigationPage2";
@@ -16212,7 +16133,6 @@ namespace ArisenStudio.Forms.Windows
             // navigationPage3
             // 
             this.navigationPage3.Appearance.Options.UseFont = true;
-            this.navigationPage3.Caption = "navigationPage3";
             this.navigationPage3.Controls.Add(this.panel3);
             this.navigationPage3.Controls.Add(this.panelControl12);
             this.navigationPage3.Font = new System.Drawing.Font("Segoe UI", 9.25F);
@@ -16984,7 +16904,6 @@ namespace ArisenStudio.Forms.Windows
             // navigationPage4
             // 
             this.navigationPage4.Appearance.Options.UseFont = true;
-            this.navigationPage4.Caption = "navigationPage4";
             this.navigationPage4.Controls.Add(this.tableLayoutPanel1);
             this.navigationPage4.Font = new System.Drawing.Font("Segoe UI", 10.25F);
             this.navigationPage4.Name = "navigationPage4";
@@ -17009,7 +16928,6 @@ namespace ArisenStudio.Forms.Windows
             // navigationPage5
             // 
             this.navigationPage5.Appearance.Options.UseFont = true;
-            this.navigationPage5.Caption = "navigationPage5";
             this.navigationPage5.Controls.Add(this.tabPane1);
             this.navigationPage5.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.navigationPage5.Name = "navigationPage5";
@@ -17057,7 +16975,7 @@ namespace ArisenStudio.Forms.Windows
             this.tabNavigationPage1.Controls.Add(this.labelControl52);
             this.tabNavigationPage1.Controls.Add(this.toggleSwitch1);
             this.tabNavigationPage1.Controls.Add(this.labelControl53);
-            this.tabNavigationPage1.Controls.Add(this.hyperlinkLabelControl1);
+            this.tabNavigationPage1.Controls.Add(this.LabelHelpTranslateCrowdin);
             this.tabNavigationPage1.Controls.Add(this.toggleSwitch2);
             this.tabNavigationPage1.Controls.Add(this.labelControl54);
             this.tabNavigationPage1.Controls.Add(this.labelControl55);
@@ -17124,13 +17042,13 @@ namespace ArisenStudio.Forms.Windows
             this.labelControl53.TabIndex = 1171;
             this.labelControl53.Text = "Customization";
             // 
-            // hyperlinkLabelControl1
+            // LabelHelpTranslateCrowdin
             // 
-            this.hyperlinkLabelControl1.Location = new System.Drawing.Point(0, 70);
-            this.hyperlinkLabelControl1.Name = "hyperlinkLabelControl1";
-            this.hyperlinkLabelControl1.Size = new System.Drawing.Size(208, 13);
-            this.hyperlinkLabelControl1.TabIndex = 1219;
-            this.hyperlinkLabelControl1.Text = "Help translate Arisen Studio on Crowdin";
+            this.LabelHelpTranslateCrowdin.Location = new System.Drawing.Point(0, 70);
+            this.LabelHelpTranslateCrowdin.Name = "LabelHelpTranslateCrowdin";
+            this.LabelHelpTranslateCrowdin.Size = new System.Drawing.Size(208, 13);
+            this.LabelHelpTranslateCrowdin.TabIndex = 1219;
+            this.LabelHelpTranslateCrowdin.Text = "Help translate Arisen Studio on Crowdin";
             // 
             // toggleSwitch2
             // 
@@ -18062,7 +17980,6 @@ namespace ArisenStudio.Forms.Windows
             // navigationPage6
             // 
             this.navigationPage6.Appearance.Options.UseFont = true;
-            this.navigationPage6.Caption = "navigationPage6";
             this.navigationPage6.Controls.Add(this.panel5);
             this.navigationPage6.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.navigationPage6.Name = "navigationPage6";
@@ -18700,7 +18617,6 @@ namespace ArisenStudio.Forms.Windows
             // navigationPage7
             // 
             this.navigationPage7.Appearance.Options.UseFont = true;
-            this.navigationPage7.Caption = "navigationPage7";
             this.navigationPage7.Controls.Add(this.panel7);
             this.navigationPage7.Controls.Add(this.panelControl14);
             this.navigationPage7.Font = new System.Drawing.Font("Segoe UI", 9.25F);
@@ -19105,7 +19021,6 @@ namespace ArisenStudio.Forms.Windows
             // navigationPage8
             // 
             this.navigationPage8.Appearance.Options.UseFont = true;
-            this.navigationPage8.Caption = "navigationPage8";
             this.navigationPage8.Controls.Add(this.panel9);
             this.navigationPage8.Controls.Add(this.panelControl15);
             this.navigationPage8.Font = new System.Drawing.Font("Segoe UI", 9.25F);
@@ -19549,7 +19464,6 @@ namespace ArisenStudio.Forms.Windows
             // navigationPage9
             // 
             this.navigationPage9.Appearance.Options.UseFont = true;
-            this.navigationPage9.Caption = "navigationPage9";
             this.navigationPage9.Controls.Add(this.panel11);
             this.navigationPage9.Controls.Add(this.panelControl16);
             this.navigationPage9.Font = new System.Drawing.Font("Segoe UI", 9.25F);
@@ -20192,7 +20106,6 @@ namespace ArisenStudio.Forms.Windows
             // navigationPage10
             // 
             this.navigationPage10.Appearance.Options.UseFont = true;
-            this.navigationPage10.Caption = "navigationPage10";
             this.navigationPage10.Controls.Add(this.panel14);
             this.navigationPage10.Controls.Add(this.panelControl17);
             this.navigationPage10.Font = new System.Drawing.Font("Segoe UI", 9.25F);
@@ -20741,7 +20654,6 @@ namespace ArisenStudio.Forms.Windows
             // navigationPage11
             // 
             this.navigationPage11.Appearance.Options.UseFont = true;
-            this.navigationPage11.Caption = "navigationPage11";
             this.navigationPage11.Controls.Add(this.panel16);
             this.navigationPage11.Controls.Add(this.panelControl18);
             this.navigationPage11.Font = new System.Drawing.Font("Segoe UI", 9.25F);
@@ -21263,7 +21175,6 @@ namespace ArisenStudio.Forms.Windows
             // navigationPage12
             // 
             this.navigationPage12.AutoScroll = true;
-            this.navigationPage12.Caption = "navigationPage12";
             this.navigationPage12.Controls.Add(this.labelControl124);
             this.navigationPage12.Controls.Add(this.labelControl125);
             this.navigationPage12.Controls.Add(this.svgImageBox2);
@@ -21514,7 +21425,6 @@ namespace ArisenStudio.Forms.Windows
             // 
             // navigationPage13
             // 
-            this.navigationPage13.Caption = "navigationPage13";
             this.navigationPage13.Controls.Add(this.panel18);
             this.navigationPage13.Controls.Add(this.panelControl20);
             this.navigationPage13.Name = "navigationPage13";
@@ -21925,7 +21835,6 @@ namespace ArisenStudio.Forms.Windows
             // 
             // navigationPage14
             // 
-            this.navigationPage14.Caption = "navigationPage14";
             this.navigationPage14.Controls.Add(this.gridControl12);
             this.navigationPage14.Controls.Add(this.panel20);
             this.navigationPage14.Controls.Add(this.panelControl21);
@@ -22279,7 +22188,6 @@ namespace ArisenStudio.Forms.Windows
             // 
             // navigationPage15
             // 
-            this.navigationPage15.Caption = "navigationPage15";
             this.navigationPage15.Controls.Add(this.gridControl13);
             this.navigationPage15.Controls.Add(this.panel21);
             this.navigationPage15.Controls.Add(this.panelControl22);
@@ -22677,7 +22585,6 @@ namespace ArisenStudio.Forms.Windows
             // 
             // navigationPage16
             // 
-            this.navigationPage16.Caption = "navigationPage16";
             this.navigationPage16.Controls.Add(this.gridControl14);
             this.navigationPage16.Controls.Add(this.panel22);
             this.navigationPage16.Controls.Add(this.panelControl23);
@@ -23862,15 +23769,17 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGameModsXboxCategory.Size = new System.Drawing.Size(61, 17);
             this.LabelGameModsXboxCategory.TabIndex = 1171;
             // 
-            // ButtonToolsPsScreenshot
+            // LabelDonatePayPal
             // 
-            this.ButtonToolsPsScreenshot.Caption = "Sceenshot Tool";
-            this.ButtonToolsPsScreenshot.Id = 97;
-            this.ButtonToolsPsScreenshot.ImageOptions.Image = global::ArisenStudio.Properties.Resources.capture;
-            this.ButtonToolsPsScreenshot.LargeWidth = 74;
-            this.ButtonToolsPsScreenshot.Name = "ButtonToolsPsScreenshot";
-            this.ButtonToolsPsScreenshot.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.ButtonToolsPsScreenshot.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonToolsPsScreenshot_ItemClick);
+            this.LabelDonatePayPal.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.LabelDonatePayPal.Appearance.Options.UseFont = true;
+            this.LabelDonatePayPal.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.LabelDonatePayPal.Location = new System.Drawing.Point(1174, 51);
+            this.LabelDonatePayPal.Name = "LabelDonatePayPal";
+            this.LabelDonatePayPal.Size = new System.Drawing.Size(95, 15);
+            this.LabelDonatePayPal.TabIndex = 20;
+            this.LabelDonatePayPal.Text = "Donate On PayPal";
+            this.LabelDonatePayPal.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelDonatePayPal_HyperlinkClick);
             // 
             // MainWindow
             // 
@@ -23946,14 +23855,12 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.PanelStatistics)).EndInit();
             this.PanelStatistics.ResumeLayout(false);
             this.PanelStatistics.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             this.FlowPanelStatistics.ResumeLayout(false);
             this.FlowPanelStatistics.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PanelRecentlyUpdated)).EndInit();
-            this.PanelRecentlyUpdated.ResumeLayout(false);
-            this.PanelRecentlyUpdated.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PanelAdPlacement)).EndInit();
+            this.PanelAdPlacement.ResumeLayout(false);
+            this.PanelAdPlacement.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WebViewAdBanner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TableDashboard1)).EndInit();
             this.TableDashboard1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PanelOurFavoriteGames)).EndInit();
@@ -24098,7 +24005,6 @@ namespace ArisenStudio.Forms.Windows
             this.TabPageCache.ResumeLayout(false);
             this.TabPageCache.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ToggleSettingsClearCacheOnClose.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch24.Properties)).EndInit();
             this.PageGameSaves.ResumeLayout(false);
             this.PanelGameSaves.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridControlGameSaves)).EndInit();
@@ -24350,8 +24256,8 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).EndInit();
             this.panelControl10.ResumeLayout(false);
             this.panelControl10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
             this.navigationPage2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -24983,7 +24889,7 @@ namespace ArisenStudio.Forms.Windows
         private BarButtonItem ButtonToolsXboxPowerShutdown;
         private BarButtonItem ButtonToolsXboxPowerSoftReboot;
         private BarButtonItem ButtonToolsXboxPowerHardReboot;
-        private BarButtonItem ButtonToolsXboxConsoleManager;
+        private BarButtonItem ButtonToolsXboxNeighborhoodEditor;
         private BarButtonItem ButtonToolsXboxNotifyMessage;
         private BarButtonItem ButtonDownloadsFolder;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup RibbonGroupQuickSettings;
@@ -24991,7 +24897,7 @@ namespace ArisenStudio.Forms.Windows
         private BarCheckItem ButtonDiscordPresence;
         private BarCheckItem ButtonInstallModsToUSB;
         private BarButtonItem ButtonHowToGuides;
-        private PanelControl PanelRecentlyUpdated;
+        private PanelControl PanelAdPlacement;
         private LabelControl LabelHeaderRecentlyUpdated;
         private TileItem TileItemFavoriteMods;
         private BarButtonItem ButtonAbout;
@@ -25146,8 +25052,6 @@ namespace ArisenStudio.Forms.Windows
         private LabelControl LabelCreditsContributors;
         private LabelControl LabelAboutHeaderContributors;
         private LabelControl LabelCreditsTranslators;
-        private AdsJumboWinForm.BannerAds BannerAdDashboard;
-        private DevExpress.XtraCharts.ChartControl chartControl1;
         private LabelControl LabelAboutSubTitle;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar RibbonStatusBar;
         private BarButtonItem ButtonSetupWizard;
@@ -25463,7 +25367,7 @@ namespace ArisenStudio.Forms.Windows
         private LabelControl labelControl52;
         private ToggleSwitch toggleSwitch1;
         private LabelControl labelControl53;
-        private HyperlinkLabelControl hyperlinkLabelControl1;
+        private HyperlinkLabelControl LabelHelpTranslateCrowdin;
         private ToggleSwitch toggleSwitch2;
         private LabelControl labelControl54;
         private LabelControl labelControl55;
@@ -25945,9 +25849,6 @@ namespace ArisenStudio.Forms.Windows
         private LabelControl LabelSettingsLocalCache;
         private ToggleSwitch ToggleSettingsClearCacheOnClose;
         private LabelControl LabelSettingsClearCacheOnClose;
-        private ToggleSwitch toggleSwitch24;
-        private LabelControl labelControl163;
-        private LabelControl LabelSettingsClearCache;
         private ButtonEdit TextBoxSettingsLaunchIniFilePath;
         private ButtonEdit TextBoxSettingsAuroraFolderPath;
         private ButtonEdit TextBoxSettingsPackagesInstallPathPS4;
@@ -25963,5 +25864,7 @@ namespace ArisenStudio.Forms.Windows
         private BarButtonItem barButtonItem15;
         private BarCheckItem barCheckItem2;
         private BarButtonItem ButtonToolsPsScreenshot;
+        private Microsoft.Web.WebView2.WinForms.WebView2 WebViewAdBanner;
+        private HyperlinkLabelControl LabelDonatePayPal;
     }
 }

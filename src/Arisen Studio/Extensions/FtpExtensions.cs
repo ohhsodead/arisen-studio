@@ -151,7 +151,7 @@ namespace ArisenStudio.Extensions
             FtpClient ftpClient = MainWindow.FtpClient;
             return ftpClient.CreateDirectory(consolePath, true);
         }
-        
+
         /// <summary>
         /// 
         /// </summary>

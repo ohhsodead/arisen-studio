@@ -72,8 +72,8 @@ namespace ArisenStudio.Forms.Dialogs.Details
             ButtonInstall.Enabled = MainWindow.IsConsoleConnected || MainWindow.Settings.InstallHomebrewToUsbDevice;
 
             ButtonFavorite.Text = IsFavorite ? Language.GetString("LABEL_REMOVE_FROM_FAVORITES") : Language.GetString("LABEL_ADD_TO_FAVORITES");
-            ButtonReport.Text = Language.GetString("LABEL_REPORT_ISSUE");
-
+            ButtonReportIssue.Text = Language.GetString("LABEL_REPORT_ISSUE");
+            ButtonHelpSupport.Text = Language.GetString("LABEL_HELP_SUPPORT");
 
             int count = 0;
             foreach (AppItemFile appItem in AppItem.DownloadFiles)
@@ -130,8 +130,14 @@ namespace ArisenStudio.Forms.Dialogs.Details
             DialogExtensions.ShowTransferFilesDialog(this, TransferType.InstallApplication, AppItem.GetCategory(Categories), AppItem, AppItem.DownloadFiles.Last());
         }
 
-        private void ButtonReport_Click(object sender, EventArgs e)
+        private void ButtonReportIssue_Click(object sender, EventArgs e)
         {
+            _ = Process.Start(Urls.WebsiteReportIssue);
+        }
+
+        private void ButtonHelpSupport_Click(object sender, EventArgs e)
+        {
+            _ = Process.Start(Urls.WebsiteHelp);
         }
 
         private void ButtonFavorite_Click(object sender, EventArgs e)

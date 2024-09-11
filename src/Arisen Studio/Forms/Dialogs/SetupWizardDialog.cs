@@ -98,61 +98,9 @@ namespace ArisenStudio.Forms.Dialogs
             }
         }
 
-        private void RadioGroupConsoles_SelectedIndexChanged(object sender, EventArgs e)
+        private void SetupWizardDialog_SizeChanged(object sender, EventArgs e)
         {
-            //switch (RadioGroupConsoles.SelectedIndex)
-            //{
-            //    //case -1:
-            //    //    break;
-            //    case 0:
-            //        Platform = ArisenStudio.Platform.PS3;
-            //        break;
-            //    case 1:
-            //        Platform = ArisenStudio.Platform.PS4;
-            //        break;
-            //    case 2:
-            //        Platform = ArisenStudio.Platform.XBOX360;
-            //        break;
-            //}
-
-            //if (RadioGroupConsoles.SelectedIndex == 2)
-            //{
-            //    if (XtraMessageBox.Show(this, Language.GetString("NEIGHBORHOOD_SCAN"), "Neighborhood Scan", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            //    {
-            //        try
-            //        {
-            //            foreach (var console in XboxExtensions.ScanForConsoles(this))
-            //            {
-            //                Settings.ConsoleProfiles.Add(console);
-            //            }
-
-            //            bool defaultExists = false;
-
-            //            foreach (var console in Settings.ConsoleProfiles)
-            //            {
-            //                if (console.IsDefault)
-            //                {
-            //                    defaultExists = true;
-            //                }
-            //            }
-
-            //            if (!defaultExists)
-            //            {
-            //                Settings.ConsoleProfiles[0].IsDefault = true;
-            //            }
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            MainWindow.Window.SetStatus(Language.GetString("NEIGHBORHOOD_SCAN_FAILED"), ex);
-            //            XtraMessageBox.Show(this,
-            //                                $"{Language.GetString("ADD_CONSOLES_MANUALLY")}\n\n{Language.GetString("ERROR")}: {ex.Message}",
-            //                                Language.GetString("SCAN_FAILED"),
-            //                                MessageBoxButtons.OK,
-            //                                MessageBoxIcon.Error);
-            //        }
-
-            //    }
-            //}
+            UpdateScrollBar();
         }
 
         private void LoadChangeLog()
@@ -300,6 +248,90 @@ namespace ArisenStudio.Forms.Dialogs
             }
         }
 
+        private void ButtonFindConsoles_Click(object sender, EventArgs e)
+        {
+            UpdateStatus(Language.GetString("SCANNING_XBOX_CONSOLES"));
+
+            try
+            {
+                int count = 0;
+
+                foreach (var consoleProfile in XboxExtensions.ScanForConsoles(this))
+                {
+                    Settings.ConsoleProfiles.Add(consoleProfile);
+                    count++;
+                }
+
+                if (count > 0)
+                {
+                    LoadConsoles();
+                }
+
+                _ = XtraMessageBox.Show(this, string.Format(Language.GetString("TOTAL_ADDED_PROFILES"), count), Language.GetString("XBOX_CONSOLES"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                UpdateStatus("Unable to scan for Xbox consoles.", ex);
+                _ = XtraMessageBox.Show(this, $"{Language.GetString("NEIGHBORHOOD_SCAN_FAILED")}.\n\nError: {ex.Message}", Language.GetString("XBOX_CONSOLES"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            UpdateStatus(Language.GetString("SCANNING_XBOX_FINISHED"));
+        }
+
+        private void ButtonEditProfile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MainWindow.IsConsoleConnected && MainWindow.ConsoleProfile == ConsoleProfile)
+                {
+                    _ = XtraMessageBox.Show(this, Language.GetString("EDIT_PROFILE_ERROR"), Language.GetString("LABEL_EXCLAMATION"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                if (ConsoleProfile != null)
+                {
+                    foreach (object control in PanelConsoleProfiles.Controls)
+                    {
+                        if (control is ProfileItem item)
+                        {
+                            item.ShouldHover = false;
+                        }
+                    }
+
+                    int selectedIndex = Settings.ConsoleProfiles.IndexOf(ConsoleProfile);
+                    ConsoleProfile oldConsoleProfile = Settings.ConsoleProfiles[selectedIndex];
+
+                    ConsoleProfile newConsoleProfile = DialogExtensions.ShowNewConnectionWindow(this, oldConsoleProfile, true);
+
+                    Settings.ConsoleProfiles[selectedIndex] = newConsoleProfile;
+
+                    SelectedItem = null;
+                    LoadConsoles();
+                }
+            }
+            catch (Exception ex)
+            {
+                UpdateStatus("There was an error editing this profile.", ex);
+                _ = XtraMessageBox.Show(this, "There was an error editing the console. If you keep seeing this then please report this bug.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void ButtonDeleteProfile_Click(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show(this, Language.GetString("CONFIRM_DELETE_ITEM"), Language.GetString("CONFIRM_DELETE"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (MainWindow.IsConsoleConnected && MainWindow.ConsoleProfile == ConsoleProfile)
+                {
+                    _ = XtraMessageBox.Show(this, Language.GetString("EDIT_PROFILE_ERROR"), Language.GetString("LABEL_EXCLAMATION"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                _ = Settings.ConsoleProfiles.Remove(ConsoleProfile);
+                SelectedItem = null;
+                LoadConsoles();
+            }
+        }
+
         private void WizardControlMain_NextClick(object sender, DevExpress.XtraWizard.WizardCommandButtonClickEventArgs e)
         {
             if (WizardControlMain.SelectedPage == WizardPageWelcome)
@@ -347,6 +379,18 @@ namespace ArisenStudio.Forms.Dialogs
             ScrollBarConsoleProfiles.SmallChange = PanelConsoleProfiles.VerticalScroll.SmallChange;
             ScrollBarConsoleProfiles.LargeChange = PanelConsoleProfiles.VerticalScroll.LargeChange;
             ScrollBarConsoleProfiles.Value = PanelConsoleProfiles.VerticalScroll.Value;
+        }
+
+        public void UpdateStatus(string status, Exception ex = null)
+        {
+            if (ex == null)
+            {
+                Program.Log.Info(status);
+            }
+            else
+            {
+                Program.Log.Error(ex, status);
+            }
         }
     }
 }

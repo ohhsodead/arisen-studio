@@ -14,6 +14,7 @@ using System.Resources;
 using System.Windows.Forms;
 using ScrollOrientation = DevExpress.XtraEditors.ScrollOrientation;
 using System.Drawing;
+using ArisenStudio.Constants;
 
 namespace ArisenStudio.Forms.Dialogs.Details
 {
@@ -149,6 +150,12 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         private void ButtonReportIssue_Click(object sender, EventArgs e)
         {
+            _ = Process.Start(Urls.WebsiteReportIssue);
+        }
+
+        private void ButtonHelp_Click(object sender, EventArgs e)
+        {
+            _ = Process.Start(Urls.WebsiteHelp);
         }
 
         protected override void OnPaint(PaintEventArgs e)

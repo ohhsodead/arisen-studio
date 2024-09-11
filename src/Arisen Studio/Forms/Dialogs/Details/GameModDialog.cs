@@ -84,6 +84,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
             ButtonFavorite.Text = IsFavorite ? Language.GetString("LABEL_REMOVE_FROM_FAVORITES") : Language.GetString("LABEL_ADD_TO_FAVORITES");
             ButtonReport.Text = Language.GetString("LABEL_REPORT_ISSUE");
+            ButtonHelp.Text = Language.GetString("LABEL_HELP_SUPPORT");
 
             int count = 0;
             foreach (DownloadFiles downloadFile in ModItem.DownloadFiles)
@@ -131,7 +132,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
         private void ButtonReportIssue_Click(object sender, EventArgs e)
         {
             _ = XtraMessageBox.Show(Language.GetString("REDIRECT_TO_GITHUB_ISSUES"), Language.GetString("REDIRECTING"), MessageBoxButtons.OK, MessageBoxIcon.Information);
-            _ = Process.Start(Urls.ProjectReportIssue);
+            _ = Process.Start(Urls.WebsiteReportIssue);
         }
 
         private void LabelDescription_HyperlinkClick(object sender, HyperlinkClickEventArgs e)

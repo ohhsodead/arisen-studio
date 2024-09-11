@@ -25,7 +25,7 @@ namespace ArisenStudio.Forms.Tools.PS3
 
         public static SettingsData Settings = MainWindow.Settings;
 
-        public static GitHubData Database = MainWindow.Database;
+        public static DatabaseClient Database = MainWindow.Database;
 
         private void GameRegions_Load(object sender, EventArgs e)
         {

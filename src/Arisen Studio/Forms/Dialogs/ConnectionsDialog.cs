@@ -311,7 +311,7 @@ namespace ArisenStudio.Forms.Dialogs
             {
                 if (MainWindow.IsConsoleConnected && MainWindow.ConsoleProfile == ConsoleProfile)
                 {
-                    _ = XtraMessageBox.Show(this, "You can't edit the details while you're connected to it.", "Connected Console", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    _ = XtraMessageBox.Show(this, Language.GetString("EDIT_PROFILE_ERROR"), Language.GetString("LABEL_EXCLAMATION"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
 
@@ -345,11 +345,11 @@ namespace ArisenStudio.Forms.Dialogs
 
         private void ButtonDeleteConsole_Click(object sender, EventArgs e)
         {
-            if (XtraMessageBox.Show(this, "Do you really want to delete the selected item?", "Delete Console", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (XtraMessageBox.Show(this, Language.GetString("CONFIRM_DELETE_ITEM"), Language.GetString("CONFIRM_DELETE"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (MainWindow.IsConsoleConnected && MainWindow.ConsoleProfile == ConsoleProfile)
                 {
-                    _ = XtraMessageBox.Show(this, "You can't edit the details while you're connected to it.", "Connected Console", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    _ = XtraMessageBox.Show(this, Language.GetString("EDIT_PROFILE_ERROR"), Language.GetString("LABEL_EXCLAMATION"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
 

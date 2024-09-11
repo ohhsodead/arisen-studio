@@ -51,6 +51,8 @@ using Microsoft.Web.WebView2.Core;
 using DevExpress.XtraCharts;
 using DevExpress.Drawing;
 using DevExpress.XtraEditors.Controls;
+using ArisenStudio.Models.Dashboard;
+using System.Net.Http;
 
 namespace ArisenStudio.Forms.Windows
 {
@@ -89,7 +91,7 @@ namespace ArisenStudio.Forms.Windows
         /// <summary>
         /// Get the data from the database files.
         /// </summary>
-        public static GitHubData Database { get; private set; }
+        public static DatabaseClient Database { get; private set; }
 
         /// <summary>
         /// Get the current console profile data.
@@ -192,6 +194,17 @@ namespace ArisenStudio.Forms.Windows
             {
                 Program.Log.Info("Internet connection detected.");
 
+                if (!await CheckDatabaseStatus())
+                {
+                    SetStatus(ResourceLanguage.GetString("LABEL_SERVER_MAINTENANCE_MESSAGE"));
+                    _ = XtraMessageBox.Show(this,
+                                            ResourceLanguage.GetString("LABEL_SERVER_MAINTENANCE"),
+                                            ResourceLanguage.GetString("LABEL_SERVER_MAINTENANCE_MESSAGE"),
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Information);
+                    Application.Exit();
+                }
+
                 if (Settings.FirstTimeOpenAfterUpdate)
                 {
                     Settings.FirstTimeOpenAfterUpdate = false;
@@ -201,7 +214,7 @@ namespace ArisenStudio.Forms.Windows
                 UpdateExtensions.CheckApplicationVersion();
 
                 SetStatus(ResourceLanguage.GetString("INITIALIZING_APP_DB") + "...");
-                await Task.Run(LoadDataAsync);
+                await LoadDataAsync();
                 InitializeFinished();
             }
             else
@@ -311,13 +324,42 @@ namespace ArisenStudio.Forms.Windows
         }
 
         /// <summary>
-        /// Retrieve the categories and mods database.
+        /// Check the server status by trying to read a test file
+        /// </summary>
+        public async Task<bool> CheckDatabaseStatus()
+        {
+            try
+            {
+                HttpClient _httpClient = new();
+                _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("ArisenStudio");
+                string response = await _httpClient.GetStringAsync(Urls.StatusCheck);
+                string status = JsonConvert.DeserializeObject<string>(response);
+
+                if (string.Equals(status, "OK", StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
+                else
+                {
+                    Program.Log.Error("Database status not OK.");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Program.Log.Error(ex, $"{ResourceLanguage.GetString("UNABLE_LOAD_DATABASE")} {ResourceLanguage.GetString("ERROR")}: {ex.Message}");
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Load the database files into the app, either from web or cache.
         /// </summary>
         private static async Task LoadDataAsync()
         {
             try
             {
-                Database = await GitHubData.InitializeAsync();//.ConfigureAwait(true);
+                Database = await DatabaseClient.InitializeAsync();//.ConfigureAwait(true);
             }
             catch (Exception ex)
             {
@@ -401,7 +443,16 @@ namespace ArisenStudio.Forms.Windows
 
             EnableConsoleActions();
 
-            BannerAdDashboard.ShowAd(802, 134, "33krwjd74qn6");
+            // Banner Ad
+
+            //WebViewAdBanner.EnsureCoreWebView2Async();
+            //WebViewAdBanner.CoreWebView2.SetVirtualHostNameToFolderMapping("appassets.example", "assets", CoreWebView2HostResourceAccessKind.DenyCors);
+            string adScript = "<script async type=\"application/javascript\" src=\"https://a.magsrv.com/ad-provider.js\"></script>" +
+                              "<ins class=\"eas6a97888e2\" data-zoneid=\"5410756\"></ins>" +
+                              "<script>(AdProvider = window.AdProvider || []).push({\"serve\": {}});</script>";
+            //WebViewAdBanner.NavigateToString(adScript);
+
+            //BannerAdDashboard.ShowAd(802, 134, "33krwjd74qn6");
 
             CloseSplashScreenProgress(handleSplashScreenProgress);
 
@@ -497,7 +548,19 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        #region Ribbon Page
+        #region Ribbon Bar
+
+        // Update Button (Top Left)
+
+        public void UpdateAvailable(bool isNewUpdate)
+        {
+            ButtonUpdate.Visibility = isNewUpdate ? BarItemVisibility.Always : BarItemVisibility.Never;
+        }
+
+        private void ButtonUpdate_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UpdateExtensions.UpdateApplication();
+        }
 
         // Connection
 
@@ -958,25 +1021,29 @@ namespace ArisenStudio.Forms.Windows
             DialogExtensions.ShowXboxTakeScreenshot(this);
         }
 
-        private void ButtonToolsXboxConsoleManager_ItemClick(object sender, ItemClickEventArgs e)
+        private void ButtonToolsXboxNeighborhoodEditor_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DialogExtensions.ShowXboxConsoleManager(this);
+            DialogExtensions.ShowXboxNeighborhoodEditor(this);
         }
 
         private void ButtonToolsXboxNotifyMessage_ItemClick(object sender, ItemClickEventArgs e)
         {
-            string notifyMessage = DialogExtensions.ShowTextInputDialog(this, ResourceLanguage.GetString("NOTIFY_MESSAGE"), ResourceLanguage.GetString("MESSAGE"));
-
-            List<string> notifyIcons = [];
-
-            foreach (XNotifyLogo xNotifyIcon in Enum.GetValues(typeof(XNotifyLogo)) as XNotifyLogo[])
+            try
             {
-                notifyIcons.Add(xNotifyIcon.Humanize());
+                string notifyMessage = DialogExtensions.ShowTextInputDialog(this, ResourceLanguage.GetString("NOTIFY_MESSAGE"), ResourceLanguage.GetString("MESSAGE"));
+
+                List<string> notifyIcons = [];
+
+                foreach (XNotifyLogo xNotifyIcon in Enum.GetValues(typeof(XNotifyLogo)) as XNotifyLogo[])
+                {
+                    notifyIcons.Add(xNotifyIcon.Humanize());
+                }
+
+                string notifyIcon = DialogExtensions.ShowListItemDialog(this, ResourceLanguage.GetString("NOTIFY_ICON"), ResourceLanguage.GetString("ICON"), notifyIcons.ToArray());
+
+                XboxConsole.XNotify(notifyMessage, notifyIcon.DehumanizeTo<XNotifyLogo>());
             }
-
-            string notifyIcon = DialogExtensions.ShowListItemDialog(this, ResourceLanguage.GetString("NOTIFY_ICON"), ResourceLanguage.GetString("ICON"), notifyIcons.ToArray());
-
-            XboxConsole.XNotify(notifyMessage, notifyIcon.DehumanizeTo<XNotifyLogo>());
+            catch { }
         }
 
         #endregion
@@ -1212,10 +1279,7 @@ namespace ArisenStudio.Forms.Windows
 
             if (!IsConsoleConnected)
             {
-                if (handleOverlayFeatureNotAvailable == null)
-                {
-                    handleOverlayFeatureNotAvailable = ShowOverlayFeatureNotAvailable(PageFileManager, ResourceLanguage.GetString("YOU_MUST_BE_CONNECTED_TO_USE_FEATURE"));
-                }
+                handleOverlayFeatureNotAvailable ??= ShowOverlayFeatureNotAvailable(PageFileManager, ResourceLanguage.GetString("YOU_MUST_BE_CONNECTED_TO_USE_FEATURE"));
             }
             else
             {
@@ -1683,59 +1747,6 @@ namespace ArisenStudio.Forms.Windows
 
         private void LoadStatistics()
         {
-            //chartControl1.Titles.Add(new ChartTitle() { Text = "Statistics" });
-
-            //Series series1 = new("Statistics", ViewType.Pie)
-            //{
-            //    // Bind the series to data.
-            //    DataSource = DataPoint.GetDataPoints(
-            //    Database.GameModsPS3.Library.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Game).Count,
-            //    Database.HomebrewPS3.Library.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Homebrew).Count,
-            //    Database.ResourcesPS3.Library.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Resource).Count,
-            //    Database.PackagesCount(),
-            //    Database.GameSaves.GameSaves.Where(x => x.GetPlatform() == Platform.PS3).ToList().Count),
-
-            //    ArgumentDataMember = "Argument"
-            //};
-
-            //series1.ValueDataMembers.AddRange(["Value"]);
-
-            //// Add the series to the chart.
-            //chartControl1.Series.Add(series1);
-
-            //// Access diagram settings.
-            //SimpleDiagram diagram = (SimpleDiagram)chartControl1.Diagram; diagram.Margins.All = 10;
-
-            //// Format the the series labels.
-            //series1.Label.TextPattern = "{VP:p0} ({V:.##}M km²)";
-
-            //// Format the series legend items.
-            //series1.LegendTextPattern = "{A}";
-
-            //// Adjust the position of series labels. 
-            //((PieSeriesLabel)series1.Label).Position = PieSeriesLabelPosition.TwoColumns;
-
-            //// Detect overlapping of series labels.
-            //((PieSeriesLabel)series1.Label).ResolveOverlappingMode = ResolveOverlappingMode.Default;
-
-            //// Access the view-type-specific options of the series.
-            //PieSeriesView myView = (PieSeriesView)series1.View;
-
-            //// Specify the pie rotation.
-            //myView.Rotation = -60;
-
-            //// Specify a data filter to explode points.
-            ////myView.ExplodedPointsFilters.Add(new SeriesPointFilter(SeriesPointKey.Value_1, DataFilterCondition.GreaterThanOrEqual, 9));
-            ////myView.ExplodedPointsFilters.Add(new SeriesPointFilter(SeriesPointKey.Argument, DataFilterCondition.NotEqual, "Others"));
-            ////myView.ExplodeMode = PieExplodeMode.UseFilters;
-            ////myView.ExplodedDistancePercentage = 30;
-            ////myView.RuntimeExploding = true;
-
-            //// Customize the legend.
-            //chartControl1.Legend.Visibility = DefaultBoolean.True;
-
-
-            /**/
             // Create a new pie series
             Series series = new("Categories", ViewType.Pie);
 
@@ -1781,18 +1792,18 @@ namespace ArisenStudio.Forms.Windows
             }
 
             // Add the series to the chart
-            _ = chartControl1.Series.Add(series);
+            //_ = chartControl1.Series.Add(series);
 
-            // Customize the chart (optional)
-            //chartControl1.Titles.Add(new ChartTitle() { Text = "Categories and Subcategories Pie Chart" });
+            //// Customize the chart (optional)
+            ////chartControl1.Titles.Add(new ChartTitle() { Text = "Categories and Subcategories Pie Chart" });
 
-            // Customize legend
-            chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            chartControl1.Legend.AlignmentHorizontal = LegendAlignmentHorizontal.Center;
-            chartControl1.Legend.AlignmentVertical = LegendAlignmentVertical.BottomOutside;
+            //// Customize legend
+            //chartControl1.Legend.Visibility = DefaultBoolean.True;
+            //chartControl1.Legend.AlignmentHorizontal = LegendAlignmentHorizontal.Center;
+            //chartControl1.Legend.AlignmentVertical = LegendAlignmentVertical.BottomOutside;
 
             // Enable tooltips
-            series.Label.TextPattern = "{A}: {VP:p0}";
+            //series.Label.TextPattern = "{A}: {VP:p0}";
 
             LabelHeaderStatistics.Text = ResourceLanguage.GetString("STATISTICS");
 
@@ -2719,15 +2730,15 @@ namespace ArisenStudio.Forms.Windows
                         Category modCategory = Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId);
 
                         _ = DataTableInstalledMods.Rows.Add(consoleProfile.Id,
-                                                        "custom|" + customMod.Id.ToString(),
-                                                        installedModInfo.Platform.Humanize(),
-                                                        modCategory.Title,
-                                                        ((DownloadFiles)installedModInfo.DownloadFiles).Name,
-                                                        customMod.ModType,
-                                                        string.IsNullOrEmpty(((DownloadFiles)installedModInfo.DownloadFiles).Region) ? "n/a" : ((DownloadFiles)installedModInfo.DownloadFiles).Region,
-                                                        ((DownloadFiles)installedModInfo.DownloadFiles).Version,
-                                                        $"{installedModInfo.TotalFiles}{(installedModInfo.TotalFiles > 1 ? $" {ResourceLanguage.GetString("FILES")}" : $" {ResourceLanguage.GetString("FILE")}")}",
-                                                        Settings.UseRelativeTimes ? installedModInfo.DateInstalled.Humanize() : $"{installedModInfo.DateInstalled:g}");
+                                                            "custom|" + customMod.Id.ToString(),
+                                                            installedModInfo.Platform.Humanize(),
+                                                            modCategory.Title,
+                                                            ((DownloadFiles)installedModInfo.DownloadFiles).Name,
+                                                            customMod.ModType,
+                                                            string.IsNullOrEmpty(((DownloadFiles)installedModInfo.DownloadFiles).Region) ? "n/a" : ((DownloadFiles)installedModInfo.DownloadFiles).Region,
+                                                            ((DownloadFiles)installedModInfo.DownloadFiles).Version,
+                                                            $"{installedModInfo.TotalFiles}{(installedModInfo.TotalFiles > 1 ? $" {ResourceLanguage.GetString("FILES")}" : $" {ResourceLanguage.GetString("FILE")}")}",
+                                                            Settings.UseRelativeTimes ? installedModInfo.DateInstalled.Humanize() : $"{installedModInfo.DateInstalled:g}");
                     }
                     else
                     {
@@ -2736,15 +2747,15 @@ namespace ArisenStudio.Forms.Windows
                         Category modCategory = Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId);
 
                         _ = DataTableInstalledMods.Rows.Add(consoleProfile.Id,
-                                                        modItemData.Id.ToString(),
-                                                        installedModInfo.Platform.Humanize(),
-                                                        modCategory.Title,
-                                                        ((DownloadFiles)installedModInfo.DownloadFiles).Name,
-                                                        modItemData.ModType,
-                                                        string.IsNullOrEmpty(((DownloadFiles)installedModInfo.DownloadFiles).Region) ? "n/a" : ((DownloadFiles)installedModInfo.DownloadFiles).Region,
-                                                        ((DownloadFiles)installedModInfo.DownloadFiles).Version,
-                                                        $"{installedModInfo.TotalFiles}{(installedModInfo.TotalFiles > 1 ? $" {ResourceLanguage.GetString("FILES")}" : $" {ResourceLanguage.GetString("FILE")}")}",
-                                                        Settings.UseRelativeTimes ? installedModInfo.DateInstalled.Humanize() : $"{installedModInfo.DateInstalled:g}");
+                                                            modItemData.Id.ToString(),
+                                                            installedModInfo.Platform.Humanize(),
+                                                            modCategory.Title,
+                                                            ((DownloadFiles)installedModInfo.DownloadFiles).Name,
+                                                            modItemData.ModType,
+                                                            string.IsNullOrEmpty(((DownloadFiles)installedModInfo.DownloadFiles).Region) ? "n/a" : ((DownloadFiles)installedModInfo.DownloadFiles).Region,
+                                                            ((DownloadFiles)installedModInfo.DownloadFiles).Version,
+                                                            $"{installedModInfo.TotalFiles}{(installedModInfo.TotalFiles > 1 ? $" {ResourceLanguage.GetString("FILES")}" : $" {ResourceLanguage.GetString("FILE")}")}",
+                                                            Settings.UseRelativeTimes ? installedModInfo.DateInstalled.Humanize() : $"{installedModInfo.DateInstalled:g}");
                     }
 
                     totalFiles += installedModInfo.TotalFiles;
@@ -3605,7 +3616,7 @@ namespace ArisenStudio.Forms.Windows
                                 {
                                     case "folder":
                                         SetLocalStatus(string.Format(ResourceLanguage.GetString("FOLDER_DELETING"), selectedItem));
-                                        UserFolders.DeleteDirectory(selectedItem);
+                                        IoExtensions.DeleteDirectory(selectedItem);
                                         SetLocalStatus(string.Format(ResourceLanguage.GetString("FOLDER_DELETED"), name));
                                         break;
                                     case "file":
@@ -4295,7 +4306,7 @@ namespace ArisenStudio.Forms.Windows
 
                                         if (Directory.Exists(localPath))
                                         {
-                                            UserFolders.DeleteDirectory(localPath);
+                                            IoExtensions.DeleteDirectory(localPath);
                                         }
 
                                         SetConsoleStatus(string.Format(ResourceLanguage.GetString("FOLDER_DOWNLOADING"), Path.GetFileName(consolePath)));
@@ -4724,7 +4735,7 @@ namespace ArisenStudio.Forms.Windows
                 ButtonToolsXboxPowerSoftReboot.Caption = ResourceLanguage.GetString("SOFT_REBOOT");
                 ButtonToolsXboxPowerHardReboot.Caption = ResourceLanguage.GetString("HARD_REBOOT");
                 ButtonToolsXboxTakeScreenshot.Caption = ResourceLanguage.GetString("TAKE_SCREENSHOT");
-                ButtonToolsXboxConsoleManager.Caption = ResourceLanguage.GetString("CONSOLE_MANAGER");
+                ButtonToolsXboxNeighborhoodEditor.Caption = ResourceLanguage.GetString("NEIGHBORHOOD_EDITOR");
                 ButtonToolsXboxNotifyMessage.Caption = ResourceLanguage.GetString("NOTIFY_MESSAGE");
 
                 // Status Bar
@@ -4838,7 +4849,7 @@ namespace ArisenStudio.Forms.Windows
                 // Settings: Downloads
                 LabelSettingsPathBaseDirectory.Text = ResourceLanguage.GetString("LABEL_APP_DATA");
                 LabelSettingsPathDownloads.Text = ResourceLanguage.GetString("LABEL_DOWNLOADS");
-                LabelSettingsPathTemp.Text = ResourceLanguage.GetString("LABEL_TEMP");
+                LabelSettingsPathTemp.Text = ResourceLanguage.GetString("LABEL_TEMP_FOLDER");
 
                 LabelSettingsReferToBaseDirectory.Text = ResourceLanguage.GetString("REFER_TO_BASE_DIRECTORY") + "\n\n" + ResourceLanguage.GetString("DIRECTORIES_MUST_BE_WRITABLE");
 
@@ -5333,7 +5344,7 @@ namespace ArisenStudio.Forms.Windows
 
         private void TextBoxSettingsPathTemp_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
-            string path = DialogExtensions.ShowFolderBrowseDialog(this, ResourceLanguage.GetString("LABEL_TEMP"));
+            string path = DialogExtensions.ShowFolderBrowseDialog(this, ResourceLanguage.GetString("LABEL_TEMP_FOLDER"));
 
             if (!path.IsNullOrEmpty())
             {
@@ -5377,22 +5388,24 @@ namespace ArisenStudio.Forms.Windows
         {
             if (TextBoxSettingsLaunchIniFilePath.Text.IsNullOrEmpty() | TextBoxSettingsLaunchIniFilePath.Text.IsNullOrWhiteSpace())
             {
-                TextBoxSettingsLaunchIniFilePath.Text = Settings.LaunchIniFilePath;
+                TextBoxSettingsLaunchIniFilePath.Text = Settings.LaunchIniFilePath.Replace(@"HDD:\", @"Hdd:\");
                 return;
             }
 
-            Settings.LaunchIniFilePath = TextBoxSettingsLaunchIniFilePath.Text;
+            Settings.LaunchIniFilePath = TextBoxSettingsLaunchIniFilePath.Text.Replace(@"HDD:\", @"Hdd:\");
+            TextBoxSettingsLaunchIniFilePath.Text = Settings.LaunchIniFilePath.Replace(@"HDD:\", @"Hdd:\");
         }
 
         private void TextBoxSettingsAuroraFolderPath_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
             if (TextBoxSettingsAuroraFolderPath.Text.IsNullOrEmpty() | TextBoxSettingsAuroraFolderPath.Text.IsNullOrWhiteSpace())
             {
-                TextBoxSettingsAuroraFolderPath.Text = Settings.AuroraFolderPath;
+                TextBoxSettingsAuroraFolderPath.Text = Settings.AuroraFolderPath.Replace(@"HDD:\", @"Hdd:\");
                 return;
             }
 
-            Settings.AuroraFolderPath = TextBoxSettingsAuroraFolderPath.Text;
+            Settings.AuroraFolderPath = TextBoxSettingsAuroraFolderPath.Text.Replace(@"HDD:\", @"Hdd:\");
+            TextBoxSettingsAuroraFolderPath.Text = Settings.AuroraFolderPath.Replace(@"HDD:\", @"Hdd:\");
         }
 
         // Cache
@@ -7677,7 +7690,7 @@ namespace ArisenStudio.Forms.Windows
         {
             if (SelectedGameModXboxId != -1)
             {
-                ShowHomebrewDetails(Platform.XBOX360, SelectedGameModXboxId);
+                ShowGameModDetails(Platform.XBOX360, SelectedGameModXboxId);
             }
         }
 
@@ -9022,7 +9035,7 @@ namespace ArisenStudio.Forms.Windows
         {
             if (e.FocusedRowHandle != -1)
             {
-                SelectedGameSaveItem = Database.GameSaves.GetModById(Platform, (int)GridViewGameSaves.GetRowCellValue(e.FocusedRowHandle, GridViewGames.Columns[0]));
+                SelectedGameSaveItem = Database.GameSaves.GetModById(Platform, (int)GridViewGameSaves.GetRowCellValue(e.FocusedRowHandle, GridViewGameSaves.Columns[0]));
             }
 
             TileItemGameSavesDownload.Enabled = e.FocusedRowHandle != -1;
@@ -9036,7 +9049,7 @@ namespace ArisenStudio.Forms.Windows
             GridHitInfo info = view.CalcHitInfo(ea.Location);
             if (info.InRow)
             {
-                SelectedGameSaveItem = Database.GameSaves.GetModById(Platform, (int)GridViewGameSaves.GetRowCellValue(e.RowHandle, GridViewGames.Columns[0]));
+                SelectedGameSaveItem = Database.GameSaves.GetModById(Platform, (int)GridViewGameSaves.GetRowCellValue(e.RowHandle, GridViewGameSaves.Columns[0]));
             }
 
             TileItemGameSavesDownload.Enabled = SelectedGameSaveItem != null;
@@ -9053,10 +9066,10 @@ namespace ArisenStudio.Forms.Windows
                 //string colCaption = info.Column == null ? "N/A" : info.Column.GetCaption();
                 //MessageBox.Show(string.Format("DoubleClick on row: {0}, column: {1}.", info.RowHandle, colCaption));
 
-                //int modId = (int)GridViewGames.GetRowCellValue(info.RowHandle, GridViewGames.Columns[0]);
+                //int modId = (int)GridViewGameSaves.GetRowCellValue(info.RowHandle, GridViewGameSaves.Columns[0]);
                 //SelectedGameModXboxId = modId;
 
-                SelectedGameSaveItem = Database.GameSaves.GetModById(Platform, (int)GridViewGameSaves.GetRowCellValue(info.RowHandle, GridViewGames.Columns[0]));
+                SelectedGameSaveItem = Database.GameSaves.GetModById(Platform, (int)GridViewGameSaves.GetRowCellValue(info.RowHandle, GridViewGameSaves.Columns[0]));
 
                 ShowGameSaveDetails(ConsoleProfile.Platform, SelectedGameSaveItem.Id);
             }
@@ -9716,7 +9729,7 @@ namespace ArisenStudio.Forms.Windows
             {
                 var appItemData = Database.HomebrewPS4.GetModById(modId);
 
-                DialogExtensions.ShowItemDetailsDialog(this, Database.CategoriesData, modItemData, appItemData);
+                DialogExtensions.ShowItemAppDetailsDialog(this, appItemData);
                 return;
             }
 
@@ -9778,7 +9791,7 @@ namespace ArisenStudio.Forms.Windows
                     return;
             }
 
-            DialogExtensions.ShowItemDetailsDialog(this, Database.CategoriesData, null, appItemData);
+            DialogExtensions.ShowItemAppDetailsDialog(this, appItemData);
         }
 
         /// <summary>
@@ -10056,9 +10069,7 @@ namespace ArisenStudio.Forms.Windows
 
         private void SetAboutInfo()
         {
-            //LabelAboutTitle.Text = $@"Arisen Studio ({UpdateExtensions.CurrentVersionName})";
             LabelAboutVersion.Text = $"{UpdateExtensions.CurrentVersionName} ({GitHubAllReleases[0].PublishedAt.DateTime.ToShortDateString()})";
-            //LabelAboutSubTitle.Text = string.Format(LabelAboutSubTitle.Text, GitHubAllReleases[0].PublishedAt.DateTime.ToShortDateString());
         }
 
         private void ImageLogo_ItemClick(object sender, SvgImageItemMouseEventArgs e)
@@ -10091,6 +10102,11 @@ namespace ArisenStudio.Forms.Windows
             _ = Process.Start(Urls.GitHubRepo);
         }
 
+        private void LabelDonatePayPal_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
+        {
+            Process.Start(Urls.DonationPayPal);
+        }
+
         private void LabelAboutLibraries_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
         {
             _ = Process.Start(e.Link);
@@ -10108,12 +10124,15 @@ namespace ArisenStudio.Forms.Windows
 
         #endregion
 
+        #region Logs, Connection Status and Enable Controls
+
         /// <summary>
         /// Enable or disable console-only actions.
         /// </summary>
         private void EnableConsoleActions()
         {
 #if !DEBUG
+            NavigationItemCustomMods.Visible = false;
             NavigationItemGameMods.Visible = Platform == Platform.PS3 | Platform == Platform.PS4 | Platform == Platform.XBOX360;
             NavigationItemHomebrew.Visible = Platform == Platform.PS3 | Platform == Platform.PS4 | Platform == Platform.XBOX360;
             NavigationItemResources.Visible = Platform == Platform.PS3;
@@ -10327,6 +10346,10 @@ namespace ArisenStudio.Forms.Windows
             StatusLabelStatus.Caption = status;
         }
 
+        #endregion
+
+        #region Settings
+
         /// <summary>
         /// Load the users settings data.
         /// </summary>
@@ -10429,6 +10452,8 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
+        #endregion
+
         private void NavigationMenu_CustomDrawElement(object sender, CustomDrawElementEventArgs e)
         {
             if (e.ObjectInfo.Element == NavigationItemDashboard | e.ObjectInfo.Element == NavigationItemSettings)
@@ -10471,140 +10496,6 @@ namespace ArisenStudio.Forms.Windows
             {
                 DXMouseEventArgs.GetMouseArgs(e).Handled = true;
             }
-        }
-
-        //public bool IsUpdateAvailable { get; set; } = false;
-
-        public void UpdateAvailable(bool isNewUpdate)
-        {
-            //IsUpdateAvailable = isNewUpdate;
-            ButtonUpdate.Visibility = isNewUpdate ? BarItemVisibility.Always : BarItemVisibility.Never;
-        }
-
-        private void ButtonUpdate_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            //if (IsUpdateAvailable)
-            //{
-                UpdateExtensions.UpdateApplication();
-            //}
-        }
-
-        private void GridViewDownloads_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
-        {
-            //if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_PLATFORM"))
-            //{
-            //    GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
-
-            //    //int indent = cellViewInfo.Bounds.X + 7;
-            //    int indent = cellViewInfo.Bounds.X;
-
-            //    cellViewInfo.CellValueRect.X = indent;
-            //    cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
-            //}
-        }
-
-        private void GridViewInstalledMods_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
-        {
-            //if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_PLATFORM"))
-            //{
-            //    GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
-
-            //    int indent = cellViewInfo.Bounds.X + 7;
-
-            //    cellViewInfo.CellValueRect.X = indent;
-            //    cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
-            //}
-        }
-
-        private void GridViewGameMods_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
-        {
-            //if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_GAME"))
-            //{
-            //    GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
-
-            //    int indent = cellViewInfo.Bounds.X + 7;
-
-            //    cellViewInfo.CellValueRect.X = indent;
-            //    cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
-            //}
-        }
-
-        private void GridViewHomebrew_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
-        {
-            //if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_CATEGORY"))
-            //{
-            //    GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
-
-            //    int indent = cellViewInfo.Bounds.X + 7;
-
-            //    cellViewInfo.CellValueRect.X = indent;
-            //    cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
-            //}
-        }
-
-        private void GridViewResources_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
-        {
-            //if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_CATEGORY"))
-            //{
-            //    GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
-
-            //    int indent = cellViewInfo.Bounds.X + 7;
-
-            //    cellViewInfo.CellValueRect.X = indent;
-            //    cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
-            //}
-        }
-
-        private void GridViewPackages_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
-        {
-            //if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_CATEGORY"))
-            //{
-            //    GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
-
-            //    int indent = cellViewInfo.Bounds.X + 7;
-
-            //    cellViewInfo.CellValueRect.X = indent;
-            //    cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
-            //}
-        }
-
-        private void GridViewPlugins_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
-        {
-            //if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_CATEGORY"))
-            //{
-            //    GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
-
-            //    int indent = cellViewInfo.Bounds.X + 7;
-
-            //    cellViewInfo.CellValueRect.X = indent;
-            //    cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
-            //}
-        }
-
-        private void GridViewGameSaves_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
-        {
-            //if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_GAME"))
-            //{
-            //    GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
-
-            //    int indent = cellViewInfo.Bounds.X + 7;
-
-            //    cellViewInfo.CellValueRect.X = indent;
-            //    cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
-            //}
-        }
-
-        private void GridViewGameCheats_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
-        {
-            //if (e.Column.FieldName == ResourceLanguage.GetString("LABEL_GAME"))
-            //{
-            //    GridCellInfo cellViewInfo = e.Cell as GridCellInfo;
-
-            //    int indent = cellViewInfo.Bounds.X + 7;
-
-            //    cellViewInfo.CellValueRect.X = indent;
-            //    cellViewInfo.CellValueRect.Width = cellViewInfo.Bounds.Width - indent;
-            //}
         }
     }
 }

@@ -77,6 +77,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
             ButtonFavorite.Text = IsFavorite ? Language.GetString("LABEL_REMOVE_FROM_FAVORITES") : Language.GetString("LABEL_ADD_TO_FAVORITES");
             ButtonReport.Text = Language.GetString("LABEL_REPORT_ISSUE");
+            ButtonHelp.Text = Language.GetString("LABEL_HELP_SUPPORT");
 
             int count = 0;
             foreach (DownloadFiles downloadFile in GameSaveItem.DownloadFiles)

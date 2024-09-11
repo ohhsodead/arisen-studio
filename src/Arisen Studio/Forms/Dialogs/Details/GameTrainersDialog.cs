@@ -28,7 +28,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         public ResourceManager Language = MainWindow.ResourceLanguage;
 
-        public GitHubData Database = MainWindow.Database;
+        public DatabaseClient Database = MainWindow.Database;
 
         public ConsoleProfile ConsoleProfile = MainWindow.ConsoleProfile;
 
@@ -85,6 +85,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
                 ButtonDownload.Text = Language.GetString("LABEL_DOWNLOAD");
                 ButtonInstall.Text = Language.GetString("LABEL_INSTALL");
+                ButtonReport.Text = Language.GetString("LABEL_REPORT_ISSUE");
                 ButtonHelp.Text = Language.GetString("LABEL_HELP_SUPPORT");
 
                 ButtonInstall.Enabled = MainWindow.IsConsoleConnected || MainWindow.Settings.InstallGameModsToUsbDevice;

@@ -76,7 +76,7 @@ namespace ArisenStudio.Forms.Dialogs
             {
                 //if (ComboBoxModType.Properties.Items.Contains(modTypes.Any()))
                 //{
-                    ComboBoxModType.Properties.Items.AddRange(modTypes.Distinct().ToList());
+                ComboBoxModType.Properties.Items.AddRange(modTypes.Distinct().ToList());
                 //}
             }
 

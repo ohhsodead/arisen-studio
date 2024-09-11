@@ -45,7 +45,7 @@ namespace ArisenStudio.Forms.Dialogs
 
         private void ButtonOpenLink_ItemClick(object sender, ItemClickEventArgs e)
         {
-            _ = Process.Start(Urls.ProjectRequestForm);
+            _ = Process.Start(Urls.WebsiteRequestForm);
         }
 
         private void WebView_NavigationStarting(object sender, CoreWebView2NavigationStartingEventArgs e)

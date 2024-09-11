@@ -65,9 +65,14 @@ namespace ArisenStudio.Forms.Tools.XBOX
 
                 fileName = fileName.RemoveInvalidChars();
 
-                string fileLocation = filePath + fileName + ".bmp";
+                string fileLocation = IoExtensions.GetNextFileName(filePath + fileName + ".bmp");
 
-                Program.Log.Info("Local File Path: " +  fileLocation);
+                Program.Log.Info($"Local File Path: {fileLocation}");
+
+                if (File.Exists(fileLocation))
+                {
+                    fileName += "-2";
+                }
 
                 XboxConsole.ScreenShot(fileLocation);
                 ImageScreenshot.Image = new Bitmap(fileLocation);
@@ -135,7 +140,7 @@ namespace ArisenStudio.Forms.Tools.XBOX
 
             try
             {
-                string link = await ImgurUploader.Upload(bitmap, apiClient);
+                string link = await ImgurUploader.Upload(bitmap, Path.GetFileNameWithoutExtension(LocalFilePath), apiClient);
 
                 if (link == "Error")
                 {

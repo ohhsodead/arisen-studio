@@ -246,6 +246,7 @@
             this.ButtonDeleteProfile.Size = new System.Drawing.Size(122, 26);
             this.ButtonDeleteProfile.TabIndex = 2;
             this.ButtonDeleteProfile.Text = "Delete Console";
+            this.ButtonDeleteProfile.Click += new System.EventHandler(this.ButtonDeleteProfile_Click);
             // 
             // ButtonEditProfile
             // 
@@ -266,6 +267,7 @@
             this.ButtonEditProfile.Size = new System.Drawing.Size(110, 26);
             this.ButtonEditProfile.TabIndex = 1;
             this.ButtonEditProfile.Text = "Edit Console";
+            this.ButtonEditProfile.Click += new System.EventHandler(this.ButtonEditProfile_Click);
             // 
             // ButtonFindConsoles
             // 
@@ -291,6 +293,7 @@
             this.ButtonFindConsoles.Size = new System.Drawing.Size(114, 26);
             this.ButtonFindConsoles.TabIndex = 13;
             this.ButtonFindConsoles.Text = "Find Consoles";
+            this.ButtonFindConsoles.Click += new System.EventHandler(this.ButtonFindConsoles_Click);
             // 
             // ButtonAddNewProfile
             // 
@@ -361,6 +364,7 @@
             this.Text = "Setup Wizard";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SetupWizardDialog_FormClosing);
             this.Load += new System.EventHandler(this.SetupWizardDialog_Load);
+            this.SizeChanged += new System.EventHandler(this.SetupWizardDialog_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.WizardControlMain)).EndInit();
             this.WizardControlMain.ResumeLayout(false);
             this.WizardPageWelcome.ResumeLayout(false);

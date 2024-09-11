@@ -219,7 +219,7 @@ namespace ArisenStudio.Models.Resources
         /// <param name="dateInstalled"></param>
         /// <param name="downloadFiles"></param>
         /// <param name="isCustom"></param>
-        public void UpdateInstalledMods(ConsoleProfile consoleProfile, string categoryId, CategoryType categoryType, int modId, int totalFiles, DateTime dateInstalled, object downloadFiles, bool isCustom = false)
+        public void UpdateInstalledMods(ConsoleProfile consoleProfile, string categoryId, CategoryType categoryType, int modId, int totalFiles, DateTime dateInstalled, DownloadFiles downloadFiles, bool isCustom = false)
         {
             if (consoleProfile != null)
             {
@@ -499,7 +499,7 @@ namespace ArisenStudio.Models.Resources
 
         public DateTime DateInstalled { get; set; }
 
-        public object DownloadFiles { get; set; }
+        public DownloadFiles DownloadFiles { get; set; }
 
         public bool IsCustom { get; set; }
     }

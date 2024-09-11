@@ -83,7 +83,7 @@ public class GameSaveItemData
 
         if (Directory.Exists(archivePath))
         {
-            UserFolders.DeleteDirectory(archivePath);
+            IoExtensions.DeleteDirectory(archivePath);
         }
 
         if (!Directory.Exists(archivePath))

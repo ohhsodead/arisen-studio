@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace ArisenStudio.Forms.Dialogs
@@ -20,7 +21,12 @@ namespace ArisenStudio.Forms.Dialogs
 
         private void DataViewDialog_Scroll(object sender, ScrollEventArgs e)
         {
-            PanelDetails.Update(); // Removes lag when scrolling
+            PanelDetails.Update();
+        }
+
+        private void LabelBody_HyperlinkClick(object sender, DevExpress.Utils.HyperlinkClickEventArgs e)
+        {
+            Process.Start(e.Link);
         }
     }
 }

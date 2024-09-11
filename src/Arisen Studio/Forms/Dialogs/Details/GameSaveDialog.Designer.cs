@@ -53,11 +53,11 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ImageCloseDetails = new DevExpress.XtraEditors.SvgImageBox();
             this.PanelActions = new DevExpress.Utils.Layout.StackPanel();
             this.ButtonDownload = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonInstall = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonFavorite = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonReport = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonHelp = new DevExpress.XtraEditors.SimpleButton();
             this.Images = new DevExpress.Utils.SvgImageCollection(this.components);
-            this.ButtonInstall = new DevExpress.XtraEditors.SimpleButton();
             this.PanelDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TablePanelStats)).BeginInit();
             this.TablePanelStats.SuspendLayout();
@@ -360,7 +360,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.PanelActions.Controls.Add(this.ButtonInstall);
             this.PanelActions.Controls.Add(this.ButtonFavorite);
             this.PanelActions.Controls.Add(this.ButtonReport);
-            this.PanelActions.Controls.Add(this.simpleButton1);
+            this.PanelActions.Controls.Add(this.ButtonHelp);
             this.PanelActions.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelActions.Location = new System.Drawing.Point(0, 450);
             this.PanelActions.Name = "PanelActions";
@@ -390,6 +390,31 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonDownload.TabIndex = 1179;
             this.ButtonDownload.Text = "Download";
             this.ButtonDownload.Click += new System.EventHandler(this.ButtonDownload_Click);
+            // 
+            // ButtonInstall
+            // 
+            this.ButtonInstall.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ButtonInstall.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.ButtonInstall.Appearance.Options.UseFont = true;
+            this.ButtonInstall.Appearance.Options.UseForeColor = true;
+            this.ButtonInstall.AutoSize = true;
+            this.ButtonInstall.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonInstall.ImageOptions.Image = global::ArisenStudio.Properties.Resources.install;
+            this.ButtonInstall.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonInstall.ImageOptions.ImageToTextIndent = 6;
+            this.ButtonInstall.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonInstall.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.install_svg;
+            this.ButtonInstall.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.ButtonInstall.Location = new System.Drawing.Point(133, 10);
+            this.ButtonInstall.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ButtonInstall.MinimumSize = new System.Drawing.Size(0, 30);
+            this.ButtonInstall.Name = "ButtonInstall";
+            this.ButtonInstall.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
+            this.ButtonInstall.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonInstall.Size = new System.Drawing.Size(90, 30);
+            this.ButtonInstall.TabIndex = 1185;
+            this.ButtonInstall.Text = "Install";
+            this.ButtonInstall.Click += new System.EventHandler(this.ButtonInstall_Click);
             // 
             // ButtonFavorite
             // 
@@ -434,63 +459,38 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonReport.Name = "ButtonReport";
             this.ButtonReport.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
             this.ButtonReport.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonReport.Size = new System.Drawing.Size(96, 28);
+            this.ButtonReport.Size = new System.Drawing.Size(127, 28);
             this.ButtonReport.TabIndex = 1177;
-            this.ButtonReport.Text = "Report";
+            this.ButtonReport.Text = "Report Issue";
             this.ButtonReport.Click += new System.EventHandler(this.ButtonReportIssue_Click);
             // 
-            // simpleButton1
+            // ButtonHelp
             // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.AutoSize = true;
-            this.simpleButton1.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton1.ImageOptions.ImageToTextIndent = 4;
-            this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.simpleButton1.Location = new System.Drawing.Point(492, 11);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.simpleButton1.MinimumSize = new System.Drawing.Size(0, 28);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
-            this.simpleButton1.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.simpleButton1.Size = new System.Drawing.Size(152, 28);
-            this.simpleButton1.TabIndex = 1180;
-            this.simpleButton1.Text = "Help && Support";
+            this.ButtonHelp.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ButtonHelp.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.ButtonHelp.Appearance.Options.UseFont = true;
+            this.ButtonHelp.Appearance.Options.UseForeColor = true;
+            this.ButtonHelp.AutoSize = true;
+            this.ButtonHelp.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonHelp.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonHelp.ImageOptions.ImageToTextIndent = 4;
+            this.ButtonHelp.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonHelp.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.ButtonHelp.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.ButtonHelp.Location = new System.Drawing.Point(523, 11);
+            this.ButtonHelp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ButtonHelp.MinimumSize = new System.Drawing.Size(0, 28);
+            this.ButtonHelp.Name = "ButtonHelp";
+            this.ButtonHelp.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
+            this.ButtonHelp.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonHelp.Size = new System.Drawing.Size(152, 28);
+            this.ButtonHelp.TabIndex = 1180;
+            this.ButtonHelp.Text = "Help && Support";
             // 
             // Images
             // 
             this.Images.Add("delete", "image://svgimages/outlook inspired/delete.svg");
             this.Images.Add("check", "image://svgimages/icon builder/actions_check.svg");
-            // 
-            // ButtonInstall
-            // 
-            this.ButtonInstall.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ButtonInstall.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.ButtonInstall.Appearance.Options.UseFont = true;
-            this.ButtonInstall.Appearance.Options.UseForeColor = true;
-            this.ButtonInstall.AutoSize = true;
-            this.ButtonInstall.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ButtonInstall.ImageOptions.Image = global::ArisenStudio.Properties.Resources.install;
-            this.ButtonInstall.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.ButtonInstall.ImageOptions.ImageToTextIndent = 6;
-            this.ButtonInstall.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.ButtonInstall.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.install_svg;
-            this.ButtonInstall.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonInstall.Location = new System.Drawing.Point(133, 10);
-            this.ButtonInstall.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ButtonInstall.MinimumSize = new System.Drawing.Size(0, 30);
-            this.ButtonInstall.Name = "ButtonInstall";
-            this.ButtonInstall.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
-            this.ButtonInstall.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonInstall.Size = new System.Drawing.Size(90, 30);
-            this.ButtonInstall.TabIndex = 1185;
-            this.ButtonInstall.Text = "Install";
-            this.ButtonInstall.Click += new System.EventHandler(this.ButtonInstall_Click);
             // 
             // GameSaveDialog
             // 
@@ -567,7 +567,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
         private Controls.StatItem StatCreatedBy;
         private Controls.StatItem StatLastUpdated;
         private SimpleButton ButtonDownload;
-        private SimpleButton simpleButton1;
+        private SimpleButton ButtonHelp;
         private SimpleButton ButtonInstall;
     }
 }

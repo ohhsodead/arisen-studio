@@ -9,11 +9,11 @@ namespace ArisenStudio.Extensions
 {
     internal class ImgurUploader
     {
-        static public async Task<string> Upload(BitmapSource bitmap, ApiClient apiClient)
+        static public async Task<string> Upload(BitmapSource bitmap, string fileName, ApiClient apiClient)
         {
             string link = "";
 
-            using (var fileStream = new FileStream("img.png", FileMode.Create))
+            using (var fileStream = new FileStream($"{fileName}.png", FileMode.Create))
             {
                 BitmapEncoder encoder = new PngBitmapEncoder();
                 encoder.Frames.Add(BitmapFrame.Create(bitmap));
@@ -24,7 +24,7 @@ namespace ArisenStudio.Extensions
             {
                 using HttpClient httpClient = new();
 
-                string filePath = @"img.png";
+                string filePath = @$"{fileName}.png";
                 using var fileStream = File.OpenRead(filePath);
 
                 ImageEndpoint imageEndpoint = new(apiClient, httpClient);

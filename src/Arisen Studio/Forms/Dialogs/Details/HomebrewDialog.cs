@@ -15,6 +15,8 @@ using System.Resources;
 using System.Windows.Forms;
 using ScrollOrientation = DevExpress.XtraEditors.ScrollOrientation;
 using System.Drawing;
+using DevExpress.Utils.Drawing;
+using ArisenStudio.Constants;
 
 namespace ArisenStudio.Forms.Dialogs.Details
 {
@@ -66,12 +68,11 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
             ButtonDownload.Text = ModItem.DownloadFiles.Count > 1 ? Language.GetString("LABEL_DOWNLOAD_LATEST") : Language.GetString("LABEL_DOWNLOAD");
             ButtonInstall.Text = ModItem.DownloadFiles.Count > 1 ? Language.GetString("LABEL_INSTALL_LATEST") : Language.GetString("LABEL_INSTALL");
-
-            ButtonInstall.Enabled = MainWindow.IsConsoleConnected || MainWindow.Settings.InstallHomebrewToUsbDevice;
+            ButtonInstall.Enabled = MainWindow.IsConsoleConnected || MainWindow.Settings.InstallGameModsToUsbDevice;
 
             ButtonFavorite.Text = IsFavorite ? Language.GetString("LABEL_REMOVE_FROM_FAVORITES") : Language.GetString("LABEL_ADD_TO_FAVORITES");
-
             ButtonReport.Text = Language.GetString("LABEL_REPORT_ISSUE");
+            ButtonHelp.Text = Language.GetString("LABEL_HELP_SUPPORT");
 
             int count = 0;
             foreach (DownloadFiles downloadFile in ModItem.DownloadFiles)
@@ -133,6 +134,12 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         private void ButtonReport_Click(object sender, EventArgs e)
         {
+            _ = Process.Start(Urls.WebsiteReportIssue);
+        }
+
+        private void ButtonHelp_Click(object sender, EventArgs e)
+        {
+            _ = Process.Start(Urls.WebsiteHelp);
         }
 
         private void ButtonFavorite_Click(object sender, EventArgs e)

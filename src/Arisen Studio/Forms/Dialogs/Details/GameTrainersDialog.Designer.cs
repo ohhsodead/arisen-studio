@@ -46,6 +46,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonDownload = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonInstall = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonHelp = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonReport = new DevExpress.XtraEditors.SimpleButton();
             this.PanelDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlTrainers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewTrainers)).BeginInit();
@@ -222,6 +223,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             // 
             this.PanelActions.Controls.Add(this.ButtonDownload);
             this.PanelActions.Controls.Add(this.ButtonInstall);
+            this.PanelActions.Controls.Add(this.ButtonReport);
             this.PanelActions.Controls.Add(this.ButtonHelp);
             this.PanelActions.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelActions.Location = new System.Drawing.Point(0, 406);
@@ -292,7 +294,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonHelp.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.ButtonHelp.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonHelp.ImageOptions.SvgImage")));
             this.ButtonHelp.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonHelp.Location = new System.Drawing.Point(231, 11);
+            this.ButtonHelp.Location = new System.Drawing.Point(366, 11);
             this.ButtonHelp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ButtonHelp.MinimumSize = new System.Drawing.Size(0, 28);
             this.ButtonHelp.Name = "ButtonHelp";
@@ -301,6 +303,29 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonHelp.Size = new System.Drawing.Size(152, 28);
             this.ButtonHelp.TabIndex = 1181;
             this.ButtonHelp.Text = "Help && Support";
+            // 
+            // ButtonReport
+            // 
+            this.ButtonReport.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ButtonReport.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.ButtonReport.Appearance.Options.UseFont = true;
+            this.ButtonReport.Appearance.Options.UseForeColor = true;
+            this.ButtonReport.AutoSize = true;
+            this.ButtonReport.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonReport.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonReport.ImageOptions.ImageToTextIndent = 6;
+            this.ButtonReport.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonReport.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonReport.ImageOptions.SvgImage")));
+            this.ButtonReport.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.ButtonReport.Location = new System.Drawing.Point(231, 11);
+            this.ButtonReport.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ButtonReport.MinimumSize = new System.Drawing.Size(0, 28);
+            this.ButtonReport.Name = "ButtonReport";
+            this.ButtonReport.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
+            this.ButtonReport.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonReport.Size = new System.Drawing.Size(127, 28);
+            this.ButtonReport.TabIndex = 1182;
+            this.ButtonReport.Text = "Report Issue";
             // 
             // GameTrainersDialog
             // 
@@ -363,5 +388,6 @@ namespace ArisenStudio.Forms.Dialogs.Details
         private SimpleButton ButtonDownload;
         private LabelControl labelControl1;
         private SimpleButton ButtonHelp;
+        private SimpleButton ButtonReport;
     }
 }

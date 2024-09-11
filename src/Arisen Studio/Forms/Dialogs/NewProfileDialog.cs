@@ -199,10 +199,10 @@ namespace ArisenStudio.Forms.Dialogs
 
                 case 3:
                     break;
-                    //ConsoleProfile.PlatformType = PlatformType.PlayStation4;
-                    //ConsoleProfile.Platform = Platform.PS4;
-                    //ImageConsole.Image = Properties.Resources.PlayStation4;
-                    //break;
+                //ConsoleProfile.PlatformType = PlatformType.PlayStation4;
+                //ConsoleProfile.Platform = Platform.PS4;
+                //ImageConsole.Image = Properties.Resources.PlayStation4;
+                //break;
 
                 case 4:
                     ConsoleProfile.PlatformType = PlatformType.Xbox360FatWhite;

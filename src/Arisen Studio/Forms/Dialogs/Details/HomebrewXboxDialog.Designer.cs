@@ -57,7 +57,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonInstall = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonFavorite = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonReport = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.ButtonHelp = new DevExpress.XtraEditors.SimpleButton();
             this.Images = new DevExpress.Utils.SvgImageCollection(this.components);
             this.TabPane = new DevExpress.XtraBars.Navigation.TabPane();
             this.TabDescription = new DevExpress.XtraBars.Navigation.TabNavigationPage();
@@ -258,7 +258,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.LabelName.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.LabelName.Name = "LabelName";
             this.LabelName.Size = new System.Drawing.Size(776, 20);
-            this.LabelName.TabIndex = 1193;
+            this.LabelName.TabIndex = 4;
             this.LabelName.Text = "Name";
             // 
             // PanelTitle
@@ -286,7 +286,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.LabelPackages.Margin = new System.Windows.Forms.Padding(0, 1, 3, 10);
             this.LabelPackages.Name = "LabelPackages";
             this.LabelPackages.Size = new System.Drawing.Size(67, 17);
-            this.LabelPackages.TabIndex = 1190;
+            this.LabelPackages.TabIndex = 0;
             this.LabelPackages.Text = "Homebrew";
             // 
             // LabelSlash
@@ -301,7 +301,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.LabelSlash.Margin = new System.Windows.Forms.Padding(3, 1, 3, 10);
             this.LabelSlash.Name = "LabelSlash";
             this.LabelSlash.Size = new System.Drawing.Size(7, 17);
-            this.LabelSlash.TabIndex = 1189;
+            this.LabelSlash.TabIndex = 1;
             this.LabelSlash.Text = "/";
             // 
             // LabelCategory
@@ -316,7 +316,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.LabelCategory.Margin = new System.Windows.Forms.Padding(3, 1, 3, 10);
             this.LabelCategory.Name = "LabelCategory";
             this.LabelCategory.Size = new System.Drawing.Size(55, 17);
-            this.LabelCategory.TabIndex = 1184;
+            this.LabelCategory.TabIndex = 2;
             this.LabelCategory.Text = "Category";
             // 
             // SeparatorHeader
@@ -342,7 +342,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ImageClose.Size = new System.Drawing.Size(26, 26);
             this.ImageClose.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
             this.ImageClose.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ImageClose.SvgImage")));
-            this.ImageClose.TabIndex = 1171;
+            this.ImageClose.TabIndex = 3;
             this.ImageClose.Text = "Close";
             this.ImageClose.Click += new System.EventHandler(this.ImageClose_Click);
             // 
@@ -352,7 +352,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.PanelActions.Controls.Add(this.ButtonInstall);
             this.PanelActions.Controls.Add(this.ButtonFavorite);
             this.PanelActions.Controls.Add(this.ButtonReport);
-            this.PanelActions.Controls.Add(this.simpleButton1);
+            this.PanelActions.Controls.Add(this.ButtonHelp);
             this.PanelActions.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelActions.Location = new System.Drawing.Point(0, 556);
             this.PanelActions.Name = "PanelActions";
@@ -379,7 +379,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonDownload.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
             this.ButtonDownload.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonDownload.Size = new System.Drawing.Size(113, 28);
-            this.ButtonDownload.TabIndex = 1179;
+            this.ButtonDownload.TabIndex = 8;
             this.ButtonDownload.Text = "Download";
             this.ButtonDownload.Click += new System.EventHandler(this.ButtonDownloadLatest_Click);
             // 
@@ -403,7 +403,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonInstall.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
             this.ButtonInstall.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonInstall.Size = new System.Drawing.Size(91, 28);
-            this.ButtonInstall.TabIndex = 1181;
+            this.ButtonInstall.TabIndex = 9;
             this.ButtonInstall.Text = "Install";
             this.ButtonInstall.Click += new System.EventHandler(this.ButtonInstall_Click);
             // 
@@ -427,7 +427,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonFavorite.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
             this.ButtonFavorite.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonFavorite.Size = new System.Drawing.Size(149, 28);
-            this.ButtonFavorite.TabIndex = 1178;
+            this.ButtonFavorite.TabIndex = 10;
             this.ButtonFavorite.Text = "Add to Favorites";
             this.ButtonFavorite.Click += new System.EventHandler(this.ButtonFavorite_Click);
             // 
@@ -451,32 +451,33 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonReport.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
             this.ButtonReport.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonReport.Size = new System.Drawing.Size(127, 28);
-            this.ButtonReport.TabIndex = 1177;
+            this.ButtonReport.TabIndex = 11;
             this.ButtonReport.Text = "Report Issue";
             this.ButtonReport.Click += new System.EventHandler(this.ButtonReportIssue_Click);
             // 
-            // simpleButton1
+            // ButtonHelp
             // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.AutoSize = true;
-            this.simpleButton1.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton1.ImageOptions.ImageToTextIndent = 4;
-            this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.simpleButton1.Location = new System.Drawing.Point(524, 11);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.simpleButton1.MinimumSize = new System.Drawing.Size(0, 28);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
-            this.simpleButton1.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.simpleButton1.Size = new System.Drawing.Size(152, 28);
-            this.simpleButton1.TabIndex = 1180;
-            this.simpleButton1.Text = "Help && Support";
+            this.ButtonHelp.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ButtonHelp.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.ButtonHelp.Appearance.Options.UseFont = true;
+            this.ButtonHelp.Appearance.Options.UseForeColor = true;
+            this.ButtonHelp.AutoSize = true;
+            this.ButtonHelp.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonHelp.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonHelp.ImageOptions.ImageToTextIndent = 4;
+            this.ButtonHelp.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonHelp.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.ButtonHelp.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.ButtonHelp.Location = new System.Drawing.Point(524, 11);
+            this.ButtonHelp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ButtonHelp.MinimumSize = new System.Drawing.Size(0, 28);
+            this.ButtonHelp.Name = "ButtonHelp";
+            this.ButtonHelp.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
+            this.ButtonHelp.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonHelp.Size = new System.Drawing.Size(152, 28);
+            this.ButtonHelp.TabIndex = 12;
+            this.ButtonHelp.Text = "Help && Support";
+            this.ButtonHelp.Click += new System.EventHandler(this.ButtonHelp_Click);
             // 
             // Images
             // 
@@ -508,7 +509,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TabPane.RegularSize = new System.Drawing.Size(776, 380);
             this.TabPane.SelectedPage = this.TabDescription;
             this.TabPane.Size = new System.Drawing.Size(776, 380);
-            this.TabPane.TabIndex = 1195;
+            this.TabPane.TabIndex = 6;
             this.TabPane.Text = "TabPane";
             this.TabPane.TransitionAnimationProperties.FrameCount = 900;
             this.TabPane.TransitionAnimationProperties.FrameInterval = 2500;
@@ -539,7 +540,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.LabelDescription.Name = "LabelDescription";
             this.LabelDescription.Padding = new System.Windows.Forms.Padding(8, 8, 8, 0);
             this.LabelDescription.Size = new System.Drawing.Size(776, 23);
-            this.LabelDescription.TabIndex = 1176;
+            this.LabelDescription.TabIndex = 7;
             this.LabelDescription.Text = "...";
             this.LabelDescription.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelDescription_HyperlinkClick);
             // 
@@ -550,7 +551,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TabDownloads.AutoScroll = true;
             this.TabDownloads.Caption = "Downloads";
             this.TabDownloads.Name = "TabDownloads";
-            this.TabDownloads.Size = new System.Drawing.Size(776, 348);
+            this.TabDownloads.Size = new System.Drawing.Size(776, 344);
             this.TabDownloads.Scroll += new DevExpress.XtraEditors.XtraScrollEventHandler(this.TabDownloads_Scroll);
             // 
             // xtraScrollableControl1
@@ -586,7 +587,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TablePanelStats.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F)});
             this.TablePanelStats.Size = new System.Drawing.Size(768, 72);
-            this.TablePanelStats.TabIndex = 1205;
+            this.TablePanelStats.TabIndex = 5;
             // 
             // StatGameMode
             // 
@@ -753,7 +754,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
         private Controls.StatItem StatLastUpdated;
         private Controls.StatItem StatGameMode;
         private SimpleButton ButtonDownload;
-        private SimpleButton simpleButton1;
+        private SimpleButton ButtonHelp;
         private SimpleButton ButtonInstall;
     }
 }

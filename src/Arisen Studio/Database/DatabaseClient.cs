@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ArisenStudio.Database
 {
-    public class GitHubData
+    public class DatabaseClient
     {
         /// <summary>
         /// Contains announcements.
@@ -140,7 +140,7 @@ namespace ArisenStudio.Database
         /// <summary>
         /// Fetch the database files hosted in our GitHub repo.
         /// </summary>
-        public GitHubData()
+        public DatabaseClient()
         {
             _favoriteGamesCache = new SimpleCache<FavoriteGamesData>("favoriteGamesCache.json");
             _favoriteModsCache = new SimpleCache<FavoriteModsData>("favoriteModsCache.json");
@@ -236,11 +236,11 @@ namespace ArisenStudio.Database
         /// Initialization of the class.
         /// </summary>
         /// <returns> instance of the class. </returns>
-        public static async Task<GitHubData> InitializeAsync()
+        public static async Task<DatabaseClient> InitializeAsync()
         {
-            GitHubData fetcher = new();
+            DatabaseClient fetcher = new();
 
-            GitHubData data = new()
+            DatabaseClient data = new()
             {
                 Announcements = await fetcher.GetAnnouncements(),
                 FavoriteGames = await fetcher.GetFavoriteGames(),

@@ -46,7 +46,6 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonDownload = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonInstall = new DevExpress.XtraEditors.SimpleButton();
             this.ButtonFaq = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonShare = new DevExpress.XtraEditors.SimpleButton();
             this.Images = new DevExpress.Utils.SvgImageCollection(this.components);
             this.PanelDetails = new DevExpress.XtraEditors.XtraScrollableControl();
             this.StatContentId = new ArisenStudio.Controls.StatItem();
@@ -107,7 +106,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.LabelPackages.Margin = new System.Windows.Forms.Padding(0, 1, 3, 10);
             this.LabelPackages.Name = "LabelPackages";
             this.LabelPackages.Size = new System.Drawing.Size(56, 17);
-            this.LabelPackages.TabIndex = 1190;
+            this.LabelPackages.TabIndex = 0;
             this.LabelPackages.Text = "Packages";
             // 
             // LabelSlash
@@ -122,7 +121,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.LabelSlash.Margin = new System.Windows.Forms.Padding(3, 1, 3, 10);
             this.LabelSlash.Name = "LabelSlash";
             this.LabelSlash.Size = new System.Drawing.Size(7, 17);
-            this.LabelSlash.TabIndex = 1189;
+            this.LabelSlash.TabIndex = 1;
             this.LabelSlash.Text = "/";
             // 
             // LabelCategory
@@ -137,7 +136,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.LabelCategory.Margin = new System.Windows.Forms.Padding(3, 1, 3, 10);
             this.LabelCategory.Name = "LabelCategory";
             this.LabelCategory.Size = new System.Drawing.Size(55, 17);
-            this.LabelCategory.TabIndex = 1184;
+            this.LabelCategory.TabIndex = 2;
             this.LabelCategory.Text = "Category";
             // 
             // LabelRegion
@@ -153,7 +152,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.LabelRegion.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.LabelRegion.Name = "LabelRegion";
             this.LabelRegion.Size = new System.Drawing.Size(69, 15);
-            this.LabelRegion.TabIndex = 1188;
+            this.LabelRegion.TabIndex = 3;
             this.LabelRegion.Text = "(All Regions)";
             // 
             // SeparatorHeader
@@ -178,7 +177,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ImageClose.Size = new System.Drawing.Size(26, 26);
             this.ImageClose.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
             this.ImageClose.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ImageClose.SvgImage")));
-            this.ImageClose.TabIndex = 1171;
+            this.ImageClose.TabIndex = 4;
             this.ImageClose.Text = "Close";
             this.ImageClose.Click += new System.EventHandler(this.ImageClose_Click);
             // 
@@ -195,7 +194,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.LabelName.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.LabelName.Name = "LabelName";
             this.LabelName.Size = new System.Drawing.Size(776, 20);
-            this.LabelName.TabIndex = 1191;
+            this.LabelName.TabIndex = 5;
             this.LabelName.Text = "Name";
             // 
             // PanelActions
@@ -203,7 +202,6 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.PanelActions.Controls.Add(this.ButtonDownload);
             this.PanelActions.Controls.Add(this.ButtonInstall);
             this.PanelActions.Controls.Add(this.ButtonFaq);
-            this.PanelActions.Controls.Add(this.ButtonShare);
             this.PanelActions.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelActions.Location = new System.Drawing.Point(0, 278);
             this.PanelActions.Name = "PanelActions";
@@ -230,7 +228,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonDownload.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
             this.ButtonDownload.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonDownload.Size = new System.Drawing.Size(113, 30);
-            this.ButtonDownload.TabIndex = 1179;
+            this.ButtonDownload.TabIndex = 9;
             this.ButtonDownload.Text = "Download";
             this.ButtonDownload.Click += new System.EventHandler(this.ButtonDownload_Click);
             // 
@@ -257,7 +255,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonInstall.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
             this.ButtonInstall.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonInstall.Size = new System.Drawing.Size(90, 30);
-            this.ButtonInstall.TabIndex = 1181;
+            this.ButtonInstall.TabIndex = 10;
             this.ButtonInstall.Text = "Install";
             this.ButtonInstall.Click += new System.EventHandler(this.ButtonInstall_Click);
             // 
@@ -281,33 +279,9 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonFaq.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
             this.ButtonFaq.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonFaq.Size = new System.Drawing.Size(81, 30);
-            this.ButtonFaq.TabIndex = 1180;
+            this.ButtonFaq.TabIndex = 11;
             this.ButtonFaq.Text = "FAQ";
             this.ButtonFaq.Click += new System.EventHandler(this.ButtonFaq_Click);
-            // 
-            // ButtonShare
-            // 
-            this.ButtonShare.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ButtonShare.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.ButtonShare.Appearance.Options.UseFont = true;
-            this.ButtonShare.Appearance.Options.UseForeColor = true;
-            this.ButtonShare.AutoSize = true;
-            this.ButtonShare.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ButtonShare.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.ButtonShare.ImageOptions.ImageToTextIndent = 6;
-            this.ButtonShare.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.ButtonShare.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_share;
-            this.ButtonShare.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonShare.Location = new System.Drawing.Point(320, 12);
-            this.ButtonShare.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ButtonShare.MinimumSize = new System.Drawing.Size(0, 30);
-            this.ButtonShare.Name = "ButtonShare";
-            this.ButtonShare.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
-            this.ButtonShare.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonShare.Size = new System.Drawing.Size(130, 30);
-            this.ButtonShare.TabIndex = 1184;
-            this.ButtonShare.Text = "Share Details";
-            this.ButtonShare.Visible = false;
             // 
             // Images
             // 
@@ -335,7 +309,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.StatContentId.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.StatContentId.Name = "StatContentId";
             this.StatContentId.Size = new System.Drawing.Size(771, 42);
-            this.StatContentId.TabIndex = 3;
+            this.StatContentId.TabIndex = 7;
             this.StatContentId.Title = "Content ID";
             this.StatContentId.Value = "Value";
             // 
@@ -349,7 +323,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.StatSha256.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.StatSha256.Name = "StatSha256";
             this.StatSha256.Size = new System.Drawing.Size(771, 42);
-            this.StatSha256.TabIndex = 4;
+            this.StatSha256.TabIndex = 8;
             this.StatSha256.Title = "SHA-256";
             this.StatSha256.Value = "Value";
             // 
@@ -369,7 +343,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.TablePanelStats.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F)});
             this.TablePanelStats.Size = new System.Drawing.Size(768, 54);
-            this.TablePanelStats.TabIndex = 1208;
+            this.TablePanelStats.TabIndex = 6;
             // 
             // StatTitleId
             // 
@@ -482,6 +456,5 @@ namespace ArisenStudio.Forms.Dialogs.Details
         private Controls.StatItem StatSha256;
         private Controls.StatItem StatContentId;
         private Controls.StatItem StatModifiedDate;
-        private SimpleButton ButtonShare;
     }
 }

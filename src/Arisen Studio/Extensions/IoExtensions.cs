@@ -21,23 +21,50 @@ namespace ArisenStudio.Extensions
         /// </summary>
         public static void DeleteDirectory(string path)
         {
-            foreach (string directory in Directory.GetDirectories(path))
+            if (!Directory.Exists(path))
             {
-                DeleteDirectory(directory);
+                return;
             }
+
+            DirectoryInfo dir = new(path);
 
             try
             {
-                Directory.Delete(path, true);
+                foreach (DirectoryInfo subdir in dir.GetDirectories())
+                {
+                    subdir.Delete(true);
+                }
+
+                dir.Delete(true);
             }
-            catch (IOException)
+            catch (IOException ex)
             {
+                Program.Log.Warn(ex);
                 Directory.Delete(path, true);
             }
-            catch (UnauthorizedAccessException)
+            catch (Exception ex)
             {
-                Directory.Delete(path, true);
+                Program.Log.Warn(ex);
+                switch (ex)
+                {
+                    case UnauthorizedAccessException:
+                    case DirectoryNotFoundException:
+                        return;
+                }
             }
+        }
+
+        public static string GetNextFileName(string fileName)
+        {
+            string extension = Path.GetExtension(fileName);
+
+            int i = 0;
+            while (File.Exists(fileName))
+            {
+                fileName = i == 0 ? fileName.Replace(extension, "-" + ++i + extension) : fileName.Replace("-" + i + extension, "-" + ++i + extension);
+            }
+
+            return fileName;
         }
     }
 }
