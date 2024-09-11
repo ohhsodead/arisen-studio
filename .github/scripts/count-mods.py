@@ -64,7 +64,10 @@ if __name__ == "__main__":
     
     os.makedirs('.github/badges', exist_ok=True)
     badge_path = '.github/badges/mods-badge.json'
-    with open(badge_path, 'w') as f:
-        json.dump(badge_data, f)
     
-    print(f"Badge data written to {badge_path}")
+    try:
+        with open(badge_path, 'w') as f:
+            json.dump(badge_data, f)
+        print(f"Badge data successfully written to {badge_path}")
+    except Exception as e:
+        print(f"Error while writing to {badge_path}: {e}")
