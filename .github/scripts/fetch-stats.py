@@ -6,8 +6,8 @@ TOKEN = os.getenv('GITHUB_TOKEN')
 
 # GitHub API URL for repository releases
 releases_url = f'https://api.github.com/repos/ohhsodead/arisen-studio/releases'
-mod_count_url = 'https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/badges/count-mods-badge.json'
-package_count_url = 'https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/badges/count-pkgs-badge.json'
+mod_count_url = 'https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/badges/mods-badge.json'
+package_count_url = 'https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/badges/pkgs-badge.json'
 
 headers = {
     'Authorization': f'token {TOKEN}'
@@ -15,7 +15,11 @@ headers = {
 
 # Fetch release data
 response = requests.get(releases_url, headers=headers)
-releases = response.json()
+try:
+    releases = response.json()
+except requests.exceptions.JSONDecodeError:
+    print(f"Error: Unable to parse JSON from releases response: {response.text}")
+    releases = []
 
 total_downloads = 0
 
@@ -24,16 +28,29 @@ for release in releases:
     for asset in release.get('assets', []):
         total_downloads += asset.get('download_count', 0)
 
+# Function to fetch JSON safely
+def fetch_json(url):
+    response = requests.get(url)
+    try:
+        return response.json()
+    except requests.exceptions.JSONDecodeError:
+        print(f"Error: Unable to parse JSON from {url}: {response.text}")
+        return {}
+
 # Fetch mod count
-response = requests.get(mod_count_url)
-mod_count = response.json().get('message', 0)
+mod_data = fetch_json(mod_count_url)
+mod_count = mod_data.get('message', 0)
 
 # Fetch package count
-response = requests.get(package_count_url)
-package_count = response.json().get('message', 0)
+package_data = fetch_json(package_count_url)
+package_count = package_data.get('message', 0)
 
 # Calculate total mods
-total_mods = int(mod_count) + int(package_count)
+try:
+    total_mods = int(mod_count) + int(package_count)
+except ValueError:
+    print("Error: Mod or package count is not a valid integer.")
+    total_mods = 0
 
 # Prepare the JSON data
 data = {

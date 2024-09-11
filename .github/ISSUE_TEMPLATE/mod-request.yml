@@ -1,7 +1,7 @@
 ---
 name: Mod Request
-description: Request a mod to be added to the database
-title: "[Request]: "
+description: Request a mod to be added to our database
+title: "[Mod Request]: "
 labels:
   - "mod request"
 

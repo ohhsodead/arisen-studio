@@ -7,16 +7,19 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch:  # Allow manual triggering
+  workflow_dispatch:
     inputs:
       manualTrigger:
         description: 'Trigger the workflow manually'
         required: false
-        default: 'true'  # You can adjust default value if needed
+        default: 'true'
 
 jobs:
   update-stats:
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write  # Grant write access to the repository
     
     steps:
       - name: Checkout repository
@@ -33,6 +36,22 @@ jobs:
       
       - name: Update mods count
         run: python .github/scripts/count-mods.py
-      
+
       - name: Update packages count
         run: python .github/scripts/count-pkgs.py
+
+      # Commit the updated badge files to the repository
+      - name: Configure Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      - name: Commit changes
+        run: |
+          git add .github/badges/mods-badge.json
+          git add .github/badges/pkgs-badge.json
+          git commit -m "Update badges"
+
+      - name: Push changes
+        run: |
+          git push
