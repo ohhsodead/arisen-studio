@@ -1857,8 +1857,8 @@ Aurora Path: {0}</value>
   <data name="LABEL_APP_DATA" xml:space="preserve">
     <value>App Data</value>
   </data>
-  <data name="LABEL_TEMP" xml:space="preserve">
-    <value>Temp</value>
+  <data name="LABEL_TEMP_FOLDER" xml:space="preserve">
+    <value>Temp Folder</value>
   </data>
   <data name="YES" xml:space="preserve">
     <value>Yes</value>
