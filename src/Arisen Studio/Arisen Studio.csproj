@@ -771,6 +771,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\paypal.svg" />
     <None Include="Resources\Icons\trainers.svg" />
     <None Include="Resources\Icons\request.svg" />
     <None Include="Resources\Icons\scan-users.svg" />

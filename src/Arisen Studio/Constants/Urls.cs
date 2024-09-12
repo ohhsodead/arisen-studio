@@ -33,6 +33,11 @@
         internal const string DonationPayPal = "https://paypal.com/donate/?business=8KX4YQ46ZNNDJ";
 
         /// <summary>
+        /// Direct link to the my Twitter/X profile.
+        /// </summary>
+        internal const string TwitterProfile = "https://twitter.com/ohhsodead";
+
+        /// <summary>
         /// Direct link to the test file hosted on @Goldug's server for Arisen.
         /// </summary>
         internal const string StatusCheck = "https://db.arisen.studio/app/status.txt";

@@ -10089,7 +10089,7 @@ namespace ArisenStudio.Forms.Windows
 
         private void ImageSocialTwitter_Click(object sender, EventArgs e)
         {
-            _ = Process.Start("https://twitter.com/ohhsodead");
+            _ = Process.Start(Urls.TwitterProfile);
         }
 
         private void ImageSocialDiscord_Click(object sender, EventArgs e)
@@ -10102,22 +10102,22 @@ namespace ArisenStudio.Forms.Windows
             _ = Process.Start(Urls.GitHubRepo);
         }
 
-        private void LabelDonatePayPal_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
+        private void ButtonDonate_Click(object sender, EventArgs e)
         {
             Process.Start(Urls.DonationPayPal);
         }
 
-        private void LabelAboutLibraries_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
+        private void LabelCreditsLibraries_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
         {
             _ = Process.Start(e.Link);
         }
 
-        private void LabelAboutContributors_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
+        private void LabelCreditsContributors_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
         {
             _ = Process.Start(e.Link);
         }
 
-        private void LabelAboutTranslators_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
+        private void LabelCreditsTranslators_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
         {
             _ = Process.Start(e.Link);
         }

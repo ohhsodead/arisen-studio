@@ -1,7 +1,7 @@
 ﻿namespace ArisenStudio.Database
 {
     /// <summary>
-    /// Get the mod item information.
+    /// Get the xbox game information.
     /// </summary>
     public class XboxGame
     {

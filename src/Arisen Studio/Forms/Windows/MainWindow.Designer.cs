@@ -1472,7 +1472,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGameModsXboxVersion = new DevExpress.XtraEditors.LabelControl();
             this.LabelGameModsXboxStatus = new DevExpress.XtraEditors.LabelControl();
             this.LabelGameModsXboxCategory = new DevExpress.XtraEditors.LabelControl();
-            this.LabelDonatePayPal = new DevExpress.XtraEditors.HyperlinkLabelControl();
+            this.ButtonDonate = new DevExpress.XtraEditors.SimpleButton();
             this.PageGameModsPS3.SuspendLayout();
             this.PanelGameGameMods.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlGameModsPS3)).BeginInit();
@@ -3923,6 +3923,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             // LabelChangeLog
             // 
+            this.LabelChangeLog.AllowHtmlString = true;
             this.LabelChangeLog.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelChangeLog.Appearance.Options.UseFont = true;
             this.LabelChangeLog.Appearance.Options.UseTextOptions = true;
@@ -11221,7 +11222,7 @@ namespace ArisenStudio.Forms.Windows
             // PageAbout
             // 
             this.PageAbout.AutoScroll = true;
-            this.PageAbout.Controls.Add(this.LabelDonatePayPal);
+            this.PageAbout.Controls.Add(this.ButtonDonate);
             this.PageAbout.Controls.Add(this.LabelHeaderAboutCredits);
             this.PageAbout.Controls.Add(this.LabelAboutVersion);
             this.PageAbout.Controls.Add(this.ImageLogo);
@@ -11377,7 +11378,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelCredits.Controls.Add(this.PanelCreditsContent);
             this.PanelCredits.Location = new System.Drawing.Point(20, 251);
             this.PanelCredits.Name = "PanelCredits";
-            this.PanelCredits.Size = new System.Drawing.Size(1268, 302);
+            this.PanelCredits.Size = new System.Drawing.Size(1250, 319);
             this.PanelCredits.TabIndex = 17;
             // 
             // PanelCreditsContent
@@ -11391,7 +11392,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelCreditsContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelCreditsContent.Location = new System.Drawing.Point(2, 2);
             this.PanelCreditsContent.Name = "PanelCreditsContent";
-            this.PanelCreditsContent.Size = new System.Drawing.Size(1264, 298);
+            this.PanelCreditsContent.Size = new System.Drawing.Size(1246, 315);
             this.PanelCreditsContent.TabIndex = 11;
             // 
             // LabelCreditsTranslators
@@ -11404,9 +11405,10 @@ namespace ArisenStudio.Forms.Windows
             this.LabelCreditsTranslators.Location = new System.Drawing.Point(0, 555);
             this.LabelCreditsTranslators.Name = "LabelCreditsTranslators";
             this.LabelCreditsTranslators.Padding = new System.Windows.Forms.Padding(12, 3, 0, 12);
-            this.LabelCreditsTranslators.Size = new System.Drawing.Size(1247, 100);
+            this.LabelCreditsTranslators.Size = new System.Drawing.Size(1229, 100);
             this.LabelCreditsTranslators.TabIndex = 18;
             this.LabelCreditsTranslators.Text = resources.GetString("LabelCreditsTranslators.Text");
+            this.LabelCreditsTranslators.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelCreditsTranslators_HyperlinkClick);
             // 
             // LabelHeaderTranslators
             // 
@@ -11417,7 +11419,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelHeaderTranslators.Location = new System.Drawing.Point(0, 527);
             this.LabelHeaderTranslators.Name = "LabelHeaderTranslators";
             this.LabelHeaderTranslators.Padding = new System.Windows.Forms.Padding(12, 6, 0, 3);
-            this.LabelHeaderTranslators.Size = new System.Drawing.Size(1247, 28);
+            this.LabelHeaderTranslators.Size = new System.Drawing.Size(1229, 28);
             this.LabelHeaderTranslators.TabIndex = 17;
             this.LabelHeaderTranslators.Text = "Translators";
             // 
@@ -11431,9 +11433,10 @@ namespace ArisenStudio.Forms.Windows
             this.LabelCreditsContributors.Location = new System.Drawing.Point(0, 354);
             this.LabelCreditsContributors.Name = "LabelCreditsContributors";
             this.LabelCreditsContributors.Padding = new System.Windows.Forms.Padding(12, 3, 0, 0);
-            this.LabelCreditsContributors.Size = new System.Drawing.Size(1247, 173);
+            this.LabelCreditsContributors.Size = new System.Drawing.Size(1229, 173);
             this.LabelCreditsContributors.TabIndex = 16;
             this.LabelCreditsContributors.Text = resources.GetString("LabelCreditsContributors.Text");
+            this.LabelCreditsContributors.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelCreditsContributors_HyperlinkClick);
             // 
             // LabelAboutHeaderContributors
             // 
@@ -11444,7 +11447,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelAboutHeaderContributors.Location = new System.Drawing.Point(0, 326);
             this.LabelAboutHeaderContributors.Name = "LabelAboutHeaderContributors";
             this.LabelAboutHeaderContributors.Padding = new System.Windows.Forms.Padding(12, 6, 0, 3);
-            this.LabelAboutHeaderContributors.Size = new System.Drawing.Size(1247, 28);
+            this.LabelAboutHeaderContributors.Size = new System.Drawing.Size(1229, 28);
             this.LabelAboutHeaderContributors.TabIndex = 15;
             this.LabelAboutHeaderContributors.Text = "Contributors";
             // 
@@ -11459,9 +11462,10 @@ namespace ArisenStudio.Forms.Windows
             this.LabelCreditsLibraries.Location = new System.Drawing.Point(0, 34);
             this.LabelCreditsLibraries.Name = "LabelCreditsLibraries";
             this.LabelCreditsLibraries.Padding = new System.Windows.Forms.Padding(12, 3, 0, 0);
-            this.LabelCreditsLibraries.Size = new System.Drawing.Size(1247, 292);
+            this.LabelCreditsLibraries.Size = new System.Drawing.Size(1229, 292);
             this.LabelCreditsLibraries.TabIndex = 14;
             this.LabelCreditsLibraries.Text = resources.GetString("LabelCreditsLibraries.Text");
+            this.LabelCreditsLibraries.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelCreditsLibraries_HyperlinkClick);
             // 
             // LabelHeaderLibraries
             // 
@@ -11472,7 +11476,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelHeaderLibraries.Location = new System.Drawing.Point(0, 0);
             this.LabelHeaderLibraries.Name = "LabelHeaderLibraries";
             this.LabelHeaderLibraries.Padding = new System.Windows.Forms.Padding(12, 12, 0, 3);
-            this.LabelHeaderLibraries.Size = new System.Drawing.Size(1247, 34);
+            this.LabelHeaderLibraries.Size = new System.Drawing.Size(1229, 34);
             this.LabelHeaderLibraries.TabIndex = 13;
             this.LabelHeaderLibraries.Text = "Third-Party Libraries";
             // 
@@ -23769,17 +23773,29 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGameModsXboxCategory.Size = new System.Drawing.Size(61, 17);
             this.LabelGameModsXboxCategory.TabIndex = 1171;
             // 
-            // LabelDonatePayPal
+            // ButtonDonate
             // 
-            this.LabelDonatePayPal.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.LabelDonatePayPal.Appearance.Options.UseFont = true;
-            this.LabelDonatePayPal.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.LabelDonatePayPal.Location = new System.Drawing.Point(1174, 51);
-            this.LabelDonatePayPal.Name = "LabelDonatePayPal";
-            this.LabelDonatePayPal.Size = new System.Drawing.Size(95, 15);
-            this.LabelDonatePayPal.TabIndex = 20;
-            this.LabelDonatePayPal.Text = "Donate On PayPal";
-            this.LabelDonatePayPal.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelDonatePayPal_HyperlinkClick);
+            this.ButtonDonate.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ButtonDonate.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.ButtonDonate.Appearance.Options.UseFont = true;
+            this.ButtonDonate.Appearance.Options.UseForeColor = true;
+            this.ButtonDonate.AutoSize = true;
+            this.ButtonDonate.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonDonate.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonDonate.ImageOptions.ImageToTextIndent = 6;
+            this.ButtonDonate.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonDonate.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.paypal;
+            this.ButtonDonate.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.ButtonDonate.Location = new System.Drawing.Point(1149, 56);
+            this.ButtonDonate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ButtonDonate.MinimumSize = new System.Drawing.Size(0, 28);
+            this.ButtonDonate.Name = "ButtonDonate";
+            this.ButtonDonate.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
+            this.ButtonDonate.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonDonate.Size = new System.Drawing.Size(121, 28);
+            this.ButtonDonate.TabIndex = 22;
+            this.ButtonDonate.Text = "Donate";
+            this.ButtonDonate.Click += new System.EventHandler(this.ButtonDonate_Click);
             // 
             // MainWindow
             // 
@@ -25865,6 +25881,6 @@ namespace ArisenStudio.Forms.Windows
         private BarCheckItem barCheckItem2;
         private BarButtonItem ButtonToolsPsScreenshot;
         private Microsoft.Web.WebView2.WinForms.WebView2 WebViewAdBanner;
-        private HyperlinkLabelControl LabelDonatePayPal;
+        private SimpleButton ButtonDonate;
     }
 }
