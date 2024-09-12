@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -272,7 +272,9 @@ Den här filen kan inte avinstalleras för att undvika saknade spelfiler, så de
     <value>Konsolhanterare</value>
   </data>
   <data name="CONSOLE_NAME_ALREADY_EXISTS" xml:space="preserve">
-    <value>Konsolnamn '{0}' finns redan i din lista över profiler. \n\nVill du fortfarande lägga till den?</value>
+    <value>Konsolnamn '{0}' finns redan i din lista över profiler. 
+
+Vill du fortfarande lägga till den?</value>
   </data>
   <data name="CONSOLE_PROFILES" xml:space="preserve">
     <value>Konsol Profiler</value>
@@ -308,11 +310,8 @@ Den här filen kan inte avinstalleras för att undvika saknade spelfiler, så de
   <data name="DATA_MISSING" xml:space="preserve">
     <value>DATA SAKNAS</value>
   </data>
-  <data name="DEFAULT_ALREADY_EXISTS" xml:space="preserve">
-    <value>Du har redan en konsolprofil inställd som standard.</value>
-  </data>
-  <data name="DEFAULT_CONSOLE_ALREADY_EXISTS" xml:space="preserve">
-    <value>Du har redan satt '{0}' som standardkonsol. Redigera den konsolen och avmarkera alternativet "Använd standard" för att ställa in den här konsolen som standard.</value>
+  <data name="DEFAULT_PROFILE_ALREADY_EXISTS" xml:space="preserve">
+    <value>Du har redan satt '{0}' som standardprofil. Vill du ersätta den med denna?</value>
   </data>
   <data name="DELETE" xml:space="preserve">
     <value>Radera</value>
@@ -395,7 +394,7 @@ Den här filen kan inte avinstalleras för att undvika saknade spelfiler, så de
   <data name="ERROR_OCCURRED" xml:space="preserve">
     <value>Ett fel uppstod: {0}
 
-Vänligen försök igen senare. Om problemet kvarstår &lt;a href="https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&amp;labels=&amp;template=bug_report.md"&gt;öppna ett nytt ärende&lt;/a&gt; på vår GitHub-tracker.</value>
+Vänligen försök igen senare. Om problemet kvarstår kan du rapportera det genom att &lt;a href="https://github.com/ohhsodead/arisen-studio/issues/new?labels=bug&amp;template=bug.yml"&gt;öppna ett nytt ärende&lt;/a&gt; på vår GitHub-tracker.</value>
   </data>
   <data name="EXTRACT_IMAGE" xml:space="preserve">
     <value>Extrahera avbild</value>
@@ -440,7 +439,7 @@ Vänligen försök igen senare. Om problemet kvarstår &lt;a href="https://githu
     <value>Dessa filer installerades inte till den anslutna konsolen.</value>
   </data>
   <data name="FILES_REINSTALL" xml:space="preserve">
-    <value>{0} är redan installerad till: {1}
+    <value>{0} är redan installerad på: {1}
 
 Vill du installera om filerna?</value>
   </data>
@@ -724,6 +723,7 @@ Varning: Döp inte om rap-filerna! Du måste lämna deras ursprungliga fula namn
   </data>
   <data name="INSERT_USB_DEVICE_TO_CONSOLE" xml:space="preserve">
     <value>En eller flera filer måste installeras på en USB-enhet som är ansluten till konsolen.
+
 Sätt in en USB-enhet i konsolen och klicka på "Ja" för att fortsätta. Annars klickar du på "Nej" för att ignorera dessa filer.</value>
   </data>
   <data name="INSTALLED" xml:space="preserve">
@@ -847,11 +847,11 @@ Sätt in en USB-enhet i konsolen och klicka på "Ja" för att fortsätta. Annars
   <data name="LABEL_CLOSE" xml:space="preserve">
     <value>Stäng</value>
   </data>
-  <data name="LABEL_CONNECTION_DETAILS" xml:space="preserve">
-    <value>Anslutningsdetaljer</value>
+  <data name="LABEL_PROFILE_DETAILS" xml:space="preserve">
+    <value>Profildetaljer</value>
   </data>
-  <data name="LABEL_CONNECTION_NAME" xml:space="preserve">
-    <value>Anslutningsnamn</value>
+  <data name="LABEL_PROFILE_NAME" xml:space="preserve">
+    <value>Profilnamn</value>
   </data>
   <data name="LABEL_CONTENT_ID" xml:space="preserve">
     <value>Innehålls-ID</value>
@@ -925,8 +925,8 @@ Sätt in en USB-enhet i konsolen och klicka på "Ja" för att fortsätta. Annars
   <data name="LABEL_EDIT" xml:space="preserve">
     <value>Edit</value>
   </data>
-  <data name="LABEL_EDIT_CONNECTION_DETAILS" xml:space="preserve">
-    <value>Redigera Anslutningsdetaljer</value>
+  <data name="LABEL_EDIT_PROFILE_DETAILS" xml:space="preserve">
+    <value>Redigera Profildetaljer</value>
     <comment>Displays in the title of the dialog popup.</comment>
   </data>
   <data name="LABEL_EDIT_NAME" xml:space="preserve">
@@ -1061,8 +1061,8 @@ Sätt in en USB-enhet i konsolen och klicka på "Ja" för att fortsätta. Annars
   <data name="LABEL_NAME" xml:space="preserve">
     <value>Namn</value>
   </data>
-  <data name="LABEL_NEW_CONNECTION_DETAILS" xml:space="preserve">
-    <value>Nya Anslutningsdetaljer</value>
+  <data name="LABEL_NEW_PROFILE_DETAILS" xml:space="preserve">
+    <value>Nya Profildetaljer</value>
     <comment>Displays in the title of the dialog popup.</comment>
   </data>
   <data name="LABEL_NEW_FOLDER" xml:space="preserve">
@@ -1271,8 +1271,8 @@ Du kan lägga till dem med filhanteraren.</value>
   <data name="MISSING" xml:space="preserve">
     <value>SAKNAS</value>
   </data>
-  <data name="MISSING_CONNECTION_NAME" xml:space="preserve">
-    <value>Du måste ange ett namn på anslutningen.</value>
+  <data name="MISSING_PROFILE_NAME" xml:space="preserve">
+    <value>Du måste ange ett profilnamn.</value>
   </data>
   <data name="MISSING_IP_ADDRESS" xml:space="preserve">
     <value>Du måste ange en IP-adress.</value>
@@ -1589,7 +1589,8 @@ Klicka på "Skicka" knappen för att öppna ett nytt ärende som kan hjälpa oss
     <value>Filer har installerats på en USB-enhet som är ansluten till konsolen. Du kan antingen avinstallera dem nu eller manuellt ta bort dem.
 
 Om du vill avinstallera filerna nu, ansluta samma USB-enhet som du installerade moddarna på till samma port på konsolen och klicka på "Ja" för att fortsätta.
-Om du inte vill avinstallera filerna klickar du på "Nej" och alla dessa filer kommer att ignoreras.</value>
+
+Om du inte vill avinstallera filerna klickar du på "Nej" så ignoreras alla dessa filer.</value>
   </data>
   <data name="RESTART" xml:space="preserve">
     <value>Starta om</value>
@@ -1804,5 +1805,111 @@ Om du inte vill avinstallera filerna klickar du på "Nej" och alla dessa filer k
   <data name="LABEL_SAVE" xml:space="preserve">
     <value>Spara</value>
     <comment>Save Profile</comment>
+  </data>
+  <data name="LABEL_PASSIVE_MODE" xml:space="preserve">
+    <value>Passivt Läge</value>
+    <comment>Passive Connection FTP</comment>
+  </data>
+  <data name="LABEL_DEFAULT_CREDENTIALS" xml:space="preserve">
+    <value>Standarduppgifter</value>
+    <comment>Use Default Connection Details</comment>
+  </data>
+  <data name="LABEL_DEFAULT_PROFILE" xml:space="preserve">
+    <value>Standardprofil</value>
+    <comment>Set as default profile for startup</comment>
+  </data>
+  <data name="MUST_HAVE_DEFAULT_CONSOLE" xml:space="preserve">
+    <value>Du måste ha minst en profil inställd som standard.</value>
+  </data>
+  <data name="LABEL_INSTALL_IGNORE_REGIONS" xml:space="preserve">
+    <value>Tvinga att installera regioner som inte stöds*</value>
+    <comment>Mods that aren't supported will still be installed</comment>
+  </data>
+  <data name="INSTALLING_TRAINER" xml:space="preserve">
+    <value>Installerar Trainer</value>
+  </data>
+  <data name="DOWNLOADING_TRAINER" xml:space="preserve">
+    <value>Laddar ner Trainer</value>
+  </data>
+  <data name="UNINSTALLING_TRAINER" xml:space="preserve">
+    <value>Avinstallerar Trainer</value>
+  </data>
+  <data name="AURORA_PATH_DOESNT_EXIST" xml:space="preserve">
+    <value>Din Aurora-mapp är antingen ogiltig eller finns inte på din konsol. Kontrollera inställningarna för att se till att den är korrekt och försök installera igen.
+
+Aurora Sökväg: {0}</value>
+  </data>
+  <data name="LOCAL_CACHE" xml:space="preserve">
+    <value>Lokalt Cacheminne</value>
+  </data>
+  <data name="CLEAR_CACHE" xml:space="preserve">
+    <value>Rensa Cacheminne</value>
+  </data>
+  <data name="CLEAR_CACHE_RESTART" xml:space="preserve">
+    <value>Rensa &amp;&amp; Starta om</value>
+  </data>
+  <data name="CLEAR_LOCAL_CACHE_ON_CLOSE" xml:space="preserve">
+    <value>Rensa lokalt cacheminne vid stängning</value>
+  </data>
+  <data name="ALWAYS_BACKUP_GAME_FILES" xml:space="preserve">
+    <value>Säkerhetskopiera alltid nuvarande spelfiler</value>
+  </data>
+  <data name="LABEL_APP_DATA" xml:space="preserve">
+    <value>Appdata</value>
+  </data>
+  <data name="LABEL_TEMP_FOLDER" xml:space="preserve">
+    <value>Temp-data Mapp</value>
+  </data>
+  <data name="YES" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="NO" xml:space="preserve">
+    <value>Nej</value>
+  </data>
+  <data name="LABEL_EDIT_LOGIN_CREDENTIALS" xml:space="preserve">
+    <value>Redigera Inloggningsuppgifter</value>
+  </data>
+  <data name="PROFILE_INFO" xml:space="preserve">
+    <value>Profilinformation</value>
+  </data>
+  <data name="LABEL_DOWNLOAD_LATEST" xml:space="preserve">
+    <value>Hämta Senaste</value>
+    <comment>Download the mods latest version</comment>
+  </data>
+  <data name="LABEL_INSTALL_LATEST" xml:space="preserve">
+    <value>Installera Senaste</value>
+    <comment>Download the mods latest version</comment>
+  </data>
+  <data name="LABEL_HELP_SUPPORT" xml:space="preserve">
+    <value>Hjälp &amp;&amp; Support</value>
+  </data>
+  <data name="CAPTURE_IMAGE" xml:space="preserve">
+    <value>Ta Bild</value>
+  </data>
+  <data name="NEW_IMAGE" xml:space="preserve">
+    <value>Ny Bild</value>
+  </data>
+  <data name="DELETE_IMAGE" xml:space="preserve">
+    <value>Ta bort Bild</value>
+  </data>
+  <data name="TOTAL_ADDED_PROFILES" xml:space="preserve">
+    <value>Totalt har {0} konsoler lagts till i dina profiler.</value>
+  </data>
+  <data name="EDIT_PROFILE_ERROR" xml:space="preserve">
+    <value>Du kan inte redigera detaljerna medan du är ansluten till den.</value>
+  </data>
+  <data name="LABEL_EXCLAMATION" xml:space="preserve">
+    <value>Utropstecken</value>
+  </data>
+  <data name="NEIGHBORHOOD_EDITOR" xml:space="preserve">
+    <value>Redigerare för Grannskap</value>
+  </data>
+  <data name="LABEL_SERVER_MAINTENANCE" xml:space="preserve">
+    <value>Serverunderhåll</value>
+  </data>
+  <data name="LABEL_SERVER_MAINTENANCE_MESSAGE" xml:space="preserve">
+    <value>Det verkar som om våra servrar för närvarande genomgår underhåll. Försök igen om ett tag.
+
+Om detta problem kvarstår efter 30 minuter, vänligen kontakta vårt supportteam för att rapportera problemet. Tack för ditt tålamod och förståelse!</value>
   </data>
 </root>
