@@ -968,7 +968,7 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
     <value>Modo de juego</value>
   </data>
   <data name="LABEL_GAME_MODS" xml:space="preserve">
-    <value>Mods del juego</value>
+    <value>Mods de juegos</value>
   </data>
   <data name="LABEL_GAME_SAVES" xml:space="preserve">
     <value>Partidas guardadas</value>
@@ -1343,7 +1343,7 @@ Error: {0}</value>
     <value>TRUCOS DE JUEGOS</value>
   </data>
   <data name="NAVIGATION_GAME_MODS" xml:space="preserve">
-    <value>MODS DE JUEGOS</value>
+    <value>Mods de juegos</value>
   </data>
   <data name="NAVIGATION_GAME_SAVES" xml:space="preserve">
     <value>PARTIDAS GUARDADAS</value>
