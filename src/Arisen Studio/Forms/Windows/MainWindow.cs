@@ -49,10 +49,11 @@ using FluentFTP.Exceptions;
 using Microsoft.Web.WebView2.WinForms;
 using Microsoft.Web.WebView2.Core;
 using DevExpress.XtraCharts;
-using DevExpress.Drawing;
 using DevExpress.XtraEditors.Controls;
-using ArisenStudio.Models.Dashboard;
 using System.Net.Http;
+using Microsoft.Web.WebView2.Wpf;
+using AdsJumboWinForm;
+using DevExpress.XtraRichEdit.API.Layout;
 
 namespace ArisenStudio.Forms.Windows
 {
@@ -198,8 +199,8 @@ namespace ArisenStudio.Forms.Windows
                 {
                     SetStatus(ResourceLanguage.GetString("LABEL_SERVER_MAINTENANCE_MESSAGE"));
                     _ = XtraMessageBox.Show(this,
-                                            ResourceLanguage.GetString("LABEL_SERVER_MAINTENANCE"),
                                             ResourceLanguage.GetString("LABEL_SERVER_MAINTENANCE_MESSAGE"),
+                                            ResourceLanguage.GetString("LABEL_SERVER_MAINTENANCE"),
                                             MessageBoxButtons.OK,
                                             MessageBoxIcon.Information);
                     Application.Exit();
@@ -216,6 +217,32 @@ namespace ArisenStudio.Forms.Windows
                 SetStatus(ResourceLanguage.GetString("INITIALIZING_APP_DB") + "...");
                 await LoadDataAsync();
                 InitializeFinished();
+
+                // Banner Ad
+
+                //WebViewAdBanner.CoreWebView2InitializationCompleted += WebViewAdBanner_CoreWebView2InitializationCompleted;
+
+                //await InitializeWebViewBanner();
+
+                //if ((WebViewAdBanner == null) || (WebViewAdBanner.CoreWebView2 == null))
+                //{
+                //    SetStatus("not ready");
+                //}
+
+                ////WebViewAdBanner.EnsureCoreWebView2Async();
+                ////string adScript = "<script async type=\"application/javascript\" src=\"https://a.magsrv.com/ad-provider.js\"></script>" +
+                ////                  "<ins class=\"eas6a97888e2\" data-zoneid=\"5410756\"></ins>" +
+                ////                  "<script>(AdProvider = window.AdProvider || []).push({\"serve\": {}});</script>";
+
+                //string adScript = "<script async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5131934319534750' " +
+                //                  "crossorigin='anonymous'></script>" +
+                //                  "<!-- Dashboard Page -->" +
+                //                  "<ins class='adsbygoogle' style='display:block' data-ad-client='ca-pub-5131934319534750' " +
+                //                  "data-ad-slot='4129494537' data-ad-format='auto' data-full-width-responsive='true'></ins>" +
+                //                  "<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>";
+
+
+                //WebViewAdBanner.NavigateToString(adScript);
             }
             else
             {
@@ -328,25 +355,28 @@ namespace ArisenStudio.Forms.Windows
         /// </summary>
         public async Task<bool> CheckDatabaseStatus()
         {
+            HttpClient _httpClient = new();
+
             try
             {
-                HttpClient _httpClient = new();
                 _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("ArisenStudio");
                 string response = await _httpClient.GetStringAsync(Urls.StatusCheck);
-                string status = JsonConvert.DeserializeObject<string>(response);
 
-                if (string.Equals(status, "OK", StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(response, "OK", StringComparison.OrdinalIgnoreCase))
                 {
+                    _httpClient.Dispose();
                     return true;
                 }
                 else
                 {
+                    _httpClient.Dispose();
                     Program.Log.Error("Database status not OK.");
                     return false;
                 }
             }
             catch (Exception ex)
             {
+                _httpClient.Dispose();
                 Program.Log.Error(ex, $"{ResourceLanguage.GetString("UNABLE_LOAD_DATABASE")} {ResourceLanguage.GetString("ERROR")}: {ex.Message}");
                 return false;
             }
@@ -443,16 +473,25 @@ namespace ArisenStudio.Forms.Windows
 
             EnableConsoleActions();
 
-            // Banner Ad
+            //// Banner Ad
+
+            //WebViewAdBanner.CoreWebView2InitializationCompleted += WebViewAdBanner_CoreWebView2InitializationCompleted;
+
+            //await InitializeWebViewBanner();
+
+            //if ((webView2 == null) || (webView2.CoreWebView2 == null))
+            //{
+            //    Debug.WriteLine("not ready");
+            //}
 
             //WebViewAdBanner.EnsureCoreWebView2Async();
-            //WebViewAdBanner.CoreWebView2.SetVirtualHostNameToFolderMapping("appassets.example", "assets", CoreWebView2HostResourceAccessKind.DenyCors);
-            string adScript = "<script async type=\"application/javascript\" src=\"https://a.magsrv.com/ad-provider.js\"></script>" +
-                              "<ins class=\"eas6a97888e2\" data-zoneid=\"5410756\"></ins>" +
-                              "<script>(AdProvider = window.AdProvider || []).push({\"serve\": {}});</script>";
+            //string adScript = "<script async type=\"application/javascript\" src=\"https://a.magsrv.com/ad-provider.js\"></script>" +
+            //                  "<ins class=\"eas6a97888e2\" data-zoneid=\"5410756\"></ins>" +
+            //                  "<script>(AdProvider = window.AdProvider || []).push({\"serve\": {}});</script>";
             //WebViewAdBanner.NavigateToString(adScript);
 
-            //BannerAdDashboard.ShowAd(802, 134, "33krwjd74qn6");
+            //BannerAdsDashboard.ShowAd(BannerAdsDashboard.Size.Width, BannerAdsDashboard.Size.Height, "33krwjd74qn6");
+            BannerAdsDashboard.ShowAd(728, 90, "33krwjd74qn6");
 
             CloseSplashScreenProgress(handleSplashScreenProgress);
 
@@ -489,6 +528,18 @@ namespace ArisenStudio.Forms.Windows
             }
 #endif
         }
+
+        //private async Task InitializeWebViewBanner()
+        //{
+        //    SetStatus("InitializeAsync");
+        //    await WebViewAdBanner.EnsureCoreWebView2Async(null);
+        //    SetStatus("WebView2 Runtime version: " + WebViewAdBanner.CoreWebView2.Environment.BrowserVersionString);
+        //}
+
+        //private void WebViewAdBanner_CoreWebView2InitializationCompleted(object sender, CoreWebView2InitializationCompletedEventArgs e)
+        //{
+        //    SetStatus("WebViewBanner_CoreWebView2InitializationCompleted");
+        //}
 
         private void SetConsoleProfile()
         {
@@ -1057,7 +1108,7 @@ namespace ArisenStudio.Forms.Windows
         {
             try
             {
-                string platform = ConsoleProfile.Platform.ToString().ToLowerInvariant();
+                string platform = ConsoleProfile.Platform.Humanize();
 
                 SetStatus(string.Format(ResourceLanguage.GetString("CONNECTING_TO_CONSOLE"), $"{ConsoleProfile.Name} ({ConsoleProfile.Address})"));
 
@@ -1071,7 +1122,15 @@ namespace ArisenStudio.Forms.Windows
                             Credentials = ConsoleProfile.UseDefaultLogin
                             ? new NetworkCredential("anonymous", "anonymous")
                             : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password),
-                            Config = new() { SocketKeepAlive = true, DataConnectionType = ConsoleProfile.PassiveMode ? FtpDataConnectionType.PASV : FtpDataConnectionType.AutoActive, ReadTimeout = 90000, ConnectTimeout = 90000, DataConnectionConnectTimeout = 90000, DataConnectionReadTimeout = 90000 },
+                            Config = new()
+                            {
+                                SocketKeepAlive = true,
+                                DataConnectionType = ConsoleProfile.PassiveMode ? FtpDataConnectionType.PASV : FtpDataConnectionType.AutoActive,
+                                ReadTimeout = 90000,
+                                ConnectTimeout = 90000,
+                                DataConnectionConnectTimeout = 90000,
+                                DataConnectionReadTimeout = 90000
+                            },
                             //Config = new() { SocketKeepAlive = true, DataConnectionType = FtpDataConnectionType.AutoActive, ReadTimeout = 90000, ConnectTimeout = 90000, DataConnectionConnectTimeout = 90000, DataConnectionReadTimeout = 90000 },
                         };
 
@@ -1135,7 +1194,7 @@ namespace ArisenStudio.Forms.Windows
                         throw new NotImplementedException();
                 }
 
-#if !DEBUG //Only here so can release without full PS4 support
+#if !DEBUG      //Only here so can release without full PS4 support
                 if (ConsoleProfile.Platform != Platform.PS4)
                 {
                     ButtonConnectConsole.Caption = ResourceLanguage.GetString("RECONNECT_CONSOLE");
@@ -1698,7 +1757,7 @@ namespace ArisenStudio.Forms.Windows
         {
             if (e.IsSuccess)
             {
-                _ = ((WebView2)sender).ExecuteScriptAsync("document.querySelector('body').style.overflow='hidden'");
+                _ = ((Microsoft.Web.WebView2.WinForms.WebView2)sender).ExecuteScriptAsync("document.querySelector('body').style.overflow='hidden'");
             }
         }
 
@@ -10104,7 +10163,7 @@ namespace ArisenStudio.Forms.Windows
 
         private void ButtonDonate_Click(object sender, EventArgs e)
         {
-            Process.Start(Urls.DonationPayPal);
+            Process.Start(Urls.DonatePatreon);
         }
 
         private void LabelCreditsLibraries_HyperlinkClick(object sender, HyperlinkClickEventArgs e)

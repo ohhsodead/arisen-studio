@@ -148,7 +148,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         private void ButtonReportIssue_Click(object sender, EventArgs e)
         {
-            _ = Process.Start(Urls.WebsiteReportIssue);
+            _ = Process.Start(Urls.ReportIssue);
         }
 
         private void ButtonHelp_Click(object sender, EventArgs e)

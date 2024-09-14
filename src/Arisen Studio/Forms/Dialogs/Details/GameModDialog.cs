@@ -132,7 +132,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
         private void ButtonReportIssue_Click(object sender, EventArgs e)
         {
             _ = XtraMessageBox.Show(Language.GetString("REDIRECT_TO_GITHUB_ISSUES"), Language.GetString("REDIRECTING"), MessageBoxButtons.OK, MessageBoxIcon.Information);
-            _ = Process.Start(Urls.WebsiteReportIssue);
+            _ = Process.Start(Urls.ReportIssue);
         }
 
         private void LabelDescription_HyperlinkClick(object sender, HyperlinkClickEventArgs e)

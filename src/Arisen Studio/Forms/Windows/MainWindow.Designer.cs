@@ -731,6 +731,7 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemHomebrewDownload = new DevExpress.XtraEditors.TileItem();
             this.TileItemHomebrewShowDetails = new DevExpress.XtraEditors.TileItem();
             this.PageAbout = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.ButtonDonate = new DevExpress.XtraEditors.SimpleButton();
             this.LabelHeaderAboutCredits = new DevExpress.XtraEditors.LabelControl();
             this.LabelAboutVersion = new DevExpress.XtraEditors.LabelControl();
             this.ImageLogo = new DevExpress.XtraEditors.SvgImageBox();
@@ -982,7 +983,6 @@ namespace ArisenStudio.Forms.Windows
             this.tileGroup3 = new DevExpress.XtraEditors.TileGroup();
             this.tileItem10 = new DevExpress.XtraEditors.TileItem();
             this.panelControl10 = new DevExpress.XtraEditors.PanelControl();
-            this.bannerAds1 = new AdsJumboWinForm.BannerAds();
             this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
             this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
@@ -1472,7 +1472,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGameModsXboxVersion = new DevExpress.XtraEditors.LabelControl();
             this.LabelGameModsXboxStatus = new DevExpress.XtraEditors.LabelControl();
             this.LabelGameModsXboxCategory = new DevExpress.XtraEditors.LabelControl();
-            this.ButtonDonate = new DevExpress.XtraEditors.SimpleButton();
+            this.BannerAdsDashboard = new AdsJumboWinForm.BannerAds();
             this.PageGameModsPS3.SuspendLayout();
             this.PanelGameGameMods.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlGameModsPS3)).BeginInit();
@@ -4262,6 +4262,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.PanelAdPlacement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.PanelAdPlacement.Controls.Add(this.BannerAdsDashboard);
             this.PanelAdPlacement.Controls.Add(this.WebViewAdBanner);
             this.PanelAdPlacement.Controls.Add(this.LabelHeaderRecentlyUpdated);
             this.PanelAdPlacement.Location = new System.Drawing.Point(0, 822);
@@ -4283,6 +4284,7 @@ namespace ArisenStudio.Forms.Windows
             this.WebViewAdBanner.Name = "WebViewAdBanner";
             this.WebViewAdBanner.Size = new System.Drawing.Size(845, 136);
             this.WebViewAdBanner.TabIndex = 12;
+            this.WebViewAdBanner.Visible = false;
             this.WebViewAdBanner.ZoomFactor = 1D;
             // 
             // LabelHeaderRecentlyUpdated
@@ -7403,6 +7405,7 @@ namespace ArisenStudio.Forms.Windows
             this.ButtonUpdate.ItemInMenuAppearance.Pressed.BackColor = System.Drawing.Color.DodgerBlue;
             this.ButtonUpdate.ItemInMenuAppearance.Pressed.Options.UseBackColor = true;
             this.ButtonUpdate.Name = "ButtonUpdate";
+            this.ButtonUpdate.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.ButtonUpdate.VisibleInSearchMenu = false;
             this.ButtonUpdate.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonUpdate_ItemClick);
             // 
@@ -11236,6 +11239,31 @@ namespace ArisenStudio.Forms.Windows
             this.PageAbout.Name = "PageAbout";
             this.PageAbout.Size = new System.Drawing.Size(1288, 571);
             // 
+            // ButtonDonate
+            // 
+            this.ButtonDonate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonDonate.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ButtonDonate.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.ButtonDonate.Appearance.Options.UseFont = true;
+            this.ButtonDonate.Appearance.Options.UseForeColor = true;
+            this.ButtonDonate.AutoSize = true;
+            this.ButtonDonate.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonDonate.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.ButtonDonate.ImageOptions.ImageToTextIndent = 6;
+            this.ButtonDonate.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ButtonDonate.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.patreon;
+            this.ButtonDonate.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.ButtonDonate.Location = new System.Drawing.Point(1172, 56);
+            this.ButtonDonate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ButtonDonate.MinimumSize = new System.Drawing.Size(0, 28);
+            this.ButtonDonate.Name = "ButtonDonate";
+            this.ButtonDonate.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
+            this.ButtonDonate.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonDonate.Size = new System.Drawing.Size(98, 28);
+            this.ButtonDonate.TabIndex = 22;
+            this.ButtonDonate.Text = "Donate";
+            this.ButtonDonate.Click += new System.EventHandler(this.ButtonDonate_Click);
+            // 
             // LabelHeaderAboutCredits
             // 
             this.LabelHeaderAboutCredits.AllowHtmlString = true;
@@ -11405,7 +11433,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelCreditsTranslators.Location = new System.Drawing.Point(0, 555);
             this.LabelCreditsTranslators.Name = "LabelCreditsTranslators";
             this.LabelCreditsTranslators.Padding = new System.Windows.Forms.Padding(12, 3, 0, 12);
-            this.LabelCreditsTranslators.Size = new System.Drawing.Size(1229, 100);
+            this.LabelCreditsTranslators.Size = new System.Drawing.Size(1246, 100);
             this.LabelCreditsTranslators.TabIndex = 18;
             this.LabelCreditsTranslators.Text = resources.GetString("LabelCreditsTranslators.Text");
             this.LabelCreditsTranslators.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelCreditsTranslators_HyperlinkClick);
@@ -11419,7 +11447,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelHeaderTranslators.Location = new System.Drawing.Point(0, 527);
             this.LabelHeaderTranslators.Name = "LabelHeaderTranslators";
             this.LabelHeaderTranslators.Padding = new System.Windows.Forms.Padding(12, 6, 0, 3);
-            this.LabelHeaderTranslators.Size = new System.Drawing.Size(1229, 28);
+            this.LabelHeaderTranslators.Size = new System.Drawing.Size(1246, 28);
             this.LabelHeaderTranslators.TabIndex = 17;
             this.LabelHeaderTranslators.Text = "Translators";
             // 
@@ -11433,7 +11461,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelCreditsContributors.Location = new System.Drawing.Point(0, 354);
             this.LabelCreditsContributors.Name = "LabelCreditsContributors";
             this.LabelCreditsContributors.Padding = new System.Windows.Forms.Padding(12, 3, 0, 0);
-            this.LabelCreditsContributors.Size = new System.Drawing.Size(1229, 173);
+            this.LabelCreditsContributors.Size = new System.Drawing.Size(1246, 173);
             this.LabelCreditsContributors.TabIndex = 16;
             this.LabelCreditsContributors.Text = resources.GetString("LabelCreditsContributors.Text");
             this.LabelCreditsContributors.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelCreditsContributors_HyperlinkClick);
@@ -11447,7 +11475,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelAboutHeaderContributors.Location = new System.Drawing.Point(0, 326);
             this.LabelAboutHeaderContributors.Name = "LabelAboutHeaderContributors";
             this.LabelAboutHeaderContributors.Padding = new System.Windows.Forms.Padding(12, 6, 0, 3);
-            this.LabelAboutHeaderContributors.Size = new System.Drawing.Size(1229, 28);
+            this.LabelAboutHeaderContributors.Size = new System.Drawing.Size(1246, 28);
             this.LabelAboutHeaderContributors.TabIndex = 15;
             this.LabelAboutHeaderContributors.Text = "Contributors";
             // 
@@ -11462,7 +11490,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelCreditsLibraries.Location = new System.Drawing.Point(0, 34);
             this.LabelCreditsLibraries.Name = "LabelCreditsLibraries";
             this.LabelCreditsLibraries.Padding = new System.Windows.Forms.Padding(12, 3, 0, 0);
-            this.LabelCreditsLibraries.Size = new System.Drawing.Size(1229, 292);
+            this.LabelCreditsLibraries.Size = new System.Drawing.Size(1246, 292);
             this.LabelCreditsLibraries.TabIndex = 14;
             this.LabelCreditsLibraries.Text = resources.GetString("LabelCreditsLibraries.Text");
             this.LabelCreditsLibraries.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelCreditsLibraries_HyperlinkClick);
@@ -11476,7 +11504,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelHeaderLibraries.Location = new System.Drawing.Point(0, 0);
             this.LabelHeaderLibraries.Name = "LabelHeaderLibraries";
             this.LabelHeaderLibraries.Padding = new System.Windows.Forms.Padding(12, 12, 0, 3);
-            this.LabelHeaderLibraries.Size = new System.Drawing.Size(1229, 34);
+            this.LabelHeaderLibraries.Size = new System.Drawing.Size(1246, 34);
             this.LabelHeaderLibraries.TabIndex = 13;
             this.LabelHeaderLibraries.Text = "Third-Party Libraries";
             // 
@@ -15371,7 +15399,6 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.panelControl10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControl10.Controls.Add(this.bannerAds1);
             this.panelControl10.Controls.Add(this.chartControl2);
             this.panelControl10.Controls.Add(this.labelControl33);
             this.panelControl10.Location = new System.Drawing.Point(0, 412);
@@ -15380,21 +15407,6 @@ namespace ArisenStudio.Forms.Windows
             this.panelControl10.Size = new System.Drawing.Size(857, 194);
             this.panelControl10.TabIndex = 4;
             this.panelControl10.Visible = false;
-            // 
-            // bannerAds1
-            // 
-            this.bannerAds1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bannerAds1.ApplicationId = "33krwjd74qn6";
-            this.bannerAds1.BackColor = System.Drawing.Color.White;
-            this.bannerAds1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.bannerAds1.HeightAd = 134;
-            this.bannerAds1.Location = new System.Drawing.Point(7, 44);
-            this.bannerAds1.Name = "bannerAds1";
-            this.bannerAds1.Size = new System.Drawing.Size(842, 134);
-            this.bannerAds1.TabIndex = 11;
-            this.bannerAds1.WidthAd = 802;
             // 
             // chartControl2
             // 
@@ -23773,29 +23785,20 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGameModsXboxCategory.Size = new System.Drawing.Size(61, 17);
             this.LabelGameModsXboxCategory.TabIndex = 1171;
             // 
-            // ButtonDonate
+            // BannerAdsDashboard
             // 
-            this.ButtonDonate.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.ButtonDonate.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.ButtonDonate.Appearance.Options.UseFont = true;
-            this.ButtonDonate.Appearance.Options.UseForeColor = true;
-            this.ButtonDonate.AutoSize = true;
-            this.ButtonDonate.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonDonate.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.ButtonDonate.ImageOptions.ImageToTextIndent = 6;
-            this.ButtonDonate.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.ButtonDonate.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.paypal;
-            this.ButtonDonate.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonDonate.Location = new System.Drawing.Point(1149, 56);
-            this.ButtonDonate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ButtonDonate.MinimumSize = new System.Drawing.Size(0, 28);
-            this.ButtonDonate.Name = "ButtonDonate";
-            this.ButtonDonate.Padding = new System.Windows.Forms.Padding(14, 0, 14, 0);
-            this.ButtonDonate.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonDonate.Size = new System.Drawing.Size(121, 28);
-            this.ButtonDonate.TabIndex = 22;
-            this.ButtonDonate.Text = "Donate";
-            this.ButtonDonate.Click += new System.EventHandler(this.ButtonDonate_Click);
+            this.BannerAdsDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BannerAdsDashboard.ApplicationId = "33krwjd74qn6";
+            this.BannerAdsDashboard.BackColor = System.Drawing.Color.White;
+            this.BannerAdsDashboard.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.BannerAdsDashboard.HeightAd = 134;
+            this.BannerAdsDashboard.Location = new System.Drawing.Point(12, 36);
+            this.BannerAdsDashboard.Name = "BannerAdsDashboard";
+            this.BannerAdsDashboard.Size = new System.Drawing.Size(838, 144);
+            this.BannerAdsDashboard.TabIndex = 16;
+            this.BannerAdsDashboard.WidthAd = 802;
             // 
             // MainWindow
             // 
@@ -25297,7 +25300,6 @@ namespace ArisenStudio.Forms.Windows
         private TileGroup tileGroup3;
         private TileItem tileItem10;
         private PanelControl panelControl10;
-        private AdsJumboWinForm.BannerAds bannerAds1;
         private DevExpress.XtraCharts.ChartControl chartControl2;
         private LabelControl labelControl33;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage4;
@@ -25882,5 +25884,6 @@ namespace ArisenStudio.Forms.Windows
         private BarButtonItem ButtonToolsPsScreenshot;
         private Microsoft.Web.WebView2.WinForms.WebView2 WebViewAdBanner;
         private SimpleButton ButtonDonate;
+        private AdsJumboWinForm.BannerAds BannerAdsDashboard;
     }
 }

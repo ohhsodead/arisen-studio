@@ -15,12 +15,12 @@
         /// <summary>
         /// Direct link to the request mods form on the project website.
         /// </summary>
-        internal const string RequestForm = "https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&labels=mod+request&projects=&template=mod-request.yml&title=%5BMod+Request%5D%3A+"; //"https://arisen.studio/submit";
+        internal const string RequestForm = "https://arisen.studio/submit"; //"https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&labels=mod+request&projects=&template=mod-request.yml&title=%5BMod+Request%5D%3A+"; 
 
         /// <summary>
         /// Direct link to the request mods form on the project website.
         /// </summary>
-        internal const string ReportIssue = "https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&labels=bug&projects=&template=bug.yml&title=%5BBug%5D%3A+"; //"https://arisen.studio/report";
+        internal const string ReportIssue = "https://arisen.studio/report"; //"https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&labels=bug&projects=&template=bug.yml&title=%5BBug%5D%3A+"; 
 
         /// <summary>
         /// Direct link to the project's Discord Server.
@@ -30,7 +30,7 @@
         /// <summary>
         /// Direct link to the donation page on PayPal.
         /// </summary>
-        internal const string DonationPayPal = "https://paypal.com/donate/?business=8KX4YQ46ZNNDJ";
+        internal const string DonatePatreon = "https://patreon.com/ohhsodead?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink";
 
         /// <summary>
         /// Direct link to the my Twitter/X profile.

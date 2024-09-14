@@ -140,7 +140,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.ComboBoxPlatform.Name = "ComboBoxPlatform";
             this.ComboBoxPlatform.Properties.AllowFocused = false;
             this.ComboBoxPlatform.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ComboBoxPlatform.Properties.Appearance.ForeColor = System.Drawing.Color.Silver;
+            this.ComboBoxPlatform.Properties.Appearance.ForeColor = System.Drawing.Color.White;
             this.ComboBoxPlatform.Properties.Appearance.Options.UseFont = true;
             this.ComboBoxPlatform.Properties.Appearance.Options.UseForeColor = true;
             this.ComboBoxPlatform.Properties.AppearanceItemHighlight.ForeColor = System.Drawing.Color.White;
@@ -226,6 +226,7 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             // CheckBoxGoldHEN
             // 
+            this.CheckBoxGoldHEN.Enabled = false;
             this.CheckBoxGoldHEN.Location = new System.Drawing.Point(124, 139);
             this.CheckBoxGoldHEN.Name = "CheckBoxGoldHEN";
             this.CheckBoxGoldHEN.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -314,10 +315,10 @@ namespace ArisenStudio.Forms.Dialogs
             this.ImageInfoDefaultCredentials.Cursor = System.Windows.Forms.Cursors.Default;
             this.ImageInfoDefaultCredentials.ItemAppearance.Disabled.FillColor = System.Drawing.Color.DimGray;
             this.ImageInfoDefaultCredentials.ItemAppearance.Normal.FillColor = System.Drawing.Color.White;
-            this.ImageInfoDefaultCredentials.Location = new System.Drawing.Point(248, 34);
+            this.ImageInfoDefaultCredentials.Location = new System.Drawing.Point(248, 35);
             this.ImageInfoDefaultCredentials.Name = "ImageInfoDefaultCredentials";
             this.ImageInfoDefaultCredentials.ShowToolTips = DevExpress.Utils.DefaultBoolean.True;
-            this.ImageInfoDefaultCredentials.Size = new System.Drawing.Size(18, 18);
+            this.ImageInfoDefaultCredentials.Size = new System.Drawing.Size(17, 17);
             this.ImageInfoDefaultCredentials.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
             this.ImageInfoDefaultCredentials.SvgImage = global::ArisenStudio.Properties.Resources.icons8_info;
             this.ImageInfoDefaultCredentials.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
@@ -337,7 +338,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.ImageInfoPassive.Location = new System.Drawing.Point(221, 106);
             this.ImageInfoPassive.Name = "ImageInfoPassive";
             this.ImageInfoPassive.ShowToolTips = DevExpress.Utils.DefaultBoolean.True;
-            this.ImageInfoPassive.Size = new System.Drawing.Size(18, 18);
+            this.ImageInfoPassive.Size = new System.Drawing.Size(17, 17);
             this.ImageInfoPassive.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
             this.ImageInfoPassive.SvgImage = global::ArisenStudio.Properties.Resources.icons8_info;
             this.ImageInfoPassive.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;

@@ -79,7 +79,7 @@ namespace ArisenStudio.Forms.Dialogs
             CheckBoxPassiveMode.Enabled = ConsoleProfile.Platform == Platform.PS3;
             CheckBoxPassiveMode.Checked = ConsoleProfile.PassiveMode;
 
-            CheckBoxGoldHEN.Enabled = ConsoleProfile.Platform == Platform.PS3;
+            CheckBoxGoldHEN.Enabled = ConsoleProfile.Platform == Platform.PS4;
             CheckBoxGoldHEN.Checked = ConsoleProfile.GoldHEN;
 
             int defaults = 0;
@@ -198,11 +198,10 @@ namespace ArisenStudio.Forms.Dialogs
                     break;
 
                 case 3:
+                    ConsoleProfile.PlatformType = PlatformType.PlayStation4;
+                    ConsoleProfile.Platform = Platform.PS4;
+                    //ImageConsole.Image = Properties.Resources.PlayStation4;
                     break;
-                //ConsoleProfile.PlatformType = PlatformType.PlayStation4;
-                //ConsoleProfile.Platform = Platform.PS4;
-                //ImageConsole.Image = Properties.Resources.PlayStation4;
-                //break;
 
                 case 4:
                     ConsoleProfile.PlatformType = PlatformType.Xbox360FatWhite;
@@ -262,10 +261,11 @@ namespace ArisenStudio.Forms.Dialogs
             //}
 
             //LabelUserPass.Visible = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
+            CheckBoxDefaultLogin.Checked = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
             ButtonEditLoginDetails.Enabled = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
             CheckBoxPassiveMode.Enabled = ConsoleProfile.Platform == Platform.PS3;
             CheckBoxPassiveMode.Checked = false;
-            CheckBoxGoldHEN.Enabled = ConsoleProfile.Platform == Platform.PS3;
+            CheckBoxGoldHEN.Enabled = ConsoleProfile.Platform == Platform.PS4;
             CheckBoxGoldHEN.Checked = false;
 
             //CheckBoxDefault.Enabled = ConsoleProfile.Platform == Platform.XBOX360;
@@ -279,21 +279,24 @@ namespace ArisenStudio.Forms.Dialogs
             {
                 if (ConsoleProfile.Platform == Platform.XBOX360)
                 {
-                    TextBoxAddress.Text = Language.GetString("LABEL_DEFAULT_PROFILE");
                     LabelAddress.Enabled = false;
+                    TextBoxAddress.Text = Language.GetString("LABEL_DEFAULT_PROFILE");
                     TextBoxAddress.Enabled = false;
+                    ButtonEditLoginDetails.Enabled = false;
                 }
                 else
                 {
-                    TextBoxAddress.Text = ConsoleProfile.Address;
                     LabelAddress.Enabled = true;
+                    TextBoxAddress.Text = ConsoleProfile.Address;
                     TextBoxAddress.Enabled = true;
+                    ButtonEditLoginDetails.Enabled = true;
                 }
             }
             else
             {
-                TextBoxAddress.Text = ConsoleProfile.Address;
                 LabelAddress.Enabled = true;
+                TextBoxAddress.Text = ConsoleProfile.Address;
+                TextBoxAddress.Enabled = true;
                 ButtonEditLoginDetails.Enabled = true;
             }
 

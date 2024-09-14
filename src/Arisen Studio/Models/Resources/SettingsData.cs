@@ -466,7 +466,7 @@ namespace ArisenStudio.Models.Resources
 
         public bool IsDefault { get; set; } = true;
 
-        public bool GoldHEN { get; set; } = true;
+        public bool GoldHEN { get; set; } = false;
 
         public List<InstalledModInfo> InstalledMods { get; set; } = [];
 
