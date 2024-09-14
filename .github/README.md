@@ -12,7 +12,7 @@
   <a href="https://github.com/ohhsodead/arisen-studio/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/ohhsodead/arisen-studio.svg" /></a>
   <br>
   <a href="https://arisen.studio/"><img src="https://img.shields.io/website?down_message=offline&up_message=online&url=https://arisen.studio/" /></a>
-  <a href="https://github.com/ohhsodead/arisen-studio-database"><img src="https://img.shields.io/website?down_message=offline&label=database&up_message=online&url=https://db.arisen.studio" /></a>
+  <a href="https://db.arisen.studio"><img src="https://img.shields.io/website?down_message=offline&label=database&up_message=online&url=https://db.arisen.studio" /></a>
   <a href="https://github.com/ohhsodead/arisen-studio-database"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/badges/mods-badge.json&label=total%20mods" /></a>
   <a href="https://github.com/ohhsodead/arisen-studio-database"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/badges/pkgs-badge.json&label=total%20packages" /></a>
   </a>
@@ -81,7 +81,7 @@ Please give this project a ⭐ if you find it useful.
 * An Internet Connection on your PC & Console (optional)
 * NET Framework 4.8 (Download the official [here](https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-web-installer))
 * PlayStation 3 (with webMAN, multiMAN or Rebug Toolbox) OR
-* Xbox 360 RGH/JTAG (with DashLaunch & Xbdm.xex as Plugin #1)
+* Xbox 360 RGH/JTAG (with DashLaunch & xbdm.xex as Plugin #1)
 
 ## Installation
 
@@ -91,9 +91,11 @@ Download and run the latest version of the Windows installer, "ArisenStudio.Inst
 
 ## Support Us
 
-If you find this project helpful and would like to support its development, please consider making a *small donation*. Your support is greatly appreciated! Funds are mainly to cover the high server costs.
+If you find this project helpful and would like to support its development, please consider making a *small donation*. Your support is greatly appreciated! Funds are mainly to cover the server costs, our domains and developer alive.
 
-<a href="https://www.paypal.com/donate/?business=8KX4YQ46ZNNDJ"><img title="Donate" src="https://img.shields.io/badge/Donate-PayPal?style=for-the-badge&logo=paypal&labelColor=orange&color=orange" alt="donate" /></a>
+<a href="https://patreon.com/bePatron?u=46012492" target="_blank"><img title="Patreon" src="https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white" alt="Patreon" /></a>
+
+<a href="https://paypal.me/ohhsodead" target="_blank"><img title="PayPal" src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white&color=blue" alt="PayPal" /></a>
 
 ## Bug Reports
 Arisen Studio isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/arisen-studio/issues/new?&labels=bug&template=bug.yml&title=%5BBug+Report%5D%3A+). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
