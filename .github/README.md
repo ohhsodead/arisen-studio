@@ -56,29 +56,30 @@ Please give this project a ⭐ if you find it useful.
 ### PlayStation 3
 * Automatically detect and remember game regions
 * Backup and restore original game files
-* Download official game updates
-* Browse/mount/unmount games
-* Package file manager
-* Console manager (IDPS/PSID, LEDs, etc.)
+* Download and install official game updates
+* Browse, launch, mount and unmount games
+* Package File Manager
+* Take screenshots of your screen
+* Console Manager (IDPS/PSID, LEDs, etc.)
 * Edit and backup/restore `boot_plugins.txt` file
-* webMAN commands (Reboot, Show Version, etc.)
+* webMAN Commands (Reboot, Show Version, etc.)
 
 ### Xbox 360
-* Launch games using the `XEX` file
+* Game launcher using the `XEX` files
 * Resign game saves to profiles
 * Load/unload modules without rebooting
 * Take screenshots of your screen
 * Spoof XUID for all CoDs
-* Console manager (LEDs, fan speed, etc.)
+* Neighborhood Editor (Icon & Name)
 * Edit and backup/restore `launch.ini` file
-* XBDM commands (Reboot, Shutdown, etc.)
+* XBDM Commands (Reboot, Shutdown, etc.)
 
 ## Requirements
 
 * An Internet Connection on your PC & Console (optional)
 * NET Framework 4.8 (Download the official [here](https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-web-installer))
 * PlayStation 3 (with webMAN, multiMAN or Rebug Toolbox) OR
-* Xbox 360 RGH/JTAG (with DashLaunch & xbdm.xex as Plugin #1)
+* Xbox 360 RGH/JTAG (with DashLaunch, xbdm.xex as Plugin #1 & optionally JRPC2)
 
 ## Installation
 
