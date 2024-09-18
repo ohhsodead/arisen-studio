@@ -28,15 +28,15 @@ The elegant, powerful, and open-source mod manager. Arisen Studio allows you to 
 
 **the only one of its kind...**
 
-![Dashboard](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/assets/Dashboard.png?raw=true)
+![Dashboard](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/assets/dashboard.png?raw=true)
 
-![Game Mods](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/assets/GameMods.png?raw=true)
+![Game Mods](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/assets/game-mods.png?raw=true)
 
-![Mod Details](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/assets/ModDetails.png?raw=true)
+![Mod Details](https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/assets/mods-details.png?raw=true)
 
 **Comments, ideas, suggestions?**
 
-<a href="https://discord.gg/FTCS3Xu"><img src="https://arisen.studio/images/discord_banner_purple.svg" /></a>
+<a href="https://discord.gg/FTCS3Xu"><img src="https://arisen.studio/images/icons/discord_banner_purple.svg" /></a>
 
 Please give this project a ⭐ if you find it useful.
 
