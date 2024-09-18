@@ -3,6 +3,50 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Beta v3.2.0
+- Updated DevExpress library to 24.1
+- Updated AutoUpdater.NET package to 1.9.2
+- Updated FluentFTP package to 51.1.0
+- Updated HtmlAgilityPack package to 1.11.65
+- Updated WebView2 package to 1.0.2651.64
+- Updated NLog package to 5.3.4
+- Added new language Portuguese (Brazilian)
+- Added simple cache for database files to improve startup
+- Added partial support for PS4 connections
+- Added support for PS4 database files
+- Added Applications page for PS4 apps
+- Added Games page for PS4 games
+- Added Trainers page for Xbox 360 games
+- Added Setup Wizard for first time use
+- Added progress bar status when transferring files
+- Added shortcut actions for library pages
+- Added a better Screenshot Tool for PS3
+- Added button to copy download link for mods
+- Added options to change Neighborhood console name and icon
+- Added option to ignore supported regions when installing
+- Added an Easter egg somewhere in the app, try find it ;)
+- Fixed no internet being detected when using a VPN
+- Fixed sizing issues with users on different scaling settings
+- Fixed creating console profile on start-up not working
+- Fixed some strings not being translated at all
+- Fixed images for directory listings in File Manager
+- Fixed automatic scan for Xbox consoles
+- Fixed some filters not working for Installed Files page
+- Fixed discord rich presence with newer AppID
+- Fixed Boot Plugins Editor not loading correct console file
+- Fixed some minor issues found in modding tools
+- Removed Console Manager for Xbox 360 due to multiple issues
+- App updates aren't forced anymore except for major versions
+- Game Cheats (RTE) is enabled for testing (beta)
+- Game Save Resigner is always enabled now
+- Improved consistency for the Settings Page
+- Improved configuration for setting file locations
+- Improved functionality for some of the tools for PS3 and Xbox
+- Redesign the layout of controls and content for dialogs
+- Moved all database files to @goldug's web server
+- Optimized lots of code, removed redundant resources
+- Major and minor quality of life improvements (QoL)
+
 ## Beta v3.1.2
 - Improved overall design and layout
 - Updated project with new coding standards
