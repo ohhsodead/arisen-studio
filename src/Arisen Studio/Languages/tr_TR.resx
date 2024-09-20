@@ -203,7 +203,7 @@ Oyun dosyalarının kaybolmasını önlemek için bu dosya kaldırılamaz, bu ne
     <value>Üretici yazılımı klasöründen dosyaları kaldıramazsınız. Eksik dosyalar konsol performansınızı etkileyebilir.</value>
   </data>
   <data name="CHANGE_LOG" xml:space="preserve">
-    <value>Değişiklikler</value>
+    <value>Deği̇şi̇kli̇kler</value>
   </data>
   <data name="CHANGE_PROFILE" xml:space="preserve">
     <value>Profili Değiştir</value>
@@ -280,7 +280,7 @@ Yinede eklemek istiyor musunuz?</value>
     <value>Konsol Profilleri</value>
   </data>
   <data name="CONTRIBUTORS" xml:space="preserve">
-    <value>Katkıcılar</value>
+    <value>Katkicilar</value>
   </data>
   <data name="COPIED_LINK" xml:space="preserve">
     <value>Bağlantı panoya kopyalandı.</value>
@@ -296,7 +296,7 @@ Yinede eklemek istiyor musunuz?</value>
     <value>Geri yüklemek için önce bir yedekleme dosyası oluşturmalısınız.</value>
   </data>
   <data name="CREDITS" xml:space="preserve">
-    <value>Hazırlayanlar</value>
+    <value>Krediler</value>
   </data>
   <data name="CURRENT_GAME" xml:space="preserve">
     <value>Mevcut Oyun:</value>
@@ -1242,7 +1242,7 @@ Dosya Yöneticisini kullanarak ekleyebilirsiniz.</value>
     <value>Sürüm</value>
   </data>
   <data name="LABEL_WELCOME" xml:space="preserve">
-    <value>Arisen Studio'ya Hoş Geldiniz</value>
+    <value>Arisen Studio 'ya Hoş Geldiniz</value>
   </data>
   <data name="LANGUAGE" xml:space="preserve">
     <value>Dil</value>
@@ -1257,7 +1257,7 @@ Dosya Yöneticisini kullanarak ekleyebilirsiniz.</value>
     <value>Son Güncellenme</value>
   </data>
   <data name="LATEST_NEWS" xml:space="preserve">
-    <value>Son Yenilikler</value>
+    <value>Son Yeni̇li̇kler</value>
   </data>
   <data name="LAUNCH_FILE_PATH" xml:space="preserve">
     <value>launch.ini Dosya Yolu</value>
@@ -1482,7 +1482,7 @@ Bu oyun için doğru modları kurun veya farklı bir oyun bölgesi seçin.</valu
     <value>Günlük Klasörünü Aç</value>
   </data>
   <data name="OPTIONS" xml:space="preserve">
-    <value>Şeçenekler</value>
+    <value>Seçenekler</value>
   </data>
   <data name="OUR_FAVORITE_APPS" xml:space="preserve">
     <value>Favori Uygulamalarımız</value>
@@ -1494,7 +1494,7 @@ Bu oyun için doğru modları kurun veya farklı bir oyun bölgesi seçin.</valu
     <value>Favori Oyunlarınız</value>
   </data>
   <data name="OUR_FAVORITE_MODS" xml:space="preserve">
-    <value>Favori Modlarınız</value>
+    <value>Favori̇ Modlarimiz</value>
   </data>
   <data name="OVERWRITE_MODS" xml:space="preserve">
     <value>Modların Üzerine Yaz</value>
@@ -1551,7 +1551,7 @@ Bu oyun için doğru modları kurun veya farklı bir oyun bölgesi seçin.</valu
     <value>Oyun başlamaya hazır.</value>
   </data>
   <data name="RECENTLY_UPDATED" xml:space="preserve">
-    <value>Son Güncellenen</value>
+    <value>Son Güncellenenler</value>
   </data>
   <data name="RECONNECT_CONSOLE" xml:space="preserve">
     <value>Konsola Tekrar Bağlan</value>
@@ -1857,8 +1857,8 @@ Aurora Yolu: {0}</value>
   <data name="LABEL_APP_DATA" xml:space="preserve">
     <value>Uygulama Verisi</value>
   </data>
-  <data name="LABEL_TEMP" xml:space="preserve">
-    <value>Geçici</value>
+  <data name="LABEL_TEMP_FOLDER" xml:space="preserve">
+    <value>Temp Klasörü</value>
   </data>
   <data name="YES" xml:space="preserve">
     <value>Evet</value>
@@ -1879,5 +1879,37 @@ Aurora Yolu: {0}</value>
   <data name="LABEL_INSTALL_LATEST" xml:space="preserve">
     <value>Son Sürümü Kur</value>
     <comment>Download the mods latest version</comment>
+  </data>
+  <data name="LABEL_HELP_SUPPORT" xml:space="preserve">
+    <value>Yardım &amp;&amp; Destek</value>
+  </data>
+  <data name="CAPTURE_IMAGE" xml:space="preserve">
+    <value>Görüntüyü Yakala</value>
+  </data>
+  <data name="NEW_IMAGE" xml:space="preserve">
+    <value>Yeni Görüntü</value>
+  </data>
+  <data name="DELETE_IMAGE" xml:space="preserve">
+    <value>Görüntüyü Sil</value>
+  </data>
+  <data name="TOTAL_ADDED_PROFILES" xml:space="preserve">
+    <value>Profillerinize toplam {0} konsol eklendi.</value>
+  </data>
+  <data name="EDIT_PROFILE_ERROR" xml:space="preserve">
+    <value>Bağlıyken ayrıntıları düzenleyemezsiniz.</value>
+  </data>
+  <data name="LABEL_EXCLAMATION" xml:space="preserve">
+    <value>Ünlem</value>
+  </data>
+  <data name="NEIGHBORHOOD_EDITOR" xml:space="preserve">
+    <value>Neighborhood Editör</value>
+  </data>
+  <data name="LABEL_SERVER_MAINTENANCE" xml:space="preserve">
+    <value>Sunucu Bakımı</value>
+  </data>
+  <data name="LABEL_SERVER_MAINTENANCE_MESSAGE" xml:space="preserve">
+    <value>Görünüşe göre sunucularımız şu anda bakımdan geçiyor. Lütfen kısa bir süre sonra tekrar deneyin.
+
+Bu sorun 30 dakika sonra da devam ederse, sorunu bildirmek için lütfen destek ekibimizle iletişime geçin. Sabrınız ve anlayışınız için teşekkür ederiz!</value>
   </data>
 </root>
