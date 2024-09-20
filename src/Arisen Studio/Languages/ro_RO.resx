@@ -1,0 +1,1913 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ABOUT" xml:space="preserve">
+    <value>Despre</value>
+  </data>
+  <data name="ADD_CONSOLES_MANUALLY" xml:space="preserve">
+    <value>Imposibil de găsit console folosind Neighborhood. Puteți introduce detaliile manual pe pagina următoare.</value>
+  </data>
+  <data name="ADD_NEW_PROFILE" xml:space="preserve">
+    <value>Adaugă un profil nou</value>
+  </data>
+  <data name="ADVANCED" xml:space="preserve">
+    <value>Avansat</value>
+  </data>
+  <data name="ADVANCED_SETTINGS" xml:space="preserve">
+    <value>Setări avansate</value>
+  </data>
+  <data name="ALL_CATEGORIES" xml:space="preserve">
+    <value>Toate Categoriile</value>
+  </data>
+  <data name="ALL_GAMES" xml:space="preserve">
+    <value>Toate Jocurile</value>
+  </data>
+  <data name="ANNOUNCEMENTS" xml:space="preserve">
+    <value>Anunțuri</value>
+  </data>
+  <data name="ANOTHER_MOD_INSTALLED" xml:space="preserve">
+    <value>{0} este instalat la: {1}
+
+Instalarea mai multor moduri pentru același joc poate duce la probleme cum ar fi conflicte.
+
+Doriți să dezinstalați fișierele curente?</value>
+  </data>
+  <data name="ANY" xml:space="preserve">
+    <value>Orice</value>
+  </data>
+  <data name="ARCHIVE_DOWNLOADING" xml:space="preserve">
+    <value>Se descarcă arhiva...</value>
+  </data>
+  <data name="ARCHIVE_DOWNLOADING_EXTRACTING_ARCHIVE" xml:space="preserve">
+    <value>Se descarcă și se extrage arhiva...</value>
+  </data>
+  <data name="ARCHIVE_DOWNLOAD_SUCCESS" xml:space="preserve">
+    <value>Fișierul arhivă descărcat cu succes.</value>
+  </data>
+  <data name="AUTOMATION" xml:space="preserve">
+    <value>Automatizare</value>
+  </data>
+  <data name="AUTO_DELETE_FILES_AFTER_INSTALLING" xml:space="preserve">
+    <value>Şterge automat fişierele locale după instalare</value>
+  </data>
+  <data name="AUTO_DETECT_GAME_REGIONS" xml:space="preserve">
+    <value>Detectează automat regiunile jocului*</value>
+  </data>
+  <data name="AUTO_DETECT_GAME_TITLES" xml:space="preserve">
+    <value>Detectează automat titlurile jocurilor</value>
+  </data>
+  <data name="AUTO_LOAD_DIRECTORY_LISTINGS" xml:space="preserve">
+    <value>Încarcă automat listările de foldere</value>
+  </data>
+  <data name="BACKUP_FILES" xml:space="preserve">
+    <value>Copii de rezervă</value>
+  </data>
+  <data name="BACKUP_FILES_MANAGER" xml:space="preserve">
+    <value>Manager copii de rezervă</value>
+  </data>
+  <data name="BACKUP_GAME_FILES" xml:space="preserve">
+    <value>Unele fișiere de joc vor fi suprascrise. Doriți să faceți o copie de rezervă a fișierelor jocului? Aceste fișiere pot fi restaurate atunci când dezinstalați modurile.</value>
+  </data>
+  <data name="BOOT_PLUGINS_EDITOR" xml:space="preserve">
+    <value>Editor de Plugin-uri Boot</value>
+  </data>
+  <data name="BOOT_PLUGINS_FILE_SAVED" xml:space="preserve">
+    <value>fişierul boot_plugins.txt a fost editat şi încărcat pe consolă.</value>
+  </data>
+  <data name="CANT_FIND_BACKUP_FILE" xml:space="preserve">
+    <value>Există o copie de rezervă pentru {0}.
+
+Cu toate acestea, acest fișier a fost mutat sau șters.
+
+Dacă ați mutat acest fișier, mergeți în Instrumente &gt; Copii de rezervă ale jocului și setați noua cale a fișierului local. Dacă acest fișier a fost șters, eliminați datele fișierului de rezervă și copiați din nou copia de siguranță.
+
+Acest fișier nu poate fi dezinstalat pentru a evita lipsa fișierelor jocului, așa că va fi ignorat.</value>
+  </data>
+  <data name="CANT_UNINSTALL_CFW_FILES" xml:space="preserve">
+    <value>Nu puteţi dezinstala fişiere din folder-ul de firmware. Orice fişiere lipsă ar putea afecta performanţa consolei dumneavoastră.</value>
+  </data>
+  <data name="CHANGE_LOG" xml:space="preserve">
+    <value>Istoric Schimbări</value>
+  </data>
+  <data name="CHANGE_PROFILE" xml:space="preserve">
+    <value>Schimbă profilul</value>
+  </data>
+  <data name="CHEAT_APPLIED" xml:space="preserve">
+    <value>Cheat aplicat cu succes.</value>
+  </data>
+  <data name="CHEAT_NOT_APPLIED" xml:space="preserve">
+    <value>Nu se poate aplica cheat-ul pentru joc. Eroare: {0}</value>
+  </data>
+  <data name="CHEAT_NOT_SUPPORTED" xml:space="preserve">
+    <value>Acest cheat nu poate fi aplicat deoarece conține opcode care nu a fost încă implementat.</value>
+  </data>
+  <data name="CHECKING_FILES" xml:space="preserve">
+    <value>Verificare fișiere</value>
+  </data>
+  <data name="CHOOSE_ITEM" xml:space="preserve">
+    <value>Alege articolul...</value>
+  </data>
+  <data name="CLEANING_INSTALL_FILES" xml:space="preserve">
+    <value>Curățare fișiere locale de instalare...</value>
+  </data>
+  <data name="CONFIRM" xml:space="preserve">
+    <value>Confirmă</value>
+  </data>
+  <data name="CONFIRM_DELETE" xml:space="preserve">
+    <value>Confirmă ștergerea</value>
+  </data>
+  <data name="CONFIRM_DELETE_ALL" xml:space="preserve">
+    <value>Confirmă ștergerea tuturor</value>
+  </data>
+  <data name="CONFIRM_DELETE_ALL_ITEMS" xml:space="preserve">
+    <value>Ești sigur că dorești să ștergeți toate fișierele?</value>
+  </data>
+  <data name="CONFIRM_DELETE_ITEM" xml:space="preserve">
+    <value>Eşti sigur că dorești să ştergi elementul selectat?</value>
+  </data>
+  <data name="CONNECTED" xml:space="preserve">
+    <value>Conectat</value>
+  </data>
+  <data name="CONNECTED_NOTIFICATION" xml:space="preserve">
+    <value>Acum ești conectat la Arisen Studio ★</value>
+  </data>
+  <data name="CONNECTING_TO_CONSOLE" xml:space="preserve">
+    <value>Se conectează la: {0}</value>
+  </data>
+  <data name="CONNECTION" xml:space="preserve">
+    <value>Conexiune</value>
+  </data>
+  <data name="CONNECTIONS" xml:space="preserve">
+    <value>Conexiuni</value>
+  </data>
+  <data name="CONNECTION_FAILED" xml:space="preserve">
+    <value>Conexiune eșuată</value>
+  </data>
+  <data name="CONNECT_CONSOLE" xml:space="preserve">
+    <value>Conectare la consolă</value>
+  </data>
+  <data name="CONNECT_TO_CONSOLE" xml:space="preserve">
+    <value>Conectare la consolă...</value>
+  </data>
+  <data name="CONSOLE_INFO" xml:space="preserve">
+    <value>Informații Consolă</value>
+  </data>
+  <data name="CONSOLE_MANAGER" xml:space="preserve">
+    <value>Manager Consolă</value>
+  </data>
+  <data name="CONSOLE_NAME_ALREADY_EXISTS" xml:space="preserve">
+    <value>Numele consolei '{0}' există deja în lista ta de profiluri.
+
+Încă dorești să îl adaugi?</value>
+  </data>
+  <data name="CONSOLE_PROFILES" xml:space="preserve">
+    <value>Profiluri Consolă</value>
+  </data>
+  <data name="CONTRIBUTORS" xml:space="preserve">
+    <value>Contribuitori</value>
+  </data>
+  <data name="COPIED_LINK" xml:space="preserve">
+    <value>Link-ul a fost copiat în clipboard.</value>
+    <comment>Shows a popup when a URL/Link has been copied to users clipboard.</comment>
+  </data>
+  <data name="COPIED_SHA1" xml:space="preserve">
+    <value>SHA1 a fost copiat în clipboard.</value>
+  </data>
+  <data name="COPIED_URL" xml:space="preserve">
+    <value>URL-ul a fost copiat în clipboard.</value>
+  </data>
+  <data name="CREATE_BACKUP_FILE" xml:space="preserve">
+    <value>Trebuie să selectaţi un fişier copie de rezervă pentru a restabili.</value>
+  </data>
+  <data name="CREDITS" xml:space="preserve">
+    <value>Contribuții</value>
+  </data>
+  <data name="CURRENT_GAME" xml:space="preserve">
+    <value>Jocul actual:</value>
+  </data>
+  <data name="CUSTOMIZATION" xml:space="preserve">
+    <value>Personalizare</value>
+  </data>
+  <data name="DASHLAUNCH_EDITOR" xml:space="preserve">
+    <value>Editor Dashlaunch</value>
+  </data>
+  <data name="DATA_MISSING" xml:space="preserve">
+    <value>DATE LIPSĂ</value>
+  </data>
+  <data name="DEFAULT_PROFILE_ALREADY_EXISTS" xml:space="preserve">
+    <value>Deja ai setat '{0}' ca profil implicit. Dorești să-l înlocuiești cu acesta?</value>
+  </data>
+  <data name="DELETE" xml:space="preserve">
+    <value>Șterge</value>
+  </data>
+  <data name="DELETED" xml:space="preserve">
+    <value>Șters</value>
+  </data>
+  <data name="DELETE_ALL_ITEMS" xml:space="preserve">
+    <value>Şterge toate elementele</value>
+  </data>
+  <data name="DELETE_ITEM" xml:space="preserve">
+    <value>Șterge element</value>
+  </data>
+  <data name="DELETE_ITEMS_SUCCESS" xml:space="preserve">
+    <value>Toate elementele au fost șterse cu succes.</value>
+  </data>
+  <data name="DELETE_ITEM_ERROR" xml:space="preserve">
+    <value>Imposibil de șters elementul. Eroare: {0}</value>
+  </data>
+  <data name="DELETE_ITEM_SUCCESS" xml:space="preserve">
+    <value>Element șters cu succes.</value>
+  </data>
+  <data name="DIRECTORIES_MUST_BE_WRITABLE" xml:space="preserve">
+    <value>Toate folderele trebuie să fie scrise.</value>
+  </data>
+  <data name="DIRECTORY_EMPTY" xml:space="preserve">
+    <value>Folder gol</value>
+  </data>
+  <data name="DIRECTORY_NOT_EXIST" xml:space="preserve">
+    <value>Acest folder nu există pe computerul dvs.</value>
+  </data>
+  <data name="DIRECTORY_NOT_FOUND" xml:space="preserve">
+    <value>Folderul nu a fost găsit</value>
+  </data>
+  <data name="DISCONNECTING_FROM_CONSOLE" xml:space="preserve">
+    <value>Deconectare de la consolă.</value>
+  </data>
+  <data name="DISCONNECT_CONSOLE" xml:space="preserve">
+    <value>Deconectează consola</value>
+  </data>
+  <data name="DISCONNECT_LOWERCASE" xml:space="preserve">
+    <value>Deconectare</value>
+  </data>
+  <data name="DISCORD_RICH_PRESENCE" xml:space="preserve">
+    <value>Discord Rich Presence</value>
+  </data>
+  <data name="DOWNLOADING_GAME_SAVE" xml:space="preserve">
+    <value>Se descarcă salvarea jocului</value>
+  </data>
+  <data name="DOWNLOADING_MODS" xml:space="preserve">
+    <value>Se descarcă modurile</value>
+  </data>
+  <data name="DOWNLOADING_PACKAGE" xml:space="preserve">
+    <value>Se descarcă pachetul</value>
+  </data>
+  <data name="DOWNLOADS_FOLDER" xml:space="preserve">
+    <value>Folder descărcări</value>
+  </data>
+  <data name="DOWNLOADS_LOCATION" xml:space="preserve">
+    <value>Locație descărcări</value>
+  </data>
+  <data name="DOWNLOAD_CANCELED" xml:space="preserve">
+    <value>Descărcare anulată.</value>
+  </data>
+  <data name="DOWNLOAD_FOLDER_NOT_FOUND" xml:space="preserve">
+    <value>Folderul pentru descărcări nu există pe calculator. Puteți schimba locația de descărcare din setări.</value>
+  </data>
+  <data name="DUPLICATE_NAME" xml:space="preserve">
+    <value>Nume duplicat</value>
+  </data>
+  <data name="EDIT_PROFILES" xml:space="preserve">
+    <value>Editează Profilele</value>
+  </data>
+  <data name="ERROR" xml:space="preserve">
+    <value>Eroare</value>
+  </data>
+  <data name="ERROR_LAUNCHING_GAME" xml:space="preserve">
+    <value>Nu se poate lansa fișierul jocului. Eroare: {0}</value>
+  </data>
+  <data name="ERROR_OCCURRED" xml:space="preserve">
+    <value>A fost întâmpinată o eroare: {0} Dacă problema persistă, raportați-o la &lt;a href="https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&amp;labels=&amp;template=bug_report.md"&gt;deschide o nouă problemă&lt;/a&gt; la tracker-ul nostru GitHub.</value>
+  </data>
+  <data name="EXTRACT_IMAGE" xml:space="preserve">
+    <value>Extrage imaginea</value>
+  </data>
+  <data name="FAVORITES_ADD" xml:space="preserve">
+    <value>Favorit</value>
+  </data>
+  <data name="FAVORITES_HIDE" xml:space="preserve">
+    <value>Ascunde favoritele</value>
+  </data>
+  <data name="FAVORITES_SHOW" xml:space="preserve">
+    <value>Arată favoritele</value>
+  </data>
+  <data name="FETCHED_LISTING" xml:space="preserve">
+    <value>Listarea folderelor a fost preluată cu succes.</value>
+  </data>
+  <data name="FETCHING_DRIVES" xml:space="preserve">
+    <value>Preluare drive-uri</value>
+  </data>
+  <data name="FETCHING_LISTING" xml:space="preserve">
+    <value>Se preia listarea folderului din: {0}</value>
+  </data>
+  <data name="FETCHING_LISTING_ERROR" xml:space="preserve">
+    <value>Nu se poate prelua listarea folderului pentru calea: {0} - Eroare: {1}</value>
+  </data>
+  <data name="FETCHING_ROOT_DIRECTORIES" xml:space="preserve">
+    <value>Se preiau folderele-rădăcină</value>
+  </data>
+  <data name="FILE" xml:space="preserve">
+    <value>Fișier</value>
+  </data>
+  <data name="FILES" xml:space="preserve">
+    <value>Fișiere</value>
+  </data>
+  <data name="FILES_INSTALL_ERROR" xml:space="preserve">
+    <value>Nu se pot instala fișierele. Eroare: {0}</value>
+  </data>
+  <data name="FILES_INSTALL_SUCCESS" xml:space="preserve">
+    <value>{0} fișiere au fost instalate cu succes.</value>
+  </data>
+  <data name="FILES_NOT_INSTALLED_TO_CONNECTED_CONSOLE" xml:space="preserve">
+    <value>Aceste fișiere nu au fost instalate pe consola conectată.</value>
+  </data>
+  <data name="FILES_REINSTALL" xml:space="preserve">
+    <value>{0} e deja instalat pe: {1}
+
+Doriți să reinstalați fișierele?</value>
+  </data>
+  <data name="FILES_UNINSTALLING" xml:space="preserve">
+    <value>Se dezinstalează fișierele...</value>
+  </data>
+  <data name="FILES_UNINSTALL_SUCCESS" xml:space="preserve">
+    <value>{0} fișiere au fost dezinstalate cu succes.</value>
+  </data>
+  <data name="FILE_BACKUP_CREATED" xml:space="preserve">
+    <value>Copie de rezervă creată cu succes.</value>
+  </data>
+  <data name="FILE_BACKUP_CREATING" xml:space="preserve">
+    <value>Se creează copia de rezervă a fișierului: {0}</value>
+  </data>
+  <data name="FILE_DELETED" xml:space="preserve">
+    <value>Fișierul a fost șters cu succes: {0}</value>
+  </data>
+  <data name="FILE_DELETING" xml:space="preserve">
+    <value>Se șterge fișierul: {0}</value>
+  </data>
+  <data name="FILE_DOWNLOADED" xml:space="preserve">
+    <value>Fișierul a fost descărcat cu succes: {0}</value>
+  </data>
+  <data name="FILE_DOWNLOADING" xml:space="preserve">
+    <value>Se descarcă fișierul: {0}</value>
+  </data>
+  <data name="FILE_DOWNLOAD_ERROR" xml:space="preserve">
+    <value>Nu s-a putut descărca fișierul. Eroare: {0}</value>
+  </data>
+  <data name="FILE_DOWNLOAD_LOCATION" xml:space="preserve">
+    <value>Se descarcă fișierul: {0} la {1}</value>
+  </data>
+  <data name="FILE_DOWNLOAD_SUCCESS" xml:space="preserve">
+    <value>Fișierul a fost descărcat cu succes.</value>
+  </data>
+  <data name="FILE_INSTALLING" xml:space="preserve">
+    <value>Se instalează fișierul: {0}</value>
+  </data>
+  <data name="FILE_INSTALL_ERROR" xml:space="preserve">
+    <value>Nu s-a putut instala fișierul. Eroare: {0}</value>
+  </data>
+  <data name="FILE_INSTALL_LOCATION" xml:space="preserve">
+    <value>Se instalează fișierul: {0} la {1}</value>
+  </data>
+  <data name="FILE_INSTALL_SUCCESS" xml:space="preserve">
+    <value>Fișier(e) instalat(e) cu succes.</value>
+  </data>
+  <data name="FILE_MISSING" xml:space="preserve">
+    <value>Fişier lipsă</value>
+  </data>
+  <data name="FILE_NAME" xml:space="preserve">
+    <value>Numele fișierului:</value>
+  </data>
+  <data name="FILE_NAME_DUPLICATE" xml:space="preserve">
+    <value>Nume duplicat</value>
+  </data>
+  <data name="FILE_NAME_EMPTY" xml:space="preserve">
+    <value>Numele fișierului nu poate fi gol.</value>
+  </data>
+  <data name="FILE_NAME_EXISTS" xml:space="preserve">
+    <value>Un fișier cu acest nume deja există.</value>
+  </data>
+  <data name="FILE_NAME_EXISTS_IN_MODULES" xml:space="preserve">
+    <value>Deja aveți un modul cu acest nume.</value>
+  </data>
+  <data name="FILE_REINSTALL" xml:space="preserve">
+    <value>{0} e deja instalat.
+
+Doriți să reinstalați fișierul?</value>
+  </data>
+  <data name="FILE_RENAME" xml:space="preserve">
+    <value>Redenumiţi Fişierul</value>
+  </data>
+  <data name="FILE_RENAMED" xml:space="preserve">
+    <value>Fișierul a fost redenumit cu succes la: {0}</value>
+  </data>
+  <data name="FILE_RENAMED_SUCCESS" xml:space="preserve">
+    <value>S-a redenumit cu succes fișierul de joc.</value>
+  </data>
+  <data name="FILE_RENAME_ERROR" xml:space="preserve">
+    <value>Nu se poate redenumi fișierul. Eroare: {0}</value>
+  </data>
+  <data name="FILE_RENAME_MODULE" xml:space="preserve">
+    <value>Doriți să redenumiți acest fișier?
+
+Notă: Nu va afecta posibilitatea de a încărca modulul.</value>
+  </data>
+  <data name="FILE_RENAMING" xml:space="preserve">
+    <value>Se redenumește fișierul în: {0}</value>
+  </data>
+  <data name="FILE_SAVE_ERROR" xml:space="preserve">
+    <value>A apărut o problemă la salvarea sau încărcarea fișierului.
+
+Eroare: {0}</value>
+  </data>
+  <data name="FILE_UNINSTALL_ERROR" xml:space="preserve">
+    <value>Fișierele nu pot fi dezinstalate. Eroare: {0}</value>
+  </data>
+  <data name="FILE_UNINSTALL_LOCATION" xml:space="preserve">
+    <value>Se dezinstalează fișierul: {0} de la {1}</value>
+  </data>
+  <data name="FILE_UNINSTALL_SUCCESSS" xml:space="preserve">
+    <value>Fișier dezinstalat cu succes.</value>
+  </data>
+  <data name="FILE_UPLOADED" xml:space="preserve">
+    <value>Fișier încărcat cu succes: {0}</value>
+  </data>
+  <data name="FILE_UPLOADING" xml:space="preserve">
+    <value>Se încarcă fișierul către: {0}</value>
+  </data>
+  <data name="FILE_UPLOAD_NOT_FOUND" xml:space="preserve">
+    <value>Acest fișier nu există pe computerul dvs.</value>
+  </data>
+  <data name="FOLDER_CREATE" xml:space="preserve">
+    <value>Adaugă folder nou</value>
+  </data>
+  <data name="FOLDER_CREATED" xml:space="preserve">
+    <value>Folder creat cu succes: {0}</value>
+  </data>
+  <data name="FOLDER_CREATE_ERROR" xml:space="preserve">
+    <value>Nu se poate crea un nou folder. Eroare: {0}</value>
+  </data>
+  <data name="FOLDER_CREATING" xml:space="preserve">
+    <value>Se creează folder-ul: {0}</value>
+  </data>
+  <data name="FOLDER_DELETED" xml:space="preserve">
+    <value>Folder șters cu succes: {0}</value>
+  </data>
+  <data name="FOLDER_DELETE_SUCCESS" xml:space="preserve">
+    <value>Folder șters cu succes.</value>
+  </data>
+  <data name="FOLDER_DELETING" xml:space="preserve">
+    <value>Ştergere folder: {0}</value>
+  </data>
+  <data name="FOLDER_DOWNLOADED" xml:space="preserve">
+    <value>Folder descărcat cu succes: {0}</value>
+  </data>
+  <data name="FOLDER_DOWNLOADING" xml:space="preserve">
+    <value>Se descarcă folderul: {0}</value>
+  </data>
+  <data name="FOLDER_DOWNLOAD_ERROR" xml:space="preserve">
+    <value>Nu s-a putut descărca folder-ul. Eroare: {0}</value>
+  </data>
+  <data name="FOLDER_NAME" xml:space="preserve">
+    <value>Nume folder:</value>
+  </data>
+  <data name="FOLDER_NAME_EXISTS" xml:space="preserve">
+    <value>Un folder cu acest nume deja există</value>
+  </data>
+  <data name="FOLDER_RENAME" xml:space="preserve">
+    <value>Redenumiți folderul</value>
+  </data>
+  <data name="FOLDER_RENAMED" xml:space="preserve">
+    <value>Folder redenumit cu succes: {0}</value>
+  </data>
+  <data name="FOLDER_RENAME_ERROR" xml:space="preserve">
+    <value>Nu s-a putut redenumi folder-ul. Eroare: {0}</value>
+  </data>
+  <data name="FOLDER_RENAMING" xml:space="preserve">
+    <value>Redenumire folder: {0}</value>
+  </data>
+  <data name="FOLDER_UPLOADED" xml:space="preserve">
+    <value>Folder încărcat cu succes: {0}</value>
+  </data>
+  <data name="FOLDER_UPLOADING" xml:space="preserve">
+    <value>Se încarcă folder-ul către: {0}</value>
+  </data>
+  <data name="FORBIDDEN" xml:space="preserve">
+    <value>Interzis</value>
+  </data>
+  <data name="FOUND_GAME_REGION" xml:space="preserve">
+    <value>Regiune de joc găsită: {0}</value>
+  </data>
+  <data name="FOUND_PREVIOUS_INSTALL" xml:space="preserve">
+    <value>S-au găsit detalii de instalare anterioare.</value>
+  </data>
+  <data name="FOUND_USB_DEVICE" xml:space="preserve">
+    <value>S-a găsit un dispozitiv USB: {0}</value>
+  </data>
+  <data name="FOUND_USER_PROFILE" xml:space="preserve">
+    <value>S-a găsit profil utilizator: {0}</value>
+  </data>
+  <data name="GAMES" xml:space="preserve">
+    <value>Jocuri</value>
+  </data>
+  <data name="GAMES_LAUNCHER" xml:space="preserve">
+    <value>Lansator de jocuri</value>
+  </data>
+  <data name="GAME_NOT_SUPPORTED" xml:space="preserve">
+    <value>Acest joc nu este suportat în prezent.</value>
+  </data>
+  <data name="GAME_REGIONS" xml:space="preserve">
+    <value>Regiunile de joc implicite</value>
+  </data>
+  <data name="GAME_SAVES" xml:space="preserve">
+    <value>Salvări de jocuri</value>
+  </data>
+  <data name="GAME_SAVE_RESIGNER" xml:space="preserve">
+    <value>Game Save Resigner</value>
+  </data>
+  <data name="GAME_UPDATES" xml:space="preserve">
+    <value>Actualizări joc</value>
+  </data>
+  <data name="GETTING_DOWNLOAD_FILES" xml:space="preserve">
+    <value>Se obține link-ul de descărcare a arhivei...</value>
+  </data>
+  <data name="GETTING_GAME_REGION" xml:space="preserve">
+    <value>Se obține regiunea jocului...</value>
+  </data>
+  <data name="GETTING_PREVIOUS_INSTALL" xml:space="preserve">
+    <value>Se obțin detaliile anterioare ale instalării...</value>
+  </data>
+  <data name="GETTING_USB_DEVICE" xml:space="preserve">
+    <value>Se obține dispozitivul USB...</value>
+  </data>
+  <data name="GETTING_USER_PROFILE" xml:space="preserve">
+    <value>Se obține profilul utilizatorului...</value>
+  </data>
+  <data name="HARD_REBOOT" xml:space="preserve">
+    <value>Repornire forțată</value>
+  </data>
+  <data name="HELP" xml:space="preserve">
+    <value>Ajutor</value>
+  </data>
+  <data name="HELP_TRANSLATE" xml:space="preserve">
+    <value>Ajută la traducerea Arisen Studio pe Crowdin</value>
+  </data>
+  <data name="HOME" xml:space="preserve">
+    <value>Acasă</value>
+  </data>
+  <data name="HOW_TO_ACTIVATE_DEMO" xml:space="preserve">
+    <value>Activarea unui pachet C00/Demo este foarte ușoară și nu necesită un fișier rap. Se poate face folosind ReActPSN sau PSNPatch.
+
+ReActPSN : Pornește homebrew-ul în timp ce ții apăsat cercul pe controller.
+PSNPatch : Rulează PSNPatch și apasă R1. Ar trebui să afișeze o listă a jocurilor care au fost deblocate.</value>
+  </data>
+  <data name="HOW_TO_ACTIVATE_DEMO_QUESTION" xml:space="preserve">
+    <value>Cum pot activa un C00/Demo care are o licenţă gratuită?</value>
+  </data>
+  <data name="HOW_TO_ACTIVATE_RAP" xml:space="preserve">
+    <value>Activarea unui pachet folosind un fișier rap necesită câțiva pași. Poate fi făcută cu ReActPSN sau PSNPatch. Cu toate acestea, voi descrie doar modul în care se face acest lucru cu ReActPSN.
+
+1. Formatați o cheie USB în FAT32
+2. Creați folderul 'exdata' în rădăcina cheii USB.
+3. Mută fișierul RAP corespunzător pentru jocurile pe care dorești să le activezi în folderul exdata.
+Atenție: Nu redenumi fișierele rap! Trebuie să le păstrezi numele original.
+4. Conectaţi cheia USB la portul USB din dreapta la PS3 (cel mai apropiat de drive-ul bluray).
+5. Ștergeți utilizatorul ReActPSN din PS3, dacă există.
+6. Creați contul "aa" (fără ghilimele) și deschideți contul.
+7. Rulați ReActPSN și ecranul ar trebui să fie negru, apoi ar trebui să auziți bip-uri și apoi PS3 ar trebui să repornească.
+8. Utilizatorul "aa" ar trebui să dispară acum, iar contul 'ReActPSN' a fost creat automat.
+9. Ai terminat!</value>
+  </data>
+  <data name="HOW_TO_ACTIVATE_RAP_QUESTION" xml:space="preserve">
+    <value>Cum pot activa un pachet PSN cu un fișier RAP?</value>
+  </data>
+  <data name="HOW_TO_GUIDES" xml:space="preserve">
+    <value>Tutoriale</value>
+  </data>
+  <data name="ICON" xml:space="preserve">
+    <value>Iconiță</value>
+  </data>
+  <data name="IDLE" xml:space="preserve">
+    <value>Inactiv</value>
+  </data>
+  <data name="IMPORTANT_MESSAGE" xml:space="preserve">
+    <value>Mesaj important</value>
+  </data>
+  <data name="INCORRECT_IP_FORMAT" xml:space="preserve">
+    <value>Adresa IP nu este în formatul corect.</value>
+  </data>
+  <data name="INITIALIZED" xml:space="preserve">
+    <value>Inițializat</value>
+  </data>
+  <data name="INITIALIZING_APP_DB" xml:space="preserve">
+    <value>Inițializarea bazei de date a aplicației</value>
+  </data>
+  <data name="INSERT_USB_DEVICE" xml:space="preserve">
+    <value>Introduceți mai întâi un dispozitiv USB în calculator și apoi instalați din nou fișierele.</value>
+  </data>
+  <data name="INSERT_USB_DEVICE_TO_CONSOLE" xml:space="preserve">
+    <value>Unul sau mai multe fişiere trebuie instalate pe un dispozitiv USB care este conectat la consolă.
+
+Introduceți un dispozitiv USB în consolă și dați clic pe „Da” pentru a continua. În caz contrar, apăsați „Nu” pentru a ignora aceste fișiere.</value>
+  </data>
+  <data name="INSTALLED" xml:space="preserve">
+    <value>Instalat</value>
+  </data>
+  <data name="INSTALLING" xml:space="preserve">
+    <value>Se instalează</value>
+  </data>
+  <data name="INSTALLING_BACKUP_FILE_LOCATION" xml:space="preserve">
+    <value>Se instalează copia de rezervă: {0} la {1}</value>
+  </data>
+  <data name="INSTALLING_FILES" xml:space="preserve">
+    <value>Instalare fișiere</value>
+  </data>
+  <data name="INSTALLING_GAME_SAVE" xml:space="preserve">
+    <value>Se instalează Game Save-ul</value>
+  </data>
+  <data name="INSTALLING_MODS" xml:space="preserve">
+    <value>Se Instalează Moduri</value>
+  </data>
+  <data name="INSTALLING_PACKAGE_FILE" xml:space="preserve">
+    <value>Se instalează pachetul</value>
+  </data>
+  <data name="INSTALL_CANCELED" xml:space="preserve">
+    <value>Instalarea a fost anulată.</value>
+  </data>
+  <data name="INSTALL_FILE" xml:space="preserve">
+    <value>Instalare fișier</value>
+  </data>
+  <data name="INSTALL_FILES" xml:space="preserve">
+    <value>Instalare fișiere</value>
+  </data>
+  <data name="INSTALL_FILES_TO_USB_DEVICE" xml:space="preserve">
+    <value>Instalare fișiere pe USB</value>
+  </data>
+  <data name="INSTALL_GAME_SAVES_TO_LOCAL_USB" xml:space="preserve">
+    <value>Instalare Salvări de jocuri pe dispozitivul USB local</value>
+  </data>
+  <data name="INSTALL_HOMEBREW_TO_LOCAL_USB" xml:space="preserve">
+    <value>Instalare Homebrew pe dispozitivul USB local</value>
+  </data>
+  <data name="INSTALL_MODS_TO_LOCAL_USB" xml:space="preserve">
+    <value>Instalare Moduri/Plugin-uri pe dispozitivul USB local</value>
+  </data>
+  <data name="INSTALL_MODS_TO_USB" xml:space="preserve">
+    <value>Instalare Moduri pe USB</value>
+  </data>
+  <data name="INSTALL_PACKAGES_TO_LOCAL_USB" xml:space="preserve">
+    <value>Instalare pachete pe dispozitivul USB local</value>
+  </data>
+  <data name="INSTALL_RESOURCES_TO_LOCAL_USB" xml:space="preserve">
+    <value>Instalare Resurse pe dispozitivul USB local</value>
+  </data>
+  <data name="INTERFACE" xml:space="preserve">
+    <value>Interfață</value>
+  </data>
+  <data name="INVALID_INPUT" xml:space="preserve">
+    <value>Datele introduse sunt incorecte</value>
+  </data>
+  <data name="INVALID_TITLE_ID" xml:space="preserve">
+    <value>ID invalid sau nu poate fi găsit. Sunteți sigur că acesta este un PS3 Title ID corect?</value>
+  </data>
+  <data name="IP_GRABBER" xml:space="preserve">
+    <value>IP Grabber</value>
+  </data>
+  <data name="LABEL_ADDRESS_NAME" xml:space="preserve">
+    <value>Adresa IP/Nume</value>
+  </data>
+  <data name="LABEL_ADD_TO_FAVORITES" xml:space="preserve">
+    <value>Adaugă la Favorite</value>
+  </data>
+  <data name="LABEL_ADD_TO_MODULES" xml:space="preserve">
+    <value>Adaugă la Module</value>
+  </data>
+  <data name="LABEL_ALL" xml:space="preserve">
+    <value>Toate</value>
+  </data>
+  <data name="LABEL_ALL_REGIONS" xml:space="preserve">
+    <value>Toate Regiunile</value>
+  </data>
+  <data name="LABEL_APPLY" xml:space="preserve">
+    <value>Aplică</value>
+  </data>
+  <data name="LABEL_APPLY_CHEAT" xml:space="preserve">
+    <value>Aplică Cheat</value>
+  </data>
+  <data name="LABEL_ASCENDING" xml:space="preserve">
+    <value>Crescător</value>
+  </data>
+  <data name="LABEL_BACK" xml:space="preserve">
+    <value>Înapoi</value>
+    <comment>Example: Go "Back" to previous page</comment>
+  </data>
+  <data name="LABEL_BACKUP_FILE" xml:space="preserve">
+    <value>Copie de rezervă fișier</value>
+  </data>
+  <data name="LABEL_BASE_DIRECTORY" xml:space="preserve">
+    <value>Folder de bază</value>
+  </data>
+  <data name="LABEL_BYTES" xml:space="preserve">
+    <value>Bytes</value>
+  </data>
+  <data name="LABEL_CANCEL" xml:space="preserve">
+    <value>Anulare</value>
+  </data>
+  <data name="LABEL_CATEGORY" xml:space="preserve">
+    <value>Categorie</value>
+  </data>
+  <data name="LABEL_CATEGORY_TYPE" xml:space="preserve">
+    <value>Tip categorie</value>
+  </data>
+  <data name="LABEL_CHANGE" xml:space="preserve">
+    <value>Schimbare</value>
+  </data>
+  <data name="LABEL_CHEATS" xml:space="preserve">
+    <value>Cheats</value>
+  </data>
+  <data name="LABEL_CHOOSE_FILE" xml:space="preserve">
+    <value>Alegere fișier</value>
+  </data>
+  <data name="LABEL_CLOSE" xml:space="preserve">
+    <value>Închide</value>
+  </data>
+  <data name="LABEL_PROFILE_DETAILS" xml:space="preserve">
+    <value>Detalii Profil</value>
+  </data>
+  <data name="LABEL_PROFILE_NAME" xml:space="preserve">
+    <value>Nume profil</value>
+  </data>
+  <data name="LABEL_CONTENT_ID" xml:space="preserve">
+    <value>Content ID</value>
+  </data>
+  <data name="LABEL_CONTRIBUTORS" xml:space="preserve">
+    <value>Contribuitori</value>
+  </data>
+  <data name="LABEL_COPIED" xml:space="preserve">
+    <value>Copiat</value>
+  </data>
+  <data name="LABEL_COPY_SHA1" xml:space="preserve">
+    <value>Copiază SHA1 in Clipboard</value>
+  </data>
+  <data name="LABEL_COPY_URL" xml:space="preserve">
+    <value>Copiază URL-ul în Clipboard</value>
+  </data>
+  <data name="LABEL_CREATED_BY" xml:space="preserve">
+    <value>Creat De</value>
+  </data>
+  <data name="LABEL_CREATED_ON" xml:space="preserve">
+    <value>Creat pe</value>
+  </data>
+  <data name="LABEL_CREATOR" xml:space="preserve">
+    <value>Creator</value>
+  </data>
+  <data name="LABEL_DEFAULT" xml:space="preserve">
+    <value>Implicit</value>
+  </data>
+  <data name="LABEL_DEFAULT_CONSOLE" xml:space="preserve">
+    <value>Consolă implicită</value>
+  </data>
+  <data name="LABEL_DELETE" xml:space="preserve">
+    <value>Șterge</value>
+  </data>
+  <data name="LABEL_DELETE_ALL" xml:space="preserve">
+    <value>Şterge tot</value>
+  </data>
+  <data name="LABEL_DESCENDING" xml:space="preserve">
+    <value>Descrescător</value>
+  </data>
+  <data name="LABEL_DESCRIPTION" xml:space="preserve">
+    <value>Descriere</value>
+  </data>
+  <data name="LABEL_DIRECTORIES" xml:space="preserve">
+    <value>Directoare</value>
+  </data>
+  <data name="LABEL_DIRECTORY" xml:space="preserve">
+    <value>Director</value>
+  </data>
+  <data name="LABEL_DOWNLOAD" xml:space="preserve">
+    <value>Descărcare</value>
+  </data>
+  <data name="LABEL_DOWNLOADED" xml:space="preserve">
+    <value>Descărcat</value>
+  </data>
+  <data name="LABEL_DOWNLOADED_ON" xml:space="preserve">
+    <value>Descărcat pe</value>
+  </data>
+  <data name="LABEL_DOWNLOADING" xml:space="preserve">
+    <value>Se descarcă</value>
+  </data>
+  <data name="LABEL_DOWNLOADS" xml:space="preserve">
+    <value>Descărcări</value>
+  </data>
+  <data name="LABEL_DOWNLOAD_FILE" xml:space="preserve">
+    <value>Descarcă Fișier</value>
+  </data>
+  <data name="LABEL_DOWNLOAD_FILES" xml:space="preserve">
+    <value>Descarcă Fișiere</value>
+  </data>
+  <data name="LABEL_EDIT" xml:space="preserve">
+    <value>Editare</value>
+  </data>
+  <data name="LABEL_EDIT_PROFILE_DETAILS" xml:space="preserve">
+    <value>Editare detalii profil</value>
+    <comment>Displays in the title of the dialog popup.</comment>
+  </data>
+  <data name="LABEL_EDIT_NAME" xml:space="preserve">
+    <value>Editare nume</value>
+  </data>
+  <data name="LABEL_FAVORITE" xml:space="preserve">
+    <value>Favorit</value>
+  </data>
+  <data name="LABEL_FILE" xml:space="preserve">
+    <value>Fișier</value>
+  </data>
+  <data name="LABEL_FILES" xml:space="preserve">
+    <value>Fișiere</value>
+  </data>
+  <data name="LABEL_FILE_NAME" xml:space="preserve">
+    <value>Nume fișier</value>
+  </data>
+  <data name="LABEL_FILE_PATH" xml:space="preserve">
+    <value>Cale fișier</value>
+  </data>
+  <data name="LABEL_FILE_SIZE" xml:space="preserve">
+    <value>Dimensiune fișier</value>
+  </data>
+  <data name="LABEL_FW_VERSION" xml:space="preserve">
+    <value>Versiune FW</value>
+  </data>
+  <data name="LABEL_GAME" xml:space="preserve">
+    <value>Joc</value>
+  </data>
+  <data name="LABEL_GAMES" xml:space="preserve">
+    <value>Jocuri</value>
+  </data>
+  <data name="LABEL_GAME_CHEATS" xml:space="preserve">
+    <value>Cheat-uri pentru joc</value>
+  </data>
+  <data name="LABEL_GAME_FILE" xml:space="preserve">
+    <value>Fișier joc</value>
+  </data>
+  <data name="LABEL_GAME_MODE" xml:space="preserve">
+    <value>Mod de joc</value>
+  </data>
+  <data name="LABEL_GAME_MODS" xml:space="preserve">
+    <value>Moduri Joc</value>
+  </data>
+  <data name="LABEL_GAME_SAVES" xml:space="preserve">
+    <value>Salvări joc</value>
+  </data>
+  <data name="LABEL_GAME_TITLE" xml:space="preserve">
+    <value>Titlu joc</value>
+  </data>
+  <data name="LABEL_HIDE_FAVORITES" xml:space="preserve">
+    <value>Ascunde favoritele</value>
+  </data>
+  <data name="LABEL_HOMEBREW" xml:space="preserve">
+    <value>Homebrew</value>
+  </data>
+  <data name="LABEL_IMAGE" xml:space="preserve">
+    <value>Imagine</value>
+  </data>
+  <data name="LABEL_IMAGE_SIZE_TOO_BIG" xml:space="preserve">
+    <value>Dimensiunea imaginii este prea mare!</value>
+  </data>
+  <data name="LABEL_IMPORT_FROM_KV_FILE" xml:space="preserve">
+    <value>Importă dintr-un fișier KV</value>
+  </data>
+  <data name="LABEL_INSTALL" xml:space="preserve">
+    <value>Instalare</value>
+  </data>
+  <data name="LABEL_INSTALLATION_FILES" xml:space="preserve">
+    <value>Fișiere de instalare</value>
+  </data>
+  <data name="LABEL_INSTALLED" xml:space="preserve">
+    <value>Instalat</value>
+  </data>
+  <data name="LABEL_INSTALLED_ON" xml:space="preserve">
+    <value>Instalat pe</value>
+  </data>
+  <data name="LABEL_INSTALL_FILE" xml:space="preserve">
+    <value>Instalare fișier</value>
+  </data>
+  <data name="LABEL_INSTALL_PATH" xml:space="preserve">
+    <value>Cale instalare</value>
+  </data>
+  <data name="LABEL_IP_ADDRESS" xml:space="preserve">
+    <value>Adresă IP</value>
+  </data>
+  <data name="LABEL_IP_OR_NAME" xml:space="preserve">
+    <value>IP/Nume</value>
+  </data>
+  <data name="LABEL_LAST_MODIFIED" xml:space="preserve">
+    <value>Modificat pe</value>
+  </data>
+  <data name="LABEL_LAST_UPDATED" xml:space="preserve">
+    <value>Ultima actualizare</value>
+  </data>
+  <data name="LABEL_LAUNCH_GAME" xml:space="preserve">
+    <value>Lansare joc</value>
+  </data>
+  <data name="LABEL_LIBRARIES" xml:space="preserve">
+    <value>Librării</value>
+  </data>
+  <data name="LABEL_LOAD_MODULE" xml:space="preserve">
+    <value>Încarcă modul</value>
+  </data>
+  <data name="LABEL_LOCAL_FILE" xml:space="preserve">
+    <value>Fișier local</value>
+  </data>
+  <data name="LABEL_LOGIN" xml:space="preserve">
+    <value>Autentificare</value>
+  </data>
+  <data name="LABEL_LOGIN_DETAILS" xml:space="preserve">
+    <value>Detalii Autentificare</value>
+  </data>
+  <data name="LABEL_MINIMUM_FIRMWARE" xml:space="preserve">
+    <value>FW minim</value>
+  </data>
+  <data name="LABEL_MIN_FW" xml:space="preserve">
+    <value>Min. FW</value>
+  </data>
+  <data name="LABEL_MODIFIED_DATE" xml:space="preserve">
+    <value>Data modificării</value>
+  </data>
+  <data name="LABEL_MODULES" xml:space="preserve">
+    <value>Module</value>
+  </data>
+  <data name="LABEL_MOD_DETAILS" xml:space="preserve">
+    <value>Detalii mod</value>
+  </data>
+  <data name="LABEL_MOD_TYPE" xml:space="preserve">
+    <value>Tip mod</value>
+  </data>
+  <data name="LABEL_NAME" xml:space="preserve">
+    <value>Nume</value>
+  </data>
+  <data name="LABEL_NEW_PROFILE_DETAILS" xml:space="preserve">
+    <value>Detalii profil nou</value>
+    <comment>Displays in the title of the dialog popup.</comment>
+  </data>
+  <data name="LABEL_NEW_FOLDER" xml:space="preserve">
+    <value>Folder nou</value>
+  </data>
+  <data name="LABEL_NEXT" xml:space="preserve">
+    <value>Înainte</value>
+  </data>
+  <data name="LABEL_NONE" xml:space="preserve">
+    <value>Niciunul</value>
+  </data>
+  <data name="LABEL_NOT_INSTALLED" xml:space="preserve">
+    <value>Neinstalat</value>
+  </data>
+  <data name="LABEL_NO_GAMES" xml:space="preserve">
+    <value>Nici un joc încă adăugat.
+
+Puteți să îl adăugați folosind managerul de fișiere.</value>
+  </data>
+  <data name="LABEL_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="LABEL_OPEN" xml:space="preserve">
+    <value>Deschideți</value>
+  </data>
+  <data name="LABEL_OPEN_EXPLORER" xml:space="preserve">
+    <value>Deschide Explorer</value>
+  </data>
+  <data name="LABEL_OPEN_PATH" xml:space="preserve">
+    <value>Deschide cale</value>
+  </data>
+  <data name="LABEL_OPEN_PROFILE" xml:space="preserve">
+    <value>Deschide profil</value>
+  </data>
+  <data name="LABEL_PACKAGES" xml:space="preserve">
+    <value>Pachete</value>
+  </data>
+  <data name="LABEL_PASSWORD" xml:space="preserve">
+    <value>Parolă</value>
+  </data>
+  <data name="LABEL_PLATFORM" xml:space="preserve">
+    <value>Platformă</value>
+  </data>
+  <data name="LABEL_PLATFORM_TYPE" xml:space="preserve">
+    <value>Tip de platformă</value>
+  </data>
+  <data name="LABEL_PLAYABLE_VERSION" xml:space="preserve">
+    <value>Versiunea Playable</value>
+  </data>
+  <data name="LABEL_PLUGINS" xml:space="preserve">
+    <value>Plugin-uri</value>
+  </data>
+  <data name="LABEL_PREVIOUS" xml:space="preserve">
+    <value>Anterior</value>
+  </data>
+  <data name="LABEL_REFRESH" xml:space="preserve">
+    <value>Actualizare</value>
+  </data>
+  <data name="LABEL_REGION" xml:space="preserve">
+    <value>Regiune</value>
+  </data>
+  <data name="LABEL_REMOVE_FROM_FAVORITES" xml:space="preserve">
+    <value>Șterge din Favorite</value>
+  </data>
+  <data name="LABEL_RENAME" xml:space="preserve">
+    <value>Redenumire</value>
+  </data>
+  <data name="LABEL_REPORT" xml:space="preserve">
+    <value>Raportează</value>
+  </data>
+  <data name="LABEL_REPORT_ISSUE" xml:space="preserve">
+    <value>Raportează o problemă</value>
+  </data>
+  <data name="LABEL_RESOURCES" xml:space="preserve">
+    <value>Resurse</value>
+  </data>
+  <data name="LABEL_RESTORE_BACKUP" xml:space="preserve">
+    <value>Restabilire copie de rezervă</value>
+  </data>
+  <data name="LABEL_RESTORE_DEFAULT" xml:space="preserve">
+    <value>Restabilire valori implicite</value>
+  </data>
+  <data name="LABEL_RESTORE_FILE" xml:space="preserve">
+    <value>Restabilire fișier</value>
+  </data>
+  <data name="LABEL_RING_BUZZER" xml:space="preserve">
+    <value>Ring Buzzer</value>
+  </data>
+  <data name="LABEL_SAVE_AND_UPDATE" xml:space="preserve">
+    <value>Salvează &amp;&amp; actualizează</value>
+  </data>
+  <data name="LABEL_SAVE_FILE" xml:space="preserve">
+    <value>Salvează fișierul</value>
+  </data>
+  <data name="LABEL_SAVE_PROFILE" xml:space="preserve">
+    <value>Salvare profil</value>
+  </data>
+  <data name="LABEL_SEARCH" xml:space="preserve">
+    <value>Căutare</value>
+  </data>
+  <data name="LABEL_SEARCHING" xml:space="preserve">
+    <value>Căutare...</value>
+  </data>
+  <data name="LABEL_SEARCH_SUCCESS" xml:space="preserve">
+    <value>Elemente preluate cu succes.</value>
+  </data>
+  <data name="LABEL_SET" xml:space="preserve">
+    <value>Setează</value>
+  </data>
+  <data name="LABEL_SETUP" xml:space="preserve">
+    <value>Instalare</value>
+  </data>
+  <data name="LABEL_SET_FAN_SPEED" xml:space="preserve">
+    <value>Setează viteza ventilatorului</value>
+  </data>
+  <data name="LABEL_SET_LEDS" xml:space="preserve">
+    <value>Setare LED-uri</value>
+  </data>
+  <data name="LABEL_SET_VALUE" xml:space="preserve">
+    <value>Setează valoare</value>
+  </data>
+  <data name="LABEL_SHOW_FAVORITES" xml:space="preserve">
+    <value>Arată favorite</value>
+  </data>
+  <data name="LABEL_SIZE" xml:space="preserve">
+    <value>Dimensiune</value>
+  </data>
+  <data name="LABEL_SORT_BY" xml:space="preserve">
+    <value>Sortați după</value>
+  </data>
+  <data name="LABEL_SORT_OPTIONS" xml:space="preserve">
+    <value>Opțiuni sortare</value>
+  </data>
+  <data name="LABEL_SORT_ORDER" xml:space="preserve">
+    <value>Ordine sortare</value>
+  </data>
+  <data name="LABEL_STATUS" xml:space="preserve">
+    <value>Stare</value>
+  </data>
+  <data name="LABEL_SUBMITTED_BY" xml:space="preserve">
+    <value>Trimis de</value>
+  </data>
+  <data name="LABEL_SYSTEM_TYPE" xml:space="preserve">
+    <value>Tip sistem</value>
+  </data>
+  <data name="LABEL_TITLE" xml:space="preserve">
+    <value>Titlu</value>
+  </data>
+  <data name="LABEL_TITLE_ID" xml:space="preserve">
+    <value>ID titlu</value>
+  </data>
+  <data name="LABEL_TOTAL_FILES" xml:space="preserve">
+    <value>Total fișiere</value>
+  </data>
+  <data name="LABEL_TRANSLATORS" xml:space="preserve">
+    <value>Traducători</value>
+  </data>
+  <data name="LABEL_TYPE" xml:space="preserve">
+    <value>Tip</value>
+  </data>
+  <data name="LABEL_UNFAVORITE" xml:space="preserve">
+    <value>Elimină din favorite</value>
+  </data>
+  <data name="LABEL_UNLOAD_MODULE" xml:space="preserve">
+    <value>Descarcă modul</value>
+  </data>
+  <data name="LABEL_UPLOAD" xml:space="preserve">
+    <value>Încarcă</value>
+  </data>
+  <data name="LABEL_USERNAME" xml:space="preserve">
+    <value>Nume de utilizator</value>
+  </data>
+  <data name="LABEL_USE_DEFAULT" xml:space="preserve">
+    <value>Folosiți ca implicit</value>
+  </data>
+  <data name="LABEL_VERSION" xml:space="preserve">
+    <value>Versiune</value>
+  </data>
+  <data name="LABEL_WELCOME" xml:space="preserve">
+    <value>Bine ai venit la Arisen Studio</value>
+  </data>
+  <data name="LANGUAGE" xml:space="preserve">
+    <value>Limbă</value>
+  </data>
+  <data name="LANGUAGE_HELP" xml:space="preserve">
+    <value>Ne pare rău, dar această limbă nu este încă implementată. Dacă vrei să ne ajuți să adăugăm această limbă, te rugăm să te alături serverului nostru de Discord și să ne spui!</value>
+  </data>
+  <data name="LANGUAGE_NOT_SUPPORTED" xml:space="preserve">
+    <value>Limba nu este suportată</value>
+  </data>
+  <data name="LAST_UPDATED" xml:space="preserve">
+    <value>Ultima actualizare</value>
+  </data>
+  <data name="LATEST_NEWS" xml:space="preserve">
+    <value>Ultimele noutăți</value>
+  </data>
+  <data name="LAUNCH_FILE_PATH" xml:space="preserve">
+    <value>Calea fișierului launch.ini</value>
+  </data>
+  <data name="LAUNCH_FILE_SAVED" xml:space="preserve">
+    <value>fişierul launch.ini.txt a fost editat şi încărcat pe consolă.</value>
+  </data>
+  <data name="MESSAGE" xml:space="preserve">
+    <value>Mesaj</value>
+  </data>
+  <data name="MISSING" xml:space="preserve">
+    <value>LIPSĂ</value>
+  </data>
+  <data name="MISSING_PROFILE_NAME" xml:space="preserve">
+    <value>Trebuie să introduceți un nume de profil.</value>
+  </data>
+  <data name="MISSING_IP_ADDRESS" xml:space="preserve">
+    <value>Trebuie să introduceţi o adresă IP.</value>
+  </data>
+  <data name="MISSING_IP_OR_NAME" xml:space="preserve">
+    <value>Trebuie să introduceţi o adresă IP sau numele consolei.</value>
+  </data>
+  <data name="MODDING_TOOLS" xml:space="preserve">
+    <value>Instrumente de Modare</value>
+  </data>
+  <data name="MODULE_ALREADY_LOADED" xml:space="preserve">
+    <value>Modulul a fost deja încărcat.</value>
+  </data>
+  <data name="MODULE_LOADED" xml:space="preserve">
+    <value>Modulul a fost deja încărcat.</value>
+  </data>
+  <data name="MODULE_LOADER" xml:space="preserve">
+    <value>Încărcător modul</value>
+  </data>
+  <data name="MODULE_LOAD_ERROR" xml:space="preserve">
+    <value>Nu s-a putut încărca modulul.
+
+Eroare: {0}</value>
+  </data>
+  <data name="MODULE_LOAD_SUCCESS" xml:space="preserve">
+    <value>Modul încărcat cu succes.</value>
+  </data>
+  <data name="MODULE_NOT_LOADED" xml:space="preserve">
+    <value>Modulul nu a fost încărcat.</value>
+  </data>
+  <data name="MODULE_UNLOAD_ERROR" xml:space="preserve">
+    <value>Imposibil de descărcat modulul.
+
+Eroare: {0}</value>
+  </data>
+  <data name="MODULE_UNLOAD_SUCCESS" xml:space="preserve">
+    <value>Modulul descarcat cu succes.</value>
+  </data>
+  <data name="MOD_NOT_INSTALLED" xml:space="preserve">
+    <value>{0} nu este instalat pe consolă.
+
+Doriți să încercați să dezinstalați fișierul/fișierele oricum?</value>
+  </data>
+  <data name="MOTHERBOARD" xml:space="preserve">
+    <value>Placă de bază</value>
+  </data>
+  <data name="MOUNT_BD" xml:space="preserve">
+    <value>Montare BD</value>
+  </data>
+  <data name="MOUNT_ISO" xml:space="preserve">
+    <value>Montare ISO</value>
+  </data>
+  <data name="MOUNT_PSN" xml:space="preserve">
+    <value>Montare PSN</value>
+  </data>
+  <data name="NAVIGATION_APPLICATIONS" xml:space="preserve">
+    <value>Aplicații</value>
+  </data>
+  <data name="NAVIGATION_DASHBOARD" xml:space="preserve">
+    <value>Panou de bord</value>
+  </data>
+  <data name="NAVIGATION_DOWNLOADS" xml:space="preserve">
+    <value>Descărcări</value>
+  </data>
+  <data name="NAVIGATION_FILE_MANAGER" xml:space="preserve">
+    <value>Manager Fişiere</value>
+  </data>
+  <data name="NAVIGATION_GAME_CHEATS" xml:space="preserve">
+    <value>Cheat-uri joc</value>
+  </data>
+  <data name="NAVIGATION_GAME_MODS" xml:space="preserve">
+    <value>Moduri joc</value>
+  </data>
+  <data name="NAVIGATION_GAME_SAVES" xml:space="preserve">
+    <value>Salvări joc</value>
+  </data>
+  <data name="NAVIGATION_HOMEBREW" xml:space="preserve">
+    <value>Homebrew</value>
+  </data>
+  <data name="NAVIGATION_INSTALLED_MODS" xml:space="preserve">
+    <value>Fișiere Instalate</value>
+  </data>
+  <data name="NAVIGATION_PACKAGES" xml:space="preserve">
+    <value>Pachete</value>
+  </data>
+  <data name="NAVIGATION_PLUGINS" xml:space="preserve">
+    <value>Plugin-uri</value>
+  </data>
+  <data name="NAVIGATION_RESOURCES" xml:space="preserve">
+    <value>Resurse</value>
+  </data>
+  <data name="NAVIGATION_SETTINGS" xml:space="preserve">
+    <value>Setări</value>
+  </data>
+  <data name="NEIGHBORHOOD_NOT_FOUND" xml:space="preserve">
+    <value>Asigurați-vă că pe computer este instalat Neighborhood</value>
+  </data>
+  <data name="NEIGHBORHOOD_SCAN" xml:space="preserve">
+    <value>Doriți să folosiți Neighborhood pentru a adăuga automat consolele dvs.?</value>
+  </data>
+  <data name="NEIGHBORHOOD_SCAN_FAILED" xml:space="preserve">
+    <value>Nu s-a putut găsi nici o consolă folosind Neighborhood.</value>
+  </data>
+  <data name="NOTICE_INSTALL_REBUG_FILES" xml:space="preserve">
+    <value>Aceste fișiere sunt instalate în dosarul de firmware (dev_rebug) care este doar pentru firmware personalizat REBUG. Vă rugăm să citiți totul mai jos înainte de a continua.
+
+- Este recomandat să creați mai întâi o copie de rezervă a întregului dosar înainte de a instala orice fișier.
+- Consola trebuie să ruleze un custom firmware pentru Rebug.
+- REBUG TOOLBOX trebuie să fie deschis în timpul instalării
+- Orice fișiere lipsă sau corupte din acest folder pot afecta performanța consolei.
+- Dacă aveți probleme după repornirea consolei, introduceți modul de recuperare și reinstalați firmware-ul personalizat.
+
+Continuă pe propriul risc și numai dacă știi ce faci.
+
+Vrei să continui?</value>
+  </data>
+  <data name="NOTIFY_ICON" xml:space="preserve">
+    <value>Iconiță notificare</value>
+  </data>
+  <data name="NOTIFY_MESSAGE" xml:space="preserve">
+    <value>Mesaj notificare</value>
+  </data>
+  <data name="NOT_CONNECTED" xml:space="preserve">
+    <value>Neconectat</value>
+  </data>
+  <data name="NOT_SUPPORTED_GAME_REGION" xml:space="preserve">
+    <value>Regiunea jocului nu este suportată.</value>
+  </data>
+  <data name="NO_ANNOUNCEMENTS" xml:space="preserve">
+    <value>NICIUN ANUNȚ</value>
+  </data>
+  <data name="NO_BACKUP_FILE" xml:space="preserve">
+    <value>Nicio copie de rezervă</value>
+  </data>
+  <data name="NO_BACKUP_FILE_FOUND" xml:space="preserve">
+    <value>Nu aveți o copie de rezervă pentru {0}. Acest fișier va fi ignorat pentru a preveni probleme referitoare la fișiere lipsă a jocului. Trebuie să instalați actualizarea jocului pentru a restaura fișierul original.</value>
+  </data>
+  <data name="NO_CONSOLE_CONNECTED" xml:space="preserve">
+    <value>Nicio consolă conectată</value>
+  </data>
+  <data name="NO_CONSOLE_PROFILE" xml:space="preserve">
+    <value>Niciun profil consolă</value>
+  </data>
+  <data name="NO_CONSOLE_PROFILES" xml:space="preserve">
+    <value>NICIUN PROFIL AL CONSOLEI</value>
+  </data>
+  <data name="NO_DOWNLOAD_FILES_SELECTED" xml:space="preserve">
+    <value>Nici o descărcare arhivă selectată.</value>
+  </data>
+  <data name="NO_GAME_REGION_FOLDER_FOUND" xml:space="preserve">
+    <value>Nu s-a putut găsi folderul de actualizare a jocului pentru această regiune.
+
+Instalează modurile corecte pentru joc sau alege altă regiune a jocului.</value>
+  </data>
+  <data name="NO_GAME_REGION_FOUND" xml:space="preserve">
+    <value>Regiunea jocului nu poate fi găsită pe consolă.</value>
+  </data>
+  <data name="NO_GAME_REGION_SELECTED" xml:space="preserve">
+    <value>Nicio regiune a jocului selectată.</value>
+  </data>
+  <data name="NO_INPUT" xml:space="preserve">
+    <value>Fără input</value>
+  </data>
+  <data name="NO_INTERNET_CONNECTION" xml:space="preserve">
+    <value>Trebuie să fiți conectat la internet pentru a utiliza această aplicație.</value>
+  </data>
+  <data name="NO_INTERNET_CONNECTION_TITLE" xml:space="preserve">
+    <value>Nu a fost detectat internet</value>
+  </data>
+  <data name="NO_LISTS" xml:space="preserve">
+    <value>Nu aveți liste</value>
+  </data>
+  <data name="NO_MORE_DETAILS" xml:space="preserve">
+    <value>Încă nu sunt disponibile alte detalii... Vă rugăm să ne informați dacă puteţi oferi mai multe!</value>
+  </data>
+  <data name="NO_NEWS_IS_GOOD_NEWS" xml:space="preserve">
+    <value>Nicio veste nu este o veste bună!</value>
+  </data>
+  <data name="NO_PREVIOUS_INSTALL_FOUND" xml:space="preserve">
+    <value>Nici o instalare anterioară găsită.</value>
+  </data>
+  <data name="NO_USB_DEVICES" xml:space="preserve">
+    <value>Niciun dispozitiv USB</value>
+  </data>
+  <data name="NO_USB_DEVICES_CONNECTED" xml:space="preserve">
+    <value>Niciun dispozitiv USB conectat.</value>
+  </data>
+  <data name="NO_USB_DEVICE_FOUND" xml:space="preserve">
+    <value>Nu s-a găsit niciun dispozitiv USB.</value>
+  </data>
+  <data name="NO_USB_DEVICE_SELECTED" xml:space="preserve">
+    <value>Niciun dispozitiv USB selectat.</value>
+  </data>
+  <data name="NO_USER_PROFILE_SELECTED" xml:space="preserve">
+    <value>Niciun profil de utilizator selectat.</value>
+  </data>
+  <data name="OPEN_FILE" xml:space="preserve">
+    <value>Deschide Fișier</value>
+  </data>
+  <data name="OPEN_FOLDER" xml:space="preserve">
+    <value>Deschideți folder-ul</value>
+  </data>
+  <data name="OPEN_LOG_FILE" xml:space="preserve">
+    <value>Deschide Fișier Log</value>
+  </data>
+  <data name="OPEN_LOG_FOLDER" xml:space="preserve">
+    <value>Deschide folder-ul cu log-uri</value>
+  </data>
+  <data name="OPTIONS" xml:space="preserve">
+    <value>Opţiuni</value>
+  </data>
+  <data name="OUR_FAVORITE_APPS" xml:space="preserve">
+    <value>Aplicațiile noastre preferate</value>
+  </data>
+  <data name="OUR_FAVORITE_CATEGORIES" xml:space="preserve">
+    <value>Categoriile noastre preferate</value>
+  </data>
+  <data name="OUR_FAVORITE_GAMES" xml:space="preserve">
+    <value>Jocurile noastre preferate</value>
+  </data>
+  <data name="OUR_FAVORITE_MODS" xml:space="preserve">
+    <value>Modurile noastre preferate</value>
+  </data>
+  <data name="OVERWRITE_MODS" xml:space="preserve">
+    <value>Suprascrie Moduri</value>
+  </data>
+  <data name="PACKAGES_INSTALL_FILE_PATH" xml:space="preserve">
+    <value>Căi de instalare pachete</value>
+  </data>
+  <data name="PACKAGE_FILES" xml:space="preserve">
+    <value>Fișiere pachet</value>
+  </data>
+  <data name="PACKAGE_FILE_MANAGER" xml:space="preserve">
+    <value>Manager fișiere pachet</value>
+  </data>
+  <data name="POWER" xml:space="preserve">
+    <value>Alimentare</value>
+  </data>
+  <data name="PREPARING_DOWNLOAD" xml:space="preserve">
+    <value>Se pregătește descărcarea arhivei...</value>
+  </data>
+  <data name="PREPARING_INSTALL" xml:space="preserve">
+    <value>Se pregătește instalarea fișierelor...</value>
+  </data>
+  <data name="PREPARING_UNINSTALL" xml:space="preserve">
+    <value>Se pregătește dezinstalarea fișierelor...</value>
+  </data>
+  <data name="PROFILE" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="PROFILE_ADD_INSTRUCTION" xml:space="preserve">
+    <value>Faceți clic pe 'Adăugare profil nou' pentru a crea unul</value>
+  </data>
+  <data name="PROFILE_ADD_NEW" xml:space="preserve">
+    <value>Adaugă un profil nou</value>
+  </data>
+  <data name="PROFILE_DELETE" xml:space="preserve">
+    <value>Ștergeți profilul</value>
+  </data>
+  <data name="PROFILE_EDIT" xml:space="preserve">
+    <value>Editare profil</value>
+  </data>
+  <data name="PROFILE_NAME_EXISTS" xml:space="preserve">
+    <value>Există deja un profil de consolă cu acest nume. Vă rugăm să alegeţi un nume diferit sau redenumiţi cel existent.</value>
+  </data>
+  <data name="QUICK_REBOOT" xml:space="preserve">
+    <value>Repornire rapidă</value>
+  </data>
+  <data name="QUICK_SETTINGS" xml:space="preserve">
+    <value>Setări rapide</value>
+  </data>
+  <data name="READY_TO_CONNECT" xml:space="preserve">
+    <value>Gata de conectare...</value>
+  </data>
+  <data name="READY_TO_START_GAME" xml:space="preserve">
+    <value>Gata de a începe jocul.</value>
+  </data>
+  <data name="RECENTLY_UPDATED" xml:space="preserve">
+    <value>Recent actualizate</value>
+  </data>
+  <data name="RECONNECT_CONSOLE" xml:space="preserve">
+    <value>Reconectare consolă</value>
+  </data>
+  <data name="REDIRECTING" xml:space="preserve">
+    <value>Redirecționare...</value>
+  </data>
+  <data name="REDIRECT_TO_GITHUB_ISSUES" xml:space="preserve">
+    <value>Acum veți fi redirecționat către pagina noastră de probleme GitHub și toate detaliile vor fi completate automat pentru dvs. Vă rugăm să furnizați informații despre problemă pentru a ne ajuta să rezolvăm problema dvs.
+
+Apasă pe butonul 'Trimite' pentru a deschide o nouă problemă care ne poate ajuta să rezolvăm orice dificultăți.</value>
+  </data>
+  <data name="REFER_TO_BASE_DIRECTORY" xml:space="preserve">
+    <value>Utilizați %BASE_DIR% pentru a consulta folder-ul de bază.</value>
+  </data>
+  <data name="REINSTALL_FILE" xml:space="preserve">
+    <value>Reinstalare fișier</value>
+  </data>
+  <data name="REMEMBER_CONSOLE_DIRECTORY_PATH" xml:space="preserve">
+    <value>Ține minte locația ultimului folder a consolei</value>
+  </data>
+  <data name="REMEMBER_GAME_REGIONS_WHEN_INSTALLING" xml:space="preserve">
+    <value>Ține minte regiunile jocului când se instalează</value>
+  </data>
+  <data name="REMEMBER_LOCAL_DIRECTORY_PATH" xml:space="preserve">
+    <value>Ține minte locația ultimului folder local</value>
+  </data>
+  <data name="REPLACE_IMAGE" xml:space="preserve">
+    <value>Înlocuiți imaginea</value>
+  </data>
+  <data name="REQUEST_MODS" xml:space="preserve">
+    <value>Solicită Moduri</value>
+  </data>
+  <data name="REQUIRES_PREVIOUS_USB_DEVICE" xml:space="preserve">
+    <value>Fişierele au fost instalate pe un dispozitiv USB conectat la consolă. Le puteţi dezinstala acum sau le puteţi şterge manual.
+
+Dacă doriţi să dezinstalaţi fişierele acum, conectaţi acelaşi dispozitiv USB care aţi instalat modurile în acelaşi port al consolei şi dați clic pe "Da" pentru a continua.
+
+Dacă nu doriţi să dezinstalaţi fişierele, dați clic pe 'Nu' şi toate aceste fişiere vor fi ignorate.</value>
+  </data>
+  <data name="RESTART" xml:space="preserve">
+    <value>Repornire</value>
+  </data>
+  <data name="RESTART_REQUIRED" xml:space="preserve">
+    <value>Repornire Necesară</value>
+  </data>
+  <data name="RESTART_TAKE_AFFECT" xml:space="preserve">
+    <value>Trebuie să reporniți aplicația pentru ca această schimbare să aibă efect. Doriți să reporniți acum?</value>
+  </data>
+  <data name="RESTORE_BACKUP_FILE" xml:space="preserve">
+    <value>Sigur doriți să restaurați fișierul de rezervă? Toate modificările vor fi pierdute.</value>
+  </data>
+  <data name="RESTORE_DEFAULT_FILE" xml:space="preserve">
+    <value>Sigur doriți să restaurați fișierul implicit? Toate modificările vor fi pierdute.</value>
+  </data>
+  <data name="RICH_PRESENCE" xml:space="preserve">
+    <value>Rich Presence</value>
+  </data>
+  <data name="SCANNING_XBOX_CONSOLES" xml:space="preserve">
+    <value>Scanare console Xbox...</value>
+  </data>
+  <data name="SCANNING_XBOX_FINISHED" xml:space="preserve">
+    <value>Scanare finalizată pentru consolele Xbox.</value>
+  </data>
+  <data name="SCAN_FAILED" xml:space="preserve">
+    <value>Scanare eșuată</value>
+  </data>
+  <data name="SCAN_XBOX_CONSOLES" xml:space="preserve">
+    <value>Scanare console Xbox</value>
+  </data>
+  <data name="SCRIPT_CANT_BE_INSTALLED" xml:space="preserve">
+    <value>Acest tip de mod (Script) nu poate fi instalat pe PS3 deoarece trebuie adăugat manual.</value>
+  </data>
+  <data name="SEND_FEEDBACK" xml:space="preserve">
+    <value>Trimiteți Feedback</value>
+  </data>
+  <data name="SETUP_COMPLETE" xml:space="preserve">
+    <value>Ai finalizat instalarea!</value>
+  </data>
+  <data name="SETUP_WIZARD" xml:space="preserve">
+    <value>Asistent de instalare</value>
+  </data>
+  <data name="SHOW_CURRENT_GAME_PLAYING" xml:space="preserve">
+    <value>Afișează jocul curent</value>
+  </data>
+  <data name="SHOW_GAMES_IN_EXTERNAL_DEVICES" xml:space="preserve">
+    <value>Arată lista jocurilor de pe dispozitivul extern</value>
+  </data>
+  <data name="SHUTDOWN" xml:space="preserve">
+    <value>Închidere</value>
+  </data>
+  <data name="SOFT_REBOOT" xml:space="preserve">
+    <value>Repornire Soft</value>
+  </data>
+  <data name="SPECIAL_THANKS" xml:space="preserve">
+    <value>Mulțumiri Speciale</value>
+  </data>
+  <data name="STARTING_INSTALL" xml:space="preserve">
+    <value>Se pornește instalarea...</value>
+  </data>
+  <data name="STATISTICS" xml:space="preserve">
+    <value>Statistici</value>
+  </data>
+  <data name="STATS_DOWNLOADS" xml:space="preserve">
+    <value>{0} Descărcări</value>
+    <comment>Number of downloads.</comment>
+  </data>
+  <data name="STATUS" xml:space="preserve">
+    <value>Stare:</value>
+  </data>
+  <data name="SUCCESS" xml:space="preserve">
+    <value>Succes</value>
+  </data>
+  <data name="SUCCESS_CONNECTED" xml:space="preserve">
+    <value>Conectat cu succes la consolă.</value>
+  </data>
+  <data name="SUCCESS_DISCONNECTED" xml:space="preserve">
+    <value>Deconectat cu succes la consolă.</value>
+  </data>
+  <data name="SUCCESS_LAUNCHED_GAME" xml:space="preserve">
+    <value>Joc lansat cu succes.</value>
+  </data>
+  <data name="SUCCESS_LAUNCH_GAME" xml:space="preserve">
+    <value>Joc lansat cu succes.</value>
+  </data>
+  <data name="SUCCESS_LOADED_DB" xml:space="preserve">
+    <value>Baza de date a fost încărcată cu succes - Se finalizează datele aplicației...</value>
+  </data>
+  <data name="SUCCESS_ROOT_DIRECTORIES" xml:space="preserve">
+    <value>Foldere root preluate cu succes</value>
+  </data>
+  <data name="SYSTEM_TEMPERATURES" xml:space="preserve">
+    <value>Temperaturi sistem</value>
+  </data>
+  <data name="TAKE_SCREENSHOT" xml:space="preserve">
+    <value>Captează ecranul</value>
+  </data>
+  <data name="TOOLS" xml:space="preserve">
+    <value>Instrumente</value>
+  </data>
+  <data name="UNABLE_LOAD_DATABASE" xml:space="preserve">
+    <value>Nu s-a putut încărca baza de date.</value>
+  </data>
+  <data name="UNABLE_TO_CONNECT" xml:space="preserve">
+    <value>Nu s-a putut conecta la consolă.</value>
+  </data>
+  <data name="UNABLE_TO_OPEN_EXPLORER" xml:space="preserve">
+    <value>Nu se poate deschide managerul de fișiere pentru folderul: {0} - Eroare {1}</value>
+  </data>
+  <data name="UNFAVORITE" xml:space="preserve">
+    <value>Elimină din favorite</value>
+  </data>
+  <data name="UNINSTALLED" xml:space="preserve">
+    <value>Dezinstalat</value>
+  </data>
+  <data name="UNINSTALLING" xml:space="preserve">
+    <value>Se dezinstalează</value>
+  </data>
+  <data name="UNINSTALLING_FILES" xml:space="preserve">
+    <value>Se dezinstalează fișierele</value>
+  </data>
+  <data name="UNINSTALLING_MODS" xml:space="preserve">
+    <value>Se dezinstalează moduri</value>
+  </data>
+  <data name="UNINSTALLING_PACKAGE" xml:space="preserve">
+    <value>Se dezinstalează pachetul</value>
+  </data>
+  <data name="UNINSTALL_ALL_ITEMS" xml:space="preserve">
+    <value>Dezinstalați toate elementele</value>
+  </data>
+  <data name="UNINSTALL_CANCELED" xml:space="preserve">
+    <value>Dezinstalare anulată.</value>
+  </data>
+  <data name="UNINSTALL_CONNECTION_REQUIREMENT" xml:space="preserve">
+    <value>Trebuie să fii conectat la: {0} ({1}) pentru a dezinstala fișierele.</value>
+    <comment>Example: You must be connected to: {Console Name} ({PS3}) to uninstall these files.</comment>
+  </data>
+  <data name="UNINSTALL_CONNECT_TO_REQUIRED_CONSOLE" xml:space="preserve">
+    <value>Aceste fișiere nu au fost instalate pe consola conectată. Vă rugăm să vă conectați la {0} ({1}) pentru a le dezinstala."</value>
+    <comment>Example: These files were not installed on the connected console. Please connect to {Console Name} ({PS3}) to uninstall them."</comment>
+  </data>
+  <data name="UNINSTALL_FILE" xml:space="preserve">
+    <value>Dezinstalare fișier</value>
+  </data>
+  <data name="UNINSTALL_FILES" xml:space="preserve">
+    <value>Dezinstalare fișier</value>
+  </data>
+  <data name="UNINSTALL_ITEM" xml:space="preserve">
+    <value>Dezinstalare fișier</value>
+  </data>
+  <data name="UNINSTALL_USB_FILES" xml:space="preserve">
+    <value>Dezinstalare fișiere USB</value>
+  </data>
+  <data name="UNMOUNT" xml:space="preserve">
+    <value>Demontare</value>
+  </data>
+  <data name="UPLOAD_ERROR" xml:space="preserve">
+    <value>Nu se poate încărca pe consolă. Eroare: {0}</value>
+  </data>
+  <data name="USB_DEVICES" xml:space="preserve">
+    <value>Dispozitive USB</value>
+  </data>
+  <data name="USE_FORMATTED_FILE_SIZES" xml:space="preserve">
+    <value>Folosește formatarea dimensiunilor fișierelor (de ex. "3 MB")</value>
+  </data>
+  <data name="USE_RELATIVE_TIMES" xml:space="preserve">
+    <value>Utilizați timpi relativi (de ex. "acum 3 luni")</value>
+  </data>
+  <data name="VIEW_DETAILS" xml:space="preserve">
+    <value>Vezi Detalii</value>
+  </data>
+  <data name="VIRTUAL_CONTROLLER" xml:space="preserve">
+    <value>Controller virtual</value>
+  </data>
+  <data name="WEBMAN_COMMANDS" xml:space="preserve">
+    <value>Comenzi webMAN</value>
+  </data>
+  <data name="WEBMAN_REQUIRED" xml:space="preserve">
+    <value>Această funcție necesită instalarea webMAN pe consolă.</value>
+  </data>
+  <data name="XBDM_COMMANDS" xml:space="preserve">
+    <value>Comenzi XBDM</value>
+  </data>
+  <data name="XBOX_CONSOLES" xml:space="preserve">
+    <value>Console Xbox</value>
+  </data>
+  <data name="XUID_GET_ERROR" xml:space="preserve">
+    <value>A apărut o eroare obținând XUID. Rețineți că trebuie să fiți online pentru a funcționa!</value>
+  </data>
+  <data name="XUID_SET_ERROR" xml:space="preserve">
+    <value>Nu s-a putut seta XUID pentru joc.</value>
+  </data>
+  <data name="XUID_SET_SUCCESS" xml:space="preserve">
+    <value>Schimbare reușită a XUID pentru joc.</value>
+  </data>
+  <data name="XUID_SPOOFER" xml:space="preserve">
+    <value>XUID Spoofer</value>
+  </data>
+  <data name="YOU_MUST_BE_CONNECTED_TO_UNINSTALL_FILES" xml:space="preserve">
+    <value>Trebuie să fii conectat la {0} pentru a dezinstala fișierele.</value>
+  </data>
+  <data name="YOU_MUST_BE_CONNECTED_TO_USE_FEATURE" xml:space="preserve">
+    <value>Trebuie să fii conectat la consolă pentru a folosi această funcție.</value>
+  </data>
+  <data name="YOU_MUST_BE_CONNECTED_TO_VIEW_INSTALLED_MODS" xml:space="preserve">
+    <value>Trebuie să fiți conectat la consolă pentru a vedea modurile instalate.</value>
+  </data>
+  <data name="YOU_MUST_ENTER_TITLE_ID" xml:space="preserve">
+    <value>Trebuie să introduceți un Title ID.</value>
+  </data>
+  <data name="LABEL_SAVE" xml:space="preserve">
+    <value>Salvare</value>
+    <comment>Save Profile</comment>
+  </data>
+  <data name="LABEL_PASSIVE_MODE" xml:space="preserve">
+    <value>Mod pasiv</value>
+    <comment>Passive Connection FTP</comment>
+  </data>
+  <data name="LABEL_DEFAULT_CREDENTIALS" xml:space="preserve">
+    <value>Date de autentificare implicite</value>
+    <comment>Use Default Connection Details</comment>
+  </data>
+  <data name="LABEL_DEFAULT_PROFILE" xml:space="preserve">
+    <value>Profil implicit</value>
+    <comment>Set as default profile for startup</comment>
+  </data>
+  <data name="MUST_HAVE_DEFAULT_CONSOLE" xml:space="preserve">
+    <value>Trebuie să aveți cel puțin un profil setat ca implicit.</value>
+  </data>
+  <data name="LABEL_INSTALL_IGNORE_REGIONS" xml:space="preserve">
+    <value>Forțează instalarea regiunilor nesuportate*</value>
+    <comment>Mods that aren't supported will still be installed</comment>
+  </data>
+  <data name="INSTALLING_TRAINER" xml:space="preserve">
+    <value>Instalare Trainer</value>
+  </data>
+  <data name="DOWNLOADING_TRAINER" xml:space="preserve">
+    <value>Descărcare Trainer</value>
+  </data>
+  <data name="UNINSTALLING_TRAINER" xml:space="preserve">
+    <value>Dezinstalare Trainer</value>
+  </data>
+  <data name="AURORA_PATH_DOESNT_EXIST" xml:space="preserve">
+    <value>Folder-ul Aurora este invalid sau nu există pe consolă. Verificați setările pentru a vă asigura că este corect și încercați să instalați din nou.
+
+Aurora Path: {0}</value>
+  </data>
+  <data name="LOCAL_CACHE" xml:space="preserve">
+    <value>Cache local</value>
+  </data>
+  <data name="CLEAR_CACHE" xml:space="preserve">
+    <value>Golire cache</value>
+  </data>
+  <data name="CLEAR_CACHE_RESTART" xml:space="preserve">
+    <value>Șterge &amp;&amp; Repornește</value>
+  </data>
+  <data name="CLEAR_LOCAL_CACHE_ON_CLOSE" xml:space="preserve">
+    <value>Golește cache-ul local la închidere</value>
+  </data>
+  <data name="ALWAYS_BACKUP_GAME_FILES" xml:space="preserve">
+    <value>Salvează întotdeauna fișierele jocului curent</value>
+  </data>
+  <data name="LABEL_APP_DATA" xml:space="preserve">
+    <value>AppData</value>
+  </data>
+  <data name="LABEL_TEMP_FOLDER" xml:space="preserve">
+    <value>Folder temporar</value>
+  </data>
+  <data name="YES" xml:space="preserve">
+    <value>Da</value>
+  </data>
+  <data name="NO" xml:space="preserve">
+    <value>Nu</value>
+  </data>
+  <data name="LABEL_EDIT_LOGIN_CREDENTIALS" xml:space="preserve">
+    <value>Editare date conectare</value>
+  </data>
+  <data name="PROFILE_INFO" xml:space="preserve">
+    <value>Informații Profil</value>
+  </data>
+  <data name="LABEL_DOWNLOAD_LATEST" xml:space="preserve">
+    <value>Descarcă cele mai recente</value>
+    <comment>Download the mods latest version</comment>
+  </data>
+  <data name="LABEL_INSTALL_LATEST" xml:space="preserve">
+    <value>Instalează cele mai recente</value>
+    <comment>Download the mods latest version</comment>
+  </data>
+  <data name="LABEL_HELP_SUPPORT" xml:space="preserve">
+    <value>Ajutor &amp;&amp; asistență</value>
+  </data>
+  <data name="CAPTURE_IMAGE" xml:space="preserve">
+    <value>Capturează imagine</value>
+  </data>
+  <data name="NEW_IMAGE" xml:space="preserve">
+    <value>Imagine nouă</value>
+  </data>
+  <data name="DELETE_IMAGE" xml:space="preserve">
+    <value>Ștergere imagine</value>
+  </data>
+  <data name="TOTAL_ADDED_PROFILES" xml:space="preserve">
+    <value>Un total de {0} console au fost adăugate la profilul tău.</value>
+  </data>
+  <data name="EDIT_PROFILE_ERROR" xml:space="preserve">
+    <value>Nu puteți edita detaliile în timp ce sunteți conectat la acesta.</value>
+  </data>
+  <data name="LABEL_EXCLAMATION" xml:space="preserve">
+    <value>Exclamație</value>
+  </data>
+  <data name="NEIGHBORHOOD_EDITOR" xml:space="preserve">
+    <value>Editor Neighborhood</value>
+  </data>
+  <data name="LABEL_SERVER_MAINTENANCE" xml:space="preserve">
+    <value>Mentenanță server</value>
+  </data>
+  <data name="LABEL_SERVER_MAINTENANCE_MESSAGE" xml:space="preserve">
+    <value>Se pare că serverele noastre sunt în prezent în curs de mentenanță. Te rugăm să încerci din nou mai târziu.
+
+Dacă problema persistă după 30 de minute, vă rugăm să contactați echipa noastră de asistență pentru a raporta problema. Vă mulțumim pentru răbdare și înțelegere!</value>
+  </data>
+</root>
