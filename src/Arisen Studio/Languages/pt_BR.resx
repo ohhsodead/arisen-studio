@@ -139,7 +139,7 @@
     <value>Todos os jogos</value>
   </data>
   <data name="ANNOUNCEMENTS" xml:space="preserve">
-    <value>COMUNICADOS</value>
+    <value>Comunicados</value>
   </data>
   <data name="ANOTHER_MOD_INSTALLED" xml:space="preserve">
     <value>{0} está instalado em: {1}
@@ -272,7 +272,9 @@ Este arquivo não pode ser desinstalado para evitar arquivos de jogo ausentes, p
     <value>Gerenciador do console</value>
   </data>
   <data name="CONSOLE_NAME_ALREADY_EXISTS" xml:space="preserve">
-    <value>Já existe um console chamado '{0}' na lista de perfis. \n\nVocê quer adicionar este console mesmo assim?</value>
+    <value>Já existe um console chamado '{0}' na lista de perfis. 
+
+Você quer adicionar este console mesmo assim?</value>
   </data>
   <data name="CONSOLE_PROFILES" xml:space="preserve">
     <value>Perfis dos consoles</value>
@@ -294,7 +296,7 @@ Este arquivo não pode ser desinstalado para evitar arquivos de jogo ausentes, p
     <value>Primeiro, crie um arquivo de backup para restauração.</value>
   </data>
   <data name="CREDITS" xml:space="preserve">
-    <value>CRÉDITOS</value>
+    <value>Créditos</value>
   </data>
   <data name="CURRENT_GAME" xml:space="preserve">
     <value>Jogo atual:</value>
@@ -360,7 +362,7 @@ Este arquivo não pode ser desinstalado para evitar arquivos de jogo ausentes, p
     <value>Baixando dados do jogo</value>
   </data>
   <data name="DOWNLOADING_MODS" xml:space="preserve">
-    <value>Baixando mods</value>
+    <value>Baixando Mods</value>
   </data>
   <data name="DOWNLOADING_PACKAGE" xml:space="preserve">
     <value>Baixando pacote</value>
@@ -392,7 +394,7 @@ Este arquivo não pode ser desinstalado para evitar arquivos de jogo ausentes, p
   <data name="ERROR_OCCURRED" xml:space="preserve">
     <value>Ocorreu um erro: {0}
 
-Por favor, tente novamente mais tarde. Se o problema persistir &lt;a href="https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&amp;labels=&amp;template=bug_report.md"&gt;abra uma nova pergunta&lt;/a&gt; no nosso rastreador GitHub.</value>
+Por favor, tente novamente mais tarde.Se você acha que isso é um bug ou problema persistir você pode reportar em nosso &lt;a href="https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&amp;labels=&amp;template=bug_report.md"&gt;GitHub&lt;/a&gt;.</value>
   </data>
   <data name="EXTRACT_IMAGE" xml:space="preserve">
     <value>Extrair imagem</value>
@@ -437,7 +439,7 @@ Por favor, tente novamente mais tarde. Se o problema persistir &lt;a href="https
     <value>Estes arquivos não foram instalados no console conectado.</value>
   </data>
   <data name="FILES_REINSTALL" xml:space="preserve">
-    <value>{0} já está instalado em: {1}
+    <value>{0} Já está instalado em: {1}
 
 Você deseja reinstalar os arquivos?</value>
   </data>
@@ -720,8 +722,9 @@ Aviso: Não renomeie os arquivos do rap ! Você precisa deixar o nome original f
     <value>Insira primeiro um dispositivo USB em seu computador e, em seguida, reinstale os arquivos.</value>
   </data>
   <data name="INSERT_USB_DEVICE_TO_CONSOLE" xml:space="preserve">
-    <value>Um ou mais arquivos precisam ser instalados em um dispositivo USB que está conectado ao seu console.
-Insira um dispositivo USB em seu console e clique em "Sim" para continuar. Caso contrário, clique em "Não" para ignorar esses arquivos.</value>
+    <value>Um ou mais arquivos precisam ser instalados em um pendrive conectado diretamente ao seu console.
+
+Insira um Pendrive na usb do seu console e clique em "Sim" para continuar. Caso contrário, clique em "Não" para ignorar esses arqu.</value>
   </data>
   <data name="INSTALLED" xml:space="preserve">
     <value>Instalado</value>
@@ -739,7 +742,7 @@ Insira um dispositivo USB em seu console e clique em "Sim" para continuar. Caso 
     <value>Instalando Dados Salvos do Jogo</value>
   </data>
   <data name="INSTALLING_MODS" xml:space="preserve">
-    <value>Instalando mods</value>
+    <value>Instalando Mods</value>
   </data>
   <data name="INSTALLING_PACKAGE_FILE" xml:space="preserve">
     <value>Instalando pacote</value>
@@ -766,7 +769,7 @@ Insira um dispositivo USB em seu console e clique em "Sim" para continuar. Caso 
     <value>Instalar mods de jogos/plugins no dispositivo USB local</value>
   </data>
   <data name="INSTALL_MODS_TO_USB" xml:space="preserve">
-    <value>Instalar mods no USB</value>
+    <value>Instalar Mods no USB</value>
   </data>
   <data name="INSTALL_PACKAGES_TO_LOCAL_USB" xml:space="preserve">
     <value>Instalar pacotes no dispositivo USB local</value>
@@ -966,7 +969,7 @@ Insira um dispositivo USB em seu console e clique em "Sim" para continuar. Caso 
     <value>Modo de jogo</value>
   </data>
   <data name="LABEL_GAME_MODS" xml:space="preserve">
-    <value>Mods de jogos</value>
+    <value>Mods de Jogos</value>
   </data>
   <data name="LABEL_GAME_SAVES" xml:space="preserve">
     <value>Jogos salvos</value>
@@ -1075,9 +1078,9 @@ Insira um dispositivo USB em seu console e clique em "Sim" para continuar. Caso 
     <value>Não Instalado</value>
   </data>
   <data name="LABEL_NO_GAMES" xml:space="preserve">
-    <value>Nenhum jogo adicionado.
+    <value>Nenhum jogo foi adicionado ainda.
 
-Você pode usar o Gerenciador de Arquivos para adicionar um jogo.</value>
+Você pode adicioná-los usando o Gerenciador de arquivos.</value>
   </data>
   <data name="LABEL_OK" xml:space="preserve">
     <value>OK</value>
@@ -1494,7 +1497,7 @@ Instale os mods corretos para este jogo ou escolha uma região de jogo diferente
     <value>Nossos Mods Favoritos</value>
   </data>
   <data name="OVERWRITE_MODS" xml:space="preserve">
-    <value>Substituir mods</value>
+    <value>Substituir Mods</value>
   </data>
   <data name="PACKAGES_INSTALL_FILE_PATH" xml:space="preserve">
     <value>Caminho do arquivo de instalação de pacotes</value>
@@ -1548,7 +1551,7 @@ Instale os mods corretos para este jogo ou escolha uma região de jogo diferente
     <value>Pronto para iniciar o jogo.</value>
   </data>
   <data name="RECENTLY_UPDATED" xml:space="preserve">
-    <value>ATUALIZADOS RECENTEMENTE</value>
+    <value>Recentemente Atualizado</value>
   </data>
   <data name="RECONNECT_CONSOLE" xml:space="preserve">
     <value>Reconectar console</value>
@@ -1583,10 +1586,11 @@ Clique no botão 'Enviar' para abrir um novo problema que pode nos ajudar a corr
     <value>Solicitação de Mods</value>
   </data>
   <data name="REQUIRES_PREVIOUS_USB_DEVICE" xml:space="preserve">
-    <value>Os arquivos foram instalados em um dispositivo USB conectado ao console. Você pode desinstalá-los agora ou excluí-los manualmente.
+    <value>Os arquivos foram instalados no pendrive conectado ao seu console. Você pode desinstalá-los agora ou excluí-los manualmente.
 
-Se você gostaria de desinstalar os arquivos agora, conecte o mesmo dispositivo USB que você instalou os mods na mesma porta do seu console e clique em 'Sim' para continuar.
-Se você não quiser desinstalar os arquivos, clique em 'Não' e todos esses arquivos serão ignorados.</value>
+Se quiser desinstalar os arquivos agora, conecte o mesmo pendrive em que você instalou os mods na mesma porta usb do console e clique em “Sim” para continuar.
+
+Se não quiser desinstalar os arquivos, clique em “Não” e todos esses arquivos serão ignorados.</value>
   </data>
   <data name="RESTART" xml:space="preserve">
     <value>Reiniciar</value>
@@ -1816,5 +1820,96 @@ Se você não quiser desinstalar os arquivos, clique em 'Não' e todos esses arq
   </data>
   <data name="MUST_HAVE_DEFAULT_CONSOLE" xml:space="preserve">
     <value>Você deve ter pelo menos um perfil definido como seu padrão.</value>
+  </data>
+  <data name="LABEL_INSTALL_IGNORE_REGIONS" xml:space="preserve">
+    <value>Forçar instalação de regiões não compatíveis*</value>
+    <comment>Mods that aren't supported will still be installed</comment>
+  </data>
+  <data name="INSTALLING_TRAINER" xml:space="preserve">
+    <value>Instalando Trainers</value>
+  </data>
+  <data name="DOWNLOADING_TRAINER" xml:space="preserve">
+    <value>Baixando Trainers</value>
+  </data>
+  <data name="UNINSTALLING_TRAINER" xml:space="preserve">
+    <value>Desinstalando Trainers</value>
+  </data>
+  <data name="AURORA_PATH_DOESNT_EXIST" xml:space="preserve">
+    <value>A pasta do Aurora é inválida ou não existe no console. Verifique as Configurações para ter certeza de que está correta e tente instalar novamente.
+
+Caminho do Aurora: {0}</value>
+  </data>
+  <data name="LOCAL_CACHE" xml:space="preserve">
+    <value>Cache Local</value>
+  </data>
+  <data name="CLEAR_CACHE" xml:space="preserve">
+    <value>Limpar Cache</value>
+  </data>
+  <data name="CLEAR_CACHE_RESTART" xml:space="preserve">
+    <value>Limpar &amp;&amp; Reiniciar</value>
+  </data>
+  <data name="CLEAR_LOCAL_CACHE_ON_CLOSE" xml:space="preserve">
+    <value>Limpar cache toda vez que reiniciar</value>
+  </data>
+  <data name="ALWAYS_BACKUP_GAME_FILES" xml:space="preserve">
+    <value>Sempre fazer backup dos arquivos de jogos atuais</value>
+  </data>
+  <data name="LABEL_APP_DATA" xml:space="preserve">
+    <value>Dados do Aplicativo</value>
+  </data>
+  <data name="LABEL_TEMP_FOLDER" xml:space="preserve">
+    <value>Pasta Temporária</value>
+  </data>
+  <data name="YES" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="NO" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="LABEL_EDIT_LOGIN_CREDENTIALS" xml:space="preserve">
+    <value>Editar Credenciais de Login</value>
+  </data>
+  <data name="PROFILE_INFO" xml:space="preserve">
+    <value>Informações do Perfil</value>
+  </data>
+  <data name="LABEL_DOWNLOAD_LATEST" xml:space="preserve">
+    <value>Baixar versão mais recente</value>
+    <comment>Download the mods latest version</comment>
+  </data>
+  <data name="LABEL_INSTALL_LATEST" xml:space="preserve">
+    <value>Instalar mais Recente</value>
+    <comment>Download the mods latest version</comment>
+  </data>
+  <data name="LABEL_HELP_SUPPORT" xml:space="preserve">
+    <value>Ajuda &amp;&amp; Suporte</value>
+  </data>
+  <data name="CAPTURE_IMAGE" xml:space="preserve">
+    <value>Capturar Imagem</value>
+  </data>
+  <data name="NEW_IMAGE" xml:space="preserve">
+    <value>Nova Imagem</value>
+  </data>
+  <data name="DELETE_IMAGE" xml:space="preserve">
+    <value>Excluir Imagem</value>
+  </data>
+  <data name="TOTAL_ADDED_PROFILES" xml:space="preserve">
+    <value>Um total de {0} consoles foram adicionados ao seu perfil.</value>
+  </data>
+  <data name="EDIT_PROFILE_ERROR" xml:space="preserve">
+    <value>Você não pode editar enquanto estiver conectado.</value>
+  </data>
+  <data name="LABEL_EXCLAMATION" xml:space="preserve">
+    <value>Exclamação</value>
+  </data>
+  <data name="NEIGHBORHOOD_EDITOR" xml:space="preserve">
+    <value>Editor do Neighborhood</value>
+  </data>
+  <data name="LABEL_SERVER_MAINTENANCE" xml:space="preserve">
+    <value>Manutenção do Servidor</value>
+  </data>
+  <data name="LABEL_SERVER_MAINTENANCE_MESSAGE" xml:space="preserve">
+    <value>Parece que nossos servidores estão passando por manutenção no momento. Tente novamente daqui a pouco.
+
+Se o problema persistir após 30 minutos, entre em contato com nossa equipe de suporte para relatar o problema. Obrigado por sua paciência e compreensão!</value>
   </data>
 </root>
