@@ -40,18 +40,22 @@ jobs:
       - name: Update packages count
         run: python .github/scripts/count-pkgs.py
 
-      # Commit the updated badge files to the repository
+      # Configure Git
       - name: Configure Git
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
 
-      - name: Commit changes
+      # Commit the updated badge files only if there are changes
+      - name: Commit changes if any
         run: |
           git add .github/badges/mods-badge.json
           git add .github/badges/pkgs-badge.json
-          git commit -m "Update badges"
-
-      - name: Push changes
-        run: |
-          git push
+          
+          # Check if there are changes before committing
+          if git diff-index --quiet HEAD --; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update badges"
+            git push
+          fi
