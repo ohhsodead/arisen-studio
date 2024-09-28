@@ -179,7 +179,7 @@ Instalar múltiples mods para el mismo juego puede llevar a problemas como confl
     <value>Copias de seguridad</value>
   </data>
   <data name="BACKUP_FILES_MANAGER" xml:space="preserve">
-    <value>Administrador de las copias de seguridad</value>
+    <value>Gestor de las copias de seguridad</value>
   </data>
   <data name="BACKUP_GAME_FILES" xml:space="preserve">
     <value>Algunos archivos del juego se sobrescribirán. ¿Quieres hacer una copia de seguridad de los archivos del juego actual? Estos archivos se pueden restaurar al desinstalar los mods.</value>
@@ -269,7 +269,7 @@ Este archivo no puede desinstalado para evitar que falten archivos del juego, po
     <value>Información de la consola</value>
   </data>
   <data name="CONSOLE_MANAGER" xml:space="preserve">
-    <value>Administrador de la consola</value>
+    <value>Gestor de la consola</value>
   </data>
   <data name="CONSOLE_NAME_ALREADY_EXISTS" xml:space="preserve">
     <value>El nombre de consola '{0}' ya existe en tu lista de perfiles.
