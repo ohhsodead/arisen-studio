@@ -1079,7 +1079,7 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
   <data name="LABEL_NO_GAMES" xml:space="preserve">
     <value>No hay juegos añadidos aún.
 
-Puedes añadirlos usando el administrador de archivos.</value>
+Puedes añadirlos usando el gestor de archivos.</value>
   </data>
   <data name="LABEL_OK" xml:space="preserve">
     <value>OK</value>
@@ -1337,7 +1337,7 @@ Error: {0}</value>
     <value>DESCARGAS</value>
   </data>
   <data name="NAVIGATION_FILE_MANAGER" xml:space="preserve">
-    <value>ADMINISTRADOR DE ARCHIVOS</value>
+    <value>Gestor de archivos</value>
   </data>
   <data name="NAVIGATION_GAME_CHEATS" xml:space="preserve">
     <value>TRUCOS DE JUEGOS</value>
@@ -1505,7 +1505,7 @@ Instala los mods correctos para este juego o elige una región de juego diferent
     <value>Archivos de paquete</value>
   </data>
   <data name="PACKAGE_FILE_MANAGER" xml:space="preserve">
-    <value>Administrador de archivos de paquetes</value>
+    <value>Gestor de archivos de paquetes</value>
   </data>
   <data name="POWER" xml:space="preserve">
     <value>Potencia</value>
