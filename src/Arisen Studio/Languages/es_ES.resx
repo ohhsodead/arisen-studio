@@ -179,7 +179,7 @@ Instalar múltiples mods para el mismo juego puede llevar a problemas como confl
     <value>Copias de seguridad</value>
   </data>
   <data name="BACKUP_FILES_MANAGER" xml:space="preserve">
-    <value>Administrador de las copias de seguridad</value>
+    <value>Gestor de las copias de seguridad</value>
   </data>
   <data name="BACKUP_GAME_FILES" xml:space="preserve">
     <value>Algunos archivos del juego se sobrescribirán. ¿Quieres hacer una copia de seguridad de los archivos del juego actual? Estos archivos se pueden restaurar al desinstalar los mods.</value>
@@ -269,7 +269,7 @@ Este archivo no puede desinstalado para evitar que falten archivos del juego, po
     <value>Información de la consola</value>
   </data>
   <data name="CONSOLE_MANAGER" xml:space="preserve">
-    <value>Administrador de la consola</value>
+    <value>Gestor de la consola</value>
   </data>
   <data name="CONSOLE_NAME_ALREADY_EXISTS" xml:space="preserve">
     <value>El nombre de consola '{0}' ya existe en tu lista de perfiles.
@@ -1079,7 +1079,7 @@ Inserta un dispositivo USB en tu consola y haz clic en 'Sí' para continuar. De 
   <data name="LABEL_NO_GAMES" xml:space="preserve">
     <value>No hay juegos añadidos aún.
 
-Puedes añadirlos usando el administrador de archivos.</value>
+Puedes añadirlos usando el gestor de archivos.</value>
   </data>
   <data name="LABEL_OK" xml:space="preserve">
     <value>OK</value>
@@ -1337,7 +1337,7 @@ Error: {0}</value>
     <value>DESCARGAS</value>
   </data>
   <data name="NAVIGATION_FILE_MANAGER" xml:space="preserve">
-    <value>ADMINISTRADOR DE ARCHIVOS</value>
+    <value>Gestor de archivos</value>
   </data>
   <data name="NAVIGATION_GAME_CHEATS" xml:space="preserve">
     <value>TRUCOS DE JUEGOS</value>
@@ -1505,7 +1505,7 @@ Instala los mods correctos para este juego o elige una región de juego diferent
     <value>Archivos de paquete</value>
   </data>
   <data name="PACKAGE_FILE_MANAGER" xml:space="preserve">
-    <value>Administrador de archivos de paquetes</value>
+    <value>Gestor de archivos de paquetes</value>
   </data>
   <data name="POWER" xml:space="preserve">
     <value>Potencia</value>
