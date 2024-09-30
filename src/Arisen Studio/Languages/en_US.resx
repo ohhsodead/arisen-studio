@@ -1352,7 +1352,7 @@ Do you want to try uninstalling the file(s) anyway?</value>
   <data name="NAVIGATION_HOMEBREW" xml:space="preserve">
     <value>Homebrew</value>
   </data>
-  <data name="NAVIGATION_INSTALLED_MODS" xml:space="preserve">
+  <data name="NAVIGATION_INSTALLED_FILES" xml:space="preserve">
     <value>Installed Files</value>
   </data>
   <data name="NAVIGATION_PACKAGES" xml:space="preserve">
