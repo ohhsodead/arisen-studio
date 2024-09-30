@@ -269,7 +269,7 @@
     <value>..\Resources\Icons\restore_file.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="PollLink" xml:space="preserve">
-    <value>&lt;div class="strawpoll-embed" id="strawpoll_Q0ZpRa0mwnM" style="height: 608px; max-width: 640px; width: 100%; margin: -30 auto; display: flex; flex-direction: column;"&gt;&lt;iframe title="StrawPoll Embed" id="strawpoll_iframe_Q0ZpRa0mwnM" src="https://strawpoll.com/embed/Q0ZpRa0mwnM" style="position: static; visibility: visible; display: block; width: 100%; flex-grow: 1;" frameborder="0" allowfullscreen allowtransparency&gt;Loading...&lt;/iframe&gt;&lt;script async src="https://cdn.strawpoll.com/dist/widgets.js" charset="utf-8"&gt;&lt;/script&gt;&lt;/div&gt;</value>
+    <value>&lt;div class="strawpoll-embed" id="strawpoll_e7ZJa82KLg3" style="height: 700px; max-width: 640px; width: 100%; margin: 0 auto; display: flex; flex-direction: column;"&gt;&lt;iframe title="StrawPoll Embed" id="strawpoll_iframe_e7ZJa82KLg3" src="https://strawpoll.com/embed/e7ZJa82KLg3" style="position: static; visibility: visible; display: block; width: 100%; flex-grow: 1;" frameborder="0" allowfullscreen allowtransparency&gt;Loading...&lt;/iframe&gt;&lt;script async src="https://cdn.strawpoll.com/dist/widgets.js" charset="utf-8"&gt;&lt;/script&gt;&lt;/div&gt;</value>
   </data>
   <data name="usb_connection" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icons\usb_connection.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -626,9 +626,9 @@
     <value>..\Resources\Icons\available-update.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="paypal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\paypal.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+    <value>..\Resources\Icons\paypal.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="patreon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\patreon.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+    <value>..\Resources\Icons\patreon.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
 </root>

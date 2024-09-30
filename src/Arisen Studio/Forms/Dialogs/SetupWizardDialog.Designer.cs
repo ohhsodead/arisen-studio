@@ -156,8 +156,11 @@
             // 
             // LabelChangeLog
             // 
+            this.LabelChangeLog.AllowHtmlString = true;
             this.LabelChangeLog.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.LabelChangeLog.Appearance.Options.UseFont = true;
+            this.LabelChangeLog.Appearance.Options.UseTextOptions = true;
+            this.LabelChangeLog.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.LabelChangeLog.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LabelChangeLog.Location = new System.Drawing.Point(5, 29);
             this.LabelChangeLog.Name = "LabelChangeLog";

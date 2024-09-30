@@ -106,7 +106,7 @@ namespace ArisenStudio
 
             _ = XtraMessageBox.Show(MainWindow.Window,
                 $"An error occurred: {e.Exception.Message}\n\n" +
-                $"If this issue persists, please report it by <a href=\"https://github.com/ohhsodead/arisen-studio/issues/new?labels=bug&template=bug.yml\">opening a new issue</a> on our GitHub tracker or opening a ticket in our Discord Server.",
+                $"If this issue persists, please report it by <a href=\"https://github.com/ohhsodead/arisen-studio/issues/new?labels=bug&template=bug.yml/\">opening a new issue</a> on our GitHub tracker or opening a ticket in our Discord Server.",
                 "Arisen Studio Handled Error",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
@@ -120,7 +120,7 @@ namespace ArisenStudio
 
             _ = XtraMessageBox.Show(MainWindow.Window,
                 $"An error occurred: {exception.Message}\n\n" +
-                $"If this issue persists, please report it by <a href=\"https://github.com/ohhsodead/arisen-studio/issues/new?labels=bug&template=bug.yml\">opening a new issue</a> on our GitHub tracker or opening a ticket in our Discord Server.",
+                $"If this issue persists, please report it by <a href=\"https://github.com/ohhsodead/arisen-studio/issues/new?labels=bug&template=bug.yml/\">opening a new issue</a> on our GitHub tracker or opening a ticket in our Discord Server.",
                 "Arisen Studio Handled Error",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);

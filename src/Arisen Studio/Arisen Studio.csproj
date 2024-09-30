@@ -103,7 +103,7 @@
     </Reference>
     <Reference Include="JRPC, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Downloads\JRPC.dll</HintPath>
+      <HintPath>..\..\..\..\Resources\xdevkit + jrpc\JRPC.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualBasic" />
@@ -771,8 +771,8 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\patreon.svg" />
-    <None Include="Resources\paypal.svg" />
+    <None Include="Resources\Icons\patreon.svg" />
+    <None Include="Resources\Icons\paypal.svg" />
     <None Include="Resources\Icons\trainers.svg" />
     <None Include="Resources\Icons\request.svg" />
     <None Include="Resources\Icons\scan-users.svg" />

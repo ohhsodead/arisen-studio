@@ -300,6 +300,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelStatsLastUpdated = new DevExpress.XtraEditors.LabelControl();
             this.LabelHeaderStatistics = new DevExpress.XtraEditors.LabelControl();
             this.PanelAdPlacement = new DevExpress.XtraEditors.PanelControl();
+            this.BannerAdsDashboard = new AdsJumboWinForm.BannerAds();
             this.WebViewAdBanner = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.LabelHeaderRecentlyUpdated = new DevExpress.XtraEditors.LabelControl();
             this.TableDashboard1 = new DevExpress.Utils.Layout.TablePanel();
@@ -339,7 +340,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelDownloadsFilterModType = new DevExpress.XtraEditors.LabelControl();
             this.ComboBoxDownloadsFilterPlatform = new DevExpress.XtraEditors.ComboBoxEdit();
             this.LabelDownloadsFilterPlatform = new DevExpress.XtraEditors.LabelControl();
-            this.separatorControl3 = new DevExpress.XtraEditors.SeparatorControl();
+            this.SeparatorDownloads7 = new DevExpress.XtraEditors.SeparatorControl();
             this.ComboBoxDownloadsFilterCategory = new DevExpress.XtraEditors.ComboBoxEdit();
             this.LabelDownloadsFilterCategory = new DevExpress.XtraEditors.LabelControl();
             this.TextBoxDownloadsFilterFileName = new DevExpress.XtraEditors.TextEdit();
@@ -754,17 +755,17 @@ namespace ArisenStudio.Forms.Windows
             this.GridViewGameCheats = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.PanelFiltersCheats = new System.Windows.Forms.Panel();
             this.ComboBoxGameCheatsFilterNumberCheats = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelGameCheatsFilterNumOfCheats = new DevExpress.XtraEditors.LabelControl();
             this.separatorControl93 = new DevExpress.XtraEditors.SeparatorControl();
             this.SeparatorCheats2 = new DevExpress.XtraEditors.SeparatorControl();
             this.SeparatorCheats3 = new DevExpress.XtraEditors.SeparatorControl();
             this.SeparatorCheats4 = new DevExpress.XtraEditors.SeparatorControl();
             this.ComboBoxGameCheatsFilterGame = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelGameCheatsFilterGame = new DevExpress.XtraEditors.LabelControl();
             this.ComboBoxGameCheatsFilterVersion = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelGameCheatsFilterVersion = new DevExpress.XtraEditors.LabelControl();
             this.ComboBoxGameCheatsFilterRegion = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelGameCheatsFilterRegion = new DevExpress.XtraEditors.LabelControl();
             this.PanelCheatsActions = new DevExpress.XtraEditors.PanelControl();
             this.TileControlCheats = new DevExpress.XtraEditors.TileControl();
             this.TileGroupCheats = new DevExpress.XtraEditors.TileGroup();
@@ -840,15 +841,15 @@ namespace ArisenStudio.Forms.Windows
             this.separatorControl5 = new DevExpress.XtraEditors.SeparatorControl();
             this.separatorControl6 = new DevExpress.XtraEditors.SeparatorControl();
             this.ComboBoxHomebrewXboxFilterCategory = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHomebrewXboxFilterCategory = new DevExpress.XtraEditors.LabelControl();
             this.ComboBoxHomebrewXboxFilterStatus = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHomebrewXboxFilterStatus = new DevExpress.XtraEditors.LabelControl();
             this.ComboBoxHomebrewXboxFilterVersion = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHomebrewXboxFilterVersion = new DevExpress.XtraEditors.LabelControl();
             this.TextBoxHomebrewXboxFilterName = new DevExpress.XtraEditors.TextEdit();
             this.ComboBoxHomebrewXboxFilterFwType = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHomebrewXboxFilterName = new DevExpress.XtraEditors.LabelControl();
+            this.LabelHomebrewXboxFilterFwType = new DevExpress.XtraEditors.LabelControl();
             this.PanelHomebrewXboxActions = new DevExpress.XtraEditors.PanelControl();
             this.TileControlHomebrewXbox = new DevExpress.XtraEditors.TileControl();
             this.TileGroupHomebrewActions = new DevExpress.XtraEditors.TileGroup();
@@ -888,17 +889,17 @@ namespace ArisenStudio.Forms.Windows
             this.PanelTrainersFilters = new System.Windows.Forms.Panel();
             this.ComboBoxTrainersFilterTitleId = new DevExpress.XtraEditors.ComboBoxEdit();
             this.ComboBoxTrainersFilterCount = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelTrainersXboxFilterNumOfTrainers = new DevExpress.XtraEditors.LabelControl();
             this.separatorControl94 = new DevExpress.XtraEditors.SeparatorControl();
             this.separatorControl95 = new DevExpress.XtraEditors.SeparatorControl();
             this.ComboBoxTrainersFilterDashType = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl50 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelTrainersXboxFilterType = new DevExpress.XtraEditors.LabelControl();
             this.separatorControl90 = new DevExpress.XtraEditors.SeparatorControl();
             this.separatorControl91 = new DevExpress.XtraEditors.SeparatorControl();
             this.separatorControl92 = new DevExpress.XtraEditors.SeparatorControl();
             this.ComboBoxTrainersFilterGame = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelTrainersXboxFilterGame = new DevExpress.XtraEditors.LabelControl();
+            this.LabelTrainersXboxFilterTitleId = new DevExpress.XtraEditors.LabelControl();
             this.PanelTrainersActions = new DevExpress.XtraEditors.PanelControl();
             this.TileControlTrainers = new DevExpress.XtraEditors.TileControl();
             this.TileGroupTrainers = new DevExpress.XtraEditors.TileGroup();
@@ -1198,11 +1199,8 @@ namespace ArisenStudio.Forms.Windows
             this.comboBoxEdit27 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl99 = new DevExpress.XtraEditors.LabelControl();
             this.comboBoxEdit28 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl100 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit19 = new DevExpress.XtraEditors.TextEdit();
             this.comboBoxEdit29 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl101 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl102 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl14 = new DevExpress.XtraEditors.PanelControl();
             this.tileControl7 = new DevExpress.XtraEditors.TileControl();
             this.tileGroup7 = new DevExpress.XtraEditors.TileGroup();
@@ -1311,7 +1309,6 @@ namespace ArisenStudio.Forms.Windows
             this.comboBoxEdit41 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl119 = new DevExpress.XtraEditors.LabelControl();
             this.comboBoxEdit42 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl120 = new DevExpress.XtraEditors.LabelControl();
             this.comboBoxEdit43 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl121 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit23 = new DevExpress.XtraEditors.TextEdit();
@@ -1472,7 +1469,6 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGameModsXboxVersion = new DevExpress.XtraEditors.LabelControl();
             this.LabelGameModsXboxStatus = new DevExpress.XtraEditors.LabelControl();
             this.LabelGameModsXboxCategory = new DevExpress.XtraEditors.LabelControl();
-            this.BannerAdsDashboard = new AdsJumboWinForm.BannerAds();
             this.PageGameModsPS3.SuspendLayout();
             this.PanelGameGameMods.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlGameModsPS3)).BeginInit();
@@ -1546,7 +1542,7 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxDownloadsFilterVersion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxDownloadsFilterModType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxDownloadsFilterPlatform.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SeparatorDownloads7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxDownloadsFilterCategory.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxDownloadsFilterFileName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelDownloadsActions)).BeginInit();
@@ -4271,6 +4267,21 @@ namespace ArisenStudio.Forms.Windows
             this.PanelAdPlacement.Size = new System.Drawing.Size(859, 194);
             this.PanelAdPlacement.TabIndex = 4;
             // 
+            // BannerAdsDashboard
+            // 
+            this.BannerAdsDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BannerAdsDashboard.ApplicationId = "33krwjd74qn6";
+            this.BannerAdsDashboard.BackColor = System.Drawing.Color.White;
+            this.BannerAdsDashboard.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.BannerAdsDashboard.HeightAd = 134;
+            this.BannerAdsDashboard.Location = new System.Drawing.Point(12, 36);
+            this.BannerAdsDashboard.Name = "BannerAdsDashboard";
+            this.BannerAdsDashboard.Size = new System.Drawing.Size(838, 144);
+            this.BannerAdsDashboard.TabIndex = 16;
+            this.BannerAdsDashboard.WidthAd = 802;
+            // 
             // WebViewAdBanner
             // 
             this.WebViewAdBanner.AllowExternalDrop = false;
@@ -4454,7 +4465,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelAnnouncementsItems.Location = new System.Drawing.Point(5, 38);
             this.PanelAnnouncementsItems.MinimumSize = new System.Drawing.Size(400, 0);
             this.PanelAnnouncementsItems.Name = "PanelAnnouncementsItems";
-            this.PanelAnnouncementsItems.Size = new System.Drawing.Size(405, 363);
+            this.PanelAnnouncementsItems.Size = new System.Drawing.Size(405, 360);
             this.PanelAnnouncementsItems.TabIndex = 8;
             this.PanelAnnouncementsItems.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.PanelAnnouncementsItems_ControlAdded);
             this.PanelAnnouncementsItems.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.PanelAnnouncementsItems_ControlRemoved);
@@ -4603,7 +4614,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelFiltersDownloads.Controls.Add(this.LabelDownloadsFilterModType);
             this.PanelFiltersDownloads.Controls.Add(this.ComboBoxDownloadsFilterPlatform);
             this.PanelFiltersDownloads.Controls.Add(this.LabelDownloadsFilterPlatform);
-            this.PanelFiltersDownloads.Controls.Add(this.separatorControl3);
+            this.PanelFiltersDownloads.Controls.Add(this.SeparatorDownloads7);
             this.PanelFiltersDownloads.Controls.Add(this.ComboBoxDownloadsFilterCategory);
             this.PanelFiltersDownloads.Controls.Add(this.LabelDownloadsFilterCategory);
             this.PanelFiltersDownloads.Controls.Add(this.TextBoxDownloadsFilterFileName);
@@ -4969,19 +4980,19 @@ namespace ArisenStudio.Forms.Windows
             this.LabelDownloadsFilterPlatform.TabIndex = 1122;
             this.LabelDownloadsFilterPlatform.Text = "Platform";
             // 
-            // separatorControl3
+            // SeparatorDownloads7
             // 
-            this.separatorControl3.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.separatorControl3.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl3.LineThickness = 1;
-            this.separatorControl3.Location = new System.Drawing.Point(0, 73);
-            this.separatorControl3.Margin = new System.Windows.Forms.Padding(0);
-            this.separatorControl3.Name = "separatorControl3";
-            this.separatorControl3.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl3.Size = new System.Drawing.Size(1288, 3);
-            this.separatorControl3.TabIndex = 1172;
+            this.SeparatorDownloads7.BackColor = System.Drawing.Color.Transparent;
+            this.SeparatorDownloads7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.SeparatorDownloads7.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
+            this.SeparatorDownloads7.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
+            this.SeparatorDownloads7.LineThickness = 1;
+            this.SeparatorDownloads7.Location = new System.Drawing.Point(0, 73);
+            this.SeparatorDownloads7.Margin = new System.Windows.Forms.Padding(0);
+            this.SeparatorDownloads7.Name = "SeparatorDownloads7";
+            this.SeparatorDownloads7.Padding = new System.Windows.Forms.Padding(0);
+            this.SeparatorDownloads7.Size = new System.Drawing.Size(1288, 3);
+            this.SeparatorDownloads7.TabIndex = 1172;
             // 
             // ComboBoxDownloadsFilterCategory
             // 
@@ -11571,17 +11582,17 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.PanelFiltersCheats.BackColor = System.Drawing.Color.Transparent;
             this.PanelFiltersCheats.Controls.Add(this.ComboBoxGameCheatsFilterNumberCheats);
-            this.PanelFiltersCheats.Controls.Add(this.labelControl9);
+            this.PanelFiltersCheats.Controls.Add(this.LabelGameCheatsFilterNumOfCheats);
             this.PanelFiltersCheats.Controls.Add(this.separatorControl93);
             this.PanelFiltersCheats.Controls.Add(this.SeparatorCheats2);
             this.PanelFiltersCheats.Controls.Add(this.SeparatorCheats3);
             this.PanelFiltersCheats.Controls.Add(this.SeparatorCheats4);
             this.PanelFiltersCheats.Controls.Add(this.ComboBoxGameCheatsFilterGame);
-            this.PanelFiltersCheats.Controls.Add(this.labelControl1);
+            this.PanelFiltersCheats.Controls.Add(this.LabelGameCheatsFilterGame);
             this.PanelFiltersCheats.Controls.Add(this.ComboBoxGameCheatsFilterVersion);
-            this.PanelFiltersCheats.Controls.Add(this.labelControl3);
+            this.PanelFiltersCheats.Controls.Add(this.LabelGameCheatsFilterVersion);
             this.PanelFiltersCheats.Controls.Add(this.ComboBoxGameCheatsFilterRegion);
-            this.PanelFiltersCheats.Controls.Add(this.labelControl5);
+            this.PanelFiltersCheats.Controls.Add(this.LabelGameCheatsFilterRegion);
             this.PanelFiltersCheats.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelFiltersCheats.Location = new System.Drawing.Point(0, 70);
             this.PanelFiltersCheats.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
@@ -11610,22 +11621,22 @@ namespace ArisenStudio.Forms.Windows
             this.ComboBoxGameCheatsFilterNumberCheats.Size = new System.Drawing.Size(84, 30);
             this.ComboBoxGameCheatsFilterNumberCheats.TabIndex = 1216;
             // 
-            // labelControl9
+            // LabelGameCheatsFilterNumOfCheats
             // 
-            this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl9.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Appearance.Options.UseForeColor = true;
-            this.labelControl9.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl9.Location = new System.Drawing.Point(1190, 12);
-            this.labelControl9.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl9.Size = new System.Drawing.Size(59, 17);
-            this.labelControl9.TabIndex = 1217;
-            this.labelControl9.Text = "# Cheats";
+            this.LabelGameCheatsFilterNumOfCheats.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelGameCheatsFilterNumOfCheats.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.LabelGameCheatsFilterNumOfCheats.Appearance.ForeColor = System.Drawing.Color.White;
+            this.LabelGameCheatsFilterNumOfCheats.Appearance.Options.UseFont = true;
+            this.LabelGameCheatsFilterNumOfCheats.Appearance.Options.UseForeColor = true;
+            this.LabelGameCheatsFilterNumOfCheats.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelGameCheatsFilterNumOfCheats.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelGameCheatsFilterNumOfCheats.Location = new System.Drawing.Point(1190, 12);
+            this.LabelGameCheatsFilterNumOfCheats.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
+            this.LabelGameCheatsFilterNumOfCheats.Name = "LabelGameCheatsFilterNumOfCheats";
+            this.LabelGameCheatsFilterNumOfCheats.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.LabelGameCheatsFilterNumOfCheats.Size = new System.Drawing.Size(59, 17);
+            this.LabelGameCheatsFilterNumOfCheats.TabIndex = 1217;
+            this.LabelGameCheatsFilterNumOfCheats.Text = "# Cheats";
             // 
             // separatorControl93
             // 
@@ -11706,21 +11717,21 @@ namespace ArisenStudio.Forms.Windows
             this.ComboBoxGameCheatsFilterGame.Size = new System.Drawing.Size(880, 30);
             this.ComboBoxGameCheatsFilterGame.TabIndex = 1170;
             // 
-            // labelControl1
+            // LabelGameCheatsFilterGame
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl1.Location = new System.Drawing.Point(-3, 12);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl1.Size = new System.Drawing.Size(41, 17);
-            this.labelControl1.TabIndex = 1171;
-            this.labelControl1.Text = "Game";
+            this.LabelGameCheatsFilterGame.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.LabelGameCheatsFilterGame.Appearance.ForeColor = System.Drawing.Color.White;
+            this.LabelGameCheatsFilterGame.Appearance.Options.UseFont = true;
+            this.LabelGameCheatsFilterGame.Appearance.Options.UseForeColor = true;
+            this.LabelGameCheatsFilterGame.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelGameCheatsFilterGame.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelGameCheatsFilterGame.Location = new System.Drawing.Point(-3, 12);
+            this.LabelGameCheatsFilterGame.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
+            this.LabelGameCheatsFilterGame.Name = "LabelGameCheatsFilterGame";
+            this.LabelGameCheatsFilterGame.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.LabelGameCheatsFilterGame.Size = new System.Drawing.Size(41, 17);
+            this.LabelGameCheatsFilterGame.TabIndex = 1171;
+            this.LabelGameCheatsFilterGame.Text = "Game";
             // 
             // ComboBoxGameCheatsFilterVersion
             // 
@@ -11743,22 +11754,22 @@ namespace ArisenStudio.Forms.Windows
             this.ComboBoxGameCheatsFilterVersion.Size = new System.Drawing.Size(84, 30);
             this.ComboBoxGameCheatsFilterVersion.TabIndex = 1164;
             // 
-            // labelControl3
+            // LabelGameCheatsFilterVersion
             // 
-            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl3.Location = new System.Drawing.Point(1073, 12);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl3.Size = new System.Drawing.Size(53, 17);
-            this.labelControl3.TabIndex = 1165;
-            this.labelControl3.Text = "Version";
+            this.LabelGameCheatsFilterVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelGameCheatsFilterVersion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.LabelGameCheatsFilterVersion.Appearance.ForeColor = System.Drawing.Color.White;
+            this.LabelGameCheatsFilterVersion.Appearance.Options.UseFont = true;
+            this.LabelGameCheatsFilterVersion.Appearance.Options.UseForeColor = true;
+            this.LabelGameCheatsFilterVersion.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelGameCheatsFilterVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelGameCheatsFilterVersion.Location = new System.Drawing.Point(1073, 12);
+            this.LabelGameCheatsFilterVersion.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
+            this.LabelGameCheatsFilterVersion.Name = "LabelGameCheatsFilterVersion";
+            this.LabelGameCheatsFilterVersion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.LabelGameCheatsFilterVersion.Size = new System.Drawing.Size(53, 17);
+            this.LabelGameCheatsFilterVersion.TabIndex = 1165;
+            this.LabelGameCheatsFilterVersion.Text = "Version";
             // 
             // ComboBoxGameCheatsFilterRegion
             // 
@@ -11781,22 +11792,22 @@ namespace ArisenStudio.Forms.Windows
             this.ComboBoxGameCheatsFilterRegion.Size = new System.Drawing.Size(136, 30);
             this.ComboBoxGameCheatsFilterRegion.TabIndex = 4;
             // 
-            // labelControl5
+            // LabelGameCheatsFilterRegion
             // 
-            this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Appearance.Options.UseForeColor = true;
-            this.labelControl5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl5.Location = new System.Drawing.Point(907, 12);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl5.Size = new System.Drawing.Size(49, 17);
-            this.labelControl5.TabIndex = 1163;
-            this.labelControl5.Text = "Region";
+            this.LabelGameCheatsFilterRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelGameCheatsFilterRegion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.LabelGameCheatsFilterRegion.Appearance.ForeColor = System.Drawing.Color.White;
+            this.LabelGameCheatsFilterRegion.Appearance.Options.UseFont = true;
+            this.LabelGameCheatsFilterRegion.Appearance.Options.UseForeColor = true;
+            this.LabelGameCheatsFilterRegion.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelGameCheatsFilterRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelGameCheatsFilterRegion.Location = new System.Drawing.Point(907, 12);
+            this.LabelGameCheatsFilterRegion.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
+            this.LabelGameCheatsFilterRegion.Name = "LabelGameCheatsFilterRegion";
+            this.LabelGameCheatsFilterRegion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.LabelGameCheatsFilterRegion.Size = new System.Drawing.Size(49, 17);
+            this.LabelGameCheatsFilterRegion.TabIndex = 1163;
+            this.LabelGameCheatsFilterRegion.Text = "Region";
             // 
             // PanelCheatsActions
             // 
@@ -13110,15 +13121,15 @@ namespace ArisenStudio.Forms.Windows
             this.PanelHomebrewXboxFilters.Controls.Add(this.separatorControl5);
             this.PanelHomebrewXboxFilters.Controls.Add(this.separatorControl6);
             this.PanelHomebrewXboxFilters.Controls.Add(this.ComboBoxHomebrewXboxFilterCategory);
-            this.PanelHomebrewXboxFilters.Controls.Add(this.labelControl2);
+            this.PanelHomebrewXboxFilters.Controls.Add(this.LabelHomebrewXboxFilterCategory);
             this.PanelHomebrewXboxFilters.Controls.Add(this.ComboBoxHomebrewXboxFilterStatus);
-            this.PanelHomebrewXboxFilters.Controls.Add(this.labelControl4);
+            this.PanelHomebrewXboxFilters.Controls.Add(this.LabelHomebrewXboxFilterStatus);
             this.PanelHomebrewXboxFilters.Controls.Add(this.ComboBoxHomebrewXboxFilterVersion);
-            this.PanelHomebrewXboxFilters.Controls.Add(this.labelControl6);
+            this.PanelHomebrewXboxFilters.Controls.Add(this.LabelHomebrewXboxFilterVersion);
             this.PanelHomebrewXboxFilters.Controls.Add(this.TextBoxHomebrewXboxFilterName);
             this.PanelHomebrewXboxFilters.Controls.Add(this.ComboBoxHomebrewXboxFilterFwType);
-            this.PanelHomebrewXboxFilters.Controls.Add(this.labelControl7);
-            this.PanelHomebrewXboxFilters.Controls.Add(this.labelControl8);
+            this.PanelHomebrewXboxFilters.Controls.Add(this.LabelHomebrewXboxFilterName);
+            this.PanelHomebrewXboxFilters.Controls.Add(this.LabelHomebrewXboxFilterFwType);
             this.PanelHomebrewXboxFilters.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelHomebrewXboxFilters.Location = new System.Drawing.Point(0, 70);
             this.PanelHomebrewXboxFilters.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
@@ -13219,21 +13230,21 @@ namespace ArisenStudio.Forms.Windows
             this.ComboBoxHomebrewXboxFilterCategory.Size = new System.Drawing.Size(220, 30);
             this.ComboBoxHomebrewXboxFilterCategory.TabIndex = 1170;
             // 
-            // labelControl2
+            // LabelHomebrewXboxFilterCategory
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl2.Location = new System.Drawing.Point(-3, 12);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl2.Size = new System.Drawing.Size(61, 17);
-            this.labelControl2.TabIndex = 1171;
-            this.labelControl2.Text = "Category";
+            this.LabelHomebrewXboxFilterCategory.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.LabelHomebrewXboxFilterCategory.Appearance.ForeColor = System.Drawing.Color.White;
+            this.LabelHomebrewXboxFilterCategory.Appearance.Options.UseFont = true;
+            this.LabelHomebrewXboxFilterCategory.Appearance.Options.UseForeColor = true;
+            this.LabelHomebrewXboxFilterCategory.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelHomebrewXboxFilterCategory.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHomebrewXboxFilterCategory.Location = new System.Drawing.Point(-3, 12);
+            this.LabelHomebrewXboxFilterCategory.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
+            this.LabelHomebrewXboxFilterCategory.Name = "LabelHomebrewXboxFilterCategory";
+            this.LabelHomebrewXboxFilterCategory.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.LabelHomebrewXboxFilterCategory.Size = new System.Drawing.Size(61, 17);
+            this.LabelHomebrewXboxFilterCategory.TabIndex = 1171;
+            this.LabelHomebrewXboxFilterCategory.Text = "Category";
             // 
             // ComboBoxHomebrewXboxFilterStatus
             // 
@@ -13260,22 +13271,22 @@ namespace ArisenStudio.Forms.Windows
             this.ComboBoxHomebrewXboxFilterStatus.Size = new System.Drawing.Size(102, 30);
             this.ComboBoxHomebrewXboxFilterStatus.TabIndex = 1168;
             // 
-            // labelControl4
+            // LabelHomebrewXboxFilterStatus
             // 
-            this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Appearance.Options.UseForeColor = true;
-            this.labelControl4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl4.Location = new System.Drawing.Point(1169, 12);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl4.Size = new System.Drawing.Size(44, 17);
-            this.labelControl4.TabIndex = 1169;
-            this.labelControl4.Text = "Status";
+            this.LabelHomebrewXboxFilterStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelHomebrewXboxFilterStatus.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.LabelHomebrewXboxFilterStatus.Appearance.ForeColor = System.Drawing.Color.White;
+            this.LabelHomebrewXboxFilterStatus.Appearance.Options.UseFont = true;
+            this.LabelHomebrewXboxFilterStatus.Appearance.Options.UseForeColor = true;
+            this.LabelHomebrewXboxFilterStatus.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelHomebrewXboxFilterStatus.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHomebrewXboxFilterStatus.Location = new System.Drawing.Point(1169, 12);
+            this.LabelHomebrewXboxFilterStatus.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
+            this.LabelHomebrewXboxFilterStatus.Name = "LabelHomebrewXboxFilterStatus";
+            this.LabelHomebrewXboxFilterStatus.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.LabelHomebrewXboxFilterStatus.Size = new System.Drawing.Size(44, 17);
+            this.LabelHomebrewXboxFilterStatus.TabIndex = 1169;
+            this.LabelHomebrewXboxFilterStatus.Text = "Status";
             // 
             // ComboBoxHomebrewXboxFilterVersion
             // 
@@ -13298,22 +13309,22 @@ namespace ArisenStudio.Forms.Windows
             this.ComboBoxHomebrewXboxFilterVersion.Size = new System.Drawing.Size(64, 30);
             this.ComboBoxHomebrewXboxFilterVersion.TabIndex = 1164;
             // 
-            // labelControl6
+            // LabelHomebrewXboxFilterVersion
             // 
-            this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl6.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Appearance.Options.UseForeColor = true;
-            this.labelControl6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl6.Location = new System.Drawing.Point(1075, 12);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl6.Size = new System.Drawing.Size(53, 17);
-            this.labelControl6.TabIndex = 1165;
-            this.labelControl6.Text = "Version";
+            this.LabelHomebrewXboxFilterVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelHomebrewXboxFilterVersion.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.LabelHomebrewXboxFilterVersion.Appearance.ForeColor = System.Drawing.Color.White;
+            this.LabelHomebrewXboxFilterVersion.Appearance.Options.UseFont = true;
+            this.LabelHomebrewXboxFilterVersion.Appearance.Options.UseForeColor = true;
+            this.LabelHomebrewXboxFilterVersion.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelHomebrewXboxFilterVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHomebrewXboxFilterVersion.Location = new System.Drawing.Point(1075, 12);
+            this.LabelHomebrewXboxFilterVersion.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
+            this.LabelHomebrewXboxFilterVersion.Name = "LabelHomebrewXboxFilterVersion";
+            this.LabelHomebrewXboxFilterVersion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.LabelHomebrewXboxFilterVersion.Size = new System.Drawing.Size(53, 17);
+            this.LabelHomebrewXboxFilterVersion.TabIndex = 1165;
+            this.LabelHomebrewXboxFilterVersion.Text = "Version";
             // 
             // TextBoxHomebrewXboxFilterName
             // 
@@ -13353,38 +13364,38 @@ namespace ArisenStudio.Forms.Windows
             this.ComboBoxHomebrewXboxFilterFwType.Size = new System.Drawing.Size(81, 30);
             this.ComboBoxHomebrewXboxFilterFwType.TabIndex = 2;
             // 
-            // labelControl7
+            // LabelHomebrewXboxFilterName
             // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Appearance.Options.UseForeColor = true;
-            this.labelControl7.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl7.Location = new System.Drawing.Point(247, 12);
-            this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl7.Size = new System.Drawing.Size(42, 17);
-            this.labelControl7.TabIndex = 1157;
-            this.labelControl7.Text = "Name";
+            this.LabelHomebrewXboxFilterName.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.LabelHomebrewXboxFilterName.Appearance.ForeColor = System.Drawing.Color.White;
+            this.LabelHomebrewXboxFilterName.Appearance.Options.UseFont = true;
+            this.LabelHomebrewXboxFilterName.Appearance.Options.UseForeColor = true;
+            this.LabelHomebrewXboxFilterName.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelHomebrewXboxFilterName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHomebrewXboxFilterName.Location = new System.Drawing.Point(247, 12);
+            this.LabelHomebrewXboxFilterName.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
+            this.LabelHomebrewXboxFilterName.Name = "LabelHomebrewXboxFilterName";
+            this.LabelHomebrewXboxFilterName.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.LabelHomebrewXboxFilterName.Size = new System.Drawing.Size(42, 17);
+            this.LabelHomebrewXboxFilterName.TabIndex = 1157;
+            this.LabelHomebrewXboxFilterName.Text = "Name";
             // 
-            // labelControl8
+            // LabelHomebrewXboxFilterFwType
             // 
-            this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl8.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Appearance.Options.UseForeColor = true;
-            this.labelControl8.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl8.Location = new System.Drawing.Point(964, 12);
-            this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl8.Size = new System.Drawing.Size(60, 17);
-            this.labelControl8.TabIndex = 1156;
-            this.labelControl8.Text = "FW Type";
+            this.LabelHomebrewXboxFilterFwType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelHomebrewXboxFilterFwType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.LabelHomebrewXboxFilterFwType.Appearance.ForeColor = System.Drawing.Color.White;
+            this.LabelHomebrewXboxFilterFwType.Appearance.Options.UseFont = true;
+            this.LabelHomebrewXboxFilterFwType.Appearance.Options.UseForeColor = true;
+            this.LabelHomebrewXboxFilterFwType.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelHomebrewXboxFilterFwType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHomebrewXboxFilterFwType.Location = new System.Drawing.Point(964, 12);
+            this.LabelHomebrewXboxFilterFwType.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
+            this.LabelHomebrewXboxFilterFwType.Name = "LabelHomebrewXboxFilterFwType";
+            this.LabelHomebrewXboxFilterFwType.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.LabelHomebrewXboxFilterFwType.Size = new System.Drawing.Size(60, 17);
+            this.LabelHomebrewXboxFilterFwType.TabIndex = 1156;
+            this.LabelHomebrewXboxFilterFwType.Text = "FW Type";
             // 
             // PanelHomebrewXboxActions
             // 
@@ -14085,17 +14096,17 @@ namespace ArisenStudio.Forms.Windows
             this.PanelTrainersFilters.BackColor = System.Drawing.Color.Transparent;
             this.PanelTrainersFilters.Controls.Add(this.ComboBoxTrainersFilterTitleId);
             this.PanelTrainersFilters.Controls.Add(this.ComboBoxTrainersFilterCount);
-            this.PanelTrainersFilters.Controls.Add(this.labelControl14);
+            this.PanelTrainersFilters.Controls.Add(this.LabelTrainersXboxFilterNumOfTrainers);
             this.PanelTrainersFilters.Controls.Add(this.separatorControl94);
             this.PanelTrainersFilters.Controls.Add(this.separatorControl95);
             this.PanelTrainersFilters.Controls.Add(this.ComboBoxTrainersFilterDashType);
-            this.PanelTrainersFilters.Controls.Add(this.labelControl50);
+            this.PanelTrainersFilters.Controls.Add(this.LabelTrainersXboxFilterType);
             this.PanelTrainersFilters.Controls.Add(this.separatorControl90);
             this.PanelTrainersFilters.Controls.Add(this.separatorControl91);
             this.PanelTrainersFilters.Controls.Add(this.separatorControl92);
             this.PanelTrainersFilters.Controls.Add(this.ComboBoxTrainersFilterGame);
-            this.PanelTrainersFilters.Controls.Add(this.labelControl10);
-            this.PanelTrainersFilters.Controls.Add(this.labelControl13);
+            this.PanelTrainersFilters.Controls.Add(this.LabelTrainersXboxFilterGame);
+            this.PanelTrainersFilters.Controls.Add(this.LabelTrainersXboxFilterTitleId);
             this.PanelTrainersFilters.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelTrainersFilters.Location = new System.Drawing.Point(0, 70);
             this.PanelTrainersFilters.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
@@ -14146,22 +14157,22 @@ namespace ArisenStudio.Forms.Windows
             this.ComboBoxTrainersFilterCount.TabIndex = 1225;
             this.ComboBoxTrainersFilterCount.SelectedIndexChanged += new System.EventHandler(this.ComboBoxTrainersFilterCount_SelectedIndexChanged);
             // 
-            // labelControl14
+            // LabelTrainersXboxFilterNumOfTrainers
             // 
-            this.labelControl14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl14.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl14.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.Appearance.Options.UseForeColor = true;
-            this.labelControl14.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl14.Location = new System.Drawing.Point(1190, 12);
-            this.labelControl14.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl14.Size = new System.Drawing.Size(68, 17);
-            this.labelControl14.TabIndex = 1226;
-            this.labelControl14.Text = "# Trainers";
+            this.LabelTrainersXboxFilterNumOfTrainers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelTrainersXboxFilterNumOfTrainers.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.LabelTrainersXboxFilterNumOfTrainers.Appearance.ForeColor = System.Drawing.Color.White;
+            this.LabelTrainersXboxFilterNumOfTrainers.Appearance.Options.UseFont = true;
+            this.LabelTrainersXboxFilterNumOfTrainers.Appearance.Options.UseForeColor = true;
+            this.LabelTrainersXboxFilterNumOfTrainers.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelTrainersXboxFilterNumOfTrainers.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelTrainersXboxFilterNumOfTrainers.Location = new System.Drawing.Point(1190, 12);
+            this.LabelTrainersXboxFilterNumOfTrainers.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
+            this.LabelTrainersXboxFilterNumOfTrainers.Name = "LabelTrainersXboxFilterNumOfTrainers";
+            this.LabelTrainersXboxFilterNumOfTrainers.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.LabelTrainersXboxFilterNumOfTrainers.Size = new System.Drawing.Size(68, 17);
+            this.LabelTrainersXboxFilterNumOfTrainers.TabIndex = 1226;
+            this.LabelTrainersXboxFilterNumOfTrainers.Text = "# Trainers";
             // 
             // separatorControl94
             // 
@@ -14215,22 +14226,22 @@ namespace ArisenStudio.Forms.Windows
             this.ComboBoxTrainersFilterDashType.TabIndex = 1218;
             this.ComboBoxTrainersFilterDashType.SelectedIndexChanged += new System.EventHandler(this.ComboBoxTrainersFilterDashType_SelectedIndexChanged);
             // 
-            // labelControl50
+            // LabelTrainersXboxFilterType
             // 
-            this.labelControl50.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl50.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl50.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl50.Appearance.Options.UseFont = true;
-            this.labelControl50.Appearance.Options.UseForeColor = true;
-            this.labelControl50.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl50.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl50.Location = new System.Drawing.Point(1044, 12);
-            this.labelControl50.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl50.Name = "labelControl50";
-            this.labelControl50.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl50.Size = new System.Drawing.Size(36, 17);
-            this.labelControl50.TabIndex = 1219;
-            this.labelControl50.Text = "Type";
+            this.LabelTrainersXboxFilterType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelTrainersXboxFilterType.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.LabelTrainersXboxFilterType.Appearance.ForeColor = System.Drawing.Color.White;
+            this.LabelTrainersXboxFilterType.Appearance.Options.UseFont = true;
+            this.LabelTrainersXboxFilterType.Appearance.Options.UseForeColor = true;
+            this.LabelTrainersXboxFilterType.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelTrainersXboxFilterType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelTrainersXboxFilterType.Location = new System.Drawing.Point(1044, 12);
+            this.LabelTrainersXboxFilterType.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
+            this.LabelTrainersXboxFilterType.Name = "LabelTrainersXboxFilterType";
+            this.LabelTrainersXboxFilterType.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.LabelTrainersXboxFilterType.Size = new System.Drawing.Size(36, 17);
+            this.LabelTrainersXboxFilterType.TabIndex = 1219;
+            this.LabelTrainersXboxFilterType.Text = "Type";
             // 
             // separatorControl90
             // 
@@ -14296,37 +14307,37 @@ namespace ArisenStudio.Forms.Windows
             this.ComboBoxTrainersFilterGame.TabIndex = 1170;
             this.ComboBoxTrainersFilterGame.SelectedIndexChanged += new System.EventHandler(this.ComboBoxTrainersFilterGame_SelectedIndexChanged);
             // 
-            // labelControl10
+            // LabelTrainersXboxFilterGame
             // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl10.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Appearance.Options.UseForeColor = true;
-            this.labelControl10.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl10.Location = new System.Drawing.Point(-3, 12);
-            this.labelControl10.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl10.Size = new System.Drawing.Size(41, 17);
-            this.labelControl10.TabIndex = 1171;
-            this.labelControl10.Text = "Game";
+            this.LabelTrainersXboxFilterGame.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.LabelTrainersXboxFilterGame.Appearance.ForeColor = System.Drawing.Color.White;
+            this.LabelTrainersXboxFilterGame.Appearance.Options.UseFont = true;
+            this.LabelTrainersXboxFilterGame.Appearance.Options.UseForeColor = true;
+            this.LabelTrainersXboxFilterGame.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelTrainersXboxFilterGame.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelTrainersXboxFilterGame.Location = new System.Drawing.Point(-3, 12);
+            this.LabelTrainersXboxFilterGame.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
+            this.LabelTrainersXboxFilterGame.Name = "LabelTrainersXboxFilterGame";
+            this.LabelTrainersXboxFilterGame.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.LabelTrainersXboxFilterGame.Size = new System.Drawing.Size(41, 17);
+            this.LabelTrainersXboxFilterGame.TabIndex = 1171;
+            this.LabelTrainersXboxFilterGame.Text = "Game";
             // 
-            // labelControl13
+            // LabelTrainersXboxFilterTitleId
             // 
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl13.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Appearance.Options.UseForeColor = true;
-            this.labelControl13.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl13.Location = new System.Drawing.Point(886, 12);
-            this.labelControl13.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl13.Size = new System.Drawing.Size(52, 17);
-            this.labelControl13.TabIndex = 1157;
-            this.labelControl13.Text = "Title ID";
+            this.LabelTrainersXboxFilterTitleId.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.LabelTrainersXboxFilterTitleId.Appearance.ForeColor = System.Drawing.Color.White;
+            this.LabelTrainersXboxFilterTitleId.Appearance.Options.UseFont = true;
+            this.LabelTrainersXboxFilterTitleId.Appearance.Options.UseForeColor = true;
+            this.LabelTrainersXboxFilterTitleId.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelTrainersXboxFilterTitleId.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelTrainersXboxFilterTitleId.Location = new System.Drawing.Point(886, 12);
+            this.LabelTrainersXboxFilterTitleId.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
+            this.LabelTrainersXboxFilterTitleId.Name = "LabelTrainersXboxFilterTitleId";
+            this.LabelTrainersXboxFilterTitleId.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.LabelTrainersXboxFilterTitleId.Size = new System.Drawing.Size(52, 17);
+            this.LabelTrainersXboxFilterTitleId.TabIndex = 1157;
+            this.LabelTrainersXboxFilterTitleId.Text = "Title ID";
             // 
             // PanelTrainersActions
             // 
@@ -18709,11 +18720,8 @@ namespace ArisenStudio.Forms.Windows
             this.panel8.Controls.Add(this.comboBoxEdit27);
             this.panel8.Controls.Add(this.labelControl99);
             this.panel8.Controls.Add(this.comboBoxEdit28);
-            this.panel8.Controls.Add(this.labelControl100);
             this.panel8.Controls.Add(this.textEdit19);
             this.panel8.Controls.Add(this.comboBoxEdit29);
-            this.panel8.Controls.Add(this.labelControl101);
-            this.panel8.Controls.Add(this.labelControl102);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
@@ -18836,23 +18844,6 @@ namespace ArisenStudio.Forms.Windows
             this.comboBoxEdit28.Size = new System.Drawing.Size(64, 30);
             this.comboBoxEdit28.TabIndex = 1164;
             // 
-            // labelControl100
-            // 
-            this.labelControl100.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl100.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl100.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl100.Appearance.Options.UseFont = true;
-            this.labelControl100.Appearance.Options.UseForeColor = true;
-            this.labelControl100.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl100.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl100.Location = new System.Drawing.Point(1207, 12);
-            this.labelControl100.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl100.Name = "labelControl100";
-            this.labelControl100.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl100.Size = new System.Drawing.Size(53, 17);
-            this.labelControl100.TabIndex = 1165;
-            this.labelControl100.Text = "Version";
-            // 
             // textEdit19
             // 
             this.textEdit19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -18888,39 +18879,6 @@ namespace ArisenStudio.Forms.Windows
             this.comboBoxEdit29.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEdit29.Size = new System.Drawing.Size(84, 30);
             this.comboBoxEdit29.TabIndex = 4;
-            // 
-            // labelControl101
-            // 
-            this.labelControl101.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl101.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl101.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl101.Appearance.Options.UseFont = true;
-            this.labelControl101.Appearance.Options.UseForeColor = true;
-            this.labelControl101.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl101.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl101.Location = new System.Drawing.Point(1093, 12);
-            this.labelControl101.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl101.Name = "labelControl101";
-            this.labelControl101.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl101.Size = new System.Drawing.Size(49, 17);
-            this.labelControl101.TabIndex = 1163;
-            this.labelControl101.Text = "Region";
-            // 
-            // labelControl102
-            // 
-            this.labelControl102.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl102.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl102.Appearance.Options.UseFont = true;
-            this.labelControl102.Appearance.Options.UseForeColor = true;
-            this.labelControl102.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl102.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl102.Location = new System.Drawing.Point(247, 12);
-            this.labelControl102.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl102.Name = "labelControl102";
-            this.labelControl102.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl102.Size = new System.Drawing.Size(42, 17);
-            this.labelControl102.TabIndex = 1157;
-            this.labelControl102.Text = "Name";
             // 
             // panelControl14
             // 
@@ -20744,7 +20702,6 @@ namespace ArisenStudio.Forms.Windows
             this.panel17.Controls.Add(this.comboBoxEdit41);
             this.panel17.Controls.Add(this.labelControl119);
             this.panel17.Controls.Add(this.comboBoxEdit42);
-            this.panel17.Controls.Add(this.labelControl120);
             this.panel17.Controls.Add(this.comboBoxEdit43);
             this.panel17.Controls.Add(this.labelControl121);
             this.panel17.Controls.Add(this.textEdit23);
@@ -20891,23 +20848,6 @@ namespace ArisenStudio.Forms.Windows
             this.comboBoxEdit42.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEdit42.Size = new System.Drawing.Size(102, 30);
             this.comboBoxEdit42.TabIndex = 1168;
-            // 
-            // labelControl120
-            // 
-            this.labelControl120.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl120.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl120.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl120.Appearance.Options.UseFont = true;
-            this.labelControl120.Appearance.Options.UseForeColor = true;
-            this.labelControl120.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl120.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl120.Location = new System.Drawing.Point(1169, 12);
-            this.labelControl120.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl120.Name = "labelControl120";
-            this.labelControl120.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl120.Size = new System.Drawing.Size(44, 17);
-            this.labelControl120.TabIndex = 1169;
-            this.labelControl120.Text = "Status";
             // 
             // comboBoxEdit43
             // 
@@ -23785,21 +23725,6 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGameModsXboxCategory.Size = new System.Drawing.Size(61, 17);
             this.LabelGameModsXboxCategory.TabIndex = 1171;
             // 
-            // BannerAdsDashboard
-            // 
-            this.BannerAdsDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BannerAdsDashboard.ApplicationId = "33krwjd74qn6";
-            this.BannerAdsDashboard.BackColor = System.Drawing.Color.White;
-            this.BannerAdsDashboard.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.BannerAdsDashboard.HeightAd = 134;
-            this.BannerAdsDashboard.Location = new System.Drawing.Point(12, 36);
-            this.BannerAdsDashboard.Name = "BannerAdsDashboard";
-            this.BannerAdsDashboard.Size = new System.Drawing.Size(838, 144);
-            this.BannerAdsDashboard.TabIndex = 16;
-            this.BannerAdsDashboard.WidthAd = 802;
-            // 
             // MainWindow
             // 
             this.Appearance.Options.UseFont = true;
@@ -23915,7 +23840,7 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxDownloadsFilterVersion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxDownloadsFilterModType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxDownloadsFilterPlatform.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SeparatorDownloads7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxDownloadsFilterCategory.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxDownloadsFilterFileName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanelDownloadsActions)).EndInit();
@@ -24982,7 +24907,7 @@ namespace ArisenStudio.Forms.Windows
         private LabelControl LabelDownloadsFilterModType;
         private ComboBoxEdit ComboBoxDownloadsFilterPlatform;
         private LabelControl LabelDownloadsFilterPlatform;
-        private SeparatorControl separatorControl3;
+        private SeparatorControl SeparatorDownloads7;
         private ComboBoxEdit ComboBoxDownloadsFilterCategory;
         private LabelControl LabelDownloadsFilterCategory;
         private TextEdit TextBoxDownloadsFilterFileName;
@@ -25095,9 +25020,9 @@ namespace ArisenStudio.Forms.Windows
         private SeparatorControl SeparatorCheats2;
         private SeparatorControl SeparatorCheats4;
         private ComboBoxEdit ComboBoxGameCheatsFilterGame;
-        private LabelControl labelControl1;
+        private LabelControl LabelGameCheatsFilterGame;
         private ComboBoxEdit ComboBoxGameCheatsFilterRegion;
-        private LabelControl labelControl5;
+        private LabelControl LabelGameCheatsFilterRegion;
         private DevExpress.XtraBars.Navigation.AccordionControlElement NavigationItemGames;
         private DevExpress.XtraBars.Navigation.AccordionControlElement NavigationItemGameCheats;
         private DevExpress.XtraBars.Navigation.NavigationPage PageGamesPS4;
@@ -25240,14 +25165,14 @@ namespace ArisenStudio.Forms.Windows
         private SeparatorControl separatorControl5;
         private SeparatorControl separatorControl6;
         private ComboBoxEdit ComboBoxHomebrewXboxFilterCategory;
-        private LabelControl labelControl2;
+        private LabelControl LabelHomebrewXboxFilterCategory;
         private ComboBoxEdit ComboBoxHomebrewXboxFilterStatus;
-        private LabelControl labelControl4;
+        private LabelControl LabelHomebrewXboxFilterStatus;
         private ComboBoxEdit ComboBoxHomebrewXboxFilterVersion;
-        private LabelControl labelControl6;
+        private LabelControl LabelHomebrewXboxFilterVersion;
         private ComboBoxEdit ComboBoxHomebrewXboxFilterFwType;
-        private LabelControl labelControl7;
-        private LabelControl labelControl8;
+        private LabelControl LabelHomebrewXboxFilterName;
+        private LabelControl LabelHomebrewXboxFilterFwType;
         private PanelControl PanelHomebrewXboxActions;
         private TileControl TileControlHomebrewXbox;
         private TileGroup TileGroupHomebrewActions;
@@ -25515,11 +25440,8 @@ namespace ArisenStudio.Forms.Windows
         private ComboBoxEdit comboBoxEdit27;
         private LabelControl labelControl99;
         private ComboBoxEdit comboBoxEdit28;
-        private LabelControl labelControl100;
         private TextEdit textEdit19;
         private ComboBoxEdit comboBoxEdit29;
-        private LabelControl labelControl101;
-        private LabelControl labelControl102;
         private PanelControl panelControl14;
         private TileControl tileControl7;
         private TileGroup tileGroup7;
@@ -25628,7 +25550,6 @@ namespace ArisenStudio.Forms.Windows
         private ComboBoxEdit comboBoxEdit41;
         private LabelControl labelControl119;
         private ComboBoxEdit comboBoxEdit42;
-        private LabelControl labelControl120;
         private ComboBoxEdit comboBoxEdit43;
         private LabelControl labelControl121;
         private TextEdit textEdit23;
@@ -25839,25 +25760,25 @@ namespace ArisenStudio.Forms.Windows
         private SeparatorControl separatorControl91;
         private SeparatorControl separatorControl92;
         private ComboBoxEdit ComboBoxTrainersFilterGame;
-        private LabelControl labelControl10;
-        private LabelControl labelControl13;
+        private LabelControl LabelTrainersXboxFilterGame;
+        private LabelControl LabelTrainersXboxFilterTitleId;
         private PanelControl PanelTrainersActions;
         private TileControl TileControlTrainers;
         private TileGroup TileGroupTrainers;
         private TileItem TileItemTrainerSortOptions;
         private TileItem TileItemTrainerShowDetails;
         private ComboBoxEdit ComboBoxGameCheatsFilterNumberCheats;
-        private LabelControl labelControl9;
+        private LabelControl LabelGameCheatsFilterNumOfCheats;
         private SeparatorControl separatorControl93;
         private SeparatorControl SeparatorCheats3;
         private ComboBoxEdit ComboBoxGameCheatsFilterVersion;
-        private LabelControl labelControl3;
+        private LabelControl LabelGameCheatsFilterVersion;
         private ComboBoxEdit ComboBoxTrainersFilterCount;
-        private LabelControl labelControl14;
+        private LabelControl LabelTrainersXboxFilterNumOfTrainers;
         private SeparatorControl separatorControl94;
         private SeparatorControl separatorControl95;
         private ComboBoxEdit ComboBoxTrainersFilterDashType;
-        private LabelControl labelControl50;
+        private LabelControl LabelTrainersXboxFilterType;
         private ComboBoxEdit ComboBoxTrainersFilterTitleId;
         private LabelControl LabelSettingsForceInstallAnyRegions;
         private ToggleSwitch ToggleSettingsForceInstallAnyRegions;

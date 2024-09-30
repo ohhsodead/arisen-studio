@@ -22,17 +22,5 @@ namespace ArisenStudio.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool DeleteOldSettingsAfterUpdate {
-            get {
-                return ((bool)(this["DeleteOldSettingsAfterUpdate"]));
-            }
-            set {
-                this["DeleteOldSettingsAfterUpdate"] = value;
-            }
-        }
     }
 }

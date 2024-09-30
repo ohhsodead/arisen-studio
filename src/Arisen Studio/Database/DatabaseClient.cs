@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using static DevExpress.XtraCharts.GLGraphics.GL;
 
 namespace ArisenStudio.Database
 {
@@ -569,6 +570,13 @@ namespace ArisenStudio.Database
             count += ThemesPS3.Packages.Count;
 
             return count;
+        }
+
+        public int TrainersCount()
+        {
+            return (from game in TrainersX360.Library
+                    from trainer in game.Trainers
+                    select game).Count();
         }
 
         public ModItemData GetModItem(Platform platform, CategoryType categoryType, int modId)

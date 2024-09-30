@@ -44,25 +44,21 @@ namespace ArisenStudio.Forms.Dialogs
             this.CheckBoxDefaultProfile = new DevExpress.XtraEditors.CheckEdit();
             this.CheckBoxGoldHEN = new DevExpress.XtraEditors.CheckEdit();
             this.LabelLoginDetails = new DevExpress.XtraEditors.LabelControl();
-            this.CheckBoxPassiveMode = new DevExpress.XtraEditors.CheckEdit();
             this.LabelOptions = new DevExpress.XtraEditors.LabelControl();
             this.GroupBoxProfileInfo = new DevExpress.XtraEditors.GroupControl();
             this.GroupBoxAdvancedSettings = new DevExpress.XtraEditors.GroupControl();
             this.ImageInfoDefaultCredentials = new DevExpress.XtraEditors.SvgImageBox();
-            this.ImageInfoPassive = new DevExpress.XtraEditors.SvgImageBox();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxPlatform.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBoxProfileName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxDefaultLogin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxDefaultProfile.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxGoldHEN.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxPassiveMode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupBoxProfileInfo)).BeginInit();
             this.GroupBoxProfileInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GroupBoxAdvancedSettings)).BeginInit();
             this.GroupBoxAdvancedSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImageInfoDefaultCredentials)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ImageInfoPassive)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelName
@@ -90,7 +86,7 @@ namespace ArisenStudio.Forms.Dialogs
             // ButtonSave
             // 
             this.ButtonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonSave.Location = new System.Drawing.Point(305, 346);
+            this.ButtonSave.Location = new System.Drawing.Point(306, 312);
             this.ButtonSave.Name = "ButtonSave";
             this.ButtonSave.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonSave.Size = new System.Drawing.Size(80, 24);
@@ -102,7 +98,7 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             this.ButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ButtonCancel.Location = new System.Drawing.Point(219, 346);
+            this.ButtonCancel.Location = new System.Drawing.Point(220, 312);
             this.ButtonCancel.Name = "ButtonCancel";
             this.ButtonCancel.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonCancel.Size = new System.Drawing.Size(80, 24);
@@ -112,7 +108,7 @@ namespace ArisenStudio.Forms.Dialogs
             // ButtonEditLoginDetails
             // 
             this.ButtonEditLoginDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonEditLoginDetails.Location = new System.Drawing.Point(284, 31);
+            this.ButtonEditLoginDetails.Location = new System.Drawing.Point(285, 31);
             this.ButtonEditLoginDetails.Name = "ButtonEditLoginDetails";
             this.ButtonEditLoginDetails.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonEditLoginDetails.Size = new System.Drawing.Size(80, 24);
@@ -162,7 +158,7 @@ namespace ArisenStudio.Forms.Dialogs
             "Xbox 360 E (Slim E)"});
             this.ComboBoxPlatform.Properties.NullValuePrompt = "Select Platform";
             this.ComboBoxPlatform.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ComboBoxPlatform.Size = new System.Drawing.Size(240, 24);
+            this.ComboBoxPlatform.Size = new System.Drawing.Size(241, 24);
             this.ComboBoxPlatform.TabIndex = 1;
             this.ComboBoxPlatform.ToolTip = "Choose the type of Platform that you have.";
             this.ComboBoxPlatform.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Cursor;
@@ -179,7 +175,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.TextBoxAddress.Properties.Appearance.Options.UseFont = true;
             this.TextBoxAddress.Properties.Appearance.Options.UseForeColor = true;
             this.TextBoxAddress.Properties.NullValuePrompt = "192.68.0.12";
-            this.TextBoxAddress.Size = new System.Drawing.Size(240, 24);
+            this.TextBoxAddress.Size = new System.Drawing.Size(241, 24);
             this.TextBoxAddress.TabIndex = 2;
             this.TextBoxAddress.ToolTip = "Enter IP Address in format: xxx.xxx.xxx.xxx";
             this.TextBoxAddress.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Cursor;
@@ -193,7 +189,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.TextBoxProfileName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxProfileName.Properties.Appearance.Options.UseFont = true;
             this.TextBoxProfileName.Properties.NullValuePrompt = "Choose your profile name";
-            this.TextBoxProfileName.Size = new System.Drawing.Size(240, 24);
+            this.TextBoxProfileName.Size = new System.Drawing.Size(241, 24);
             this.TextBoxProfileName.TabIndex = 0;
             this.TextBoxProfileName.ToolTip = "Enter a unique name for your profile.";
             this.TextBoxProfileName.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Cursor;
@@ -227,7 +223,7 @@ namespace ArisenStudio.Forms.Dialogs
             // CheckBoxGoldHEN
             // 
             this.CheckBoxGoldHEN.Enabled = false;
-            this.CheckBoxGoldHEN.Location = new System.Drawing.Point(124, 139);
+            this.CheckBoxGoldHEN.Location = new System.Drawing.Point(124, 105);
             this.CheckBoxGoldHEN.Name = "CheckBoxGoldHEN";
             this.CheckBoxGoldHEN.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.CheckBoxGoldHEN.Properties.Appearance.Options.UseFont = true;
@@ -247,18 +243,6 @@ namespace ArisenStudio.Forms.Dialogs
             this.LabelLoginDetails.Size = new System.Drawing.Size(71, 15);
             this.LabelLoginDetails.TabIndex = 1147;
             this.LabelLoginDetails.Text = "Login Details:";
-            // 
-            // CheckBoxPassiveMode
-            // 
-            this.CheckBoxPassiveMode.Location = new System.Drawing.Point(124, 105);
-            this.CheckBoxPassiveMode.Name = "CheckBoxPassiveMode";
-            this.CheckBoxPassiveMode.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.CheckBoxPassiveMode.Properties.Appearance.Options.UseFont = true;
-            this.CheckBoxPassiveMode.Properties.AutoWidth = true;
-            this.CheckBoxPassiveMode.Properties.Caption = "Passive Mode";
-            this.CheckBoxPassiveMode.Size = new System.Drawing.Size(96, 20);
-            this.CheckBoxPassiveMode.TabIndex = 6;
-            this.CheckBoxPassiveMode.CheckStateChanged += new System.EventHandler(this.CheckBoxPassiveMode_CheckStateChanged);
             // 
             // LabelOptions
             // 
@@ -284,27 +268,26 @@ namespace ArisenStudio.Forms.Dialogs
             this.GroupBoxProfileInfo.Location = new System.Drawing.Point(12, 12);
             this.GroupBoxProfileInfo.Margin = new System.Windows.Forms.Padding(3, 3, 3, 6);
             this.GroupBoxProfileInfo.Name = "GroupBoxProfileInfo";
-            this.GroupBoxProfileInfo.Size = new System.Drawing.Size(373, 138);
+            this.GroupBoxProfileInfo.Size = new System.Drawing.Size(374, 138);
             this.GroupBoxProfileInfo.TabIndex = 1155;
             this.GroupBoxProfileInfo.Text = "Profile Information";
             // 
             // GroupBoxAdvancedSettings
             // 
-            this.GroupBoxAdvancedSettings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.GroupBoxAdvancedSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GroupBoxAdvancedSettings.Controls.Add(this.ImageInfoDefaultCredentials);
-            this.GroupBoxAdvancedSettings.Controls.Add(this.ImageInfoPassive);
             this.GroupBoxAdvancedSettings.Controls.Add(this.LabelLoginDetails);
             this.GroupBoxAdvancedSettings.Controls.Add(this.LabelOptions);
             this.GroupBoxAdvancedSettings.Controls.Add(this.CheckBoxDefaultLogin);
-            this.GroupBoxAdvancedSettings.Controls.Add(this.CheckBoxPassiveMode);
             this.GroupBoxAdvancedSettings.Controls.Add(this.ButtonEditLoginDetails);
             this.GroupBoxAdvancedSettings.Controls.Add(this.CheckBoxDefaultProfile);
             this.GroupBoxAdvancedSettings.Controls.Add(this.CheckBoxGoldHEN);
             this.GroupBoxAdvancedSettings.Location = new System.Drawing.Point(12, 161);
             this.GroupBoxAdvancedSettings.Margin = new System.Windows.Forms.Padding(3, 5, 3, 6);
             this.GroupBoxAdvancedSettings.Name = "GroupBoxAdvancedSettings";
-            this.GroupBoxAdvancedSettings.Size = new System.Drawing.Size(373, 172);
+            this.GroupBoxAdvancedSettings.Size = new System.Drawing.Size(374, 138);
             this.GroupBoxAdvancedSettings.TabIndex = 1156;
             this.GroupBoxAdvancedSettings.Text = "Advanced Settings";
             // 
@@ -329,26 +312,6 @@ namespace ArisenStudio.Forms.Dialogs
             this.ImageInfoDefaultCredentials.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.ImageInfoDefaultCredentials.ToolTipTitle = "Default Credentials";
             // 
-            // ImageInfoPassive
-            // 
-            this.ImageInfoPassive.ContextButtonOptions.AllowGlyphSkinning = true;
-            this.ImageInfoPassive.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ImageInfoPassive.ItemAppearance.Disabled.FillColor = System.Drawing.Color.DimGray;
-            this.ImageInfoPassive.ItemAppearance.Normal.FillColor = System.Drawing.Color.White;
-            this.ImageInfoPassive.Location = new System.Drawing.Point(221, 106);
-            this.ImageInfoPassive.Name = "ImageInfoPassive";
-            this.ImageInfoPassive.ShowToolTips = DevExpress.Utils.DefaultBoolean.True;
-            this.ImageInfoPassive.Size = new System.Drawing.Size(17, 17);
-            this.ImageInfoPassive.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
-            this.ImageInfoPassive.SvgImage = global::ArisenStudio.Properties.Resources.icons8_info;
-            this.ImageInfoPassive.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            this.ImageInfoPassive.TabIndex = 1155;
-            this.ImageInfoPassive.ToolTip = "Connects without actively controlling the console. Ideal for monitoring purposes." +
-    "";
-            this.ImageInfoPassive.ToolTipAnchor = DevExpress.Utils.ToolTipAnchor.Cursor;
-            this.ImageInfoPassive.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
-            this.ImageInfoPassive.ToolTipTitle = "Passive Mode";
-            // 
             // NewProfileDialog
             // 
             this.AcceptButton = this.ButtonSave;
@@ -356,7 +319,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(397, 382);
+            this.ClientSize = new System.Drawing.Size(398, 348);
             this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.ButtonSave);
             this.Controls.Add(this.GroupBoxProfileInfo);
@@ -384,7 +347,6 @@ namespace ArisenStudio.Forms.Dialogs
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxDefaultLogin.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxDefaultProfile.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBoxGoldHEN.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CheckBoxPassiveMode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupBoxProfileInfo)).EndInit();
             this.GroupBoxProfileInfo.ResumeLayout(false);
             this.GroupBoxProfileInfo.PerformLayout();
@@ -392,7 +354,6 @@ namespace ArisenStudio.Forms.Dialogs
             this.GroupBoxAdvancedSettings.ResumeLayout(false);
             this.GroupBoxAdvancedSettings.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImageInfoDefaultCredentials)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ImageInfoPassive)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -411,11 +372,9 @@ namespace ArisenStudio.Forms.Dialogs
         private CheckEdit CheckBoxDefaultProfile;
         private CheckEdit CheckBoxGoldHEN;
         private LabelControl LabelLoginDetails;
-        private CheckEdit CheckBoxPassiveMode;
         private LabelControl LabelOptions;
         private GroupControl GroupBoxProfileInfo;
         private GroupControl GroupBoxAdvancedSettings;
-        private SvgImageBox ImageInfoPassive;
         private SvgImageBox ImageInfoDefaultCredentials;
     }
 }

@@ -473,7 +473,7 @@ namespace ArisenStudio.Forms.Windows
 
             EnableConsoleActions();
 
-            //// Banner Ad
+            // Banner Ad
 
             //WebViewAdBanner.CoreWebView2InitializationCompleted += WebViewAdBanner_CoreWebView2InitializationCompleted;
 
@@ -1115,6 +1115,25 @@ namespace ArisenStudio.Forms.Windows
                 switch (ConsoleProfile.Platform)
                 {
                     case Platform.PS3:
+                        //FtpClient = new FtpClient
+                        //{
+                        //    Host = ConsoleProfile.Address,
+                        //    Port = 21,
+                        //    Credentials = ConsoleProfile.UseDefaultLogin
+                        //    ? new NetworkCredential("anonymous", "anonymous")
+                        //    : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password),
+                        //    Config = new()
+                        //    {
+                        //        SocketKeepAlive = true,
+                        //        DataConnectionType = ConsoleProfile.PassiveMode ? FtpDataConnectionType.PASV : FtpDataConnectionType.AutoActive,
+                        //        ReadTimeout = 90000,
+                        //        ConnectTimeout = 90000,
+                        //        DataConnectionConnectTimeout = 90000,
+                        //        DataConnectionReadTimeout = 90000
+                        //    },
+                        //    //Config = new() { SocketKeepAlive = true, DataConnectionType = FtpDataConnectionType.AutoActive, ReadTimeout = 90000, ConnectTimeout = 90000, DataConnectionConnectTimeout = 90000, DataConnectionReadTimeout = 90000 },
+                        //};
+
                         FtpClient = new FtpClient
                         {
                             Host = ConsoleProfile.Address,
@@ -1125,20 +1144,38 @@ namespace ArisenStudio.Forms.Windows
                             Config = new()
                             {
                                 SocketKeepAlive = true,
-                                DataConnectionType = ConsoleProfile.PassiveMode ? FtpDataConnectionType.PASV : FtpDataConnectionType.AutoActive,
+                                DataConnectionType = FtpDataConnectionType.PASV,
                                 ReadTimeout = 90000,
                                 ConnectTimeout = 90000,
                                 DataConnectionConnectTimeout = 90000,
                                 DataConnectionReadTimeout = 90000
                             },
-                            //Config = new() { SocketKeepAlive = true, DataConnectionType = FtpDataConnectionType.AutoActive, ReadTimeout = 90000, ConnectTimeout = 90000, DataConnectionConnectTimeout = 90000, DataConnectionReadTimeout = 90000 },
                         };
+
+                        //FtpClient = new FtpClient
+                        //{
+                        //    Host = ConsoleProfile.Address,
+                        //    Port = 21,
+                        //    Credentials = ConsoleProfile.UseDefaultLogin
+                        //    ? new NetworkCredential("anonymous", "anonymous")
+                        //    : new NetworkCredential(ConsoleProfile.Username, ConsoleProfile.Password),
+                        //    Config = new()
+                        //    {
+                        //        SocketKeepAlive = true,
+                        //        DataConnectionType = FtpDataConnectionType.PASV,
+                        //        ReadTimeout = 90000,
+                        //        ConnectTimeout = 90000,
+                        //        DataConnectionConnectTimeout = 90000,
+                        //        DataConnectionReadTimeout = 90000
+                        //    },
+                        //    //Config = new() { SocketKeepAlive = true, DataConnectionType = FtpDataConnectionType.AutoActive, ReadTimeout = 90000, ConnectTimeout = 90000, DataConnectionConnectTimeout = 90000, DataConnectionReadTimeout = 90000 },
+                        //};
 
                         FtpClient.Connect();
 
                         IsWebManInstalled = WebManExtensions.IsWebManInstalled(ConsoleProfile.Address);
 
-                        NotifyIfWebManInstalled(platform, IsWebManInstalled);
+                        NotifyIfWebManInstalled(IsWebManInstalled);
 
                         SetPlatform(ConsoleProfile.Platform);
 
@@ -1233,16 +1270,11 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        private void NotifyIfWebManInstalled(string platform, bool isWebManInstalled)
+        private void NotifyIfWebManInstalled(bool isWebManInstalled)
         {
             if (isWebManInstalled)
             {
-                switch (platform)
-                {
-                    case "PS3":
-                        WebManExtensions.NotifyPopup(ConsoleProfile.Address, ResourceLanguage.GetString("CONNECTED_NOTIFICATION"));
-                        break;
-                }
+                WebManExtensions.NotifyPopup(ConsoleProfile.Address, ResourceLanguage.GetString("CONNECTED_NOTIFICATION"));
             }
         }
 
@@ -1884,6 +1916,8 @@ namespace ArisenStudio.Forms.Windows
             LabelStatsXbox360.Text =
                 $"{Database.GameModsX360.Library.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Game).Count:N0} {ResourceLanguage.GetString("LABEL_GAME_MODS")}\n" +
                 $"{Database.HomebrewX360.Library.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Homebrew).Count:N0} {ResourceLanguage.GetString("LABEL_HOMEBREW")}\n" +
+                $"{Database.HomebrewX360.Library.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Homebrew).Count:N0} {ResourceLanguage.GetString("LABEL_HOMEBREW")}\n" +
+                $"{Database.TrainersCount():N0} {"Trainers"}\n" +
                 $"{Database.GameSaves.GameSaves.Where(x => x.GetPlatform() == Platform.XBOX360).ToList().Count:N0} {ResourceLanguage.GetString("LABEL_GAME_SAVES")}";
             //$"{Database.GamePatchesXbox.GetTotalCheats():N0} {ResourceLanguage.GetString("LABEL_GAME_CHEATS")}";
 
@@ -4659,6 +4693,7 @@ namespace ArisenStudio.Forms.Windows
             { "English", "ArisenStudio.Languages.en_US" },
             { "Español", "ArisenStudio.Languages.es_ES" },
             { "Português (Brasil)", "ArisenStudio.Languages.pt_BR" },
+            { "Română", "ArisenStudio.Languages.ro_RO" },
             { "Svenska", "ArisenStudio.Languages.sv_SE" },
             { "Türkçe", "ArisenStudio.Languages.tr_TR" },
             //{ "Português", "ArisenStudio.Languages.pt_PT" },
@@ -4831,11 +4866,6 @@ namespace ArisenStudio.Forms.Windows
                 NoAnnouncements.LoadText();
 
                 // Downloads
-                TileItemDownloadsOpenFolder.Text = ResourceLanguage.GetString("OPEN_FOLDER");
-                TileItemDownloadsOpenFile.Text = ResourceLanguage.GetString("OPEN_FILE");
-                TileItemDownloadsDeleteItem.Text = ResourceLanguage.GetString("DELETE_ITEM");
-                TileItemDownloadsViewDetails.Text = ResourceLanguage.GetString("VIEW_DETAILS");
-
                 LabelDownloadsFilterPlatform.Text = ResourceLanguage.GetString("LABEL_PLATFORM");
                 LabelDownloadsFilterCategory.Text = ResourceLanguage.GetString("LABEL_CATEGORY");
                 LabelDownloadsFilterName.Text = ResourceLanguage.GetString("LABEL_NAME");
@@ -4845,10 +4875,6 @@ namespace ArisenStudio.Forms.Windows
                 LabelDownloadsFilterDownloadedOn.Text = ResourceLanguage.GetString("LABEL_DOWNLOADED_ON");
 
                 // Installed Mods
-                TileItemInstalledModsDeleteItem.Text = ResourceLanguage.GetString("DELETE_ITEM");
-                TileItemInstalledModsUninstallItem.Text = ResourceLanguage.GetString("UNINSTALL_ITEM");
-                TileItemInstalledModsViewDetails.Text = ResourceLanguage.GetString("VIEW_DETAILS");
-
                 LabelInstalledModsFilterPlatform.Text = ResourceLanguage.GetString("LABEL_PLATFORM");
                 LabelInstalledModsFilterCategory.Text = ResourceLanguage.GetString("LABEL_CATEGORY");
                 LabelInstalledModsFilterName.Text = ResourceLanguage.GetString("LABEL_NAME");
@@ -4924,9 +4950,6 @@ namespace ArisenStudio.Forms.Windows
                 LabelSettingsShowCurrentGamePlaying.Text = ResourceLanguage.GetString("SHOW_CURRENT_GAME_PLAYING");
 
                 // Game Mods
-                TileItemGameModsPS3ShowFavorites.Text = ResourceLanguage.GetString("LABEL_SHOW_FAVORITES");
-                TileItemGameModsPS3Sort.Text = ResourceLanguage.GetString("LABEL_SORT_OPTIONS");
-
                 LabelGameModsPS3FilterCategory.Text = ResourceLanguage.GetString("LABEL_CATEGORY");
                 LabelGameModsPS3FilterName.Text = ResourceLanguage.GetString("LABEL_NAME");
                 LabelGameModsPS3FilterSystemType.Text = ResourceLanguage.GetString("LABEL_SYSTEM_TYPE");
@@ -4942,9 +4965,6 @@ namespace ArisenStudio.Forms.Windows
                 _ = ComboBoxGameModsPS3FilterStatus.Properties.Items.Add(ResourceLanguage.GetString("LABEL_DOWNLOADED"));
 
                 // Homebrew
-                TileItemHomebrewShowFavorites.Text = ResourceLanguage.GetString("LABEL_SHOW_FAVORITES");
-                TileItemHomebrewSortOptions.Text = ResourceLanguage.GetString("LABEL_SORT_OPTIONS");
-
                 LabelHomebrewFilterCategory.Text = ResourceLanguage.GetString("LABEL_CATEGORY");
                 LabelHomebrewFilterName.Text = ResourceLanguage.GetString("LABEL_NAME");
                 LabelHomebrewFilterSystemType.Text = ResourceLanguage.GetString("LABEL_SYSTEM_TYPE");
@@ -4958,9 +4978,6 @@ namespace ArisenStudio.Forms.Windows
                 _ = ComboBoxHomebrewFilterStatus.Properties.Items.Add(ResourceLanguage.GetString("LABEL_DOWNLOADED"));
 
                 // Resources
-                TileItemResourcesShowFavorites.Text = ResourceLanguage.GetString("LABEL_SHOW_FAVORITES");
-                TileItemResourcesSortOptions.Text = ResourceLanguage.GetString("LABEL_SORT_OPTIONS");
-
                 LabelResourcesFilterCategory.Text = ResourceLanguage.GetString("LABEL_CATEGORY");
                 LabelResourcesFilterName.Text = ResourceLanguage.GetString("LABEL_NAME");
                 LabelResourcesFilterSystemType.Text = ResourceLanguage.GetString("LABEL_SYSTEM_TYPE");
@@ -4975,8 +4992,6 @@ namespace ArisenStudio.Forms.Windows
                 _ = ComboBoxResourcesFilterStatus.Properties.Items.Add(ResourceLanguage.GetString("LABEL_DOWNLOADED"));
 
                 // Packages
-                TileItemPackagesSortOptions.Text = ResourceLanguage.GetString("LABEL_SORT_OPTIONS");
-
                 LabelPackagesFilterCategory.Text = ResourceLanguage.GetString("LABEL_CATEGORY");
                 LabelPackagesFilterName.Text = ResourceLanguage.GetString("LABEL_NAME");
                 LabelPackagesFilterRegion.Text = ResourceLanguage.GetString("LABEL_REGION");
@@ -4991,9 +5006,6 @@ namespace ArisenStudio.Forms.Windows
                 _ = ComboBoxPackagesFilterStatus.Properties.Items.Add(ResourceLanguage.GetString("LABEL_DOWNLOADED"));
 
                 // Homebrew (Xbox 360)
-                TileItemGameModsXboxShowFavorites.Text = ResourceLanguage.GetString("LABEL_SHOW_FAVORITES");
-                TileItemGameModsXboxSortOptions.Text = ResourceLanguage.GetString("LABEL_SORT_OPTIONS");
-
                 LabelGameModsXboxFilterGame.Text = ResourceLanguage.GetString("LABEL_CATEGORY");
                 LabelGameModsXboxFilterName.Text = ResourceLanguage.GetString("LABEL_NAME");
                 LabelGameModsXboxFilterVersion.Text = ResourceLanguage.GetString("LABEL_VERSION");
@@ -5006,9 +5018,6 @@ namespace ArisenStudio.Forms.Windows
                 _ = ComboBoxGameModsXboxFilterStatus.Properties.Items.Add(ResourceLanguage.GetString("LABEL_DOWNLOADED"));
 
                 // Homebrew (PS4)
-                TileItemHomebrewPS4ShowFavorites.Text = ResourceLanguage.GetString("LABEL_SHOW_FAVORITES");
-                TileItemHomebrewPS4SortOptions.Text = ResourceLanguage.GetString("LABEL_SORT_OPTIONS");
-
                 LabelHomebrewPS4FilterCategory.Text = ResourceLanguage.GetString("LABEL_CATEGORY");
                 LabelHomebrewPS4FilterName.Text = ResourceLanguage.GetString("LABEL_NAME");
                 LabelHomebrewPS4FilterFwVersion.Text = ResourceLanguage.GetString("LABEL_FW_VERSION");
@@ -5022,8 +5031,6 @@ namespace ArisenStudio.Forms.Windows
                 _ = ComboBoxHomebrewPS4FilterStatus.Properties.Items.Add(ResourceLanguage.GetString("LABEL_DOWNLOADED"));
 
                 // Game Saves
-                TileItemGameSavesSortOptions.Text = ResourceLanguage.GetString("LABEL_SORT_OPTIONS");
-
                 LabelGameSavesFilterGame.Text = ResourceLanguage.GetString("LABEL_GAME");
                 LabelGameSavesFilterName.Text = ResourceLanguage.GetString("LABEL_NAME");
                 LabelGameSavesFilterRegion.Text = ResourceLanguage.GetString("LABEL_REGION");
@@ -5036,8 +5043,8 @@ namespace ArisenStudio.Forms.Windows
             }
             catch (Exception ex)
             {
-                SetStatus("Unable to change the language. Error: " + ex.Message, ex);
-                _ = XtraMessageBox.Show(this, "There was an issue changing the language. Error: " + ex.Message);
+                SetStatus("Unable to change application language. Error: " + ex.Message, ex);
+                _ = XtraMessageBox.Show(this, "There was an issue changing application language. Error: " + ex.Message);
             }
         }
 
@@ -10194,10 +10201,11 @@ namespace ArisenStudio.Forms.Windows
             NavigationItemCustomMods.Visible = false;
             NavigationItemGameMods.Visible = Platform == Platform.PS3 | Platform == Platform.PS4 | Platform == Platform.XBOX360;
             NavigationItemHomebrew.Visible = Platform == Platform.PS3 | Platform == Platform.PS4 | Platform == Platform.XBOX360;
+            NavigationItemTrainers.Visible = Platform == Platform.XBOX360;
             NavigationItemResources.Visible = Platform == Platform.PS3;
             NavigationItemPackages.Visible = Platform == Platform.PS3;
             NavigationItemGames.Visible = Platform == Platform.PS4;
-            //NavigationItemGameCheats.Visible = false;
+            NavigationItemGameCheats.Visible = Platform == Platform.PS3;
 
             ButtonScanXboxConsoles.Visibility =
                 Platform == Platform.XBOX360
@@ -10418,17 +10426,6 @@ namespace ArisenStudio.Forms.Windows
 
             try
             {
-#if !DEBUG
-                if (Properties.Settings.Default.DeleteOldSettingsAfterUpdate && File.Exists(UserFolders.SettingsData))
-                {
-                    File.Delete(UserFolders.SettingsData);
-                    Properties.Settings.Default.DeleteOldSettingsAfterUpdate = false;
-                    Properties.Settings.Default.Save();
-
-                    Program.Log.Info("Deleted existing settings due to new update.");
-                }
-#endif
-
                 if (!Directory.Exists(UserFolders.AppData))
                 {
                     Directory.CreateDirectory(UserFolders.AppData);
