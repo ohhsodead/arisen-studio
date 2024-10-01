@@ -96,6 +96,7 @@ If you find this project helpful and would like to support its development, plea
 <a href="https://paypal.me/ohhsodead" target="_blank"><img title="PayPal" src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white&color=blue" alt="PayPal" /></a>
 
 ## Bug Reports
+
 Arisen Studio isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/arisen-studio/issues/new?&labels=bug&template=bug.yml&title=%5BBug+Report%5D%3A+). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
 
 ## Contributing
@@ -106,7 +107,7 @@ You're also welcome to submit any pull requests with fixes and suggestions, like
 
 Arisen Studio previously used a self-curated repository for its database, but we have since migrated to a more secure server to enhance performance. The old repository is no longer in use and can be considered obsolete.
 
-If you want to contribute or request mods to the database, you can submit a request via [this form](https://arisen.studio/submit) on our website or [open an issue](https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&labels=mod+request&projects=&template=mod-request.yml&title=%5BMod+Request%5D%3A+).
+If you want to contribute or request mods to the database, you can submit a request via [this form](https://arisen.studio/submit) on our website or [open an issue](https://github.com/ohhsodead/arisen-studio-database/issues/new?assignees=&labels=mod+request&projects=&template=mod_request.yml&title=%5BRequest%5D%3A+).
 
 ### Translations
 For the localization process we use the collaborative platform from [Crowdin](https://crowdin.com/), thanks to their generosity for providing a professional service to Open Source projects free of charge. Please read the [introduction for new translators](https://support.crowdin.com/crowdin-intro/) and [guide for using the online editor](https://support.crowdin.com/online-editor/) to understand how it works.
@@ -115,7 +116,7 @@ If you are already familiar with the Crowdin platform and want to contribute you
 
 ## Requesting Mods
 
-I know that not all mods aren't on our database, but if you [open an issue](https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&labels=mod+request&projects=&template=mod-request.yml&title=%5BMod+Request%5D%3A+) with the details then we can get them added for you!
+I know that not all mods aren't on our database, but if you [submit this form](https://arisen.studio/submit) with the details then we can get them added for you!
 
 ## Credits & Libraries
 
