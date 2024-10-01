@@ -13,8 +13,8 @@
   <br>
   <a href="https://arisen.studio/"><img src="https://img.shields.io/website?down_message=offline&up_message=online&url=https://arisen.studio/" /></a>
   <a href="https://db.arisen.studio"><img src="https://img.shields.io/website?down_message=offline&label=database&up_message=online&url=https://db.arisen.studio" /></a>
-  <a href="https://github.com/ohhsodead/arisen-studio-database"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/badges/mods-badge.json&label=total%20mods" /></a>
-  <a href="https://github.com/ohhsodead/arisen-studio-database"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/badges/pkgs-badge.json&label=total%20packages" /></a>
+  <a href="https://github.com/ohhsodead/arisen-studio"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/badges/mods-badge.json&label=total%20mods" /></a>
+  <a href="https://github.com/ohhsodead/arisen-studio"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/badges/pkgs-badge.json&label=total%20packages" /></a>
   </a>
   </br>
   <a href="https://sourceforge.net/projects/arisenstudio/"><img src="https://img.shields.io/badge/SourceForge-ff6600?logo=sourceforge&logoColor=white" /></a>
@@ -104,7 +104,9 @@ You're also welcome to submit any pull requests with fixes and suggestions, like
 
 ### Database
 
-Arisen Studio uses a self-curated repository as its database, which can be found [here](https://github.com/ohhsodead/arisen-studio-database). This repository contains all the necessary data for the project. When contributing, ensure that any database-related changes or additions are made to this repository.
+Arisen Studio previously used a self-curated repository for its database, but we have since migrated to a more secure server to enhance performance. The old repository is no longer in use and can be considered obsolete.
+
+If you want to contribute or request mods to the database, you can submit a request via [this form](https://arisen.studio/submit) on our website or [open an issue](https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&labels=mod+request&projects=&template=mod-request.yml&title=%5BMod+Request%5D%3A+).
 
 ### Translations
 For the localization process we use the collaborative platform from [Crowdin](https://crowdin.com/), thanks to their generosity for providing a professional service to Open Source projects free of charge. Please read the [introduction for new translators](https://support.crowdin.com/crowdin-intro/) and [guide for using the online editor](https://support.crowdin.com/online-editor/) to understand how it works.
@@ -147,6 +149,7 @@ I know that not all mods aren't on our database, but if you [open an issue](http
 * [crystall1nedev](https://github.com/crystall1nedev)
 * [EgoMaw](https://github.com/EgoMaw)
 * [goldug](http://djopposite.se/)
+* [Hyper](https://x.com/HyperColt14)
 * [NCKwolf](https://twitter.com/NCKwolf)
 * [oSerenity](https://github.com/oSerenity)
 * [TheHiddenHour](https://github.com/TheHiddenHour) 
