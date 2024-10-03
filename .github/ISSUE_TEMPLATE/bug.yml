@@ -1,5 +1,5 @@
-name: Bug Report
-description: Problems and issues with code of Arisen Studio
+name: 🐞 Bug Report
+description: Create a bug report to help us improve Arisen Studio
 title: "[Bug]: "
 labels: ["bug"]
 body:
@@ -47,6 +47,13 @@ body:
   validations:
     required: true
     render: markdown
+- type: input
+  attributes:
+    label: Arisen Studio Version
+    description: Go to "Home" => "About" button.
+    placeholder: "Example: 0.1.11.0"
+  validations:
+    required: true
 - type: textarea
   attributes:
     label: Logs
