@@ -49,6 +49,7 @@ Please give this project a ⭐ if you find it useful.
 * Filter by console type, mod type and region
 * Download the mods to your computer
 * Install and uninstall mods directly to your console
+* Access over 1k game cheats (RTE) and add your own
 * Manage your downloads and installed mods
 * File manager with local and console listings
 * Discord rich presence to show game playing
@@ -57,6 +58,7 @@ Please give this project a ⭐ if you find it useful.
 * Automatically detect and remember game regions
 * Backup and restore original game files
 * Download and install official game updates
+* Download and install official PSN store pkgs
 * Browse, launch, mount and unmount games
 * Package File Manager
 * Take screenshots of your screen
