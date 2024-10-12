@@ -14,6 +14,7 @@ using System.IO;
 using System.Resources;
 using System.Windows.Forms;
 using FtpExtensions = ArisenStudio.Extensions.FtpExtensions;
+using System.Threading.Tasks;
 
 namespace ArisenStudio.Forms.Tools.PS3
 {
@@ -28,7 +29,7 @@ namespace ArisenStudio.Forms.Tools.PS3
 
         public static SettingsData Settings = MainWindow.Settings;
 
-        private static FtpClient FtpClient { get; } = MainWindow.FtpClient;
+        private static AsyncFtpClient FtpClient { get; } = MainWindow.FtpClient;
 
         private static string PackageFilesPath { get; } = MainWindow.Settings.PackageInstallPathPS3;
 
@@ -46,7 +47,7 @@ namespace ArisenStudio.Forms.Tools.PS3
 
         private void TimerWait_Tick(object sender, EventArgs e)
         {
-            LoadPackages();
+            LoadPackagesAsync();
             TimerWait.Enabled = false;
         }
 
@@ -57,7 +58,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             new(Language.GetString("LABEL_FILE_SIZE"), typeof(string))
         ]);
 
-        private void LoadPackages()
+        private async Task LoadPackagesAsync()
         {
             try
             {
@@ -65,9 +66,9 @@ namespace ArisenStudio.Forms.Tools.PS3
 
                 DataTablePackages.Rows.Clear();
 
-                FtpClient.SetWorkingDirectory(PackageFilesPath);
+                await FtpClient.SetWorkingDirectory(PackageFilesPath);
 
-                foreach (FtpListItem listItem in FtpClient.GetListing(PackageFilesPath))
+                foreach (FtpListItem listItem in await FtpClient.GetListing(PackageFilesPath))
                 {
                     switch (listItem.Type)
                     {
@@ -131,7 +132,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             ButtonDownloadFile.Enabled = GridViewPackageFiles.SelectedRowsCount > 0;
         }
 
-        private void ButtonInstallPackageFile_Click(object sender, EventArgs e)
+        private async void ButtonInstallPackageFile_Click(object sender, EventArgs e)
         {
             string localFilePath = DialogExtensions.ShowOpenFileDialog(this, "Package File", "PKG Files (*.pkg)|*.pkg");
 
@@ -142,16 +143,16 @@ namespace ArisenStudio.Forms.Tools.PS3
                         string fileName = Path.GetFileName(localFilePath);
                         string installFilePath = PackageFilesPath + "/" + fileName;
 
-                        if (FtpClient.FileExists(installFilePath))
+                        if (await FtpClient.FileExists(installFilePath))
                         {
                             _ = XtraMessageBox.Show("Package file with this name already exists on your console.", "Package File Exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             return;
                         }
 
                         UpdateStatus(string.Format(Language.GetString("FILE_INSTALLING"), fileName));
-                        _ = FtpExtensions.UploadFile(localFilePath, installFilePath);
+                        _ = FtpExtensions.UploadFileAsync(localFilePath, installFilePath);
                         UpdateStatus("Successfully installed file.");
-                        LoadPackages();
+                        await LoadPackagesAsync();
                         break;
                     }
             }
@@ -166,7 +167,7 @@ namespace ArisenStudio.Forms.Tools.PS3
                 UpdateStatus($"Deleting file: {packageFileName}");
                 FtpExtensions.DeleteFile(PackageFilesPath + "/" + packageFileName);
                 UpdateStatus("Successfully deleted file.");
-                LoadPackages();
+                LoadPackagesAsync();
             }
         }
 
@@ -179,7 +180,7 @@ namespace ArisenStudio.Forms.Tools.PS3
                     UpdateStatus($"Deleting file: {package.Name}");
                     FtpExtensions.DeleteFile(PackageFilesPath + "/" + package.Name);
                     UpdateStatus("Successfully package file.");
-                    LoadPackages();
+                    LoadPackagesAsync();
                 }
             }
         }

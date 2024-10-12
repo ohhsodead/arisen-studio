@@ -10,6 +10,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ArisenStudio.Database
@@ -284,7 +285,7 @@ namespace ArisenStudio.Database
         /// Download the modded files archive and extracts all files to <see cref="DownloadDataDirectory" />.
         /// </summary>
         /// <param name="downloadFiles"> </param>
-        public void DownloadInstallFiles(DownloadFiles downloadFiles, Category category)
+        public async Task DownloadArchiveFiles(DownloadFiles downloadFiles, Category category, IProgress<int> progress = null)
         {
             string archivePath = DownloadDataDirectory(downloadFiles, category);
             string archiveFilePath = ArchiveZipFile(downloadFiles, category);
@@ -303,23 +304,26 @@ namespace ArisenStudio.Database
                 _ = Directory.CreateDirectory(archivePath);
             }
 
-            //if (!Directory.Exists(Path.GetDirectoryName(archiveFilePath)))
-            //{
-            //    Directory.CreateDirectory(archiveFilePath);
-            //}
-
             if (File.Exists(archiveFilePath))
             {
                 File.Delete(archiveFilePath);
             }
 
-            using (WebClient webClient = new())
+            using (WebClient webClient = new WebClient())
             {
                 webClient.Headers.Add("Accept: application/zip");
                 webClient.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
-                webClient.DownloadFile(new Uri(downloadFiles.Url), archiveFilePath);
+
+                webClient.DownloadProgressChanged += (sender, e) =>
+                {
+                    // Report download progress (0-100)
+                    progress?.Report(e.ProgressPercentage);
+                };
+
+                await webClient.DownloadFileTaskAsync(new Uri(downloadFiles.Url), archiveFilePath);
             }
 
+            // Extract the archive file to the archive path
             ZipFile.ExtractToDirectory(archiveFilePath, archivePath);
 
             DownloadedItem downloadItem = MainWindow.Settings.DownloadedMods.FirstOrDefault(x => x.Platform == GetPlatform() && x.ModId == Id);

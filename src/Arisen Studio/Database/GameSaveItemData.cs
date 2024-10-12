@@ -11,6 +11,7 @@ using System.IO.Compression;
 using System.Linq;
 using System.Net;
 using ArisenStudio.Models.Database;
+using System.Threading.Tasks;
 
 /// <summary>
 /// Get the game save information.
@@ -76,14 +77,18 @@ public class GameSaveItemData
     /// Download the modded files archive and extracts all files to <see cref="DownloadDataDirectory" />.
     /// </summary>
     /// <param name="downloadFiles"> </param>
-    public void DownloadInstallFiles(DownloadFiles downloadFiles, Category category)
+    public async Task DownloadArchiveFiles(DownloadFiles downloadFiles, Category category, IProgress<int> progress = null)
     {
         string archivePath = DownloadDataDirectory(downloadFiles, category);
         string archiveFilePath = ArchiveZipFile(downloadFiles, category);
 
         if (Directory.Exists(archivePath))
         {
-            IoExtensions.DeleteDirectory(archivePath);
+            try
+            {
+                Directory.Delete(archivePath, true);
+            }
+            catch (Exception) { }
         }
 
         if (!Directory.Exists(archivePath))
@@ -96,11 +101,18 @@ public class GameSaveItemData
             File.Delete(archiveFilePath);
         }
 
-        using (WebClient webClient = new())
+        using (WebClient webClient = new WebClient())
         {
             webClient.Headers.Add("Accept: application/zip");
             webClient.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
-            webClient.DownloadFile(new Uri(downloadFiles.Url), archiveFilePath);
+
+            webClient.DownloadProgressChanged += (sender, e) =>
+            {
+                // Report download progress (0-100)
+                progress?.Report(e.ProgressPercentage);
+            };
+
+            await webClient.DownloadFileTaskAsync(new Uri(downloadFiles.Url), archiveFilePath);
         }
 
         ZipFile.ExtractToDirectory(archiveFilePath, archivePath);

@@ -4,6 +4,7 @@ using ArisenStudio.Forms.Windows;
 using System.Linq;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ArisenStudio.Database
 {
@@ -39,7 +40,7 @@ namespace ArisenStudio.Database
         /// <param name="owner"> Parent Form for Dialogs </param>
         /// <param name="gameId"> Game Id </param>
         /// <returns> </returns>
-        public string GetGameRegion(Form owner, string gameId)
+        public async Task<string> GetGameRegionAsync(Form owner, string gameId)
         {
             if (MainWindow.Settings.RememberGameRegions)
             {
@@ -53,7 +54,22 @@ namespace ArisenStudio.Database
 
             if (MainWindow.Settings.AutoDetectGameRegions)
             {
-                List<string> foundRegions = Regions.Where(region => FtpExtensions.DirectoryExists($"/dev_hdd0/game/{region}")).ToList();
+                List<string> foundRegions = new List<string>();
+
+                // Create tasks for each region to check if the directory exists
+                var regionTasks = Regions.Select(async region =>
+                {
+                    bool exists = await FtpExtensions.DirectoryExistsAsync($"/dev_hdd0/game/{region}");
+                    return new { region, exists };
+                }).ToList();
+
+                // Await all tasks and filter the regions that exist
+                var results = await Task.WhenAll(regionTasks);
+
+                // Add the regions that exist to the foundRegions list
+                foundRegions = results.Where(r => r.exists).Select(r => r.region).ToList();
+
+                //List<string> foundRegions = await Regions.Where(async region => await FtpExtensions.DirectoryExistsAsync($"/dev_hdd0/game/{region}")).ToList();
 
                 foreach (string region in foundRegions.Where(region => XtraMessageBox.Show(owner, $"Game Region: {region} has been found for: {Title}\n\nIs this correct?", "Game Region",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))

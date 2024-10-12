@@ -178,8 +178,9 @@
     <Compile Include="Controls\StatItem.Designer.cs">
       <DependentUpon>StatItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Database\GameItemData.cs" />
     <Compile Include="Database\AppItemFile.cs" />
-    <Compile Include="Database\GameCheatItemData.cs" />
+    <Compile Include="Database\GameCheatsData.cs" />
     <Compile Include="Database\GamePatchItemData.cs" />
     <Compile Include="Database\TrainerGameData.cs" />
     <Compile Include="Database\GameSaveItemData.cs" />
@@ -195,6 +196,12 @@
     <Compile Include="Extensions\PS4\PS4Extensions.cs" />
     <Compile Include="Extensions\UsbExtensions.cs" />
     <Compile Include="Extensions\XBOX\XboxExtensions.cs" />
+    <Compile Include="Forms\Dialogs\Details\GameCheatsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\Details\GameCheatsDialog.Designer.cs">
+      <DependentUpon>GameCheatsDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Dialogs\EasterEgg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,12 +213,6 @@
     </Compile>
     <Compile Include="Forms\Dialogs\Details\GameTrainersDialog.Designer.cs">
       <DependentUpon>GameTrainersDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Dialogs\Details\GameCheatsDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Dialogs\Details\GameCheatsDialog.Designer.cs">
-      <DependentUpon>GameCheatsDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Dialogs\Details\CustomModDialog.cs">
       <SubType>Form</SubType>
@@ -278,6 +279,12 @@
     </Compile>
     <Compile Include="Forms\Dialogs\Details\HomebrewDialog.Designer.cs">
       <DependentUpon>HomebrewDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\ReportIssueDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\ReportIssueDialog.Designer.cs">
+      <DependentUpon>ReportIssueDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Dialogs\SortOptionsDialog.cs">
       <SubType>Form</SubType>
@@ -448,6 +455,7 @@
     <Compile Include="Models\Dashboard\FavoriteGamesData.cs" />
     <Compile Include="Models\Dashboard\FavoriteModsData.cs" />
     <Compile Include="Models\Dashboard\AnnouncementsData.cs" />
+    <Compile Include="Models\Database\GamesDataPS3.cs" />
     <Compile Include="Models\Database\GameCheatsData.cs" />
     <Compile Include="Models\Database\GamePatchesData.cs" />
     <Compile Include="Models\Database\TrainersData.cs" />
@@ -538,14 +546,14 @@
     <EmbeddedResource Include="Controls\StatItem.resx">
       <DependentUpon>StatItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\Details\GameCheatsDialog.resx">
+      <DependentUpon>GameCheatsDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\EasterEgg.resx">
       <DependentUpon>EasterEgg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\Details\GameTrainersDialog.resx">
       <DependentUpon>GameTrainersDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Dialogs\Details\GameCheatsDialog.resx">
-      <DependentUpon>GameCheatsDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\Details\CustomModDialog.resx">
       <DependentUpon>CustomModDialog.cs</DependentUpon>
@@ -580,6 +588,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\Details\HomebrewDialog.resx">
       <DependentUpon>HomebrewDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\ReportIssueDialog.resx">
+      <DependentUpon>ReportIssueDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\SortOptionsDialog.resx">
       <DependentUpon>SortOptionsDialog.cs</DependentUpon>
@@ -690,6 +701,7 @@
     <EmbeddedResource Include="Languages\pt_BR.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Languages\ro_RO.resx" />
     <EmbeddedResource Include="Languages\sv_SE.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -740,7 +752,7 @@
       <Version>51.1.0</Version>
     </PackageReference>
     <PackageReference Include="HtmlAgilityPack">
-      <Version>1.11.65</Version>
+      <Version>1.11.67</Version>
     </PackageReference>
     <PackageReference Include="Humanizer">
       <Version>2.14.1</Version>
@@ -752,7 +764,7 @@
       <Version>2.5.2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Web.WebView2">
-      <Version>1.0.2739.15</Version>
+      <Version>1.0.2792.45</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.3</Version>
@@ -771,6 +783,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Refresh1.svg" />
+    <None Include="Resources\OpenInNewWindow.svg" />
+    <None Include="Resources\Refresh.svg" />
+    <None Include="Resources\NewWindow.svg" />
     <None Include="Resources\Icons\patreon.svg" />
     <None Include="Resources\Icons\paypal.svg" />
     <None Include="Resources\Icons\trainers.svg" />

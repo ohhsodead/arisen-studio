@@ -88,7 +88,7 @@ namespace ArisenStudio.Forms.Dialogs
                             break;
 
                         case PlatformType.PlayStation3SuperSlim:
-                            consoleImage = Resources.PlayStation3Slim;
+                            consoleImage = Resources.PlayStation3SuperSlim;
                             break;
 
                         case PlatformType.PlayStation4:
@@ -137,7 +137,7 @@ namespace ArisenStudio.Forms.Dialogs
                                 break;
 
                             case PlatformType.PlayStation3SuperSlim:
-                                consoleImage = Resources.PlayStation3Slim;
+                                consoleImage = Resources.PlayStation3SuperSlim;
                                 break;
 
                             case PlatformType.PlayStation4:
@@ -184,7 +184,7 @@ namespace ArisenStudio.Forms.Dialogs
                                 break;
 
                             case PlatformType.PlayStation3SuperSlim:
-                                consoleImage = Resources.PlayStation3Slim;
+                                consoleImage = Resources.PlayStation3SuperSlim;
                                 break;
 
                             case PlatformType.PlayStation4:

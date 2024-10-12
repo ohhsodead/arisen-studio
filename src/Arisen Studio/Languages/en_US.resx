@@ -1912,4 +1912,12 @@ Aurora Path: {0}</value>
 
 If this issue persists after 30 minutes, please contact our support team to report the problem. Thank you for your patience and understanding!</value>
   </data>
+  <data name="STATUS_IDLING" xml:space="preserve">
+    <value>Idling...</value>
+  </data>
+  <data name="UNKNOWN_ERROR_OCCURRED" xml:space="preserve">
+    <value>An error occurred: {0}
+
+If this issue continues, you can submit a bug report using our automatic tracker. Would you like to do this now?</value>
+  </data>
 </root>

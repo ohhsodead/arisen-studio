@@ -1,18 +1,28 @@
-﻿using DevExpress.XtraEditors;
-using DevExpress.XtraGrid.Views.Base;
-using DevExpress.XtraGrid.Views.Grid;
+﻿using DevExpress.Utils;
+using DevExpress.XtraEditors;
+using Humanizer;
+using ArisenStudio.Controls;
 using ArisenStudio.Database;
 using ArisenStudio.Extensions;
 using ArisenStudio.Forms.Windows;
-using PS3Lib;
+using ArisenStudio.Models.Database;
+using ArisenStudio.Models.Resources;
 using System;
-using System.Data;
+using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Resources;
-using System.Text;
 using System.Windows.Forms;
-using ArisenStudio.Models.Resources;
+using ScrollOrientation = DevExpress.XtraEditors.ScrollOrientation;
 using System.Drawing;
+using ArisenStudio.Constants;
+using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Views.Grid;
+using Newtonsoft.Json;
+using PS3Lib;
+using System.Data;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace ArisenStudio.Forms.Dialogs.Details
 {
@@ -29,39 +39,60 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         public static PS3API PS3 = new();
 
-        public GameCheatItemData GameCheatItem = null;
+        public GameItemData GameItem = null;
+
+        public GameCheatsData GameCheats = null;
+
+        private Cheats SelectedCheatItem = null;
+
 
         private DataTable DataTableCheats { get; } = DataExtensions.CreateDataTable(
             [
-                new("Cheat Name", typeof(string))
+                new("Name", typeof(string))
             ]);
 
-        private void GameCheatsDialog_Load(object sender, EventArgs e)
+        private async void GameCheatsDialog_Load(object sender, EventArgs e)
         {
             try
             {
+                GridViewCheats.ShowLoadingPanel();
+
+                GameCheats = await GetGameCheatsPS3(GameItem.File);
+
 #if !DEBUG
-                PS3 = new(SelectAPI.ControlConsole);
-                PS3.ConnectTarget(ConsoleProfile.Address);
-                PS3.AttachProcess();
+                try
+                {
+
+                    PS3 = new(SelectAPI.PS3Manager);
+                    PS3.ConnectTarget(ConsoleProfile.Address);
+                    PS3.AttachProcess();
+                }
+                catch (Exception ex)
+                {
+                    Program.Log.Error("Unable to connect or attach using webMAN API.", ex);
+                    XtraMessageBox.Show(this, string.Format("Unable to connect or attach using webMAN. You must have PS3MAPI enabled in your webMAN settings. Error: {0}", ex.Message), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Close();
+                }
 #endif
 
-                // Display details in UI
-                LabelGame.Text = GameCheatItem.Game;
-                LabelVersion.Text = "- " + GameCheatItem.Version;
-                LabelRegion.Text = $"({GameCheatItem.Region})";
+                LabelGame.Text = GameItem.Game;
+                LabelVersion.Text = "- " + GameItem.Version;
+                LabelRegion.Text = $"({GameItem.Region})";
 
                 DataTableCheats.Rows.Clear();
 
-                foreach (Cheats cheat in GameCheatItem.Cheats)
+                foreach (var cheat in GameCheats.Cheats)
                 {
                     DataTableCheats.Rows.Add(cheat.Name);
                 }
 
                 GridControlCheats.DataSource = DataTableCheats;
 
+                GridViewCheats.HideLoadingPanel();
+
                 ButtonApplyCheat.Text = Language.GetString("LABEL_APPLY_CHEAT");
-                ButtonReportIssue.Text = Language.GetString("LABEL_REPORT_ISSUE");
+                ButtonReport.Text = Language.GetString("LABEL_REPORT_ISSUE");
+                ButtonHelp.Text = Language.GetString("LABEL_HELP_SUPPORT");
             }
             catch (Exception ex)
             {
@@ -71,6 +102,22 @@ namespace ArisenStudio.Forms.Dialogs.Details
             }
         }
 
+        private readonly HttpClient _httpClient = new();
+
+        ///// <summary>
+        ///// URL pointing to the Game Cheats database file for PS3.
+        ///// </summary>
+        //internal const string GamesCheatsBasePS3 = "https://db.arisen.studio/data/ps3/cheats/game-cheats/";
+
+        public async Task<GameCheatsData> GetGameCheatsPS3(string fileName)
+        {
+            //_httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("ArisenStudioDatabase");
+
+            //string response = await _httpClient.GetStringAsync(Urls.GamesCheatsBasePS3 + fileName);
+            string response = await _httpClient.GetStringAsync("https://raw.githubusercontent.com/ohhsodead/game-cheats/refs/heads/main/PS3/" + fileName);
+            return JsonConvert.DeserializeObject<GameCheatsData>(response);
+        }
+
         private void ImageClose_Click(object sender, EventArgs e)
         {
             Close();
@@ -78,17 +125,19 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         private void GridViewCheats_RowClick(object sender, RowClickEventArgs e)
         {
-            SelectedCheatItem = GameCheatItem.Cheats[e.RowHandle];
+            SelectedCheatItem = GameCheats.Cheats[e.RowHandle];
+
+            ButtonApplyCheat.Enabled = e.RowHandle != -1;
         }
 
         private void GridViewCheats_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            ButtonApplyCheat.Enabled = GridViewCheats.SelectedRowsCount > 0;
+            SelectedCheatItem = GameCheats.Cheats[e.FocusedRowHandle];
+
+            ButtonApplyCheat.Enabled = e.FocusedRowHandle != -1;
         }
 
-        private Cheats SelectedCheatItem { get; set; }
-
-        private void ButtonApply_Click(object sender, EventArgs e)
+        private void ButtonApplyCheat_Click(object sender, EventArgs e)
         {
             if (!ContainsUnimplementedOpcodes())
             {
@@ -107,20 +156,26 @@ namespace ArisenStudio.Forms.Dialogs.Details
             }
         }
 
+        private void ButtonReport_Click(object sender, EventArgs e)
+        {
+            DialogExtensions.ShowReportIssueDialog(this);
+        }
+
+        private void ButtonHelp_Click(object sender, EventArgs e)
+        {
+            _ = Process.Start(Urls.WebsiteHelp);
+        }
+
         private bool ContainsUnimplementedOpcodes()
         {
             return SelectedCheatItem.Offsets.Any(x => x.ContainsUnimplementedOpcodes());
-        }
-
-        private void ButtonReport_Click(object sender, EventArgs e)
-        {
         }
 
         private string ApplyCheat(Offsets offsets, string lastReturn)
         {
             try
             {
-                if (offsets.Opcode == "00002000")
+                if (offsets.Opcode == "00002000") // Int32
                 {
                     uint offset = Convert.ToUInt32(offsets.Offset, 16);
                     uint value = Convert.ToUInt32(offsets.Value, 16);
@@ -130,7 +185,22 @@ namespace ArisenStudio.Forms.Dialogs.Details
                         offset = Convert.ToUInt32(lastReturn, 16);
                     }
 
-                    PS3.PS3MAPI.Extension.WriteInt32(offset, (int)value);
+                    PS3.Extension.WriteInt32(offset, (int)value);
+                }
+                else if (offsets.Opcode == "00002000")
+                {
+                    if (offsets.ValueType.ContainsIgnoreCase("AOB")) // Array of Bytes
+                    {
+                        uint offset = Convert.ToByte(offsets.Offset, 16);
+                        byte[] value = Extensions.StringExtensions.HexStringToBytes(offsets.Value);
+
+                        if ((int)offset == 0)
+                        {
+                            offset = Convert.ToUInt32(lastReturn, 16);
+                        }
+
+                        PS3.Extension.WriteBytes(offset, value);
+                    }
                 }
             }
             catch (Exception ex)
@@ -140,8 +210,6 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
             return "00000000";
         }
-
-
 
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -159,30 +227,6 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
             using Brush brush = new SolidBrush(BackColor);
             e.Graphics.FillPath(brush, GraphicExtensions.GetRoundedRectanglePath(ClientRectangle, 4));
-        }
-
-        private const int WmHscroll = 0x114;
-        private const int WmVscroll = 0x115;
-
-        protected override void WndProc(ref Message m)
-        {
-            if ((m.Msg == WmHscroll || m.Msg == WmVscroll)
-            && (((int)m.WParam & 0xFFFF) == 5))
-            {
-                // Change SB_THUMBTRACK to SB_THUMBPOSITION
-                m.WParam = (IntPtr)(((int)m.WParam & ~0xFFFF) | 4);
-            }
-            base.WndProc(ref m);
-        }
-
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000;    // Turn on WS_EX_COMPOSITED
-                return cp;
-            }
         }
 
         protected override bool ProcessDialogKey(Keys keyData)

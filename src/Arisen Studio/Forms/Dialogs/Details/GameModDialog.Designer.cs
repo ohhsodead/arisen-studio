@@ -548,6 +548,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonReport.Size = new System.Drawing.Size(127, 28);
             this.ButtonReport.TabIndex = 1181;
             this.ButtonReport.Text = "Report Issue";
+            this.ButtonReport.Click += new System.EventHandler(this.ButtonReport_Click);
             // 
             // ButtonHelp
             // 
@@ -571,6 +572,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.ButtonHelp.Size = new System.Drawing.Size(152, 28);
             this.ButtonHelp.TabIndex = 7;
             this.ButtonHelp.Text = "Help && Support";
+            this.ButtonHelp.Click += new System.EventHandler(this.ButtonHelp_Click);
             // 
             // Images
             // 

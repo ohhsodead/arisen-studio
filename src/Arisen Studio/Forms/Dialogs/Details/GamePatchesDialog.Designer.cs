@@ -275,9 +275,10 @@ namespace ArisenStudio.Forms.Dialogs.Details
             this.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
-            this.IconOptions.Image = global::ArisenStudio.Properties.Resources.arisenstudio;
+            this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.False;
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("GamePatchesDialog.IconOptions.Icon")));
             this.IconOptions.ShowIcon = false;
+            this.IconOptions.SvgImage = global::ArisenStudio.Properties.Resources.arisenstudio1;
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Newtonsoft.Json;
 
 namespace ArisenStudio.Extensions
@@ -26,6 +27,11 @@ namespace ArisenStudio.Extensions
 
             _cacheFilePath = Path.Combine(directoryPath, cacheFileName);
             LoadCache();
+        }
+
+        public List<string> GetAllKeys()
+        {
+            return _cacheContainer.Cache.Keys.ToList();
         }
 
         // Try to get the cached value and its metadata

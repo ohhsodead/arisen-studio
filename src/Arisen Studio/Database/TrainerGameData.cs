@@ -7,6 +7,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Net;
+using ArisenStudio.Database;
+using System.Threading.Tasks;
+using ArisenStudio.Models.Database;
 
 /// <summary>
 /// Get the game trainer information.
@@ -46,19 +49,10 @@ public class TrainerGameData
     /// Download the archive and extracts all files to <see cref="DownloadDataDirectory" />.
     /// </summary>
     /// <param name="trainerData"> </param>
-    public void DownloadInstallFiles(TrainerItem trainerData)
+    public async Task DownloadArchiveFiles(TrainerItem trainerData, IProgress<int> progress = null)
     {
         string archivePath = DownloadDataDirectory(trainerData);
         string archiveFilePath = ArchiveZipFile(trainerData);
-
-        try
-        {
-            if (Directory.Exists(archivePath))
-            {
-                Directory.Delete(archivePath, true);
-            }
-        }
-        catch (Exception) { }
 
         if (Directory.Exists(archivePath))
         {
@@ -79,50 +73,26 @@ public class TrainerGameData
             File.Delete(archiveFilePath);
         }
 
-        using (WebClient webClient = new())
+        using (WebClient webClient = new WebClient())
         {
             webClient.Headers.Add("Accept: application/zip");
             webClient.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
-            webClient.DownloadFile(new Uri(trainerData.Url), archiveFilePath);
+
+            webClient.DownloadProgressChanged += (sender, e) =>
+            {
+                // Report download progress (0-100)
+                progress?.Report(e.ProgressPercentage);
+            };
+
+            await webClient.DownloadFileTaskAsync(new Uri(trainerData.Url), archiveFilePath);
         }
 
+        // Extract the archive file to the archive path
         ZipFile.ExtractToDirectory(archiveFilePath, archivePath);
-        //ZipFile.ExtractToDirectory(archiveFilePath, archivePath, Encoding.UTF8);
-
-        //try
-        //{
-        //    //Declare a temporary path to unzip your files
-        //    string tempPath = Path.Combine(Directory.GetCurrentDirectory(), "tempUnzip");
-        //    ZipFile.ExtractToDirectory(archiveFilePath, tempPath);
-
-        //    //build an array of the unzipped files
-        //    string[] files = Directory.GetFiles(tempPath);
-
-        //    foreach (string file in files)
-        //    {
-        //        FileInfo f = new FileInfo(file);
-        //        //Check if the file exists already, if so delete it and then move the new file to the extract folder
-        //        if (File.Exists(Path.Combine(archivePath, f.Name)))
-        //        {
-        //            File.Delete(Path.Combine(archivePath, f.Name));
-        //            File.Move(f.FullName, Path.Combine(archivePath, f.Name));
-        //        }
-        //        else
-        //        {
-        //            File.Move(f.FullName, Path.Combine(archivePath, f.Name));
-        //        }
-        //    }
-        //    //Delete the temporary directory.
-        //    Directory.Delete(tempPath);
-        //}
-        //catch (Exception ex)
-        //{
-        //    Program.Log.Error("Unable to unzip archive. Error: " + ex.Message);
-        //}
     }
 }
 
-public class TrainerItem
+    public class TrainerItem
 {
     public DateTime LastUpdated { get; set; }
 

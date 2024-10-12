@@ -202,7 +202,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             Close();
         }
 
-        private void ButtonDetectRegions_Click(object sender, EventArgs e)
+        private async void ButtonDetectRegions_Click(object sender, EventArgs e)
         {
             if (XtraMessageBox.Show("All saved game regions will be cleared. Do you want to continue?", "Game Region", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -210,7 +210,7 @@ namespace ArisenStudio.Forms.Tools.PS3
                 {
                     foreach (string region in category.Regions)
                     {
-                        if (FtpExtensions.DirectoryExists($"/dev_hdd0/game/{region}"))
+                        if (await FtpExtensions.DirectoryExistsAsync($"/dev_hdd0/game/{region}"))
                         {
                             Settings.UpdateGameRegion(category.Id, region);
                         }

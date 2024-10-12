@@ -2,12 +2,14 @@
 using ArisenStudio.Forms.Windows;
 using ArisenStudio.Models.Database;
 using ArisenStudio.Models.Resources;
+using ICSharpCode.SharpZipLib.Zip;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ArisenStudio.Database
@@ -114,7 +116,7 @@ namespace ArisenStudio.Database
         /// Download the modded files archive and extracts all files to <see cref="DownloadDataDirectory" />.
         /// </summary>
         /// <param name="appFile"> </param>
-        public void DownloadInstallFiles(AppItemFile appFile)
+        public async Task DownloadAppFile(AppItemFile appFile, IProgress<int> progress = null)
         {
             string folderPath = DownloadFilesDirectory(appFile);
             string filePath = LocalFilePath(appFile);
@@ -133,53 +135,24 @@ namespace ArisenStudio.Database
                 _ = Directory.CreateDirectory(folderPath);
             }
 
-            if (!Directory.Exists(Path.GetDirectoryName(folderPath)))
-            {
-                _ = Directory.CreateDirectory(folderPath);
-            }
-
             if (File.Exists(filePath))
             {
                 File.Delete(filePath);
             }
 
-            using (WebClient webClient = new())
+            using (WebClient webClient = new WebClient())
             {
-                //webClient.Headers.Add("Accept: application/zip");
+                webClient.Headers.Add("Accept: application/zip");
                 webClient.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
-                webClient.DownloadFile(new Uri(appFile.GetFileUrl(TitleId)), filePath);
-            }
 
-            /*
-            DownloadedItem downloadItem = MainWindow.Settings.DownloadedMods.FirstOrDefault(x => x.Platform == GetPlatform() && x.ModId == Id);
-            
-            if (downloadItem == null)
-            {
-                MainWindow.Settings.DownloadedMods.Add(
-                    new DownloadedItem()
-                    {
-                        Platform = GetPlatform(),
-                        ModId = Id,
-                        CategoryId = CategoryId,
-                        DownloadFile = appFile,
-                        FilePath = filePath,
-                        DateTime = DateTime.Now
-                    });
+                webClient.DownloadProgressChanged += (sender, e) =>
+                {
+                    // Report download progress (0-100)
+                    progress?.Report(e.ProgressPercentage);
+                };
+
+                await webClient.DownloadFileTaskAsync(new Uri(appFile.GetFileUrl(TitleId)), filePath);
             }
-            else
-            {
-                MainWindow.Settings.DownloadedMods[MainWindow.Settings.DownloadedMods.IndexOf(downloadItem)] =
-                    new DownloadedItem()
-                    {
-                        Platform = GetPlatform(),
-                        ModId = Id,
-                        CategoryId = CategoryId,
-                        DownloadFile = downloadFiles,
-                        FilePath = archiveFilePath,
-                        DateTime = DateTime.Now
-                    };
-            }
-            */
         }
     }
 }

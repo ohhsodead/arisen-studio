@@ -1,17 +1,24 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.Serialization;
 
 namespace ArisenStudio.Database
 {
     /// <summary>
     /// Get the game cheat information.
     /// </summary>
-    public class GameCheatItemData
+    public class GameCheatsData
     {
-        public string Region { get; set; }
-
         public string Game { get; set; }
 
-        public string Version { get; set; }
+        public string Region { get; set; } = string.Empty;
+
+        [DataMember]
+        //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Populate)]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        [DefaultValue("-")]
+        public string Version { get; set; } = "-";
 
         public List<Cheats> Cheats { get; set; }
     }

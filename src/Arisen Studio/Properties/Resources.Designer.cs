@@ -1281,6 +1281,16 @@ namespace ArisenStudio.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage NewWindow {
+            get {
+                object obj = ResourceManager.GetObject("NewWindow", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap notify {
@@ -1306,6 +1316,16 @@ namespace ArisenStudio.Properties {
         internal static DevExpress.Utils.Svg.SvgImage open_url {
             get {
                 object obj = ResourceManager.GetObject("open_url", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage OpenInNewWindow {
+            get {
+                object obj = ResourceManager.GetObject("OpenInNewWindow", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
             }
         }
@@ -1401,7 +1421,7 @@ namespace ArisenStudio.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;strawpoll-embed&quot; id=&quot;strawpoll_e7ZJa82KLg3&quot; style=&quot;height: 700px; max-width: 640px; width: 100%; margin: 0 auto; display: flex; flex-direction: column;&quot;&gt;&lt;iframe title=&quot;StrawPoll Embed&quot; id=&quot;strawpoll_iframe_e7ZJa82KLg3&quot; src=&quot;https://strawpoll.com/embed/e7ZJa82KLg3&quot; style=&quot;position: static; visibility: visible; display: block; width: 100%; flex-grow: 1;&quot; frameborder=&quot;0&quot; allowfullscreen allowtransparency&gt;Loading...&lt;/iframe&gt;&lt;script async src=&quot;https://cdn.strawpoll.com/dist/widgets.js&quot; charset=&quot;utf-8 [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;div class=&quot;strawpoll-embed&quot; id=&quot;strawpoll_e7ZJa82KLg3&quot; style=&quot;height: 800px; max-width: 640px; width: 100%; margin: 0 auto; display: flex; flex-direction: column;&quot;&gt;&lt;iframe title=&quot;StrawPoll Embed&quot; id=&quot;strawpoll_iframe_e7ZJa82KLg3&quot; src=&quot;https://strawpoll.com/embed/e7ZJa82KLg3&quot; style=&quot;position: static; visibility: visible; display: block; width: 100%; flex-grow: 1;&quot; frameborder=&quot;0&quot; allowfullscreen allowtransparency&gt;Loading...&lt;/iframe&gt;&lt;script async src=&quot;https://cdn.strawpoll.com/dist/widgets.js&quot; charset=&quot;utf-8 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string PollLink {
             get {
@@ -1426,6 +1446,26 @@ namespace ArisenStudio.Properties {
             get {
                 object obj = ResourceManager.GetObject("profile_switch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage Refresh {
+            get {
+                object obj = ResourceManager.GetObject("Refresh", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage Refresh1 {
+            get {
+                object obj = ResourceManager.GetObject("Refresh1", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
             }
         }
         

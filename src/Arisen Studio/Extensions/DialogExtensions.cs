@@ -17,6 +17,7 @@ using System.Windows.Forms;
 using System.Reflection;
 using System.Resources;
 using ArisenStudio.Forms.Windows;
+using ArisenStudio.Constants;
 
 namespace ArisenStudio.Extensions
 {
@@ -210,10 +211,10 @@ namespace ArisenStudio.Extensions
             overlayForm.Dispose();
         }
 
-        public static void ShowItemGameCheatsDialog(Form owner, GameCheatItemData gameCheatItem)
+        public static void ShowItemGameCheatsDialog(Form owner, GameItemData gameItem)
         {
             using GameCheatsDialog cheatsDialog = new();
-            cheatsDialog.GameCheatItem = gameCheatItem;
+            cheatsDialog.GameItem = gameItem;
 
             XtraForm overlayForm = new()
             {
@@ -227,7 +228,6 @@ namespace ArisenStudio.Extensions
             };
 
             overlayForm.Show(owner);
-
             cheatsDialog.Owner = owner;
             _ = cheatsDialog.ShowDialog();
 
@@ -236,8 +236,10 @@ namespace ArisenStudio.Extensions
 
         public static void ShowItemGamePatchesDialog(Form owner, GamePatchItemData gamePatchItem)
         {
-            using GamePatchesDialog patchesDialog = new();
-            patchesDialog.GamePatchItem = gamePatchItem;
+            XtraForm detailsDialog = new()
+            {
+                Owner = owner
+            };
 
             XtraForm overlayForm = new()
             {
@@ -252,16 +254,18 @@ namespace ArisenStudio.Extensions
 
             overlayForm.Show(owner);
 
-            patchesDialog.Owner = owner;
-            _ = patchesDialog.ShowDialog();
+            detailsDialog.Owner = owner;
+            _ = detailsDialog.ShowDialog();
 
             overlayForm.Dispose();
         }
 
         public static void ShowGameTrainers(Form owner, TrainerGameData trainerItem)
         {
-            using GameTrainersDialog gameTrainersDialog = new();
-            gameTrainersDialog.TrainerGameData = trainerItem;
+            XtraForm detailsDialog = new()
+            {
+                Owner = owner
+            };
 
             XtraForm overlayForm = new()
             {
@@ -276,8 +280,8 @@ namespace ArisenStudio.Extensions
 
             overlayForm.Show(owner);
 
-            gameTrainersDialog.Owner = owner;
-            _ = gameTrainersDialog.ShowDialog();
+            detailsDialog.Owner = owner;
+            _ = detailsDialog.ShowDialog();
 
             overlayForm.Dispose();
         }
@@ -714,6 +718,21 @@ namespace ArisenStudio.Extensions
 
         #endregion
 
+        public static void ShowReportIssueDialog(Form owner, Exception ex = null)
+        {
+            using ReportIssueDialog reportIssueDialog = new();
+            if (ex != null) { reportIssueDialog.FormUrl = Urls.GenerateIssueFormUrl(ex, false); reportIssueDialog.ExceptionThrown = ex; }
+            _ = reportIssueDialog.ShowDialog(owner);
+        }
+
+        public static void ReportIssueNoForm(Form owner, Exception ex = null)
+        {
+            using ReportIssueDialog reportIssueDialog = new();
+            if (ex != null) { reportIssueDialog.ExceptionThrown = ex; }
+            reportIssueDialog.Show(owner);
+            reportIssueDialog.Hide();
+        }
+
         public static void ShowRequestModsDialog(Form owner)
         {
             using RequestModsDialog requestModsDialog = new();
@@ -774,13 +793,6 @@ namespace ArisenStudio.Extensions
             Program.Log.Info("Opening Screenshot Tool (PS3) dialog...");
             using Forms.Tools.PS3.TakeScreenshot takeScreenshot = new();
             _ = takeScreenshot.ShowDialog(owner);
-        }
-
-        public static void ShowGameCheats(Form owner)
-        {
-            Program.Log.Info("Opening Game Cheats (PS3) dialog...");
-            using GameCheatsDialog gameCheatsDialog = new();
-            _ = gameCheatsDialog.ShowDialog(owner);
         }
 
         #endregion

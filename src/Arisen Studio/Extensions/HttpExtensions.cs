@@ -12,6 +12,13 @@ using System.Collections.Generic;
 using System.Windows.Media.Imaging;
 using FluentFTP;
 using System.Linq;
+using ArisenStudio.Models.Database;
+using System.IO.Compression;
+using ArisenStudio.Constants;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using Humanizer;
+using System.Threading;
 
 namespace ArisenStudio.Extensions
 {
@@ -76,14 +83,96 @@ namespace ArisenStudio.Extensions
         /// </summary>
         /// <param name="url"> </param>
         /// <param name="filePath"> </param>
-        public static void DownloadFile(string url, string filePath)
+        public static async Task<bool> DownloadFileAsync(string url, string filePath, IProgress<int> progress = null, LabelControl statusLabel = null, CancellationToken cancellationToken = default)
         {
             _ = Directory.CreateDirectory(Path.GetDirectoryName(filePath));
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.Tls13;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls13;
             ServicePointManager.ServerCertificateValidationCallback = (_, _, _, _) => true;
 
-            WebClient webClient = new();
-            webClient.DownloadFile(url, filePath);
+            using WebClient webClient = new WebClient();
+            var tcs = new TaskCompletionSource<bool>();
+
+            // Register the cancellation token to cancel the download
+            cancellationToken.Register(() => webClient.CancelAsync());
+
+            webClient.DownloadProgressChanged += (sender, e) =>
+            {
+                if (cancellationToken.IsCancellationRequested)
+                {
+                    tcs.SetCanceled();
+                    return;
+                }
+
+                long bytesDownloaded = e.BytesReceived;
+                long totalBytes = e.TotalBytesToReceive;
+                string progressMessage = $"{ByteSizeExtensions.Bytes(bytesDownloaded).Humanize()} / {ByteSizeExtensions.Bytes(totalBytes).Humanize()}"; // ({e.ProgressPercentage}%)
+
+                // Report progress to the progress bar
+                progress?.Report(e.ProgressPercentage);
+
+                // Update the label if provided
+                if (statusLabel != null)
+                {
+                    if (statusLabel.InvokeRequired)
+                    {
+                        statusLabel.Invoke((MethodInvoker)(() => statusLabel.Visible = true));
+                        statusLabel.Invoke((MethodInvoker)(() => statusLabel.Text = progressMessage));
+                    }
+                    else
+                    {
+                        statusLabel.Visible = true;
+                        statusLabel.Text = progressMessage;
+                    }
+                }
+            };
+
+            webClient.DownloadFileCompleted += (sender, e) =>
+            {
+                if (e.Error == null && !e.Cancelled)
+                {
+                    // Download succeeded
+                    tcs.SetResult(true);
+                }
+                else if (e.Cancelled)
+                {
+                    // Download was cancelled
+                    tcs.SetCanceled();
+                }
+                else
+                {
+                    // Download failed due to an error
+                    tcs.SetException(e.Error);
+                }
+
+                // Update the label on completion
+                if (statusLabel != null)
+                {
+                    if (statusLabel.InvokeRequired)
+                    {
+                        statusLabel.Invoke((MethodInvoker)(() => statusLabel.Visible = true));
+                    }
+                    else
+                    {
+                        statusLabel.Visible = true;
+                    }
+                }
+            };
+
+            try
+            {
+                webClient.DownloadFileAsync(new Uri(url), filePath);
+                return await tcs.Task;
+            }
+            catch (OperationCanceledException)
+            {
+                // Handle cancellation case
+                return false; // Return false if the download was canceled
+            }
+            catch (Exception ex)
+            {
+                // Handle other exceptions
+                throw new Exception("Download failed", ex);
+            }
         }
 
         /// <summary>
@@ -98,46 +187,8 @@ namespace ArisenStudio.Extensions
             return new(responseStream);
         }
 
-        /// <summary>
-        /// </summary>
-        /// <returns> </returns>
-        //public static async Task<bool> CheckForInternetAsync()
-        public static bool CheckForInternetConnection()
-        {
-            try
-            {
-                Program.Log.Info("Checking for Internet connection...");
-                //return NetworkInterface.GetIsNetworkAvailable();
-                using Ping pr = new();
-                PingReply p = pr.Send("8.8.8.8", 1000, new byte[32]);
-
-                return p.Status == IPStatus.Success;
-            }
-            catch (Exception ex)
-            {
-                Program.Log.Error(ex, "Unable to check for Internet connection. Error: " + ex.Message);
-            }
-
-            return false;
-        }
-
         public static bool CheckInternetConnection()
         {
-            //NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
-
-            //foreach (NetworkInterface nic in nics)
-            //{
-            //    if (nic.NetworkInterfaceType != NetworkInterfaceType.Loopback && nic.NetworkInterfaceType != NetworkInterfaceType.Tunnel && 
-            //        nic.OperationalStatus == OperationalStatus.Up)
-            //    {
-            //        return true;
-            //    }
-            //}
-
-            //NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler(NetworkChange_NetworkAvailabilityChanged);
-
-            //return false;
-
             return NetworkInterface.GetAllNetworkInterfaces().Any(static x => x.OperationalStatus == OperationalStatus.Up);
         }
     }

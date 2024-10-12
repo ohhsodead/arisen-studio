@@ -49,7 +49,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.GroupListItems.Controls.Add(this.GridControlListItems);
             this.GroupListItems.Location = new System.Drawing.Point(12, 12);
             this.GroupListItems.Name = "GroupListItems";
-            this.GroupListItems.Size = new System.Drawing.Size(174, 217);
+            this.GroupListItems.Size = new System.Drawing.Size(241, 217);
             this.GroupListItems.TabIndex = 3;
             this.GroupListItems.Text = "Choose Item...";
             // 
@@ -60,7 +60,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.GridControlListItems.MainView = this.GridViewListItems;
             this.GridControlListItems.Margin = new System.Windows.Forms.Padding(0);
             this.GridControlListItems.Name = "GridControlListItems";
-            this.GridControlListItems.Size = new System.Drawing.Size(170, 193);
+            this.GridControlListItems.Size = new System.Drawing.Size(237, 193);
             this.GridControlListItems.TabIndex = 1;
             this.GridControlListItems.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewListItems});
@@ -93,7 +93,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(198, 241);
+            this.ClientSize = new System.Drawing.Size(265, 241);
             this.Controls.Add(this.GroupListItems);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);

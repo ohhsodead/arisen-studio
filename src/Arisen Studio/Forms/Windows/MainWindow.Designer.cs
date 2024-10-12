@@ -3,12 +3,9 @@ using System.Windows.Forms;
 using DevExpress.Utils.Layout;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraNavBar;
-using DevExpress.XtraWaitForm;
-using VScrollBar = DevExpress.XtraEditors.VScrollBar;
 
 namespace ArisenStudio.Forms.Windows
 {
@@ -134,61 +131,6 @@ namespace ArisenStudio.Forms.Windows
             DevExpress.XtraEditors.TileItemElement tileItemElement62 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement63 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement64 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
-            DevExpress.XtraEditors.TileItemElement tileItemElement65 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem5 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.XtraEditors.TileItemElement tileItemElement66 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem6 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.XtraEditors.TileItemElement tileItemElement67 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.Utils.SuperToolTip superToolTip7 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem7 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.XtraEditors.TileItemElement tileItemElement68 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.Utils.SuperToolTip superToolTip8 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem8 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.XtraEditors.TileItemElement tileItemElement69 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement70 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement71 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement72 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement73 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement74 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement75 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement76 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement77 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement78 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement79 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement80 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement81 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement82 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement83 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement84 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement85 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement86 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement87 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement88 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement89 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement90 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement91 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement92 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement93 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement94 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement95 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement96 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement97 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement98 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement99 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement100 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement101 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement102 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement103 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement104 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement105 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement106 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement107 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement108 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement109 = new DevExpress.XtraEditors.TileItemElement();
             this.PageGameModsPS3 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.PanelGameGameMods = new System.Windows.Forms.Panel();
             this.GridControlGameModsPS3 = new DevExpress.XtraGrid.GridControl();
@@ -315,7 +257,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelAnnouncementsItems = new DevExpress.XtraEditors.XtraScrollableControl();
             this.NoAnnouncements = new ArisenStudio.Controls.NoAnnouncementsItem();
             this.PanelCurrentPoll = new DevExpress.XtraEditors.PanelControl();
-            this.WebViewPoll = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.WebViewCurrentPoll = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.LabelHeaderCurrentPoll = new DevExpress.XtraEditors.LabelControl();
             this.PageDownloads = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.PanelDownloads = new System.Windows.Forms.Panel();
@@ -474,7 +416,8 @@ namespace ArisenStudio.Forms.Windows
             this.TabPageFiles = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.TextBoxSettingsAuroraFolderPath = new DevExpress.XtraEditors.ButtonEdit();
             this.RibbonControlMain = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.ButtonUpdate = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonHeaderDonate = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonHeaderUpdate = new DevExpress.XtraBars.BarButtonItem();
             this.skinPaletteDropDownButtonItem1 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             this.barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
             this.ButtonConnectConsole = new DevExpress.XtraBars.BarButtonItem();
@@ -754,9 +697,6 @@ namespace ArisenStudio.Forms.Windows
             this.GridControlGameCheats = new DevExpress.XtraGrid.GridControl();
             this.GridViewGameCheats = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.PanelFiltersCheats = new System.Windows.Forms.Panel();
-            this.ComboBoxGameCheatsFilterNumberCheats = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.LabelGameCheatsFilterNumOfCheats = new DevExpress.XtraEditors.LabelControl();
-            this.separatorControl93 = new DevExpress.XtraEditors.SeparatorControl();
             this.SeparatorCheats2 = new DevExpress.XtraEditors.SeparatorControl();
             this.SeparatorCheats3 = new DevExpress.XtraEditors.SeparatorControl();
             this.SeparatorCheats4 = new DevExpress.XtraEditors.SeparatorControl();
@@ -941,504 +881,6 @@ namespace ArisenStudio.Forms.Windows
             this.MenuLocalFiles = new DevExpress.XtraBars.PopupMenu(this.components);
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
-            this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
-            this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
-            this.noAnnouncementsItem1 = new ArisenStudio.Controls.NoAnnouncementsItem();
-            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
-            this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
-            this.tileControl2 = new DevExpress.XtraEditors.TileControl();
-            this.tileGroup2 = new DevExpress.XtraEditors.TileGroup();
-            this.tileItem9 = new DevExpress.XtraEditors.TileItem();
-            this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
-            this.xtraScrollableControl2 = new DevExpress.XtraEditors.XtraScrollableControl();
-            this.labelControl29 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
-            this.separatorControl8 = new DevExpress.XtraEditors.SeparatorControl();
-            this.panelControl8 = new DevExpress.XtraEditors.PanelControl();
-            this.svgImageBox1 = new DevExpress.XtraEditors.SvgImageBox();
-            this.xtraScrollableControl3 = new DevExpress.XtraEditors.XtraScrollableControl();
-            this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl9 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl32 = new DevExpress.XtraEditors.LabelControl();
-            this.tileControl3 = new DevExpress.XtraEditors.TileControl();
-            this.tileGroup3 = new DevExpress.XtraEditors.TileGroup();
-            this.tileItem10 = new DevExpress.XtraEditors.TileItem();
-            this.panelControl10 = new DevExpress.XtraEditors.PanelControl();
-            this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
-            this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
-            this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.separatorControl9 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl10 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl11 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl12 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl13 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl14 = new DevExpress.XtraEditors.SeparatorControl();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
-            this.comboBoxEdit8 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl34 = new DevExpress.XtraEditors.LabelControl();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.labelControl35 = new DevExpress.XtraEditors.LabelControl();
-            this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
-            this.comboBoxEdit9 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl36 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit10 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl37 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit11 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl38 = new DevExpress.XtraEditors.LabelControl();
-            this.separatorControl15 = new DevExpress.XtraEditors.SeparatorControl();
-            this.comboBoxEdit12 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl39 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl40 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl11 = new DevExpress.XtraEditors.PanelControl();
-            this.tileControl4 = new DevExpress.XtraEditors.TileControl();
-            this.tileGroup4 = new DevExpress.XtraEditors.TileGroup();
-            this.tileItem11 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem12 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem13 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem14 = new DevExpress.XtraEditors.TileItem();
-            this.navigationPage3 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
-            this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
-            this.separatorControl16 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl17 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl18 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl19 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl20 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl21 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl22 = new DevExpress.XtraEditors.SeparatorControl();
-            this.pictureEdit3 = new DevExpress.XtraEditors.PictureEdit();
-            this.pictureEdit4 = new DevExpress.XtraEditors.PictureEdit();
-            this.labelControl41 = new DevExpress.XtraEditors.LabelControl();
-            this.pictureEdit5 = new DevExpress.XtraEditors.PictureEdit();
-            this.labelControl42 = new DevExpress.XtraEditors.LabelControl();
-            this.pictureEdit6 = new DevExpress.XtraEditors.PictureEdit();
-            this.comboBoxEdit13 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl43 = new DevExpress.XtraEditors.LabelControl();
-            this.separatorControl23 = new DevExpress.XtraEditors.SeparatorControl();
-            this.comboBoxEdit14 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl44 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit15 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl45 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.comboBoxEdit16 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.comboBoxEdit17 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl46 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl47 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl48 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl12 = new DevExpress.XtraEditors.PanelControl();
-            this.tileControl5 = new DevExpress.XtraEditors.TileControl();
-            this.tileGroup5 = new DevExpress.XtraEditors.TileGroup();
-            this.tileItem15 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem16 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem17 = new DevExpress.XtraEditors.TileItem();
-            this.navigationPage4 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.navigationPage5 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
-            this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.labelControl51 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl52 = new DevExpress.XtraEditors.LabelControl();
-            this.toggleSwitch1 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl53 = new DevExpress.XtraEditors.LabelControl();
-            this.LabelHelpTranslateCrowdin = new DevExpress.XtraEditors.HyperlinkLabelControl();
-            this.toggleSwitch2 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl54 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl55 = new DevExpress.XtraEditors.LabelControl();
-            this.toggleSwitch3 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.comboBoxEdit20 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl56 = new DevExpress.XtraEditors.LabelControl();
-            this.toggleSwitch4 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl57 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl58 = new DevExpress.XtraEditors.LabelControl();
-            this.toggleSwitch5 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl59 = new DevExpress.XtraEditors.LabelControl();
-            this.toggleSwitch6 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.toggleSwitch7 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl60 = new DevExpress.XtraEditors.LabelControl();
-            this.toggleSwitch8 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl61 = new DevExpress.XtraEditors.LabelControl();
-            this.toggleSwitch9 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl62 = new DevExpress.XtraEditors.LabelControl();
-            this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.labelControl63 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl64 = new DevExpress.XtraEditors.LabelControl();
-            this.toggleSwitch10 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.toggleSwitch11 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl65 = new DevExpress.XtraEditors.LabelControl();
-            this.toggleSwitch12 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl66 = new DevExpress.XtraEditors.LabelControl();
-            this.toggleSwitch13 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl67 = new DevExpress.XtraEditors.LabelControl();
-            this.toggleSwitch14 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl68 = new DevExpress.XtraEditors.LabelControl();
-            this.toggleSwitch15 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl69 = new DevExpress.XtraEditors.LabelControl();
-            this.toggleSwitch16 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl70 = new DevExpress.XtraEditors.LabelControl();
-            this.toggleSwitch17 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl71 = new DevExpress.XtraEditors.LabelControl();
-            this.toggleSwitch18 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl72 = new DevExpress.XtraEditors.LabelControl();
-            this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.separatorControl24 = new DevExpress.XtraEditors.SeparatorControl();
-            this.labelControl73 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl74 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl75 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl76 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit9 = new DevExpress.XtraEditors.TextEdit();
-            this.separatorControl25 = new DevExpress.XtraEditors.SeparatorControl();
-            this.labelControl77 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl78 = new DevExpress.XtraEditors.LabelControl();
-            this.tabNavigationPage4 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.simpleButton17 = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl79 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl80 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit10 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit11 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit12 = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton18 = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl81 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl82 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton19 = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit13 = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton20 = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl83 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit14 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl84 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl85 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton21 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton22 = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl86 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit15 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit16 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl87 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton23 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton24 = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl88 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit17 = new DevExpress.XtraEditors.TextEdit();
-            this.tabNavigationPage5 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.labelControl89 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl90 = new DevExpress.XtraEditors.LabelControl();
-            this.toggleSwitch19 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.toggleSwitch20 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl91 = new DevExpress.XtraEditors.LabelControl();
-            this.navigationPage6 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.gridControl5 = new DevExpress.XtraGrid.GridControl();
-            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.separatorControl26 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl27 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl28 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl29 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl30 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl31 = new DevExpress.XtraEditors.SeparatorControl();
-            this.comboBoxEdit21 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.separatorControl32 = new DevExpress.XtraEditors.SeparatorControl();
-            this.comboBoxEdit22 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl92 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit23 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl93 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit24 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl94 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit18 = new DevExpress.XtraEditors.TextEdit();
-            this.comboBoxEdit25 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.comboBoxEdit26 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl95 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl96 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl97 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl98 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl13 = new DevExpress.XtraEditors.PanelControl();
-            this.tileControl6 = new DevExpress.XtraEditors.TileControl();
-            this.tileGroup6 = new DevExpress.XtraEditors.TileGroup();
-            this.tileItem18 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem19 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem20 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem21 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem22 = new DevExpress.XtraEditors.TileItem();
-            this.navigationPage7 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.gridControl6 = new DevExpress.XtraGrid.GridControl();
-            this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.separatorControl33 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl34 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl35 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl36 = new DevExpress.XtraEditors.SeparatorControl();
-            this.comboBoxEdit27 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl99 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit28 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.textEdit19 = new DevExpress.XtraEditors.TextEdit();
-            this.comboBoxEdit29 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.panelControl14 = new DevExpress.XtraEditors.PanelControl();
-            this.tileControl7 = new DevExpress.XtraEditors.TileControl();
-            this.tileGroup7 = new DevExpress.XtraEditors.TileGroup();
-            this.tileItem23 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem24 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem25 = new DevExpress.XtraEditors.TileItem();
-            this.navigationPage8 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.gridControl7 = new DevExpress.XtraGrid.GridControl();
-            this.gridView8 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.separatorControl37 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl38 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl39 = new DevExpress.XtraEditors.SeparatorControl();
-            this.comboBoxEdit30 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl103 = new DevExpress.XtraEditors.LabelControl();
-            this.separatorControl40 = new DevExpress.XtraEditors.SeparatorControl();
-            this.comboBoxEdit31 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl104 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit32 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl105 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit20 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl106 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl15 = new DevExpress.XtraEditors.PanelControl();
-            this.tileControl8 = new DevExpress.XtraEditors.TileControl();
-            this.tileGroup8 = new DevExpress.XtraEditors.TileGroup();
-            this.tileItem26 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem27 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem28 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem29 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem30 = new DevExpress.XtraEditors.TileItem();
-            this.navigationPage9 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.gridControl8 = new DevExpress.XtraGrid.GridControl();
-            this.gridView9 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.separatorControl41 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl42 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl43 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl44 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl45 = new DevExpress.XtraEditors.SeparatorControl();
-            this.pictureEdit7 = new DevExpress.XtraEditors.PictureEdit();
-            this.pictureEdit8 = new DevExpress.XtraEditors.PictureEdit();
-            this.labelControl107 = new DevExpress.XtraEditors.LabelControl();
-            this.dateEdit3 = new DevExpress.XtraEditors.DateEdit();
-            this.pictureEdit9 = new DevExpress.XtraEditors.PictureEdit();
-            this.labelControl108 = new DevExpress.XtraEditors.LabelControl();
-            this.separatorControl46 = new DevExpress.XtraEditors.SeparatorControl();
-            this.comboBoxEdit33 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl109 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit21 = new DevExpress.XtraEditors.TextEdit();
-            this.comboBoxEdit34 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl110 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl111 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit35 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl112 = new DevExpress.XtraEditors.LabelControl();
-            this.pictureEdit10 = new DevExpress.XtraEditors.PictureEdit();
-            this.spinEdit2 = new DevExpress.XtraEditors.SpinEdit();
-            this.panelControl16 = new DevExpress.XtraEditors.PanelControl();
-            this.tileControl9 = new DevExpress.XtraEditors.TileControl();
-            this.tileGroup9 = new DevExpress.XtraEditors.TileGroup();
-            this.tileItem31 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem32 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem33 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem34 = new DevExpress.XtraEditors.TileItem();
-            this.navigationPage10 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.gridControl9 = new DevExpress.XtraGrid.GridControl();
-            this.gridView10 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.separatorControl47 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl48 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl49 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl50 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl51 = new DevExpress.XtraEditors.SeparatorControl();
-            this.comboBoxEdit36 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.separatorControl52 = new DevExpress.XtraEditors.SeparatorControl();
-            this.comboBoxEdit37 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl113 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit38 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl114 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit39 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl115 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit22 = new DevExpress.XtraEditors.TextEdit();
-            this.comboBoxEdit40 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl116 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl117 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl118 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl17 = new DevExpress.XtraEditors.PanelControl();
-            this.tileControl10 = new DevExpress.XtraEditors.TileControl();
-            this.tileGroup10 = new DevExpress.XtraEditors.TileGroup();
-            this.tileItem35 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem36 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem37 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem38 = new DevExpress.XtraEditors.TileItem();
-            this.navigationPage11 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.gridControl10 = new DevExpress.XtraGrid.GridControl();
-            this.gridView11 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.separatorControl53 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl54 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl55 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl56 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl57 = new DevExpress.XtraEditors.SeparatorControl();
-            this.comboBoxEdit41 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl119 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit42 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.comboBoxEdit43 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl121 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit23 = new DevExpress.XtraEditors.TextEdit();
-            this.comboBoxEdit44 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl122 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl123 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl18 = new DevExpress.XtraEditors.PanelControl();
-            this.tileControl11 = new DevExpress.XtraEditors.TileControl();
-            this.tileGroup11 = new DevExpress.XtraEditors.TileGroup();
-            this.tileItem39 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem40 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem41 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem42 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem43 = new DevExpress.XtraEditors.TileItem();
-            this.navigationPage12 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.labelControl124 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl125 = new DevExpress.XtraEditors.LabelControl();
-            this.svgImageBox2 = new DevExpress.XtraEditors.SvgImageBox();
-            this.svgImageBox3 = new DevExpress.XtraEditors.SvgImageBox();
-            this.svgImageBox4 = new DevExpress.XtraEditors.SvgImageBox();
-            this.svgImageBox5 = new DevExpress.XtraEditors.SvgImageBox();
-            this.svgImageBox6 = new DevExpress.XtraEditors.SvgImageBox();
-            this.labelControl126 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl127 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl19 = new DevExpress.XtraEditors.PanelControl();
-            this.xtraScrollableControl4 = new DevExpress.XtraEditors.XtraScrollableControl();
-            this.labelControl128 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl129 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl130 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl131 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl132 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl133 = new DevExpress.XtraEditors.LabelControl();
-            this.navigationPage13 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.gridControl11 = new DevExpress.XtraGrid.GridControl();
-            this.gridView12 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.separatorControl58 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl59 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl60 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl61 = new DevExpress.XtraEditors.SeparatorControl();
-            this.comboBoxEdit45 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl134 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit46 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl135 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit47 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl136 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit24 = new DevExpress.XtraEditors.TextEdit();
-            this.comboBoxEdit48 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl137 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl138 = new DevExpress.XtraEditors.LabelControl();
-            this.separatorControl62 = new DevExpress.XtraEditors.SeparatorControl();
-            this.panelControl20 = new DevExpress.XtraEditors.PanelControl();
-            this.tileControl12 = new DevExpress.XtraEditors.TileControl();
-            this.navigationPage14 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.gridControl12 = new DevExpress.XtraGrid.GridControl();
-            this.gridView13 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.separatorControl63 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl64 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl65 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl66 = new DevExpress.XtraEditors.SeparatorControl();
-            this.comboBoxEdit49 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl139 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit50 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl140 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit25 = new DevExpress.XtraEditors.TextEdit();
-            this.comboBoxEdit51 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl141 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl142 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl21 = new DevExpress.XtraEditors.PanelControl();
-            this.tileControl13 = new DevExpress.XtraEditors.TileControl();
-            this.tileGroup13 = new DevExpress.XtraEditors.TileGroup();
-            this.tileItem48 = new DevExpress.XtraEditors.TileItem();
-            this.navigationPage15 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.gridControl13 = new DevExpress.XtraGrid.GridControl();
-            this.gridView14 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.separatorControl67 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl68 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl69 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl70 = new DevExpress.XtraEditors.SeparatorControl();
-            this.comboBoxEdit52 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl143 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit53 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl144 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit54 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl145 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit26 = new DevExpress.XtraEditors.TextEdit();
-            this.comboBoxEdit55 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl146 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl147 = new DevExpress.XtraEditors.LabelControl();
-            this.separatorControl71 = new DevExpress.XtraEditors.SeparatorControl();
-            this.panelControl22 = new DevExpress.XtraEditors.PanelControl();
-            this.tileControl14 = new DevExpress.XtraEditors.TileControl();
-            this.navigationPage16 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.gridControl14 = new DevExpress.XtraGrid.GridControl();
-            this.gridView15 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panel22 = new System.Windows.Forms.Panel();
-            this.separatorControl72 = new DevExpress.XtraEditors.SeparatorControl();
-            this.comboBoxEdit56 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl148 = new DevExpress.XtraEditors.LabelControl();
-            this.separatorControl73 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl74 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl75 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl76 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl77 = new DevExpress.XtraEditors.SeparatorControl();
-            this.comboBoxEdit57 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.separatorControl78 = new DevExpress.XtraEditors.SeparatorControl();
-            this.comboBoxEdit58 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl149 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit59 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl150 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit27 = new DevExpress.XtraEditors.TextEdit();
-            this.comboBoxEdit60 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl151 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl152 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl153 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit61 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl154 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl23 = new DevExpress.XtraEditors.PanelControl();
-            this.tileControl15 = new DevExpress.XtraEditors.TileControl();
-            this.tileGroup15 = new DevExpress.XtraEditors.TileGroup();
-            this.tileItem53 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem54 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem55 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem56 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem57 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem58 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem59 = new DevExpress.XtraEditors.TileItem();
             this.navigationPage17 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.gridControl15 = new DevExpress.XtraGrid.GridControl();
             this.gridView16 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -1522,7 +964,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelAnnouncementsItems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelCurrentPoll)).BeginInit();
             this.PanelCurrentPoll.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.WebViewPoll)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WebViewCurrentPoll)).BeginInit();
             this.PageDownloads.SuspendLayout();
             this.PanelDownloads.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlDownloads)).BeginInit();
@@ -1743,8 +1185,6 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.GridControlGameCheats)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewGameCheats)).BeginInit();
             this.PanelFiltersCheats.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxGameCheatsFilterNumberCheats.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl93)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SeparatorCheats2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SeparatorCheats3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SeparatorCheats4)).BeginInit();
@@ -1844,316 +1284,6 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MenuLocalFiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
-            this.navigationFrame1.SuspendLayout();
-            this.navigationPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
-            this.panelControl4.SuspendLayout();
-            this.xtraScrollableControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
-            this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
-            this.panelControl6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
-            this.panelControl7.SuspendLayout();
-            this.xtraScrollableControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).BeginInit();
-            this.panelControl8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).BeginInit();
-            this.panelControl9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).BeginInit();
-            this.panelControl10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
-            this.navigationPage2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit8.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit9.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit10.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit11.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit12.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).BeginInit();
-            this.panelControl11.SuspendLayout();
-            this.navigationPage3.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl22)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit13.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit14.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit15.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit16.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit17.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl12)).BeginInit();
-            this.panelControl12.SuspendLayout();
-            this.navigationPage4.SuspendLayout();
-            this.navigationPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
-            this.tabPane1.SuspendLayout();
-            this.tabNavigationPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit20.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch7.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch8.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch9.Properties)).BeginInit();
-            this.tabNavigationPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch10.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch11.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch12.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch13.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch14.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch15.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch16.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch17.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch18.Properties)).BeginInit();
-            this.tabNavigationPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl24)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl25)).BeginInit();
-            this.tabNavigationPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit12.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit13.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit14.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit15.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit16.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit17.Properties)).BeginInit();
-            this.tabNavigationPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch19.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch20.Properties)).BeginInit();
-            this.navigationPage6.SuspendLayout();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl26)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl27)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl28)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl29)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl30)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl31)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit21.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl32)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit22.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit23.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit24.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit18.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit25.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit26.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl13)).BeginInit();
-            this.panelControl13.SuspendLayout();
-            this.navigationPage7.SuspendLayout();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl33)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl34)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl35)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl36)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit27.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit28.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit19.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit29.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl14)).BeginInit();
-            this.panelControl14.SuspendLayout();
-            this.navigationPage8.SuspendLayout();
-            this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).BeginInit();
-            this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl37)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl38)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl39)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit30.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl40)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit31.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit32.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit20.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl15)).BeginInit();
-            this.panelControl15.SuspendLayout();
-            this.navigationPage9.SuspendLayout();
-            this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView9)).BeginInit();
-            this.panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl41)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl42)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl43)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl44)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl45)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit8.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit3.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit9.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl46)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit33.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit21.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit34.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit35.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit10.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl16)).BeginInit();
-            this.panelControl16.SuspendLayout();
-            this.navigationPage10.SuspendLayout();
-            this.panel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView10)).BeginInit();
-            this.panel15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl47)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl48)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl49)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl50)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl51)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit36.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl52)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit37.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit38.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit39.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit22.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit40.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl17)).BeginInit();
-            this.panelControl17.SuspendLayout();
-            this.navigationPage11.SuspendLayout();
-            this.panel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView11)).BeginInit();
-            this.panel17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl53)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl54)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl55)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl56)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl57)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit41.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit42.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit43.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit23.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit44.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl18)).BeginInit();
-            this.panelControl18.SuspendLayout();
-            this.navigationPage12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl19)).BeginInit();
-            this.panelControl19.SuspendLayout();
-            this.xtraScrollableControl4.SuspendLayout();
-            this.navigationPage13.SuspendLayout();
-            this.panel18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView12)).BeginInit();
-            this.panel19.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl58)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl59)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl60)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl61)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit45.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit46.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit47.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit24.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit48.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl62)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl20)).BeginInit();
-            this.panelControl20.SuspendLayout();
-            this.navigationPage14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView13)).BeginInit();
-            this.panel20.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl63)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl64)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl65)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl66)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit49.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit50.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit25.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit51.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl21)).BeginInit();
-            this.panelControl21.SuspendLayout();
-            this.navigationPage15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView14)).BeginInit();
-            this.panel21.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl67)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl68)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl69)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl70)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit52.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit53.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit54.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit26.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit55.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl71)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl22)).BeginInit();
-            this.panelControl22.SuspendLayout();
-            this.navigationPage16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView15)).BeginInit();
-            this.panel22.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl72)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit56.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl73)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl74)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl75)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl76)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl77)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit57.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl78)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit58.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit59.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit27.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit60.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit61.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl23)).BeginInit();
-            this.panelControl23.SuspendLayout();
             this.navigationPage17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView16)).BeginInit();
@@ -2178,7 +1308,7 @@ namespace ArisenStudio.Forms.Windows
             this.PageGameModsPS3.Controls.Add(this.PanelGameGameMods);
             this.PageGameModsPS3.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.PageGameModsPS3.Name = "PageGameModsPS3";
-            this.PageGameModsPS3.Size = new System.Drawing.Size(1288, 571);
+            this.PageGameModsPS3.Size = new System.Drawing.Size(1278, 571);
             // 
             // PanelGameGameMods
             // 
@@ -2190,7 +1320,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelGameGameMods.Location = new System.Drawing.Point(0, 0);
             this.PanelGameGameMods.Margin = new System.Windows.Forms.Padding(0);
             this.PanelGameGameMods.Name = "PanelGameGameMods";
-            this.PanelGameGameMods.Size = new System.Drawing.Size(1288, 571);
+            this.PanelGameGameMods.Size = new System.Drawing.Size(1278, 571);
             this.PanelGameGameMods.TabIndex = 8;
             // 
             // GridControlGameModsPS3
@@ -2201,7 +1331,7 @@ namespace ArisenStudio.Forms.Windows
             this.GridControlGameModsPS3.MainView = this.GridViewGameModsPS3;
             this.GridControlGameModsPS3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.GridControlGameModsPS3.Name = "GridControlGameModsPS3";
-            this.GridControlGameModsPS3.Size = new System.Drawing.Size(1288, 425);
+            this.GridControlGameModsPS3.Size = new System.Drawing.Size(1278, 425);
             this.GridControlGameModsPS3.TabIndex = 6;
             this.GridControlGameModsPS3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewGameModsPS3});
@@ -2273,7 +1403,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelGameModsFilters.Location = new System.Drawing.Point(0, 70);
             this.PanelGameModsFilters.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
             this.PanelGameModsFilters.Name = "PanelGameModsFilters";
-            this.PanelGameModsFilters.Size = new System.Drawing.Size(1288, 76);
+            this.PanelGameModsFilters.Size = new System.Drawing.Size(1278, 76);
             this.PanelGameModsFilters.TabIndex = 12;
             // 
             // SeparatorGameMods5
@@ -2284,7 +1414,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorGameMods5.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorGameMods5.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorGameMods5.LineThickness = 1;
-            this.SeparatorGameMods5.Location = new System.Drawing.Point(1060, 12);
+            this.SeparatorGameMods5.Location = new System.Drawing.Point(1053, 12);
             this.SeparatorGameMods5.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorGameMods5.Name = "SeparatorGameMods5";
             this.SeparatorGameMods5.Padding = new System.Windows.Forms.Padding(0);
@@ -2299,7 +1429,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorGameMods6.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorGameMods6.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorGameMods6.LineThickness = 1;
-            this.SeparatorGameMods6.Location = new System.Drawing.Point(1154, 12);
+            this.SeparatorGameMods6.Location = new System.Drawing.Point(1147, 12);
             this.SeparatorGameMods6.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorGameMods6.Name = "SeparatorGameMods6";
             this.SeparatorGameMods6.Padding = new System.Windows.Forms.Padding(0);
@@ -2314,7 +1444,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorGameMods4.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorGameMods4.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorGameMods4.LineThickness = 1;
-            this.SeparatorGameMods4.Location = new System.Drawing.Point(948, 12);
+            this.SeparatorGameMods4.Location = new System.Drawing.Point(941, 12);
             this.SeparatorGameMods4.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorGameMods4.Name = "SeparatorGameMods4";
             this.SeparatorGameMods4.Padding = new System.Windows.Forms.Padding(0);
@@ -2329,7 +1459,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorGameMods3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorGameMods3.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorGameMods3.LineThickness = 1;
-            this.SeparatorGameMods3.Location = new System.Drawing.Point(818, 12);
+            this.SeparatorGameMods3.Location = new System.Drawing.Point(811, 12);
             this.SeparatorGameMods3.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorGameMods3.Name = "SeparatorGameMods3";
             this.SeparatorGameMods3.Padding = new System.Windows.Forms.Padding(0);
@@ -2344,7 +1474,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorGameMods2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorGameMods2.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorGameMods2.LineThickness = 1;
-            this.SeparatorGameMods2.Location = new System.Drawing.Point(707, 12);
+            this.SeparatorGameMods2.Location = new System.Drawing.Point(700, 12);
             this.SeparatorGameMods2.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorGameMods2.Name = "SeparatorGameMods2";
             this.SeparatorGameMods2.Padding = new System.Windows.Forms.Padding(0);
@@ -2368,7 +1498,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxGameModsPS3FilterModType
             // 
             this.ComboBoxGameModsPS3FilterModType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxGameModsPS3FilterModType.Location = new System.Drawing.Point(836, 34);
+            this.ComboBoxGameModsPS3FilterModType.Location = new System.Drawing.Point(829, 34);
             this.ComboBoxGameModsPS3FilterModType.Name = "ComboBoxGameModsPS3FilterModType";
             this.ComboBoxGameModsPS3FilterModType.Properties.AllowFocused = false;
             this.ComboBoxGameModsPS3FilterModType.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -2400,7 +1530,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorGameMods7.Margin = new System.Windows.Forms.Padding(0);
             this.SeparatorGameMods7.Name = "SeparatorGameMods7";
             this.SeparatorGameMods7.Padding = new System.Windows.Forms.Padding(0);
-            this.SeparatorGameMods7.Size = new System.Drawing.Size(1288, 3);
+            this.SeparatorGameMods7.Size = new System.Drawing.Size(1278, 3);
             this.SeparatorGameMods7.TabIndex = 1172;
             // 
             // ComboBoxGameModsPS3FilterGame
@@ -2443,7 +1573,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxGameModsPS3FilterStatus
             // 
             this.ComboBoxGameModsPS3FilterStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxGameModsPS3FilterStatus.Location = new System.Drawing.Point(1172, 34);
+            this.ComboBoxGameModsPS3FilterStatus.Location = new System.Drawing.Point(1165, 34);
             this.ComboBoxGameModsPS3FilterStatus.Name = "ComboBoxGameModsPS3FilterStatus";
             this.ComboBoxGameModsPS3FilterStatus.Properties.AllowFocused = false;
             this.ComboBoxGameModsPS3FilterStatus.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -2475,7 +1605,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGameModsPS3FilterStatus.Appearance.Options.UseFont = true;
             this.LabelGameModsPS3FilterStatus.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelGameModsPS3FilterStatus.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelGameModsPS3FilterStatus.Location = new System.Drawing.Point(1169, 12);
+            this.LabelGameModsPS3FilterStatus.Location = new System.Drawing.Point(1162, 12);
             this.LabelGameModsPS3FilterStatus.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelGameModsPS3FilterStatus.Name = "LabelGameModsPS3FilterStatus";
             this.LabelGameModsPS3FilterStatus.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -2486,7 +1616,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxGameModsPS3FilterVersion
             // 
             this.ComboBoxGameModsPS3FilterVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxGameModsPS3FilterVersion.Location = new System.Drawing.Point(1078, 34);
+            this.ComboBoxGameModsPS3FilterVersion.Location = new System.Drawing.Point(1071, 34);
             this.ComboBoxGameModsPS3FilterVersion.Name = "ComboBoxGameModsPS3FilterVersion";
             this.ComboBoxGameModsPS3FilterVersion.Properties.AllowFocused = false;
             this.ComboBoxGameModsPS3FilterVersion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -2514,7 +1644,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGameModsPS3FilterVersion.Appearance.Options.UseFont = true;
             this.LabelGameModsPS3FilterVersion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelGameModsPS3FilterVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelGameModsPS3FilterVersion.Location = new System.Drawing.Point(1075, 12);
+            this.LabelGameModsPS3FilterVersion.Location = new System.Drawing.Point(1068, 12);
             this.LabelGameModsPS3FilterVersion.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelGameModsPS3FilterVersion.Name = "LabelGameModsPS3FilterVersion";
             this.LabelGameModsPS3FilterVersion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -2536,14 +1666,14 @@ namespace ArisenStudio.Forms.Windows
             this.TextBoxGameModsPS3FilterName.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.TextBoxGameModsPS3FilterName.Properties.AutoHeight = false;
             this.TextBoxGameModsPS3FilterName.Properties.NullValuePrompt = "Search...";
-            this.TextBoxGameModsPS3FilterName.Size = new System.Drawing.Size(445, 30);
+            this.TextBoxGameModsPS3FilterName.Size = new System.Drawing.Size(438, 30);
             this.TextBoxGameModsPS3FilterName.TabIndex = 3;
             this.TextBoxGameModsPS3FilterName.TextChanged += new System.EventHandler(this.TextBoxGameModsPS3FilterName_TextChanged);
             // 
             // ComboBoxGameModsPS3FilterRegion
             // 
             this.ComboBoxGameModsPS3FilterRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxGameModsPS3FilterRegion.Location = new System.Drawing.Point(966, 34);
+            this.ComboBoxGameModsPS3FilterRegion.Location = new System.Drawing.Point(959, 34);
             this.ComboBoxGameModsPS3FilterRegion.Name = "ComboBoxGameModsPS3FilterRegion";
             this.ComboBoxGameModsPS3FilterRegion.Properties.AllowFocused = false;
             this.ComboBoxGameModsPS3FilterRegion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -2567,7 +1697,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxGameModsPS3FilterSystemType
             // 
             this.ComboBoxGameModsPS3FilterSystemType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxGameModsPS3FilterSystemType.Location = new System.Drawing.Point(725, 34);
+            this.ComboBoxGameModsPS3FilterSystemType.Location = new System.Drawing.Point(718, 34);
             this.ComboBoxGameModsPS3FilterSystemType.Name = "ComboBoxGameModsPS3FilterSystemType";
             this.ComboBoxGameModsPS3FilterSystemType.Properties.AllowFocused = false;
             this.ComboBoxGameModsPS3FilterSystemType.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -2597,7 +1727,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGameModsPS3FilterRegion.Appearance.Options.UseFont = true;
             this.LabelGameModsPS3FilterRegion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelGameModsPS3FilterRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelGameModsPS3FilterRegion.Location = new System.Drawing.Point(963, 12);
+            this.LabelGameModsPS3FilterRegion.Location = new System.Drawing.Point(956, 12);
             this.LabelGameModsPS3FilterRegion.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelGameModsPS3FilterRegion.Name = "LabelGameModsPS3FilterRegion";
             this.LabelGameModsPS3FilterRegion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -2626,7 +1756,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGameModsPS3FilterSystemType.Appearance.Options.UseFont = true;
             this.LabelGameModsPS3FilterSystemType.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelGameModsPS3FilterSystemType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelGameModsPS3FilterSystemType.Location = new System.Drawing.Point(722, 12);
+            this.LabelGameModsPS3FilterSystemType.Location = new System.Drawing.Point(715, 12);
             this.LabelGameModsPS3FilterSystemType.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelGameModsPS3FilterSystemType.Name = "LabelGameModsPS3FilterSystemType";
             this.LabelGameModsPS3FilterSystemType.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -2641,7 +1771,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGameModsPS3FilterModType.Appearance.Options.UseFont = true;
             this.LabelGameModsPS3FilterModType.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelGameModsPS3FilterModType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelGameModsPS3FilterModType.Location = new System.Drawing.Point(833, 12);
+            this.LabelGameModsPS3FilterModType.Location = new System.Drawing.Point(826, 12);
             this.LabelGameModsPS3FilterModType.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelGameModsPS3FilterModType.Name = "LabelGameModsPS3FilterModType";
             this.LabelGameModsPS3FilterModType.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -2660,7 +1790,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelGameModsActions.LookAndFeel.UseDefaultLookAndFeel = false;
             this.PanelGameModsActions.Margin = new System.Windows.Forms.Padding(0);
             this.PanelGameModsActions.Name = "PanelGameModsActions";
-            this.PanelGameModsActions.Size = new System.Drawing.Size(1288, 70);
+            this.PanelGameModsActions.Size = new System.Drawing.Size(1278, 70);
             this.PanelGameModsActions.TabIndex = 1218;
             // 
             // TileControlGameMods
@@ -2687,7 +1817,7 @@ namespace ArisenStudio.Forms.Windows
             this.TileControlGameMods.Name = "TileControlGameMods";
             this.TileControlGameMods.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.TileControlGameMods.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.TileControlGameMods.Size = new System.Drawing.Size(1284, 66);
+            this.TileControlGameMods.Size = new System.Drawing.Size(1274, 66);
             this.TileControlGameMods.TabIndex = 9;
             this.TileControlGameMods.Text = "TileControlModsActions";
             // 
@@ -3133,8 +2263,10 @@ namespace ArisenStudio.Forms.Windows
             this.NavigationMenu.ExpandItemOnHeaderClick = false;
             this.NavigationMenu.ItemHeight = 34;
             this.NavigationMenu.Location = new System.Drawing.Point(0, 0);
+            this.NavigationMenu.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
             this.NavigationMenu.Name = "NavigationMenu";
             this.NavigationMenu.OptionsMinimizing.AllowMinimizeMode = DevExpress.Utils.DefaultBoolean.False;
+            this.NavigationMenu.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
             this.NavigationMenu.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Hidden;
             this.NavigationMenu.ShowGroupExpandButtons = false;
             this.NavigationMenu.ShowItemExpandButtons = false;
@@ -3656,7 +2788,7 @@ namespace ArisenStudio.Forms.Windows
             this.NavigationItemPackages.ImageOptions.SvgImageSize = new System.Drawing.Size(20, 20);
             this.NavigationItemPackages.Name = "NavigationItemPackages";
             this.NavigationItemPackages.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.NavigationItemPackages.Text = "Packages";
+            this.NavigationItemPackages.Text = "Store PKGs";
             this.NavigationItemPackages.Click += new System.EventHandler(this.NavigationItemPackages_Click);
             // 
             // NavigationItemGames
@@ -3781,7 +2913,7 @@ namespace ArisenStudio.Forms.Windows
             this.NavigationItemGameCheats.Name = "NavigationItemGameCheats";
             this.NavigationItemGameCheats.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.NavigationItemGameCheats.Text = "Game Cheats";
-            this.NavigationItemGameCheats.Click += new System.EventHandler(this.NavigationItemGameCheats_Click);
+            this.NavigationItemGameCheats.Click += new System.EventHandler(this.NavigationItemGameCheats_ClickAsync);
             // 
             // PanelLatestNews
             // 
@@ -3794,7 +2926,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelLatestNews.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.PanelLatestNews.Name = "PanelLatestNews";
             this.TableDashboard3.SetRow(this.PanelLatestNews, 0);
-            this.PanelLatestNews.Size = new System.Drawing.Size(536, 401);
+            this.PanelLatestNews.Size = new System.Drawing.Size(531, 401);
             this.PanelLatestNews.TabIndex = 4;
             // 
             // ImageLatestNewsRefresh
@@ -3804,7 +2936,7 @@ namespace ArisenStudio.Forms.Windows
             this.ImageLatestNewsRefresh.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Lime;
             this.ImageLatestNewsRefresh.ItemAppearance.Normal.FillColor = System.Drawing.Color.White;
             this.ImageLatestNewsRefresh.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
-            this.ImageLatestNewsRefresh.Location = new System.Drawing.Point(508, 9);
+            this.ImageLatestNewsRefresh.Location = new System.Drawing.Point(502, 10);
             this.ImageLatestNewsRefresh.Name = "ImageLatestNewsRefresh";
             this.ImageLatestNewsRefresh.Size = new System.Drawing.Size(20, 20);
             this.ImageLatestNewsRefresh.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
@@ -3821,7 +2953,7 @@ namespace ArisenStudio.Forms.Windows
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelNewsItems.Location = new System.Drawing.Point(5, 37);
             this.PanelNewsItems.Name = "PanelNewsItems";
-            this.PanelNewsItems.Size = new System.Drawing.Size(529, 357);
+            this.PanelNewsItems.Size = new System.Drawing.Size(521, 357);
             this.PanelNewsItems.TabIndex = 1;
             // 
             // LabelHeaderLatestNews
@@ -3843,7 +2975,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelChangeLog.Controls.Add(this.PanelChangeLogText);
             this.PanelChangeLog.Controls.Add(this.LabelHeaderWhatsNew);
             this.PanelChangeLog.Controls.Add(this.separatorControl7);
-            this.PanelChangeLog.Location = new System.Drawing.Point(869, 822);
+            this.PanelChangeLog.Location = new System.Drawing.Point(862, 822);
             this.PanelChangeLog.Margin = new System.Windows.Forms.Padding(5);
             this.PanelChangeLog.MinimumSize = new System.Drawing.Size(416, 350);
             this.PanelChangeLog.Name = "PanelChangeLog";
@@ -3969,7 +3101,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelOurFavoriteMods.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.PanelOurFavoriteMods.Name = "PanelOurFavoriteMods";
             this.TableDashboard1.SetRow(this.PanelOurFavoriteMods, 1);
-            this.PanelOurFavoriteMods.Size = new System.Drawing.Size(859, 195);
+            this.PanelOurFavoriteMods.Size = new System.Drawing.Size(852, 195);
             this.PanelOurFavoriteMods.TabIndex = 2;
             // 
             // TileControlFavoriteMods
@@ -3988,9 +3120,9 @@ namespace ArisenStudio.Forms.Windows
             this.TileControlFavoriteMods.Location = new System.Drawing.Point(7, 44);
             this.TileControlFavoriteMods.MaxId = 14;
             this.TileControlFavoriteMods.Name = "TileControlFavoriteMods";
-            this.TileControlFavoriteMods.Padding = new System.Windows.Forms.Padding(14, 10, 10, 10);
+            this.TileControlFavoriteMods.Padding = new System.Windows.Forms.Padding(14, 10, 14, 10);
             this.TileControlFavoriteMods.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
-            this.TileControlFavoriteMods.Size = new System.Drawing.Size(845, 135);
+            this.TileControlFavoriteMods.Size = new System.Drawing.Size(838, 132);
             this.TileControlFavoriteMods.TabIndex = 3;
             this.TileControlFavoriteMods.Text = "tileControl1";
             // 
@@ -4086,7 +3218,7 @@ namespace ArisenStudio.Forms.Windows
             this.PageGameCheats,
             this.PageAbout});
             this.NavigationFrame.SelectedPage = this.PageDashboard;
-            this.NavigationFrame.Size = new System.Drawing.Size(1288, 571);
+            this.NavigationFrame.Size = new System.Drawing.Size(1278, 571);
             this.NavigationFrame.TabIndex = 1;
             this.NavigationFrame.Text = "Navigation Frame";
             this.NavigationFrame.TransitionAnimationProperties.FrameCount = 900;
@@ -4104,7 +3236,7 @@ namespace ArisenStudio.Forms.Windows
             this.PageDashboard.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.PageDashboard.Name = "PageDashboard";
             this.PageDashboard.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.PageDashboard.Size = new System.Drawing.Size(1288, 571);
+            this.PageDashboard.Size = new System.Drawing.Size(1278, 571);
             // 
             // TableDashboard3
             // 
@@ -4120,7 +3252,7 @@ namespace ArisenStudio.Forms.Windows
             this.TableDashboard3.Name = "TableDashboard3";
             this.TableDashboard3.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.TableDashboard3.Size = new System.Drawing.Size(859, 401);
+            this.TableDashboard3.Size = new System.Drawing.Size(852, 401);
             this.TableDashboard3.TabIndex = 15;
             // 
             // PanelStatistics
@@ -4128,11 +3260,11 @@ namespace ArisenStudio.Forms.Windows
             this.TableDashboard3.SetColumn(this.PanelStatistics, 1);
             this.PanelStatistics.Controls.Add(this.FlowPanelStatistics);
             this.PanelStatistics.Controls.Add(this.LabelHeaderStatistics);
-            this.PanelStatistics.Location = new System.Drawing.Point(546, 0);
+            this.PanelStatistics.Location = new System.Drawing.Point(541, 0);
             this.PanelStatistics.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.PanelStatistics.Name = "PanelStatistics";
             this.TableDashboard3.SetRow(this.PanelStatistics, 0);
-            this.PanelStatistics.Size = new System.Drawing.Size(313, 401);
+            this.PanelStatistics.Size = new System.Drawing.Size(311, 401);
             this.PanelStatistics.TabIndex = 6;
             // 
             // FlowPanelStatistics
@@ -4152,7 +3284,7 @@ namespace ArisenStudio.Forms.Windows
             this.FlowPanelStatistics.Location = new System.Drawing.Point(1, 36);
             this.FlowPanelStatistics.Name = "FlowPanelStatistics";
             this.FlowPanelStatistics.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.FlowPanelStatistics.Size = new System.Drawing.Size(303, 334);
+            this.FlowPanelStatistics.Size = new System.Drawing.Size(305, 334);
             this.FlowPanelStatistics.TabIndex = 9;
             // 
             // LabelStatsDownloads
@@ -4264,7 +3396,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelAdPlacement.Location = new System.Drawing.Point(0, 822);
             this.PanelAdPlacement.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
             this.PanelAdPlacement.Name = "PanelAdPlacement";
-            this.PanelAdPlacement.Size = new System.Drawing.Size(859, 194);
+            this.PanelAdPlacement.Size = new System.Drawing.Size(852, 194);
             this.PanelAdPlacement.TabIndex = 4;
             // 
             // BannerAdsDashboard
@@ -4278,7 +3410,7 @@ namespace ArisenStudio.Forms.Windows
             this.BannerAdsDashboard.HeightAd = 134;
             this.BannerAdsDashboard.Location = new System.Drawing.Point(12, 36);
             this.BannerAdsDashboard.Name = "BannerAdsDashboard";
-            this.BannerAdsDashboard.Size = new System.Drawing.Size(838, 144);
+            this.BannerAdsDashboard.Size = new System.Drawing.Size(843, 144);
             this.BannerAdsDashboard.TabIndex = 16;
             this.BannerAdsDashboard.WidthAd = 802;
             // 
@@ -4293,7 +3425,7 @@ namespace ArisenStudio.Forms.Windows
             this.WebViewAdBanner.ForeColor = System.Drawing.Color.White;
             this.WebViewAdBanner.Location = new System.Drawing.Point(5, 44);
             this.WebViewAdBanner.Name = "WebViewAdBanner";
-            this.WebViewAdBanner.Size = new System.Drawing.Size(845, 136);
+            this.WebViewAdBanner.Size = new System.Drawing.Size(850, 136);
             this.WebViewAdBanner.TabIndex = 12;
             this.WebViewAdBanner.Visible = false;
             this.WebViewAdBanner.ZoomFactor = 1D;
@@ -4322,7 +3454,7 @@ namespace ArisenStudio.Forms.Windows
             this.TableDashboard1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.TableDashboard1.Size = new System.Drawing.Size(859, 401);
+            this.TableDashboard1.Size = new System.Drawing.Size(852, 401);
             this.TableDashboard1.TabIndex = 13;
             // 
             // PanelOurFavoriteGames
@@ -4335,7 +3467,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelOurFavoriteGames.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.PanelOurFavoriteGames.Name = "PanelOurFavoriteGames";
             this.TableDashboard1.SetRow(this.PanelOurFavoriteGames, 0);
-            this.PanelOurFavoriteGames.Size = new System.Drawing.Size(859, 196);
+            this.PanelOurFavoriteGames.Size = new System.Drawing.Size(852, 196);
             this.PanelOurFavoriteGames.TabIndex = 12;
             // 
             // LabelHeaderFavoriteGames
@@ -4366,9 +3498,9 @@ namespace ArisenStudio.Forms.Windows
             this.TileControlFavoriteGames.Location = new System.Drawing.Point(7, 44);
             this.TileControlFavoriteGames.MaxId = 15;
             this.TileControlFavoriteGames.Name = "TileControlFavoriteGames";
-            this.TileControlFavoriteGames.Padding = new System.Windows.Forms.Padding(14, 10, 10, 10);
+            this.TileControlFavoriteGames.Padding = new System.Windows.Forms.Padding(14, 10, 14, 10);
             this.TileControlFavoriteGames.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
-            this.TileControlFavoriteGames.Size = new System.Drawing.Size(845, 132);
+            this.TileControlFavoriteGames.Size = new System.Drawing.Size(838, 132);
             this.TileControlFavoriteGames.TabIndex = 1;
             this.TileControlFavoriteGames.Text = "tileControl1";
             // 
@@ -4420,7 +3552,7 @@ namespace ArisenStudio.Forms.Windows
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
             this.TableDashboard2.Controls.Add(this.PanelAnnouncements);
             this.TableDashboard2.Controls.Add(this.PanelCurrentPoll);
-            this.TableDashboard2.Location = new System.Drawing.Point(869, 0);
+            this.TableDashboard2.Location = new System.Drawing.Point(862, 0);
             this.TableDashboard2.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
             this.TableDashboard2.Name = "TableDashboard2";
             this.TableDashboard2.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
@@ -4486,7 +3618,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelCurrentPoll.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.PanelCurrentPoll.Appearance.Options.UseBackColor = true;
             this.TableDashboard2.SetColumn(this.PanelCurrentPoll, 0);
-            this.PanelCurrentPoll.Controls.Add(this.WebViewPoll);
+            this.PanelCurrentPoll.Controls.Add(this.WebViewCurrentPoll);
             this.PanelCurrentPoll.Controls.Add(this.LabelHeaderCurrentPoll);
             this.PanelCurrentPoll.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelCurrentPoll.Location = new System.Drawing.Point(0, 411);
@@ -4496,21 +3628,21 @@ namespace ArisenStudio.Forms.Windows
             this.PanelCurrentPoll.Size = new System.Drawing.Size(416, 401);
             this.PanelCurrentPoll.TabIndex = 9;
             // 
-            // WebViewPoll
+            // WebViewCurrentPoll
             // 
-            this.WebViewPoll.AllowExternalDrop = false;
-            this.WebViewPoll.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.WebViewCurrentPoll.AllowExternalDrop = false;
+            this.WebViewCurrentPoll.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.WebViewPoll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.WebViewPoll.CreationProperties = null;
-            this.WebViewPoll.DefaultBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.WebViewPoll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.WebViewPoll.Location = new System.Drawing.Point(7, 41);
-            this.WebViewPoll.Name = "WebViewPoll";
-            this.WebViewPoll.Size = new System.Drawing.Size(402, 359);
-            this.WebViewPoll.TabIndex = 7;
-            this.WebViewPoll.ZoomFactor = 0.75D;
+            this.WebViewCurrentPoll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.WebViewCurrentPoll.CreationProperties = null;
+            this.WebViewCurrentPoll.DefaultBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.WebViewCurrentPoll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.WebViewCurrentPoll.Location = new System.Drawing.Point(2, 41);
+            this.WebViewCurrentPoll.Name = "WebViewCurrentPoll";
+            this.WebViewCurrentPoll.Size = new System.Drawing.Size(413, 359);
+            this.WebViewCurrentPoll.TabIndex = 7;
+            this.WebViewCurrentPoll.ZoomFactor = 0.75D;
             // 
             // LabelHeaderCurrentPoll
             // 
@@ -4528,7 +3660,7 @@ namespace ArisenStudio.Forms.Windows
             this.PageDownloads.Controls.Add(this.PanelDownloads);
             this.PageDownloads.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.PageDownloads.Name = "PageDownloads";
-            this.PageDownloads.Size = new System.Drawing.Size(1288, 571);
+            this.PageDownloads.Size = new System.Drawing.Size(1278, 571);
             // 
             // PanelDownloads
             // 
@@ -4541,7 +3673,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelDownloads.Location = new System.Drawing.Point(0, 0);
             this.PanelDownloads.Margin = new System.Windows.Forms.Padding(0);
             this.PanelDownloads.Name = "PanelDownloads";
-            this.PanelDownloads.Size = new System.Drawing.Size(1288, 571);
+            this.PanelDownloads.Size = new System.Drawing.Size(1278, 571);
             this.PanelDownloads.TabIndex = 16;
             // 
             // GridControlDownloads
@@ -4554,7 +3686,7 @@ namespace ArisenStudio.Forms.Windows
             this.GridControlDownloads.MainView = this.GridViewDownloads;
             this.GridControlDownloads.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.GridControlDownloads.Name = "GridControlDownloads";
-            this.GridControlDownloads.Size = new System.Drawing.Size(1288, 425);
+            this.GridControlDownloads.Size = new System.Drawing.Size(1278, 425);
             this.GridControlDownloads.TabIndex = 6;
             this.GridControlDownloads.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewDownloads});
@@ -4623,7 +3755,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelFiltersDownloads.Location = new System.Drawing.Point(0, 70);
             this.PanelFiltersDownloads.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
             this.PanelFiltersDownloads.Name = "PanelFiltersDownloads";
-            this.PanelFiltersDownloads.Size = new System.Drawing.Size(1288, 76);
+            this.PanelFiltersDownloads.Size = new System.Drawing.Size(1278, 76);
             this.PanelFiltersDownloads.TabIndex = 12;
             // 
             // SeparatorDownloads3
@@ -4634,7 +3766,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorDownloads3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorDownloads3.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorDownloads3.LineThickness = 1;
-            this.SeparatorDownloads3.Location = new System.Drawing.Point(817, 12);
+            this.SeparatorDownloads3.Location = new System.Drawing.Point(810, 12);
             this.SeparatorDownloads3.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorDownloads3.Name = "SeparatorDownloads3";
             this.SeparatorDownloads3.Padding = new System.Windows.Forms.Padding(0);
@@ -4649,7 +3781,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorDownloads4.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorDownloads4.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorDownloads4.LineThickness = 1;
-            this.SeparatorDownloads4.Location = new System.Drawing.Point(947, 12);
+            this.SeparatorDownloads4.Location = new System.Drawing.Point(940, 12);
             this.SeparatorDownloads4.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorDownloads4.Name = "SeparatorDownloads4";
             this.SeparatorDownloads4.Padding = new System.Windows.Forms.Padding(0);
@@ -4664,7 +3796,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorDownloads5.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorDownloads5.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorDownloads5.LineThickness = 1;
-            this.SeparatorDownloads5.Location = new System.Drawing.Point(1059, 12);
+            this.SeparatorDownloads5.Location = new System.Drawing.Point(1052, 12);
             this.SeparatorDownloads5.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorDownloads5.Name = "SeparatorDownloads5";
             this.SeparatorDownloads5.Padding = new System.Windows.Forms.Padding(0);
@@ -4679,7 +3811,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorDownloads6.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorDownloads6.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorDownloads6.LineThickness = 1;
-            this.SeparatorDownloads6.Location = new System.Drawing.Point(1153, 12);
+            this.SeparatorDownloads6.Location = new System.Drawing.Point(1146, 12);
             this.SeparatorDownloads6.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorDownloads6.Name = "SeparatorDownloads6";
             this.SeparatorDownloads6.Padding = new System.Windows.Forms.Padding(0);
@@ -4718,7 +3850,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.DateTimeDownloadsFilterDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DateTimeDownloadsFilterDate.EditValue = null;
-            this.DateTimeDownloadsFilterDate.Location = new System.Drawing.Point(1171, 34);
+            this.DateTimeDownloadsFilterDate.Location = new System.Drawing.Point(1164, 34);
             this.DateTimeDownloadsFilterDate.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.DateTimeDownloadsFilterDate.Name = "DateTimeDownloadsFilterDate";
             this.DateTimeDownloadsFilterDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -4756,7 +3888,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxDownloadsFilterRegion
             // 
             this.ComboBoxDownloadsFilterRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxDownloadsFilterRegion.Location = new System.Drawing.Point(965, 34);
+            this.ComboBoxDownloadsFilterRegion.Location = new System.Drawing.Point(958, 34);
             this.ComboBoxDownloadsFilterRegion.Name = "ComboBoxDownloadsFilterRegion";
             this.ComboBoxDownloadsFilterRegion.Properties.AllowFocused = false;
             this.ComboBoxDownloadsFilterRegion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -4786,7 +3918,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelDownloadsFilterRegion.Appearance.Options.UseForeColor = true;
             this.LabelDownloadsFilterRegion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelDownloadsFilterRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelDownloadsFilterRegion.Location = new System.Drawing.Point(962, 12);
+            this.LabelDownloadsFilterRegion.Location = new System.Drawing.Point(955, 12);
             this.LabelDownloadsFilterRegion.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
             this.LabelDownloadsFilterRegion.Name = "LabelDownloadsFilterRegion";
             this.LabelDownloadsFilterRegion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -4798,7 +3930,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.ImageDownloadsFilterOnType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ImageDownloadsFilterOnType.EditValue = global::ArisenStudio.Properties.Resources.icons8_equals;
-            this.ImageDownloadsFilterOnType.Location = new System.Drawing.Point(1175, 38);
+            this.ImageDownloadsFilterOnType.Location = new System.Drawing.Point(1168, 38);
             this.ImageDownloadsFilterOnType.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.ImageDownloadsFilterOnType.Name = "ImageDownloadsFilterOnType";
             this.ImageDownloadsFilterOnType.Properties.AllowFocused = false;
@@ -4824,7 +3956,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelDownloadsFilterDownloadedOn.Appearance.Options.UseForeColor = true;
             this.LabelDownloadsFilterDownloadedOn.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelDownloadsFilterDownloadedOn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelDownloadsFilterDownloadedOn.Location = new System.Drawing.Point(1168, 12);
+            this.LabelDownloadsFilterDownloadedOn.Location = new System.Drawing.Point(1161, 12);
             this.LabelDownloadsFilterDownloadedOn.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelDownloadsFilterDownloadedOn.Name = "LabelDownloadsFilterDownloadedOn";
             this.LabelDownloadsFilterDownloadedOn.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -4835,7 +3967,7 @@ namespace ArisenStudio.Forms.Windows
             // ImageDownloadsFilterOnTypeBack
             // 
             this.ImageDownloadsFilterOnTypeBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ImageDownloadsFilterOnTypeBack.Location = new System.Drawing.Point(1171, 34);
+            this.ImageDownloadsFilterOnTypeBack.Location = new System.Drawing.Point(1164, 34);
             this.ImageDownloadsFilterOnTypeBack.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.ImageDownloadsFilterOnTypeBack.Name = "ImageDownloadsFilterOnTypeBack";
             this.ImageDownloadsFilterOnTypeBack.Properties.AllowFocused = false;
@@ -4854,7 +3986,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxDownloadsFilterVersion
             // 
             this.ComboBoxDownloadsFilterVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxDownloadsFilterVersion.Location = new System.Drawing.Point(1077, 34);
+            this.ComboBoxDownloadsFilterVersion.Location = new System.Drawing.Point(1070, 34);
             this.ComboBoxDownloadsFilterVersion.Name = "ComboBoxDownloadsFilterVersion";
             this.ComboBoxDownloadsFilterVersion.Properties.AllowFocused = false;
             this.ComboBoxDownloadsFilterVersion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -4886,7 +4018,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelDownloadsFilterVersion.Appearance.Options.UseForeColor = true;
             this.LabelDownloadsFilterVersion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelDownloadsFilterVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelDownloadsFilterVersion.Location = new System.Drawing.Point(1074, 12);
+            this.LabelDownloadsFilterVersion.Location = new System.Drawing.Point(1067, 12);
             this.LabelDownloadsFilterVersion.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
             this.LabelDownloadsFilterVersion.Name = "LabelDownloadsFilterVersion";
             this.LabelDownloadsFilterVersion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -4897,7 +4029,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxDownloadsFilterModType
             // 
             this.ComboBoxDownloadsFilterModType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxDownloadsFilterModType.Location = new System.Drawing.Point(835, 34);
+            this.ComboBoxDownloadsFilterModType.Location = new System.Drawing.Point(828, 34);
             this.ComboBoxDownloadsFilterModType.Name = "ComboBoxDownloadsFilterModType";
             this.ComboBoxDownloadsFilterModType.Properties.AllowFocused = false;
             this.ComboBoxDownloadsFilterModType.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -4929,7 +4061,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelDownloadsFilterModType.Appearance.Options.UseForeColor = true;
             this.LabelDownloadsFilterModType.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelDownloadsFilterModType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelDownloadsFilterModType.Location = new System.Drawing.Point(832, 12);
+            this.LabelDownloadsFilterModType.Location = new System.Drawing.Point(825, 12);
             this.LabelDownloadsFilterModType.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
             this.LabelDownloadsFilterModType.Name = "LabelDownloadsFilterModType";
             this.LabelDownloadsFilterModType.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -4991,7 +4123,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorDownloads7.Margin = new System.Windows.Forms.Padding(0);
             this.SeparatorDownloads7.Name = "SeparatorDownloads7";
             this.SeparatorDownloads7.Padding = new System.Windows.Forms.Padding(0);
-            this.SeparatorDownloads7.Size = new System.Drawing.Size(1288, 3);
+            this.SeparatorDownloads7.Size = new System.Drawing.Size(1278, 3);
             this.SeparatorDownloads7.TabIndex = 1172;
             // 
             // ComboBoxDownloadsFilterCategory
@@ -5049,7 +4181,7 @@ namespace ArisenStudio.Forms.Windows
             this.TextBoxDownloadsFilterFileName.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.TextBoxDownloadsFilterFileName.Properties.AutoHeight = false;
             this.TextBoxDownloadsFilterFileName.Properties.NullValuePrompt = "Search...";
-            this.TextBoxDownloadsFilterFileName.Size = new System.Drawing.Size(433, 30);
+            this.TextBoxDownloadsFilterFileName.Size = new System.Drawing.Size(426, 30);
             this.TextBoxDownloadsFilterFileName.TabIndex = 1;
             this.TextBoxDownloadsFilterFileName.EditValueChanged += new System.EventHandler(this.TextBoxDownloadsFilterFileName_EditValueChanged);
             // 
@@ -5080,7 +4212,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelDownloadsActions.LookAndFeel.UseDefaultLookAndFeel = false;
             this.PanelDownloadsActions.Margin = new System.Windows.Forms.Padding(0);
             this.PanelDownloadsActions.Name = "PanelDownloadsActions";
-            this.PanelDownloadsActions.Size = new System.Drawing.Size(1288, 70);
+            this.PanelDownloadsActions.Size = new System.Drawing.Size(1278, 70);
             this.PanelDownloadsActions.TabIndex = 18;
             // 
             // TileControlDownloads
@@ -5119,7 +4251,7 @@ namespace ArisenStudio.Forms.Windows
             this.TileControlDownloads.ScrollButtonFadeAnimationTime = 1;
             this.TileControlDownloads.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
             this.TileControlDownloads.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(70)))));
-            this.TileControlDownloads.Size = new System.Drawing.Size(1284, 66);
+            this.TileControlDownloads.Size = new System.Drawing.Size(1274, 66);
             this.TileControlDownloads.TabIndex = 17;
             // 
             // TileGroupDownloads
@@ -5255,7 +4387,7 @@ namespace ArisenStudio.Forms.Windows
             this.PageInstalledFiles.Controls.Add(this.PanelInstalledFilesActions);
             this.PageInstalledFiles.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.PageInstalledFiles.Name = "PageInstalledFiles";
-            this.PageInstalledFiles.Size = new System.Drawing.Size(1288, 571);
+            this.PageInstalledFiles.Size = new System.Drawing.Size(1278, 571);
             // 
             // PanelInstalledMods
             // 
@@ -5267,7 +4399,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelInstalledMods.Location = new System.Drawing.Point(0, 70);
             this.PanelInstalledMods.Margin = new System.Windows.Forms.Padding(0);
             this.PanelInstalledMods.Name = "PanelInstalledMods";
-            this.PanelInstalledMods.Size = new System.Drawing.Size(1288, 501);
+            this.PanelInstalledMods.Size = new System.Drawing.Size(1278, 501);
             this.PanelInstalledMods.TabIndex = 1182;
             // 
             // GridControlInstalledFiles
@@ -5282,7 +4414,7 @@ namespace ArisenStudio.Forms.Windows
             this.GridControlInstalledFiles.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.GridControlInstalledFiles.Name = "GridControlInstalledFiles";
             this.GridControlInstalledFiles.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.GridControlInstalledFiles.Size = new System.Drawing.Size(1288, 425);
+            this.GridControlInstalledFiles.Size = new System.Drawing.Size(1278, 425);
             this.GridControlInstalledFiles.TabIndex = 6;
             this.GridControlInstalledFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewInstalledFiles});
@@ -5354,14 +4486,14 @@ namespace ArisenStudio.Forms.Windows
             this.PanelInstalledFilesFilters.Location = new System.Drawing.Point(0, 0);
             this.PanelInstalledFilesFilters.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
             this.PanelInstalledFilesFilters.Name = "PanelInstalledFilesFilters";
-            this.PanelInstalledFilesFilters.Size = new System.Drawing.Size(1288, 76);
+            this.PanelInstalledFilesFilters.Size = new System.Drawing.Size(1278, 76);
             this.PanelInstalledFilesFilters.TabIndex = 12;
             // 
             // DateTimeInstalledFilesFilterInstalledOn
             // 
             this.DateTimeInstalledFilesFilterInstalledOn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DateTimeInstalledFilesFilterInstalledOn.EditValue = null;
-            this.DateTimeInstalledFilesFilterInstalledOn.Location = new System.Drawing.Point(1174, 34);
+            this.DateTimeInstalledFilesFilterInstalledOn.Location = new System.Drawing.Point(1167, 34);
             this.DateTimeInstalledFilesFilterInstalledOn.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.DateTimeInstalledFilesFilterInstalledOn.Name = "DateTimeInstalledFilesFilterInstalledOn";
             this.DateTimeInstalledFilesFilterInstalledOn.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -5405,7 +4537,7 @@ namespace ArisenStudio.Forms.Windows
             0,
             0,
             0});
-            this.NumericBoxInstalledFilesFilterTotalFiles.Location = new System.Drawing.Point(1078, 34);
+            this.NumericBoxInstalledFilesFilterTotalFiles.Location = new System.Drawing.Point(1071, 34);
             this.NumericBoxInstalledFilesFilterTotalFiles.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.NumericBoxInstalledFilesFilterTotalFiles.Name = "NumericBoxInstalledFilesFilterTotalFiles";
             this.NumericBoxInstalledFilesFilterTotalFiles.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -5435,7 +4567,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorInstalledFiles7.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorInstalledFiles7.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorInstalledFiles7.LineThickness = 1;
-            this.SeparatorInstalledFiles7.Location = new System.Drawing.Point(1159, 12);
+            this.SeparatorInstalledFiles7.Location = new System.Drawing.Point(1152, 12);
             this.SeparatorInstalledFiles7.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorInstalledFiles7.Name = "SeparatorInstalledFiles7";
             this.SeparatorInstalledFiles7.Padding = new System.Windows.Forms.Padding(0);
@@ -5450,7 +4582,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorInstalledFiles6.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorInstalledFiles6.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorInstalledFiles6.LineThickness = 1;
-            this.SeparatorInstalledFiles6.Location = new System.Drawing.Point(1063, 12);
+            this.SeparatorInstalledFiles6.Location = new System.Drawing.Point(1056, 12);
             this.SeparatorInstalledFiles6.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorInstalledFiles6.Name = "SeparatorInstalledFiles6";
             this.SeparatorInstalledFiles6.Padding = new System.Windows.Forms.Padding(0);
@@ -5465,7 +4597,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorInstalledFiles5.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorInstalledFiles5.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorInstalledFiles5.LineThickness = 1;
-            this.SeparatorInstalledFiles5.Location = new System.Drawing.Point(969, 12);
+            this.SeparatorInstalledFiles5.Location = new System.Drawing.Point(962, 12);
             this.SeparatorInstalledFiles5.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorInstalledFiles5.Name = "SeparatorInstalledFiles5";
             this.SeparatorInstalledFiles5.Padding = new System.Windows.Forms.Padding(0);
@@ -5480,7 +4612,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorInstalledFiles4.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorInstalledFiles4.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorInstalledFiles4.LineThickness = 1;
-            this.SeparatorInstalledFiles4.Location = new System.Drawing.Point(857, 12);
+            this.SeparatorInstalledFiles4.Location = new System.Drawing.Point(850, 12);
             this.SeparatorInstalledFiles4.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorInstalledFiles4.Name = "SeparatorInstalledFiles4";
             this.SeparatorInstalledFiles4.Padding = new System.Windows.Forms.Padding(0);
@@ -5495,7 +4627,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorInstalledFiles3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorInstalledFiles3.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorInstalledFiles3.LineThickness = 1;
-            this.SeparatorInstalledFiles3.Location = new System.Drawing.Point(727, 12);
+            this.SeparatorInstalledFiles3.Location = new System.Drawing.Point(720, 12);
             this.SeparatorInstalledFiles3.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorInstalledFiles3.Name = "SeparatorInstalledFiles3";
             this.SeparatorInstalledFiles3.Padding = new System.Windows.Forms.Padding(0);
@@ -5534,7 +4666,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.ImageInstalledModsFilterTotalFilesType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ImageInstalledModsFilterTotalFilesType.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ImageInstalledModsFilterTotalFilesType.Location = new System.Drawing.Point(1081, 42);
+            this.ImageInstalledModsFilterTotalFilesType.Location = new System.Drawing.Point(1074, 42);
             this.ImageInstalledModsFilterTotalFilesType.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.ImageInstalledModsFilterTotalFilesType.Name = "ImageInstalledModsFilterTotalFilesType";
             this.ImageInstalledModsFilterTotalFilesType.Properties.AllowFocused = false;
@@ -5553,7 +4685,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.ImageInstalledModsFilterTotalFilesTypeBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ImageInstalledModsFilterTotalFilesTypeBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ImageInstalledModsFilterTotalFilesTypeBack.Location = new System.Drawing.Point(1077, 34);
+            this.ImageInstalledModsFilterTotalFilesTypeBack.Location = new System.Drawing.Point(1070, 34);
             this.ImageInstalledModsFilterTotalFilesTypeBack.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.ImageInstalledModsFilterTotalFilesTypeBack.Name = "ImageInstalledModsFilterTotalFilesTypeBack";
             this.ImageInstalledModsFilterTotalFilesTypeBack.Properties.AllowFocused = false;
@@ -5577,7 +4709,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelInstalledModsFilterTotalFiles.Appearance.Options.UseForeColor = true;
             this.LabelInstalledModsFilterTotalFiles.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelInstalledModsFilterTotalFiles.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelInstalledModsFilterTotalFiles.Location = new System.Drawing.Point(1074, 12);
+            this.LabelInstalledModsFilterTotalFiles.Location = new System.Drawing.Point(1067, 12);
             this.LabelInstalledModsFilterTotalFiles.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelInstalledModsFilterTotalFiles.Name = "LabelInstalledModsFilterTotalFiles";
             this.LabelInstalledModsFilterTotalFiles.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -5589,7 +4721,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.ImageInstalledModsFilterInstalledOnType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ImageInstalledModsFilterInstalledOnType.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ImageInstalledModsFilterInstalledOnType.Location = new System.Drawing.Point(1177, 42);
+            this.ImageInstalledModsFilterInstalledOnType.Location = new System.Drawing.Point(1170, 42);
             this.ImageInstalledModsFilterInstalledOnType.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.ImageInstalledModsFilterInstalledOnType.Name = "ImageInstalledModsFilterInstalledOnType";
             this.ImageInstalledModsFilterInstalledOnType.Properties.AllowFocused = false;
@@ -5613,7 +4745,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelInstalledModsFilterInstalledOn.Appearance.Options.UseForeColor = true;
             this.LabelInstalledModsFilterInstalledOn.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelInstalledModsFilterInstalledOn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelInstalledModsFilterInstalledOn.Location = new System.Drawing.Point(1170, 12);
+            this.LabelInstalledModsFilterInstalledOn.Location = new System.Drawing.Point(1163, 12);
             this.LabelInstalledModsFilterInstalledOn.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelInstalledModsFilterInstalledOn.Name = "LabelInstalledModsFilterInstalledOn";
             this.LabelInstalledModsFilterInstalledOn.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -5625,7 +4757,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.ImageInstalledModsFilterInstalledOnTypeBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ImageInstalledModsFilterInstalledOnTypeBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ImageInstalledModsFilterInstalledOnTypeBack.Location = new System.Drawing.Point(1173, 34);
+            this.ImageInstalledModsFilterInstalledOnTypeBack.Location = new System.Drawing.Point(1166, 34);
             this.ImageInstalledModsFilterInstalledOnTypeBack.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.ImageInstalledModsFilterInstalledOnTypeBack.Name = "ImageInstalledModsFilterInstalledOnTypeBack";
             this.ImageInstalledModsFilterInstalledOnTypeBack.Properties.AllowFocused = false;
@@ -5694,7 +4826,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorInstalledModsFilter.Margin = new System.Windows.Forms.Padding(0);
             this.SeparatorInstalledModsFilter.Name = "SeparatorInstalledModsFilter";
             this.SeparatorInstalledModsFilter.Padding = new System.Windows.Forms.Padding(0);
-            this.SeparatorInstalledModsFilter.Size = new System.Drawing.Size(1288, 3);
+            this.SeparatorInstalledModsFilter.Size = new System.Drawing.Size(1278, 3);
             this.SeparatorInstalledModsFilter.TabIndex = 1172;
             // 
             // ComboBoxInstalledFilesFilterCategory
@@ -5739,7 +4871,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxInstalledFilesFilterVersion
             // 
             this.ComboBoxInstalledFilesFilterVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxInstalledFilesFilterVersion.Location = new System.Drawing.Point(987, 34);
+            this.ComboBoxInstalledFilesFilterVersion.Location = new System.Drawing.Point(980, 34);
             this.ComboBoxInstalledFilesFilterVersion.Name = "ComboBoxInstalledFilesFilterVersion";
             this.ComboBoxInstalledFilesFilterVersion.Properties.AllowFocused = false;
             this.ComboBoxInstalledFilesFilterVersion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -5769,7 +4901,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelInstalledModsFilterVersion.Appearance.Options.UseForeColor = true;
             this.LabelInstalledModsFilterVersion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelInstalledModsFilterVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelInstalledModsFilterVersion.Location = new System.Drawing.Point(984, 12);
+            this.LabelInstalledModsFilterVersion.Location = new System.Drawing.Point(977, 12);
             this.LabelInstalledModsFilterVersion.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
             this.LabelInstalledModsFilterVersion.Name = "LabelInstalledModsFilterVersion";
             this.LabelInstalledModsFilterVersion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -5791,14 +4923,14 @@ namespace ArisenStudio.Forms.Windows
             this.TextBoxInstalledFilesFilterName.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.TextBoxInstalledFilesFilterName.Properties.AutoHeight = false;
             this.TextBoxInstalledFilesFilterName.Properties.NullValuePrompt = "Search...";
-            this.TextBoxInstalledFilesFilterName.Size = new System.Drawing.Size(343, 30);
+            this.TextBoxInstalledFilesFilterName.Size = new System.Drawing.Size(336, 30);
             this.TextBoxInstalledFilesFilterName.TabIndex = 1;
             this.TextBoxInstalledFilesFilterName.TextChanged += new System.EventHandler(this.TextBoxInstalledModsFilterName_TextChanged);
             // 
             // ComboBoxInstalledFilesFilterRegion
             // 
             this.ComboBoxInstalledFilesFilterRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxInstalledFilesFilterRegion.Location = new System.Drawing.Point(875, 34);
+            this.ComboBoxInstalledFilesFilterRegion.Location = new System.Drawing.Point(868, 34);
             this.ComboBoxInstalledFilesFilterRegion.Name = "ComboBoxInstalledFilesFilterRegion";
             this.ComboBoxInstalledFilesFilterRegion.Properties.AllowFocused = false;
             this.ComboBoxInstalledFilesFilterRegion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -5822,7 +4954,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxInstalledFilesFilterType
             // 
             this.ComboBoxInstalledFilesFilterType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxInstalledFilesFilterType.Location = new System.Drawing.Point(745, 34);
+            this.ComboBoxInstalledFilesFilterType.Location = new System.Drawing.Point(738, 34);
             this.ComboBoxInstalledFilesFilterType.Name = "ComboBoxInstalledFilesFilterType";
             this.ComboBoxInstalledFilesFilterType.Properties.AllowFocused = false;
             this.ComboBoxInstalledFilesFilterType.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -5852,7 +4984,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelInstalledModsFilterRegion.Appearance.Options.UseForeColor = true;
             this.LabelInstalledModsFilterRegion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelInstalledModsFilterRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelInstalledModsFilterRegion.Location = new System.Drawing.Point(872, 12);
+            this.LabelInstalledModsFilterRegion.Location = new System.Drawing.Point(865, 12);
             this.LabelInstalledModsFilterRegion.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
             this.LabelInstalledModsFilterRegion.Name = "LabelInstalledModsFilterRegion";
             this.LabelInstalledModsFilterRegion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -5885,7 +5017,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelInstalledModsFilterModType.Appearance.Options.UseForeColor = true;
             this.LabelInstalledModsFilterModType.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelInstalledModsFilterModType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelInstalledModsFilterModType.Location = new System.Drawing.Point(742, 12);
+            this.LabelInstalledModsFilterModType.Location = new System.Drawing.Point(735, 12);
             this.LabelInstalledModsFilterModType.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
             this.LabelInstalledModsFilterModType.Name = "LabelInstalledModsFilterModType";
             this.LabelInstalledModsFilterModType.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -5899,7 +5031,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelInstalledFilesActions.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelInstalledFilesActions.Location = new System.Drawing.Point(0, 0);
             this.PanelInstalledFilesActions.Name = "PanelInstalledFilesActions";
-            this.PanelInstalledFilesActions.Size = new System.Drawing.Size(1288, 70);
+            this.PanelInstalledFilesActions.Size = new System.Drawing.Size(1278, 70);
             this.PanelInstalledFilesActions.TabIndex = 1183;
             // 
             // TileControlInstalledMods
@@ -5930,7 +5062,7 @@ namespace ArisenStudio.Forms.Windows
             this.TileControlInstalledMods.RowCount = 1;
             this.TileControlInstalledMods.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
             this.TileControlInstalledMods.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(70)))));
-            this.TileControlInstalledMods.Size = new System.Drawing.Size(1284, 66);
+            this.TileControlInstalledMods.Size = new System.Drawing.Size(1274, 66);
             this.TileControlInstalledMods.TabIndex = 1183;
             // 
             // TileGroupInstalledMods
@@ -6037,7 +5169,7 @@ namespace ArisenStudio.Forms.Windows
             this.PageFileManager.Controls.Add(this.PanelFileManager);
             this.PageFileManager.Font = new System.Drawing.Font("Segoe UI", 10.25F);
             this.PageFileManager.Name = "PageFileManager";
-            this.PageFileManager.Size = new System.Drawing.Size(1288, 571);
+            this.PageFileManager.Size = new System.Drawing.Size(1278, 571);
             // 
             // PanelFileManager
             // 
@@ -6054,7 +5186,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelFileManager.Name = "PanelFileManager";
             this.PanelFileManager.RowCount = 1;
             this.PanelFileManager.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.PanelFileManager.Size = new System.Drawing.Size(1288, 564);
+            this.PanelFileManager.Size = new System.Drawing.Size(1281, 564);
             this.PanelFileManager.TabIndex = 1215;
             // 
             // GroupConsoleFileExplorer
@@ -6068,10 +5200,10 @@ namespace ArisenStudio.Forms.Windows
             this.GroupConsoleFileExplorer.Controls.Add(this.TextBoxFileManagerConsolePath);
             this.GroupConsoleFileExplorer.Controls.Add(this.ComboBoxFileManagerConsoleDrives);
             this.GroupConsoleFileExplorer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GroupConsoleFileExplorer.Location = new System.Drawing.Point(649, 0);
+            this.GroupConsoleFileExplorer.Location = new System.Drawing.Point(645, 0);
             this.GroupConsoleFileExplorer.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.GroupConsoleFileExplorer.Name = "GroupConsoleFileExplorer";
-            this.GroupConsoleFileExplorer.Size = new System.Drawing.Size(639, 564);
+            this.GroupConsoleFileExplorer.Size = new System.Drawing.Size(636, 564);
             this.GroupConsoleFileExplorer.TabIndex = 14;
             this.GroupConsoleFileExplorer.Text = "Console File Explorer";
             // 
@@ -6087,7 +5219,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelFileManagerConsoleButtons.Location = new System.Drawing.Point(2, 492);
             this.PanelFileManagerConsoleButtons.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.PanelFileManagerConsoleButtons.Name = "PanelFileManagerConsoleButtons";
-            this.PanelFileManagerConsoleButtons.Size = new System.Drawing.Size(635, 42);
+            this.PanelFileManagerConsoleButtons.Size = new System.Drawing.Size(632, 42);
             this.PanelFileManagerConsoleButtons.TabIndex = 3;
             // 
             // ButtonFileManagerConsoleDownload
@@ -6225,7 +5357,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelFileManagerConsoleStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelFileManagerConsoleStatus.Location = new System.Drawing.Point(2, 534);
             this.PanelFileManagerConsoleStatus.Name = "PanelFileManagerConsoleStatus";
-            this.PanelFileManagerConsoleStatus.Size = new System.Drawing.Size(635, 28);
+            this.PanelFileManagerConsoleStatus.Size = new System.Drawing.Size(632, 28);
             this.PanelFileManagerConsoleStatus.TabIndex = 1175;
             // 
             // LabelFileManagerConsoleStatus
@@ -6254,7 +5386,7 @@ namespace ArisenStudio.Forms.Windows
             this.GridControlFileManagerConsoleFiles.MainView = this.GridViewFileManagerConsoleFiles;
             this.GridControlFileManagerConsoleFiles.Margin = new System.Windows.Forms.Padding(6, 3, 6, 0);
             this.GridControlFileManagerConsoleFiles.Name = "GridControlFileManagerConsoleFiles";
-            this.GridControlFileManagerConsoleFiles.Size = new System.Drawing.Size(616, 421);
+            this.GridControlFileManagerConsoleFiles.Size = new System.Drawing.Size(619, 421);
             this.GridControlFileManagerConsoleFiles.TabIndex = 7;
             this.GridControlFileManagerConsoleFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewFileManagerConsoleFiles});
@@ -6294,7 +5426,7 @@ namespace ArisenStudio.Forms.Windows
             // ButtonFileManagerConsoleNavigate
             // 
             this.ButtonFileManagerConsoleNavigate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonFileManagerConsoleNavigate.Location = new System.Drawing.Point(588, 37);
+            this.ButtonFileManagerConsoleNavigate.Location = new System.Drawing.Point(591, 37);
             this.ButtonFileManagerConsoleNavigate.Name = "ButtonFileManagerConsoleNavigate";
             this.ButtonFileManagerConsoleNavigate.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonFileManagerConsoleNavigate.Size = new System.Drawing.Size(40, 24);
@@ -6311,7 +5443,7 @@ namespace ArisenStudio.Forms.Windows
             this.TextBoxFileManagerConsolePath.Properties.AllowFocused = false;
             this.TextBoxFileManagerConsolePath.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.TextBoxFileManagerConsolePath.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxFileManagerConsolePath.Size = new System.Drawing.Size(468, 26);
+            this.TextBoxFileManagerConsolePath.Size = new System.Drawing.Size(471, 26);
             this.TextBoxFileManagerConsolePath.TabIndex = 1171;
             // 
             // ComboBoxFileManagerConsoleDrives
@@ -6345,7 +5477,7 @@ namespace ArisenStudio.Forms.Windows
             this.GroupLocalFileExplorer.Location = new System.Drawing.Point(0, 0);
             this.GroupLocalFileExplorer.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.GroupLocalFileExplorer.Name = "GroupLocalFileExplorer";
-            this.GroupLocalFileExplorer.Size = new System.Drawing.Size(639, 564);
+            this.GroupLocalFileExplorer.Size = new System.Drawing.Size(635, 564);
             this.GroupLocalFileExplorer.TabIndex = 13;
             this.GroupLocalFileExplorer.Text = "Local File Explorer";
             // 
@@ -6361,7 +5493,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelFileManagerLocalButtons.Location = new System.Drawing.Point(2, 492);
             this.PanelFileManagerLocalButtons.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.PanelFileManagerLocalButtons.Name = "PanelFileManagerLocalButtons";
-            this.PanelFileManagerLocalButtons.Size = new System.Drawing.Size(635, 42);
+            this.PanelFileManagerLocalButtons.Size = new System.Drawing.Size(631, 42);
             this.PanelFileManagerLocalButtons.TabIndex = 1;
             // 
             // ButtonFileManagerLocalUpload
@@ -6498,7 +5630,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelFileManagerLocalStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelFileManagerLocalStatus.Location = new System.Drawing.Point(2, 534);
             this.PanelFileManagerLocalStatus.Name = "PanelFileManagerLocalStatus";
-            this.PanelFileManagerLocalStatus.Size = new System.Drawing.Size(635, 28);
+            this.PanelFileManagerLocalStatus.Size = new System.Drawing.Size(631, 28);
             this.PanelFileManagerLocalStatus.TabIndex = 1174;
             // 
             // LabelFileManagerLocalStatus
@@ -6527,7 +5659,7 @@ namespace ArisenStudio.Forms.Windows
             this.GridControlFileManagerLocalFiles.MainView = this.GridViewFileManagerLocalFiles;
             this.GridControlFileManagerLocalFiles.Margin = new System.Windows.Forms.Padding(6, 3, 6, 0);
             this.GridControlFileManagerLocalFiles.Name = "GridControlFileManagerLocalFiles";
-            this.GridControlFileManagerLocalFiles.Size = new System.Drawing.Size(617, 421);
+            this.GridControlFileManagerLocalFiles.Size = new System.Drawing.Size(619, 421);
             this.GridControlFileManagerLocalFiles.TabIndex = 0;
             this.GridControlFileManagerLocalFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewFileManagerLocalFiles});
@@ -6568,7 +5700,7 @@ namespace ArisenStudio.Forms.Windows
             // ButtonFileManagerBrowseLocalDirectory
             // 
             this.ButtonFileManagerBrowseLocalDirectory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonFileManagerBrowseLocalDirectory.Location = new System.Drawing.Point(588, 37);
+            this.ButtonFileManagerBrowseLocalDirectory.Location = new System.Drawing.Point(590, 37);
             this.ButtonFileManagerBrowseLocalDirectory.Name = "ButtonFileManagerBrowseLocalDirectory";
             this.ButtonFileManagerBrowseLocalDirectory.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonFileManagerBrowseLocalDirectory.Size = new System.Drawing.Size(40, 24);
@@ -6601,7 +5733,7 @@ namespace ArisenStudio.Forms.Windows
             this.TextBoxFileManagerLocalPath.Properties.AllowFocused = false;
             this.TextBoxFileManagerLocalPath.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.TextBoxFileManagerLocalPath.Properties.Appearance.Options.UseFont = true;
-            this.TextBoxFileManagerLocalPath.Size = new System.Drawing.Size(523, 26);
+            this.TextBoxFileManagerLocalPath.Size = new System.Drawing.Size(525, 26);
             this.TextBoxFileManagerLocalPath.TabIndex = 1170;
             // 
             // PageSettings
@@ -6610,7 +5742,7 @@ namespace ArisenStudio.Forms.Windows
             this.PageSettings.Controls.Add(this.TabControlSettings);
             this.PageSettings.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.PageSettings.Name = "PageSettings";
-            this.PageSettings.Size = new System.Drawing.Size(1288, 571);
+            this.PageSettings.Size = new System.Drawing.Size(1278, 571);
             // 
             // TabControlSettings
             // 
@@ -6642,9 +5774,9 @@ namespace ArisenStudio.Forms.Windows
             this.TabPageDownload,
             this.TabPageCache,
             this.TabPageDiscord});
-            this.TabControlSettings.RegularSize = new System.Drawing.Size(1288, 571);
+            this.TabControlSettings.RegularSize = new System.Drawing.Size(1278, 571);
             this.TabControlSettings.SelectedPage = this.TabPageInterface;
-            this.TabControlSettings.Size = new System.Drawing.Size(1288, 571);
+            this.TabControlSettings.Size = new System.Drawing.Size(1278, 571);
             this.TabControlSettings.TabIndex = 7;
             this.TabControlSettings.TransitionAnimationProperties.FrameCount = 900;
             this.TabControlSettings.TransitionAnimationProperties.FrameInterval = 2500;
@@ -6679,7 +5811,7 @@ namespace ArisenStudio.Forms.Windows
             this.TabPageInterface.Controls.Add(this.LabelSettingsShowGamesFromExternalDevices);
             this.TabPageInterface.Name = "TabPageInterface";
             this.TabPageInterface.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.TabPageInterface.Size = new System.Drawing.Size(1288, 533);
+            this.TabPageInterface.Size = new System.Drawing.Size(1278, 533);
             // 
             // LabelSettingsAlwaysShowGamePlaying
             // 
@@ -7286,14 +6418,16 @@ namespace ArisenStudio.Forms.Windows
             this.RibbonControlMain.ApplicationButtonImageOptions.SvgImageSize = new System.Drawing.Size(100, 100);
             this.RibbonControlMain.ApplicationButtonText = "User Name";
             this.RibbonControlMain.AutoSizeItems = true;
-            this.RibbonControlMain.CaptionBarItemLinks.Add(this.ButtonUpdate);
+            this.RibbonControlMain.CaptionBarItemLinks.Add(this.ButtonHeaderDonate);
+            this.RibbonControlMain.CaptionBarItemLinks.Add(this.ButtonHeaderUpdate);
             this.RibbonControlMain.ExpandCollapseItem.AllowDrawArrow = false;
             this.RibbonControlMain.ExpandCollapseItem.AllowDrawArrowInMenu = false;
             this.RibbonControlMain.ExpandCollapseItem.Id = 0;
             this.RibbonControlMain.ExpandCollapseItem.VisibleInSearchMenu = false;
             this.RibbonControlMain.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.RibbonControlMain.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ButtonUpdate,
+            this.ButtonHeaderDonate,
+            this.ButtonHeaderUpdate,
             this.RibbonControlMain.ExpandCollapseItem,
             this.skinPaletteDropDownButtonItem1,
             this.barCheckItem1,
@@ -7370,7 +6504,7 @@ namespace ArisenStudio.Forms.Windows
             this.barCheckItem2,
             this.ButtonToolsPsScreenshot});
             this.RibbonControlMain.Location = new System.Drawing.Point(0, 0);
-            this.RibbonControlMain.MaxItemId = 98;
+            this.RibbonControlMain.MaxItemId = 99;
             this.RibbonControlMain.Name = "RibbonControlMain";
             this.RibbonControlMain.OptionsStubGlyphs.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.RibbonControlMain.OptionsStubGlyphs.UseFont = true;
@@ -7391,34 +6525,60 @@ namespace ArisenStudio.Forms.Windows
             this.RibbonControlMain.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             this.RibbonControlMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RibbonControl1_MouseDown);
             // 
-            // ButtonUpdate
+            // ButtonHeaderDonate
             // 
-            this.ButtonUpdate.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
-            this.ButtonUpdate.Caption = "New Update Available";
-            this.ButtonUpdate.Id = 91;
-            this.ButtonUpdate.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ButtonUpdate.ImageOptions.AllowStubGlyph = DevExpress.Utils.DefaultBoolean.True;
-            this.ButtonUpdate.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.available_update;
-            this.ButtonUpdate.ItemAppearance.Disabled.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonUpdate.ItemAppearance.Disabled.Options.UseFont = true;
-            this.ButtonUpdate.ItemAppearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonUpdate.ItemAppearance.Hovered.Options.UseFont = true;
-            this.ButtonUpdate.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonUpdate.ItemAppearance.Normal.Options.UseFont = true;
-            this.ButtonUpdate.ItemAppearance.Pressed.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonUpdate.ItemAppearance.Pressed.Options.UseFont = true;
-            this.ButtonUpdate.ItemInMenuAppearance.Disabled.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ButtonUpdate.ItemInMenuAppearance.Disabled.Options.UseBackColor = true;
-            this.ButtonUpdate.ItemInMenuAppearance.Hovered.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ButtonUpdate.ItemInMenuAppearance.Hovered.Options.UseBackColor = true;
-            this.ButtonUpdate.ItemInMenuAppearance.Normal.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ButtonUpdate.ItemInMenuAppearance.Normal.Options.UseBackColor = true;
-            this.ButtonUpdate.ItemInMenuAppearance.Pressed.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ButtonUpdate.ItemInMenuAppearance.Pressed.Options.UseBackColor = true;
-            this.ButtonUpdate.Name = "ButtonUpdate";
-            this.ButtonUpdate.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.ButtonUpdate.VisibleInSearchMenu = false;
-            this.ButtonUpdate.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonUpdate_ItemClick);
+            this.ButtonHeaderDonate.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonHeaderDonate.Caption = "Support With a Donation";
+            this.ButtonHeaderDonate.Id = 98;
+            this.ButtonHeaderDonate.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonHeaderDonate.ImageOptions.AllowStubGlyph = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonHeaderDonate.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonHeaderDonate.ImageOptions.SvgImage")));
+            this.ButtonHeaderDonate.ItemAppearance.Disabled.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonHeaderDonate.ItemAppearance.Disabled.Options.UseFont = true;
+            this.ButtonHeaderDonate.ItemAppearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonHeaderDonate.ItemAppearance.Hovered.Options.UseFont = true;
+            this.ButtonHeaderDonate.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonHeaderDonate.ItemAppearance.Normal.Options.UseFont = true;
+            this.ButtonHeaderDonate.ItemInMenuAppearance.Disabled.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonHeaderDonate.ItemInMenuAppearance.Disabled.Options.UseFont = true;
+            this.ButtonHeaderDonate.ItemInMenuAppearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonHeaderDonate.ItemInMenuAppearance.Hovered.Options.UseFont = true;
+            this.ButtonHeaderDonate.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonHeaderDonate.ItemInMenuAppearance.Normal.Options.UseFont = true;
+            this.ButtonHeaderDonate.ItemInMenuAppearance.Pressed.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonHeaderDonate.ItemInMenuAppearance.Pressed.Options.UseFont = true;
+            this.ButtonHeaderDonate.Name = "ButtonHeaderDonate";
+            this.ButtonHeaderDonate.VisibleInSearchMenu = false;
+            this.ButtonHeaderDonate.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonHeaderDonate_ItemClick);
+            // 
+            // ButtonHeaderUpdate
+            // 
+            this.ButtonHeaderUpdate.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
+            this.ButtonHeaderUpdate.Caption = "New Update Available";
+            this.ButtonHeaderUpdate.Id = 91;
+            this.ButtonHeaderUpdate.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonHeaderUpdate.ImageOptions.AllowStubGlyph = DevExpress.Utils.DefaultBoolean.False;
+            this.ButtonHeaderUpdate.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonHeaderUpdate.ImageOptions.SvgImage")));
+            this.ButtonHeaderUpdate.ItemAppearance.Disabled.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonHeaderUpdate.ItemAppearance.Disabled.Options.UseFont = true;
+            this.ButtonHeaderUpdate.ItemAppearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonHeaderUpdate.ItemAppearance.Hovered.Options.UseFont = true;
+            this.ButtonHeaderUpdate.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonHeaderUpdate.ItemAppearance.Normal.Options.UseFont = true;
+            this.ButtonHeaderUpdate.ItemAppearance.Pressed.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonHeaderUpdate.ItemAppearance.Pressed.Options.UseFont = true;
+            this.ButtonHeaderUpdate.ItemInMenuAppearance.Disabled.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ButtonHeaderUpdate.ItemInMenuAppearance.Disabled.Options.UseBackColor = true;
+            this.ButtonHeaderUpdate.ItemInMenuAppearance.Hovered.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ButtonHeaderUpdate.ItemInMenuAppearance.Hovered.Options.UseBackColor = true;
+            this.ButtonHeaderUpdate.ItemInMenuAppearance.Normal.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ButtonHeaderUpdate.ItemInMenuAppearance.Normal.Options.UseBackColor = true;
+            this.ButtonHeaderUpdate.ItemInMenuAppearance.Pressed.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ButtonHeaderUpdate.ItemInMenuAppearance.Pressed.Options.UseBackColor = true;
+            this.ButtonHeaderUpdate.Name = "ButtonHeaderUpdate";
+            this.ButtonHeaderUpdate.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.ButtonHeaderUpdate.VisibleInSearchMenu = false;
+            this.ButtonHeaderUpdate.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonUpdate_ItemClick);
             // 
             // skinPaletteDropDownButtonItem1
             // 
@@ -8636,7 +7796,7 @@ namespace ArisenStudio.Forms.Windows
             this.PageGameSaves.Controls.Add(this.PanelGameSavesActions);
             this.PageGameSaves.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.PageGameSaves.Name = "PageGameSaves";
-            this.PageGameSaves.Size = new System.Drawing.Size(1288, 571);
+            this.PageGameSaves.Size = new System.Drawing.Size(1278, 571);
             // 
             // PanelGameSaves
             // 
@@ -8648,7 +7808,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelGameSaves.Location = new System.Drawing.Point(0, 70);
             this.PanelGameSaves.Margin = new System.Windows.Forms.Padding(0);
             this.PanelGameSaves.Name = "PanelGameSaves";
-            this.PanelGameSaves.Size = new System.Drawing.Size(1288, 501);
+            this.PanelGameSaves.Size = new System.Drawing.Size(1278, 501);
             this.PanelGameSaves.TabIndex = 1183;
             // 
             // GridControlGameSaves
@@ -8663,7 +7823,7 @@ namespace ArisenStudio.Forms.Windows
             this.GridControlGameSaves.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.GridControlGameSaves.Name = "GridControlGameSaves";
             this.GridControlGameSaves.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.GridControlGameSaves.Size = new System.Drawing.Size(1288, 425);
+            this.GridControlGameSaves.Size = new System.Drawing.Size(1278, 425);
             this.GridControlGameSaves.TabIndex = 5;
             this.GridControlGameSaves.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewGameSaves});
@@ -8720,7 +7880,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelGameSavesFilters.Location = new System.Drawing.Point(0, 0);
             this.PanelGameSavesFilters.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
             this.PanelGameSavesFilters.Name = "PanelGameSavesFilters";
-            this.PanelGameSavesFilters.Size = new System.Drawing.Size(1288, 76);
+            this.PanelGameSavesFilters.Size = new System.Drawing.Size(1278, 76);
             this.PanelGameSavesFilters.TabIndex = 12;
             // 
             // SeparatorGameSaves2
@@ -8731,7 +7891,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorGameSaves2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorGameSaves2.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorGameSaves2.LineThickness = 1;
-            this.SeparatorGameSaves2.Location = new System.Drawing.Point(1078, 12);
+            this.SeparatorGameSaves2.Location = new System.Drawing.Point(1071, 12);
             this.SeparatorGameSaves2.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorGameSaves2.Name = "SeparatorGameSaves2";
             this.SeparatorGameSaves2.Padding = new System.Windows.Forms.Padding(0);
@@ -8746,7 +7906,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorGameSaves3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorGameSaves3.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorGameSaves3.LineThickness = 1;
-            this.SeparatorGameSaves3.Location = new System.Drawing.Point(1192, 12);
+            this.SeparatorGameSaves3.Location = new System.Drawing.Point(1185, 12);
             this.SeparatorGameSaves3.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorGameSaves3.Name = "SeparatorGameSaves3";
             this.SeparatorGameSaves3.Padding = new System.Windows.Forms.Padding(0);
@@ -8778,7 +7938,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorGameSaves4.Margin = new System.Windows.Forms.Padding(0);
             this.SeparatorGameSaves4.Name = "SeparatorGameSaves4";
             this.SeparatorGameSaves4.Padding = new System.Windows.Forms.Padding(0);
-            this.SeparatorGameSaves4.Size = new System.Drawing.Size(1288, 3);
+            this.SeparatorGameSaves4.Size = new System.Drawing.Size(1278, 3);
             this.SeparatorGameSaves4.TabIndex = 1172;
             // 
             // ComboBoxGameSavesFilterCategory
@@ -8821,7 +7981,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxGameSavesFilterVersion
             // 
             this.ComboBoxGameSavesFilterVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxGameSavesFilterVersion.Location = new System.Drawing.Point(1210, 34);
+            this.ComboBoxGameSavesFilterVersion.Location = new System.Drawing.Point(1203, 34);
             this.ComboBoxGameSavesFilterVersion.Name = "ComboBoxGameSavesFilterVersion";
             this.ComboBoxGameSavesFilterVersion.Properties.AllowFocused = false;
             this.ComboBoxGameSavesFilterVersion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -8849,7 +8009,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGameSavesFilterVersion.Appearance.Options.UseForeColor = true;
             this.LabelGameSavesFilterVersion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelGameSavesFilterVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelGameSavesFilterVersion.Location = new System.Drawing.Point(1207, 12);
+            this.LabelGameSavesFilterVersion.Location = new System.Drawing.Point(1200, 12);
             this.LabelGameSavesFilterVersion.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
             this.LabelGameSavesFilterVersion.Name = "LabelGameSavesFilterVersion";
             this.LabelGameSavesFilterVersion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -8869,14 +8029,14 @@ namespace ArisenStudio.Forms.Windows
             this.TextBoxGameSavesFilterName.Properties.Appearance.Options.UseFont = true;
             this.TextBoxGameSavesFilterName.Properties.AutoHeight = false;
             this.TextBoxGameSavesFilterName.Properties.NullValuePrompt = "Search...";
-            this.TextBoxGameSavesFilterName.Size = new System.Drawing.Size(816, 30);
+            this.TextBoxGameSavesFilterName.Size = new System.Drawing.Size(809, 30);
             this.TextBoxGameSavesFilterName.TabIndex = 1;
             this.TextBoxGameSavesFilterName.TextChanged += new System.EventHandler(this.TextBoxGameSavesFilterName_TextChanged);
             // 
             // ComboBoxGameSavesFilterRegion
             // 
             this.ComboBoxGameSavesFilterRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxGameSavesFilterRegion.Location = new System.Drawing.Point(1096, 34);
+            this.ComboBoxGameSavesFilterRegion.Location = new System.Drawing.Point(1089, 34);
             this.ComboBoxGameSavesFilterRegion.Name = "ComboBoxGameSavesFilterRegion";
             this.ComboBoxGameSavesFilterRegion.Properties.AllowFocused = false;
             this.ComboBoxGameSavesFilterRegion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -8904,7 +8064,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGameSavesFilterRegion.Appearance.Options.UseForeColor = true;
             this.LabelGameSavesFilterRegion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelGameSavesFilterRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelGameSavesFilterRegion.Location = new System.Drawing.Point(1093, 12);
+            this.LabelGameSavesFilterRegion.Location = new System.Drawing.Point(1086, 12);
             this.LabelGameSavesFilterRegion.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
             this.LabelGameSavesFilterRegion.Name = "LabelGameSavesFilterRegion";
             this.LabelGameSavesFilterRegion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -8939,7 +8099,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelGameSavesActions.LookAndFeel.UseDefaultLookAndFeel = false;
             this.PanelGameSavesActions.Margin = new System.Windows.Forms.Padding(0);
             this.PanelGameSavesActions.Name = "PanelGameSavesActions";
-            this.PanelGameSavesActions.Size = new System.Drawing.Size(1288, 70);
+            this.PanelGameSavesActions.Size = new System.Drawing.Size(1278, 70);
             this.PanelGameSavesActions.TabIndex = 1187;
             // 
             // TileControlGameSaves
@@ -8974,7 +8134,7 @@ namespace ArisenStudio.Forms.Windows
             this.TileControlGameSaves.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
             this.TileControlGameSaves.RowCount = 1;
             this.TileControlGameSaves.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
-            this.TileControlGameSaves.Size = new System.Drawing.Size(1284, 66);
+            this.TileControlGameSaves.Size = new System.Drawing.Size(1274, 66);
             this.TileControlGameSaves.TabIndex = 1;
             this.TileControlGameSaves.Text = "TileControlModsActions";
             // 
@@ -9050,7 +8210,7 @@ namespace ArisenStudio.Forms.Windows
             this.PageGameModsXbox.Controls.Add(this.PanelPluginsActions);
             this.PageGameModsXbox.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.PageGameModsXbox.Name = "PageGameModsXbox";
-            this.PageGameModsXbox.Size = new System.Drawing.Size(1288, 571);
+            this.PageGameModsXbox.Size = new System.Drawing.Size(1278, 571);
             // 
             // PanelPlugins
             // 
@@ -9062,7 +8222,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelPlugins.Location = new System.Drawing.Point(0, 70);
             this.PanelPlugins.Margin = new System.Windows.Forms.Padding(0);
             this.PanelPlugins.Name = "PanelPlugins";
-            this.PanelPlugins.Size = new System.Drawing.Size(1288, 501);
+            this.PanelPlugins.Size = new System.Drawing.Size(1278, 501);
             this.PanelPlugins.TabIndex = 1185;
             // 
             // GridControlGameModsXbox
@@ -9077,7 +8237,7 @@ namespace ArisenStudio.Forms.Windows
             this.GridControlGameModsXbox.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.GridControlGameModsXbox.Name = "GridControlGameModsXbox";
             this.GridControlGameModsXbox.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.GridControlGameModsXbox.Size = new System.Drawing.Size(1288, 425);
+            this.GridControlGameModsXbox.Size = new System.Drawing.Size(1278, 425);
             this.GridControlGameModsXbox.TabIndex = 5;
             this.GridControlGameModsXbox.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewGameModsXbox});
@@ -9113,6 +8273,7 @@ namespace ArisenStudio.Forms.Windows
             this.GridViewGameModsXbox.RowHeight = 30;
             this.GridViewGameModsXbox.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.GridViewGameModsXbox.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewGameModsXbox_RowClick);
+            this.GridViewGameModsXbox.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridViewGameModsXbox_FocusedRowChanged);
             this.GridViewGameModsXbox.DoubleClick += new System.EventHandler(this.GridViewGameModsXbox_DoubleClick);
             // 
             // PanelGameModsXbox
@@ -9134,7 +8295,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelGameModsXbox.Location = new System.Drawing.Point(0, 0);
             this.PanelGameModsXbox.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
             this.PanelGameModsXbox.Name = "PanelGameModsXbox";
-            this.PanelGameModsXbox.Size = new System.Drawing.Size(1288, 76);
+            this.PanelGameModsXbox.Size = new System.Drawing.Size(1278, 76);
             this.PanelGameModsXbox.TabIndex = 12;
             // 
             // SeparatorGameModsXbox2
@@ -9145,7 +8306,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorGameModsXbox2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorGameModsXbox2.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorGameModsXbox2.LineThickness = 1;
-            this.SeparatorGameModsXbox2.Location = new System.Drawing.Point(1060, 12);
+            this.SeparatorGameModsXbox2.Location = new System.Drawing.Point(1053, 12);
             this.SeparatorGameModsXbox2.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorGameModsXbox2.Name = "SeparatorGameModsXbox2";
             this.SeparatorGameModsXbox2.Padding = new System.Windows.Forms.Padding(0);
@@ -9160,7 +8321,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorGameModsXbox3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorGameModsXbox3.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorGameModsXbox3.LineThickness = 1;
-            this.SeparatorGameModsXbox3.Location = new System.Drawing.Point(1154, 12);
+            this.SeparatorGameModsXbox3.Location = new System.Drawing.Point(1147, 12);
             this.SeparatorGameModsXbox3.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorGameModsXbox3.Name = "SeparatorGameModsXbox3";
             this.SeparatorGameModsXbox3.Padding = new System.Windows.Forms.Padding(0);
@@ -9184,7 +8345,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxGameModsXboxFilterStatus
             // 
             this.ComboBoxGameModsXboxFilterStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxGameModsXboxFilterStatus.Location = new System.Drawing.Point(1172, 34);
+            this.ComboBoxGameModsXboxFilterStatus.Location = new System.Drawing.Point(1165, 34);
             this.ComboBoxGameModsXboxFilterStatus.Name = "ComboBoxGameModsXboxFilterStatus";
             this.ComboBoxGameModsXboxFilterStatus.Properties.AllowFocused = false;
             this.ComboBoxGameModsXboxFilterStatus.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -9217,7 +8378,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGameModsXboxFilterStatus.Appearance.Options.UseForeColor = true;
             this.LabelGameModsXboxFilterStatus.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelGameModsXboxFilterStatus.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelGameModsXboxFilterStatus.Location = new System.Drawing.Point(1169, 12);
+            this.LabelGameModsXboxFilterStatus.Location = new System.Drawing.Point(1162, 12);
             this.LabelGameModsXboxFilterStatus.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
             this.LabelGameModsXboxFilterStatus.Name = "LabelGameModsXboxFilterStatus";
             this.LabelGameModsXboxFilterStatus.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -9236,7 +8397,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorGameModsXbox4.Margin = new System.Windows.Forms.Padding(0);
             this.SeparatorGameModsXbox4.Name = "SeparatorGameModsXbox4";
             this.SeparatorGameModsXbox4.Padding = new System.Windows.Forms.Padding(0);
-            this.SeparatorGameModsXbox4.Size = new System.Drawing.Size(1288, 3);
+            this.SeparatorGameModsXbox4.Size = new System.Drawing.Size(1278, 3);
             this.SeparatorGameModsXbox4.TabIndex = 1172;
             // 
             // ComboBoxGameModsXboxFilterGame
@@ -9279,7 +8440,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxGameModsXboxFilterVersion
             // 
             this.ComboBoxGameModsXboxFilterVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxGameModsXboxFilterVersion.Location = new System.Drawing.Point(1078, 34);
+            this.ComboBoxGameModsXboxFilterVersion.Location = new System.Drawing.Point(1071, 34);
             this.ComboBoxGameModsXboxFilterVersion.Name = "ComboBoxGameModsXboxFilterVersion";
             this.ComboBoxGameModsXboxFilterVersion.Properties.AllowFocused = false;
             this.ComboBoxGameModsXboxFilterVersion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -9307,7 +8468,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGameModsXboxFilterVersion.Appearance.Options.UseForeColor = true;
             this.LabelGameModsXboxFilterVersion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelGameModsXboxFilterVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelGameModsXboxFilterVersion.Location = new System.Drawing.Point(1075, 12);
+            this.LabelGameModsXboxFilterVersion.Location = new System.Drawing.Point(1068, 12);
             this.LabelGameModsXboxFilterVersion.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
             this.LabelGameModsXboxFilterVersion.Name = "LabelGameModsXboxFilterVersion";
             this.LabelGameModsXboxFilterVersion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -9327,7 +8488,7 @@ namespace ArisenStudio.Forms.Windows
             this.TextBoxGameModsXboxFilterName.Properties.Appearance.Options.UseFont = true;
             this.TextBoxGameModsXboxFilterName.Properties.AutoHeight = false;
             this.TextBoxGameModsXboxFilterName.Properties.NullValuePrompt = "Search...";
-            this.TextBoxGameModsXboxFilterName.Size = new System.Drawing.Size(798, 30);
+            this.TextBoxGameModsXboxFilterName.Size = new System.Drawing.Size(791, 30);
             this.TextBoxGameModsXboxFilterName.TabIndex = 1;
             this.TextBoxGameModsXboxFilterName.TextChanged += new System.EventHandler(this.TextBoxGameModsXboxFilterName_TextChanged);
             // 
@@ -9358,7 +8519,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelPluginsActions.LookAndFeel.UseDefaultLookAndFeel = false;
             this.PanelPluginsActions.Margin = new System.Windows.Forms.Padding(0);
             this.PanelPluginsActions.Name = "PanelPluginsActions";
-            this.PanelPluginsActions.Size = new System.Drawing.Size(1288, 70);
+            this.PanelPluginsActions.Size = new System.Drawing.Size(1278, 70);
             this.PanelPluginsActions.TabIndex = 1186;
             // 
             // TileControlPlugins
@@ -9393,7 +8554,7 @@ namespace ArisenStudio.Forms.Windows
             this.TileControlPlugins.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.TileControlPlugins.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
             this.TileControlPlugins.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
-            this.TileControlPlugins.Size = new System.Drawing.Size(1284, 66);
+            this.TileControlPlugins.Size = new System.Drawing.Size(1274, 66);
             this.TileControlPlugins.TabIndex = 1;
             this.TileControlPlugins.Text = "TileControlModsActions";
             // 
@@ -9489,7 +8650,7 @@ namespace ArisenStudio.Forms.Windows
             this.PagePackagesPS3.Controls.Add(this.PanelPackagesActions);
             this.PagePackagesPS3.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.PagePackagesPS3.Name = "PagePackagesPS3";
-            this.PagePackagesPS3.Size = new System.Drawing.Size(1288, 571);
+            this.PagePackagesPS3.Size = new System.Drawing.Size(1278, 571);
             // 
             // PanelPackages
             // 
@@ -9500,7 +8661,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelPackages.Location = new System.Drawing.Point(0, 70);
             this.PanelPackages.Margin = new System.Windows.Forms.Padding(0);
             this.PanelPackages.Name = "PanelPackages";
-            this.PanelPackages.Size = new System.Drawing.Size(1288, 501);
+            this.PanelPackages.Size = new System.Drawing.Size(1278, 501);
             this.PanelPackages.TabIndex = 1183;
             // 
             // GridControlPackages
@@ -9511,7 +8672,7 @@ namespace ArisenStudio.Forms.Windows
             this.GridControlPackages.MainView = this.GridViewPackages;
             this.GridControlPackages.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.GridControlPackages.Name = "GridControlPackages";
-            this.GridControlPackages.Size = new System.Drawing.Size(1288, 425);
+            this.GridControlPackages.Size = new System.Drawing.Size(1278, 425);
             this.GridControlPackages.TabIndex = 5;
             this.GridControlPackages.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewPackages});
@@ -9578,7 +8739,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelPackagesFilters.Location = new System.Drawing.Point(0, 0);
             this.PanelPackagesFilters.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
             this.PanelPackagesFilters.Name = "PanelPackagesFilters";
-            this.PanelPackagesFilters.Size = new System.Drawing.Size(1288, 76);
+            this.PanelPackagesFilters.Size = new System.Drawing.Size(1278, 76);
             this.PanelPackagesFilters.TabIndex = 12;
             // 
             // SeparatorPackages4
@@ -9589,7 +8750,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorPackages4.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorPackages4.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorPackages4.LineThickness = 1;
-            this.SeparatorPackages4.Location = new System.Drawing.Point(1042, 12);
+            this.SeparatorPackages4.Location = new System.Drawing.Point(1035, 12);
             this.SeparatorPackages4.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorPackages4.Name = "SeparatorPackages4";
             this.SeparatorPackages4.Padding = new System.Windows.Forms.Padding(0);
@@ -9604,7 +8765,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorPackages3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorPackages3.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorPackages3.LineThickness = 1;
-            this.SeparatorPackages3.Location = new System.Drawing.Point(911, 12);
+            this.SeparatorPackages3.Location = new System.Drawing.Point(904, 12);
             this.SeparatorPackages3.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorPackages3.Name = "SeparatorPackages3";
             this.SeparatorPackages3.Padding = new System.Windows.Forms.Padding(0);
@@ -9619,7 +8780,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorPackages5.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorPackages5.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorPackages5.LineThickness = 1;
-            this.SeparatorPackages5.Location = new System.Drawing.Point(1154, 12);
+            this.SeparatorPackages5.Location = new System.Drawing.Point(1147, 12);
             this.SeparatorPackages5.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorPackages5.Name = "SeparatorPackages5";
             this.SeparatorPackages5.Padding = new System.Windows.Forms.Padding(0);
@@ -9634,7 +8795,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorPackages2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorPackages2.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorPackages2.LineThickness = 1;
-            this.SeparatorPackages2.Location = new System.Drawing.Point(799, 12);
+            this.SeparatorPackages2.Location = new System.Drawing.Point(792, 12);
             this.SeparatorPackages2.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorPackages2.Name = "SeparatorPackages2";
             this.SeparatorPackages2.Padding = new System.Windows.Forms.Padding(0);
@@ -9658,7 +8819,7 @@ namespace ArisenStudio.Forms.Windows
             // ImagePackagesFilterFileSizeType
             // 
             this.ImagePackagesFilterFileSizeType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ImagePackagesFilterFileSizeType.Location = new System.Drawing.Point(1064, 41);
+            this.ImagePackagesFilterFileSizeType.Location = new System.Drawing.Point(1057, 41);
             this.ImagePackagesFilterFileSizeType.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.ImagePackagesFilterFileSizeType.Name = "ImagePackagesFilterFileSizeType";
             this.ImagePackagesFilterFileSizeType.Properties.AllowFocused = false;
@@ -9676,7 +8837,7 @@ namespace ArisenStudio.Forms.Windows
             // ImagePackagesFilterFileSizeBack
             // 
             this.ImagePackagesFilterFileSizeBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ImagePackagesFilterFileSizeBack.Location = new System.Drawing.Point(1060, 34);
+            this.ImagePackagesFilterFileSizeBack.Location = new System.Drawing.Point(1053, 34);
             this.ImagePackagesFilterFileSizeBack.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.ImagePackagesFilterFileSizeBack.Name = "ImagePackagesFilterFileSizeBack";
             this.ImagePackagesFilterFileSizeBack.Properties.AllowFocused = false;
@@ -9701,7 +8862,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelPackagesFilterFileSize.Appearance.Options.UseForeColor = true;
             this.LabelPackagesFilterFileSize.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelPackagesFilterFileSize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelPackagesFilterFileSize.Location = new System.Drawing.Point(1057, 12);
+            this.LabelPackagesFilterFileSize.Location = new System.Drawing.Point(1050, 12);
             this.LabelPackagesFilterFileSize.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelPackagesFilterFileSize.Name = "LabelPackagesFilterFileSize";
             this.LabelPackagesFilterFileSize.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -9713,7 +8874,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.ComboBoxPackagesFilterModifiedDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ComboBoxPackagesFilterModifiedDate.EditValue = null;
-            this.ComboBoxPackagesFilterModifiedDate.Location = new System.Drawing.Point(950, 34);
+            this.ComboBoxPackagesFilterModifiedDate.Location = new System.Drawing.Point(943, 34);
             this.ComboBoxPackagesFilterModifiedDate.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.ComboBoxPackagesFilterModifiedDate.Name = "ComboBoxPackagesFilterModifiedDate";
             this.ComboBoxPackagesFilterModifiedDate.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
@@ -9747,7 +8908,7 @@ namespace ArisenStudio.Forms.Windows
             // ImagePackagesFilterDateType
             // 
             this.ImagePackagesFilterDateType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ImagePackagesFilterDateType.Location = new System.Drawing.Point(933, 42);
+            this.ImagePackagesFilterDateType.Location = new System.Drawing.Point(926, 42);
             this.ImagePackagesFilterDateType.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.ImagePackagesFilterDateType.Name = "ImagePackagesFilterDateType";
             this.ImagePackagesFilterDateType.Properties.AllowFocused = false;
@@ -9771,7 +8932,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelPackagesFilterModifiedDate.Appearance.Options.UseForeColor = true;
             this.LabelPackagesFilterModifiedDate.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelPackagesFilterModifiedDate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelPackagesFilterModifiedDate.Location = new System.Drawing.Point(926, 12);
+            this.LabelPackagesFilterModifiedDate.Location = new System.Drawing.Point(919, 12);
             this.LabelPackagesFilterModifiedDate.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelPackagesFilterModifiedDate.Name = "LabelPackagesFilterModifiedDate";
             this.LabelPackagesFilterModifiedDate.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -9790,13 +8951,13 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorPackages6.Margin = new System.Windows.Forms.Padding(0);
             this.SeparatorPackages6.Name = "SeparatorPackages6";
             this.SeparatorPackages6.Padding = new System.Windows.Forms.Padding(0);
-            this.SeparatorPackages6.Size = new System.Drawing.Size(1288, 3);
+            this.SeparatorPackages6.Size = new System.Drawing.Size(1278, 3);
             this.SeparatorPackages6.TabIndex = 1172;
             // 
             // ComboBoxPackagesFilterStatus
             // 
             this.ComboBoxPackagesFilterStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxPackagesFilterStatus.Location = new System.Drawing.Point(1172, 34);
+            this.ComboBoxPackagesFilterStatus.Location = new System.Drawing.Point(1165, 34);
             this.ComboBoxPackagesFilterStatus.Name = "ComboBoxPackagesFilterStatus";
             this.ComboBoxPackagesFilterStatus.Properties.AllowFocused = false;
             this.ComboBoxPackagesFilterStatus.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -9828,7 +8989,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelPackagesFilterStatus.Appearance.Options.UseForeColor = true;
             this.LabelPackagesFilterStatus.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelPackagesFilterStatus.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelPackagesFilterStatus.Location = new System.Drawing.Point(1169, 12);
+            this.LabelPackagesFilterStatus.Location = new System.Drawing.Point(1162, 12);
             this.LabelPackagesFilterStatus.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelPackagesFilterStatus.Name = "LabelPackagesFilterStatus";
             this.LabelPackagesFilterStatus.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -9849,14 +9010,14 @@ namespace ArisenStudio.Forms.Windows
             this.TextBoxPackagesFilterName.Properties.AutoHeight = false;
             this.TextBoxPackagesFilterName.Properties.EditValueChangedDelay = 1500;
             this.TextBoxPackagesFilterName.Properties.NullValuePrompt = "Search...";
-            this.TextBoxPackagesFilterName.Size = new System.Drawing.Size(688, 30);
+            this.TextBoxPackagesFilterName.Size = new System.Drawing.Size(681, 30);
             this.TextBoxPackagesFilterName.TabIndex = 1;
             this.TextBoxPackagesFilterName.EditValueChanged += new System.EventHandler(this.TextBoxPackagesFilterTitle_EditValueChanged);
             // 
             // ComboBoxPackagesFilterRegion
             // 
             this.ComboBoxPackagesFilterRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxPackagesFilterRegion.Location = new System.Drawing.Point(817, 34);
+            this.ComboBoxPackagesFilterRegion.Location = new System.Drawing.Point(810, 34);
             this.ComboBoxPackagesFilterRegion.Name = "ComboBoxPackagesFilterRegion";
             this.ComboBoxPackagesFilterRegion.Properties.AllowFocused = false;
             this.ComboBoxPackagesFilterRegion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -9890,7 +9051,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelPackagesFilterRegion.Appearance.Options.UseForeColor = true;
             this.LabelPackagesFilterRegion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelPackagesFilterRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelPackagesFilterRegion.Location = new System.Drawing.Point(814, 12);
+            this.LabelPackagesFilterRegion.Location = new System.Drawing.Point(807, 12);
             this.LabelPackagesFilterRegion.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelPackagesFilterRegion.Name = "LabelPackagesFilterRegion";
             this.LabelPackagesFilterRegion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -9961,7 +9122,7 @@ namespace ArisenStudio.Forms.Windows
             // ImagePackagesFilterDateTypeBack
             // 
             this.ImagePackagesFilterDateTypeBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ImagePackagesFilterDateTypeBack.Location = new System.Drawing.Point(929, 34);
+            this.ImagePackagesFilterDateTypeBack.Location = new System.Drawing.Point(922, 34);
             this.ImagePackagesFilterDateTypeBack.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.ImagePackagesFilterDateTypeBack.Name = "ImagePackagesFilterDateTypeBack";
             this.ImagePackagesFilterDateTypeBack.Properties.AllowFocused = false;
@@ -9985,7 +9146,7 @@ namespace ArisenStudio.Forms.Windows
             0,
             0,
             0});
-            this.ComboBoxPackagesFilterFileSize.Location = new System.Drawing.Point(1081, 34);
+            this.ComboBoxPackagesFilterFileSize.Location = new System.Drawing.Point(1074, 34);
             this.ComboBoxPackagesFilterFileSize.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.ComboBoxPackagesFilterFileSize.Name = "ComboBoxPackagesFilterFileSize";
             this.ComboBoxPackagesFilterFileSize.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -10019,7 +9180,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelPackagesActions.LookAndFeel.UseDefaultLookAndFeel = false;
             this.PanelPackagesActions.Margin = new System.Windows.Forms.Padding(0);
             this.PanelPackagesActions.Name = "PanelPackagesActions";
-            this.PanelPackagesActions.Size = new System.Drawing.Size(1288, 70);
+            this.PanelPackagesActions.Size = new System.Drawing.Size(1278, 70);
             this.PanelPackagesActions.TabIndex = 1184;
             // 
             // TileControlPackages
@@ -10049,7 +9210,7 @@ namespace ArisenStudio.Forms.Windows
             this.TileControlPackages.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.TileControlPackages.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
             this.TileControlPackages.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
-            this.TileControlPackages.Size = new System.Drawing.Size(1284, 66);
+            this.TileControlPackages.Size = new System.Drawing.Size(1274, 66);
             this.TileControlPackages.TabIndex = 1;
             this.TileControlPackages.Text = "TileControlModsActions";
             // 
@@ -10145,7 +9306,7 @@ namespace ArisenStudio.Forms.Windows
             this.PageResourcesPS3.Controls.Add(this.PanelResourcesActions);
             this.PageResourcesPS3.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.PageResourcesPS3.Name = "PageResourcesPS3";
-            this.PageResourcesPS3.Size = new System.Drawing.Size(1288, 571);
+            this.PageResourcesPS3.Size = new System.Drawing.Size(1278, 571);
             // 
             // PanelResources
             // 
@@ -10156,7 +9317,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelResources.Location = new System.Drawing.Point(0, 70);
             this.PanelResources.Margin = new System.Windows.Forms.Padding(0);
             this.PanelResources.Name = "PanelResources";
-            this.PanelResources.Size = new System.Drawing.Size(1288, 501);
+            this.PanelResources.Size = new System.Drawing.Size(1278, 501);
             this.PanelResources.TabIndex = 1216;
             // 
             // GridControlResources
@@ -10167,7 +9328,7 @@ namespace ArisenStudio.Forms.Windows
             this.GridControlResources.MainView = this.GridViewResources;
             this.GridControlResources.Margin = new System.Windows.Forms.Padding(0);
             this.GridControlResources.Name = "GridControlResources";
-            this.GridControlResources.Size = new System.Drawing.Size(1288, 425);
+            this.GridControlResources.Size = new System.Drawing.Size(1278, 425);
             this.GridControlResources.TabIndex = 5;
             this.GridControlResources.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewResources});
@@ -10232,7 +9393,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelResourcesFilters.Location = new System.Drawing.Point(0, 0);
             this.PanelResourcesFilters.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
             this.PanelResourcesFilters.Name = "PanelResourcesFilters";
-            this.PanelResourcesFilters.Size = new System.Drawing.Size(1288, 76);
+            this.PanelResourcesFilters.Size = new System.Drawing.Size(1278, 76);
             this.PanelResourcesFilters.TabIndex = 12;
             // 
             // SeparatorResources2
@@ -10243,7 +9404,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorResources2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorResources2.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorResources2.LineThickness = 1;
-            this.SeparatorResources2.Location = new System.Drawing.Point(819, 12);
+            this.SeparatorResources2.Location = new System.Drawing.Point(812, 12);
             this.SeparatorResources2.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorResources2.Name = "SeparatorResources2";
             this.SeparatorResources2.Padding = new System.Windows.Forms.Padding(0);
@@ -10258,7 +9419,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorResources3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorResources3.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorResources3.LineThickness = 1;
-            this.SeparatorResources3.Location = new System.Drawing.Point(930, 12);
+            this.SeparatorResources3.Location = new System.Drawing.Point(923, 12);
             this.SeparatorResources3.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorResources3.Name = "SeparatorResources3";
             this.SeparatorResources3.Padding = new System.Windows.Forms.Padding(0);
@@ -10273,7 +9434,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorResources4.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorResources4.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorResources4.LineThickness = 1;
-            this.SeparatorResources4.Location = new System.Drawing.Point(1060, 12);
+            this.SeparatorResources4.Location = new System.Drawing.Point(1053, 12);
             this.SeparatorResources4.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorResources4.Name = "SeparatorResources4";
             this.SeparatorResources4.Padding = new System.Windows.Forms.Padding(0);
@@ -10288,7 +9449,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorResources5.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorResources5.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorResources5.LineThickness = 1;
-            this.SeparatorResources5.Location = new System.Drawing.Point(1154, 12);
+            this.SeparatorResources5.Location = new System.Drawing.Point(1147, 12);
             this.SeparatorResources5.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorResources5.Name = "SeparatorResources5";
             this.SeparatorResources5.Padding = new System.Windows.Forms.Padding(0);
@@ -10312,7 +9473,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxResourcesFilterModType
             // 
             this.ComboBoxResourcesFilterModType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxResourcesFilterModType.Location = new System.Drawing.Point(948, 34);
+            this.ComboBoxResourcesFilterModType.Location = new System.Drawing.Point(941, 34);
             this.ComboBoxResourcesFilterModType.Name = "ComboBoxResourcesFilterModType";
             this.ComboBoxResourcesFilterModType.Properties.AllowFocused = false;
             this.ComboBoxResourcesFilterModType.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -10342,7 +9503,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorResources6.Margin = new System.Windows.Forms.Padding(0);
             this.SeparatorResources6.Name = "SeparatorResources6";
             this.SeparatorResources6.Padding = new System.Windows.Forms.Padding(0);
-            this.SeparatorResources6.Size = new System.Drawing.Size(1288, 3);
+            this.SeparatorResources6.Size = new System.Drawing.Size(1278, 3);
             this.SeparatorResources6.TabIndex = 1172;
             // 
             // ComboBoxResourcesFilterCategory
@@ -10385,7 +9546,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxResourcesFilterStatus
             // 
             this.ComboBoxResourcesFilterStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxResourcesFilterStatus.Location = new System.Drawing.Point(1172, 34);
+            this.ComboBoxResourcesFilterStatus.Location = new System.Drawing.Point(1165, 34);
             this.ComboBoxResourcesFilterStatus.Name = "ComboBoxResourcesFilterStatus";
             this.ComboBoxResourcesFilterStatus.Properties.AllowFocused = false;
             this.ComboBoxResourcesFilterStatus.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -10417,7 +9578,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelResourcesFilterStatus.Appearance.Options.UseForeColor = true;
             this.LabelResourcesFilterStatus.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelResourcesFilterStatus.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelResourcesFilterStatus.Location = new System.Drawing.Point(1169, 12);
+            this.LabelResourcesFilterStatus.Location = new System.Drawing.Point(1162, 12);
             this.LabelResourcesFilterStatus.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelResourcesFilterStatus.Name = "LabelResourcesFilterStatus";
             this.LabelResourcesFilterStatus.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -10428,7 +9589,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxResourcesFilterVersion
             // 
             this.ComboBoxResourcesFilterVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxResourcesFilterVersion.Location = new System.Drawing.Point(1078, 34);
+            this.ComboBoxResourcesFilterVersion.Location = new System.Drawing.Point(1071, 34);
             this.ComboBoxResourcesFilterVersion.Name = "ComboBoxResourcesFilterVersion";
             this.ComboBoxResourcesFilterVersion.Properties.AllowFocused = false;
             this.ComboBoxResourcesFilterVersion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -10456,7 +9617,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelResourcesFilterVersion.Appearance.Options.UseForeColor = true;
             this.LabelResourcesFilterVersion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelResourcesFilterVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelResourcesFilterVersion.Location = new System.Drawing.Point(1075, 12);
+            this.LabelResourcesFilterVersion.Location = new System.Drawing.Point(1068, 12);
             this.LabelResourcesFilterVersion.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelResourcesFilterVersion.Name = "LabelResourcesFilterVersion";
             this.LabelResourcesFilterVersion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -10476,14 +9637,14 @@ namespace ArisenStudio.Forms.Windows
             this.TextBoxResourcesFilterName.Properties.Appearance.Options.UseFont = true;
             this.TextBoxResourcesFilterName.Properties.AutoHeight = false;
             this.TextBoxResourcesFilterName.Properties.NullValuePrompt = "Search...";
-            this.TextBoxResourcesFilterName.Size = new System.Drawing.Size(557, 30);
+            this.TextBoxResourcesFilterName.Size = new System.Drawing.Size(550, 30);
             this.TextBoxResourcesFilterName.TabIndex = 1;
             this.TextBoxResourcesFilterName.TextChanged += new System.EventHandler(this.TextBoxResourcesFilterName_TextChanged);
             // 
             // ComboBoxResourcesFilterSystemType
             // 
             this.ComboBoxResourcesFilterSystemType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxResourcesFilterSystemType.Location = new System.Drawing.Point(837, 34);
+            this.ComboBoxResourcesFilterSystemType.Location = new System.Drawing.Point(830, 34);
             this.ComboBoxResourcesFilterSystemType.Name = "ComboBoxResourcesFilterSystemType";
             this.ComboBoxResourcesFilterSystemType.Properties.AllowFocused = false;
             this.ComboBoxResourcesFilterSystemType.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -10529,7 +9690,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelResourcesFilterSystemType.Appearance.Options.UseForeColor = true;
             this.LabelResourcesFilterSystemType.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelResourcesFilterSystemType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelResourcesFilterSystemType.Location = new System.Drawing.Point(834, 12);
+            this.LabelResourcesFilterSystemType.Location = new System.Drawing.Point(827, 12);
             this.LabelResourcesFilterSystemType.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelResourcesFilterSystemType.Name = "LabelResourcesFilterSystemType";
             this.LabelResourcesFilterSystemType.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -10546,7 +9707,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelResourcesFilterModType.Appearance.Options.UseForeColor = true;
             this.LabelResourcesFilterModType.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelResourcesFilterModType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelResourcesFilterModType.Location = new System.Drawing.Point(945, 12);
+            this.LabelResourcesFilterModType.Location = new System.Drawing.Point(938, 12);
             this.LabelResourcesFilterModType.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelResourcesFilterModType.Name = "LabelResourcesFilterModType";
             this.LabelResourcesFilterModType.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -10565,7 +9726,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelResourcesActions.LookAndFeel.UseDefaultLookAndFeel = false;
             this.PanelResourcesActions.Margin = new System.Windows.Forms.Padding(0);
             this.PanelResourcesActions.Name = "PanelResourcesActions";
-            this.PanelResourcesActions.Size = new System.Drawing.Size(1288, 70);
+            this.PanelResourcesActions.Size = new System.Drawing.Size(1278, 70);
             this.PanelResourcesActions.TabIndex = 1218;
             // 
             // TileControlResources
@@ -10598,7 +9759,7 @@ namespace ArisenStudio.Forms.Windows
             this.TileControlResources.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.TileControlResources.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
             this.TileControlResources.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
-            this.TileControlResources.Size = new System.Drawing.Size(1284, 66);
+            this.TileControlResources.Size = new System.Drawing.Size(1274, 66);
             this.TileControlResources.TabIndex = 0;
             this.TileControlResources.Text = "TileControlModsActions";
             // 
@@ -10706,7 +9867,7 @@ namespace ArisenStudio.Forms.Windows
             this.PageHomebrewPS3.Controls.Add(this.PanelHomebrewActions);
             this.PageHomebrewPS3.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.PageHomebrewPS3.Name = "PageHomebrewPS3";
-            this.PageHomebrewPS3.Size = new System.Drawing.Size(1288, 571);
+            this.PageHomebrewPS3.Size = new System.Drawing.Size(1278, 571);
             // 
             // PanelHomebrew
             // 
@@ -10717,7 +9878,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelHomebrew.Location = new System.Drawing.Point(0, 70);
             this.PanelHomebrew.Margin = new System.Windows.Forms.Padding(0);
             this.PanelHomebrew.Name = "PanelHomebrew";
-            this.PanelHomebrew.Size = new System.Drawing.Size(1288, 501);
+            this.PanelHomebrew.Size = new System.Drawing.Size(1278, 501);
             this.PanelHomebrew.TabIndex = 1215;
             // 
             // GridControlHomebrewPS3
@@ -10728,7 +9889,7 @@ namespace ArisenStudio.Forms.Windows
             this.GridControlHomebrewPS3.MainView = this.GridViewHomebrewPS3;
             this.GridControlHomebrewPS3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.GridControlHomebrewPS3.Name = "GridControlHomebrewPS3";
-            this.GridControlHomebrewPS3.Size = new System.Drawing.Size(1288, 425);
+            this.GridControlHomebrewPS3.Size = new System.Drawing.Size(1278, 425);
             this.GridControlHomebrewPS3.TabIndex = 5;
             this.GridControlHomebrewPS3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewHomebrewPS3});
@@ -10765,9 +9926,9 @@ namespace ArisenStudio.Forms.Windows
             this.GridViewHomebrewPS3.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.False;
             this.GridViewHomebrewPS3.RowHeight = 30;
             this.GridViewHomebrewPS3.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
-            this.GridViewHomebrewPS3.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewHomebrew_RowClick);
-            this.GridViewHomebrewPS3.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridViewHomebrew_FocusedRowChanged);
-            this.GridViewHomebrewPS3.DoubleClick += new System.EventHandler(this.GridViewHomebrew_DoubleClick);
+            this.GridViewHomebrewPS3.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GridViewHomebrewPS3_RowClick);
+            this.GridViewHomebrewPS3.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridViewHomebrewPS3_FocusedRowChanged);
+            this.GridViewHomebrewPS3.DoubleClick += new System.EventHandler(this.GridViewHomebrewPS3_DoubleClick);
             // 
             // PanelHomebrewFilters
             // 
@@ -10791,7 +9952,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelHomebrewFilters.Location = new System.Drawing.Point(0, 0);
             this.PanelHomebrewFilters.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
             this.PanelHomebrewFilters.Name = "PanelHomebrewFilters";
-            this.PanelHomebrewFilters.Size = new System.Drawing.Size(1288, 76);
+            this.PanelHomebrewFilters.Size = new System.Drawing.Size(1278, 76);
             this.PanelHomebrewFilters.TabIndex = 12;
             // 
             // SeparatorHomebrew2
@@ -10802,7 +9963,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorHomebrew2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorHomebrew2.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorHomebrew2.LineThickness = 1;
-            this.SeparatorHomebrew2.Location = new System.Drawing.Point(949, 12);
+            this.SeparatorHomebrew2.Location = new System.Drawing.Point(942, 12);
             this.SeparatorHomebrew2.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorHomebrew2.Name = "SeparatorHomebrew2";
             this.SeparatorHomebrew2.Padding = new System.Windows.Forms.Padding(0);
@@ -10817,7 +9978,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorHomebrew3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorHomebrew3.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorHomebrew3.LineThickness = 1;
-            this.SeparatorHomebrew3.Location = new System.Drawing.Point(1060, 12);
+            this.SeparatorHomebrew3.Location = new System.Drawing.Point(1053, 12);
             this.SeparatorHomebrew3.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorHomebrew3.Name = "SeparatorHomebrew3";
             this.SeparatorHomebrew3.Padding = new System.Windows.Forms.Padding(0);
@@ -10832,7 +9993,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorHomebrew4.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorHomebrew4.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorHomebrew4.LineThickness = 1;
-            this.SeparatorHomebrew4.Location = new System.Drawing.Point(1154, 12);
+            this.SeparatorHomebrew4.Location = new System.Drawing.Point(1147, 12);
             this.SeparatorHomebrew4.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorHomebrew4.Name = "SeparatorHomebrew4";
             this.SeparatorHomebrew4.Padding = new System.Windows.Forms.Padding(0);
@@ -10864,7 +10025,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorHomebrew5.Margin = new System.Windows.Forms.Padding(0);
             this.SeparatorHomebrew5.Name = "SeparatorHomebrew5";
             this.SeparatorHomebrew5.Padding = new System.Windows.Forms.Padding(0);
-            this.SeparatorHomebrew5.Size = new System.Drawing.Size(1288, 3);
+            this.SeparatorHomebrew5.Size = new System.Drawing.Size(1278, 3);
             this.SeparatorHomebrew5.TabIndex = 1172;
             // 
             // ComboBoxHomebrewFilterCategory
@@ -10907,7 +10068,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxHomebrewFilterStatus
             // 
             this.ComboBoxHomebrewFilterStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxHomebrewFilterStatus.Location = new System.Drawing.Point(1172, 34);
+            this.ComboBoxHomebrewFilterStatus.Location = new System.Drawing.Point(1165, 34);
             this.ComboBoxHomebrewFilterStatus.Name = "ComboBoxHomebrewFilterStatus";
             this.ComboBoxHomebrewFilterStatus.Properties.AllowFocused = false;
             this.ComboBoxHomebrewFilterStatus.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -10939,7 +10100,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelHomebrewFilterStatus.Appearance.Options.UseForeColor = true;
             this.LabelHomebrewFilterStatus.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelHomebrewFilterStatus.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHomebrewFilterStatus.Location = new System.Drawing.Point(1169, 12);
+            this.LabelHomebrewFilterStatus.Location = new System.Drawing.Point(1162, 12);
             this.LabelHomebrewFilterStatus.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelHomebrewFilterStatus.Name = "LabelHomebrewFilterStatus";
             this.LabelHomebrewFilterStatus.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -10950,7 +10111,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxHomebrewFilterVersion
             // 
             this.ComboBoxHomebrewFilterVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxHomebrewFilterVersion.Location = new System.Drawing.Point(1078, 34);
+            this.ComboBoxHomebrewFilterVersion.Location = new System.Drawing.Point(1071, 34);
             this.ComboBoxHomebrewFilterVersion.Name = "ComboBoxHomebrewFilterVersion";
             this.ComboBoxHomebrewFilterVersion.Properties.AllowFocused = false;
             this.ComboBoxHomebrewFilterVersion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -10978,7 +10139,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelHomebrewFilterVersion.Appearance.Options.UseForeColor = true;
             this.LabelHomebrewFilterVersion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelHomebrewFilterVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHomebrewFilterVersion.Location = new System.Drawing.Point(1075, 12);
+            this.LabelHomebrewFilterVersion.Location = new System.Drawing.Point(1068, 12);
             this.LabelHomebrewFilterVersion.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelHomebrewFilterVersion.Name = "LabelHomebrewFilterVersion";
             this.LabelHomebrewFilterVersion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -10998,14 +10159,14 @@ namespace ArisenStudio.Forms.Windows
             this.TextBoxHomebrewFilterName.Properties.Appearance.Options.UseFont = true;
             this.TextBoxHomebrewFilterName.Properties.AutoHeight = false;
             this.TextBoxHomebrewFilterName.Properties.NullValuePrompt = "Search...";
-            this.TextBoxHomebrewFilterName.Size = new System.Drawing.Size(687, 30);
+            this.TextBoxHomebrewFilterName.Size = new System.Drawing.Size(680, 30);
             this.TextBoxHomebrewFilterName.TabIndex = 1;
             this.TextBoxHomebrewFilterName.TextChanged += new System.EventHandler(this.TextBoxFilterHomebrewName_TextChanged);
             // 
             // ComboBoxHomebrewFilterSystemType
             // 
             this.ComboBoxHomebrewFilterSystemType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxHomebrewFilterSystemType.Location = new System.Drawing.Point(967, 34);
+            this.ComboBoxHomebrewFilterSystemType.Location = new System.Drawing.Point(960, 34);
             this.ComboBoxHomebrewFilterSystemType.Name = "ComboBoxHomebrewFilterSystemType";
             this.ComboBoxHomebrewFilterSystemType.Properties.AllowFocused = false;
             this.ComboBoxHomebrewFilterSystemType.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -11051,7 +10212,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelHomebrewFilterSystemType.Appearance.Options.UseForeColor = true;
             this.LabelHomebrewFilterSystemType.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelHomebrewFilterSystemType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHomebrewFilterSystemType.Location = new System.Drawing.Point(964, 12);
+            this.LabelHomebrewFilterSystemType.Location = new System.Drawing.Point(957, 12);
             this.LabelHomebrewFilterSystemType.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelHomebrewFilterSystemType.Name = "LabelHomebrewFilterSystemType";
             this.LabelHomebrewFilterSystemType.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -11070,7 +10231,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelHomebrewActions.LookAndFeel.UseDefaultLookAndFeel = false;
             this.PanelHomebrewActions.Margin = new System.Windows.Forms.Padding(0);
             this.PanelHomebrewActions.Name = "PanelHomebrewActions";
-            this.PanelHomebrewActions.Size = new System.Drawing.Size(1288, 70);
+            this.PanelHomebrewActions.Size = new System.Drawing.Size(1278, 70);
             this.PanelHomebrewActions.TabIndex = 1217;
             // 
             // TileControlHomebrew
@@ -11101,7 +10262,7 @@ namespace ArisenStudio.Forms.Windows
             this.TileControlHomebrew.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.TileControlHomebrew.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
             this.TileControlHomebrew.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
-            this.TileControlHomebrew.Size = new System.Drawing.Size(1284, 66);
+            this.TileControlHomebrew.Size = new System.Drawing.Size(1274, 66);
             this.TileControlHomebrew.TabIndex = 0;
             this.TileControlHomebrew.Text = "TileControlModsActions";
             // 
@@ -11248,7 +10409,7 @@ namespace ArisenStudio.Forms.Windows
             this.PageAbout.Controls.Add(this.LabelAboutTitle);
             this.PageAbout.Controls.Add(this.PanelCredits);
             this.PageAbout.Name = "PageAbout";
-            this.PageAbout.Size = new System.Drawing.Size(1288, 571);
+            this.PageAbout.Size = new System.Drawing.Size(1278, 571);
             // 
             // ButtonDonate
             // 
@@ -11264,7 +10425,7 @@ namespace ArisenStudio.Forms.Windows
             this.ButtonDonate.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.ButtonDonate.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.patreon;
             this.ButtonDonate.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonDonate.Location = new System.Drawing.Point(1172, 56);
+            this.ButtonDonate.Location = new System.Drawing.Point(1165, 56);
             this.ButtonDonate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ButtonDonate.MinimumSize = new System.Drawing.Size(0, 28);
             this.ButtonDonate.Name = "ButtonDonate";
@@ -11321,7 +10482,7 @@ namespace ArisenStudio.Forms.Windows
             this.ImageSocialWebsite.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ImageSocialWebsite.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Silver;
             this.ImageSocialWebsite.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
-            this.ImageSocialWebsite.Location = new System.Drawing.Point(1149, 19);
+            this.ImageSocialWebsite.Location = new System.Drawing.Point(1142, 19);
             this.ImageSocialWebsite.Name = "ImageSocialWebsite";
             this.ImageSocialWebsite.Size = new System.Drawing.Size(26, 26);
             this.ImageSocialWebsite.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
@@ -11337,7 +10498,7 @@ namespace ArisenStudio.Forms.Windows
             this.ImageSocialDiscord.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ImageSocialDiscord.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Silver;
             this.ImageSocialDiscord.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
-            this.ImageSocialDiscord.Location = new System.Drawing.Point(1213, 19);
+            this.ImageSocialDiscord.Location = new System.Drawing.Point(1206, 19);
             this.ImageSocialDiscord.Name = "ImageSocialDiscord";
             this.ImageSocialDiscord.Size = new System.Drawing.Size(26, 26);
             this.ImageSocialDiscord.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
@@ -11353,7 +10514,7 @@ namespace ArisenStudio.Forms.Windows
             this.ImageSocialTwitter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ImageSocialTwitter.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Silver;
             this.ImageSocialTwitter.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
-            this.ImageSocialTwitter.Location = new System.Drawing.Point(1245, 19);
+            this.ImageSocialTwitter.Location = new System.Drawing.Point(1238, 19);
             this.ImageSocialTwitter.Name = "ImageSocialTwitter";
             this.ImageSocialTwitter.Size = new System.Drawing.Size(26, 26);
             this.ImageSocialTwitter.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
@@ -11369,7 +10530,7 @@ namespace ArisenStudio.Forms.Windows
             this.ImageSocialGitHub.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ImageSocialGitHub.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Silver;
             this.ImageSocialGitHub.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
-            this.ImageSocialGitHub.Location = new System.Drawing.Point(1181, 19);
+            this.ImageSocialGitHub.Location = new System.Drawing.Point(1174, 19);
             this.ImageSocialGitHub.Name = "ImageSocialGitHub";
             this.ImageSocialGitHub.Size = new System.Drawing.Size(26, 26);
             this.ImageSocialGitHub.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
@@ -11417,7 +10578,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelCredits.Controls.Add(this.PanelCreditsContent);
             this.PanelCredits.Location = new System.Drawing.Point(20, 251);
             this.PanelCredits.Name = "PanelCredits";
-            this.PanelCredits.Size = new System.Drawing.Size(1250, 319);
+            this.PanelCredits.Size = new System.Drawing.Size(1243, 319);
             this.PanelCredits.TabIndex = 17;
             // 
             // PanelCreditsContent
@@ -11431,7 +10592,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelCreditsContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelCreditsContent.Location = new System.Drawing.Point(2, 2);
             this.PanelCreditsContent.Name = "PanelCreditsContent";
-            this.PanelCreditsContent.Size = new System.Drawing.Size(1246, 315);
+            this.PanelCreditsContent.Size = new System.Drawing.Size(1239, 315);
             this.PanelCreditsContent.TabIndex = 11;
             // 
             // LabelCreditsTranslators
@@ -11444,7 +10605,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelCreditsTranslators.Location = new System.Drawing.Point(0, 555);
             this.LabelCreditsTranslators.Name = "LabelCreditsTranslators";
             this.LabelCreditsTranslators.Padding = new System.Windows.Forms.Padding(12, 3, 0, 12);
-            this.LabelCreditsTranslators.Size = new System.Drawing.Size(1246, 100);
+            this.LabelCreditsTranslators.Size = new System.Drawing.Size(1239, 100);
             this.LabelCreditsTranslators.TabIndex = 18;
             this.LabelCreditsTranslators.Text = resources.GetString("LabelCreditsTranslators.Text");
             this.LabelCreditsTranslators.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelCreditsTranslators_HyperlinkClick);
@@ -11458,7 +10619,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelHeaderTranslators.Location = new System.Drawing.Point(0, 527);
             this.LabelHeaderTranslators.Name = "LabelHeaderTranslators";
             this.LabelHeaderTranslators.Padding = new System.Windows.Forms.Padding(12, 6, 0, 3);
-            this.LabelHeaderTranslators.Size = new System.Drawing.Size(1246, 28);
+            this.LabelHeaderTranslators.Size = new System.Drawing.Size(1239, 28);
             this.LabelHeaderTranslators.TabIndex = 17;
             this.LabelHeaderTranslators.Text = "Translators";
             // 
@@ -11472,7 +10633,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelCreditsContributors.Location = new System.Drawing.Point(0, 354);
             this.LabelCreditsContributors.Name = "LabelCreditsContributors";
             this.LabelCreditsContributors.Padding = new System.Windows.Forms.Padding(12, 3, 0, 0);
-            this.LabelCreditsContributors.Size = new System.Drawing.Size(1246, 173);
+            this.LabelCreditsContributors.Size = new System.Drawing.Size(1239, 173);
             this.LabelCreditsContributors.TabIndex = 16;
             this.LabelCreditsContributors.Text = resources.GetString("LabelCreditsContributors.Text");
             this.LabelCreditsContributors.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelCreditsContributors_HyperlinkClick);
@@ -11486,7 +10647,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelAboutHeaderContributors.Location = new System.Drawing.Point(0, 326);
             this.LabelAboutHeaderContributors.Name = "LabelAboutHeaderContributors";
             this.LabelAboutHeaderContributors.Padding = new System.Windows.Forms.Padding(12, 6, 0, 3);
-            this.LabelAboutHeaderContributors.Size = new System.Drawing.Size(1246, 28);
+            this.LabelAboutHeaderContributors.Size = new System.Drawing.Size(1239, 28);
             this.LabelAboutHeaderContributors.TabIndex = 15;
             this.LabelAboutHeaderContributors.Text = "Contributors";
             // 
@@ -11501,7 +10662,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelCreditsLibraries.Location = new System.Drawing.Point(0, 34);
             this.LabelCreditsLibraries.Name = "LabelCreditsLibraries";
             this.LabelCreditsLibraries.Padding = new System.Windows.Forms.Padding(12, 3, 0, 0);
-            this.LabelCreditsLibraries.Size = new System.Drawing.Size(1246, 292);
+            this.LabelCreditsLibraries.Size = new System.Drawing.Size(1239, 292);
             this.LabelCreditsLibraries.TabIndex = 14;
             this.LabelCreditsLibraries.Text = resources.GetString("LabelCreditsLibraries.Text");
             this.LabelCreditsLibraries.HyperlinkClick += new DevExpress.Utils.HyperlinkClickEventHandler(this.LabelCreditsLibraries_HyperlinkClick);
@@ -11515,7 +10676,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelHeaderLibraries.Location = new System.Drawing.Point(0, 0);
             this.LabelHeaderLibraries.Name = "LabelHeaderLibraries";
             this.LabelHeaderLibraries.Padding = new System.Windows.Forms.Padding(12, 12, 0, 3);
-            this.LabelHeaderLibraries.Size = new System.Drawing.Size(1246, 34);
+            this.LabelHeaderLibraries.Size = new System.Drawing.Size(1239, 34);
             this.LabelHeaderLibraries.TabIndex = 13;
             this.LabelHeaderLibraries.Text = "Third-Party Libraries";
             // 
@@ -11525,7 +10686,7 @@ namespace ArisenStudio.Forms.Windows
             this.PageGameCheats.Controls.Add(this.PanelFiltersCheats);
             this.PageGameCheats.Controls.Add(this.PanelCheatsActions);
             this.PageGameCheats.Name = "PageGameCheats";
-            this.PageGameCheats.Size = new System.Drawing.Size(1288, 571);
+            this.PageGameCheats.Size = new System.Drawing.Size(1278, 571);
             // 
             // GridControlGameCheats
             // 
@@ -11539,7 +10700,7 @@ namespace ArisenStudio.Forms.Windows
             this.GridControlGameCheats.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.GridControlGameCheats.Name = "GridControlGameCheats";
             this.GridControlGameCheats.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.GridControlGameCheats.Size = new System.Drawing.Size(1288, 425);
+            this.GridControlGameCheats.Size = new System.Drawing.Size(1278, 425);
             this.GridControlGameCheats.TabIndex = 1183;
             this.GridControlGameCheats.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewGameCheats});
@@ -11581,9 +10742,6 @@ namespace ArisenStudio.Forms.Windows
             // PanelFiltersCheats
             // 
             this.PanelFiltersCheats.BackColor = System.Drawing.Color.Transparent;
-            this.PanelFiltersCheats.Controls.Add(this.ComboBoxGameCheatsFilterNumberCheats);
-            this.PanelFiltersCheats.Controls.Add(this.LabelGameCheatsFilterNumOfCheats);
-            this.PanelFiltersCheats.Controls.Add(this.separatorControl93);
             this.PanelFiltersCheats.Controls.Add(this.SeparatorCheats2);
             this.PanelFiltersCheats.Controls.Add(this.SeparatorCheats3);
             this.PanelFiltersCheats.Controls.Add(this.SeparatorCheats4);
@@ -11597,61 +10755,8 @@ namespace ArisenStudio.Forms.Windows
             this.PanelFiltersCheats.Location = new System.Drawing.Point(0, 70);
             this.PanelFiltersCheats.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
             this.PanelFiltersCheats.Name = "PanelFiltersCheats";
-            this.PanelFiltersCheats.Size = new System.Drawing.Size(1288, 76);
+            this.PanelFiltersCheats.Size = new System.Drawing.Size(1278, 76);
             this.PanelFiltersCheats.TabIndex = 1184;
-            // 
-            // ComboBoxGameCheatsFilterNumberCheats
-            // 
-            this.ComboBoxGameCheatsFilterNumberCheats.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxGameCheatsFilterNumberCheats.Location = new System.Drawing.Point(1190, 34);
-            this.ComboBoxGameCheatsFilterNumberCheats.Name = "ComboBoxGameCheatsFilterNumberCheats";
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.AllowFocused = false;
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.Appearance.Options.UseFont = true;
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.AutoComplete = false;
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.AutoHeight = false;
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.DropDownRows = 12;
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.NullValuePrompt = "Select...";
-            this.ComboBoxGameCheatsFilterNumberCheats.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ComboBoxGameCheatsFilterNumberCheats.Size = new System.Drawing.Size(84, 30);
-            this.ComboBoxGameCheatsFilterNumberCheats.TabIndex = 1216;
-            // 
-            // LabelGameCheatsFilterNumOfCheats
-            // 
-            this.LabelGameCheatsFilterNumOfCheats.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelGameCheatsFilterNumOfCheats.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.LabelGameCheatsFilterNumOfCheats.Appearance.ForeColor = System.Drawing.Color.White;
-            this.LabelGameCheatsFilterNumOfCheats.Appearance.Options.UseFont = true;
-            this.LabelGameCheatsFilterNumOfCheats.Appearance.Options.UseForeColor = true;
-            this.LabelGameCheatsFilterNumOfCheats.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LabelGameCheatsFilterNumOfCheats.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelGameCheatsFilterNumOfCheats.Location = new System.Drawing.Point(1190, 12);
-            this.LabelGameCheatsFilterNumOfCheats.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.LabelGameCheatsFilterNumOfCheats.Name = "LabelGameCheatsFilterNumOfCheats";
-            this.LabelGameCheatsFilterNumOfCheats.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.LabelGameCheatsFilterNumOfCheats.Size = new System.Drawing.Size(59, 17);
-            this.LabelGameCheatsFilterNumOfCheats.TabIndex = 1217;
-            this.LabelGameCheatsFilterNumOfCheats.Text = "# Cheats";
-            // 
-            // separatorControl93
-            // 
-            this.separatorControl93.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl93.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl93.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl93.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl93.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl93.LineThickness = 1;
-            this.separatorControl93.Location = new System.Drawing.Point(1172, 12);
-            this.separatorControl93.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl93.Name = "separatorControl93";
-            this.separatorControl93.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl93.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl93.TabIndex = 1215;
             // 
             // SeparatorCheats2
             // 
@@ -11661,7 +10766,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorCheats2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorCheats2.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorCheats2.LineThickness = 1;
-            this.SeparatorCheats2.Location = new System.Drawing.Point(892, 12);
+            this.SeparatorCheats2.Location = new System.Drawing.Point(999, 12);
             this.SeparatorCheats2.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorCheats2.Name = "SeparatorCheats2";
             this.SeparatorCheats2.Padding = new System.Windows.Forms.Padding(0);
@@ -11676,7 +10781,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorCheats3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorCheats3.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorCheats3.LineThickness = 1;
-            this.SeparatorCheats3.Location = new System.Drawing.Point(1058, 12);
+            this.SeparatorCheats3.Location = new System.Drawing.Point(1165, 12);
             this.SeparatorCheats3.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorCheats3.Name = "SeparatorCheats3";
             this.SeparatorCheats3.Padding = new System.Windows.Forms.Padding(0);
@@ -11694,7 +10799,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorCheats4.Margin = new System.Windows.Forms.Padding(0);
             this.SeparatorCheats4.Name = "SeparatorCheats4";
             this.SeparatorCheats4.Padding = new System.Windows.Forms.Padding(0);
-            this.SeparatorCheats4.Size = new System.Drawing.Size(1288, 3);
+            this.SeparatorCheats4.Size = new System.Drawing.Size(1278, 3);
             this.SeparatorCheats4.TabIndex = 1172;
             // 
             // ComboBoxGameCheatsFilterGame
@@ -11707,15 +10812,15 @@ namespace ArisenStudio.Forms.Windows
             this.ComboBoxGameCheatsFilterGame.Properties.Appearance.Options.UseFont = true;
             this.ComboBoxGameCheatsFilterGame.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.ComboBoxGameCheatsFilterGame.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.ComboBoxGameCheatsFilterGame.Properties.AutoComplete = false;
             this.ComboBoxGameCheatsFilterGame.Properties.AutoHeight = false;
             this.ComboBoxGameCheatsFilterGame.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ComboBoxGameCheatsFilterGame.Properties.DropDownRows = 15;
+            this.ComboBoxGameCheatsFilterGame.Properties.ItemAutoHeight = true;
             this.ComboBoxGameCheatsFilterGame.Properties.NullValuePrompt = "Select...";
-            this.ComboBoxGameCheatsFilterGame.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.ComboBoxGameCheatsFilterGame.Size = new System.Drawing.Size(880, 30);
+            this.ComboBoxGameCheatsFilterGame.Size = new System.Drawing.Size(987, 30);
             this.ComboBoxGameCheatsFilterGame.TabIndex = 1170;
+            this.ComboBoxGameCheatsFilterGame.SelectedIndexChanged += new System.EventHandler(this.ComboBoxGameCheatsFilterGame_SelectedIndexChanged);
             // 
             // LabelGameCheatsFilterGame
             // 
@@ -11736,7 +10841,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxGameCheatsFilterVersion
             // 
             this.ComboBoxGameCheatsFilterVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxGameCheatsFilterVersion.Location = new System.Drawing.Point(1076, 34);
+            this.ComboBoxGameCheatsFilterVersion.Location = new System.Drawing.Point(1183, 34);
             this.ComboBoxGameCheatsFilterVersion.Name = "ComboBoxGameCheatsFilterVersion";
             this.ComboBoxGameCheatsFilterVersion.Properties.AllowFocused = false;
             this.ComboBoxGameCheatsFilterVersion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -11763,7 +10868,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGameCheatsFilterVersion.Appearance.Options.UseForeColor = true;
             this.LabelGameCheatsFilterVersion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelGameCheatsFilterVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelGameCheatsFilterVersion.Location = new System.Drawing.Point(1073, 12);
+            this.LabelGameCheatsFilterVersion.Location = new System.Drawing.Point(1180, 12);
             this.LabelGameCheatsFilterVersion.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
             this.LabelGameCheatsFilterVersion.Name = "LabelGameCheatsFilterVersion";
             this.LabelGameCheatsFilterVersion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -11774,7 +10879,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxGameCheatsFilterRegion
             // 
             this.ComboBoxGameCheatsFilterRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxGameCheatsFilterRegion.Location = new System.Drawing.Point(910, 34);
+            this.ComboBoxGameCheatsFilterRegion.Location = new System.Drawing.Point(1017, 34);
             this.ComboBoxGameCheatsFilterRegion.Name = "ComboBoxGameCheatsFilterRegion";
             this.ComboBoxGameCheatsFilterRegion.Properties.AllowFocused = false;
             this.ComboBoxGameCheatsFilterRegion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -11801,7 +10906,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGameCheatsFilterRegion.Appearance.Options.UseForeColor = true;
             this.LabelGameCheatsFilterRegion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelGameCheatsFilterRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelGameCheatsFilterRegion.Location = new System.Drawing.Point(907, 12);
+            this.LabelGameCheatsFilterRegion.Location = new System.Drawing.Point(1014, 12);
             this.LabelGameCheatsFilterRegion.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
             this.LabelGameCheatsFilterRegion.Name = "LabelGameCheatsFilterRegion";
             this.LabelGameCheatsFilterRegion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -11820,7 +10925,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelCheatsActions.LookAndFeel.UseDefaultLookAndFeel = false;
             this.PanelCheatsActions.Margin = new System.Windows.Forms.Padding(0);
             this.PanelCheatsActions.Name = "PanelCheatsActions";
-            this.PanelCheatsActions.Size = new System.Drawing.Size(1288, 70);
+            this.PanelCheatsActions.Size = new System.Drawing.Size(1278, 70);
             this.PanelCheatsActions.TabIndex = 1186;
             // 
             // TileControlCheats
@@ -11853,7 +10958,7 @@ namespace ArisenStudio.Forms.Windows
             this.TileControlCheats.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.TileControlCheats.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
             this.TileControlCheats.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
-            this.TileControlCheats.Size = new System.Drawing.Size(1284, 66);
+            this.TileControlCheats.Size = new System.Drawing.Size(1274, 66);
             this.TileControlCheats.TabIndex = 1;
             this.TileControlCheats.Text = "TileControlModsActions";
             // 
@@ -11890,7 +10995,7 @@ namespace ArisenStudio.Forms.Windows
             this.PageGamesPS4.Controls.Add(this.PanelFiltersGames);
             this.PageGamesPS4.Controls.Add(this.PanelGamesActions);
             this.PageGamesPS4.Name = "PageGamesPS4";
-            this.PageGamesPS4.Size = new System.Drawing.Size(1288, 571);
+            this.PageGamesPS4.Size = new System.Drawing.Size(1278, 571);
             // 
             // GridControlGames
             // 
@@ -11904,7 +11009,7 @@ namespace ArisenStudio.Forms.Windows
             this.GridControlGames.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.GridControlGames.Name = "GridControlGames";
             this.GridControlGames.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.GridControlGames.Size = new System.Drawing.Size(1288, 425);
+            this.GridControlGames.Size = new System.Drawing.Size(1278, 425);
             this.GridControlGames.TabIndex = 1221;
             this.GridControlGames.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewGames});
@@ -11963,7 +11068,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelFiltersGames.Location = new System.Drawing.Point(0, 70);
             this.PanelFiltersGames.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
             this.PanelFiltersGames.Name = "PanelFiltersGames";
-            this.PanelFiltersGames.Size = new System.Drawing.Size(1288, 76);
+            this.PanelFiltersGames.Size = new System.Drawing.Size(1278, 76);
             this.PanelFiltersGames.TabIndex = 1222;
             // 
             // SeparatorGames3
@@ -11974,7 +11079,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorGames3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorGames3.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorGames3.LineThickness = 1;
-            this.SeparatorGames3.Location = new System.Drawing.Point(1043, 12);
+            this.SeparatorGames3.Location = new System.Drawing.Point(1036, 12);
             this.SeparatorGames3.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorGames3.Name = "SeparatorGames3";
             this.SeparatorGames3.Padding = new System.Windows.Forms.Padding(0);
@@ -11989,7 +11094,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorGames4.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorGames4.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorGames4.LineThickness = 1;
-            this.SeparatorGames4.Location = new System.Drawing.Point(1154, 12);
+            this.SeparatorGames4.Location = new System.Drawing.Point(1147, 12);
             this.SeparatorGames4.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorGames4.Name = "SeparatorGames4";
             this.SeparatorGames4.Padding = new System.Windows.Forms.Padding(0);
@@ -12004,7 +11109,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorGames2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorGames2.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorGames2.LineThickness = 1;
-            this.SeparatorGames2.Location = new System.Drawing.Point(949, 12);
+            this.SeparatorGames2.Location = new System.Drawing.Point(942, 12);
             this.SeparatorGames2.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorGames2.Name = "SeparatorGames2";
             this.SeparatorGames2.Padding = new System.Windows.Forms.Padding(0);
@@ -12066,7 +11171,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxGamesFilterStatus
             // 
             this.ComboBoxGamesFilterStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxGamesFilterStatus.Location = new System.Drawing.Point(1172, 34);
+            this.ComboBoxGamesFilterStatus.Location = new System.Drawing.Point(1165, 34);
             this.ComboBoxGamesFilterStatus.Name = "ComboBoxGamesFilterStatus";
             this.ComboBoxGamesFilterStatus.Properties.AllowFocused = false;
             this.ComboBoxGamesFilterStatus.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -12100,7 +11205,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGamesFiltersStatus.Appearance.Options.UseForeColor = true;
             this.LabelGamesFiltersStatus.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelGamesFiltersStatus.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelGamesFiltersStatus.Location = new System.Drawing.Point(1169, 12);
+            this.LabelGamesFiltersStatus.Location = new System.Drawing.Point(1162, 12);
             this.LabelGamesFiltersStatus.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelGamesFiltersStatus.Name = "LabelGamesFiltersStatus";
             this.LabelGamesFiltersStatus.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -12111,7 +11216,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxGamesFilterVersion
             // 
             this.ComboBoxGamesFilterVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxGamesFilterVersion.Location = new System.Drawing.Point(967, 34);
+            this.ComboBoxGamesFilterVersion.Location = new System.Drawing.Point(960, 34);
             this.ComboBoxGamesFilterVersion.Name = "ComboBoxGamesFilterVersion";
             this.ComboBoxGamesFilterVersion.Properties.AllowFocused = false;
             this.ComboBoxGamesFilterVersion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -12141,7 +11246,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGamesFiltersVersion.Appearance.Options.UseForeColor = true;
             this.LabelGamesFiltersVersion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelGamesFiltersVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelGamesFiltersVersion.Location = new System.Drawing.Point(964, 12);
+            this.LabelGamesFiltersVersion.Location = new System.Drawing.Point(957, 12);
             this.LabelGamesFiltersVersion.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelGamesFiltersVersion.Name = "LabelGamesFiltersVersion";
             this.LabelGamesFiltersVersion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -12163,14 +11268,14 @@ namespace ArisenStudio.Forms.Windows
             this.TextBoxGamesFilterName.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.TextBoxGamesFilterName.Properties.AutoHeight = false;
             this.TextBoxGamesFilterName.Properties.NullValuePrompt = "Search...";
-            this.TextBoxGamesFilterName.Size = new System.Drawing.Size(687, 30);
+            this.TextBoxGamesFilterName.Size = new System.Drawing.Size(680, 30);
             this.TextBoxGamesFilterName.TabIndex = 3;
             this.TextBoxGamesFilterName.TextChanged += new System.EventHandler(this.TextBoxGamesFilterName_TextChanged);
             // 
             // ComboBoxGamesFilterFwVersion
             // 
             this.ComboBoxGamesFilterFwVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxGamesFilterFwVersion.Location = new System.Drawing.Point(1061, 34);
+            this.ComboBoxGamesFilterFwVersion.Location = new System.Drawing.Point(1054, 34);
             this.ComboBoxGamesFilterFwVersion.Name = "ComboBoxGamesFilterFwVersion";
             this.ComboBoxGamesFilterFwVersion.Properties.AllowFocused = false;
             this.ComboBoxGamesFilterFwVersion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -12218,7 +11323,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelGamesFiltersFwVersion.Appearance.Options.UseForeColor = true;
             this.LabelGamesFiltersFwVersion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelGamesFiltersFwVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelGamesFiltersFwVersion.Location = new System.Drawing.Point(1058, 12);
+            this.LabelGamesFiltersFwVersion.Location = new System.Drawing.Point(1051, 12);
             this.LabelGamesFiltersFwVersion.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelGamesFiltersFwVersion.Name = "LabelGamesFiltersFwVersion";
             this.LabelGamesFiltersFwVersion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -12237,7 +11342,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorGames5.Margin = new System.Windows.Forms.Padding(0);
             this.SeparatorGames5.Name = "SeparatorGames5";
             this.SeparatorGames5.Padding = new System.Windows.Forms.Padding(0);
-            this.SeparatorGames5.Size = new System.Drawing.Size(1288, 3);
+            this.SeparatorGames5.Size = new System.Drawing.Size(1278, 3);
             this.SeparatorGames5.TabIndex = 1172;
             // 
             // PanelGamesActions
@@ -12251,7 +11356,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelGamesActions.LookAndFeel.UseDefaultLookAndFeel = false;
             this.PanelGamesActions.Margin = new System.Windows.Forms.Padding(0);
             this.PanelGamesActions.Name = "PanelGamesActions";
-            this.PanelGamesActions.Size = new System.Drawing.Size(1288, 70);
+            this.PanelGamesActions.Size = new System.Drawing.Size(1278, 70);
             this.PanelGamesActions.TabIndex = 1224;
             // 
             // TileControlGames
@@ -12284,7 +11389,7 @@ namespace ArisenStudio.Forms.Windows
             this.TileControlGames.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.TileControlGames.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
             this.TileControlGames.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
-            this.TileControlGames.Size = new System.Drawing.Size(1284, 66);
+            this.TileControlGames.Size = new System.Drawing.Size(1274, 66);
             this.TileControlGames.TabIndex = 1;
             this.TileControlGames.Text = "TileControlModsActions";
             // 
@@ -12382,7 +11487,7 @@ namespace ArisenStudio.Forms.Windows
             this.PageCustomMods.Controls.Add(this.PanelFiltersCustomMods);
             this.PageCustomMods.Controls.Add(this.PanelCustomModsActions);
             this.PageCustomMods.Name = "PageCustomMods";
-            this.PageCustomMods.Size = new System.Drawing.Size(1288, 571);
+            this.PageCustomMods.Size = new System.Drawing.Size(1278, 571);
             // 
             // GridControlCustomMods
             // 
@@ -12392,7 +11497,7 @@ namespace ArisenStudio.Forms.Windows
             this.GridControlCustomMods.MainView = this.GridViewCustomMods;
             this.GridControlCustomMods.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.GridControlCustomMods.Name = "GridControlCustomMods";
-            this.GridControlCustomMods.Size = new System.Drawing.Size(1288, 425);
+            this.GridControlCustomMods.Size = new System.Drawing.Size(1278, 425);
             this.GridControlCustomMods.TabIndex = 1218;
             this.GridControlCustomMods.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewCustomMods});
@@ -12459,7 +11564,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelFiltersCustomMods.Location = new System.Drawing.Point(0, 70);
             this.PanelFiltersCustomMods.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
             this.PanelFiltersCustomMods.Name = "PanelFiltersCustomMods";
-            this.PanelFiltersCustomMods.Size = new System.Drawing.Size(1288, 76);
+            this.PanelFiltersCustomMods.Size = new System.Drawing.Size(1278, 76);
             this.PanelFiltersCustomMods.TabIndex = 1219;
             // 
             // SeparatorCustomMods1
@@ -12522,7 +11627,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorCustomMods5.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorCustomMods5.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorCustomMods5.LineThickness = 1;
-            this.SeparatorCustomMods5.Location = new System.Drawing.Point(1060, 12);
+            this.SeparatorCustomMods5.Location = new System.Drawing.Point(1053, 12);
             this.SeparatorCustomMods5.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorCustomMods5.Name = "SeparatorCustomMods5";
             this.SeparatorCustomMods5.Padding = new System.Windows.Forms.Padding(0);
@@ -12537,7 +11642,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorCustomMods6.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorCustomMods6.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorCustomMods6.LineThickness = 1;
-            this.SeparatorCustomMods6.Location = new System.Drawing.Point(1154, 12);
+            this.SeparatorCustomMods6.Location = new System.Drawing.Point(1147, 12);
             this.SeparatorCustomMods6.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorCustomMods6.Name = "SeparatorCustomMods6";
             this.SeparatorCustomMods6.Padding = new System.Windows.Forms.Padding(0);
@@ -12552,7 +11657,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorCustomMods4.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorCustomMods4.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorCustomMods4.LineThickness = 1;
-            this.SeparatorCustomMods4.Location = new System.Drawing.Point(948, 12);
+            this.SeparatorCustomMods4.Location = new System.Drawing.Point(941, 12);
             this.SeparatorCustomMods4.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorCustomMods4.Name = "SeparatorCustomMods4";
             this.SeparatorCustomMods4.Padding = new System.Windows.Forms.Padding(0);
@@ -12567,7 +11672,7 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorCustomMods3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.SeparatorCustomMods3.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.SeparatorCustomMods3.LineThickness = 1;
-            this.SeparatorCustomMods3.Location = new System.Drawing.Point(818, 12);
+            this.SeparatorCustomMods3.Location = new System.Drawing.Point(811, 12);
             this.SeparatorCustomMods3.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.SeparatorCustomMods3.Name = "SeparatorCustomMods3";
             this.SeparatorCustomMods3.Padding = new System.Windows.Forms.Padding(0);
@@ -12591,7 +11696,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxCustomModsFilterModType
             // 
             this.ComboBoxCustomModsFilterModType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxCustomModsFilterModType.Location = new System.Drawing.Point(836, 34);
+            this.ComboBoxCustomModsFilterModType.Location = new System.Drawing.Point(829, 34);
             this.ComboBoxCustomModsFilterModType.Name = "ComboBoxCustomModsFilterModType";
             this.ComboBoxCustomModsFilterModType.Properties.AllowFocused = false;
             this.ComboBoxCustomModsFilterModType.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -12622,13 +11727,13 @@ namespace ArisenStudio.Forms.Windows
             this.SeparatorCustomMods7.Margin = new System.Windows.Forms.Padding(0);
             this.SeparatorCustomMods7.Name = "SeparatorCustomMods7";
             this.SeparatorCustomMods7.Padding = new System.Windows.Forms.Padding(0);
-            this.SeparatorCustomMods7.Size = new System.Drawing.Size(1288, 3);
+            this.SeparatorCustomMods7.Size = new System.Drawing.Size(1278, 3);
             this.SeparatorCustomMods7.TabIndex = 1172;
             // 
             // ComboBoxCustomModsFilterStatus
             // 
             this.ComboBoxCustomModsFilterStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxCustomModsFilterStatus.Location = new System.Drawing.Point(1172, 34);
+            this.ComboBoxCustomModsFilterStatus.Location = new System.Drawing.Point(1165, 34);
             this.ComboBoxCustomModsFilterStatus.Name = "ComboBoxCustomModsFilterStatus";
             this.ComboBoxCustomModsFilterStatus.Properties.AllowFocused = false;
             this.ComboBoxCustomModsFilterStatus.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -12661,7 +11766,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelCustomModsFilterStatus.Appearance.Options.UseForeColor = true;
             this.LabelCustomModsFilterStatus.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelCustomModsFilterStatus.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelCustomModsFilterStatus.Location = new System.Drawing.Point(1169, 12);
+            this.LabelCustomModsFilterStatus.Location = new System.Drawing.Point(1162, 12);
             this.LabelCustomModsFilterStatus.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelCustomModsFilterStatus.Name = "LabelCustomModsFilterStatus";
             this.LabelCustomModsFilterStatus.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -12672,7 +11777,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxCustomModsFilterVersion
             // 
             this.ComboBoxCustomModsFilterVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxCustomModsFilterVersion.Location = new System.Drawing.Point(1078, 34);
+            this.ComboBoxCustomModsFilterVersion.Location = new System.Drawing.Point(1071, 34);
             this.ComboBoxCustomModsFilterVersion.Name = "ComboBoxCustomModsFilterVersion";
             this.ComboBoxCustomModsFilterVersion.Properties.AllowFocused = false;
             this.ComboBoxCustomModsFilterVersion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -12701,7 +11806,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelCustomModsFilterVersion.Appearance.Options.UseForeColor = true;
             this.LabelCustomModsFilterVersion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelCustomModsFilterVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelCustomModsFilterVersion.Location = new System.Drawing.Point(1075, 12);
+            this.LabelCustomModsFilterVersion.Location = new System.Drawing.Point(1068, 12);
             this.LabelCustomModsFilterVersion.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelCustomModsFilterVersion.Name = "LabelCustomModsFilterVersion";
             this.LabelCustomModsFilterVersion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -12723,13 +11828,13 @@ namespace ArisenStudio.Forms.Windows
             this.TextBoxCustomModsFilterName.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.TextBoxCustomModsFilterName.Properties.AutoHeight = false;
             this.TextBoxCustomModsFilterName.Properties.NullValuePrompt = "Search...";
-            this.TextBoxCustomModsFilterName.Size = new System.Drawing.Size(436, 30);
+            this.TextBoxCustomModsFilterName.Size = new System.Drawing.Size(429, 30);
             this.TextBoxCustomModsFilterName.TabIndex = 3;
             // 
             // ComboBoxCustomModsFilterRegion
             // 
             this.ComboBoxCustomModsFilterRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxCustomModsFilterRegion.Location = new System.Drawing.Point(966, 34);
+            this.ComboBoxCustomModsFilterRegion.Location = new System.Drawing.Point(959, 34);
             this.ComboBoxCustomModsFilterRegion.Name = "ComboBoxCustomModsFilterRegion";
             this.ComboBoxCustomModsFilterRegion.Properties.AllowFocused = false;
             this.ComboBoxCustomModsFilterRegion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -12758,7 +11863,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelCustomModsFilterRegion.Appearance.Options.UseForeColor = true;
             this.LabelCustomModsFilterRegion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelCustomModsFilterRegion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelCustomModsFilterRegion.Location = new System.Drawing.Point(963, 12);
+            this.LabelCustomModsFilterRegion.Location = new System.Drawing.Point(956, 12);
             this.LabelCustomModsFilterRegion.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelCustomModsFilterRegion.Name = "LabelCustomModsFilterRegion";
             this.LabelCustomModsFilterRegion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -12791,7 +11896,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelCustomModsFilterModType.Appearance.Options.UseForeColor = true;
             this.LabelCustomModsFilterModType.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelCustomModsFilterModType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelCustomModsFilterModType.Location = new System.Drawing.Point(833, 12);
+            this.LabelCustomModsFilterModType.Location = new System.Drawing.Point(826, 12);
             this.LabelCustomModsFilterModType.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelCustomModsFilterModType.Name = "LabelCustomModsFilterModType";
             this.LabelCustomModsFilterModType.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -12852,7 +11957,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelCustomModsActions.LookAndFeel.UseDefaultLookAndFeel = false;
             this.PanelCustomModsActions.Margin = new System.Windows.Forms.Padding(0);
             this.PanelCustomModsActions.Name = "PanelCustomModsActions";
-            this.PanelCustomModsActions.Size = new System.Drawing.Size(1288, 70);
+            this.PanelCustomModsActions.Size = new System.Drawing.Size(1278, 70);
             this.PanelCustomModsActions.TabIndex = 1221;
             // 
             // TileControlCustomMods
@@ -12882,7 +11987,7 @@ namespace ArisenStudio.Forms.Windows
             this.TileControlCustomMods.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.TileControlCustomMods.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
             this.TileControlCustomMods.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
-            this.TileControlCustomMods.Size = new System.Drawing.Size(1284, 66);
+            this.TileControlCustomMods.Size = new System.Drawing.Size(1274, 66);
             this.TileControlCustomMods.TabIndex = 9;
             // 
             // TileGroupCustomMods
@@ -13061,7 +12166,7 @@ namespace ArisenStudio.Forms.Windows
             this.PageHomebrewXbox.Controls.Add(this.PanelHomebrewXboxFilters);
             this.PageHomebrewXbox.Controls.Add(this.PanelHomebrewXboxActions);
             this.PageHomebrewXbox.Name = "PageHomebrewXbox";
-            this.PageHomebrewXbox.Size = new System.Drawing.Size(1288, 571);
+            this.PageHomebrewXbox.Size = new System.Drawing.Size(1278, 571);
             // 
             // GridControlHomebrewXbox
             // 
@@ -13071,7 +12176,7 @@ namespace ArisenStudio.Forms.Windows
             this.GridControlHomebrewXbox.MainView = this.GridViewHomebrewXbox;
             this.GridControlHomebrewXbox.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.GridControlHomebrewXbox.Name = "GridControlHomebrewXbox";
-            this.GridControlHomebrewXbox.Size = new System.Drawing.Size(1288, 425);
+            this.GridControlHomebrewXbox.Size = new System.Drawing.Size(1278, 425);
             this.GridControlHomebrewXbox.TabIndex = 1218;
             this.GridControlHomebrewXbox.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewHomebrewXbox});
@@ -13134,7 +12239,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelHomebrewXboxFilters.Location = new System.Drawing.Point(0, 70);
             this.PanelHomebrewXboxFilters.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
             this.PanelHomebrewXboxFilters.Name = "PanelHomebrewXboxFilters";
-            this.PanelHomebrewXboxFilters.Size = new System.Drawing.Size(1288, 76);
+            this.PanelHomebrewXboxFilters.Size = new System.Drawing.Size(1278, 76);
             this.PanelHomebrewXboxFilters.TabIndex = 1219;
             // 
             // separatorControl1
@@ -13145,7 +12250,7 @@ namespace ArisenStudio.Forms.Windows
             this.separatorControl1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.separatorControl1.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.separatorControl1.LineThickness = 1;
-            this.separatorControl1.Location = new System.Drawing.Point(949, 12);
+            this.separatorControl1.Location = new System.Drawing.Point(942, 12);
             this.separatorControl1.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.separatorControl1.Name = "separatorControl1";
             this.separatorControl1.Padding = new System.Windows.Forms.Padding(0);
@@ -13160,7 +12265,7 @@ namespace ArisenStudio.Forms.Windows
             this.separatorControl2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.separatorControl2.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.separatorControl2.LineThickness = 1;
-            this.separatorControl2.Location = new System.Drawing.Point(1060, 12);
+            this.separatorControl2.Location = new System.Drawing.Point(1053, 12);
             this.separatorControl2.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.separatorControl2.Name = "separatorControl2";
             this.separatorControl2.Padding = new System.Windows.Forms.Padding(0);
@@ -13175,7 +12280,7 @@ namespace ArisenStudio.Forms.Windows
             this.separatorControl4.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.separatorControl4.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.separatorControl4.LineThickness = 1;
-            this.separatorControl4.Location = new System.Drawing.Point(1154, 12);
+            this.separatorControl4.Location = new System.Drawing.Point(1147, 12);
             this.separatorControl4.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.separatorControl4.Name = "separatorControl4";
             this.separatorControl4.Padding = new System.Windows.Forms.Padding(0);
@@ -13207,7 +12312,7 @@ namespace ArisenStudio.Forms.Windows
             this.separatorControl6.Margin = new System.Windows.Forms.Padding(0);
             this.separatorControl6.Name = "separatorControl6";
             this.separatorControl6.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl6.Size = new System.Drawing.Size(1288, 3);
+            this.separatorControl6.Size = new System.Drawing.Size(1278, 3);
             this.separatorControl6.TabIndex = 1172;
             // 
             // ComboBoxHomebrewXboxFilterCategory
@@ -13229,6 +12334,7 @@ namespace ArisenStudio.Forms.Windows
             this.ComboBoxHomebrewXboxFilterCategory.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ComboBoxHomebrewXboxFilterCategory.Size = new System.Drawing.Size(220, 30);
             this.ComboBoxHomebrewXboxFilterCategory.TabIndex = 1170;
+            this.ComboBoxHomebrewXboxFilterCategory.SelectedIndexChanged += new System.EventHandler(this.ComboBoxHomebrewXboxFilterCategory_SelectedIndexChanged);
             // 
             // LabelHomebrewXboxFilterCategory
             // 
@@ -13249,7 +12355,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxHomebrewXboxFilterStatus
             // 
             this.ComboBoxHomebrewXboxFilterStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxHomebrewXboxFilterStatus.Location = new System.Drawing.Point(1172, 34);
+            this.ComboBoxHomebrewXboxFilterStatus.Location = new System.Drawing.Point(1165, 34);
             this.ComboBoxHomebrewXboxFilterStatus.Name = "ComboBoxHomebrewXboxFilterStatus";
             this.ComboBoxHomebrewXboxFilterStatus.Properties.AllowFocused = false;
             this.ComboBoxHomebrewXboxFilterStatus.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -13270,6 +12376,7 @@ namespace ArisenStudio.Forms.Windows
             this.ComboBoxHomebrewXboxFilterStatus.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ComboBoxHomebrewXboxFilterStatus.Size = new System.Drawing.Size(102, 30);
             this.ComboBoxHomebrewXboxFilterStatus.TabIndex = 1168;
+            this.ComboBoxHomebrewXboxFilterStatus.SelectedIndexChanged += new System.EventHandler(this.ComboBoxHomebrewXboxFilterStatus_SelectedIndexChanged);
             // 
             // LabelHomebrewXboxFilterStatus
             // 
@@ -13280,7 +12387,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelHomebrewXboxFilterStatus.Appearance.Options.UseForeColor = true;
             this.LabelHomebrewXboxFilterStatus.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelHomebrewXboxFilterStatus.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHomebrewXboxFilterStatus.Location = new System.Drawing.Point(1169, 12);
+            this.LabelHomebrewXboxFilterStatus.Location = new System.Drawing.Point(1162, 12);
             this.LabelHomebrewXboxFilterStatus.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelHomebrewXboxFilterStatus.Name = "LabelHomebrewXboxFilterStatus";
             this.LabelHomebrewXboxFilterStatus.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -13291,7 +12398,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxHomebrewXboxFilterVersion
             // 
             this.ComboBoxHomebrewXboxFilterVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxHomebrewXboxFilterVersion.Location = new System.Drawing.Point(1078, 34);
+            this.ComboBoxHomebrewXboxFilterVersion.Location = new System.Drawing.Point(1071, 34);
             this.ComboBoxHomebrewXboxFilterVersion.Name = "ComboBoxHomebrewXboxFilterVersion";
             this.ComboBoxHomebrewXboxFilterVersion.Properties.AllowFocused = false;
             this.ComboBoxHomebrewXboxFilterVersion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -13308,6 +12415,7 @@ namespace ArisenStudio.Forms.Windows
             this.ComboBoxHomebrewXboxFilterVersion.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ComboBoxHomebrewXboxFilterVersion.Size = new System.Drawing.Size(64, 30);
             this.ComboBoxHomebrewXboxFilterVersion.TabIndex = 1164;
+            this.ComboBoxHomebrewXboxFilterVersion.SelectedIndexChanged += new System.EventHandler(this.ComboBoxHomebrewXboxFilterVersion_SelectedIndexChanged);
             // 
             // LabelHomebrewXboxFilterVersion
             // 
@@ -13318,7 +12426,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelHomebrewXboxFilterVersion.Appearance.Options.UseForeColor = true;
             this.LabelHomebrewXboxFilterVersion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelHomebrewXboxFilterVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHomebrewXboxFilterVersion.Location = new System.Drawing.Point(1075, 12);
+            this.LabelHomebrewXboxFilterVersion.Location = new System.Drawing.Point(1068, 12);
             this.LabelHomebrewXboxFilterVersion.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelHomebrewXboxFilterVersion.Name = "LabelHomebrewXboxFilterVersion";
             this.LabelHomebrewXboxFilterVersion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -13338,13 +12446,14 @@ namespace ArisenStudio.Forms.Windows
             this.TextBoxHomebrewXboxFilterName.Properties.Appearance.Options.UseFont = true;
             this.TextBoxHomebrewXboxFilterName.Properties.AutoHeight = false;
             this.TextBoxHomebrewXboxFilterName.Properties.NullValuePrompt = "Search...";
-            this.TextBoxHomebrewXboxFilterName.Size = new System.Drawing.Size(687, 30);
+            this.TextBoxHomebrewXboxFilterName.Size = new System.Drawing.Size(680, 30);
             this.TextBoxHomebrewXboxFilterName.TabIndex = 1;
+            this.TextBoxHomebrewXboxFilterName.TextChanged += new System.EventHandler(this.TextBoxHomebrewXboxFilterName_TextChanged);
             // 
             // ComboBoxHomebrewXboxFilterFwType
             // 
             this.ComboBoxHomebrewXboxFilterFwType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxHomebrewXboxFilterFwType.Location = new System.Drawing.Point(967, 34);
+            this.ComboBoxHomebrewXboxFilterFwType.Location = new System.Drawing.Point(960, 34);
             this.ComboBoxHomebrewXboxFilterFwType.Name = "ComboBoxHomebrewXboxFilterFwType";
             this.ComboBoxHomebrewXboxFilterFwType.Properties.AllowFocused = false;
             this.ComboBoxHomebrewXboxFilterFwType.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -13389,7 +12498,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelHomebrewXboxFilterFwType.Appearance.Options.UseForeColor = true;
             this.LabelHomebrewXboxFilterFwType.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelHomebrewXboxFilterFwType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHomebrewXboxFilterFwType.Location = new System.Drawing.Point(964, 12);
+            this.LabelHomebrewXboxFilterFwType.Location = new System.Drawing.Point(957, 12);
             this.LabelHomebrewXboxFilterFwType.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelHomebrewXboxFilterFwType.Name = "LabelHomebrewXboxFilterFwType";
             this.LabelHomebrewXboxFilterFwType.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -13408,7 +12517,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelHomebrewXboxActions.LookAndFeel.UseDefaultLookAndFeel = false;
             this.PanelHomebrewXboxActions.Margin = new System.Windows.Forms.Padding(0);
             this.PanelHomebrewXboxActions.Name = "PanelHomebrewXboxActions";
-            this.PanelHomebrewXboxActions.Size = new System.Drawing.Size(1288, 70);
+            this.PanelHomebrewXboxActions.Size = new System.Drawing.Size(1278, 70);
             this.PanelHomebrewXboxActions.TabIndex = 1220;
             // 
             // TileControlHomebrewXbox
@@ -13439,7 +12548,7 @@ namespace ArisenStudio.Forms.Windows
             this.TileControlHomebrewXbox.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.TileControlHomebrewXbox.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
             this.TileControlHomebrewXbox.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
-            this.TileControlHomebrewXbox.Size = new System.Drawing.Size(1284, 66);
+            this.TileControlHomebrewXbox.Size = new System.Drawing.Size(1274, 66);
             this.TileControlHomebrewXbox.TabIndex = 0;
             this.TileControlHomebrewXbox.Text = "TileControlModsActions";
             // 
@@ -13554,7 +12663,7 @@ namespace ArisenStudio.Forms.Windows
             this.PageHomebrewPS4.Controls.Add(this.PanelHomebrewFiltersPS4);
             this.PageHomebrewPS4.Controls.Add(this.PanelHomebrewPS4Actions);
             this.PageHomebrewPS4.Name = "PageHomebrewPS4";
-            this.PageHomebrewPS4.Size = new System.Drawing.Size(1288, 571);
+            this.PageHomebrewPS4.Size = new System.Drawing.Size(1278, 571);
             // 
             // GridControlHomebrewPS4
             // 
@@ -13568,7 +12677,7 @@ namespace ArisenStudio.Forms.Windows
             this.GridControlHomebrewPS4.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.GridControlHomebrewPS4.Name = "GridControlHomebrewPS4";
             this.GridControlHomebrewPS4.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.GridControlHomebrewPS4.Size = new System.Drawing.Size(1288, 425);
+            this.GridControlHomebrewPS4.Size = new System.Drawing.Size(1278, 425);
             this.GridControlHomebrewPS4.TabIndex = 1225;
             this.GridControlHomebrewPS4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewHomebrewPS4});
@@ -13626,7 +12735,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelHomebrewFiltersPS4.Location = new System.Drawing.Point(0, 70);
             this.PanelHomebrewFiltersPS4.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
             this.PanelHomebrewFiltersPS4.Name = "PanelHomebrewFiltersPS4";
-            this.PanelHomebrewFiltersPS4.Size = new System.Drawing.Size(1288, 76);
+            this.PanelHomebrewFiltersPS4.Size = new System.Drawing.Size(1278, 76);
             this.PanelHomebrewFiltersPS4.TabIndex = 1226;
             // 
             // separatorControl84
@@ -13637,7 +12746,7 @@ namespace ArisenStudio.Forms.Windows
             this.separatorControl84.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.separatorControl84.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.separatorControl84.LineThickness = 1;
-            this.separatorControl84.Location = new System.Drawing.Point(1043, 12);
+            this.separatorControl84.Location = new System.Drawing.Point(1036, 12);
             this.separatorControl84.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.separatorControl84.Name = "separatorControl84";
             this.separatorControl84.Padding = new System.Windows.Forms.Padding(0);
@@ -13652,7 +12761,7 @@ namespace ArisenStudio.Forms.Windows
             this.separatorControl85.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.separatorControl85.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.separatorControl85.LineThickness = 1;
-            this.separatorControl85.Location = new System.Drawing.Point(1154, 12);
+            this.separatorControl85.Location = new System.Drawing.Point(1147, 12);
             this.separatorControl85.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.separatorControl85.Name = "separatorControl85";
             this.separatorControl85.Padding = new System.Windows.Forms.Padding(0);
@@ -13667,7 +12776,7 @@ namespace ArisenStudio.Forms.Windows
             this.separatorControl86.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.separatorControl86.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.separatorControl86.LineThickness = 1;
-            this.separatorControl86.Location = new System.Drawing.Point(949, 12);
+            this.separatorControl86.Location = new System.Drawing.Point(942, 12);
             this.separatorControl86.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.separatorControl86.Name = "separatorControl86";
             this.separatorControl86.Padding = new System.Windows.Forms.Padding(0);
@@ -13728,7 +12837,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxHomebrewPS4FilterStatus
             // 
             this.ComboBoxHomebrewPS4FilterStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxHomebrewPS4FilterStatus.Location = new System.Drawing.Point(1172, 34);
+            this.ComboBoxHomebrewPS4FilterStatus.Location = new System.Drawing.Point(1165, 34);
             this.ComboBoxHomebrewPS4FilterStatus.Name = "ComboBoxHomebrewPS4FilterStatus";
             this.ComboBoxHomebrewPS4FilterStatus.Properties.AllowFocused = false;
             this.ComboBoxHomebrewPS4FilterStatus.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -13761,7 +12870,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelHomebrewPS4FilterStatus.Appearance.Options.UseForeColor = true;
             this.LabelHomebrewPS4FilterStatus.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelHomebrewPS4FilterStatus.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHomebrewPS4FilterStatus.Location = new System.Drawing.Point(1169, 12);
+            this.LabelHomebrewPS4FilterStatus.Location = new System.Drawing.Point(1162, 12);
             this.LabelHomebrewPS4FilterStatus.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelHomebrewPS4FilterStatus.Name = "LabelHomebrewPS4FilterStatus";
             this.LabelHomebrewPS4FilterStatus.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -13772,7 +12881,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxHomebrewPS4FilterVersion
             // 
             this.ComboBoxHomebrewPS4FilterVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxHomebrewPS4FilterVersion.Location = new System.Drawing.Point(967, 34);
+            this.ComboBoxHomebrewPS4FilterVersion.Location = new System.Drawing.Point(960, 34);
             this.ComboBoxHomebrewPS4FilterVersion.Name = "ComboBoxHomebrewPS4FilterVersion";
             this.ComboBoxHomebrewPS4FilterVersion.Properties.AllowFocused = false;
             this.ComboBoxHomebrewPS4FilterVersion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -13801,7 +12910,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelHomebrewPS4FilterVersion.Appearance.Options.UseForeColor = true;
             this.LabelHomebrewPS4FilterVersion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelHomebrewPS4FilterVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHomebrewPS4FilterVersion.Location = new System.Drawing.Point(964, 12);
+            this.LabelHomebrewPS4FilterVersion.Location = new System.Drawing.Point(957, 12);
             this.LabelHomebrewPS4FilterVersion.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelHomebrewPS4FilterVersion.Name = "LabelHomebrewPS4FilterVersion";
             this.LabelHomebrewPS4FilterVersion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -13823,13 +12932,13 @@ namespace ArisenStudio.Forms.Windows
             this.TextBoxHomebrewPS4FilterName.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.TextBoxHomebrewPS4FilterName.Properties.AutoHeight = false;
             this.TextBoxHomebrewPS4FilterName.Properties.NullValuePrompt = "Search...";
-            this.TextBoxHomebrewPS4FilterName.Size = new System.Drawing.Size(687, 30);
+            this.TextBoxHomebrewPS4FilterName.Size = new System.Drawing.Size(680, 30);
             this.TextBoxHomebrewPS4FilterName.TabIndex = 3;
             // 
             // ComboBoxHomebrewPS4FilterFwVersion
             // 
             this.ComboBoxHomebrewPS4FilterFwVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxHomebrewPS4FilterFwVersion.Location = new System.Drawing.Point(1061, 34);
+            this.ComboBoxHomebrewPS4FilterFwVersion.Location = new System.Drawing.Point(1054, 34);
             this.ComboBoxHomebrewPS4FilterFwVersion.Name = "ComboBoxHomebrewPS4FilterFwVersion";
             this.ComboBoxHomebrewPS4FilterFwVersion.Properties.AllowFocused = false;
             this.ComboBoxHomebrewPS4FilterFwVersion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -13876,7 +12985,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelHomebrewPS4FilterFwVersion.Appearance.Options.UseForeColor = true;
             this.LabelHomebrewPS4FilterFwVersion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelHomebrewPS4FilterFwVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHomebrewPS4FilterFwVersion.Location = new System.Drawing.Point(1058, 12);
+            this.LabelHomebrewPS4FilterFwVersion.Location = new System.Drawing.Point(1051, 12);
             this.LabelHomebrewPS4FilterFwVersion.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
             this.LabelHomebrewPS4FilterFwVersion.Name = "LabelHomebrewPS4FilterFwVersion";
             this.LabelHomebrewPS4FilterFwVersion.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -13895,7 +13004,7 @@ namespace ArisenStudio.Forms.Windows
             this.separatorControl88.Margin = new System.Windows.Forms.Padding(0);
             this.separatorControl88.Name = "separatorControl88";
             this.separatorControl88.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl88.Size = new System.Drawing.Size(1288, 3);
+            this.separatorControl88.Size = new System.Drawing.Size(1278, 3);
             this.separatorControl88.TabIndex = 1172;
             // 
             // PanelHomebrewPS4Actions
@@ -13909,7 +13018,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelHomebrewPS4Actions.LookAndFeel.UseDefaultLookAndFeel = false;
             this.PanelHomebrewPS4Actions.Margin = new System.Windows.Forms.Padding(0);
             this.PanelHomebrewPS4Actions.Name = "PanelHomebrewPS4Actions";
-            this.PanelHomebrewPS4Actions.Size = new System.Drawing.Size(1288, 70);
+            this.PanelHomebrewPS4Actions.Size = new System.Drawing.Size(1278, 70);
             this.PanelHomebrewPS4Actions.TabIndex = 1227;
             // 
             // TileControlHomebrewPS4Actions
@@ -13942,7 +13051,7 @@ namespace ArisenStudio.Forms.Windows
             this.TileControlHomebrewPS4Actions.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.TileControlHomebrewPS4Actions.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
             this.TileControlHomebrewPS4Actions.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
-            this.TileControlHomebrewPS4Actions.Size = new System.Drawing.Size(1284, 66);
+            this.TileControlHomebrewPS4Actions.Size = new System.Drawing.Size(1274, 66);
             this.TileControlHomebrewPS4Actions.TabIndex = 1;
             this.TileControlHomebrewPS4Actions.Text = "TileControlModsActions";
             // 
@@ -14038,7 +13147,7 @@ namespace ArisenStudio.Forms.Windows
             this.PageTrainersXbox.Controls.Add(this.PanelTrainersFilters);
             this.PageTrainersXbox.Controls.Add(this.PanelTrainersActions);
             this.PageTrainersXbox.Name = "PageTrainersXbox";
-            this.PageTrainersXbox.Size = new System.Drawing.Size(1288, 571);
+            this.PageTrainersXbox.Size = new System.Drawing.Size(1278, 571);
             // 
             // GridControlTrainers
             // 
@@ -14052,7 +13161,7 @@ namespace ArisenStudio.Forms.Windows
             this.GridControlTrainers.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.GridControlTrainers.Name = "GridControlTrainers";
             this.GridControlTrainers.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.GridControlTrainers.Size = new System.Drawing.Size(1288, 425);
+            this.GridControlTrainers.Size = new System.Drawing.Size(1278, 425);
             this.GridControlTrainers.TabIndex = 1186;
             this.GridControlTrainers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewTrainers});
@@ -14111,7 +13220,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelTrainersFilters.Location = new System.Drawing.Point(0, 70);
             this.PanelTrainersFilters.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
             this.PanelTrainersFilters.Name = "PanelTrainersFilters";
-            this.PanelTrainersFilters.Size = new System.Drawing.Size(1288, 76);
+            this.PanelTrainersFilters.Size = new System.Drawing.Size(1278, 76);
             this.PanelTrainersFilters.TabIndex = 1187;
             // 
             // ComboBoxTrainersFilterTitleId
@@ -14138,7 +13247,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxTrainersFilterCount
             // 
             this.ComboBoxTrainersFilterCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxTrainersFilterCount.Location = new System.Drawing.Point(1190, 34);
+            this.ComboBoxTrainersFilterCount.Location = new System.Drawing.Point(1183, 34);
             this.ComboBoxTrainersFilterCount.Name = "ComboBoxTrainersFilterCount";
             this.ComboBoxTrainersFilterCount.Properties.AllowFocused = false;
             this.ComboBoxTrainersFilterCount.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -14166,7 +13275,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelTrainersXboxFilterNumOfTrainers.Appearance.Options.UseForeColor = true;
             this.LabelTrainersXboxFilterNumOfTrainers.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelTrainersXboxFilterNumOfTrainers.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelTrainersXboxFilterNumOfTrainers.Location = new System.Drawing.Point(1190, 12);
+            this.LabelTrainersXboxFilterNumOfTrainers.Location = new System.Drawing.Point(1183, 12);
             this.LabelTrainersXboxFilterNumOfTrainers.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
             this.LabelTrainersXboxFilterNumOfTrainers.Name = "LabelTrainersXboxFilterNumOfTrainers";
             this.LabelTrainersXboxFilterNumOfTrainers.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -14182,7 +13291,7 @@ namespace ArisenStudio.Forms.Windows
             this.separatorControl94.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.separatorControl94.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.separatorControl94.LineThickness = 1;
-            this.separatorControl94.Location = new System.Drawing.Point(1172, 12);
+            this.separatorControl94.Location = new System.Drawing.Point(1165, 12);
             this.separatorControl94.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.separatorControl94.Name = "separatorControl94";
             this.separatorControl94.Padding = new System.Windows.Forms.Padding(0);
@@ -14197,7 +13306,7 @@ namespace ArisenStudio.Forms.Windows
             this.separatorControl95.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.separatorControl95.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.separatorControl95.LineThickness = 1;
-            this.separatorControl95.Location = new System.Drawing.Point(1029, 12);
+            this.separatorControl95.Location = new System.Drawing.Point(1022, 12);
             this.separatorControl95.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.separatorControl95.Name = "separatorControl95";
             this.separatorControl95.Padding = new System.Windows.Forms.Padding(0);
@@ -14207,7 +13316,7 @@ namespace ArisenStudio.Forms.Windows
             // ComboBoxTrainersFilterDashType
             // 
             this.ComboBoxTrainersFilterDashType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxTrainersFilterDashType.Location = new System.Drawing.Point(1047, 34);
+            this.ComboBoxTrainersFilterDashType.Location = new System.Drawing.Point(1040, 34);
             this.ComboBoxTrainersFilterDashType.Name = "ComboBoxTrainersFilterDashType";
             this.ComboBoxTrainersFilterDashType.Properties.AllowFocused = false;
             this.ComboBoxTrainersFilterDashType.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -14235,7 +13344,7 @@ namespace ArisenStudio.Forms.Windows
             this.LabelTrainersXboxFilterType.Appearance.Options.UseForeColor = true;
             this.LabelTrainersXboxFilterType.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelTrainersXboxFilterType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelTrainersXboxFilterType.Location = new System.Drawing.Point(1044, 12);
+            this.LabelTrainersXboxFilterType.Location = new System.Drawing.Point(1037, 12);
             this.LabelTrainersXboxFilterType.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
             this.LabelTrainersXboxFilterType.Name = "LabelTrainersXboxFilterType";
             this.LabelTrainersXboxFilterType.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -14251,7 +13360,7 @@ namespace ArisenStudio.Forms.Windows
             this.separatorControl90.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
             this.separatorControl90.LineOrientation = System.Windows.Forms.Orientation.Vertical;
             this.separatorControl90.LineThickness = 1;
-            this.separatorControl90.Location = new System.Drawing.Point(1192, 12);
+            this.separatorControl90.Location = new System.Drawing.Point(1185, 12);
             this.separatorControl90.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
             this.separatorControl90.Name = "separatorControl90";
             this.separatorControl90.Padding = new System.Windows.Forms.Padding(0);
@@ -14283,7 +13392,7 @@ namespace ArisenStudio.Forms.Windows
             this.separatorControl92.Margin = new System.Windows.Forms.Padding(0);
             this.separatorControl92.Name = "separatorControl92";
             this.separatorControl92.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl92.Size = new System.Drawing.Size(1288, 3);
+            this.separatorControl92.Size = new System.Drawing.Size(1278, 3);
             this.separatorControl92.TabIndex = 1172;
             // 
             // ComboBoxTrainersFilterGame
@@ -14350,7 +13459,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelTrainersActions.LookAndFeel.UseDefaultLookAndFeel = false;
             this.PanelTrainersActions.Margin = new System.Windows.Forms.Padding(0);
             this.PanelTrainersActions.Name = "PanelTrainersActions";
-            this.PanelTrainersActions.Size = new System.Drawing.Size(1288, 70);
+            this.PanelTrainersActions.Size = new System.Drawing.Size(1278, 70);
             this.PanelTrainersActions.TabIndex = 1188;
             // 
             // TileControlTrainers
@@ -14385,7 +13494,7 @@ namespace ArisenStudio.Forms.Windows
             this.TileControlTrainers.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
             this.TileControlTrainers.RowCount = 1;
             this.TileControlTrainers.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
-            this.TileControlTrainers.Size = new System.Drawing.Size(1284, 66);
+            this.TileControlTrainers.Size = new System.Drawing.Size(1274, 66);
             this.TileControlTrainers.TabIndex = 1;
             this.TileControlTrainers.Text = "TileControlModsActions";
             // 
@@ -14462,8 +13571,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelNavigationMenu.Appearance.Options.UseFont = true;
             this.PanelNavigationMenu.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.PanelNavigationMenu.Controls.Add(this.NavigationMenu);
-            this.PanelNavigationMenu.Location = new System.Drawing.Point(-10, 185);
-            this.PanelNavigationMenu.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.PanelNavigationMenu.Location = new System.Drawing.Point(-3, 185);
             this.PanelNavigationMenu.Name = "PanelNavigationMenu";
             this.PanelNavigationMenu.Size = new System.Drawing.Size(208, 575);
             this.PanelNavigationMenu.TabIndex = 1217;
@@ -14475,10 +13583,10 @@ namespace ArisenStudio.Forms.Windows
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelNavigationPages.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.PanelNavigationPages.Controls.Add(this.NavigationFrame);
-            this.PanelNavigationPages.Location = new System.Drawing.Point(198, 189);
+            this.PanelNavigationPages.Location = new System.Drawing.Point(208, 189);
             this.PanelNavigationPages.Margin = new System.Windows.Forms.Padding(0);
             this.PanelNavigationPages.Name = "PanelNavigationPages";
-            this.PanelNavigationPages.Size = new System.Drawing.Size(1288, 571);
+            this.PanelNavigationPages.Size = new System.Drawing.Size(1278, 571);
             this.PanelNavigationPages.TabIndex = 1218;
             // 
             // TimerCurrentGame
@@ -14805,8413 +13913,6 @@ namespace ArisenStudio.Forms.Windows
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(200, 100);
             this.panelControl2.TabIndex = 0;
-            // 
-            // navigationFrame1
-            // 
-            this.navigationFrame1.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.True;
-            this.navigationFrame1.Controls.Add(this.navigationPage1);
-            this.navigationFrame1.Controls.Add(this.navigationPage2);
-            this.navigationFrame1.Controls.Add(this.navigationPage3);
-            this.navigationFrame1.Controls.Add(this.navigationPage4);
-            this.navigationFrame1.Controls.Add(this.navigationPage5);
-            this.navigationFrame1.Controls.Add(this.navigationPage6);
-            this.navigationFrame1.Controls.Add(this.navigationPage7);
-            this.navigationFrame1.Controls.Add(this.navigationPage8);
-            this.navigationFrame1.Controls.Add(this.navigationPage9);
-            this.navigationFrame1.Controls.Add(this.navigationPage10);
-            this.navigationFrame1.Controls.Add(this.navigationPage11);
-            this.navigationFrame1.Controls.Add(this.navigationPage12);
-            this.navigationFrame1.Controls.Add(this.navigationPage13);
-            this.navigationFrame1.Controls.Add(this.navigationPage14);
-            this.navigationFrame1.Controls.Add(this.navigationPage15);
-            this.navigationFrame1.Controls.Add(this.navigationPage16);
-            this.navigationFrame1.Location = new System.Drawing.Point(0, 0);
-            this.navigationFrame1.Name = "navigationFrame1";
-            this.navigationFrame1.SelectedPage = null;
-            this.navigationFrame1.Size = new System.Drawing.Size(0, 0);
-            this.navigationFrame1.TabIndex = 0;
-            // 
-            // navigationPage1
-            // 
-            this.navigationPage1.Appearance.Options.UseFont = true;
-            this.navigationPage1.Controls.Add(this.panelControl3);
-            this.navigationPage1.Controls.Add(this.panelControl4);
-            this.navigationPage1.Controls.Add(this.panelControl5);
-            this.navigationPage1.Controls.Add(this.panelControl6);
-            this.navigationPage1.Controls.Add(this.panelControl7);
-            this.navigationPage1.Controls.Add(this.panelControl8);
-            this.navigationPage1.Controls.Add(this.panelControl9);
-            this.navigationPage1.Controls.Add(this.panelControl10);
-            this.navigationPage1.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.navigationPage1.Name = "navigationPage1";
-            this.navigationPage1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.navigationPage1.Size = new System.Drawing.Size(1288, 571);
-            // 
-            // panelControl3
-            // 
-            this.panelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControl3.AutoSize = true;
-            this.panelControl3.Controls.Add(this.flowLayoutPanel1);
-            this.panelControl3.Controls.Add(this.labelControl24);
-            this.panelControl3.Location = new System.Drawing.Point(596, 413);
-            this.panelControl3.Margin = new System.Windows.Forms.Padding(5);
-            this.panelControl3.MinimumSize = new System.Drawing.Size(256, 200);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(261, 377);
-            this.panelControl3.TabIndex = 6;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.Controls.Add(this.labelControl15);
-            this.flowLayoutPanel1.Controls.Add(this.labelControl16);
-            this.flowLayoutPanel1.Controls.Add(this.labelControl17);
-            this.flowLayoutPanel1.Controls.Add(this.labelControl19);
-            this.flowLayoutPanel1.Controls.Add(this.labelControl20);
-            this.flowLayoutPanel1.Controls.Add(this.labelControl21);
-            this.flowLayoutPanel1.Controls.Add(this.labelControl22);
-            this.flowLayoutPanel1.Controls.Add(this.labelControl23);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1, 36);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(255, 334);
-            this.flowLayoutPanel1.TabIndex = 9;
-            // 
-            // labelControl15
-            // 
-            this.labelControl15.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl15.Appearance.Options.UseFont = true;
-            this.labelControl15.Location = new System.Drawing.Point(11, 3);
-            this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(78, 17);
-            this.labelControl15.TabIndex = 10;
-            this.labelControl15.Text = "0 Downloads";
-            // 
-            // labelControl16
-            // 
-            this.labelControl16.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl16.Appearance.Options.UseFont = true;
-            this.labelControl16.Location = new System.Drawing.Point(11, 26);
-            this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(79, 17);
-            this.labelControl16.TabIndex = 3;
-            this.labelControl16.Text = "PlayStation 3";
-            // 
-            // labelControl17
-            // 
-            this.labelControl17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl17.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.labelControl17.Appearance.Options.UseFont = true;
-            this.labelControl17.Location = new System.Drawing.Point(11, 47);
-            this.labelControl17.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
-            this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(151, 119);
-            this.labelControl17.TabIndex = 4;
-            this.labelControl17.Text = "0 Game Mods\r\n0 Homebrew\r\n0 Resources\r\n0 Packages\r\n0 Game Saves\r\n0 Game Cheats\r\n0 " +
-    "Something";
-            // 
-            // labelControl19
-            // 
-            this.labelControl19.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl19.Appearance.Options.UseFont = true;
-            this.labelControl19.Location = new System.Drawing.Point(11, 172);
-            this.labelControl19.Name = "labelControl19";
-            this.labelControl19.Size = new System.Drawing.Size(79, 17);
-            this.labelControl19.TabIndex = 8;
-            this.labelControl19.Text = "PlayStation 4";
-            // 
-            // labelControl20
-            // 
-            this.labelControl20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl20.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.labelControl20.Appearance.Options.UseFont = true;
-            this.labelControl20.Location = new System.Drawing.Point(11, 193);
-            this.labelControl20.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
-            this.labelControl20.Name = "labelControl20";
-            this.labelControl20.Size = new System.Drawing.Size(151, 34);
-            this.labelControl20.TabIndex = 9;
-            this.labelControl20.Text = "0 Applications\r\n0 Games";
-            // 
-            // labelControl21
-            // 
-            this.labelControl21.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl21.Appearance.Options.UseFont = true;
-            this.labelControl21.Location = new System.Drawing.Point(11, 233);
-            this.labelControl21.Name = "labelControl21";
-            this.labelControl21.Size = new System.Drawing.Size(56, 17);
-            this.labelControl21.TabIndex = 5;
-            this.labelControl21.Text = "Xbox 360";
-            // 
-            // labelControl22
-            // 
-            this.labelControl22.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.labelControl22.Appearance.Options.UseFont = true;
-            this.labelControl22.Location = new System.Drawing.Point(11, 254);
-            this.labelControl22.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
-            this.labelControl22.Name = "labelControl22";
-            this.labelControl22.Size = new System.Drawing.Size(88, 51);
-            this.labelControl22.TabIndex = 6;
-            this.labelControl22.Text = "0 Plugins\r\n0 Game Saves\r\n0 Game Cheats";
-            // 
-            // labelControl23
-            // 
-            this.labelControl23.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.labelControl23.Appearance.Options.UseFont = true;
-            this.labelControl23.Location = new System.Drawing.Point(11, 314);
-            this.labelControl23.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.labelControl23.Name = "labelControl23";
-            this.labelControl23.Size = new System.Drawing.Size(151, 17);
-            this.labelControl23.TabIndex = 7;
-            this.labelControl23.Text = "Last Updated: 00/00/0000";
-            // 
-            // labelControl24
-            // 
-            this.labelControl24.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl24.Appearance.Options.UseFont = true;
-            this.labelControl24.Location = new System.Drawing.Point(12, 10);
-            this.labelControl24.Name = "labelControl24";
-            this.labelControl24.Size = new System.Drawing.Size(63, 20);
-            this.labelControl24.TabIndex = 0;
-            this.labelControl24.Text = "Statistics";
-            // 
-            // panelControl4
-            // 
-            this.panelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControl4.Controls.Add(this.labelControl25);
-            this.panelControl4.Controls.Add(this.xtraScrollableControl1);
-            this.panelControl4.Location = new System.Drawing.Point(867, 0);
-            this.panelControl4.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
-            this.panelControl4.MinimumSize = new System.Drawing.Size(413, 330);
-            this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(418, 468);
-            this.panelControl4.TabIndex = 6;
-            // 
-            // labelControl25
-            // 
-            this.labelControl25.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.labelControl25.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl25.Appearance.Options.UseBackColor = true;
-            this.labelControl25.Appearance.Options.UseFont = true;
-            this.labelControl25.Location = new System.Drawing.Point(12, 10);
-            this.labelControl25.Name = "labelControl25";
-            this.labelControl25.Size = new System.Drawing.Size(115, 20);
-            this.labelControl25.TabIndex = 9;
-            this.labelControl25.Text = "Announcements";
-            // 
-            // xtraScrollableControl1
-            // 
-            this.xtraScrollableControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.xtraScrollableControl1.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.xtraScrollableControl1.Appearance.Options.UseBackColor = true;
-            this.xtraScrollableControl1.Controls.Add(this.noAnnouncementsItem1);
-            this.xtraScrollableControl1.Location = new System.Drawing.Point(5, 38);
-            this.xtraScrollableControl1.MinimumSize = new System.Drawing.Size(400, 0);
-            this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(412, 425);
-            this.xtraScrollableControl1.TabIndex = 8;
-            // 
-            // noAnnouncementsItem1
-            // 
-            this.noAnnouncementsItem1.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.noAnnouncementsItem1.Appearance.Options.UseBackColor = true;
-            this.noAnnouncementsItem1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.noAnnouncementsItem1.Location = new System.Drawing.Point(57, 56);
-            this.noAnnouncementsItem1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 12);
-            this.noAnnouncementsItem1.Name = "noAnnouncementsItem1";
-            this.noAnnouncementsItem1.Size = new System.Drawing.Size(292, 308);
-            this.noAnnouncementsItem1.TabIndex = 0;
-            // 
-            // panelControl5
-            // 
-            this.panelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControl5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.panelControl5.Appearance.Options.UseBackColor = true;
-            this.panelControl5.Controls.Add(this.webView21);
-            this.panelControl5.Controls.Add(this.labelControl26);
-            this.panelControl5.Location = new System.Drawing.Point(867, 478);
-            this.panelControl5.Margin = new System.Windows.Forms.Padding(5);
-            this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(418, 317);
-            this.panelControl5.TabIndex = 9;
-            // 
-            // webView21
-            // 
-            this.webView21.AllowExternalDrop = true;
-            this.webView21.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.webView21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.webView21.CreationProperties = null;
-            this.webView21.DefaultBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.webView21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.webView21.Location = new System.Drawing.Point(7, 44);
-            this.webView21.Name = "webView21";
-            this.webView21.Size = new System.Drawing.Size(404, 268);
-            this.webView21.TabIndex = 7;
-            this.webView21.ZoomFactor = 0.79D;
-            // 
-            // labelControl26
-            // 
-            this.labelControl26.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl26.Appearance.Options.UseFont = true;
-            this.labelControl26.Location = new System.Drawing.Point(12, 10);
-            this.labelControl26.Name = "labelControl26";
-            this.labelControl26.Size = new System.Drawing.Size(83, 20);
-            this.labelControl26.TabIndex = 0;
-            this.labelControl26.Text = "Current Poll";
-            // 
-            // panelControl6
-            // 
-            this.panelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControl6.Controls.Add(this.tileControl2);
-            this.panelControl6.Controls.Add(this.labelControl27);
-            this.panelControl6.Location = new System.Drawing.Point(0, 208);
-            this.panelControl6.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
-            this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(857, 194);
-            this.panelControl6.TabIndex = 2;
-            // 
-            // tileControl2
-            // 
-            this.tileControl2.AllowDrag = false;
-            this.tileControl2.AllowDragTilesBetweenGroups = false;
-            this.tileControl2.AllowItemHover = true;
-            this.tileControl2.AllowSelectedItemBorder = false;
-            this.tileControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tileControl2.BackColor = System.Drawing.Color.Transparent;
-            this.tileControl2.Groups.Add(this.tileGroup2);
-            this.tileControl2.HorizontalContentAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.tileControl2.ItemBorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            this.tileControl2.Location = new System.Drawing.Point(7, 44);
-            this.tileControl2.MaxId = 14;
-            this.tileControl2.Name = "tileControl2";
-            this.tileControl2.Padding = new System.Windows.Forms.Padding(14, 10, 10, 10);
-            this.tileControl2.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
-            this.tileControl2.Size = new System.Drawing.Size(842, 134);
-            this.tileControl2.TabIndex = 3;
-            this.tileControl2.Text = "tileControl1";
-            // 
-            // tileGroup2
-            // 
-            this.tileGroup2.Items.Add(this.tileItem9);
-            this.tileGroup2.Name = "tileGroup2";
-            // 
-            // tileItem9
-            // 
-            this.tileItem9.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.tileItem9.AppearanceItem.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.tileItem9.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem9.AppearanceItem.Normal.Options.UseBorderColor = true;
-            this.tileItem9.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.tileItem9.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tileItem9.AppearanceItem.Normal.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.tileItem9.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement61.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            tileItemElement61.Appearance.Normal.Options.UseFont = true;
-            tileItemElement61.Appearance.Normal.Options.UseTextOptions = true;
-            tileItemElement61.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            tileItemElement61.Text = "Call of Duty: Black Ops";
-            tileItemElement61.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement62.AnchorAlignment = DevExpress.Utils.AnchorAlignment.Bottom;
-            tileItemElement62.AnchorElementIndex = 0;
-            tileItemElement62.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            tileItemElement62.Appearance.Normal.Options.UseFont = true;
-            tileItemElement62.Appearance.Normal.Options.UseTextOptions = true;
-            tileItemElement62.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            tileItemElement62.Text = "Infracted Menu";
-            tileItemElement62.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            this.tileItem9.Elements.Add(tileItemElement61);
-            this.tileItem9.Elements.Add(tileItemElement62);
-            this.tileItem9.Id = 11;
-            this.tileItem9.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.tileItem9.Name = "tileItem9";
-            this.tileItem9.TextShowMode = DevExpress.XtraEditors.TileItemContentShowMode.Always;
-            this.tileItem9.Visible = false;
-            // 
-            // labelControl27
-            // 
-            this.labelControl27.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl27.Appearance.Options.UseFont = true;
-            this.labelControl27.Location = new System.Drawing.Point(12, 10);
-            this.labelControl27.Name = "labelControl27";
-            this.labelControl27.Size = new System.Drawing.Size(130, 20);
-            this.labelControl27.TabIndex = 0;
-            this.labelControl27.Text = "Our Favorite Mods";
-            // 
-            // panelControl7
-            // 
-            this.panelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControl7.Controls.Add(this.simpleButton1);
-            this.panelControl7.Controls.Add(this.simpleButton2);
-            this.panelControl7.Controls.Add(this.labelControl28);
-            this.panelControl7.Controls.Add(this.xtraScrollableControl2);
-            this.panelControl7.Controls.Add(this.labelControl30);
-            this.panelControl7.Controls.Add(this.separatorControl8);
-            this.panelControl7.Location = new System.Drawing.Point(867, 805);
-            this.panelControl7.Margin = new System.Windows.Forms.Padding(5);
-            this.panelControl7.MinimumSize = new System.Drawing.Size(410, 358);
-            this.panelControl7.Name = "panelControl7";
-            this.panelControl7.Size = new System.Drawing.Size(418, 374);
-            this.panelControl7.TabIndex = 8;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Enabled = false;
-            this.simpleButton1.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
-            this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton1.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            this.simpleButton1.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.simpleButton1.Location = new System.Drawing.Point(336, 44);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 12;
-            this.simpleButton1.Text = "Next";
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
-            this.simpleButton2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton2.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton2.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            this.simpleButton2.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.simpleButton2.Location = new System.Drawing.Point(12, 44);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 9;
-            this.simpleButton2.Text = "Previous";
-            // 
-            // labelControl28
-            // 
-            this.labelControl28.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl28.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl28.Appearance.Options.UseFont = true;
-            this.labelControl28.Appearance.Options.UseTextOptions = true;
-            this.labelControl28.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl28.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.labelControl28.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl28.Location = new System.Drawing.Point(0, 47);
-            this.labelControl28.Name = "labelControl28";
-            this.labelControl28.Size = new System.Drawing.Size(418, 20);
-            this.labelControl28.TabIndex = 2;
-            this.labelControl28.Text = "Version";
-            // 
-            // xtraScrollableControl2
-            // 
-            this.xtraScrollableControl2.AllowTouchScroll = true;
-            this.xtraScrollableControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.xtraScrollableControl2.Controls.Add(this.labelControl29);
-            this.xtraScrollableControl2.FireScrollEventOnMouseWheel = true;
-            this.xtraScrollableControl2.Location = new System.Drawing.Point(12, 86);
-            this.xtraScrollableControl2.MinimumSize = new System.Drawing.Size(393, 0);
-            this.xtraScrollableControl2.Name = "xtraScrollableControl2";
-            this.xtraScrollableControl2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 4);
-            this.xtraScrollableControl2.Size = new System.Drawing.Size(405, 285);
-            this.xtraScrollableControl2.TabIndex = 11;
-            // 
-            // labelControl29
-            // 
-            this.labelControl29.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl29.Appearance.Options.UseFont = true;
-            this.labelControl29.Appearance.Options.UseTextOptions = true;
-            this.labelControl29.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.labelControl29.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
-            this.labelControl29.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.labelControl29.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl29.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelControl29.Location = new System.Drawing.Point(0, 0);
-            this.labelControl29.Name = "labelControl29";
-            this.labelControl29.Size = new System.Drawing.Size(405, 17);
-            this.labelControl29.TabIndex = 3;
-            this.labelControl29.Text = "Change Log";
-            // 
-            // labelControl30
-            // 
-            this.labelControl30.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl30.Appearance.Options.UseFont = true;
-            this.labelControl30.Location = new System.Drawing.Point(12, 10);
-            this.labelControl30.Name = "labelControl30";
-            this.labelControl30.Size = new System.Drawing.Size(82, 20);
-            this.labelControl30.TabIndex = 0;
-            this.labelControl30.Text = "Change Log";
-            // 
-            // separatorControl8
-            // 
-            this.separatorControl8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl8.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl8.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl8.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl8.LineThickness = 1;
-            this.separatorControl8.Location = new System.Drawing.Point(0, 76);
-            this.separatorControl8.Margin = new System.Windows.Forms.Padding(0);
-            this.separatorControl8.Name = "separatorControl8";
-            this.separatorControl8.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl8.Size = new System.Drawing.Size(418, 3);
-            this.separatorControl8.TabIndex = 1173;
-            // 
-            // panelControl8
-            // 
-            this.panelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControl8.Controls.Add(this.svgImageBox1);
-            this.panelControl8.Controls.Add(this.xtraScrollableControl3);
-            this.panelControl8.Controls.Add(this.labelControl31);
-            this.panelControl8.Location = new System.Drawing.Point(0, 413);
-            this.panelControl8.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
-            this.panelControl8.MinimumSize = new System.Drawing.Size(0, 100);
-            this.panelControl8.Name = "panelControl8";
-            this.panelControl8.Size = new System.Drawing.Size(586, 320);
-            this.panelControl8.TabIndex = 4;
-            // 
-            // svgImageBox1
-            // 
-            this.svgImageBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.svgImageBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.svgImageBox1.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Lime;
-            this.svgImageBox1.ItemAppearance.Normal.FillColor = System.Drawing.Color.White;
-            this.svgImageBox1.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
-            this.svgImageBox1.Location = new System.Drawing.Point(557, 9);
-            this.svgImageBox1.Name = "svgImageBox1";
-            this.svgImageBox1.Size = new System.Drawing.Size(20, 20);
-            this.svgImageBox1.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
-            this.svgImageBox1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageBox1.SvgImage")));
-            this.svgImageBox1.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            this.svgImageBox1.TabIndex = 2;
-            this.svgImageBox1.Text = "Refresh";
-            // 
-            // xtraScrollableControl3
-            // 
-            this.xtraScrollableControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.xtraScrollableControl3.Location = new System.Drawing.Point(5, 37);
-            this.xtraScrollableControl3.Name = "xtraScrollableControl3";
-            this.xtraScrollableControl3.Size = new System.Drawing.Size(578, 276);
-            this.xtraScrollableControl3.TabIndex = 1;
-            // 
-            // labelControl31
-            // 
-            this.labelControl31.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl31.Appearance.Options.UseFont = true;
-            this.labelControl31.Location = new System.Drawing.Point(12, 10);
-            this.labelControl31.Name = "labelControl31";
-            this.labelControl31.Size = new System.Drawing.Size(86, 20);
-            this.labelControl31.TabIndex = 0;
-            this.labelControl31.Text = "Latest News";
-            // 
-            // panelControl9
-            // 
-            this.panelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControl9.Controls.Add(this.labelControl32);
-            this.panelControl9.Controls.Add(this.tileControl3);
-            this.panelControl9.Location = new System.Drawing.Point(0, 0);
-            this.panelControl9.Margin = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.panelControl9.Name = "panelControl9";
-            this.panelControl9.Size = new System.Drawing.Size(857, 198);
-            this.panelControl9.TabIndex = 12;
-            // 
-            // labelControl32
-            // 
-            this.labelControl32.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.labelControl32.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl32.Appearance.Options.UseBackColor = true;
-            this.labelControl32.Appearance.Options.UseFont = true;
-            this.labelControl32.Location = new System.Drawing.Point(13, 10);
-            this.labelControl32.Name = "labelControl32";
-            this.labelControl32.Size = new System.Drawing.Size(139, 20);
-            this.labelControl32.TabIndex = 0;
-            this.labelControl32.Text = "Our Favorite Games";
-            // 
-            // tileControl3
-            // 
-            this.tileControl3.AllowDrag = false;
-            this.tileControl3.AllowDragTilesBetweenGroups = false;
-            this.tileControl3.AllowItemHover = true;
-            this.tileControl3.AllowSelectedItemBorder = false;
-            this.tileControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tileControl3.BackColor = System.Drawing.Color.Transparent;
-            this.tileControl3.Groups.Add(this.tileGroup3);
-            this.tileControl3.HorizontalContentAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.tileControl3.ItemBorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            this.tileControl3.Location = new System.Drawing.Point(7, 44);
-            this.tileControl3.MaxId = 15;
-            this.tileControl3.Name = "tileControl3";
-            this.tileControl3.Padding = new System.Windows.Forms.Padding(14, 10, 10, 10);
-            this.tileControl3.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
-            this.tileControl3.Size = new System.Drawing.Size(842, 134);
-            this.tileControl3.TabIndex = 1;
-            this.tileControl3.Text = "tileControl1";
-            // 
-            // tileGroup3
-            // 
-            this.tileGroup3.Items.Add(this.tileItem10);
-            this.tileGroup3.Name = "tileGroup3";
-            // 
-            // tileItem10
-            // 
-            this.tileItem10.AppearanceItem.Normal.BackColor = System.Drawing.Color.Coral;
-            this.tileItem10.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Coral;
-            this.tileItem10.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem10.AppearanceItem.Normal.Options.UseBorderColor = true;
-            this.tileItem10.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.tileItem10.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tileItem10.AppearanceItem.Normal.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.tileItem10.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement63.AnchorAlignment = DevExpress.Utils.AnchorAlignment.Top;
-            tileItemElement63.AnchorElementIndex = 1;
-            tileItemElement63.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            tileItemElement63.Appearance.Normal.Options.UseFont = true;
-            tileItemElement63.Appearance.Normal.Options.UseTextOptions = true;
-            tileItemElement63.Appearance.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            tileItemElement63.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            tileItemElement63.StretchHorizontal = true;
-            tileItemElement63.Text = "Game Title";
-            tileItemElement63.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            tileItemElement64.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            tileItemElement64.Appearance.Normal.Options.UseFont = true;
-            tileItemElement64.Appearance.Normal.Options.UseTextOptions = true;
-            tileItemElement64.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            tileItemElement64.ColumnIndex = 1;
-            tileItemElement64.RowIndex = 1;
-            tileItemElement64.Text = "Total Mods";
-            tileItemElement64.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.tileItem10.Elements.Add(tileItemElement63);
-            this.tileItem10.Elements.Add(tileItemElement64);
-            this.tileItem10.Id = 11;
-            this.tileItem10.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.tileItem10.Name = "tileItem10";
-            this.tileItem10.TextShowMode = DevExpress.XtraEditors.TileItemContentShowMode.Always;
-            this.tileItem10.Visible = false;
-            // 
-            // panelControl10
-            // 
-            this.panelControl10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControl10.Controls.Add(this.chartControl2);
-            this.panelControl10.Controls.Add(this.labelControl33);
-            this.panelControl10.Location = new System.Drawing.Point(0, 412);
-            this.panelControl10.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
-            this.panelControl10.Name = "panelControl10";
-            this.panelControl10.Size = new System.Drawing.Size(857, 194);
-            this.panelControl10.TabIndex = 4;
-            this.panelControl10.Visible = false;
-            // 
-            // chartControl2
-            // 
-            this.chartControl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.chartControl2.BorderOptions.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            this.chartControl2.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            this.chartControl2.Location = new System.Drawing.Point(12, 44);
-            this.chartControl2.Name = "chartControl2";
-            this.chartControl2.PaletteName = "Office 2013";
-            series1.Name = "Series 1";
-            series1.SeriesID = 1;
-            series1.View = pieSeriesView1;
-            this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
-            this.chartControl2.SeriesTemplate.ShowInLegend = false;
-            this.chartControl2.Size = new System.Drawing.Size(300, 200);
-            this.chartControl2.TabIndex = 10;
-            this.chartControl2.Visible = false;
-            // 
-            // labelControl33
-            // 
-            this.labelControl33.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl33.Appearance.Options.UseFont = true;
-            this.labelControl33.Location = new System.Drawing.Point(12, 10);
-            this.labelControl33.Name = "labelControl33";
-            this.labelControl33.Size = new System.Drawing.Size(29, 20);
-            this.labelControl33.TabIndex = 0;
-            this.labelControl33.Text = "#Ad";
-            // 
-            // navigationPage2
-            // 
-            this.navigationPage2.Appearance.Options.UseFont = true;
-            this.navigationPage2.Controls.Add(this.panel1);
-            this.navigationPage2.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.navigationPage2.Name = "navigationPage2";
-            this.navigationPage2.Size = new System.Drawing.Size(1288, 571);
-            // 
-            // panel1
-            // 
-            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.gridControl1);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.panelControl11);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1288, 571);
-            this.panel1.TabIndex = 16;
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(55)))), ((int)(((byte)(58)))));
-            this.gridControl1.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gridControl1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gridControl1.Location = new System.Drawing.Point(0, 146);
-            this.gridControl1.MainView = this.gridView2;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1288, 425);
-            this.gridControl1.TabIndex = 6;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.ActiveFilterEnabled = false;
-            this.gridView2.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView2.Appearance.Empty.Options.UseBackColor = true;
-            this.gridView2.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView2.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gridView2.Appearance.Row.Options.UseBackColor = true;
-            this.gridView2.Appearance.Row.Options.UseFont = true;
-            this.gridView2.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(55)))), ((int)(((byte)(58)))));
-            this.gridView2.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.gridView2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
-            this.gridView2.GridControl = this.gridControl1;
-            this.gridView2.GroupRowHeight = 30;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsBehavior.Editable = false;
-            this.gridView2.OptionsBehavior.ReadOnly = true;
-            this.gridView2.OptionsCustomization.AllowFilter = false;
-            this.gridView2.OptionsFilter.AllowFilterEditor = false;
-            this.gridView2.OptionsMenu.ShowAutoFilterRowItem = false;
-            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView2.OptionsView.ShowColumnHeaders = false;
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            this.gridView2.OptionsView.ShowHorizontalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView2.OptionsView.ShowIndicator = false;
-            this.gridView2.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView2.RowHeight = 30;
-            this.gridView2.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.separatorControl9);
-            this.panel2.Controls.Add(this.separatorControl10);
-            this.panel2.Controls.Add(this.separatorControl11);
-            this.panel2.Controls.Add(this.separatorControl12);
-            this.panel2.Controls.Add(this.separatorControl13);
-            this.panel2.Controls.Add(this.separatorControl14);
-            this.panel2.Controls.Add(this.dateEdit1);
-            this.panel2.Controls.Add(this.comboBoxEdit8);
-            this.panel2.Controls.Add(this.labelControl34);
-            this.panel2.Controls.Add(this.pictureEdit1);
-            this.panel2.Controls.Add(this.labelControl35);
-            this.panel2.Controls.Add(this.pictureEdit2);
-            this.panel2.Controls.Add(this.comboBoxEdit9);
-            this.panel2.Controls.Add(this.labelControl36);
-            this.panel2.Controls.Add(this.comboBoxEdit10);
-            this.panel2.Controls.Add(this.labelControl37);
-            this.panel2.Controls.Add(this.comboBoxEdit11);
-            this.panel2.Controls.Add(this.labelControl38);
-            this.panel2.Controls.Add(this.separatorControl15);
-            this.panel2.Controls.Add(this.comboBoxEdit12);
-            this.panel2.Controls.Add(this.labelControl39);
-            this.panel2.Controls.Add(this.textEdit3);
-            this.panel2.Controls.Add(this.labelControl40);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 70);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1288, 76);
-            this.panel2.TabIndex = 12;
-            // 
-            // separatorControl9
-            // 
-            this.separatorControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl9.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl9.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl9.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl9.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl9.LineThickness = 1;
-            this.separatorControl9.Location = new System.Drawing.Point(817, 12);
-            this.separatorControl9.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl9.Name = "separatorControl9";
-            this.separatorControl9.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl9.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl9.TabIndex = 1215;
-            // 
-            // separatorControl10
-            // 
-            this.separatorControl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl10.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl10.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl10.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl10.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl10.LineThickness = 1;
-            this.separatorControl10.Location = new System.Drawing.Point(947, 12);
-            this.separatorControl10.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl10.Name = "separatorControl10";
-            this.separatorControl10.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl10.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl10.TabIndex = 1214;
-            // 
-            // separatorControl11
-            // 
-            this.separatorControl11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl11.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl11.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl11.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl11.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl11.LineThickness = 1;
-            this.separatorControl11.Location = new System.Drawing.Point(1059, 12);
-            this.separatorControl11.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl11.Name = "separatorControl11";
-            this.separatorControl11.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl11.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl11.TabIndex = 1213;
-            // 
-            // separatorControl12
-            // 
-            this.separatorControl12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl12.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl12.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl12.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl12.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl12.LineThickness = 1;
-            this.separatorControl12.Location = new System.Drawing.Point(1153, 12);
-            this.separatorControl12.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl12.Name = "separatorControl12";
-            this.separatorControl12.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl12.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl12.TabIndex = 1212;
-            // 
-            // separatorControl13
-            // 
-            this.separatorControl13.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl13.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl13.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl13.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl13.LineThickness = 1;
-            this.separatorControl13.Location = new System.Drawing.Point(354, 12);
-            this.separatorControl13.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl13.Name = "separatorControl13";
-            this.separatorControl13.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl13.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl13.TabIndex = 1211;
-            // 
-            // separatorControl14
-            // 
-            this.separatorControl14.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl14.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl14.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl14.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl14.LineThickness = 1;
-            this.separatorControl14.Location = new System.Drawing.Point(104, 12);
-            this.separatorControl14.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl14.Name = "separatorControl14";
-            this.separatorControl14.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl14.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl14.TabIndex = 1210;
-            // 
-            // dateEdit1
-            // 
-            this.dateEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(1171, 34);
-            this.dateEdit1.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.dateEdit1.Properties.Appearance.Options.UseFont = true;
-            this.dateEdit1.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.dateEdit1.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.dateEdit1.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.dateEdit1.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.dateEdit1.Properties.AutoHeight = false;
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;
-            this.dateEdit1.Properties.CalendarTimeProperties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.dateEdit1.Properties.CalendarTimeProperties.Appearance.Options.UseFont = true;
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.DisplayFormat.FormatString = "MM/dd/yyyy";
-            this.dateEdit1.Properties.CalendarTimeProperties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dateEdit1.Properties.CalendarTimeProperties.EditFormat.FormatString = "MM/dd/yyyy";
-            this.dateEdit1.Properties.CalendarTimeProperties.TouchUIMaxValue = new System.DateTime(9999, 12, 31, 0, 0, 0, 0);
-            this.dateEdit1.Properties.CalendarTimeProperties.UseMaskAsDisplayFormat = true;
-            this.dateEdit1.Properties.DisplayFormat.FormatString = "MM/dd/yyyy";
-            this.dateEdit1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dateEdit1.Properties.EditFormat.FormatString = "MM/dd/yyyy";
-            this.dateEdit1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dateEdit1.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
-            this.dateEdit1.Properties.MaskSettings.Set("mask", "MM/dd/yyyy");
-            this.dateEdit1.Properties.NullValuePrompt = "Select...";
-            this.dateEdit1.Properties.UseMaskAsDisplayFormat = true;
-            this.dateEdit1.Size = new System.Drawing.Size(103, 30);
-            this.dateEdit1.TabIndex = 1202;
-            // 
-            // comboBoxEdit8
-            // 
-            this.comboBoxEdit8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit8.Location = new System.Drawing.Point(965, 34);
-            this.comboBoxEdit8.Name = "comboBoxEdit8";
-            this.comboBoxEdit8.Properties.AllowFocused = false;
-            this.comboBoxEdit8.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit8.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit8.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit8.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit8.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit8.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit8.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit8.Properties.AutoComplete = false;
-            this.comboBoxEdit8.Properties.AutoHeight = false;
-            this.comboBoxEdit8.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit8.Properties.DropDownRows = 12;
-            this.comboBoxEdit8.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit8.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit8.Size = new System.Drawing.Size(82, 30);
-            this.comboBoxEdit8.TabIndex = 1206;
-            // 
-            // labelControl34
-            // 
-            this.labelControl34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl34.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl34.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl34.Appearance.Options.UseFont = true;
-            this.labelControl34.Appearance.Options.UseForeColor = true;
-            this.labelControl34.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl34.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl34.Location = new System.Drawing.Point(962, 12);
-            this.labelControl34.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl34.Name = "labelControl34";
-            this.labelControl34.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl34.Size = new System.Drawing.Size(49, 17);
-            this.labelControl34.TabIndex = 1207;
-            this.labelControl34.Text = "Region";
-            // 
-            // pictureEdit1
-            // 
-            this.pictureEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureEdit1.EditValue = global::ArisenStudio.Properties.Resources.icons8_equals;
-            this.pictureEdit1.Location = new System.Drawing.Point(1175, 38);
-            this.pictureEdit1.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.AllowFocused = false;
-            this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(65)))), ((int)(((byte)(68)))));
-            this.pictureEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.LightGray;
-            this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit1.Properties.Appearance.Options.UseForeColor = true;
-            this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit1.Properties.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            this.pictureEdit1.Size = new System.Drawing.Size(18, 18);
-            this.pictureEdit1.TabIndex = 1203;
-            this.pictureEdit1.Visible = false;
-            // 
-            // labelControl35
-            // 
-            this.labelControl35.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl35.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl35.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl35.Appearance.Options.UseFont = true;
-            this.labelControl35.Appearance.Options.UseForeColor = true;
-            this.labelControl35.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl35.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl35.Location = new System.Drawing.Point(1168, 12);
-            this.labelControl35.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl35.Name = "labelControl35";
-            this.labelControl35.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl35.Size = new System.Drawing.Size(98, 17);
-            this.labelControl35.TabIndex = 1201;
-            this.labelControl35.Text = "Dowloaded On";
-            // 
-            // pictureEdit2
-            // 
-            this.pictureEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureEdit2.Location = new System.Drawing.Point(1171, 34);
-            this.pictureEdit2.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.pictureEdit2.Name = "pictureEdit2";
-            this.pictureEdit2.Properties.AllowFocused = false;
-            this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(65)))), ((int)(((byte)(68)))));
-            this.pictureEdit2.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.pictureEdit2.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit2.Properties.Appearance.Options.UseForeColor = true;
-            this.pictureEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit2.Properties.NullText = " ";
-            this.pictureEdit2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit2.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit2.Size = new System.Drawing.Size(26, 26);
-            this.pictureEdit2.TabIndex = 1205;
-            this.pictureEdit2.Visible = false;
-            // 
-            // comboBoxEdit9
-            // 
-            this.comboBoxEdit9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit9.Location = new System.Drawing.Point(1077, 34);
-            this.comboBoxEdit9.Name = "comboBoxEdit9";
-            this.comboBoxEdit9.Properties.AllowFocused = false;
-            this.comboBoxEdit9.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit9.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit9.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit9.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit9.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit9.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit9.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit9.Properties.AutoComplete = false;
-            this.comboBoxEdit9.Properties.AutoHeight = false;
-            this.comboBoxEdit9.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit9.Properties.DropDownRows = 15;
-            this.comboBoxEdit9.Properties.Items.AddRange(new object[] {
-            "<All>"});
-            this.comboBoxEdit9.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit9.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit9.Size = new System.Drawing.Size(64, 30);
-            this.comboBoxEdit9.TabIndex = 1175;
-            // 
-            // labelControl36
-            // 
-            this.labelControl36.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl36.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl36.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl36.Appearance.Options.UseFont = true;
-            this.labelControl36.Appearance.Options.UseForeColor = true;
-            this.labelControl36.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl36.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl36.Location = new System.Drawing.Point(1074, 12);
-            this.labelControl36.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
-            this.labelControl36.Name = "labelControl36";
-            this.labelControl36.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl36.Size = new System.Drawing.Size(53, 17);
-            this.labelControl36.TabIndex = 1176;
-            this.labelControl36.Text = "Version";
-            // 
-            // comboBoxEdit10
-            // 
-            this.comboBoxEdit10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit10.Location = new System.Drawing.Point(835, 34);
-            this.comboBoxEdit10.Name = "comboBoxEdit10";
-            this.comboBoxEdit10.Properties.AllowFocused = false;
-            this.comboBoxEdit10.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit10.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit10.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit10.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit10.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit10.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit10.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit10.Properties.AutoComplete = false;
-            this.comboBoxEdit10.Properties.AutoHeight = false;
-            this.comboBoxEdit10.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit10.Properties.DropDownRows = 15;
-            this.comboBoxEdit10.Properties.Items.AddRange(new object[] {
-            "<All>"});
-            this.comboBoxEdit10.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit10.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit10.Size = new System.Drawing.Size(100, 30);
-            this.comboBoxEdit10.TabIndex = 1173;
-            // 
-            // labelControl37
-            // 
-            this.labelControl37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl37.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl37.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl37.Appearance.Options.UseFont = true;
-            this.labelControl37.Appearance.Options.UseForeColor = true;
-            this.labelControl37.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl37.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl37.Location = new System.Drawing.Point(832, 12);
-            this.labelControl37.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
-            this.labelControl37.Name = "labelControl37";
-            this.labelControl37.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl37.Size = new System.Drawing.Size(68, 17);
-            this.labelControl37.TabIndex = 1174;
-            this.labelControl37.Text = "Mod Type";
-            // 
-            // comboBoxEdit11
-            // 
-            this.comboBoxEdit11.Location = new System.Drawing.Point(0, 34);
-            this.comboBoxEdit11.Name = "comboBoxEdit11";
-            this.comboBoxEdit11.Properties.AllowFocused = false;
-            this.comboBoxEdit11.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit11.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit11.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit11.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit11.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit11.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit11.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit11.Properties.AutoComplete = false;
-            this.comboBoxEdit11.Properties.AutoHeight = false;
-            this.comboBoxEdit11.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit11.Properties.DropDownRows = 12;
-            this.comboBoxEdit11.Properties.Items.AddRange(new object[] {
-            "<All>",
-            "PlayStation 3",
-            "Xbox 360"});
-            this.comboBoxEdit11.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit11.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit11.Size = new System.Drawing.Size(92, 30);
-            this.comboBoxEdit11.TabIndex = 3;
-            // 
-            // labelControl38
-            // 
-            this.labelControl38.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl38.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl38.Appearance.Options.UseFont = true;
-            this.labelControl38.Appearance.Options.UseForeColor = true;
-            this.labelControl38.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl38.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl38.Location = new System.Drawing.Point(-3, 12);
-            this.labelControl38.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
-            this.labelControl38.Name = "labelControl38";
-            this.labelControl38.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl38.Size = new System.Drawing.Size(60, 17);
-            this.labelControl38.TabIndex = 1122;
-            this.labelControl38.Text = "Platform";
-            // 
-            // separatorControl15
-            // 
-            this.separatorControl15.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl15.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.separatorControl15.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl15.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl15.LineThickness = 1;
-            this.separatorControl15.Location = new System.Drawing.Point(0, 73);
-            this.separatorControl15.Margin = new System.Windows.Forms.Padding(0);
-            this.separatorControl15.Name = "separatorControl15";
-            this.separatorControl15.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl15.Size = new System.Drawing.Size(1288, 3);
-            this.separatorControl15.TabIndex = 1172;
-            // 
-            // comboBoxEdit12
-            // 
-            this.comboBoxEdit12.Location = new System.Drawing.Point(122, 34);
-            this.comboBoxEdit12.Name = "comboBoxEdit12";
-            this.comboBoxEdit12.Properties.AllowFocused = false;
-            this.comboBoxEdit12.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit12.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit12.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit12.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit12.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit12.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit12.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit12.Properties.AutoComplete = false;
-            this.comboBoxEdit12.Properties.AutoHeight = false;
-            this.comboBoxEdit12.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit12.Properties.DropDownRows = 15;
-            this.comboBoxEdit12.Properties.Items.AddRange(new object[] {
-            "<All Categories>"});
-            this.comboBoxEdit12.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit12.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit12.Size = new System.Drawing.Size(220, 30);
-            this.comboBoxEdit12.TabIndex = 1170;
-            // 
-            // labelControl39
-            // 
-            this.labelControl39.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl39.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl39.Appearance.Options.UseFont = true;
-            this.labelControl39.Appearance.Options.UseForeColor = true;
-            this.labelControl39.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl39.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl39.Location = new System.Drawing.Point(119, 12);
-            this.labelControl39.Margin = new System.Windows.Forms.Padding(5, 4, 3, 2);
-            this.labelControl39.Name = "labelControl39";
-            this.labelControl39.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl39.Size = new System.Drawing.Size(61, 17);
-            this.labelControl39.TabIndex = 1171;
-            this.labelControl39.Text = "Category";
-            // 
-            // textEdit3
-            // 
-            this.textEdit3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit3.Location = new System.Drawing.Point(372, 34);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Properties.AllowFocused = false;
-            this.textEdit3.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.textEdit3.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textEdit3.Properties.Appearance.Options.UseFont = true;
-            this.textEdit3.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.textEdit3.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.textEdit3.Properties.AutoHeight = false;
-            this.textEdit3.Properties.NullValuePrompt = "Search...";
-            this.textEdit3.Size = new System.Drawing.Size(433, 30);
-            this.textEdit3.TabIndex = 1;
-            // 
-            // labelControl40
-            // 
-            this.labelControl40.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl40.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl40.Appearance.Options.UseFont = true;
-            this.labelControl40.Appearance.Options.UseForeColor = true;
-            this.labelControl40.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl40.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl40.Location = new System.Drawing.Point(369, 12);
-            this.labelControl40.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
-            this.labelControl40.Name = "labelControl40";
-            this.labelControl40.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl40.Size = new System.Drawing.Size(42, 17);
-            this.labelControl40.TabIndex = 1157;
-            this.labelControl40.Text = "Name";
-            // 
-            // panelControl11
-            // 
-            this.panelControl11.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.panelControl11.Appearance.Options.UseBackColor = true;
-            this.panelControl11.Controls.Add(this.tileControl4);
-            this.panelControl11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl11.Location = new System.Drawing.Point(0, 0);
-            this.panelControl11.LookAndFeel.SkinName = "WXI";
-            this.panelControl11.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.panelControl11.Margin = new System.Windows.Forms.Padding(0);
-            this.panelControl11.Name = "panelControl11";
-            this.panelControl11.Size = new System.Drawing.Size(1288, 70);
-            this.panelControl11.TabIndex = 18;
-            // 
-            // tileControl4
-            // 
-            this.tileControl4.AllowDrag = false;
-            this.tileControl4.AllowDragTilesBetweenGroups = false;
-            this.tileControl4.AllowGlyphSkinning = true;
-            this.tileControl4.AllowItemHover = true;
-            this.tileControl4.AllowSelectedItemBorder = false;
-            this.tileControl4.AllowSmoothScrolling = false;
-            this.tileControl4.AppearanceGroupHighlighting.HoveredMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(70)))));
-            this.tileControl4.AppearanceGroupHighlighting.MaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(70)))));
-            this.tileControl4.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.tileControl4.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileControl4.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileControl4.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileControl4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.tileControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tileControl4.Groups.Add(this.tileGroup4);
-            this.tileControl4.HorizontalContentAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.tileControl4.IndentBetweenGroups = 0;
-            this.tileControl4.IndentBetweenItems = 2;
-            this.tileControl4.ItemBorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            this.tileControl4.ItemContentAnimation = DevExpress.XtraEditors.TileItemContentAnimationType.Fade;
-            this.tileControl4.ItemImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileControl4.ItemPadding = new System.Windows.Forms.Padding(0);
-            this.tileControl4.ItemSize = 98;
-            this.tileControl4.Location = new System.Drawing.Point(2, 2);
-            this.tileControl4.Margin = new System.Windows.Forms.Padding(0);
-            this.tileControl4.MaxId = 10;
-            this.tileControl4.Name = "tileControl4";
-            this.tileControl4.OptionsAdaptiveLayout.ScrollMode = DevExpress.XtraEditors.TileControlAdaptiveLayoutScrollMode.ItemScrolling;
-            this.tileControl4.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileControl4.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.tileControl4.RowCount = 0;
-            this.tileControl4.ScrollButtonFadeAnimationTime = 1;
-            this.tileControl4.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
-            this.tileControl4.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(70)))));
-            this.tileControl4.Size = new System.Drawing.Size(1284, 66);
-            this.tileControl4.TabIndex = 17;
-            // 
-            // tileGroup4
-            // 
-            this.tileGroup4.Items.Add(this.tileItem11);
-            this.tileGroup4.Items.Add(this.tileItem12);
-            this.tileGroup4.Items.Add(this.tileItem13);
-            this.tileGroup4.Items.Add(this.tileItem14);
-            this.tileGroup4.Name = "tileGroup4";
-            this.tileGroup4.Text = "Downloads Actions";
-            // 
-            // tileItem11
-            // 
-            this.tileItem11.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem11.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem11.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem11.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem11.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem11.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.tileItem11.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tileItem11.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement65.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement65.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement65.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_opened_folder;
-            tileItemElement65.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement65.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement65.Text = "";
-            tileItemElement65.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem11.Elements.Add(tileItemElement65);
-            this.tileItem11.Id = 0;
-            this.tileItem11.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem11.Name = "tileItem11";
-            this.tileItem11.Padding = new System.Windows.Forms.Padding(0);
-            toolTipItem5.Text = "Open Folder";
-            superToolTip5.Items.Add(toolTipItem5);
-            this.tileItem11.SuperTip = superToolTip5;
-            // 
-            // tileItem12
-            // 
-            this.tileItem12.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem12.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem12.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem12.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem12.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem12.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.tileItem12.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tileItem12.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement66.ImageOptions.Image = global::ArisenStudio.Properties.Resources.icons8_preview_file_24;
-            tileItemElement66.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement66.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement66.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_open_archive;
-            tileItemElement66.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement66.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement66.Text = "";
-            tileItemElement66.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem12.Elements.Add(tileItemElement66);
-            this.tileItem12.Enabled = false;
-            this.tileItem12.Id = 0;
-            this.tileItem12.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem12.Name = "tileItem12";
-            this.tileItem12.Padding = new System.Windows.Forms.Padding(0);
-            toolTipItem6.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
-            toolTipItem6.Text = "Open File";
-            superToolTip6.Items.Add(toolTipItem6);
-            this.tileItem12.SuperTip = superToolTip6;
-            // 
-            // tileItem13
-            // 
-            this.tileItem13.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem13.AppearanceItem.Disabled.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem13.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem13.AppearanceItem.Disabled.Options.UseBackColor = true;
-            this.tileItem13.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem13.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem13.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem13.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.tileItem13.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tileItem13.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement67.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement67.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement67.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_delete;
-            tileItemElement67.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement67.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement67.Text = "";
-            tileItemElement67.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem13.Elements.Add(tileItemElement67);
-            this.tileItem13.Enabled = false;
-            this.tileItem13.Id = 2;
-            this.tileItem13.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem13.Name = "tileItem13";
-            this.tileItem13.Padding = new System.Windows.Forms.Padding(0);
-            toolTipItem7.Text = "Delete Item";
-            superToolTip7.Items.Add(toolTipItem7);
-            this.tileItem13.SuperTip = superToolTip7;
-            // 
-            // tileItem14
-            // 
-            this.tileItem14.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem14.AppearanceItem.Disabled.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem14.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem14.AppearanceItem.Disabled.Options.UseBackColor = true;
-            this.tileItem14.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem14.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem14.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem14.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.tileItem14.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tileItem14.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement68.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement68.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement68.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement68.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement68.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement68.Text = "";
-            tileItemElement68.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem14.Elements.Add(tileItemElement68);
-            this.tileItem14.Enabled = false;
-            this.tileItem14.Id = 8;
-            this.tileItem14.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem14.Name = "tileItem14";
-            this.tileItem14.Padding = new System.Windows.Forms.Padding(0);
-            toolTipItem8.Text = "View Details";
-            superToolTip8.Items.Add(toolTipItem8);
-            this.tileItem14.SuperTip = superToolTip8;
-            // 
-            // navigationPage3
-            // 
-            this.navigationPage3.Appearance.Options.UseFont = true;
-            this.navigationPage3.Controls.Add(this.panel3);
-            this.navigationPage3.Controls.Add(this.panelControl12);
-            this.navigationPage3.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.navigationPage3.Name = "navigationPage3";
-            this.navigationPage3.Size = new System.Drawing.Size(1288, 571);
-            // 
-            // panel3
-            // 
-            this.panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.gridControl2);
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 70);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1288, 501);
-            this.panel3.TabIndex = 1182;
-            // 
-            // gridControl2
-            // 
-            this.gridControl2.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.gridControl2.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gridControl2.EmbeddedNavigator.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.gridControl2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gridControl2.Location = new System.Drawing.Point(0, 76);
-            this.gridControl2.MainView = this.gridView3;
-            this.gridControl2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.gridControl2.Size = new System.Drawing.Size(1252, 458);
-            this.gridControl2.TabIndex = 6;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3});
-            // 
-            // gridView3
-            // 
-            this.gridView3.ActiveFilterEnabled = false;
-            this.gridView3.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView3.Appearance.Empty.Options.UseBackColor = true;
-            this.gridView3.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView3.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gridView3.Appearance.Row.Options.UseBackColor = true;
-            this.gridView3.Appearance.Row.Options.UseFont = true;
-            this.gridView3.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(55)))), ((int)(((byte)(58)))));
-            this.gridView3.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.gridView3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
-            this.gridView3.GridControl = this.gridControl2;
-            this.gridView3.GroupRowHeight = 30;
-            this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsBehavior.Editable = false;
-            this.gridView3.OptionsBehavior.ReadOnly = true;
-            this.gridView3.OptionsCustomization.AllowFilter = false;
-            this.gridView3.OptionsFilter.AllowFilterEditor = false;
-            this.gridView3.OptionsMenu.ShowAutoFilterRowItem = false;
-            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView3.OptionsView.ShowColumnHeaders = false;
-            this.gridView3.OptionsView.ShowGroupPanel = false;
-            this.gridView3.OptionsView.ShowHorizontalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView3.OptionsView.ShowIndicator = false;
-            this.gridView3.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView3.RowHeight = 30;
-            this.gridView3.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.Controls.Add(this.dateEdit2);
-            this.panel4.Controls.Add(this.spinEdit1);
-            this.panel4.Controls.Add(this.separatorControl16);
-            this.panel4.Controls.Add(this.separatorControl17);
-            this.panel4.Controls.Add(this.separatorControl18);
-            this.panel4.Controls.Add(this.separatorControl19);
-            this.panel4.Controls.Add(this.separatorControl20);
-            this.panel4.Controls.Add(this.separatorControl21);
-            this.panel4.Controls.Add(this.separatorControl22);
-            this.panel4.Controls.Add(this.pictureEdit3);
-            this.panel4.Controls.Add(this.pictureEdit4);
-            this.panel4.Controls.Add(this.labelControl41);
-            this.panel4.Controls.Add(this.pictureEdit5);
-            this.panel4.Controls.Add(this.labelControl42);
-            this.panel4.Controls.Add(this.pictureEdit6);
-            this.panel4.Controls.Add(this.comboBoxEdit13);
-            this.panel4.Controls.Add(this.labelControl43);
-            this.panel4.Controls.Add(this.separatorControl23);
-            this.panel4.Controls.Add(this.comboBoxEdit14);
-            this.panel4.Controls.Add(this.labelControl44);
-            this.panel4.Controls.Add(this.comboBoxEdit15);
-            this.panel4.Controls.Add(this.labelControl45);
-            this.panel4.Controls.Add(this.textEdit4);
-            this.panel4.Controls.Add(this.comboBoxEdit16);
-            this.panel4.Controls.Add(this.comboBoxEdit17);
-            this.panel4.Controls.Add(this.labelControl46);
-            this.panel4.Controls.Add(this.labelControl47);
-            this.panel4.Controls.Add(this.labelControl48);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1288, 76);
-            this.panel4.TabIndex = 12;
-            // 
-            // dateEdit2
-            // 
-            this.dateEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateEdit2.EditValue = null;
-            this.dateEdit2.Location = new System.Drawing.Point(1174, 34);
-            this.dateEdit2.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.dateEdit2.Name = "dateEdit2";
-            this.dateEdit2.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.dateEdit2.Properties.Appearance.Options.UseFont = true;
-            this.dateEdit2.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.dateEdit2.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.dateEdit2.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.dateEdit2.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.dateEdit2.Properties.AutoHeight = false;
-            this.dateEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;
-            this.dateEdit2.Properties.CalendarTimeProperties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.dateEdit2.Properties.CalendarTimeProperties.Appearance.Options.UseFont = true;
-            this.dateEdit2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Properties.CalendarTimeProperties.DisplayFormat.FormatString = "MM/dd/yyyy";
-            this.dateEdit2.Properties.CalendarTimeProperties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dateEdit2.Properties.CalendarTimeProperties.EditFormat.FormatString = "MM/dd/yyyy";
-            this.dateEdit2.Properties.CalendarTimeProperties.TouchUIMaxValue = new System.DateTime(9999, 12, 31, 0, 0, 0, 0);
-            this.dateEdit2.Properties.CalendarTimeProperties.UseMaskAsDisplayFormat = true;
-            this.dateEdit2.Properties.DisplayFormat.FormatString = "MM/dd/yyyy";
-            this.dateEdit2.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dateEdit2.Properties.EditFormat.FormatString = "MM/dd/yyyy";
-            this.dateEdit2.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dateEdit2.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
-            this.dateEdit2.Properties.MaskSettings.Set("mask", "MM/dd/yyyy");
-            this.dateEdit2.Properties.MaxDate = new System.DateTime(9999, 12, 31, 0, 0, 0, 0);
-            this.dateEdit2.Properties.NullValuePrompt = "Select...";
-            this.dateEdit2.Properties.UseMaskAsDisplayFormat = true;
-            this.dateEdit2.Properties.EditValueChanged += new System.EventHandler(this.DateTimeInstalledModsFilterInstalledOn_Properties_EditValueChanged);
-            this.dateEdit2.Size = new System.Drawing.Size(100, 30);
-            this.dateEdit2.TabIndex = 1202;
-            // 
-            // spinEdit1
-            // 
-            this.spinEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.spinEdit1.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.spinEdit1.Location = new System.Drawing.Point(1078, 34);
-            this.spinEdit1.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.spinEdit1.Name = "spinEdit1";
-            this.spinEdit1.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.spinEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.spinEdit1.Properties.Appearance.Options.UseFont = true;
-            this.spinEdit1.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.spinEdit1.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.spinEdit1.Properties.AutoHeight = false;
-            this.spinEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinEdit1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.spinEdit1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.spinEdit1.Properties.IsFloatValue = false;
-            this.spinEdit1.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.spinEdit1.Properties.MaskSettings.Set("mask", "###");
-            this.spinEdit1.Properties.NullValuePrompt = "Select...";
-            this.spinEdit1.Properties.UseMaskAsDisplayFormat = true;
-            this.spinEdit1.Properties.EditValueChanged += new System.EventHandler(this.NumericBoxInstalledModsFilterTotalFiles_Properties_EditValueChanged);
-            this.spinEdit1.Size = new System.Drawing.Size(69, 30);
-            this.spinEdit1.TabIndex = 1206;
-            // 
-            // separatorControl16
-            // 
-            this.separatorControl16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl16.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl16.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl16.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl16.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl16.LineThickness = 1;
-            this.separatorControl16.Location = new System.Drawing.Point(1159, 12);
-            this.separatorControl16.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl16.Name = "separatorControl16";
-            this.separatorControl16.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl16.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl16.TabIndex = 1215;
-            // 
-            // separatorControl17
-            // 
-            this.separatorControl17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl17.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl17.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl17.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl17.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl17.LineThickness = 1;
-            this.separatorControl17.Location = new System.Drawing.Point(1063, 12);
-            this.separatorControl17.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl17.Name = "separatorControl17";
-            this.separatorControl17.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl17.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl17.TabIndex = 1214;
-            // 
-            // separatorControl18
-            // 
-            this.separatorControl18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl18.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl18.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl18.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl18.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl18.LineThickness = 1;
-            this.separatorControl18.Location = new System.Drawing.Point(969, 12);
-            this.separatorControl18.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl18.Name = "separatorControl18";
-            this.separatorControl18.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl18.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl18.TabIndex = 1213;
-            // 
-            // separatorControl19
-            // 
-            this.separatorControl19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl19.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl19.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl19.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl19.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl19.LineThickness = 1;
-            this.separatorControl19.Location = new System.Drawing.Point(857, 12);
-            this.separatorControl19.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl19.Name = "separatorControl19";
-            this.separatorControl19.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl19.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl19.TabIndex = 1212;
-            // 
-            // separatorControl20
-            // 
-            this.separatorControl20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl20.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl20.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl20.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl20.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl20.LineThickness = 1;
-            this.separatorControl20.Location = new System.Drawing.Point(727, 12);
-            this.separatorControl20.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl20.Name = "separatorControl20";
-            this.separatorControl20.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl20.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl20.TabIndex = 1211;
-            // 
-            // separatorControl21
-            // 
-            this.separatorControl21.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl21.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl21.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl21.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl21.LineThickness = 1;
-            this.separatorControl21.Location = new System.Drawing.Point(354, 12);
-            this.separatorControl21.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl21.Name = "separatorControl21";
-            this.separatorControl21.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl21.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl21.TabIndex = 1210;
-            // 
-            // separatorControl22
-            // 
-            this.separatorControl22.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl22.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl22.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl22.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl22.LineThickness = 1;
-            this.separatorControl22.Location = new System.Drawing.Point(104, 12);
-            this.separatorControl22.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl22.Name = "separatorControl22";
-            this.separatorControl22.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl22.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl22.TabIndex = 1209;
-            // 
-            // pictureEdit3
-            // 
-            this.pictureEdit3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureEdit3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureEdit3.Location = new System.Drawing.Point(1081, 42);
-            this.pictureEdit3.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.pictureEdit3.Name = "pictureEdit3";
-            this.pictureEdit3.Properties.AllowFocused = false;
-            this.pictureEdit3.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.pictureEdit3.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.pictureEdit3.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit3.Properties.Appearance.Options.UseForeColor = true;
-            this.pictureEdit3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit3.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit3.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit3.Size = new System.Drawing.Size(14, 14);
-            this.pictureEdit3.TabIndex = 1207;
-            this.pictureEdit3.Visible = false;
-            // 
-            // pictureEdit4
-            // 
-            this.pictureEdit4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureEdit4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureEdit4.Location = new System.Drawing.Point(1077, 34);
-            this.pictureEdit4.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.pictureEdit4.Name = "pictureEdit4";
-            this.pictureEdit4.Properties.AllowFocused = false;
-            this.pictureEdit4.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(65)))), ((int)(((byte)(68)))));
-            this.pictureEdit4.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.pictureEdit4.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit4.Properties.Appearance.Options.UseForeColor = true;
-            this.pictureEdit4.Properties.NullText = " ";
-            this.pictureEdit4.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit4.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit4.Size = new System.Drawing.Size(22, 30);
-            this.pictureEdit4.TabIndex = 1208;
-            this.pictureEdit4.Visible = false;
-            // 
-            // labelControl41
-            // 
-            this.labelControl41.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl41.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl41.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl41.Appearance.Options.UseFont = true;
-            this.labelControl41.Appearance.Options.UseForeColor = true;
-            this.labelControl41.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl41.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl41.Location = new System.Drawing.Point(1074, 12);
-            this.labelControl41.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl41.Name = "labelControl41";
-            this.labelControl41.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl41.Size = new System.Drawing.Size(70, 17);
-            this.labelControl41.TabIndex = 1204;
-            this.labelControl41.Text = "Total Files";
-            // 
-            // pictureEdit5
-            // 
-            this.pictureEdit5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureEdit5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureEdit5.Location = new System.Drawing.Point(1177, 42);
-            this.pictureEdit5.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.pictureEdit5.Name = "pictureEdit5";
-            this.pictureEdit5.Properties.AllowFocused = false;
-            this.pictureEdit5.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.pictureEdit5.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.pictureEdit5.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit5.Properties.Appearance.Options.UseForeColor = true;
-            this.pictureEdit5.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit5.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit5.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit5.Size = new System.Drawing.Size(14, 14);
-            this.pictureEdit5.TabIndex = 1203;
-            this.pictureEdit5.Visible = false;
-            // 
-            // labelControl42
-            // 
-            this.labelControl42.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl42.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl42.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl42.Appearance.Options.UseFont = true;
-            this.labelControl42.Appearance.Options.UseForeColor = true;
-            this.labelControl42.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl42.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl42.Location = new System.Drawing.Point(1170, 12);
-            this.labelControl42.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl42.Name = "labelControl42";
-            this.labelControl42.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl42.Size = new System.Drawing.Size(81, 17);
-            this.labelControl42.TabIndex = 1201;
-            this.labelControl42.Text = "Installed On";
-            // 
-            // pictureEdit6
-            // 
-            this.pictureEdit6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureEdit6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureEdit6.Location = new System.Drawing.Point(1173, 34);
-            this.pictureEdit6.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.pictureEdit6.Name = "pictureEdit6";
-            this.pictureEdit6.Properties.AllowFocused = false;
-            this.pictureEdit6.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(65)))), ((int)(((byte)(68)))));
-            this.pictureEdit6.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.pictureEdit6.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit6.Properties.Appearance.Options.UseForeColor = true;
-            this.pictureEdit6.Properties.NullText = " ";
-            this.pictureEdit6.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit6.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit6.Size = new System.Drawing.Size(22, 30);
-            this.pictureEdit6.TabIndex = 1205;
-            this.pictureEdit6.Visible = false;
-            // 
-            // comboBoxEdit13
-            // 
-            this.comboBoxEdit13.Location = new System.Drawing.Point(0, 34);
-            this.comboBoxEdit13.Name = "comboBoxEdit13";
-            this.comboBoxEdit13.Properties.AllowFocused = false;
-            this.comboBoxEdit13.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit13.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit13.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit13.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit13.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit13.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit13.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit13.Properties.AutoComplete = false;
-            this.comboBoxEdit13.Properties.AutoHeight = false;
-            this.comboBoxEdit13.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit13.Properties.DropDownRows = 12;
-            this.comboBoxEdit13.Properties.Items.AddRange(new object[] {
-            "<All>",
-            "PlayStation 3",
-            "Xbox 360"});
-            this.comboBoxEdit13.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit13.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit13.Size = new System.Drawing.Size(92, 30);
-            this.comboBoxEdit13.TabIndex = 1173;
-            // 
-            // labelControl43
-            // 
-            this.labelControl43.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl43.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl43.Appearance.Options.UseFont = true;
-            this.labelControl43.Appearance.Options.UseForeColor = true;
-            this.labelControl43.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl43.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl43.Location = new System.Drawing.Point(-3, 12);
-            this.labelControl43.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl43.Name = "labelControl43";
-            this.labelControl43.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl43.Size = new System.Drawing.Size(60, 17);
-            this.labelControl43.TabIndex = 1174;
-            this.labelControl43.Text = "Platform";
-            // 
-            // separatorControl23
-            // 
-            this.separatorControl23.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl23.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.separatorControl23.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl23.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl23.LineThickness = 1;
-            this.separatorControl23.Location = new System.Drawing.Point(0, 73);
-            this.separatorControl23.Margin = new System.Windows.Forms.Padding(0);
-            this.separatorControl23.Name = "separatorControl23";
-            this.separatorControl23.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl23.Size = new System.Drawing.Size(1288, 3);
-            this.separatorControl23.TabIndex = 1172;
-            // 
-            // comboBoxEdit14
-            // 
-            this.comboBoxEdit14.Location = new System.Drawing.Point(122, 34);
-            this.comboBoxEdit14.Name = "comboBoxEdit14";
-            this.comboBoxEdit14.Properties.AllowFocused = false;
-            this.comboBoxEdit14.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit14.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit14.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit14.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit14.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit14.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit14.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit14.Properties.AutoComplete = false;
-            this.comboBoxEdit14.Properties.AutoHeight = false;
-            this.comboBoxEdit14.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit14.Properties.DropDownRows = 15;
-            this.comboBoxEdit14.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit14.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit14.Size = new System.Drawing.Size(220, 30);
-            this.comboBoxEdit14.TabIndex = 1170;
-            // 
-            // labelControl44
-            // 
-            this.labelControl44.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl44.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl44.Appearance.Options.UseFont = true;
-            this.labelControl44.Appearance.Options.UseForeColor = true;
-            this.labelControl44.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl44.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl44.Location = new System.Drawing.Point(119, 12);
-            this.labelControl44.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl44.Name = "labelControl44";
-            this.labelControl44.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl44.Size = new System.Drawing.Size(61, 17);
-            this.labelControl44.TabIndex = 1171;
-            this.labelControl44.Text = "Category";
-            // 
-            // comboBoxEdit15
-            // 
-            this.comboBoxEdit15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit15.Location = new System.Drawing.Point(987, 34);
-            this.comboBoxEdit15.Name = "comboBoxEdit15";
-            this.comboBoxEdit15.Properties.AllowFocused = false;
-            this.comboBoxEdit15.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit15.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit15.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit15.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit15.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit15.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit15.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit15.Properties.AutoComplete = false;
-            this.comboBoxEdit15.Properties.AutoHeight = false;
-            this.comboBoxEdit15.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit15.Properties.DropDownRows = 12;
-            this.comboBoxEdit15.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit15.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit15.Size = new System.Drawing.Size(64, 30);
-            this.comboBoxEdit15.TabIndex = 1164;
-            // 
-            // labelControl45
-            // 
-            this.labelControl45.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl45.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl45.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl45.Appearance.Options.UseFont = true;
-            this.labelControl45.Appearance.Options.UseForeColor = true;
-            this.labelControl45.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl45.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl45.Location = new System.Drawing.Point(984, 12);
-            this.labelControl45.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl45.Name = "labelControl45";
-            this.labelControl45.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl45.Size = new System.Drawing.Size(53, 17);
-            this.labelControl45.TabIndex = 1165;
-            this.labelControl45.Text = "Version";
-            // 
-            // textEdit4
-            // 
-            this.textEdit4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit4.Location = new System.Drawing.Point(372, 34);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Properties.AllowFocused = false;
-            this.textEdit4.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.textEdit4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textEdit4.Properties.Appearance.Options.UseFont = true;
-            this.textEdit4.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.textEdit4.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.textEdit4.Properties.AutoHeight = false;
-            this.textEdit4.Properties.NullValuePrompt = "Search...";
-            this.textEdit4.Size = new System.Drawing.Size(343, 30);
-            this.textEdit4.TabIndex = 1;
-            // 
-            // comboBoxEdit16
-            // 
-            this.comboBoxEdit16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit16.Location = new System.Drawing.Point(875, 34);
-            this.comboBoxEdit16.Name = "comboBoxEdit16";
-            this.comboBoxEdit16.Properties.AllowFocused = false;
-            this.comboBoxEdit16.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit16.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit16.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit16.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit16.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit16.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit16.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit16.Properties.AutoComplete = false;
-            this.comboBoxEdit16.Properties.AutoHeight = false;
-            this.comboBoxEdit16.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit16.Properties.DropDownRows = 12;
-            this.comboBoxEdit16.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit16.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit16.Size = new System.Drawing.Size(82, 30);
-            this.comboBoxEdit16.TabIndex = 4;
-            // 
-            // comboBoxEdit17
-            // 
-            this.comboBoxEdit17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit17.Location = new System.Drawing.Point(745, 34);
-            this.comboBoxEdit17.Name = "comboBoxEdit17";
-            this.comboBoxEdit17.Properties.AllowFocused = false;
-            this.comboBoxEdit17.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit17.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit17.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit17.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit17.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit17.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit17.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit17.Properties.AutoComplete = false;
-            this.comboBoxEdit17.Properties.AutoHeight = false;
-            this.comboBoxEdit17.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit17.Properties.DropDownRows = 12;
-            this.comboBoxEdit17.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit17.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit17.Size = new System.Drawing.Size(100, 30);
-            this.comboBoxEdit17.TabIndex = 3;
-            // 
-            // labelControl46
-            // 
-            this.labelControl46.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl46.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl46.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl46.Appearance.Options.UseFont = true;
-            this.labelControl46.Appearance.Options.UseForeColor = true;
-            this.labelControl46.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl46.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl46.Location = new System.Drawing.Point(872, 12);
-            this.labelControl46.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl46.Name = "labelControl46";
-            this.labelControl46.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl46.Size = new System.Drawing.Size(49, 17);
-            this.labelControl46.TabIndex = 1163;
-            this.labelControl46.Text = "Region";
-            // 
-            // labelControl47
-            // 
-            this.labelControl47.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl47.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl47.Appearance.Options.UseFont = true;
-            this.labelControl47.Appearance.Options.UseForeColor = true;
-            this.labelControl47.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl47.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl47.Location = new System.Drawing.Point(369, 12);
-            this.labelControl47.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl47.Name = "labelControl47";
-            this.labelControl47.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl47.Size = new System.Drawing.Size(42, 17);
-            this.labelControl47.TabIndex = 1157;
-            this.labelControl47.Text = "Name";
-            // 
-            // labelControl48
-            // 
-            this.labelControl48.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl48.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl48.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl48.Appearance.Options.UseFont = true;
-            this.labelControl48.Appearance.Options.UseForeColor = true;
-            this.labelControl48.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl48.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl48.Location = new System.Drawing.Point(742, 12);
-            this.labelControl48.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl48.Name = "labelControl48";
-            this.labelControl48.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl48.Size = new System.Drawing.Size(68, 17);
-            this.labelControl48.TabIndex = 1122;
-            this.labelControl48.Text = "Mod Type";
-            // 
-            // panelControl12
-            // 
-            this.panelControl12.Controls.Add(this.tileControl5);
-            this.panelControl12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl12.Location = new System.Drawing.Point(0, 0);
-            this.panelControl12.Name = "panelControl12";
-            this.panelControl12.Size = new System.Drawing.Size(1288, 70);
-            this.panelControl12.TabIndex = 1183;
-            // 
-            // tileControl5
-            // 
-            this.tileControl5.AllowDisabledStateIndication = false;
-            this.tileControl5.AllowDrag = false;
-            this.tileControl5.AllowDragTilesBetweenGroups = false;
-            this.tileControl5.AllowGlyphSkinning = true;
-            this.tileControl5.AllowItemHover = true;
-            this.tileControl5.AppearanceGroupHighlighting.HoveredMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(70)))));
-            this.tileControl5.AppearanceGroupHighlighting.MaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(70)))));
-            this.tileControl5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.tileControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tileControl5.Groups.Add(this.tileGroup5);
-            this.tileControl5.HorizontalContentAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.tileControl5.IndentBetweenItems = 2;
-            this.tileControl5.ItemContentAnimation = DevExpress.XtraEditors.TileItemContentAnimationType.Fade;
-            this.tileControl5.ItemImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileControl5.ItemImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            this.tileControl5.ItemPadding = new System.Windows.Forms.Padding(0);
-            this.tileControl5.ItemSize = 98;
-            this.tileControl5.ItemTextShowMode = DevExpress.XtraEditors.TileItemContentShowMode.Always;
-            this.tileControl5.Location = new System.Drawing.Point(2, 2);
-            this.tileControl5.MaxId = 6;
-            this.tileControl5.Name = "tileControl5";
-            this.tileControl5.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileControl5.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.tileControl5.RowCount = 1;
-            this.tileControl5.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
-            this.tileControl5.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(70)))));
-            this.tileControl5.Size = new System.Drawing.Size(1284, 66);
-            this.tileControl5.TabIndex = 1183;
-            // 
-            // tileGroup5
-            // 
-            this.tileGroup5.Items.Add(this.tileItem15);
-            this.tileGroup5.Items.Add(this.tileItem16);
-            this.tileGroup5.Items.Add(this.tileItem17);
-            this.tileGroup5.Name = "tileGroup5";
-            this.tileGroup5.Text = "Installed Mods Actions";
-            // 
-            // tileItem15
-            // 
-            this.tileItem15.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem15.AppearanceItem.Disabled.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem15.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem15.AppearanceItem.Disabled.Options.UseBackColor = true;
-            this.tileItem15.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem15.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem15.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.tileItem15.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem15.AppearanceItem.Normal.Options.UseFont = true;
-            this.tileItem15.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.tileItem15.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tileItem15.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement69.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement69.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement69.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement69.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_delete;
-            tileItemElement69.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement69.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement69.Text = "";
-            tileItemElement69.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem15.Elements.Add(tileItemElement69);
-            this.tileItem15.Enabled = false;
-            this.tileItem15.Id = 5;
-            this.tileItem15.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem15.Name = "tileItem15";
-            this.tileItem15.Padding = new System.Windows.Forms.Padding(0);
-            // 
-            // tileItem16
-            // 
-            this.tileItem16.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem16.AppearanceItem.Disabled.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem16.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem16.AppearanceItem.Disabled.Options.UseBackColor = true;
-            this.tileItem16.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem16.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem16.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.tileItem16.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem16.AppearanceItem.Normal.Options.UseFont = true;
-            this.tileItem16.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.tileItem16.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tileItem16.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement70.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement70.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement70.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement70.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_uninstall;
-            tileItemElement70.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement70.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement70.Text = "";
-            tileItemElement70.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem16.Elements.Add(tileItemElement70);
-            this.tileItem16.Enabled = false;
-            this.tileItem16.Id = 2;
-            this.tileItem16.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem16.Name = "tileItem16";
-            this.tileItem16.Padding = new System.Windows.Forms.Padding(0);
-            // 
-            // tileItem17
-            // 
-            this.tileItem17.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem17.AppearanceItem.Disabled.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem17.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem17.AppearanceItem.Disabled.Options.UseBackColor = true;
-            this.tileItem17.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem17.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem17.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.tileItem17.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem17.AppearanceItem.Normal.Options.UseFont = true;
-            this.tileItem17.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.tileItem17.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tileItem17.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement71.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement71.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement71.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement71.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement71.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement71.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement71.Text = "";
-            tileItemElement71.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem17.Elements.Add(tileItemElement71);
-            this.tileItem17.Enabled = false;
-            this.tileItem17.Id = 3;
-            this.tileItem17.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem17.Name = "tileItem17";
-            this.tileItem17.Padding = new System.Windows.Forms.Padding(0);
-            // 
-            // navigationPage4
-            // 
-            this.navigationPage4.Appearance.Options.UseFont = true;
-            this.navigationPage4.Controls.Add(this.tableLayoutPanel1);
-            this.navigationPage4.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            this.navigationPage4.Name = "navigationPage4";
-            this.navigationPage4.Size = new System.Drawing.Size(1288, 571);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(14);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1288, 564);
-            this.tableLayoutPanel1.TabIndex = 1215;
-            // 
-            // navigationPage5
-            // 
-            this.navigationPage5.Appearance.Options.UseFont = true;
-            this.navigationPage5.Controls.Add(this.tabPane1);
-            this.navigationPage5.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.navigationPage5.Name = "navigationPage5";
-            this.navigationPage5.Size = new System.Drawing.Size(1288, 571);
-            // 
-            // tabPane1
-            // 
-            this.tabPane1.AllowResize = false;
-            this.tabPane1.AppearanceButton.Hovered.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.tabPane1.AppearanceButton.Hovered.ForeColor = System.Drawing.Color.Silver;
-            this.tabPane1.AppearanceButton.Hovered.Options.UseFont = true;
-            this.tabPane1.AppearanceButton.Hovered.Options.UseForeColor = true;
-            this.tabPane1.AppearanceButton.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.tabPane1.AppearanceButton.Normal.ForeColor = System.Drawing.Color.DarkGray;
-            this.tabPane1.AppearanceButton.Normal.Options.UseFont = true;
-            this.tabPane1.AppearanceButton.Normal.Options.UseForeColor = true;
-            this.tabPane1.AppearanceButton.Pressed.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.tabPane1.AppearanceButton.Pressed.Options.UseFont = true;
-            this.tabPane1.Controls.Add(this.tabNavigationPage1);
-            this.tabPane1.Controls.Add(this.tabNavigationPage2);
-            this.tabPane1.Controls.Add(this.tabNavigationPage3);
-            this.tabPane1.Controls.Add(this.tabNavigationPage4);
-            this.tabPane1.Controls.Add(this.tabNavigationPage5);
-            this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPane1.Location = new System.Drawing.Point(0, 0);
-            this.tabPane1.Margin = new System.Windows.Forms.Padding(0);
-            this.tabPane1.Name = "tabPane1";
-            this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
-            this.tabNavigationPage1,
-            this.tabNavigationPage2,
-            this.tabNavigationPage3,
-            this.tabNavigationPage4,
-            this.tabNavigationPage5});
-            this.tabPane1.RegularSize = new System.Drawing.Size(1288, 571);
-            this.tabPane1.SelectedPage = this.tabNavigationPage1;
-            this.tabPane1.Size = new System.Drawing.Size(1288, 571);
-            this.tabPane1.TabIndex = 7;
-            this.tabPane1.TransitionType = DevExpress.Utils.Animation.Transitions.Fade;
-            // 
-            // tabNavigationPage1
-            // 
-            this.tabNavigationPage1.AutoScroll = true;
-            this.tabNavigationPage1.Caption = "Interface";
-            this.tabNavigationPage1.Controls.Add(this.labelControl51);
-            this.tabNavigationPage1.Controls.Add(this.labelControl52);
-            this.tabNavigationPage1.Controls.Add(this.toggleSwitch1);
-            this.tabNavigationPage1.Controls.Add(this.labelControl53);
-            this.tabNavigationPage1.Controls.Add(this.LabelHelpTranslateCrowdin);
-            this.tabNavigationPage1.Controls.Add(this.toggleSwitch2);
-            this.tabNavigationPage1.Controls.Add(this.labelControl54);
-            this.tabNavigationPage1.Controls.Add(this.labelControl55);
-            this.tabNavigationPage1.Controls.Add(this.toggleSwitch3);
-            this.tabNavigationPage1.Controls.Add(this.comboBoxEdit20);
-            this.tabNavigationPage1.Controls.Add(this.labelControl56);
-            this.tabNavigationPage1.Controls.Add(this.toggleSwitch4);
-            this.tabNavigationPage1.Controls.Add(this.labelControl57);
-            this.tabNavigationPage1.Controls.Add(this.labelControl58);
-            this.tabNavigationPage1.Controls.Add(this.toggleSwitch5);
-            this.tabNavigationPage1.Controls.Add(this.labelControl59);
-            this.tabNavigationPage1.Controls.Add(this.toggleSwitch6);
-            this.tabNavigationPage1.Controls.Add(this.toggleSwitch7);
-            this.tabNavigationPage1.Controls.Add(this.labelControl60);
-            this.tabNavigationPage1.Controls.Add(this.toggleSwitch8);
-            this.tabNavigationPage1.Controls.Add(this.labelControl61);
-            this.tabNavigationPage1.Controls.Add(this.toggleSwitch9);
-            this.tabNavigationPage1.Controls.Add(this.labelControl62);
-            this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1288, 533);
-            // 
-            // labelControl51
-            // 
-            this.labelControl51.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.labelControl51.Appearance.Options.UseFont = true;
-            this.labelControl51.Location = new System.Drawing.Point(70, 249);
-            this.labelControl51.Margin = new System.Windows.Forms.Padding(0, 6, 3, 6);
-            this.labelControl51.Name = "labelControl51";
-            this.labelControl51.Size = new System.Drawing.Size(184, 15);
-            this.labelControl51.TabIndex = 1221;
-            this.labelControl51.Text = "Always show current game playing";
-            // 
-            // labelControl52
-            // 
-            this.labelControl52.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl52.Appearance.Options.UseFont = true;
-            this.labelControl52.Location = new System.Drawing.Point(0, 16);
-            this.labelControl52.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.labelControl52.Name = "labelControl52";
-            this.labelControl52.Size = new System.Drawing.Size(53, 15);
-            this.labelControl52.TabIndex = 1175;
-            this.labelControl52.Text = "Language";
-            // 
-            // toggleSwitch1
-            // 
-            this.toggleSwitch1.Location = new System.Drawing.Point(0, 246);
-            this.toggleSwitch1.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
-            this.toggleSwitch1.Name = "toggleSwitch1";
-            this.toggleSwitch1.Properties.AutoWidth = true;
-            this.toggleSwitch1.Properties.OffText = "Off";
-            this.toggleSwitch1.Properties.OnText = "On";
-            this.toggleSwitch1.Properties.ShowText = false;
-            this.toggleSwitch1.Size = new System.Drawing.Size(54, 24);
-            this.toggleSwitch1.TabIndex = 1220;
-            // 
-            // labelControl53
-            // 
-            this.labelControl53.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl53.Appearance.Options.UseFont = true;
-            this.labelControl53.Location = new System.Drawing.Point(0, 111);
-            this.labelControl53.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.labelControl53.Name = "labelControl53";
-            this.labelControl53.Size = new System.Drawing.Size(79, 15);
-            this.labelControl53.TabIndex = 1171;
-            this.labelControl53.Text = "Customization";
-            // 
-            // LabelHelpTranslateCrowdin
-            // 
-            this.LabelHelpTranslateCrowdin.Location = new System.Drawing.Point(0, 70);
-            this.LabelHelpTranslateCrowdin.Name = "LabelHelpTranslateCrowdin";
-            this.LabelHelpTranslateCrowdin.Size = new System.Drawing.Size(208, 13);
-            this.LabelHelpTranslateCrowdin.TabIndex = 1219;
-            this.LabelHelpTranslateCrowdin.Text = "Help translate Arisen Studio on Crowdin";
-            // 
-            // toggleSwitch2
-            // 
-            this.toggleSwitch2.Location = new System.Drawing.Point(0, 145);
-            this.toggleSwitch2.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
-            this.toggleSwitch2.Name = "toggleSwitch2";
-            this.toggleSwitch2.Properties.AutoWidth = true;
-            this.toggleSwitch2.Properties.OffText = "Off";
-            this.toggleSwitch2.Properties.OnText = "On";
-            this.toggleSwitch2.Properties.ShowText = false;
-            this.toggleSwitch2.Size = new System.Drawing.Size(54, 24);
-            this.toggleSwitch2.TabIndex = 1176;
-            // 
-            // labelControl54
-            // 
-            this.labelControl54.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.labelControl54.Appearance.Options.UseFont = true;
-            this.labelControl54.Location = new System.Drawing.Point(70, 369);
-            this.labelControl54.Margin = new System.Windows.Forms.Padding(0, 6, 3, 6);
-            this.labelControl54.Name = "labelControl54";
-            this.labelControl54.Size = new System.Drawing.Size(190, 15);
-            this.labelControl54.TabIndex = 1212;
-            this.labelControl54.Text = "Automatically load directory listings";
-            // 
-            // labelControl55
-            // 
-            this.labelControl55.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.labelControl55.Appearance.Options.UseFont = true;
-            this.labelControl55.Location = new System.Drawing.Point(70, 148);
-            this.labelControl55.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.labelControl55.Name = "labelControl55";
-            this.labelControl55.Size = new System.Drawing.Size(191, 15);
-            this.labelControl55.TabIndex = 1177;
-            this.labelControl55.Text = "Use formatted file sizes (e.g. \"3 MB\")";
-            // 
-            // toggleSwitch3
-            // 
-            this.toggleSwitch3.Location = new System.Drawing.Point(0, 366);
-            this.toggleSwitch3.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
-            this.toggleSwitch3.Name = "toggleSwitch3";
-            this.toggleSwitch3.Properties.AutoWidth = true;
-            this.toggleSwitch3.Properties.OffText = "Off";
-            this.toggleSwitch3.Properties.OnText = "On";
-            this.toggleSwitch3.Properties.ShowText = false;
-            this.toggleSwitch3.Size = new System.Drawing.Size(54, 24);
-            this.toggleSwitch3.TabIndex = 1211;
-            // 
-            // comboBoxEdit20
-            // 
-            this.comboBoxEdit20.EditValue = "English";
-            this.comboBoxEdit20.Location = new System.Drawing.Point(0, 42);
-            this.comboBoxEdit20.Name = "comboBoxEdit20";
-            this.comboBoxEdit20.Properties.AllowFocused = false;
-            this.comboBoxEdit20.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit20.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.comboBoxEdit20.Properties.Appearance.Options.UseBackColor = true;
-            this.comboBoxEdit20.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit20.Properties.AutoComplete = false;
-            this.comboBoxEdit20.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit20.Properties.DropDownRows = 12;
-            this.comboBoxEdit20.Properties.Items.AddRange(new object[] {
-            "English"});
-            this.comboBoxEdit20.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit20.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit20.Size = new System.Drawing.Size(361, 22);
-            this.comboBoxEdit20.TabIndex = 1178;
-            // 
-            // labelControl56
-            // 
-            this.labelControl56.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.labelControl56.Appearance.Options.UseFont = true;
-            this.labelControl56.Location = new System.Drawing.Point(70, 429);
-            this.labelControl56.Margin = new System.Windows.Forms.Padding(0, 6, 3, 6);
-            this.labelControl56.Name = "labelControl56";
-            this.labelControl56.Size = new System.Drawing.Size(200, 15);
-            this.labelControl56.TabIndex = 1201;
-            this.labelControl56.Text = "Remember last console directory path";
-            // 
-            // toggleSwitch4
-            // 
-            this.toggleSwitch4.Location = new System.Drawing.Point(0, 175);
-            this.toggleSwitch4.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
-            this.toggleSwitch4.Name = "toggleSwitch4";
-            this.toggleSwitch4.Properties.AutoWidth = true;
-            this.toggleSwitch4.Properties.OffText = "Off";
-            this.toggleSwitch4.Properties.OnText = "On";
-            this.toggleSwitch4.Properties.ShowText = false;
-            this.toggleSwitch4.Size = new System.Drawing.Size(54, 24);
-            this.toggleSwitch4.TabIndex = 1179;
-            // 
-            // labelControl57
-            // 
-            this.labelControl57.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.labelControl57.Appearance.Options.UseFont = true;
-            this.labelControl57.Location = new System.Drawing.Point(70, 399);
-            this.labelControl57.Margin = new System.Windows.Forms.Padding(0, 6, 3, 6);
-            this.labelControl57.Name = "labelControl57";
-            this.labelControl57.Size = new System.Drawing.Size(184, 15);
-            this.labelControl57.TabIndex = 1200;
-            this.labelControl57.Text = "Remember last local directory path";
-            // 
-            // labelControl58
-            // 
-            this.labelControl58.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.labelControl58.Appearance.Options.UseFont = true;
-            this.labelControl58.Location = new System.Drawing.Point(70, 179);
-            this.labelControl58.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.labelControl58.Name = "labelControl58";
-            this.labelControl58.Size = new System.Drawing.Size(208, 15);
-            this.labelControl58.TabIndex = 1180;
-            this.labelControl58.Text = "Use relative times (e.g. \"3 months ago\")";
-            // 
-            // toggleSwitch5
-            // 
-            this.toggleSwitch5.Location = new System.Drawing.Point(0, 426);
-            this.toggleSwitch5.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
-            this.toggleSwitch5.Name = "toggleSwitch5";
-            this.toggleSwitch5.Properties.AutoWidth = true;
-            this.toggleSwitch5.Properties.OffText = "Off";
-            this.toggleSwitch5.Properties.OnText = "On";
-            this.toggleSwitch5.Properties.ShowText = false;
-            this.toggleSwitch5.Size = new System.Drawing.Size(54, 24);
-            this.toggleSwitch5.TabIndex = 1199;
-            // 
-            // labelControl59
-            // 
-            this.labelControl59.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl59.Appearance.Options.UseFont = true;
-            this.labelControl59.Location = new System.Drawing.Point(0, 219);
-            this.labelControl59.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.labelControl59.Name = "labelControl59";
-            this.labelControl59.Size = new System.Drawing.Size(66, 15);
-            this.labelControl59.TabIndex = 1187;
-            this.labelControl59.Text = "Automation";
-            // 
-            // toggleSwitch6
-            // 
-            this.toggleSwitch6.Location = new System.Drawing.Point(0, 396);
-            this.toggleSwitch6.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
-            this.toggleSwitch6.Name = "toggleSwitch6";
-            this.toggleSwitch6.Properties.AutoWidth = true;
-            this.toggleSwitch6.Properties.OffText = "Off";
-            this.toggleSwitch6.Properties.OnText = "On";
-            this.toggleSwitch6.Properties.ShowText = false;
-            this.toggleSwitch6.Size = new System.Drawing.Size(54, 24);
-            this.toggleSwitch6.TabIndex = 1198;
-            // 
-            // toggleSwitch7
-            // 
-            this.toggleSwitch7.Location = new System.Drawing.Point(0, 276);
-            this.toggleSwitch7.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
-            this.toggleSwitch7.Name = "toggleSwitch7";
-            this.toggleSwitch7.Properties.AutoWidth = true;
-            this.toggleSwitch7.Properties.OffText = "Off";
-            this.toggleSwitch7.Properties.OnText = "On";
-            this.toggleSwitch7.Properties.ShowText = false;
-            this.toggleSwitch7.Size = new System.Drawing.Size(54, 24);
-            this.toggleSwitch7.TabIndex = 1188;
-            // 
-            // labelControl60
-            // 
-            this.labelControl60.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.labelControl60.Appearance.Options.UseFont = true;
-            this.labelControl60.Location = new System.Drawing.Point(70, 339);
-            this.labelControl60.Margin = new System.Windows.Forms.Padding(0, 6, 3, 6);
-            this.labelControl60.Name = "labelControl60";
-            this.labelControl60.Size = new System.Drawing.Size(171, 15);
-            this.labelControl60.TabIndex = 1194;
-            this.labelControl60.Text = "Automatically detect game titles";
-            // 
-            // toggleSwitch8
-            // 
-            this.toggleSwitch8.Location = new System.Drawing.Point(0, 306);
-            this.toggleSwitch8.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
-            this.toggleSwitch8.Name = "toggleSwitch8";
-            this.toggleSwitch8.Properties.AutoWidth = true;
-            this.toggleSwitch8.Properties.OffText = "Off";
-            this.toggleSwitch8.Properties.OnText = "On";
-            this.toggleSwitch8.Properties.ShowText = false;
-            this.toggleSwitch8.Size = new System.Drawing.Size(54, 24);
-            this.toggleSwitch8.TabIndex = 1189;
-            // 
-            // labelControl61
-            // 
-            this.labelControl61.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.labelControl61.Appearance.Options.UseFont = true;
-            this.labelControl61.Location = new System.Drawing.Point(70, 309);
-            this.labelControl61.Margin = new System.Windows.Forms.Padding(0, 6, 3, 6);
-            this.labelControl61.Name = "labelControl61";
-            this.labelControl61.Size = new System.Drawing.Size(185, 15);
-            this.labelControl61.TabIndex = 1193;
-            this.labelControl61.Text = "Automatically detect game regions";
-            // 
-            // toggleSwitch9
-            // 
-            this.toggleSwitch9.Location = new System.Drawing.Point(0, 336);
-            this.toggleSwitch9.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
-            this.toggleSwitch9.Name = "toggleSwitch9";
-            this.toggleSwitch9.Properties.AutoWidth = true;
-            this.toggleSwitch9.Properties.OffText = "Off";
-            this.toggleSwitch9.Properties.OnText = "On";
-            this.toggleSwitch9.Properties.ShowText = false;
-            this.toggleSwitch9.Size = new System.Drawing.Size(54, 24);
-            this.toggleSwitch9.TabIndex = 1190;
-            // 
-            // labelControl62
-            // 
-            this.labelControl62.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.labelControl62.Appearance.Options.UseFont = true;
-            this.labelControl62.Location = new System.Drawing.Point(70, 279);
-            this.labelControl62.Margin = new System.Windows.Forms.Padding(0, 6, 3, 6);
-            this.labelControl62.Name = "labelControl62";
-            this.labelControl62.Size = new System.Drawing.Size(201, 15);
-            this.labelControl62.TabIndex = 1192;
-            this.labelControl62.Text = "Show games list from external devices";
-            // 
-            // tabNavigationPage2
-            // 
-            this.tabNavigationPage2.AutoScroll = true;
-            this.tabNavigationPage2.Caption = "Transfer";
-            this.tabNavigationPage2.Controls.Add(this.labelControl63);
-            this.tabNavigationPage2.Controls.Add(this.labelControl64);
-            this.tabNavigationPage2.Controls.Add(this.toggleSwitch10);
-            this.tabNavigationPage2.Controls.Add(this.toggleSwitch11);
-            this.tabNavigationPage2.Controls.Add(this.labelControl65);
-            this.tabNavigationPage2.Controls.Add(this.toggleSwitch12);
-            this.tabNavigationPage2.Controls.Add(this.labelControl66);
-            this.tabNavigationPage2.Controls.Add(this.toggleSwitch13);
-            this.tabNavigationPage2.Controls.Add(this.labelControl67);
-            this.tabNavigationPage2.Controls.Add(this.toggleSwitch14);
-            this.tabNavigationPage2.Controls.Add(this.labelControl68);
-            this.tabNavigationPage2.Controls.Add(this.toggleSwitch15);
-            this.tabNavigationPage2.Controls.Add(this.labelControl69);
-            this.tabNavigationPage2.Controls.Add(this.toggleSwitch16);
-            this.tabNavigationPage2.Controls.Add(this.labelControl70);
-            this.tabNavigationPage2.Controls.Add(this.toggleSwitch17);
-            this.tabNavigationPage2.Controls.Add(this.labelControl71);
-            this.tabNavigationPage2.Controls.Add(this.toggleSwitch18);
-            this.tabNavigationPage2.Controls.Add(this.labelControl72);
-            this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(1288, 533);
-            // 
-            // labelControl63
-            // 
-            this.labelControl63.Appearance.Options.UseFont = true;
-            this.labelControl63.Location = new System.Drawing.Point(60, 174);
-            this.labelControl63.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.labelControl63.Name = "labelControl63";
-            this.labelControl63.Size = new System.Drawing.Size(197, 13);
-            this.labelControl63.TabIndex = 1225;
-            this.labelControl63.Text = "Install Applications to local USB device";
-            // 
-            // labelControl64
-            // 
-            this.labelControl64.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl64.Appearance.Options.UseFont = true;
-            this.labelControl64.Location = new System.Drawing.Point(0, 16);
-            this.labelControl64.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.labelControl64.Name = "labelControl64";
-            this.labelControl64.Size = new System.Drawing.Size(96, 15);
-            this.labelControl64.TabIndex = 1188;
-            this.labelControl64.Text = "Transferring Files";
-            // 
-            // toggleSwitch10
-            // 
-            this.toggleSwitch10.Location = new System.Drawing.Point(0, 170);
-            this.toggleSwitch10.Margin = new System.Windows.Forms.Padding(14, 3, 3, 15);
-            this.toggleSwitch10.Name = "toggleSwitch10";
-            this.toggleSwitch10.Properties.AutoWidth = true;
-            this.toggleSwitch10.Properties.OffText = "Off";
-            this.toggleSwitch10.Properties.OnText = "On";
-            this.toggleSwitch10.Properties.ShowText = false;
-            this.toggleSwitch10.Size = new System.Drawing.Size(54, 24);
-            this.toggleSwitch10.TabIndex = 1224;
-            // 
-            // toggleSwitch11
-            // 
-            this.toggleSwitch11.Location = new System.Drawing.Point(0, 110);
-            this.toggleSwitch11.Margin = new System.Windows.Forms.Padding(14, 3, 3, 15);
-            this.toggleSwitch11.Name = "toggleSwitch11";
-            this.toggleSwitch11.Properties.AutoWidth = true;
-            this.toggleSwitch11.Properties.OffText = "Off";
-            this.toggleSwitch11.Properties.OnText = "On";
-            this.toggleSwitch11.Properties.ShowText = false;
-            this.toggleSwitch11.Size = new System.Drawing.Size(54, 24);
-            this.toggleSwitch11.TabIndex = 1217;
-            // 
-            // labelControl65
-            // 
-            this.labelControl65.Appearance.Options.UseFont = true;
-            this.labelControl65.Location = new System.Drawing.Point(60, 293);
-            this.labelControl65.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.labelControl65.Name = "labelControl65";
-            this.labelControl65.Size = new System.Drawing.Size(214, 13);
-            this.labelControl65.TabIndex = 1223;
-            this.labelControl65.Text = "Always backup game files when installing";
-            // 
-            // toggleSwitch12
-            // 
-            this.toggleSwitch12.Location = new System.Drawing.Point(0, 200);
-            this.toggleSwitch12.Margin = new System.Windows.Forms.Padding(14, 3, 3, 15);
-            this.toggleSwitch12.Name = "toggleSwitch12";
-            this.toggleSwitch12.Properties.AutoWidth = true;
-            this.toggleSwitch12.Properties.OffText = "Off";
-            this.toggleSwitch12.Properties.OnText = "On";
-            this.toggleSwitch12.Properties.ShowText = false;
-            this.toggleSwitch12.Size = new System.Drawing.Size(54, 24);
-            this.toggleSwitch12.TabIndex = 1204;
-            // 
-            // labelControl66
-            // 
-            this.labelControl66.Appearance.Options.UseFont = true;
-            this.labelControl66.Location = new System.Drawing.Point(60, 233);
-            this.labelControl66.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.labelControl66.Name = "labelControl66";
-            this.labelControl66.Size = new System.Drawing.Size(206, 13);
-            this.labelControl66.TabIndex = 1221;
-            this.labelControl66.Text = "Clean up local files after installing mods";
-            // 
-            // toggleSwitch13
-            // 
-            this.toggleSwitch13.Location = new System.Drawing.Point(0, 80);
-            this.toggleSwitch13.Margin = new System.Windows.Forms.Padding(14, 3, 3, 15);
-            this.toggleSwitch13.Name = "toggleSwitch13";
-            this.toggleSwitch13.Properties.AutoWidth = true;
-            this.toggleSwitch13.Properties.OffText = "Off";
-            this.toggleSwitch13.Properties.OnText = "On";
-            this.toggleSwitch13.Properties.ShowText = false;
-            this.toggleSwitch13.Size = new System.Drawing.Size(54, 24);
-            this.toggleSwitch13.TabIndex = 1215;
-            // 
-            // labelControl67
-            // 
-            this.labelControl67.Appearance.Options.UseFont = true;
-            this.labelControl67.Location = new System.Drawing.Point(60, 144);
-            this.labelControl67.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.labelControl67.Name = "labelControl67";
-            this.labelControl67.Size = new System.Drawing.Size(180, 13);
-            this.labelControl67.TabIndex = 1207;
-            this.labelControl67.Text = "Install Packages to local USB device";
-            // 
-            // toggleSwitch14
-            // 
-            this.toggleSwitch14.Location = new System.Drawing.Point(0, 260);
-            this.toggleSwitch14.Margin = new System.Windows.Forms.Padding(14, 3, 3, 15);
-            this.toggleSwitch14.Name = "toggleSwitch14";
-            this.toggleSwitch14.Properties.AutoWidth = true;
-            this.toggleSwitch14.Properties.OffText = "Off";
-            this.toggleSwitch14.Properties.OnText = "On";
-            this.toggleSwitch14.Properties.ShowText = false;
-            this.toggleSwitch14.Size = new System.Drawing.Size(54, 24);
-            this.toggleSwitch14.TabIndex = 1191;
-            // 
-            // labelControl68
-            // 
-            this.labelControl68.Appearance.Options.UseFont = true;
-            this.labelControl68.Location = new System.Drawing.Point(60, 204);
-            this.labelControl68.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.labelControl68.Name = "labelControl68";
-            this.labelControl68.Size = new System.Drawing.Size(193, 13);
-            this.labelControl68.TabIndex = 1205;
-            this.labelControl68.Text = "Install Game Saves to local USB device";
-            // 
-            // toggleSwitch15
-            // 
-            this.toggleSwitch15.Location = new System.Drawing.Point(0, 140);
-            this.toggleSwitch15.Margin = new System.Windows.Forms.Padding(14, 3, 3, 15);
-            this.toggleSwitch15.Name = "toggleSwitch15";
-            this.toggleSwitch15.Properties.AutoWidth = true;
-            this.toggleSwitch15.Properties.OffText = "Off";
-            this.toggleSwitch15.Properties.OnText = "On";
-            this.toggleSwitch15.Properties.ShowText = false;
-            this.toggleSwitch15.Size = new System.Drawing.Size(54, 24);
-            this.toggleSwitch15.TabIndex = 1206;
-            // 
-            // labelControl69
-            // 
-            this.labelControl69.Appearance.Options.UseFont = true;
-            this.labelControl69.Location = new System.Drawing.Point(60, 112);
-            this.labelControl69.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.labelControl69.Name = "labelControl69";
-            this.labelControl69.Size = new System.Drawing.Size(185, 13);
-            this.labelControl69.TabIndex = 1218;
-            this.labelControl69.Text = "Install Resources to local USB device";
-            // 
-            // toggleSwitch16
-            // 
-            this.toggleSwitch16.Location = new System.Drawing.Point(0, 230);
-            this.toggleSwitch16.Margin = new System.Windows.Forms.Padding(14, 3, 3, 15);
-            this.toggleSwitch16.Name = "toggleSwitch16";
-            this.toggleSwitch16.Properties.AutoWidth = true;
-            this.toggleSwitch16.Properties.OffText = "Off";
-            this.toggleSwitch16.Properties.OnText = "On";
-            this.toggleSwitch16.Properties.ShowText = false;
-            this.toggleSwitch16.Size = new System.Drawing.Size(54, 24);
-            this.toggleSwitch16.TabIndex = 1220;
-            // 
-            // labelControl70
-            // 
-            this.labelControl70.Appearance.Options.UseFont = true;
-            this.labelControl70.Location = new System.Drawing.Point(60, 263);
-            this.labelControl70.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.labelControl70.Name = "labelControl70";
-            this.labelControl70.Size = new System.Drawing.Size(210, 13);
-            this.labelControl70.TabIndex = 1195;
-            this.labelControl70.Text = "Remember game regions when installing";
-            // 
-            // toggleSwitch17
-            // 
-            this.toggleSwitch17.Location = new System.Drawing.Point(0, 50);
-            this.toggleSwitch17.Margin = new System.Windows.Forms.Padding(14, 3, 3, 15);
-            this.toggleSwitch17.Name = "toggleSwitch17";
-            this.toggleSwitch17.Properties.AutoWidth = true;
-            this.toggleSwitch17.Properties.OffText = "Off";
-            this.toggleSwitch17.Properties.OnText = "On";
-            this.toggleSwitch17.Properties.ShowText = false;
-            this.toggleSwitch17.Size = new System.Drawing.Size(54, 24);
-            this.toggleSwitch17.TabIndex = 1202;
-            // 
-            // labelControl71
-            // 
-            this.labelControl71.Appearance.Options.UseFont = true;
-            this.labelControl71.Location = new System.Drawing.Point(60, 82);
-            this.labelControl71.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.labelControl71.Name = "labelControl71";
-            this.labelControl71.Size = new System.Drawing.Size(189, 13);
-            this.labelControl71.TabIndex = 1216;
-            this.labelControl71.Text = "Install Homebrew to local USB device";
-            // 
-            // toggleSwitch18
-            // 
-            this.toggleSwitch18.Location = new System.Drawing.Point(0, 290);
-            this.toggleSwitch18.Margin = new System.Windows.Forms.Padding(14, 3, 3, 15);
-            this.toggleSwitch18.Name = "toggleSwitch18";
-            this.toggleSwitch18.Properties.AutoWidth = true;
-            this.toggleSwitch18.Properties.OffText = "Off";
-            this.toggleSwitch18.Properties.OnText = "On";
-            this.toggleSwitch18.Properties.ShowText = false;
-            this.toggleSwitch18.Size = new System.Drawing.Size(54, 24);
-            this.toggleSwitch18.TabIndex = 1222;
-            // 
-            // labelControl72
-            // 
-            this.labelControl72.Appearance.Options.UseFont = true;
-            this.labelControl72.Location = new System.Drawing.Point(60, 52);
-            this.labelControl72.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.labelControl72.Name = "labelControl72";
-            this.labelControl72.Size = new System.Drawing.Size(236, 13);
-            this.labelControl72.TabIndex = 1203;
-            this.labelControl72.Text = "Install Game Mods/Plugins to local USB device";
-            // 
-            // tabNavigationPage3
-            // 
-            this.tabNavigationPage3.AutoScroll = true;
-            this.tabNavigationPage3.Caption = "Files";
-            this.tabNavigationPage3.Controls.Add(this.separatorControl24);
-            this.tabNavigationPage3.Controls.Add(this.labelControl73);
-            this.tabNavigationPage3.Controls.Add(this.labelControl74);
-            this.tabNavigationPage3.Controls.Add(this.textEdit7);
-            this.tabNavigationPage3.Controls.Add(this.labelControl75);
-            this.tabNavigationPage3.Controls.Add(this.labelControl76);
-            this.tabNavigationPage3.Controls.Add(this.textEdit8);
-            this.tabNavigationPage3.Controls.Add(this.textEdit9);
-            this.tabNavigationPage3.Controls.Add(this.separatorControl25);
-            this.tabNavigationPage3.Controls.Add(this.labelControl77);
-            this.tabNavigationPage3.Controls.Add(this.labelControl78);
-            this.tabNavigationPage3.Name = "tabNavigationPage3";
-            this.tabNavigationPage3.Size = new System.Drawing.Size(1288, 533);
-            // 
-            // separatorControl24
-            // 
-            this.separatorControl24.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl24.LineColor = System.Drawing.Color.Gray;
-            this.separatorControl24.Location = new System.Drawing.Point(0, 102);
-            this.separatorControl24.Name = "separatorControl24";
-            this.separatorControl24.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.separatorControl24.Size = new System.Drawing.Size(1288, 24);
-            this.separatorControl24.TabIndex = 1181;
-            // 
-            // labelControl73
-            // 
-            this.labelControl73.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl73.Appearance.Options.UseFont = true;
-            this.labelControl73.Location = new System.Drawing.Point(0, 16);
-            this.labelControl73.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.labelControl73.Name = "labelControl73";
-            this.labelControl73.Size = new System.Drawing.Size(72, 15);
-            this.labelControl73.TabIndex = 1173;
-            this.labelControl73.Text = "PlayStation 3";
-            // 
-            // labelControl74
-            // 
-            this.labelControl74.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl74.Appearance.Options.UseFont = true;
-            this.labelControl74.Location = new System.Drawing.Point(0, 145);
-            this.labelControl74.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.labelControl74.Name = "labelControl74";
-            this.labelControl74.Size = new System.Drawing.Size(72, 15);
-            this.labelControl74.TabIndex = 1180;
-            this.labelControl74.Text = "PlayStation 4";
-            // 
-            // textEdit7
-            // 
-            this.textEdit7.Location = new System.Drawing.Point(0, 329);
-            this.textEdit7.Margin = new System.Windows.Forms.Padding(3, 3, 3, 8);
-            this.textEdit7.Name = "textEdit7";
-            this.textEdit7.Size = new System.Drawing.Size(701, 22);
-            this.textEdit7.TabIndex = 1171;
-            // 
-            // labelControl75
-            // 
-            this.labelControl75.Appearance.Options.UseFont = true;
-            this.labelControl75.Location = new System.Drawing.Point(0, 178);
-            this.labelControl75.Name = "labelControl75";
-            this.labelControl75.Size = new System.Drawing.Size(128, 13);
-            this.labelControl75.TabIndex = 1179;
-            this.labelControl75.Text = "Packages File Install Path";
-            // 
-            // labelControl76
-            // 
-            this.labelControl76.Appearance.Options.UseFont = true;
-            this.labelControl76.Location = new System.Drawing.Point(0, 307);
-            this.labelControl76.Name = "labelControl76";
-            this.labelControl76.Size = new System.Drawing.Size(98, 13);
-            this.labelControl76.TabIndex = 1172;
-            this.labelControl76.Text = "launch.ini File Path";
-            // 
-            // textEdit8
-            // 
-            this.textEdit8.Location = new System.Drawing.Point(0, 200);
-            this.textEdit8.Margin = new System.Windows.Forms.Padding(3, 3, 3, 8);
-            this.textEdit8.Name = "textEdit8";
-            this.textEdit8.Size = new System.Drawing.Size(701, 22);
-            this.textEdit8.TabIndex = 1178;
-            // 
-            // textEdit9
-            // 
-            this.textEdit9.Location = new System.Drawing.Point(0, 71);
-            this.textEdit9.Margin = new System.Windows.Forms.Padding(3, 3, 3, 8);
-            this.textEdit9.Name = "textEdit9";
-            this.textEdit9.Size = new System.Drawing.Size(701, 22);
-            this.textEdit9.TabIndex = 1174;
-            // 
-            // separatorControl25
-            // 
-            this.separatorControl25.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl25.LineColor = System.Drawing.Color.Gray;
-            this.separatorControl25.Location = new System.Drawing.Point(0, 231);
-            this.separatorControl25.Name = "separatorControl25";
-            this.separatorControl25.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.separatorControl25.Size = new System.Drawing.Size(1288, 24);
-            this.separatorControl25.TabIndex = 1177;
-            // 
-            // labelControl77
-            // 
-            this.labelControl77.Appearance.Options.UseFont = true;
-            this.labelControl77.Location = new System.Drawing.Point(0, 49);
-            this.labelControl77.Name = "labelControl77";
-            this.labelControl77.Size = new System.Drawing.Size(128, 13);
-            this.labelControl77.TabIndex = 1175;
-            this.labelControl77.Text = "Packages File Install Path";
-            // 
-            // labelControl78
-            // 
-            this.labelControl78.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl78.Appearance.Options.UseFont = true;
-            this.labelControl78.Location = new System.Drawing.Point(0, 274);
-            this.labelControl78.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.labelControl78.Name = "labelControl78";
-            this.labelControl78.Size = new System.Drawing.Size(53, 15);
-            this.labelControl78.TabIndex = 1176;
-            this.labelControl78.Text = "Xbox 360";
-            // 
-            // tabNavigationPage4
-            // 
-            this.tabNavigationPage4.AutoScroll = true;
-            this.tabNavigationPage4.Caption = "Download";
-            this.tabNavigationPage4.Controls.Add(this.simpleButton17);
-            this.tabNavigationPage4.Controls.Add(this.labelControl79);
-            this.tabNavigationPage4.Controls.Add(this.labelControl80);
-            this.tabNavigationPage4.Controls.Add(this.textEdit10);
-            this.tabNavigationPage4.Controls.Add(this.textEdit11);
-            this.tabNavigationPage4.Controls.Add(this.textEdit12);
-            this.tabNavigationPage4.Controls.Add(this.simpleButton18);
-            this.tabNavigationPage4.Controls.Add(this.labelControl81);
-            this.tabNavigationPage4.Controls.Add(this.labelControl82);
-            this.tabNavigationPage4.Controls.Add(this.simpleButton19);
-            this.tabNavigationPage4.Controls.Add(this.textEdit13);
-            this.tabNavigationPage4.Controls.Add(this.simpleButton20);
-            this.tabNavigationPage4.Controls.Add(this.labelControl83);
-            this.tabNavigationPage4.Controls.Add(this.textEdit14);
-            this.tabNavigationPage4.Controls.Add(this.labelControl84);
-            this.tabNavigationPage4.Controls.Add(this.labelControl85);
-            this.tabNavigationPage4.Controls.Add(this.simpleButton21);
-            this.tabNavigationPage4.Controls.Add(this.simpleButton22);
-            this.tabNavigationPage4.Controls.Add(this.labelControl86);
-            this.tabNavigationPage4.Controls.Add(this.textEdit15);
-            this.tabNavigationPage4.Controls.Add(this.textEdit16);
-            this.tabNavigationPage4.Controls.Add(this.labelControl87);
-            this.tabNavigationPage4.Controls.Add(this.simpleButton23);
-            this.tabNavigationPage4.Controls.Add(this.simpleButton24);
-            this.tabNavigationPage4.Controls.Add(this.labelControl88);
-            this.tabNavigationPage4.Controls.Add(this.textEdit17);
-            this.tabNavigationPage4.Name = "tabNavigationPage4";
-            this.tabNavigationPage4.Size = new System.Drawing.Size(1288, 533);
-            // 
-            // simpleButton17
-            // 
-            this.simpleButton17.Location = new System.Drawing.Point(732, 350);
-            this.simpleButton17.Name = "simpleButton17";
-            this.simpleButton17.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.simpleButton17.Size = new System.Drawing.Size(40, 20);
-            this.simpleButton17.TabIndex = 1207;
-            this.simpleButton17.Text = "...";
-            // 
-            // labelControl79
-            // 
-            this.labelControl79.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl79.Appearance.Options.UseFont = true;
-            this.labelControl79.Location = new System.Drawing.Point(0, 16);
-            this.labelControl79.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.labelControl79.Name = "labelControl79";
-            this.labelControl79.Size = new System.Drawing.Size(82, 15);
-            this.labelControl79.TabIndex = 1179;
-            this.labelControl79.Text = "Base Directory";
-            // 
-            // labelControl80
-            // 
-            this.labelControl80.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl80.Appearance.Options.UseFont = true;
-            this.labelControl80.Location = new System.Drawing.Point(0, 316);
-            this.labelControl80.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.labelControl80.Name = "labelControl80";
-            this.labelControl80.Size = new System.Drawing.Size(57, 15);
-            this.labelControl80.TabIndex = 1205;
-            this.labelControl80.Text = "Resources";
-            // 
-            // textEdit10
-            // 
-            this.textEdit10.EditValue = "";
-            this.textEdit10.Location = new System.Drawing.Point(0, 50);
-            this.textEdit10.Name = "textEdit10";
-            this.textEdit10.Properties.MaxLength = 256;
-            this.textEdit10.Size = new System.Drawing.Size(726, 22);
-            this.textEdit10.TabIndex = 1181;
-            // 
-            // textEdit11
-            // 
-            this.textEdit11.EditValue = "";
-            this.textEdit11.Location = new System.Drawing.Point(0, 350);
-            this.textEdit11.Name = "textEdit11";
-            this.textEdit11.Properties.MaxLength = 256;
-            this.textEdit11.Size = new System.Drawing.Size(726, 22);
-            this.textEdit11.TabIndex = 1206;
-            // 
-            // textEdit12
-            // 
-            this.textEdit12.EditValue = "";
-            this.textEdit12.Location = new System.Drawing.Point(0, 200);
-            this.textEdit12.Name = "textEdit12";
-            this.textEdit12.Properties.MaxLength = 256;
-            this.textEdit12.Size = new System.Drawing.Size(726, 22);
-            this.textEdit12.TabIndex = 1185;
-            // 
-            // simpleButton18
-            // 
-            this.simpleButton18.Location = new System.Drawing.Point(732, 275);
-            this.simpleButton18.Name = "simpleButton18";
-            this.simpleButton18.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.simpleButton18.Size = new System.Drawing.Size(40, 20);
-            this.simpleButton18.TabIndex = 1204;
-            this.simpleButton18.Text = "...";
-            // 
-            // labelControl81
-            // 
-            this.labelControl81.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl81.Appearance.Options.UseFont = true;
-            this.labelControl81.Location = new System.Drawing.Point(0, 166);
-            this.labelControl81.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.labelControl81.Name = "labelControl81";
-            this.labelControl81.Size = new System.Drawing.Size(66, 15);
-            this.labelControl81.TabIndex = 1184;
-            this.labelControl81.Text = "Game Mods";
-            // 
-            // labelControl82
-            // 
-            this.labelControl82.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl82.Appearance.Options.UseFont = true;
-            this.labelControl82.Location = new System.Drawing.Point(0, 241);
-            this.labelControl82.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.labelControl82.Name = "labelControl82";
-            this.labelControl82.Size = new System.Drawing.Size(63, 15);
-            this.labelControl82.TabIndex = 1202;
-            this.labelControl82.Text = "Homebrew";
-            // 
-            // simpleButton19
-            // 
-            this.simpleButton19.Location = new System.Drawing.Point(732, 50);
-            this.simpleButton19.Name = "simpleButton19";
-            this.simpleButton19.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.simpleButton19.Size = new System.Drawing.Size(40, 20);
-            this.simpleButton19.TabIndex = 1186;
-            this.simpleButton19.Text = "...";
-            // 
-            // textEdit13
-            // 
-            this.textEdit13.EditValue = "";
-            this.textEdit13.Location = new System.Drawing.Point(0, 275);
-            this.textEdit13.Name = "textEdit13";
-            this.textEdit13.Properties.MaxLength = 256;
-            this.textEdit13.Size = new System.Drawing.Size(726, 22);
-            this.textEdit13.TabIndex = 1203;
-            // 
-            // simpleButton20
-            // 
-            this.simpleButton20.Location = new System.Drawing.Point(732, 200);
-            this.simpleButton20.Name = "simpleButton20";
-            this.simpleButton20.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.simpleButton20.Size = new System.Drawing.Size(40, 20);
-            this.simpleButton20.TabIndex = 1187;
-            this.simpleButton20.Text = "...";
-            // 
-            // labelControl83
-            // 
-            this.labelControl83.Appearance.Options.UseFont = true;
-            this.labelControl83.Location = new System.Drawing.Point(0, 627);
-            this.labelControl83.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.labelControl83.Name = "labelControl83";
-            this.labelControl83.Size = new System.Drawing.Size(162, 13);
-            this.labelControl83.TabIndex = 1201;
-            this.labelControl83.Text = "All directories must be writable.";
-            // 
-            // textEdit14
-            // 
-            this.textEdit14.EditValue = "";
-            this.textEdit14.Location = new System.Drawing.Point(0, 425);
-            this.textEdit14.Name = "textEdit14";
-            this.textEdit14.Properties.MaxLength = 256;
-            this.textEdit14.Size = new System.Drawing.Size(726, 22);
-            this.textEdit14.TabIndex = 1189;
-            // 
-            // labelControl84
-            // 
-            this.labelControl84.Appearance.Options.UseFont = true;
-            this.labelControl84.Location = new System.Drawing.Point(0, 606);
-            this.labelControl84.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.labelControl84.Name = "labelControl84";
-            this.labelControl84.Size = new System.Drawing.Size(241, 13);
-            this.labelControl84.TabIndex = 1200;
-            this.labelControl84.Text = "Use %BASE_DIR% to refer to the Base Directory.";
-            // 
-            // labelControl85
-            // 
-            this.labelControl85.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl85.Appearance.Options.UseFont = true;
-            this.labelControl85.Location = new System.Drawing.Point(0, 391);
-            this.labelControl85.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.labelControl85.Name = "labelControl85";
-            this.labelControl85.Size = new System.Drawing.Size(51, 15);
-            this.labelControl85.TabIndex = 1188;
-            this.labelControl85.Text = "Packages";
-            // 
-            // simpleButton21
-            // 
-            this.simpleButton21.Location = new System.Drawing.Point(732, 125);
-            this.simpleButton21.Name = "simpleButton21";
-            this.simpleButton21.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.simpleButton21.Size = new System.Drawing.Size(40, 20);
-            this.simpleButton21.TabIndex = 1199;
-            this.simpleButton21.Text = "...";
-            // 
-            // simpleButton22
-            // 
-            this.simpleButton22.Location = new System.Drawing.Point(732, 425);
-            this.simpleButton22.Name = "simpleButton22";
-            this.simpleButton22.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.simpleButton22.Size = new System.Drawing.Size(40, 20);
-            this.simpleButton22.TabIndex = 1190;
-            this.simpleButton22.Text = "...";
-            // 
-            // labelControl86
-            // 
-            this.labelControl86.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl86.Appearance.Options.UseFont = true;
-            this.labelControl86.Location = new System.Drawing.Point(0, 91);
-            this.labelControl86.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.labelControl86.Name = "labelControl86";
-            this.labelControl86.Size = new System.Drawing.Size(61, 15);
-            this.labelControl86.TabIndex = 1197;
-            this.labelControl86.Text = "Downloads";
-            // 
-            // textEdit15
-            // 
-            this.textEdit15.EditValue = "";
-            this.textEdit15.Location = new System.Drawing.Point(0, 500);
-            this.textEdit15.Name = "textEdit15";
-            this.textEdit15.Properties.MaxLength = 256;
-            this.textEdit15.Size = new System.Drawing.Size(726, 22);
-            this.textEdit15.TabIndex = 1192;
-            // 
-            // textEdit16
-            // 
-            this.textEdit16.EditValue = "";
-            this.textEdit16.Location = new System.Drawing.Point(0, 125);
-            this.textEdit16.Name = "textEdit16";
-            this.textEdit16.Properties.MaxLength = 256;
-            this.textEdit16.Size = new System.Drawing.Size(726, 22);
-            this.textEdit16.TabIndex = 1198;
-            // 
-            // labelControl87
-            // 
-            this.labelControl87.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl87.Appearance.Options.UseFont = true;
-            this.labelControl87.Location = new System.Drawing.Point(0, 466);
-            this.labelControl87.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.labelControl87.Name = "labelControl87";
-            this.labelControl87.Size = new System.Drawing.Size(39, 15);
-            this.labelControl87.TabIndex = 1191;
-            this.labelControl87.Text = "Plugins";
-            // 
-            // simpleButton23
-            // 
-            this.simpleButton23.Location = new System.Drawing.Point(732, 575);
-            this.simpleButton23.Name = "simpleButton23";
-            this.simpleButton23.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.simpleButton23.Size = new System.Drawing.Size(40, 20);
-            this.simpleButton23.TabIndex = 1196;
-            this.simpleButton23.Text = "...";
-            // 
-            // simpleButton24
-            // 
-            this.simpleButton24.Location = new System.Drawing.Point(732, 500);
-            this.simpleButton24.Name = "simpleButton24";
-            this.simpleButton24.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.simpleButton24.Size = new System.Drawing.Size(40, 20);
-            this.simpleButton24.TabIndex = 1193;
-            this.simpleButton24.Text = "...";
-            // 
-            // labelControl88
-            // 
-            this.labelControl88.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl88.Appearance.Options.UseFont = true;
-            this.labelControl88.Location = new System.Drawing.Point(0, 541);
-            this.labelControl88.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.labelControl88.Name = "labelControl88";
-            this.labelControl88.Size = new System.Drawing.Size(68, 15);
-            this.labelControl88.TabIndex = 1194;
-            this.labelControl88.Text = "Game Saves";
-            // 
-            // textEdit17
-            // 
-            this.textEdit17.EditValue = "";
-            this.textEdit17.Location = new System.Drawing.Point(0, 575);
-            this.textEdit17.Name = "textEdit17";
-            this.textEdit17.Properties.MaxLength = 256;
-            this.textEdit17.Size = new System.Drawing.Size(726, 22);
-            this.textEdit17.TabIndex = 1195;
-            // 
-            // tabNavigationPage5
-            // 
-            this.tabNavigationPage5.AutoScroll = true;
-            this.tabNavigationPage5.Caption = "Discord";
-            this.tabNavigationPage5.Controls.Add(this.labelControl89);
-            this.tabNavigationPage5.Controls.Add(this.labelControl90);
-            this.tabNavigationPage5.Controls.Add(this.toggleSwitch19);
-            this.tabNavigationPage5.Controls.Add(this.toggleSwitch20);
-            this.tabNavigationPage5.Controls.Add(this.labelControl91);
-            this.tabNavigationPage5.Name = "tabNavigationPage5";
-            this.tabNavigationPage5.Size = new System.Drawing.Size(1288, 533);
-            // 
-            // labelControl89
-            // 
-            this.labelControl89.Appearance.Options.UseFont = true;
-            this.labelControl89.Location = new System.Drawing.Point(60, 52);
-            this.labelControl89.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.labelControl89.Name = "labelControl89";
-            this.labelControl89.Size = new System.Drawing.Size(205, 13);
-            this.labelControl89.TabIndex = 1184;
-            this.labelControl89.Text = "Always show presence for Arisen Studio";
-            // 
-            // labelControl90
-            // 
-            this.labelControl90.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl90.Appearance.Options.UseFont = true;
-            this.labelControl90.Location = new System.Drawing.Point(0, 16);
-            this.labelControl90.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
-            this.labelControl90.Name = "labelControl90";
-            this.labelControl90.Size = new System.Drawing.Size(78, 15);
-            this.labelControl90.TabIndex = 1180;
-            this.labelControl90.Text = "Rich Presence";
-            // 
-            // toggleSwitch19
-            // 
-            this.toggleSwitch19.Location = new System.Drawing.Point(0, 50);
-            this.toggleSwitch19.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
-            this.toggleSwitch19.Name = "toggleSwitch19";
-            this.toggleSwitch19.Properties.AutoWidth = true;
-            this.toggleSwitch19.Properties.OffText = "Off";
-            this.toggleSwitch19.Properties.OnText = "On";
-            this.toggleSwitch19.Properties.ShowText = false;
-            this.toggleSwitch19.Size = new System.Drawing.Size(54, 24);
-            this.toggleSwitch19.TabIndex = 1183;
-            // 
-            // toggleSwitch20
-            // 
-            this.toggleSwitch20.Location = new System.Drawing.Point(0, 80);
-            this.toggleSwitch20.Margin = new System.Windows.Forms.Padding(14, 3, 3, 8);
-            this.toggleSwitch20.Name = "toggleSwitch20";
-            this.toggleSwitch20.Properties.AutoWidth = true;
-            this.toggleSwitch20.Properties.OffText = "Off";
-            this.toggleSwitch20.Properties.OnText = "On";
-            this.toggleSwitch20.Properties.ShowText = false;
-            this.toggleSwitch20.Size = new System.Drawing.Size(54, 24);
-            this.toggleSwitch20.TabIndex = 1181;
-            // 
-            // labelControl91
-            // 
-            this.labelControl91.Appearance.Options.UseFont = true;
-            this.labelControl91.Location = new System.Drawing.Point(60, 82);
-            this.labelControl91.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.labelControl91.Name = "labelControl91";
-            this.labelControl91.Size = new System.Drawing.Size(161, 13);
-            this.labelControl91.TabIndex = 1182;
-            this.labelControl91.Text = "Show the current game playing";
-            // 
-            // navigationPage6
-            // 
-            this.navigationPage6.Appearance.Options.UseFont = true;
-            this.navigationPage6.Controls.Add(this.panel5);
-            this.navigationPage6.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.navigationPage6.Name = "navigationPage6";
-            this.navigationPage6.Size = new System.Drawing.Size(1288, 571);
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Transparent;
-            this.panel5.Controls.Add(this.gridControl5);
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Controls.Add(this.panelControl13);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1288, 571);
-            this.panel5.TabIndex = 8;
-            // 
-            // gridControl5
-            // 
-            this.gridControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridControl5.Location = new System.Drawing.Point(0, 146);
-            this.gridControl5.MainView = this.gridView6;
-            this.gridControl5.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.gridControl5.Name = "gridControl5";
-            this.gridControl5.Size = new System.Drawing.Size(1288, 425);
-            this.gridControl5.TabIndex = 6;
-            this.gridControl5.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView6});
-            // 
-            // gridView6
-            // 
-            this.gridView6.ActiveFilterEnabled = false;
-            this.gridView6.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView6.Appearance.Empty.Options.UseBackColor = true;
-            this.gridView6.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView6.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gridView6.Appearance.Row.Options.UseBackColor = true;
-            this.gridView6.Appearance.Row.Options.UseFont = true;
-            this.gridView6.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(55)))), ((int)(((byte)(58)))));
-            this.gridView6.Appearance.SelectedRow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(71)))), ((int)(((byte)(73)))));
-            this.gridView6.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.gridView6.Appearance.SelectedRow.Options.UseForeColor = true;
-            this.gridView6.AppearancePrint.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.gridView6.AppearancePrint.Row.Options.UseBackColor = true;
-            this.gridView6.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridView6.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
-            this.gridView6.GridControl = this.gridControl5;
-            this.gridView6.GroupRowHeight = 30;
-            this.gridView6.Name = "gridView6";
-            this.gridView6.OptionsBehavior.Editable = false;
-            this.gridView6.OptionsBehavior.ReadOnly = true;
-            this.gridView6.OptionsCustomization.AllowFilter = false;
-            this.gridView6.OptionsFilter.AllowFilterEditor = false;
-            this.gridView6.OptionsMenu.ShowAutoFilterRowItem = false;
-            this.gridView6.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView6.OptionsView.ShowColumnHeaders = false;
-            this.gridView6.OptionsView.ShowGroupPanel = false;
-            this.gridView6.OptionsView.ShowHorizontalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView6.OptionsView.ShowIndicator = false;
-            this.gridView6.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView6.RowHeight = 30;
-            this.gridView6.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Transparent;
-            this.panel6.Controls.Add(this.separatorControl26);
-            this.panel6.Controls.Add(this.separatorControl27);
-            this.panel6.Controls.Add(this.separatorControl28);
-            this.panel6.Controls.Add(this.separatorControl29);
-            this.panel6.Controls.Add(this.separatorControl30);
-            this.panel6.Controls.Add(this.separatorControl31);
-            this.panel6.Controls.Add(this.comboBoxEdit21);
-            this.panel6.Controls.Add(this.separatorControl32);
-            this.panel6.Controls.Add(this.comboBoxEdit22);
-            this.panel6.Controls.Add(this.labelControl92);
-            this.panel6.Controls.Add(this.comboBoxEdit23);
-            this.panel6.Controls.Add(this.labelControl93);
-            this.panel6.Controls.Add(this.comboBoxEdit24);
-            this.panel6.Controls.Add(this.labelControl94);
-            this.panel6.Controls.Add(this.textEdit18);
-            this.panel6.Controls.Add(this.comboBoxEdit25);
-            this.panel6.Controls.Add(this.comboBoxEdit26);
-            this.panel6.Controls.Add(this.labelControl95);
-            this.panel6.Controls.Add(this.labelControl96);
-            this.panel6.Controls.Add(this.labelControl97);
-            this.panel6.Controls.Add(this.labelControl98);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.panel6.Location = new System.Drawing.Point(0, 70);
-            this.panel6.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1288, 76);
-            this.panel6.TabIndex = 12;
-            // 
-            // separatorControl26
-            // 
-            this.separatorControl26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl26.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl26.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl26.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl26.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl26.LineThickness = 1;
-            this.separatorControl26.Location = new System.Drawing.Point(1060, 12);
-            this.separatorControl26.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl26.Name = "separatorControl26";
-            this.separatorControl26.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl26.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl26.TabIndex = 1216;
-            // 
-            // separatorControl27
-            // 
-            this.separatorControl27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl27.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl27.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl27.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl27.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl27.LineThickness = 1;
-            this.separatorControl27.Location = new System.Drawing.Point(1154, 12);
-            this.separatorControl27.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl27.Name = "separatorControl27";
-            this.separatorControl27.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl27.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl27.TabIndex = 1215;
-            // 
-            // separatorControl28
-            // 
-            this.separatorControl28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl28.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl28.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl28.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl28.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl28.LineThickness = 1;
-            this.separatorControl28.Location = new System.Drawing.Point(948, 12);
-            this.separatorControl28.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl28.Name = "separatorControl28";
-            this.separatorControl28.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl28.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl28.TabIndex = 1214;
-            // 
-            // separatorControl29
-            // 
-            this.separatorControl29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl29.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl29.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl29.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl29.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl29.LineThickness = 1;
-            this.separatorControl29.Location = new System.Drawing.Point(818, 12);
-            this.separatorControl29.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl29.Name = "separatorControl29";
-            this.separatorControl29.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl29.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl29.TabIndex = 1213;
-            // 
-            // separatorControl30
-            // 
-            this.separatorControl30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl30.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl30.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl30.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl30.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl30.LineThickness = 1;
-            this.separatorControl30.Location = new System.Drawing.Point(707, 12);
-            this.separatorControl30.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl30.Name = "separatorControl30";
-            this.separatorControl30.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl30.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl30.TabIndex = 1212;
-            // 
-            // separatorControl31
-            // 
-            this.separatorControl31.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl31.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl31.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl31.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl31.LineThickness = 1;
-            this.separatorControl31.Location = new System.Drawing.Point(232, 12);
-            this.separatorControl31.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl31.Name = "separatorControl31";
-            this.separatorControl31.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl31.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl31.TabIndex = 1211;
-            // 
-            // comboBoxEdit21
-            // 
-            this.comboBoxEdit21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit21.Location = new System.Drawing.Point(836, 34);
-            this.comboBoxEdit21.Name = "comboBoxEdit21";
-            this.comboBoxEdit21.Properties.AllowFocused = false;
-            this.comboBoxEdit21.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit21.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit21.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit21.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit21.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit21.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit21.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit21.Properties.AutoComplete = false;
-            this.comboBoxEdit21.Properties.AutoHeight = false;
-            this.comboBoxEdit21.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit21.Properties.DropDownRows = 12;
-            this.comboBoxEdit21.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit21.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit21.Size = new System.Drawing.Size(100, 30);
-            this.comboBoxEdit21.TabIndex = 5;
-            // 
-            // separatorControl32
-            // 
-            this.separatorControl32.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl32.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.separatorControl32.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl32.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl32.LineThickness = 1;
-            this.separatorControl32.Location = new System.Drawing.Point(0, 73);
-            this.separatorControl32.Margin = new System.Windows.Forms.Padding(0);
-            this.separatorControl32.Name = "separatorControl32";
-            this.separatorControl32.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl32.Size = new System.Drawing.Size(1288, 3);
-            this.separatorControl32.TabIndex = 1172;
-            // 
-            // comboBoxEdit22
-            // 
-            this.comboBoxEdit22.Location = new System.Drawing.Point(0, 34);
-            this.comboBoxEdit22.Name = "comboBoxEdit22";
-            this.comboBoxEdit22.Properties.AllowFocused = false;
-            this.comboBoxEdit22.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit22.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit22.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit22.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit22.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit22.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit22.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit22.Properties.AutoComplete = false;
-            this.comboBoxEdit22.Properties.AutoHeight = false;
-            this.comboBoxEdit22.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit22.Properties.DropDownRows = 15;
-            this.comboBoxEdit22.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit22.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit22.Size = new System.Drawing.Size(220, 30);
-            this.comboBoxEdit22.TabIndex = 2;
-            // 
-            // labelControl92
-            // 
-            this.labelControl92.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl92.Appearance.Options.UseFont = true;
-            this.labelControl92.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl92.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl92.Location = new System.Drawing.Point(-3, 12);
-            this.labelControl92.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl92.Name = "labelControl92";
-            this.labelControl92.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl92.Size = new System.Drawing.Size(41, 17);
-            this.labelControl92.TabIndex = 1171;
-            this.labelControl92.Text = "Game";
-            // 
-            // comboBoxEdit23
-            // 
-            this.comboBoxEdit23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit23.Location = new System.Drawing.Point(1172, 34);
-            this.comboBoxEdit23.Name = "comboBoxEdit23";
-            this.comboBoxEdit23.Properties.AllowFocused = false;
-            this.comboBoxEdit23.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit23.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit23.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit23.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit23.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit23.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit23.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit23.Properties.AutoComplete = false;
-            this.comboBoxEdit23.Properties.AutoHeight = false;
-            this.comboBoxEdit23.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit23.Properties.Items.AddRange(new object[] {
-            "<All>",
-            "Downloaded",
-            "Not Installed",
-            "Installed"});
-            this.comboBoxEdit23.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit23.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit23.Size = new System.Drawing.Size(102, 30);
-            this.comboBoxEdit23.TabIndex = 9;
-            // 
-            // labelControl93
-            // 
-            this.labelControl93.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl93.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl93.Appearance.Options.UseFont = true;
-            this.labelControl93.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl93.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl93.Location = new System.Drawing.Point(1169, 12);
-            this.labelControl93.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl93.Name = "labelControl93";
-            this.labelControl93.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl93.Size = new System.Drawing.Size(44, 17);
-            this.labelControl93.TabIndex = 1169;
-            this.labelControl93.Text = "Status";
-            // 
-            // comboBoxEdit24
-            // 
-            this.comboBoxEdit24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit24.Location = new System.Drawing.Point(1078, 34);
-            this.comboBoxEdit24.Name = "comboBoxEdit24";
-            this.comboBoxEdit24.Properties.AllowFocused = false;
-            this.comboBoxEdit24.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit24.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit24.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit24.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit24.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit24.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit24.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit24.Properties.AutoComplete = false;
-            this.comboBoxEdit24.Properties.AutoHeight = false;
-            this.comboBoxEdit24.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit24.Properties.DropDownRows = 12;
-            this.comboBoxEdit24.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit24.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit24.Size = new System.Drawing.Size(64, 30);
-            this.comboBoxEdit24.TabIndex = 7;
-            // 
-            // labelControl94
-            // 
-            this.labelControl94.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl94.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl94.Appearance.Options.UseFont = true;
-            this.labelControl94.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl94.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl94.Location = new System.Drawing.Point(1075, 12);
-            this.labelControl94.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl94.Name = "labelControl94";
-            this.labelControl94.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl94.Size = new System.Drawing.Size(53, 17);
-            this.labelControl94.TabIndex = 1165;
-            this.labelControl94.Text = "Version";
-            // 
-            // textEdit18
-            // 
-            this.textEdit18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit18.Location = new System.Drawing.Point(250, 34);
-            this.textEdit18.Name = "textEdit18";
-            this.textEdit18.Properties.AllowFocused = false;
-            this.textEdit18.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.textEdit18.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textEdit18.Properties.Appearance.Options.UseFont = true;
-            this.textEdit18.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.textEdit18.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.textEdit18.Properties.AutoHeight = false;
-            this.textEdit18.Properties.NullValuePrompt = "Search...";
-            this.textEdit18.Size = new System.Drawing.Size(445, 30);
-            this.textEdit18.TabIndex = 3;
-            // 
-            // comboBoxEdit25
-            // 
-            this.comboBoxEdit25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit25.Location = new System.Drawing.Point(966, 34);
-            this.comboBoxEdit25.Name = "comboBoxEdit25";
-            this.comboBoxEdit25.Properties.AllowFocused = false;
-            this.comboBoxEdit25.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit25.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit25.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit25.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit25.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit25.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit25.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit25.Properties.AutoComplete = false;
-            this.comboBoxEdit25.Properties.AutoHeight = false;
-            this.comboBoxEdit25.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit25.Properties.DropDownRows = 12;
-            this.comboBoxEdit25.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit25.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit25.Size = new System.Drawing.Size(82, 30);
-            this.comboBoxEdit25.TabIndex = 6;
-            // 
-            // comboBoxEdit26
-            // 
-            this.comboBoxEdit26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit26.Location = new System.Drawing.Point(725, 34);
-            this.comboBoxEdit26.Name = "comboBoxEdit26";
-            this.comboBoxEdit26.Properties.AllowFocused = false;
-            this.comboBoxEdit26.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit26.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit26.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit26.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit26.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit26.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit26.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit26.Properties.AutoComplete = false;
-            this.comboBoxEdit26.Properties.AutoHeight = false;
-            this.comboBoxEdit26.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit26.Properties.DropDownRows = 12;
-            this.comboBoxEdit26.Properties.Items.AddRange(new object[] {
-            "<All>"});
-            this.comboBoxEdit26.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit26.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit26.Size = new System.Drawing.Size(81, 30);
-            this.comboBoxEdit26.TabIndex = 4;
-            // 
-            // labelControl95
-            // 
-            this.labelControl95.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl95.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl95.Appearance.Options.UseFont = true;
-            this.labelControl95.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl95.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl95.Location = new System.Drawing.Point(963, 12);
-            this.labelControl95.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl95.Name = "labelControl95";
-            this.labelControl95.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl95.Size = new System.Drawing.Size(49, 17);
-            this.labelControl95.TabIndex = 1163;
-            this.labelControl95.Text = "Region";
-            // 
-            // labelControl96
-            // 
-            this.labelControl96.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl96.Appearance.Options.UseFont = true;
-            this.labelControl96.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl96.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl96.Location = new System.Drawing.Point(247, 12);
-            this.labelControl96.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl96.Name = "labelControl96";
-            this.labelControl96.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl96.Size = new System.Drawing.Size(42, 17);
-            this.labelControl96.TabIndex = 1157;
-            this.labelControl96.Text = "Name";
-            // 
-            // labelControl97
-            // 
-            this.labelControl97.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl97.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl97.Appearance.Options.UseFont = true;
-            this.labelControl97.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl97.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl97.Location = new System.Drawing.Point(722, 12);
-            this.labelControl97.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl97.Name = "labelControl97";
-            this.labelControl97.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl97.Size = new System.Drawing.Size(60, 17);
-            this.labelControl97.TabIndex = 1156;
-            this.labelControl97.Text = "FW Type";
-            // 
-            // labelControl98
-            // 
-            this.labelControl98.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl98.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl98.Appearance.Options.UseFont = true;
-            this.labelControl98.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl98.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl98.Location = new System.Drawing.Point(833, 12);
-            this.labelControl98.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl98.Name = "labelControl98";
-            this.labelControl98.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl98.Size = new System.Drawing.Size(68, 17);
-            this.labelControl98.TabIndex = 1122;
-            this.labelControl98.Text = "Mod Type";
-            // 
-            // panelControl13
-            // 
-            this.panelControl13.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.panelControl13.Appearance.Options.UseBackColor = true;
-            this.panelControl13.Controls.Add(this.tileControl6);
-            this.panelControl13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl13.Location = new System.Drawing.Point(0, 0);
-            this.panelControl13.LookAndFeel.SkinName = "WXI";
-            this.panelControl13.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.panelControl13.Margin = new System.Windows.Forms.Padding(0);
-            this.panelControl13.Name = "panelControl13";
-            this.panelControl13.Size = new System.Drawing.Size(1288, 70);
-            this.panelControl13.TabIndex = 1218;
-            // 
-            // tileControl6
-            // 
-            this.tileControl6.AllowDisabledStateIndication = false;
-            this.tileControl6.AllowDrag = false;
-            this.tileControl6.AllowDragTilesBetweenGroups = false;
-            this.tileControl6.AllowGlyphSkinning = true;
-            this.tileControl6.AllowItemHover = true;
-            this.tileControl6.AppearanceGroupHighlighting.HoveredMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(70)))));
-            this.tileControl6.AppearanceGroupHighlighting.MaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(70)))));
-            this.tileControl6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.tileControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tileControl6.Groups.Add(this.tileGroup6);
-            this.tileControl6.HorizontalContentAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.tileControl6.IndentBetweenItems = 2;
-            this.tileControl6.ItemContentAnimation = DevExpress.XtraEditors.TileItemContentAnimationType.Fade;
-            this.tileControl6.ItemImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileControl6.ItemImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            this.tileControl6.ItemPadding = new System.Windows.Forms.Padding(0);
-            this.tileControl6.ItemSize = 98;
-            this.tileControl6.Location = new System.Drawing.Point(2, 2);
-            this.tileControl6.MaxId = 10;
-            this.tileControl6.Name = "tileControl6";
-            this.tileControl6.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileControl6.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.tileControl6.Size = new System.Drawing.Size(1284, 66);
-            this.tileControl6.TabIndex = 9;
-            this.tileControl6.Text = "TileControlModsActions";
-            // 
-            // tileGroup6
-            // 
-            this.tileGroup6.Items.Add(this.tileItem18);
-            this.tileGroup6.Items.Add(this.tileItem19);
-            this.tileGroup6.Items.Add(this.tileItem20);
-            this.tileGroup6.Items.Add(this.tileItem21);
-            this.tileGroup6.Items.Add(this.tileItem22);
-            this.tileGroup6.Name = "tileGroup6";
-            this.tileGroup6.Text = "Game Mods Actions";
-            // 
-            // tileItem18
-            // 
-            this.tileItem18.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem18.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem18.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem18.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem18.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.tileItem18.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem18.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileItem18.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.tileItem18.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tileItem18.AppearanceItem.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.tileItem18.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement72.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement72.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement72.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement72.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
-            tileItemElement72.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement72.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement72.Text = "";
-            this.tileItem18.Elements.Add(tileItemElement72);
-            this.tileItem18.Id = 6;
-            this.tileItem18.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem18.Name = "tileItem18";
-            this.tileItem18.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // tileItem19
-            // 
-            this.tileItem19.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem19.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem19.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem19.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem19.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.tileItem19.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem19.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileItem19.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.tileItem19.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tileItem19.AppearanceItem.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.tileItem19.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement73.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement73.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement73.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement73.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement73.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement73.Text = "";
-            this.tileItem19.Elements.Add(tileItemElement73);
-            this.tileItem19.Id = 1;
-            this.tileItem19.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem19.Name = "tileItem19";
-            this.tileItem19.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // tileItem20
-            // 
-            this.tileItem20.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem20.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem20.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem20.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem20.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.tileItem20.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem20.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileItem20.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement74.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement74.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_add_favorite;
-            tileItemElement74.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement74.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement74.Text = "";
-            this.tileItem20.Elements.Add(tileItemElement74);
-            this.tileItem20.Enabled = false;
-            this.tileItem20.Id = 9;
-            this.tileItem20.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem20.Name = "tileItem20";
-            this.tileItem20.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // tileItem21
-            // 
-            this.tileItem21.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem21.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem21.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem21.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem21.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.tileItem21.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem21.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileItem21.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement75.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement75.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement75.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
-            tileItemElement75.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement75.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement75.Text = "";
-            this.tileItem21.Elements.Add(tileItemElement75);
-            this.tileItem21.Enabled = false;
-            this.tileItem21.Id = 7;
-            this.tileItem21.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem21.Name = "tileItem21";
-            this.tileItem21.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // tileItem22
-            // 
-            this.tileItem22.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem22.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem22.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem22.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem22.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.tileItem22.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem22.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileItem22.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement76.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement76.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement76.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement76.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement76.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement76.Text = "";
-            this.tileItem22.Elements.Add(tileItemElement76);
-            this.tileItem22.Enabled = false;
-            this.tileItem22.Id = 8;
-            this.tileItem22.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem22.Name = "tileItem22";
-            this.tileItem22.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // navigationPage7
-            // 
-            this.navigationPage7.Appearance.Options.UseFont = true;
-            this.navigationPage7.Controls.Add(this.panel7);
-            this.navigationPage7.Controls.Add(this.panelControl14);
-            this.navigationPage7.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.navigationPage7.Name = "navigationPage7";
-            this.navigationPage7.Size = new System.Drawing.Size(1288, 571);
-            // 
-            // panel7
-            // 
-            this.panel7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel7.BackColor = System.Drawing.Color.Transparent;
-            this.panel7.Controls.Add(this.gridControl6);
-            this.panel7.Controls.Add(this.panel8);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 70);
-            this.panel7.Margin = new System.Windows.Forms.Padding(0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1288, 501);
-            this.panel7.TabIndex = 1183;
-            // 
-            // gridControl6
-            // 
-            this.gridControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl6.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.gridControl6.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gridControl6.EmbeddedNavigator.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.gridControl6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gridControl6.Location = new System.Drawing.Point(0, 76);
-            this.gridControl6.MainView = this.gridView7;
-            this.gridControl6.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.gridControl6.Name = "gridControl6";
-            this.gridControl6.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.gridControl6.Size = new System.Drawing.Size(1288, 425);
-            this.gridControl6.TabIndex = 5;
-            this.gridControl6.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView7});
-            // 
-            // gridView7
-            // 
-            this.gridView7.ActiveFilterEnabled = false;
-            this.gridView7.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView7.Appearance.Empty.Options.UseBackColor = true;
-            this.gridView7.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView7.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gridView7.Appearance.Row.Options.UseBackColor = true;
-            this.gridView7.Appearance.Row.Options.UseFont = true;
-            this.gridView7.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(55)))), ((int)(((byte)(58)))));
-            this.gridView7.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.gridView7.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridView7.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
-            this.gridView7.GridControl = this.gridControl6;
-            this.gridView7.GroupRowHeight = 30;
-            this.gridView7.Name = "gridView7";
-            this.gridView7.OptionsBehavior.Editable = false;
-            this.gridView7.OptionsBehavior.ReadOnly = true;
-            this.gridView7.OptionsCustomization.AllowFilter = false;
-            this.gridView7.OptionsFilter.AllowFilterEditor = false;
-            this.gridView7.OptionsMenu.ShowAutoFilterRowItem = false;
-            this.gridView7.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView7.OptionsView.ShowColumnHeaders = false;
-            this.gridView7.OptionsView.ShowGroupPanel = false;
-            this.gridView7.OptionsView.ShowHorizontalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView7.OptionsView.ShowIndicator = false;
-            this.gridView7.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView7.RowHeight = 30;
-            this.gridView7.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Transparent;
-            this.panel8.Controls.Add(this.separatorControl33);
-            this.panel8.Controls.Add(this.separatorControl34);
-            this.panel8.Controls.Add(this.separatorControl35);
-            this.panel8.Controls.Add(this.separatorControl36);
-            this.panel8.Controls.Add(this.comboBoxEdit27);
-            this.panel8.Controls.Add(this.labelControl99);
-            this.panel8.Controls.Add(this.comboBoxEdit28);
-            this.panel8.Controls.Add(this.textEdit19);
-            this.panel8.Controls.Add(this.comboBoxEdit29);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1288, 76);
-            this.panel8.TabIndex = 12;
-            // 
-            // separatorControl33
-            // 
-            this.separatorControl33.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl33.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl33.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl33.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl33.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl33.LineThickness = 1;
-            this.separatorControl33.Location = new System.Drawing.Point(1078, 12);
-            this.separatorControl33.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl33.Name = "separatorControl33";
-            this.separatorControl33.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl33.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl33.TabIndex = 1214;
-            // 
-            // separatorControl34
-            // 
-            this.separatorControl34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl34.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl34.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl34.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl34.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl34.LineThickness = 1;
-            this.separatorControl34.Location = new System.Drawing.Point(1192, 12);
-            this.separatorControl34.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl34.Name = "separatorControl34";
-            this.separatorControl34.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl34.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl34.TabIndex = 1213;
-            // 
-            // separatorControl35
-            // 
-            this.separatorControl35.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl35.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl35.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl35.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl35.LineThickness = 1;
-            this.separatorControl35.Location = new System.Drawing.Point(232, 12);
-            this.separatorControl35.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl35.Name = "separatorControl35";
-            this.separatorControl35.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl35.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl35.TabIndex = 1212;
-            // 
-            // separatorControl36
-            // 
-            this.separatorControl36.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl36.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.separatorControl36.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl36.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl36.LineThickness = 1;
-            this.separatorControl36.Location = new System.Drawing.Point(0, 73);
-            this.separatorControl36.Margin = new System.Windows.Forms.Padding(0);
-            this.separatorControl36.Name = "separatorControl36";
-            this.separatorControl36.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl36.Size = new System.Drawing.Size(1288, 3);
-            this.separatorControl36.TabIndex = 1172;
-            // 
-            // comboBoxEdit27
-            // 
-            this.comboBoxEdit27.Location = new System.Drawing.Point(0, 34);
-            this.comboBoxEdit27.Name = "comboBoxEdit27";
-            this.comboBoxEdit27.Properties.AllowFocused = false;
-            this.comboBoxEdit27.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit27.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit27.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit27.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit27.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit27.Properties.AutoComplete = false;
-            this.comboBoxEdit27.Properties.AutoHeight = false;
-            this.comboBoxEdit27.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit27.Properties.DropDownRows = 15;
-            this.comboBoxEdit27.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit27.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit27.Size = new System.Drawing.Size(220, 30);
-            this.comboBoxEdit27.TabIndex = 1170;
-            // 
-            // labelControl99
-            // 
-            this.labelControl99.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl99.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl99.Appearance.Options.UseFont = true;
-            this.labelControl99.Appearance.Options.UseForeColor = true;
-            this.labelControl99.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl99.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl99.Location = new System.Drawing.Point(-3, 12);
-            this.labelControl99.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl99.Name = "labelControl99";
-            this.labelControl99.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl99.Size = new System.Drawing.Size(41, 17);
-            this.labelControl99.TabIndex = 1171;
-            this.labelControl99.Text = "Game";
-            // 
-            // comboBoxEdit28
-            // 
-            this.comboBoxEdit28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit28.Location = new System.Drawing.Point(1210, 34);
-            this.comboBoxEdit28.Name = "comboBoxEdit28";
-            this.comboBoxEdit28.Properties.AllowFocused = false;
-            this.comboBoxEdit28.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit28.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit28.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit28.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit28.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit28.Properties.AutoComplete = false;
-            this.comboBoxEdit28.Properties.AutoHeight = false;
-            this.comboBoxEdit28.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit28.Properties.DropDownRows = 12;
-            this.comboBoxEdit28.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit28.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit28.Size = new System.Drawing.Size(64, 30);
-            this.comboBoxEdit28.TabIndex = 1164;
-            // 
-            // textEdit19
-            // 
-            this.textEdit19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit19.Location = new System.Drawing.Point(250, 34);
-            this.textEdit19.Name = "textEdit19";
-            this.textEdit19.Properties.AllowFocused = false;
-            this.textEdit19.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.textEdit19.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textEdit19.Properties.Appearance.Options.UseFont = true;
-            this.textEdit19.Properties.AutoHeight = false;
-            this.textEdit19.Properties.NullValuePrompt = "Search...";
-            this.textEdit19.Size = new System.Drawing.Size(816, 30);
-            this.textEdit19.TabIndex = 1;
-            // 
-            // comboBoxEdit29
-            // 
-            this.comboBoxEdit29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit29.Location = new System.Drawing.Point(1096, 34);
-            this.comboBoxEdit29.Name = "comboBoxEdit29";
-            this.comboBoxEdit29.Properties.AllowFocused = false;
-            this.comboBoxEdit29.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit29.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit29.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit29.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit29.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit29.Properties.AutoComplete = false;
-            this.comboBoxEdit29.Properties.AutoHeight = false;
-            this.comboBoxEdit29.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit29.Properties.DropDownRows = 12;
-            this.comboBoxEdit29.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit29.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit29.Size = new System.Drawing.Size(84, 30);
-            this.comboBoxEdit29.TabIndex = 4;
-            // 
-            // panelControl14
-            // 
-            this.panelControl14.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.panelControl14.Appearance.Options.UseBackColor = true;
-            this.panelControl14.Controls.Add(this.tileControl7);
-            this.panelControl14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl14.Location = new System.Drawing.Point(0, 0);
-            this.panelControl14.LookAndFeel.SkinName = "WXI";
-            this.panelControl14.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.panelControl14.Margin = new System.Windows.Forms.Padding(0);
-            this.panelControl14.Name = "panelControl14";
-            this.panelControl14.Size = new System.Drawing.Size(1288, 70);
-            this.panelControl14.TabIndex = 1187;
-            // 
-            // tileControl7
-            // 
-            this.tileControl7.AllowDisabledStateIndication = false;
-            this.tileControl7.AllowDrag = false;
-            this.tileControl7.AllowDragTilesBetweenGroups = false;
-            this.tileControl7.AllowGlyphSkinning = true;
-            this.tileControl7.AllowItemHover = true;
-            this.tileControl7.AllowSelectedItemBorder = false;
-            this.tileControl7.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileControl7.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileControl7.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileControl7.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.tileControl7.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileControl7.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileControl7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.tileControl7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tileControl7.Groups.Add(this.tileGroup7);
-            this.tileControl7.HorizontalContentAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.tileControl7.IndentBetweenItems = 2;
-            this.tileControl7.ItemBorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            this.tileControl7.ItemContentAnimation = DevExpress.XtraEditors.TileItemContentAnimationType.Fade;
-            this.tileControl7.ItemImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileControl7.ItemPadding = new System.Windows.Forms.Padding(0);
-            this.tileControl7.ItemSize = 98;
-            this.tileControl7.ItemTextShowMode = DevExpress.XtraEditors.TileItemContentShowMode.Always;
-            this.tileControl7.Location = new System.Drawing.Point(2, 2);
-            this.tileControl7.MaxId = 8;
-            this.tileControl7.Name = "tileControl7";
-            this.tileControl7.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileControl7.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.tileControl7.RowCount = 1;
-            this.tileControl7.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
-            this.tileControl7.Size = new System.Drawing.Size(1284, 66);
-            this.tileControl7.TabIndex = 1;
-            this.tileControl7.Text = "TileControlModsActions";
-            // 
-            // tileGroup7
-            // 
-            this.tileGroup7.Items.Add(this.tileItem23);
-            this.tileGroup7.Items.Add(this.tileItem24);
-            this.tileGroup7.Items.Add(this.tileItem25);
-            this.tileGroup7.Name = "tileGroup7";
-            this.tileGroup7.Text = "Game Saves Actions";
-            // 
-            // tileItem23
-            // 
-            this.tileItem23.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem23.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.tileItem23.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem23.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem23.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.tileItem23.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem23.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileItem23.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.tileItem23.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tileItem23.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement77.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement77.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement77.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement77.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement77.Text = "";
-            tileItemElement77.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem23.Elements.Add(tileItemElement77);
-            this.tileItem23.Id = 1;
-            this.tileItem23.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem23.Name = "tileItem23";
-            this.tileItem23.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // tileItem24
-            // 
-            this.tileItem24.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem24.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement78.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
-            tileItemElement78.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement78.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement78.Text = "";
-            this.tileItem24.Elements.Add(tileItemElement78);
-            this.tileItem24.Enabled = false;
-            this.tileItem24.Id = 6;
-            this.tileItem24.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem24.Name = "tileItem24";
-            this.tileItem24.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // tileItem25
-            // 
-            this.tileItem25.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem25.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement79.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement79.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement79.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement79.Text = "";
-            this.tileItem25.Elements.Add(tileItemElement79);
-            this.tileItem25.Enabled = false;
-            this.tileItem25.Id = 7;
-            this.tileItem25.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem25.Name = "tileItem25";
-            this.tileItem25.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // navigationPage8
-            // 
-            this.navigationPage8.Appearance.Options.UseFont = true;
-            this.navigationPage8.Controls.Add(this.panel9);
-            this.navigationPage8.Controls.Add(this.panelControl15);
-            this.navigationPage8.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.navigationPage8.Name = "navigationPage8";
-            this.navigationPage8.Size = new System.Drawing.Size(1288, 571);
-            // 
-            // panel9
-            // 
-            this.panel9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel9.BackColor = System.Drawing.Color.Transparent;
-            this.panel9.Controls.Add(this.gridControl7);
-            this.panel9.Controls.Add(this.panel10);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(0, 70);
-            this.panel9.Margin = new System.Windows.Forms.Padding(0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1288, 501);
-            this.panel9.TabIndex = 1185;
-            // 
-            // gridControl7
-            // 
-            this.gridControl7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl7.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.gridControl7.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gridControl7.EmbeddedNavigator.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.gridControl7.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gridControl7.Location = new System.Drawing.Point(0, 76);
-            this.gridControl7.MainView = this.gridView8;
-            this.gridControl7.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.gridControl7.Name = "gridControl7";
-            this.gridControl7.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.gridControl7.Size = new System.Drawing.Size(1288, 425);
-            this.gridControl7.TabIndex = 5;
-            this.gridControl7.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView8});
-            // 
-            // gridView8
-            // 
-            this.gridView8.ActiveFilterEnabled = false;
-            this.gridView8.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView8.Appearance.Empty.Options.UseBackColor = true;
-            this.gridView8.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView8.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gridView8.Appearance.Row.Options.UseBackColor = true;
-            this.gridView8.Appearance.Row.Options.UseFont = true;
-            this.gridView8.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(55)))), ((int)(((byte)(58)))));
-            this.gridView8.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.gridView8.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridView8.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
-            this.gridView8.GridControl = this.gridControl7;
-            this.gridView8.GroupRowHeight = 30;
-            this.gridView8.Name = "gridView8";
-            this.gridView8.OptionsBehavior.Editable = false;
-            this.gridView8.OptionsBehavior.ReadOnly = true;
-            this.gridView8.OptionsCustomization.AllowFilter = false;
-            this.gridView8.OptionsFilter.AllowFilterEditor = false;
-            this.gridView8.OptionsMenu.ShowAutoFilterRowItem = false;
-            this.gridView8.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView8.OptionsView.ShowColumnHeaders = false;
-            this.gridView8.OptionsView.ShowGroupPanel = false;
-            this.gridView8.OptionsView.ShowHorizontalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView8.OptionsView.ShowIndicator = false;
-            this.gridView8.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView8.RowHeight = 30;
-            this.gridView8.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.Transparent;
-            this.panel10.Controls.Add(this.separatorControl37);
-            this.panel10.Controls.Add(this.separatorControl38);
-            this.panel10.Controls.Add(this.separatorControl39);
-            this.panel10.Controls.Add(this.comboBoxEdit30);
-            this.panel10.Controls.Add(this.labelControl103);
-            this.panel10.Controls.Add(this.separatorControl40);
-            this.panel10.Controls.Add(this.comboBoxEdit31);
-            this.panel10.Controls.Add(this.labelControl104);
-            this.panel10.Controls.Add(this.comboBoxEdit32);
-            this.panel10.Controls.Add(this.labelControl105);
-            this.panel10.Controls.Add(this.textEdit20);
-            this.panel10.Controls.Add(this.labelControl106);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1288, 76);
-            this.panel10.TabIndex = 12;
-            // 
-            // separatorControl37
-            // 
-            this.separatorControl37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl37.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl37.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl37.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl37.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl37.LineThickness = 1;
-            this.separatorControl37.Location = new System.Drawing.Point(1060, 12);
-            this.separatorControl37.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl37.Name = "separatorControl37";
-            this.separatorControl37.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl37.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl37.TabIndex = 1219;
-            // 
-            // separatorControl38
-            // 
-            this.separatorControl38.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl38.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl38.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl38.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl38.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl38.LineThickness = 1;
-            this.separatorControl38.Location = new System.Drawing.Point(1154, 12);
-            this.separatorControl38.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl38.Name = "separatorControl38";
-            this.separatorControl38.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl38.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl38.TabIndex = 1217;
-            // 
-            // separatorControl39
-            // 
-            this.separatorControl39.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl39.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl39.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl39.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl39.LineThickness = 1;
-            this.separatorControl39.Location = new System.Drawing.Point(232, 12);
-            this.separatorControl39.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl39.Name = "separatorControl39";
-            this.separatorControl39.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl39.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl39.TabIndex = 1216;
-            // 
-            // comboBoxEdit30
-            // 
-            this.comboBoxEdit30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit30.Location = new System.Drawing.Point(1172, 34);
-            this.comboBoxEdit30.Name = "comboBoxEdit30";
-            this.comboBoxEdit30.Properties.AllowFocused = false;
-            this.comboBoxEdit30.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit30.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit30.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit30.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit30.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit30.Properties.AutoComplete = false;
-            this.comboBoxEdit30.Properties.AutoHeight = false;
-            this.comboBoxEdit30.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit30.Properties.DropDownRows = 12;
-            this.comboBoxEdit30.Properties.Items.AddRange(new object[] {
-            "<All>",
-            "Not Installed",
-            "Installing",
-            "Installed"});
-            this.comboBoxEdit30.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit30.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit30.Size = new System.Drawing.Size(102, 30);
-            this.comboBoxEdit30.TabIndex = 1182;
-            // 
-            // labelControl103
-            // 
-            this.labelControl103.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl103.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl103.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl103.Appearance.Options.UseFont = true;
-            this.labelControl103.Appearance.Options.UseForeColor = true;
-            this.labelControl103.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl103.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl103.Location = new System.Drawing.Point(1169, 12);
-            this.labelControl103.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl103.Name = "labelControl103";
-            this.labelControl103.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl103.Size = new System.Drawing.Size(44, 17);
-            this.labelControl103.TabIndex = 1183;
-            this.labelControl103.Text = "Status";
-            // 
-            // separatorControl40
-            // 
-            this.separatorControl40.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl40.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.separatorControl40.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl40.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl40.LineThickness = 1;
-            this.separatorControl40.Location = new System.Drawing.Point(0, 73);
-            this.separatorControl40.Margin = new System.Windows.Forms.Padding(0);
-            this.separatorControl40.Name = "separatorControl40";
-            this.separatorControl40.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl40.Size = new System.Drawing.Size(1288, 3);
-            this.separatorControl40.TabIndex = 1172;
-            // 
-            // comboBoxEdit31
-            // 
-            this.comboBoxEdit31.Location = new System.Drawing.Point(0, 34);
-            this.comboBoxEdit31.Name = "comboBoxEdit31";
-            this.comboBoxEdit31.Properties.AllowFocused = false;
-            this.comboBoxEdit31.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit31.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit31.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit31.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit31.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit31.Properties.AutoComplete = false;
-            this.comboBoxEdit31.Properties.AutoHeight = false;
-            this.comboBoxEdit31.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit31.Properties.DropDownRows = 15;
-            this.comboBoxEdit31.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit31.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit31.Size = new System.Drawing.Size(220, 30);
-            this.comboBoxEdit31.TabIndex = 1170;
-            // 
-            // labelControl104
-            // 
-            this.labelControl104.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl104.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl104.Appearance.Options.UseFont = true;
-            this.labelControl104.Appearance.Options.UseForeColor = true;
-            this.labelControl104.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl104.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl104.Location = new System.Drawing.Point(-3, 12);
-            this.labelControl104.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl104.Name = "labelControl104";
-            this.labelControl104.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl104.Size = new System.Drawing.Size(61, 17);
-            this.labelControl104.TabIndex = 1171;
-            this.labelControl104.Text = "Category";
-            // 
-            // comboBoxEdit32
-            // 
-            this.comboBoxEdit32.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit32.Location = new System.Drawing.Point(1078, 34);
-            this.comboBoxEdit32.Name = "comboBoxEdit32";
-            this.comboBoxEdit32.Properties.AllowFocused = false;
-            this.comboBoxEdit32.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit32.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit32.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit32.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit32.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit32.Properties.AutoComplete = false;
-            this.comboBoxEdit32.Properties.AutoHeight = false;
-            this.comboBoxEdit32.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit32.Properties.DropDownRows = 12;
-            this.comboBoxEdit32.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit32.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit32.Size = new System.Drawing.Size(64, 30);
-            this.comboBoxEdit32.TabIndex = 1164;
-            // 
-            // labelControl105
-            // 
-            this.labelControl105.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl105.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl105.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl105.Appearance.Options.UseFont = true;
-            this.labelControl105.Appearance.Options.UseForeColor = true;
-            this.labelControl105.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl105.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl105.Location = new System.Drawing.Point(1075, 12);
-            this.labelControl105.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl105.Name = "labelControl105";
-            this.labelControl105.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl105.Size = new System.Drawing.Size(53, 17);
-            this.labelControl105.TabIndex = 1165;
-            this.labelControl105.Text = "Version";
-            // 
-            // textEdit20
-            // 
-            this.textEdit20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit20.Location = new System.Drawing.Point(250, 34);
-            this.textEdit20.Name = "textEdit20";
-            this.textEdit20.Properties.AllowFocused = false;
-            this.textEdit20.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.textEdit20.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textEdit20.Properties.Appearance.Options.UseFont = true;
-            this.textEdit20.Properties.AutoHeight = false;
-            this.textEdit20.Properties.NullValuePrompt = "Search...";
-            this.textEdit20.Size = new System.Drawing.Size(798, 30);
-            this.textEdit20.TabIndex = 1;
-            // 
-            // labelControl106
-            // 
-            this.labelControl106.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl106.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl106.Appearance.Options.UseFont = true;
-            this.labelControl106.Appearance.Options.UseForeColor = true;
-            this.labelControl106.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl106.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl106.Location = new System.Drawing.Point(247, 12);
-            this.labelControl106.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl106.Name = "labelControl106";
-            this.labelControl106.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl106.Size = new System.Drawing.Size(42, 17);
-            this.labelControl106.TabIndex = 1157;
-            this.labelControl106.Text = "Name";
-            // 
-            // panelControl15
-            // 
-            this.panelControl15.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.panelControl15.Appearance.Options.UseBackColor = true;
-            this.panelControl15.Controls.Add(this.tileControl8);
-            this.panelControl15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl15.Location = new System.Drawing.Point(0, 0);
-            this.panelControl15.LookAndFeel.SkinName = "WXI";
-            this.panelControl15.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.panelControl15.Margin = new System.Windows.Forms.Padding(0);
-            this.panelControl15.Name = "panelControl15";
-            this.panelControl15.Size = new System.Drawing.Size(1288, 70);
-            this.panelControl15.TabIndex = 1186;
-            // 
-            // tileControl8
-            // 
-            this.tileControl8.AllowDisabledStateIndication = false;
-            this.tileControl8.AllowDrag = false;
-            this.tileControl8.AllowDragTilesBetweenGroups = false;
-            this.tileControl8.AllowGlyphSkinning = true;
-            this.tileControl8.AllowItemHover = true;
-            this.tileControl8.AllowSelectedItemBorder = false;
-            this.tileControl8.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileControl8.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileControl8.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileControl8.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.tileControl8.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileControl8.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileControl8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.tileControl8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tileControl8.Groups.Add(this.tileGroup8);
-            this.tileControl8.HorizontalContentAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.tileControl8.IndentBetweenItems = 2;
-            this.tileControl8.ItemBorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            this.tileControl8.ItemContentAnimation = DevExpress.XtraEditors.TileItemContentAnimationType.Fade;
-            this.tileControl8.ItemImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileControl8.ItemImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            this.tileControl8.ItemPadding = new System.Windows.Forms.Padding(0);
-            this.tileControl8.ItemSize = 98;
-            this.tileControl8.ItemTextShowMode = DevExpress.XtraEditors.TileItemContentShowMode.Always;
-            this.tileControl8.Location = new System.Drawing.Point(2, 2);
-            this.tileControl8.MaxId = 9;
-            this.tileControl8.Name = "tileControl8";
-            this.tileControl8.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileControl8.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.tileControl8.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
-            this.tileControl8.Size = new System.Drawing.Size(1284, 66);
-            this.tileControl8.TabIndex = 1;
-            this.tileControl8.Text = "TileControlModsActions";
-            // 
-            // tileGroup8
-            // 
-            this.tileGroup8.Items.Add(this.tileItem26);
-            this.tileGroup8.Items.Add(this.tileItem27);
-            this.tileGroup8.Items.Add(this.tileItem28);
-            this.tileGroup8.Items.Add(this.tileItem29);
-            this.tileGroup8.Items.Add(this.tileItem30);
-            this.tileGroup8.Name = "tileGroup8";
-            this.tileGroup8.Text = "Plugins Actions";
-            // 
-            // tileItem26
-            // 
-            this.tileItem26.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem26.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.tileItem26.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem26.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem26.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem26.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.tileItem26.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tileItem26.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement80.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
-            tileItemElement80.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement80.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement80.Text = "";
-            tileItemElement80.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem26.Elements.Add(tileItemElement80);
-            this.tileItem26.Id = 2;
-            this.tileItem26.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem26.Name = "tileItem26";
-            this.tileItem26.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // tileItem27
-            // 
-            this.tileItem27.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem27.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.tileItem27.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem27.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem27.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem27.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.tileItem27.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tileItem27.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement81.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement81.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement81.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement81.Text = "";
-            tileItemElement81.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem27.Elements.Add(tileItemElement81);
-            this.tileItem27.Id = 1;
-            this.tileItem27.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem27.Name = "tileItem27";
-            this.tileItem27.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // tileItem28
-            // 
-            this.tileItem28.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement82.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement82.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
-            tileItemElement82.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement82.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement82.Text = "";
-            this.tileItem28.Elements.Add(tileItemElement82);
-            this.tileItem28.Enabled = false;
-            this.tileItem28.Id = 6;
-            this.tileItem28.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem28.Name = "tileItem28";
-            this.tileItem28.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // tileItem29
-            // 
-            this.tileItem29.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement83.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement83.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement83.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement83.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement83.Text = "";
-            this.tileItem29.Elements.Add(tileItemElement83);
-            this.tileItem29.Enabled = false;
-            this.tileItem29.Id = 7;
-            this.tileItem29.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem29.Name = "tileItem29";
-            this.tileItem29.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // tileItem30
-            // 
-            this.tileItem30.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement84.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement84.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement84.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement84.Text = "";
-            this.tileItem30.Elements.Add(tileItemElement84);
-            this.tileItem30.Enabled = false;
-            this.tileItem30.Id = 8;
-            this.tileItem30.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem30.Name = "tileItem30";
-            this.tileItem30.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // navigationPage9
-            // 
-            this.navigationPage9.Appearance.Options.UseFont = true;
-            this.navigationPage9.Controls.Add(this.panel11);
-            this.navigationPage9.Controls.Add(this.panelControl16);
-            this.navigationPage9.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.navigationPage9.Name = "navigationPage9";
-            this.navigationPage9.Size = new System.Drawing.Size(1288, 571);
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.Transparent;
-            this.panel11.Controls.Add(this.gridControl8);
-            this.panel11.Controls.Add(this.panel13);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(0, 70);
-            this.panel11.Margin = new System.Windows.Forms.Padding(0);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1288, 501);
-            this.panel11.TabIndex = 1183;
-            // 
-            // gridControl8
-            // 
-            this.gridControl8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl8.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gridControl8.Location = new System.Drawing.Point(0, 76);
-            this.gridControl8.MainView = this.gridView9;
-            this.gridControl8.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.gridControl8.Name = "gridControl8";
-            this.gridControl8.Size = new System.Drawing.Size(1288, 425);
-            this.gridControl8.TabIndex = 5;
-            this.gridControl8.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView9});
-            // 
-            // gridView9
-            // 
-            this.gridView9.ActiveFilterEnabled = false;
-            this.gridView9.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView9.Appearance.Empty.Options.UseBackColor = true;
-            this.gridView9.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView9.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gridView9.Appearance.Row.Options.UseBackColor = true;
-            this.gridView9.Appearance.Row.Options.UseFont = true;
-            this.gridView9.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(55)))), ((int)(((byte)(58)))));
-            this.gridView9.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.gridView9.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridView9.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
-            this.gridView9.GridControl = this.gridControl8;
-            this.gridView9.GroupRowHeight = 30;
-            this.gridView9.Name = "gridView9";
-            this.gridView9.OptionsBehavior.Editable = false;
-            this.gridView9.OptionsBehavior.ReadOnly = true;
-            this.gridView9.OptionsCustomization.AllowFilter = false;
-            this.gridView9.OptionsFilter.AllowFilterEditor = false;
-            this.gridView9.OptionsMenu.ShowAutoFilterRowItem = false;
-            this.gridView9.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView9.OptionsView.ShowColumnHeaders = false;
-            this.gridView9.OptionsView.ShowGroupPanel = false;
-            this.gridView9.OptionsView.ShowHorizontalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView9.OptionsView.ShowIndicator = false;
-            this.gridView9.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView9.RowHeight = 30;
-            this.gridView9.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.Transparent;
-            this.panel13.Controls.Add(this.separatorControl41);
-            this.panel13.Controls.Add(this.separatorControl42);
-            this.panel13.Controls.Add(this.separatorControl43);
-            this.panel13.Controls.Add(this.separatorControl44);
-            this.panel13.Controls.Add(this.separatorControl45);
-            this.panel13.Controls.Add(this.pictureEdit7);
-            this.panel13.Controls.Add(this.pictureEdit8);
-            this.panel13.Controls.Add(this.labelControl107);
-            this.panel13.Controls.Add(this.dateEdit3);
-            this.panel13.Controls.Add(this.pictureEdit9);
-            this.panel13.Controls.Add(this.labelControl108);
-            this.panel13.Controls.Add(this.separatorControl46);
-            this.panel13.Controls.Add(this.comboBoxEdit33);
-            this.panel13.Controls.Add(this.labelControl109);
-            this.panel13.Controls.Add(this.textEdit21);
-            this.panel13.Controls.Add(this.comboBoxEdit34);
-            this.panel13.Controls.Add(this.labelControl110);
-            this.panel13.Controls.Add(this.labelControl111);
-            this.panel13.Controls.Add(this.comboBoxEdit35);
-            this.panel13.Controls.Add(this.labelControl112);
-            this.panel13.Controls.Add(this.pictureEdit10);
-            this.panel13.Controls.Add(this.spinEdit2);
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel13.Location = new System.Drawing.Point(0, 0);
-            this.panel13.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(1288, 76);
-            this.panel13.TabIndex = 12;
-            // 
-            // separatorControl41
-            // 
-            this.separatorControl41.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl41.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl41.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl41.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl41.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl41.LineThickness = 1;
-            this.separatorControl41.Location = new System.Drawing.Point(1042, 12);
-            this.separatorControl41.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl41.Name = "separatorControl41";
-            this.separatorControl41.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl41.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl41.TabIndex = 1216;
-            // 
-            // separatorControl42
-            // 
-            this.separatorControl42.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl42.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl42.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl42.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl42.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl42.LineThickness = 1;
-            this.separatorControl42.Location = new System.Drawing.Point(911, 12);
-            this.separatorControl42.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl42.Name = "separatorControl42";
-            this.separatorControl42.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl42.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl42.TabIndex = 1215;
-            // 
-            // separatorControl43
-            // 
-            this.separatorControl43.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl43.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl43.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl43.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl43.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl43.LineThickness = 1;
-            this.separatorControl43.Location = new System.Drawing.Point(1154, 12);
-            this.separatorControl43.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl43.Name = "separatorControl43";
-            this.separatorControl43.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl43.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl43.TabIndex = 1214;
-            // 
-            // separatorControl44
-            // 
-            this.separatorControl44.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl44.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl44.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl44.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl44.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl44.LineThickness = 1;
-            this.separatorControl44.Location = new System.Drawing.Point(799, 12);
-            this.separatorControl44.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl44.Name = "separatorControl44";
-            this.separatorControl44.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl44.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl44.TabIndex = 1213;
-            // 
-            // separatorControl45
-            // 
-            this.separatorControl45.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl45.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl45.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl45.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl45.LineThickness = 1;
-            this.separatorControl45.Location = new System.Drawing.Point(81, 12);
-            this.separatorControl45.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl45.Name = "separatorControl45";
-            this.separatorControl45.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl45.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl45.TabIndex = 1212;
-            // 
-            // pictureEdit7
-            // 
-            this.pictureEdit7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureEdit7.Location = new System.Drawing.Point(1064, 41);
-            this.pictureEdit7.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.pictureEdit7.Name = "pictureEdit7";
-            this.pictureEdit7.Properties.AllowFocused = false;
-            this.pictureEdit7.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.pictureEdit7.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.pictureEdit7.Properties.Appearance.Options.UseFont = true;
-            this.pictureEdit7.Properties.Appearance.Options.UseForeColor = true;
-            this.pictureEdit7.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit7.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit7.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit7.Size = new System.Drawing.Size(14, 14);
-            this.pictureEdit7.TabIndex = 1199;
-            // 
-            // pictureEdit8
-            // 
-            this.pictureEdit8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureEdit8.Location = new System.Drawing.Point(1060, 34);
-            this.pictureEdit8.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.pictureEdit8.Name = "pictureEdit8";
-            this.pictureEdit8.Properties.AllowFocused = false;
-            this.pictureEdit8.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(55)))), ((int)(((byte)(58)))));
-            this.pictureEdit8.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.pictureEdit8.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.pictureEdit8.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit8.Properties.Appearance.Options.UseFont = true;
-            this.pictureEdit8.Properties.Appearance.Options.UseForeColor = true;
-            this.pictureEdit8.Properties.NullText = " ";
-            this.pictureEdit8.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit8.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit8.Size = new System.Drawing.Size(22, 30);
-            this.pictureEdit8.TabIndex = 1200;
-            // 
-            // labelControl107
-            // 
-            this.labelControl107.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl107.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl107.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl107.Appearance.Options.UseFont = true;
-            this.labelControl107.Appearance.Options.UseForeColor = true;
-            this.labelControl107.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl107.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl107.Location = new System.Drawing.Point(1057, 12);
-            this.labelControl107.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl107.Name = "labelControl107";
-            this.labelControl107.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl107.Size = new System.Drawing.Size(56, 17);
-            this.labelControl107.TabIndex = 1196;
-            this.labelControl107.Text = "File Size";
-            // 
-            // dateEdit3
-            // 
-            this.dateEdit3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateEdit3.EditValue = null;
-            this.dateEdit3.Location = new System.Drawing.Point(950, 34);
-            this.dateEdit3.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.dateEdit3.Name = "dateEdit3";
-            this.dateEdit3.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.dateEdit3.Properties.Appearance.Options.UseFont = true;
-            this.dateEdit3.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.dateEdit3.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.dateEdit3.Properties.AutoHeight = false;
-            this.dateEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit3.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;
-            this.dateEdit3.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit3.Properties.CalendarTimeProperties.DisplayFormat.FormatString = "MM/dd/yyyy";
-            this.dateEdit3.Properties.CalendarTimeProperties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dateEdit3.Properties.CalendarTimeProperties.EditFormat.FormatString = "MM/dd/yyyy";
-            this.dateEdit3.Properties.CalendarTimeProperties.TouchUIMaxValue = new System.DateTime(9999, 12, 31, 0, 0, 0, 0);
-            this.dateEdit3.Properties.CalendarTimeProperties.UseMaskAsDisplayFormat = true;
-            this.dateEdit3.Properties.DisplayFormat.FormatString = "MM/dd/yyyy";
-            this.dateEdit3.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dateEdit3.Properties.EditFormat.FormatString = "MM/dd/yyyy";
-            this.dateEdit3.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dateEdit3.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
-            this.dateEdit3.Properties.MaskSettings.Set("mask", "MM/dd/yyyy");
-            this.dateEdit3.Properties.NullDate = "";
-            this.dateEdit3.Properties.NullValuePrompt = "Select...";
-            this.dateEdit3.Properties.UseMaskAsDisplayFormat = true;
-            this.dateEdit3.Size = new System.Drawing.Size(80, 30);
-            this.dateEdit3.TabIndex = 1191;
-            // 
-            // pictureEdit9
-            // 
-            this.pictureEdit9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureEdit9.Location = new System.Drawing.Point(933, 42);
-            this.pictureEdit9.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.pictureEdit9.Name = "pictureEdit9";
-            this.pictureEdit9.Properties.AllowFocused = false;
-            this.pictureEdit9.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.pictureEdit9.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.pictureEdit9.Properties.Appearance.Options.UseFont = true;
-            this.pictureEdit9.Properties.Appearance.Options.UseForeColor = true;
-            this.pictureEdit9.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit9.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit9.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit9.Size = new System.Drawing.Size(14, 14);
-            this.pictureEdit9.TabIndex = 1194;
-            // 
-            // labelControl108
-            // 
-            this.labelControl108.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl108.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl108.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl108.Appearance.Options.UseFont = true;
-            this.labelControl108.Appearance.Options.UseForeColor = true;
-            this.labelControl108.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl108.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl108.Location = new System.Drawing.Point(926, 12);
-            this.labelControl108.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl108.Name = "labelControl108";
-            this.labelControl108.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl108.Size = new System.Drawing.Size(95, 17);
-            this.labelControl108.TabIndex = 1190;
-            this.labelControl108.Text = "Modified Date";
-            // 
-            // separatorControl46
-            // 
-            this.separatorControl46.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl46.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.separatorControl46.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl46.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl46.LineThickness = 1;
-            this.separatorControl46.Location = new System.Drawing.Point(0, 73);
-            this.separatorControl46.Margin = new System.Windows.Forms.Padding(0);
-            this.separatorControl46.Name = "separatorControl46";
-            this.separatorControl46.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl46.Size = new System.Drawing.Size(1288, 3);
-            this.separatorControl46.TabIndex = 1172;
-            // 
-            // comboBoxEdit33
-            // 
-            this.comboBoxEdit33.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit33.Location = new System.Drawing.Point(1172, 34);
-            this.comboBoxEdit33.Name = "comboBoxEdit33";
-            this.comboBoxEdit33.Properties.AllowFocused = false;
-            this.comboBoxEdit33.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit33.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit33.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit33.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit33.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit33.Properties.AutoComplete = false;
-            this.comboBoxEdit33.Properties.AutoHeight = false;
-            this.comboBoxEdit33.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit33.Properties.Items.AddRange(new object[] {
-            "<All>",
-            "Downloaded",
-            "Not Installed",
-            "Installed"});
-            this.comboBoxEdit33.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit33.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit33.Size = new System.Drawing.Size(102, 30);
-            this.comboBoxEdit33.TabIndex = 1168;
-            // 
-            // labelControl109
-            // 
-            this.labelControl109.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl109.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl109.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl109.Appearance.Options.UseFont = true;
-            this.labelControl109.Appearance.Options.UseForeColor = true;
-            this.labelControl109.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl109.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl109.Location = new System.Drawing.Point(1169, 12);
-            this.labelControl109.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl109.Name = "labelControl109";
-            this.labelControl109.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl109.Size = new System.Drawing.Size(44, 17);
-            this.labelControl109.TabIndex = 1169;
-            this.labelControl109.Text = "Status";
-            // 
-            // textEdit21
-            // 
-            this.textEdit21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit21.Location = new System.Drawing.Point(99, 34);
-            this.textEdit21.Name = "textEdit21";
-            this.textEdit21.Properties.AllowFocused = false;
-            this.textEdit21.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.textEdit21.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textEdit21.Properties.Appearance.Options.UseFont = true;
-            this.textEdit21.Properties.AutoHeight = false;
-            this.textEdit21.Properties.EditValueChangedDelay = 1500;
-            this.textEdit21.Properties.NullValuePrompt = "Search...";
-            this.textEdit21.Size = new System.Drawing.Size(688, 30);
-            this.textEdit21.TabIndex = 1;
-            // 
-            // comboBoxEdit34
-            // 
-            this.comboBoxEdit34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit34.Location = new System.Drawing.Point(817, 34);
-            this.comboBoxEdit34.Name = "comboBoxEdit34";
-            this.comboBoxEdit34.Properties.AllowFocused = false;
-            this.comboBoxEdit34.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit34.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit34.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit34.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit34.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit34.Properties.AutoComplete = false;
-            this.comboBoxEdit34.Properties.AutoHeight = false;
-            this.comboBoxEdit34.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit34.Properties.DropDownRows = 12;
-            this.comboBoxEdit34.Properties.Items.AddRange(new object[] {
-            "<ALL>",
-            "EU",
-            "US",
-            "JP",
-            "ASIA"});
-            this.comboBoxEdit34.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit34.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit34.Size = new System.Drawing.Size(82, 30);
-            this.comboBoxEdit34.TabIndex = 4;
-            // 
-            // labelControl110
-            // 
-            this.labelControl110.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl110.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl110.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl110.Appearance.Options.UseFont = true;
-            this.labelControl110.Appearance.Options.UseForeColor = true;
-            this.labelControl110.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl110.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl110.Location = new System.Drawing.Point(814, 12);
-            this.labelControl110.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl110.Name = "labelControl110";
-            this.labelControl110.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl110.Size = new System.Drawing.Size(49, 17);
-            this.labelControl110.TabIndex = 1163;
-            this.labelControl110.Text = "Region";
-            // 
-            // labelControl111
-            // 
-            this.labelControl111.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl111.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl111.Appearance.Options.UseFont = true;
-            this.labelControl111.Appearance.Options.UseForeColor = true;
-            this.labelControl111.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl111.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl111.Location = new System.Drawing.Point(96, 12);
-            this.labelControl111.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl111.Name = "labelControl111";
-            this.labelControl111.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl111.Size = new System.Drawing.Size(42, 17);
-            this.labelControl111.TabIndex = 1157;
-            this.labelControl111.Text = "Name";
-            // 
-            // comboBoxEdit35
-            // 
-            this.comboBoxEdit35.Location = new System.Drawing.Point(0, 34);
-            this.comboBoxEdit35.Name = "comboBoxEdit35";
-            this.comboBoxEdit35.Properties.AllowFocused = false;
-            this.comboBoxEdit35.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit35.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit35.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit35.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit35.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit35.Properties.AutoComplete = false;
-            this.comboBoxEdit35.Properties.AutoHeight = false;
-            this.comboBoxEdit35.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit35.Properties.DropDownRows = 15;
-            this.comboBoxEdit35.Properties.Items.AddRange(new object[] {
-            "<ALL>",
-            "Games",
-            "Demos",
-            "DLCs",
-            "Avatars",
-            "Themes"});
-            this.comboBoxEdit35.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit35.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit35.Size = new System.Drawing.Size(69, 30);
-            this.comboBoxEdit35.TabIndex = 1187;
-            // 
-            // labelControl112
-            // 
-            this.labelControl112.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl112.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl112.Appearance.Options.UseFont = true;
-            this.labelControl112.Appearance.Options.UseForeColor = true;
-            this.labelControl112.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl112.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl112.Location = new System.Drawing.Point(-3, 12);
-            this.labelControl112.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl112.Name = "labelControl112";
-            this.labelControl112.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl112.Size = new System.Drawing.Size(61, 17);
-            this.labelControl112.TabIndex = 1188;
-            this.labelControl112.Text = "Category";
-            // 
-            // pictureEdit10
-            // 
-            this.pictureEdit10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureEdit10.Location = new System.Drawing.Point(929, 34);
-            this.pictureEdit10.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.pictureEdit10.Name = "pictureEdit10";
-            this.pictureEdit10.Properties.AllowFocused = false;
-            this.pictureEdit10.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(55)))), ((int)(((byte)(58)))));
-            this.pictureEdit10.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.pictureEdit10.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.pictureEdit10.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit10.Properties.Appearance.Options.UseFont = true;
-            this.pictureEdit10.Properties.Appearance.Options.UseForeColor = true;
-            this.pictureEdit10.Properties.NullText = " ";
-            this.pictureEdit10.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit10.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit10.Size = new System.Drawing.Size(22, 30);
-            this.pictureEdit10.TabIndex = 1197;
-            // 
-            // spinEdit2
-            // 
-            this.spinEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.spinEdit2.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.spinEdit2.Location = new System.Drawing.Point(1081, 34);
-            this.spinEdit2.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.spinEdit2.Name = "spinEdit2";
-            this.spinEdit2.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.spinEdit2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.spinEdit2.Properties.Appearance.Options.UseFont = true;
-            this.spinEdit2.Properties.AutoHeight = false;
-            this.spinEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinEdit2.Properties.DisplayFormat.FormatString = "#### B";
-            this.spinEdit2.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.spinEdit2.Properties.EditFormat.FormatString = "#### B";
-            this.spinEdit2.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.spinEdit2.Properties.IsFloatValue = false;
-            this.spinEdit2.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.spinEdit2.Properties.MaskSettings.Set("mask", "#### B");
-            this.spinEdit2.Properties.NullText = "0";
-            this.spinEdit2.Properties.NullValuePrompt = "Select...";
-            this.spinEdit2.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.False;
-            this.spinEdit2.Properties.UseMaskAsDisplayFormat = true;
-            this.spinEdit2.Size = new System.Drawing.Size(61, 30);
-            this.spinEdit2.TabIndex = 1198;
-            // 
-            // panelControl16
-            // 
-            this.panelControl16.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.panelControl16.Appearance.Options.UseBackColor = true;
-            this.panelControl16.Controls.Add(this.tileControl9);
-            this.panelControl16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl16.Location = new System.Drawing.Point(0, 0);
-            this.panelControl16.LookAndFeel.SkinName = "WXI";
-            this.panelControl16.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.panelControl16.Margin = new System.Windows.Forms.Padding(0);
-            this.panelControl16.Name = "panelControl16";
-            this.panelControl16.Size = new System.Drawing.Size(1288, 70);
-            this.panelControl16.TabIndex = 1184;
-            // 
-            // tileControl9
-            // 
-            this.tileControl9.AllowDisabledStateIndication = false;
-            this.tileControl9.AllowDrag = false;
-            this.tileControl9.AllowDragTilesBetweenGroups = false;
-            this.tileControl9.AllowGlyphSkinning = true;
-            this.tileControl9.AllowItemHover = true;
-            this.tileControl9.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileControl9.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileControl9.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileControl9.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileControl9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.tileControl9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tileControl9.Groups.Add(this.tileGroup9);
-            this.tileControl9.HorizontalContentAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.tileControl9.IndentBetweenItems = 2;
-            this.tileControl9.ItemContentAnimation = DevExpress.XtraEditors.TileItemContentAnimationType.Fade;
-            this.tileControl9.ItemImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileControl9.ItemPadding = new System.Windows.Forms.Padding(0);
-            this.tileControl9.ItemSize = 98;
-            this.tileControl9.ItemTextShowMode = DevExpress.XtraEditors.TileItemContentShowMode.Always;
-            this.tileControl9.Location = new System.Drawing.Point(2, 2);
-            this.tileControl9.MaxId = 11;
-            this.tileControl9.Name = "tileControl9";
-            this.tileControl9.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileControl9.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.tileControl9.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
-            this.tileControl9.Size = new System.Drawing.Size(1284, 66);
-            this.tileControl9.TabIndex = 1;
-            this.tileControl9.Text = "TileControlModsActions";
-            // 
-            // tileGroup9
-            // 
-            this.tileGroup9.Items.Add(this.tileItem31);
-            this.tileGroup9.Items.Add(this.tileItem32);
-            this.tileGroup9.Items.Add(this.tileItem33);
-            this.tileGroup9.Items.Add(this.tileItem34);
-            this.tileGroup9.Name = "tileGroup9";
-            this.tileGroup9.Text = "Packages Actions";
-            // 
-            // tileItem31
-            // 
-            this.tileItem31.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem31.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem31.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem31.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem31.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem31.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.tileItem31.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tileItem31.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement85.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement85.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement85.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement85.Text = "";
-            tileItemElement85.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem31.Elements.Add(tileItemElement85);
-            this.tileItem31.Id = 1;
-            this.tileItem31.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem31.Name = "tileItem31";
-            this.tileItem31.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // tileItem32
-            // 
-            this.tileItem32.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem32.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem32.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem32.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem32.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem32.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement86.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_install;
-            tileItemElement86.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement86.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement86.Text = "";
-            this.tileItem32.Elements.Add(tileItemElement86);
-            this.tileItem32.Enabled = false;
-            this.tileItem32.Id = 10;
-            this.tileItem32.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem32.Name = "tileItem32";
-            this.tileItem32.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // tileItem33
-            // 
-            this.tileItem33.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem33.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem33.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement87.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
-            tileItemElement87.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement87.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement87.Text = "";
-            this.tileItem33.Elements.Add(tileItemElement87);
-            this.tileItem33.Enabled = false;
-            this.tileItem33.Id = 8;
-            this.tileItem33.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem33.Name = "tileItem33";
-            this.tileItem33.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // tileItem34
-            // 
-            this.tileItem34.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem34.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem34.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement88.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement88.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement88.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement88.Text = "";
-            this.tileItem34.Elements.Add(tileItemElement88);
-            this.tileItem34.Enabled = false;
-            this.tileItem34.Id = 9;
-            this.tileItem34.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem34.Name = "tileItem34";
-            this.tileItem34.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // navigationPage10
-            // 
-            this.navigationPage10.Appearance.Options.UseFont = true;
-            this.navigationPage10.Controls.Add(this.panel14);
-            this.navigationPage10.Controls.Add(this.panelControl17);
-            this.navigationPage10.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.navigationPage10.Name = "navigationPage10";
-            this.navigationPage10.Size = new System.Drawing.Size(1288, 571);
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.Transparent;
-            this.panel14.Controls.Add(this.gridControl9);
-            this.panel14.Controls.Add(this.panel15);
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel14.Location = new System.Drawing.Point(0, 70);
-            this.panel14.Margin = new System.Windows.Forms.Padding(0);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(1288, 501);
-            this.panel14.TabIndex = 1216;
-            // 
-            // gridControl9
-            // 
-            this.gridControl9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl9.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gridControl9.Location = new System.Drawing.Point(0, 76);
-            this.gridControl9.MainView = this.gridView10;
-            this.gridControl9.Margin = new System.Windows.Forms.Padding(0);
-            this.gridControl9.Name = "gridControl9";
-            this.gridControl9.Size = new System.Drawing.Size(1288, 425);
-            this.gridControl9.TabIndex = 5;
-            this.gridControl9.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView10});
-            // 
-            // gridView10
-            // 
-            this.gridView10.ActiveFilterEnabled = false;
-            this.gridView10.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView10.Appearance.Empty.Options.UseBackColor = true;
-            this.gridView10.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView10.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gridView10.Appearance.Row.Options.UseBackColor = true;
-            this.gridView10.Appearance.Row.Options.UseFont = true;
-            this.gridView10.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(55)))), ((int)(((byte)(58)))));
-            this.gridView10.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.gridView10.AppearancePrint.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.gridView10.AppearancePrint.Row.Options.UseBackColor = true;
-            this.gridView10.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridView10.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
-            this.gridView10.GridControl = this.gridControl9;
-            this.gridView10.GroupRowHeight = 30;
-            this.gridView10.Name = "gridView10";
-            this.gridView10.OptionsBehavior.Editable = false;
-            this.gridView10.OptionsBehavior.ReadOnly = true;
-            this.gridView10.OptionsCustomization.AllowFilter = false;
-            this.gridView10.OptionsFilter.AllowFilterEditor = false;
-            this.gridView10.OptionsMenu.ShowAutoFilterRowItem = false;
-            this.gridView10.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView10.OptionsView.ShowColumnHeaders = false;
-            this.gridView10.OptionsView.ShowGroupPanel = false;
-            this.gridView10.OptionsView.ShowHorizontalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView10.OptionsView.ShowIndicator = false;
-            this.gridView10.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView10.RowHeight = 30;
-            this.gridView10.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
-            // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.Color.Transparent;
-            this.panel15.Controls.Add(this.separatorControl47);
-            this.panel15.Controls.Add(this.separatorControl48);
-            this.panel15.Controls.Add(this.separatorControl49);
-            this.panel15.Controls.Add(this.separatorControl50);
-            this.panel15.Controls.Add(this.separatorControl51);
-            this.panel15.Controls.Add(this.comboBoxEdit36);
-            this.panel15.Controls.Add(this.separatorControl52);
-            this.panel15.Controls.Add(this.comboBoxEdit37);
-            this.panel15.Controls.Add(this.labelControl113);
-            this.panel15.Controls.Add(this.comboBoxEdit38);
-            this.panel15.Controls.Add(this.labelControl114);
-            this.panel15.Controls.Add(this.comboBoxEdit39);
-            this.panel15.Controls.Add(this.labelControl115);
-            this.panel15.Controls.Add(this.textEdit22);
-            this.panel15.Controls.Add(this.comboBoxEdit40);
-            this.panel15.Controls.Add(this.labelControl116);
-            this.panel15.Controls.Add(this.labelControl117);
-            this.panel15.Controls.Add(this.labelControl118);
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel15.Location = new System.Drawing.Point(0, 0);
-            this.panel15.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(1288, 76);
-            this.panel15.TabIndex = 12;
-            // 
-            // separatorControl47
-            // 
-            this.separatorControl47.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl47.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl47.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl47.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl47.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl47.LineThickness = 1;
-            this.separatorControl47.Location = new System.Drawing.Point(819, 12);
-            this.separatorControl47.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl47.Name = "separatorControl47";
-            this.separatorControl47.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl47.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl47.TabIndex = 1216;
-            // 
-            // separatorControl48
-            // 
-            this.separatorControl48.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl48.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl48.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl48.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl48.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl48.LineThickness = 1;
-            this.separatorControl48.Location = new System.Drawing.Point(930, 12);
-            this.separatorControl48.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl48.Name = "separatorControl48";
-            this.separatorControl48.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl48.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl48.TabIndex = 1215;
-            // 
-            // separatorControl49
-            // 
-            this.separatorControl49.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl49.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl49.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl49.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl49.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl49.LineThickness = 1;
-            this.separatorControl49.Location = new System.Drawing.Point(1060, 12);
-            this.separatorControl49.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl49.Name = "separatorControl49";
-            this.separatorControl49.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl49.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl49.TabIndex = 1214;
-            // 
-            // separatorControl50
-            // 
-            this.separatorControl50.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl50.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl50.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl50.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl50.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl50.LineThickness = 1;
-            this.separatorControl50.Location = new System.Drawing.Point(1154, 12);
-            this.separatorControl50.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl50.Name = "separatorControl50";
-            this.separatorControl50.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl50.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl50.TabIndex = 1213;
-            // 
-            // separatorControl51
-            // 
-            this.separatorControl51.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl51.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl51.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl51.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl51.LineThickness = 1;
-            this.separatorControl51.Location = new System.Drawing.Point(232, 12);
-            this.separatorControl51.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl51.Name = "separatorControl51";
-            this.separatorControl51.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl51.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl51.TabIndex = 1212;
-            // 
-            // comboBoxEdit36
-            // 
-            this.comboBoxEdit36.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit36.Location = new System.Drawing.Point(948, 34);
-            this.comboBoxEdit36.Name = "comboBoxEdit36";
-            this.comboBoxEdit36.Properties.AllowFocused = false;
-            this.comboBoxEdit36.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit36.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit36.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit36.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit36.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit36.Properties.AutoComplete = false;
-            this.comboBoxEdit36.Properties.AutoHeight = false;
-            this.comboBoxEdit36.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit36.Properties.DropDownRows = 12;
-            this.comboBoxEdit36.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit36.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit36.Size = new System.Drawing.Size(100, 30);
-            this.comboBoxEdit36.TabIndex = 1173;
-            // 
-            // separatorControl52
-            // 
-            this.separatorControl52.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl52.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.separatorControl52.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl52.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl52.LineThickness = 1;
-            this.separatorControl52.Location = new System.Drawing.Point(0, 73);
-            this.separatorControl52.Margin = new System.Windows.Forms.Padding(0);
-            this.separatorControl52.Name = "separatorControl52";
-            this.separatorControl52.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl52.Size = new System.Drawing.Size(1288, 3);
-            this.separatorControl52.TabIndex = 1172;
-            // 
-            // comboBoxEdit37
-            // 
-            this.comboBoxEdit37.Location = new System.Drawing.Point(0, 34);
-            this.comboBoxEdit37.Name = "comboBoxEdit37";
-            this.comboBoxEdit37.Properties.AllowFocused = false;
-            this.comboBoxEdit37.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit37.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit37.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit37.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit37.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit37.Properties.AutoComplete = false;
-            this.comboBoxEdit37.Properties.AutoHeight = false;
-            this.comboBoxEdit37.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit37.Properties.DropDownRows = 15;
-            this.comboBoxEdit37.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit37.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit37.Size = new System.Drawing.Size(220, 30);
-            this.comboBoxEdit37.TabIndex = 1170;
-            // 
-            // labelControl113
-            // 
-            this.labelControl113.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl113.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl113.Appearance.Options.UseFont = true;
-            this.labelControl113.Appearance.Options.UseForeColor = true;
-            this.labelControl113.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl113.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl113.Location = new System.Drawing.Point(-3, 12);
-            this.labelControl113.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl113.Name = "labelControl113";
-            this.labelControl113.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl113.Size = new System.Drawing.Size(61, 17);
-            this.labelControl113.TabIndex = 1171;
-            this.labelControl113.Text = "Category";
-            // 
-            // comboBoxEdit38
-            // 
-            this.comboBoxEdit38.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit38.Location = new System.Drawing.Point(1172, 34);
-            this.comboBoxEdit38.Name = "comboBoxEdit38";
-            this.comboBoxEdit38.Properties.AllowFocused = false;
-            this.comboBoxEdit38.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit38.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit38.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit38.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit38.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit38.Properties.AutoComplete = false;
-            this.comboBoxEdit38.Properties.AutoHeight = false;
-            this.comboBoxEdit38.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit38.Properties.Items.AddRange(new object[] {
-            "<All>",
-            "Downloaded",
-            "Not Installed",
-            "Installed"});
-            this.comboBoxEdit38.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit38.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit38.Size = new System.Drawing.Size(102, 30);
-            this.comboBoxEdit38.TabIndex = 1168;
-            // 
-            // labelControl114
-            // 
-            this.labelControl114.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl114.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl114.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl114.Appearance.Options.UseFont = true;
-            this.labelControl114.Appearance.Options.UseForeColor = true;
-            this.labelControl114.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl114.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl114.Location = new System.Drawing.Point(1169, 12);
-            this.labelControl114.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl114.Name = "labelControl114";
-            this.labelControl114.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl114.Size = new System.Drawing.Size(44, 17);
-            this.labelControl114.TabIndex = 1169;
-            this.labelControl114.Text = "Status";
-            // 
-            // comboBoxEdit39
-            // 
-            this.comboBoxEdit39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit39.Location = new System.Drawing.Point(1078, 34);
-            this.comboBoxEdit39.Name = "comboBoxEdit39";
-            this.comboBoxEdit39.Properties.AllowFocused = false;
-            this.comboBoxEdit39.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit39.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit39.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit39.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit39.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit39.Properties.AutoComplete = false;
-            this.comboBoxEdit39.Properties.AutoHeight = false;
-            this.comboBoxEdit39.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit39.Properties.DropDownRows = 12;
-            this.comboBoxEdit39.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit39.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit39.Size = new System.Drawing.Size(64, 30);
-            this.comboBoxEdit39.TabIndex = 1164;
-            // 
-            // labelControl115
-            // 
-            this.labelControl115.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl115.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl115.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl115.Appearance.Options.UseFont = true;
-            this.labelControl115.Appearance.Options.UseForeColor = true;
-            this.labelControl115.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl115.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl115.Location = new System.Drawing.Point(1075, 12);
-            this.labelControl115.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl115.Name = "labelControl115";
-            this.labelControl115.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl115.Size = new System.Drawing.Size(53, 17);
-            this.labelControl115.TabIndex = 1165;
-            this.labelControl115.Text = "Version";
-            // 
-            // textEdit22
-            // 
-            this.textEdit22.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit22.Location = new System.Drawing.Point(250, 34);
-            this.textEdit22.Name = "textEdit22";
-            this.textEdit22.Properties.AllowFocused = false;
-            this.textEdit22.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.textEdit22.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textEdit22.Properties.Appearance.Options.UseFont = true;
-            this.textEdit22.Properties.AutoHeight = false;
-            this.textEdit22.Properties.NullValuePrompt = "Search...";
-            this.textEdit22.Size = new System.Drawing.Size(557, 30);
-            this.textEdit22.TabIndex = 1;
-            // 
-            // comboBoxEdit40
-            // 
-            this.comboBoxEdit40.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit40.Location = new System.Drawing.Point(837, 34);
-            this.comboBoxEdit40.Name = "comboBoxEdit40";
-            this.comboBoxEdit40.Properties.AllowFocused = false;
-            this.comboBoxEdit40.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit40.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit40.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit40.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit40.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit40.Properties.AutoComplete = false;
-            this.comboBoxEdit40.Properties.AutoHeight = false;
-            this.comboBoxEdit40.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit40.Properties.DropDownRows = 12;
-            this.comboBoxEdit40.Properties.Items.AddRange(new object[] {
-            "<Any>"});
-            this.comboBoxEdit40.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit40.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit40.Size = new System.Drawing.Size(81, 30);
-            this.comboBoxEdit40.TabIndex = 2;
-            // 
-            // labelControl116
-            // 
-            this.labelControl116.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl116.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl116.Appearance.Options.UseFont = true;
-            this.labelControl116.Appearance.Options.UseForeColor = true;
-            this.labelControl116.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl116.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl116.Location = new System.Drawing.Point(247, 12);
-            this.labelControl116.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl116.Name = "labelControl116";
-            this.labelControl116.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl116.Size = new System.Drawing.Size(42, 17);
-            this.labelControl116.TabIndex = 1157;
-            this.labelControl116.Text = "Name";
-            // 
-            // labelControl117
-            // 
-            this.labelControl117.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl117.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl117.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl117.Appearance.Options.UseFont = true;
-            this.labelControl117.Appearance.Options.UseForeColor = true;
-            this.labelControl117.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl117.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl117.Location = new System.Drawing.Point(834, 12);
-            this.labelControl117.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl117.Name = "labelControl117";
-            this.labelControl117.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl117.Size = new System.Drawing.Size(60, 17);
-            this.labelControl117.TabIndex = 1156;
-            this.labelControl117.Text = "FW Type";
-            // 
-            // labelControl118
-            // 
-            this.labelControl118.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl118.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl118.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl118.Appearance.Options.UseFont = true;
-            this.labelControl118.Appearance.Options.UseForeColor = true;
-            this.labelControl118.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl118.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl118.Location = new System.Drawing.Point(945, 12);
-            this.labelControl118.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl118.Name = "labelControl118";
-            this.labelControl118.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl118.Size = new System.Drawing.Size(68, 17);
-            this.labelControl118.TabIndex = 1122;
-            this.labelControl118.Text = "Mod Type";
-            // 
-            // panelControl17
-            // 
-            this.panelControl17.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.panelControl17.Appearance.Options.UseBackColor = true;
-            this.panelControl17.Controls.Add(this.tileControl10);
-            this.panelControl17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl17.Location = new System.Drawing.Point(0, 0);
-            this.panelControl17.LookAndFeel.SkinName = "WXI";
-            this.panelControl17.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.panelControl17.Margin = new System.Windows.Forms.Padding(0);
-            this.panelControl17.Name = "panelControl17";
-            this.panelControl17.Size = new System.Drawing.Size(1288, 70);
-            this.panelControl17.TabIndex = 1218;
-            // 
-            // tileControl10
-            // 
-            this.tileControl10.AllowDisabledStateIndication = false;
-            this.tileControl10.AllowDrag = false;
-            this.tileControl10.AllowDragTilesBetweenGroups = false;
-            this.tileControl10.AllowGlyphSkinning = true;
-            this.tileControl10.AllowItemHover = true;
-            this.tileControl10.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.tileControl10.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileControl10.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileControl10.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.tileControl10.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileControl10.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileControl10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.tileControl10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tileControl10.Groups.Add(this.tileGroup10);
-            this.tileControl10.HorizontalContentAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.tileControl10.IndentBetweenItems = 2;
-            this.tileControl10.ItemBorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            this.tileControl10.ItemContentAnimation = DevExpress.XtraEditors.TileItemContentAnimationType.Fade;
-            this.tileControl10.ItemImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileControl10.ItemPadding = new System.Windows.Forms.Padding(0);
-            this.tileControl10.ItemSize = 98;
-            this.tileControl10.ItemTextShowMode = DevExpress.XtraEditors.TileItemContentShowMode.Always;
-            this.tileControl10.Location = new System.Drawing.Point(2, 2);
-            this.tileControl10.MaxId = 8;
-            this.tileControl10.Name = "tileControl10";
-            this.tileControl10.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileControl10.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.tileControl10.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
-            this.tileControl10.Size = new System.Drawing.Size(1284, 66);
-            this.tileControl10.TabIndex = 0;
-            this.tileControl10.Text = "TileControlModsActions";
-            // 
-            // tileGroup10
-            // 
-            this.tileGroup10.Items.Add(this.tileItem35);
-            this.tileGroup10.Items.Add(this.tileItem36);
-            this.tileGroup10.Items.Add(this.tileItem37);
-            this.tileGroup10.Items.Add(this.tileItem38);
-            this.tileGroup10.Name = "tileGroup10";
-            this.tileGroup10.Text = "Resources Actions";
-            // 
-            // tileItem35
-            // 
-            this.tileItem35.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem35.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem35.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem35.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem35.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem35.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.tileItem35.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tileItem35.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement89.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement89.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement89.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement89.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
-            tileItemElement89.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement89.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement89.Text = "";
-            tileItemElement89.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem35.Elements.Add(tileItemElement89);
-            this.tileItem35.Id = 2;
-            this.tileItem35.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem35.Name = "tileItem35";
-            this.tileItem35.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // tileItem36
-            // 
-            this.tileItem36.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem36.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem36.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem36.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem36.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem36.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.tileItem36.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tileItem36.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement90.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement90.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement90.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement90.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement90.Text = "";
-            tileItemElement90.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem36.Elements.Add(tileItemElement90);
-            this.tileItem36.Id = 1;
-            this.tileItem36.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem36.Name = "tileItem36";
-            this.tileItem36.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // tileItem37
-            // 
-            this.tileItem37.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem37.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem37.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem37.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.tileItem37.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileItem37.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement91.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
-            tileItemElement91.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement91.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement91.Text = "";
-            this.tileItem37.Elements.Add(tileItemElement91);
-            this.tileItem37.Enabled = false;
-            this.tileItem37.Id = 6;
-            this.tileItem37.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem37.Name = "tileItem37";
-            this.tileItem37.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // tileItem38
-            // 
-            this.tileItem38.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem38.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem38.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem38.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.tileItem38.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileItem38.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement92.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement92.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement92.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement92.Text = "";
-            this.tileItem38.Elements.Add(tileItemElement92);
-            this.tileItem38.Enabled = false;
-            this.tileItem38.Id = 7;
-            this.tileItem38.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem38.Name = "tileItem38";
-            this.tileItem38.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // navigationPage11
-            // 
-            this.navigationPage11.Appearance.Options.UseFont = true;
-            this.navigationPage11.Controls.Add(this.panel16);
-            this.navigationPage11.Controls.Add(this.panelControl18);
-            this.navigationPage11.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.navigationPage11.Name = "navigationPage11";
-            this.navigationPage11.Size = new System.Drawing.Size(1288, 571);
-            // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.Color.Transparent;
-            this.panel16.Controls.Add(this.gridControl10);
-            this.panel16.Controls.Add(this.panel17);
-            this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel16.Location = new System.Drawing.Point(0, 70);
-            this.panel16.Margin = new System.Windows.Forms.Padding(0);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(1288, 501);
-            this.panel16.TabIndex = 1215;
-            // 
-            // gridControl10
-            // 
-            this.gridControl10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridControl10.Location = new System.Drawing.Point(0, 76);
-            this.gridControl10.MainView = this.gridView11;
-            this.gridControl10.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.gridControl10.Name = "gridControl10";
-            this.gridControl10.Size = new System.Drawing.Size(1288, 425);
-            this.gridControl10.TabIndex = 5;
-            this.gridControl10.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView11});
-            // 
-            // gridView11
-            // 
-            this.gridView11.ActiveFilterEnabled = false;
-            this.gridView11.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView11.Appearance.Empty.Options.UseBackColor = true;
-            this.gridView11.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView11.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gridView11.Appearance.Row.Options.UseBackColor = true;
-            this.gridView11.Appearance.Row.Options.UseFont = true;
-            this.gridView11.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(55)))), ((int)(((byte)(58)))));
-            this.gridView11.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.gridView11.AppearancePrint.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.gridView11.AppearancePrint.Row.Options.UseBackColor = true;
-            this.gridView11.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridView11.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
-            this.gridView11.GridControl = this.gridControl10;
-            this.gridView11.GroupRowHeight = 30;
-            this.gridView11.Name = "gridView11";
-            this.gridView11.OptionsBehavior.Editable = false;
-            this.gridView11.OptionsBehavior.ReadOnly = true;
-            this.gridView11.OptionsCustomization.AllowFilter = false;
-            this.gridView11.OptionsFilter.AllowFilterEditor = false;
-            this.gridView11.OptionsMenu.ShowAutoFilterRowItem = false;
-            this.gridView11.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView11.OptionsView.ShowColumnHeaders = false;
-            this.gridView11.OptionsView.ShowGroupPanel = false;
-            this.gridView11.OptionsView.ShowHorizontalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView11.OptionsView.ShowIndicator = false;
-            this.gridView11.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView11.RowHeight = 30;
-            this.gridView11.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
-            // 
-            // panel17
-            // 
-            this.panel17.BackColor = System.Drawing.Color.Transparent;
-            this.panel17.Controls.Add(this.separatorControl53);
-            this.panel17.Controls.Add(this.separatorControl54);
-            this.panel17.Controls.Add(this.separatorControl55);
-            this.panel17.Controls.Add(this.separatorControl56);
-            this.panel17.Controls.Add(this.separatorControl57);
-            this.panel17.Controls.Add(this.comboBoxEdit41);
-            this.panel17.Controls.Add(this.labelControl119);
-            this.panel17.Controls.Add(this.comboBoxEdit42);
-            this.panel17.Controls.Add(this.comboBoxEdit43);
-            this.panel17.Controls.Add(this.labelControl121);
-            this.panel17.Controls.Add(this.textEdit23);
-            this.panel17.Controls.Add(this.comboBoxEdit44);
-            this.panel17.Controls.Add(this.labelControl122);
-            this.panel17.Controls.Add(this.labelControl123);
-            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel17.Location = new System.Drawing.Point(0, 0);
-            this.panel17.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(1288, 76);
-            this.panel17.TabIndex = 12;
-            // 
-            // separatorControl53
-            // 
-            this.separatorControl53.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl53.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl53.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl53.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl53.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl53.LineThickness = 1;
-            this.separatorControl53.Location = new System.Drawing.Point(949, 12);
-            this.separatorControl53.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl53.Name = "separatorControl53";
-            this.separatorControl53.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl53.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl53.TabIndex = 1215;
-            // 
-            // separatorControl54
-            // 
-            this.separatorControl54.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl54.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl54.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl54.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl54.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl54.LineThickness = 1;
-            this.separatorControl54.Location = new System.Drawing.Point(1060, 12);
-            this.separatorControl54.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl54.Name = "separatorControl54";
-            this.separatorControl54.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl54.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl54.TabIndex = 1214;
-            // 
-            // separatorControl55
-            // 
-            this.separatorControl55.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl55.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl55.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl55.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl55.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl55.LineThickness = 1;
-            this.separatorControl55.Location = new System.Drawing.Point(1154, 12);
-            this.separatorControl55.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl55.Name = "separatorControl55";
-            this.separatorControl55.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl55.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl55.TabIndex = 1213;
-            // 
-            // separatorControl56
-            // 
-            this.separatorControl56.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl56.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl56.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl56.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl56.LineThickness = 1;
-            this.separatorControl56.Location = new System.Drawing.Point(232, 12);
-            this.separatorControl56.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl56.Name = "separatorControl56";
-            this.separatorControl56.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl56.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl56.TabIndex = 1212;
-            // 
-            // separatorControl57
-            // 
-            this.separatorControl57.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl57.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.separatorControl57.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl57.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl57.LineThickness = 1;
-            this.separatorControl57.Location = new System.Drawing.Point(0, 73);
-            this.separatorControl57.Margin = new System.Windows.Forms.Padding(0);
-            this.separatorControl57.Name = "separatorControl57";
-            this.separatorControl57.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl57.Size = new System.Drawing.Size(1288, 3);
-            this.separatorControl57.TabIndex = 1172;
-            // 
-            // comboBoxEdit41
-            // 
-            this.comboBoxEdit41.Location = new System.Drawing.Point(0, 34);
-            this.comboBoxEdit41.Name = "comboBoxEdit41";
-            this.comboBoxEdit41.Properties.AllowFocused = false;
-            this.comboBoxEdit41.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit41.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit41.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit41.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit41.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit41.Properties.AutoComplete = false;
-            this.comboBoxEdit41.Properties.AutoHeight = false;
-            this.comboBoxEdit41.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit41.Properties.DropDownRows = 15;
-            this.comboBoxEdit41.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit41.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit41.Size = new System.Drawing.Size(220, 30);
-            this.comboBoxEdit41.TabIndex = 1170;
-            // 
-            // labelControl119
-            // 
-            this.labelControl119.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl119.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl119.Appearance.Options.UseFont = true;
-            this.labelControl119.Appearance.Options.UseForeColor = true;
-            this.labelControl119.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl119.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl119.Location = new System.Drawing.Point(-3, 12);
-            this.labelControl119.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl119.Name = "labelControl119";
-            this.labelControl119.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl119.Size = new System.Drawing.Size(61, 17);
-            this.labelControl119.TabIndex = 1171;
-            this.labelControl119.Text = "Category";
-            // 
-            // comboBoxEdit42
-            // 
-            this.comboBoxEdit42.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit42.Location = new System.Drawing.Point(1172, 34);
-            this.comboBoxEdit42.Name = "comboBoxEdit42";
-            this.comboBoxEdit42.Properties.AllowFocused = false;
-            this.comboBoxEdit42.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit42.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit42.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit42.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit42.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit42.Properties.AutoComplete = false;
-            this.comboBoxEdit42.Properties.AutoHeight = false;
-            this.comboBoxEdit42.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit42.Properties.Items.AddRange(new object[] {
-            "<All>",
-            "Downloaded",
-            "Not Installed",
-            "Installed"});
-            this.comboBoxEdit42.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit42.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit42.Size = new System.Drawing.Size(102, 30);
-            this.comboBoxEdit42.TabIndex = 1168;
-            // 
-            // comboBoxEdit43
-            // 
-            this.comboBoxEdit43.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit43.Location = new System.Drawing.Point(1078, 34);
-            this.comboBoxEdit43.Name = "comboBoxEdit43";
-            this.comboBoxEdit43.Properties.AllowFocused = false;
-            this.comboBoxEdit43.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit43.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit43.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit43.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit43.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit43.Properties.AutoComplete = false;
-            this.comboBoxEdit43.Properties.AutoHeight = false;
-            this.comboBoxEdit43.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit43.Properties.DropDownRows = 12;
-            this.comboBoxEdit43.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit43.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit43.Size = new System.Drawing.Size(64, 30);
-            this.comboBoxEdit43.TabIndex = 1164;
-            // 
-            // labelControl121
-            // 
-            this.labelControl121.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl121.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl121.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl121.Appearance.Options.UseFont = true;
-            this.labelControl121.Appearance.Options.UseForeColor = true;
-            this.labelControl121.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl121.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl121.Location = new System.Drawing.Point(1075, 12);
-            this.labelControl121.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl121.Name = "labelControl121";
-            this.labelControl121.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl121.Size = new System.Drawing.Size(53, 17);
-            this.labelControl121.TabIndex = 1165;
-            this.labelControl121.Text = "Version";
-            // 
-            // textEdit23
-            // 
-            this.textEdit23.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit23.Location = new System.Drawing.Point(250, 34);
-            this.textEdit23.Name = "textEdit23";
-            this.textEdit23.Properties.AllowFocused = false;
-            this.textEdit23.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.textEdit23.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textEdit23.Properties.Appearance.Options.UseFont = true;
-            this.textEdit23.Properties.AutoHeight = false;
-            this.textEdit23.Properties.NullValuePrompt = "Search...";
-            this.textEdit23.Size = new System.Drawing.Size(687, 30);
-            this.textEdit23.TabIndex = 1;
-            // 
-            // comboBoxEdit44
-            // 
-            this.comboBoxEdit44.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit44.Location = new System.Drawing.Point(967, 34);
-            this.comboBoxEdit44.Name = "comboBoxEdit44";
-            this.comboBoxEdit44.Properties.AllowFocused = false;
-            this.comboBoxEdit44.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit44.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit44.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit44.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit44.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit44.Properties.AutoComplete = false;
-            this.comboBoxEdit44.Properties.AutoHeight = false;
-            this.comboBoxEdit44.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit44.Properties.DropDownRows = 12;
-            this.comboBoxEdit44.Properties.Items.AddRange(new object[] {
-            "<All>"});
-            this.comboBoxEdit44.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit44.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit44.Size = new System.Drawing.Size(81, 30);
-            this.comboBoxEdit44.TabIndex = 2;
-            // 
-            // labelControl122
-            // 
-            this.labelControl122.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl122.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl122.Appearance.Options.UseFont = true;
-            this.labelControl122.Appearance.Options.UseForeColor = true;
-            this.labelControl122.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl122.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl122.Location = new System.Drawing.Point(247, 12);
-            this.labelControl122.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl122.Name = "labelControl122";
-            this.labelControl122.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl122.Size = new System.Drawing.Size(42, 17);
-            this.labelControl122.TabIndex = 1157;
-            this.labelControl122.Text = "Name";
-            // 
-            // labelControl123
-            // 
-            this.labelControl123.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl123.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl123.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl123.Appearance.Options.UseFont = true;
-            this.labelControl123.Appearance.Options.UseForeColor = true;
-            this.labelControl123.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl123.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl123.Location = new System.Drawing.Point(964, 12);
-            this.labelControl123.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl123.Name = "labelControl123";
-            this.labelControl123.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl123.Size = new System.Drawing.Size(60, 17);
-            this.labelControl123.TabIndex = 1156;
-            this.labelControl123.Text = "FW Type";
-            // 
-            // panelControl18
-            // 
-            this.panelControl18.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.panelControl18.Appearance.Options.UseBackColor = true;
-            this.panelControl18.Controls.Add(this.tileControl11);
-            this.panelControl18.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl18.Location = new System.Drawing.Point(0, 0);
-            this.panelControl18.LookAndFeel.SkinName = "WXI";
-            this.panelControl18.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.panelControl18.Margin = new System.Windows.Forms.Padding(0);
-            this.panelControl18.Name = "panelControl18";
-            this.panelControl18.Size = new System.Drawing.Size(1288, 70);
-            this.panelControl18.TabIndex = 1217;
-            // 
-            // tileControl11
-            // 
-            this.tileControl11.AllowDisabledStateIndication = false;
-            this.tileControl11.AllowDrag = false;
-            this.tileControl11.AllowDragTilesBetweenGroups = false;
-            this.tileControl11.AllowGlyphSkinning = true;
-            this.tileControl11.AllowItemHover = true;
-            this.tileControl11.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileControl11.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileControl11.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.tileControl11.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileControl11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.tileControl11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tileControl11.Groups.Add(this.tileGroup11);
-            this.tileControl11.HorizontalContentAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.tileControl11.IndentBetweenItems = 2;
-            this.tileControl11.ItemContentAnimation = DevExpress.XtraEditors.TileItemContentAnimationType.Fade;
-            this.tileControl11.ItemImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileControl11.ItemImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            this.tileControl11.ItemPadding = new System.Windows.Forms.Padding(0);
-            this.tileControl11.ItemSize = 98;
-            this.tileControl11.ItemTextShowMode = DevExpress.XtraEditors.TileItemContentShowMode.Always;
-            this.tileControl11.Location = new System.Drawing.Point(2, 2);
-            this.tileControl11.MaxId = 10;
-            this.tileControl11.Name = "tileControl11";
-            this.tileControl11.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileControl11.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.tileControl11.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
-            this.tileControl11.Size = new System.Drawing.Size(1284, 66);
-            this.tileControl11.TabIndex = 0;
-            this.tileControl11.Text = "TileControlModsActions";
-            // 
-            // tileGroup11
-            // 
-            this.tileGroup11.Items.Add(this.tileItem39);
-            this.tileGroup11.Items.Add(this.tileItem40);
-            this.tileGroup11.Items.Add(this.tileItem41);
-            this.tileGroup11.Items.Add(this.tileItem42);
-            this.tileGroup11.Items.Add(this.tileItem43);
-            this.tileGroup11.Name = "tileGroup11";
-            this.tileGroup11.Text = "Homebrew Actions";
-            // 
-            // tileItem39
-            // 
-            this.tileItem39.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem39.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem39.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem39.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem39.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.tileItem39.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem39.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileItem39.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.tileItem39.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tileItem39.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement93.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement93.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
-            tileItemElement93.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement93.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement93.Text = "";
-            tileItemElement93.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem39.Elements.Add(tileItemElement93);
-            this.tileItem39.Id = 6;
-            this.tileItem39.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem39.Name = "tileItem39";
-            this.tileItem39.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // tileItem40
-            // 
-            this.tileItem40.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem40.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem40.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem40.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem40.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.tileItem40.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem40.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileItem40.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.tileItem40.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tileItem40.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement94.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement94.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement94.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement94.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement94.Text = "";
-            tileItemElement94.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem40.Elements.Add(tileItemElement94);
-            this.tileItem40.Id = 1;
-            this.tileItem40.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem40.Name = "tileItem40";
-            this.tileItem40.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // tileItem41
-            // 
-            this.tileItem41.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem41.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem41.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem41.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem41.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.tileItem41.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem41.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileItem41.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement95.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement95.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_add_favorite;
-            tileItemElement95.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement95.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement95.Text = "";
-            this.tileItem41.Elements.Add(tileItemElement95);
-            this.tileItem41.Enabled = false;
-            this.tileItem41.Id = 9;
-            this.tileItem41.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem41.Name = "tileItem41";
-            this.tileItem41.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // tileItem42
-            // 
-            this.tileItem42.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem42.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem42.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem42.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem42.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.tileItem42.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem42.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileItem42.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement96.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement96.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
-            tileItemElement96.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement96.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement96.Text = "";
-            this.tileItem42.Elements.Add(tileItemElement96);
-            this.tileItem42.Enabled = false;
-            this.tileItem42.Id = 7;
-            this.tileItem42.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem42.Name = "tileItem42";
-            this.tileItem42.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // tileItem43
-            // 
-            this.tileItem43.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem43.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem43.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem43.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem43.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.tileItem43.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem43.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileItem43.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement97.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement97.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement97.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement97.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement97.Text = "";
-            this.tileItem43.Elements.Add(tileItemElement97);
-            this.tileItem43.Enabled = false;
-            this.tileItem43.Id = 8;
-            this.tileItem43.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem43.Name = "tileItem43";
-            this.tileItem43.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // navigationPage12
-            // 
-            this.navigationPage12.AutoScroll = true;
-            this.navigationPage12.Controls.Add(this.labelControl124);
-            this.navigationPage12.Controls.Add(this.labelControl125);
-            this.navigationPage12.Controls.Add(this.svgImageBox2);
-            this.navigationPage12.Controls.Add(this.svgImageBox3);
-            this.navigationPage12.Controls.Add(this.svgImageBox4);
-            this.navigationPage12.Controls.Add(this.svgImageBox5);
-            this.navigationPage12.Controls.Add(this.svgImageBox6);
-            this.navigationPage12.Controls.Add(this.labelControl126);
-            this.navigationPage12.Controls.Add(this.labelControl127);
-            this.navigationPage12.Controls.Add(this.panelControl19);
-            this.navigationPage12.Name = "navigationPage12";
-            this.navigationPage12.Size = new System.Drawing.Size(1288, 571);
-            // 
-            // labelControl124
-            // 
-            this.labelControl124.AllowHtmlString = true;
-            this.labelControl124.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl124.Appearance.Options.UseFont = true;
-            this.labelControl124.Appearance.Options.UseTextOptions = true;
-            this.labelControl124.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.labelControl124.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
-            this.labelControl124.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.labelControl124.Location = new System.Drawing.Point(20, 217);
-            this.labelControl124.Margin = new System.Windows.Forms.Padding(3, 16, 3, 12);
-            this.labelControl124.Name = "labelControl124";
-            this.labelControl124.Size = new System.Drawing.Size(44, 19);
-            this.labelControl124.TabIndex = 19;
-            this.labelControl124.Text = "Credits";
-            // 
-            // labelControl125
-            // 
-            this.labelControl125.AllowHtmlString = true;
-            this.labelControl125.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.labelControl125.Appearance.Options.UseFont = true;
-            this.labelControl125.Location = new System.Drawing.Point(20, 127);
-            this.labelControl125.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.labelControl125.Name = "labelControl125";
-            this.labelControl125.Size = new System.Drawing.Size(175, 20);
-            this.labelControl125.TabIndex = 18;
-            this.labelControl125.Text = "Beta v3.0.0 (Release Date)";
-            // 
-            // svgImageBox2
-            // 
-            this.svgImageBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.svgImageBox2.Location = new System.Drawing.Point(20, 19);
-            this.svgImageBox2.Name = "svgImageBox2";
-            this.svgImageBox2.Size = new System.Drawing.Size(65, 65);
-            this.svgImageBox2.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
-            this.svgImageBox2.SvgImage = global::ArisenStudio.Properties.Resources.arisenstudio1;
-            this.svgImageBox2.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            this.svgImageBox2.TabIndex = 16;
-            // 
-            // svgImageBox3
-            // 
-            this.svgImageBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.svgImageBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.svgImageBox3.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Silver;
-            this.svgImageBox3.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
-            this.svgImageBox3.Location = new System.Drawing.Point(1149, 19);
-            this.svgImageBox3.Name = "svgImageBox3";
-            this.svgImageBox3.Size = new System.Drawing.Size(26, 26);
-            this.svgImageBox3.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
-            this.svgImageBox3.SvgImage = global::ArisenStudio.Properties.Resources.website1;
-            this.svgImageBox3.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            this.svgImageBox3.TabIndex = 15;
-            this.svgImageBox3.Text = "svgImageBox4";
-            // 
-            // svgImageBox4
-            // 
-            this.svgImageBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.svgImageBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.svgImageBox4.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Silver;
-            this.svgImageBox4.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
-            this.svgImageBox4.Location = new System.Drawing.Point(1213, 19);
-            this.svgImageBox4.Name = "svgImageBox4";
-            this.svgImageBox4.Size = new System.Drawing.Size(26, 26);
-            this.svgImageBox4.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
-            this.svgImageBox4.SvgImage = global::ArisenStudio.Properties.Resources.discord1;
-            this.svgImageBox4.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            this.svgImageBox4.TabIndex = 14;
-            this.svgImageBox4.Text = "svgImageBox3";
-            // 
-            // svgImageBox5
-            // 
-            this.svgImageBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.svgImageBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.svgImageBox5.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Silver;
-            this.svgImageBox5.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
-            this.svgImageBox5.Location = new System.Drawing.Point(1245, 19);
-            this.svgImageBox5.Name = "svgImageBox5";
-            this.svgImageBox5.Size = new System.Drawing.Size(26, 26);
-            this.svgImageBox5.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
-            this.svgImageBox5.SvgImage = global::ArisenStudio.Properties.Resources.twitter1;
-            this.svgImageBox5.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            this.svgImageBox5.TabIndex = 13;
-            this.svgImageBox5.Text = "svgImageBox2";
-            // 
-            // svgImageBox6
-            // 
-            this.svgImageBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.svgImageBox6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.svgImageBox6.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Silver;
-            this.svgImageBox6.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
-            this.svgImageBox6.Location = new System.Drawing.Point(1181, 19);
-            this.svgImageBox6.Name = "svgImageBox6";
-            this.svgImageBox6.Size = new System.Drawing.Size(26, 26);
-            this.svgImageBox6.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
-            this.svgImageBox6.SvgImage = global::ArisenStudio.Properties.Resources.github1;
-            this.svgImageBox6.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            this.svgImageBox6.TabIndex = 12;
-            this.svgImageBox6.Text = "svgImageBox1";
-            // 
-            // labelControl126
-            // 
-            this.labelControl126.AllowHtmlString = true;
-            this.labelControl126.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl126.Appearance.Options.UseFont = true;
-            this.labelControl126.Appearance.Options.UseTextOptions = true;
-            this.labelControl126.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.labelControl126.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
-            this.labelControl126.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.labelControl126.Location = new System.Drawing.Point(20, 160);
-            this.labelControl126.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.labelControl126.Name = "labelControl126";
-            this.labelControl126.Size = new System.Drawing.Size(174, 38);
-            this.labelControl126.TabIndex = 6;
-            this.labelControl126.Text = "©2024 ohhsodead\r\nReleased under <a href=\"https://github.com/ohhsodead/arisen-stud" +
-    "io/blob/main/LICENSE.md/\">MIT</a> License";
-            // 
-            // labelControl127
-            // 
-            this.labelControl127.AllowHtmlString = true;
-            this.labelControl127.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 19F, System.Drawing.FontStyle.Bold);
-            this.labelControl127.Appearance.Options.UseFont = true;
-            this.labelControl127.Location = new System.Drawing.Point(20, 90);
-            this.labelControl127.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
-            this.labelControl127.Name = "labelControl127";
-            this.labelControl127.Size = new System.Drawing.Size(154, 35);
-            this.labelControl127.TabIndex = 5;
-            this.labelControl127.Text = "Arisen Studio";
-            // 
-            // panelControl19
-            // 
-            this.panelControl19.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControl19.Controls.Add(this.xtraScrollableControl4);
-            this.panelControl19.Location = new System.Drawing.Point(20, 251);
-            this.panelControl19.Name = "panelControl19";
-            this.panelControl19.Size = new System.Drawing.Size(1268, 302);
-            this.panelControl19.TabIndex = 17;
-            // 
-            // xtraScrollableControl4
-            // 
-            this.xtraScrollableControl4.Controls.Add(this.labelControl128);
-            this.xtraScrollableControl4.Controls.Add(this.labelControl129);
-            this.xtraScrollableControl4.Controls.Add(this.labelControl130);
-            this.xtraScrollableControl4.Controls.Add(this.labelControl131);
-            this.xtraScrollableControl4.Controls.Add(this.labelControl132);
-            this.xtraScrollableControl4.Controls.Add(this.labelControl133);
-            this.xtraScrollableControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraScrollableControl4.Location = new System.Drawing.Point(2, 2);
-            this.xtraScrollableControl4.Name = "xtraScrollableControl4";
-            this.xtraScrollableControl4.Size = new System.Drawing.Size(1264, 298);
-            this.xtraScrollableControl4.TabIndex = 11;
-            // 
-            // labelControl128
-            // 
-            this.labelControl128.AllowHtmlString = true;
-            this.labelControl128.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.labelControl128.Appearance.Options.UseFont = true;
-            this.labelControl128.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl128.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelControl128.Location = new System.Drawing.Point(0, 504);
-            this.labelControl128.Name = "labelControl128";
-            this.labelControl128.Padding = new System.Windows.Forms.Padding(12, 3, 0, 12);
-            this.labelControl128.Size = new System.Drawing.Size(1264, 100);
-            this.labelControl128.TabIndex = 18;
-            this.labelControl128.Text = resources.GetString("labelControl128.Text");
-            // 
-            // labelControl129
-            // 
-            this.labelControl129.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl129.Appearance.Options.UseFont = true;
-            this.labelControl129.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl129.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelControl129.Location = new System.Drawing.Point(0, 476);
-            this.labelControl129.Name = "labelControl129";
-            this.labelControl129.Padding = new System.Windows.Forms.Padding(12, 6, 0, 3);
-            this.labelControl129.Size = new System.Drawing.Size(1264, 28);
-            this.labelControl129.TabIndex = 17;
-            this.labelControl129.Text = "Translators";
-            // 
-            // labelControl130
-            // 
-            this.labelControl130.AllowHtmlString = true;
-            this.labelControl130.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.labelControl130.Appearance.Options.UseFont = true;
-            this.labelControl130.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl130.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelControl130.Location = new System.Drawing.Point(0, 354);
-            this.labelControl130.Name = "labelControl130";
-            this.labelControl130.Padding = new System.Windows.Forms.Padding(12, 3, 0, 0);
-            this.labelControl130.Size = new System.Drawing.Size(1264, 122);
-            this.labelControl130.TabIndex = 16;
-            this.labelControl130.Text = resources.GetString("labelControl130.Text");
-            // 
-            // labelControl131
-            // 
-            this.labelControl131.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl131.Appearance.Options.UseFont = true;
-            this.labelControl131.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl131.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelControl131.Location = new System.Drawing.Point(0, 326);
-            this.labelControl131.Name = "labelControl131";
-            this.labelControl131.Padding = new System.Windows.Forms.Padding(12, 6, 0, 3);
-            this.labelControl131.Size = new System.Drawing.Size(1264, 28);
-            this.labelControl131.TabIndex = 15;
-            this.labelControl131.Text = "Contributors";
-            // 
-            // labelControl132
-            // 
-            this.labelControl132.AllowHtmlString = true;
-            this.labelControl132.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.labelControl132.Appearance.Options.UseFont = true;
-            this.labelControl132.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl132.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl132.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelControl132.Location = new System.Drawing.Point(0, 34);
-            this.labelControl132.Name = "labelControl132";
-            this.labelControl132.Padding = new System.Windows.Forms.Padding(12, 3, 0, 0);
-            this.labelControl132.Size = new System.Drawing.Size(1264, 292);
-            this.labelControl132.TabIndex = 14;
-            this.labelControl132.Text = resources.GetString("labelControl132.Text");
-            // 
-            // labelControl133
-            // 
-            this.labelControl133.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl133.Appearance.Options.UseFont = true;
-            this.labelControl133.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl133.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelControl133.Location = new System.Drawing.Point(0, 0);
-            this.labelControl133.Name = "labelControl133";
-            this.labelControl133.Padding = new System.Windows.Forms.Padding(12, 12, 0, 3);
-            this.labelControl133.Size = new System.Drawing.Size(1264, 34);
-            this.labelControl133.TabIndex = 13;
-            this.labelControl133.Text = "Third-Party Libraries";
-            // 
-            // navigationPage13
-            // 
-            this.navigationPage13.Controls.Add(this.panel18);
-            this.navigationPage13.Controls.Add(this.panelControl20);
-            this.navigationPage13.Name = "navigationPage13";
-            this.navigationPage13.Size = new System.Drawing.Size(1288, 571);
-            // 
-            // panel18
-            // 
-            this.panel18.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel18.BackColor = System.Drawing.Color.Transparent;
-            this.panel18.Controls.Add(this.gridControl11);
-            this.panel18.Controls.Add(this.panel19);
-            this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel18.Location = new System.Drawing.Point(0, 70);
-            this.panel18.Margin = new System.Windows.Forms.Padding(0);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(1288, 501);
-            this.panel18.TabIndex = 1219;
-            // 
-            // gridControl11
-            // 
-            this.gridControl11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl11.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.gridControl11.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gridControl11.EmbeddedNavigator.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.gridControl11.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gridControl11.Location = new System.Drawing.Point(0, 76);
-            this.gridControl11.MainView = this.gridView12;
-            this.gridControl11.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.gridControl11.Name = "gridControl11";
-            this.gridControl11.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.gridControl11.Size = new System.Drawing.Size(1288, 425);
-            this.gridControl11.TabIndex = 6;
-            this.gridControl11.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView12});
-            // 
-            // gridView12
-            // 
-            this.gridView12.ActiveFilterEnabled = false;
-            this.gridView12.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView12.Appearance.Empty.Options.UseBackColor = true;
-            this.gridView12.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView12.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gridView12.Appearance.Row.Options.UseBackColor = true;
-            this.gridView12.Appearance.Row.Options.UseFont = true;
-            this.gridView12.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(55)))), ((int)(((byte)(58)))));
-            this.gridView12.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.gridView12.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridView12.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
-            this.gridView12.GridControl = this.gridControl11;
-            this.gridView12.GroupRowHeight = 30;
-            this.gridView12.Name = "gridView12";
-            this.gridView12.OptionsBehavior.Editable = false;
-            this.gridView12.OptionsBehavior.ReadOnly = true;
-            this.gridView12.OptionsCustomization.AllowFilter = false;
-            this.gridView12.OptionsFilter.AllowFilterEditor = false;
-            this.gridView12.OptionsMenu.ShowAutoFilterRowItem = false;
-            this.gridView12.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView12.OptionsView.ShowColumnHeaders = false;
-            this.gridView12.OptionsView.ShowGroupPanel = false;
-            this.gridView12.OptionsView.ShowHorizontalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView12.OptionsView.ShowIndicator = false;
-            this.gridView12.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView12.RowHeight = 30;
-            this.gridView12.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
-            // 
-            // panel19
-            // 
-            this.panel19.BackColor = System.Drawing.Color.Transparent;
-            this.panel19.Controls.Add(this.separatorControl58);
-            this.panel19.Controls.Add(this.separatorControl59);
-            this.panel19.Controls.Add(this.separatorControl60);
-            this.panel19.Controls.Add(this.separatorControl61);
-            this.panel19.Controls.Add(this.comboBoxEdit45);
-            this.panel19.Controls.Add(this.labelControl134);
-            this.panel19.Controls.Add(this.comboBoxEdit46);
-            this.panel19.Controls.Add(this.labelControl135);
-            this.panel19.Controls.Add(this.comboBoxEdit47);
-            this.panel19.Controls.Add(this.labelControl136);
-            this.panel19.Controls.Add(this.textEdit24);
-            this.panel19.Controls.Add(this.comboBoxEdit48);
-            this.panel19.Controls.Add(this.labelControl137);
-            this.panel19.Controls.Add(this.labelControl138);
-            this.panel19.Controls.Add(this.separatorControl62);
-            this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel19.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.panel19.Location = new System.Drawing.Point(0, 0);
-            this.panel19.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(1288, 76);
-            this.panel19.TabIndex = 1220;
-            // 
-            // separatorControl58
-            // 
-            this.separatorControl58.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl58.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl58.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl58.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl58.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl58.LineThickness = 1;
-            this.separatorControl58.Location = new System.Drawing.Point(1043, 12);
-            this.separatorControl58.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl58.Name = "separatorControl58";
-            this.separatorControl58.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl58.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl58.TabIndex = 1216;
-            // 
-            // separatorControl59
-            // 
-            this.separatorControl59.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl59.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl59.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl59.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl59.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl59.LineThickness = 1;
-            this.separatorControl59.Location = new System.Drawing.Point(1154, 12);
-            this.separatorControl59.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl59.Name = "separatorControl59";
-            this.separatorControl59.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl59.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl59.TabIndex = 1215;
-            // 
-            // separatorControl60
-            // 
-            this.separatorControl60.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl60.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl60.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl60.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl60.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl60.LineThickness = 1;
-            this.separatorControl60.Location = new System.Drawing.Point(949, 12);
-            this.separatorControl60.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl60.Name = "separatorControl60";
-            this.separatorControl60.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl60.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl60.TabIndex = 1212;
-            // 
-            // separatorControl61
-            // 
-            this.separatorControl61.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl61.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl61.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl61.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl61.LineThickness = 1;
-            this.separatorControl61.Location = new System.Drawing.Point(232, 12);
-            this.separatorControl61.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl61.Name = "separatorControl61";
-            this.separatorControl61.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl61.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl61.TabIndex = 1211;
-            // 
-            // comboBoxEdit45
-            // 
-            this.comboBoxEdit45.Location = new System.Drawing.Point(0, 34);
-            this.comboBoxEdit45.Name = "comboBoxEdit45";
-            this.comboBoxEdit45.Properties.AllowFocused = false;
-            this.comboBoxEdit45.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit45.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit45.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit45.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit45.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit45.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit45.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit45.Properties.AutoComplete = false;
-            this.comboBoxEdit45.Properties.AutoHeight = false;
-            this.comboBoxEdit45.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit45.Properties.DropDownRows = 15;
-            this.comboBoxEdit45.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit45.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit45.Size = new System.Drawing.Size(220, 30);
-            this.comboBoxEdit45.TabIndex = 2;
-            // 
-            // labelControl134
-            // 
-            this.labelControl134.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl134.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl134.Appearance.Options.UseFont = true;
-            this.labelControl134.Appearance.Options.UseForeColor = true;
-            this.labelControl134.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl134.Location = new System.Drawing.Point(-3, 12);
-            this.labelControl134.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl134.Name = "labelControl134";
-            this.labelControl134.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl134.Size = new System.Drawing.Size(61, 17);
-            this.labelControl134.TabIndex = 1171;
-            this.labelControl134.Text = "Category";
-            // 
-            // comboBoxEdit46
-            // 
-            this.comboBoxEdit46.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit46.Location = new System.Drawing.Point(1172, 34);
-            this.comboBoxEdit46.Name = "comboBoxEdit46";
-            this.comboBoxEdit46.Properties.AllowFocused = false;
-            this.comboBoxEdit46.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit46.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit46.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit46.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit46.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit46.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit46.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit46.Properties.AutoComplete = false;
-            this.comboBoxEdit46.Properties.AutoHeight = false;
-            this.comboBoxEdit46.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit46.Properties.Items.AddRange(new object[] {
-            "<All>",
-            "Downloaded",
-            "Not Installed",
-            "Installed"});
-            this.comboBoxEdit46.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit46.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit46.Size = new System.Drawing.Size(102, 30);
-            this.comboBoxEdit46.TabIndex = 9;
-            // 
-            // labelControl135
-            // 
-            this.labelControl135.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl135.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl135.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl135.Appearance.Options.UseFont = true;
-            this.labelControl135.Appearance.Options.UseForeColor = true;
-            this.labelControl135.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl135.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl135.Location = new System.Drawing.Point(1169, 12);
-            this.labelControl135.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl135.Name = "labelControl135";
-            this.labelControl135.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl135.Size = new System.Drawing.Size(44, 17);
-            this.labelControl135.TabIndex = 1169;
-            this.labelControl135.Text = "Status";
-            // 
-            // comboBoxEdit47
-            // 
-            this.comboBoxEdit47.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit47.Location = new System.Drawing.Point(967, 34);
-            this.comboBoxEdit47.Name = "comboBoxEdit47";
-            this.comboBoxEdit47.Properties.AllowFocused = false;
-            this.comboBoxEdit47.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit47.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit47.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit47.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit47.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit47.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit47.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit47.Properties.AutoComplete = false;
-            this.comboBoxEdit47.Properties.AutoHeight = false;
-            this.comboBoxEdit47.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit47.Properties.DropDownRows = 12;
-            this.comboBoxEdit47.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit47.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit47.Size = new System.Drawing.Size(64, 30);
-            this.comboBoxEdit47.TabIndex = 7;
-            // 
-            // labelControl136
-            // 
-            this.labelControl136.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl136.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl136.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl136.Appearance.Options.UseFont = true;
-            this.labelControl136.Appearance.Options.UseForeColor = true;
-            this.labelControl136.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl136.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl136.Location = new System.Drawing.Point(964, 12);
-            this.labelControl136.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl136.Name = "labelControl136";
-            this.labelControl136.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl136.Size = new System.Drawing.Size(53, 17);
-            this.labelControl136.TabIndex = 1165;
-            this.labelControl136.Text = "Version";
-            // 
-            // textEdit24
-            // 
-            this.textEdit24.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit24.Location = new System.Drawing.Point(250, 34);
-            this.textEdit24.Name = "textEdit24";
-            this.textEdit24.Properties.AllowFocused = false;
-            this.textEdit24.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.textEdit24.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textEdit24.Properties.Appearance.Options.UseFont = true;
-            this.textEdit24.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.textEdit24.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.textEdit24.Properties.AutoHeight = false;
-            this.textEdit24.Properties.NullValuePrompt = "Search...";
-            this.textEdit24.Size = new System.Drawing.Size(687, 30);
-            this.textEdit24.TabIndex = 3;
-            // 
-            // comboBoxEdit48
-            // 
-            this.comboBoxEdit48.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit48.Location = new System.Drawing.Point(1061, 34);
-            this.comboBoxEdit48.Name = "comboBoxEdit48";
-            this.comboBoxEdit48.Properties.AllowFocused = false;
-            this.comboBoxEdit48.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit48.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit48.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit48.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit48.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit48.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit48.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit48.Properties.AutoComplete = false;
-            this.comboBoxEdit48.Properties.AutoHeight = false;
-            this.comboBoxEdit48.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit48.Properties.DropDownRows = 12;
-            this.comboBoxEdit48.Properties.Items.AddRange(new object[] {
-            "<All>"});
-            this.comboBoxEdit48.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit48.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit48.Size = new System.Drawing.Size(81, 30);
-            this.comboBoxEdit48.TabIndex = 4;
-            // 
-            // labelControl137
-            // 
-            this.labelControl137.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl137.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl137.Appearance.Options.UseFont = true;
-            this.labelControl137.Appearance.Options.UseForeColor = true;
-            this.labelControl137.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl137.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl137.Location = new System.Drawing.Point(247, 12);
-            this.labelControl137.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl137.Name = "labelControl137";
-            this.labelControl137.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl137.Size = new System.Drawing.Size(42, 17);
-            this.labelControl137.TabIndex = 1157;
-            this.labelControl137.Text = "Name";
-            // 
-            // labelControl138
-            // 
-            this.labelControl138.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl138.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl138.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl138.Appearance.Options.UseFont = true;
-            this.labelControl138.Appearance.Options.UseForeColor = true;
-            this.labelControl138.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl138.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl138.Location = new System.Drawing.Point(1058, 12);
-            this.labelControl138.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl138.Name = "labelControl138";
-            this.labelControl138.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl138.Size = new System.Drawing.Size(77, 17);
-            this.labelControl138.TabIndex = 1156;
-            this.labelControl138.Text = "FW Version";
-            // 
-            // separatorControl62
-            // 
-            this.separatorControl62.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl62.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.separatorControl62.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl62.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl62.LineThickness = 1;
-            this.separatorControl62.Location = new System.Drawing.Point(0, 73);
-            this.separatorControl62.Margin = new System.Windows.Forms.Padding(0);
-            this.separatorControl62.Name = "separatorControl62";
-            this.separatorControl62.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl62.Size = new System.Drawing.Size(1288, 3);
-            this.separatorControl62.TabIndex = 1172;
-            // 
-            // panelControl20
-            // 
-            this.panelControl20.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.panelControl20.Appearance.Options.UseBackColor = true;
-            this.panelControl20.Controls.Add(this.tileControl12);
-            this.panelControl20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl20.Location = new System.Drawing.Point(0, 0);
-            this.panelControl20.LookAndFeel.SkinName = "WXI";
-            this.panelControl20.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.panelControl20.Margin = new System.Windows.Forms.Padding(0);
-            this.panelControl20.Name = "panelControl20";
-            this.panelControl20.Size = new System.Drawing.Size(1288, 70);
-            this.panelControl20.TabIndex = 1220;
-            // 
-            // tileControl12
-            // 
-            this.tileControl12.AllowDisabledStateIndication = false;
-            this.tileControl12.AllowDrag = false;
-            this.tileControl12.AllowDragTilesBetweenGroups = false;
-            this.tileControl12.AllowGlyphSkinning = true;
-            this.tileControl12.AllowItemHover = true;
-            this.tileControl12.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileControl12.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileControl12.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileControl12.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.tileControl12.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileControl12.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileControl12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.tileControl12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tileControl12.HorizontalContentAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.tileControl12.IndentBetweenItems = 2;
-            this.tileControl12.ItemBorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            this.tileControl12.ItemContentAnimation = DevExpress.XtraEditors.TileItemContentAnimationType.Fade;
-            this.tileControl12.ItemImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileControl12.ItemPadding = new System.Windows.Forms.Padding(0);
-            this.tileControl12.ItemSize = 98;
-            this.tileControl12.ItemTextShowMode = DevExpress.XtraEditors.TileItemContentShowMode.Always;
-            this.tileControl12.Location = new System.Drawing.Point(2, 2);
-            this.tileControl12.MaxId = 8;
-            this.tileControl12.Name = "tileControl12";
-            this.tileControl12.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileControl12.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.tileControl12.RowCount = 1;
-            this.tileControl12.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
-            this.tileControl12.Size = new System.Drawing.Size(1284, 66);
-            this.tileControl12.TabIndex = 1;
-            this.tileControl12.Text = "TileControlModsActions";
-            // 
-            // navigationPage14
-            // 
-            this.navigationPage14.Controls.Add(this.gridControl12);
-            this.navigationPage14.Controls.Add(this.panel20);
-            this.navigationPage14.Controls.Add(this.panelControl21);
-            this.navigationPage14.Name = "navigationPage14";
-            this.navigationPage14.Size = new System.Drawing.Size(1288, 571);
-            // 
-            // gridControl12
-            // 
-            this.gridControl12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl12.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.gridControl12.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gridControl12.EmbeddedNavigator.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.gridControl12.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gridControl12.Location = new System.Drawing.Point(0, 146);
-            this.gridControl12.MainView = this.gridView13;
-            this.gridControl12.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.gridControl12.Name = "gridControl12";
-            this.gridControl12.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.gridControl12.Size = new System.Drawing.Size(1288, 425);
-            this.gridControl12.TabIndex = 1183;
-            this.gridControl12.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView13});
-            // 
-            // gridView13
-            // 
-            this.gridView13.ActiveFilterEnabled = false;
-            this.gridView13.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView13.Appearance.Empty.Options.UseBackColor = true;
-            this.gridView13.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView13.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gridView13.Appearance.Row.Options.UseBackColor = true;
-            this.gridView13.Appearance.Row.Options.UseFont = true;
-            this.gridView13.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(55)))), ((int)(((byte)(58)))));
-            this.gridView13.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.gridView13.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridView13.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
-            this.gridView13.GridControl = this.gridControl12;
-            this.gridView13.GroupRowHeight = 30;
-            this.gridView13.Name = "gridView13";
-            this.gridView13.OptionsBehavior.Editable = false;
-            this.gridView13.OptionsBehavior.ReadOnly = true;
-            this.gridView13.OptionsCustomization.AllowFilter = false;
-            this.gridView13.OptionsFilter.AllowFilterEditor = false;
-            this.gridView13.OptionsMenu.ShowAutoFilterRowItem = false;
-            this.gridView13.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView13.OptionsView.ShowColumnHeaders = false;
-            this.gridView13.OptionsView.ShowGroupPanel = false;
-            this.gridView13.OptionsView.ShowHorizontalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView13.OptionsView.ShowIndicator = false;
-            this.gridView13.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView13.RowHeight = 30;
-            this.gridView13.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
-            // 
-            // panel20
-            // 
-            this.panel20.BackColor = System.Drawing.Color.Transparent;
-            this.panel20.Controls.Add(this.separatorControl63);
-            this.panel20.Controls.Add(this.separatorControl64);
-            this.panel20.Controls.Add(this.separatorControl65);
-            this.panel20.Controls.Add(this.separatorControl66);
-            this.panel20.Controls.Add(this.comboBoxEdit49);
-            this.panel20.Controls.Add(this.labelControl139);
-            this.panel20.Controls.Add(this.comboBoxEdit50);
-            this.panel20.Controls.Add(this.labelControl140);
-            this.panel20.Controls.Add(this.textEdit25);
-            this.panel20.Controls.Add(this.comboBoxEdit51);
-            this.panel20.Controls.Add(this.labelControl141);
-            this.panel20.Controls.Add(this.labelControl142);
-            this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel20.Location = new System.Drawing.Point(0, 70);
-            this.panel20.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(1288, 76);
-            this.panel20.TabIndex = 1184;
-            // 
-            // separatorControl63
-            // 
-            this.separatorControl63.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl63.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl63.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl63.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl63.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl63.LineThickness = 1;
-            this.separatorControl63.Location = new System.Drawing.Point(1078, 12);
-            this.separatorControl63.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl63.Name = "separatorControl63";
-            this.separatorControl63.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl63.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl63.TabIndex = 1214;
-            // 
-            // separatorControl64
-            // 
-            this.separatorControl64.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl64.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl64.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl64.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl64.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl64.LineThickness = 1;
-            this.separatorControl64.Location = new System.Drawing.Point(1192, 12);
-            this.separatorControl64.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl64.Name = "separatorControl64";
-            this.separatorControl64.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl64.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl64.TabIndex = 1213;
-            // 
-            // separatorControl65
-            // 
-            this.separatorControl65.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl65.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl65.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl65.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl65.LineThickness = 1;
-            this.separatorControl65.Location = new System.Drawing.Point(232, 12);
-            this.separatorControl65.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl65.Name = "separatorControl65";
-            this.separatorControl65.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl65.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl65.TabIndex = 1212;
-            // 
-            // separatorControl66
-            // 
-            this.separatorControl66.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl66.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.separatorControl66.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl66.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl66.LineThickness = 1;
-            this.separatorControl66.Location = new System.Drawing.Point(0, 73);
-            this.separatorControl66.Margin = new System.Windows.Forms.Padding(0);
-            this.separatorControl66.Name = "separatorControl66";
-            this.separatorControl66.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl66.Size = new System.Drawing.Size(1288, 3);
-            this.separatorControl66.TabIndex = 1172;
-            // 
-            // comboBoxEdit49
-            // 
-            this.comboBoxEdit49.Location = new System.Drawing.Point(0, 34);
-            this.comboBoxEdit49.Name = "comboBoxEdit49";
-            this.comboBoxEdit49.Properties.AllowFocused = false;
-            this.comboBoxEdit49.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit49.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit49.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit49.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit49.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit49.Properties.AutoComplete = false;
-            this.comboBoxEdit49.Properties.AutoHeight = false;
-            this.comboBoxEdit49.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit49.Properties.DropDownRows = 15;
-            this.comboBoxEdit49.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit49.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit49.Size = new System.Drawing.Size(220, 30);
-            this.comboBoxEdit49.TabIndex = 1170;
-            // 
-            // labelControl139
-            // 
-            this.labelControl139.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl139.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl139.Appearance.Options.UseFont = true;
-            this.labelControl139.Appearance.Options.UseForeColor = true;
-            this.labelControl139.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl139.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl139.Location = new System.Drawing.Point(-3, 12);
-            this.labelControl139.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl139.Name = "labelControl139";
-            this.labelControl139.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl139.Size = new System.Drawing.Size(41, 17);
-            this.labelControl139.TabIndex = 1171;
-            this.labelControl139.Text = "Game";
-            // 
-            // comboBoxEdit50
-            // 
-            this.comboBoxEdit50.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit50.Location = new System.Drawing.Point(1210, 34);
-            this.comboBoxEdit50.Name = "comboBoxEdit50";
-            this.comboBoxEdit50.Properties.AllowFocused = false;
-            this.comboBoxEdit50.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit50.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit50.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit50.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit50.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit50.Properties.AutoComplete = false;
-            this.comboBoxEdit50.Properties.AutoHeight = false;
-            this.comboBoxEdit50.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit50.Properties.DropDownRows = 12;
-            this.comboBoxEdit50.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit50.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit50.Size = new System.Drawing.Size(64, 30);
-            this.comboBoxEdit50.TabIndex = 1164;
-            // 
-            // labelControl140
-            // 
-            this.labelControl140.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl140.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl140.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl140.Appearance.Options.UseFont = true;
-            this.labelControl140.Appearance.Options.UseForeColor = true;
-            this.labelControl140.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl140.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl140.Location = new System.Drawing.Point(1207, 12);
-            this.labelControl140.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl140.Name = "labelControl140";
-            this.labelControl140.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl140.Size = new System.Drawing.Size(53, 17);
-            this.labelControl140.TabIndex = 1165;
-            this.labelControl140.Text = "Version";
-            // 
-            // textEdit25
-            // 
-            this.textEdit25.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit25.Location = new System.Drawing.Point(250, 34);
-            this.textEdit25.Name = "textEdit25";
-            this.textEdit25.Properties.AllowFocused = false;
-            this.textEdit25.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.textEdit25.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textEdit25.Properties.Appearance.Options.UseFont = true;
-            this.textEdit25.Properties.AutoHeight = false;
-            this.textEdit25.Properties.NullValuePrompt = "Search...";
-            this.textEdit25.Size = new System.Drawing.Size(816, 30);
-            this.textEdit25.TabIndex = 1;
-            // 
-            // comboBoxEdit51
-            // 
-            this.comboBoxEdit51.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit51.Location = new System.Drawing.Point(1096, 34);
-            this.comboBoxEdit51.Name = "comboBoxEdit51";
-            this.comboBoxEdit51.Properties.AllowFocused = false;
-            this.comboBoxEdit51.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit51.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit51.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit51.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit51.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit51.Properties.AutoComplete = false;
-            this.comboBoxEdit51.Properties.AutoHeight = false;
-            this.comboBoxEdit51.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit51.Properties.DropDownRows = 12;
-            this.comboBoxEdit51.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit51.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit51.Size = new System.Drawing.Size(84, 30);
-            this.comboBoxEdit51.TabIndex = 4;
-            // 
-            // labelControl141
-            // 
-            this.labelControl141.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl141.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl141.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl141.Appearance.Options.UseFont = true;
-            this.labelControl141.Appearance.Options.UseForeColor = true;
-            this.labelControl141.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl141.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl141.Location = new System.Drawing.Point(1093, 12);
-            this.labelControl141.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl141.Name = "labelControl141";
-            this.labelControl141.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl141.Size = new System.Drawing.Size(49, 17);
-            this.labelControl141.TabIndex = 1163;
-            this.labelControl141.Text = "Region";
-            // 
-            // labelControl142
-            // 
-            this.labelControl142.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl142.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl142.Appearance.Options.UseFont = true;
-            this.labelControl142.Appearance.Options.UseForeColor = true;
-            this.labelControl142.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl142.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl142.Location = new System.Drawing.Point(247, 12);
-            this.labelControl142.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl142.Name = "labelControl142";
-            this.labelControl142.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl142.Size = new System.Drawing.Size(42, 17);
-            this.labelControl142.TabIndex = 1157;
-            this.labelControl142.Text = "Name";
-            // 
-            // panelControl21
-            // 
-            this.panelControl21.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.panelControl21.Appearance.Options.UseBackColor = true;
-            this.panelControl21.Controls.Add(this.tileControl13);
-            this.panelControl21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl21.Location = new System.Drawing.Point(0, 0);
-            this.panelControl21.LookAndFeel.SkinName = "WXI";
-            this.panelControl21.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.panelControl21.Margin = new System.Windows.Forms.Padding(0);
-            this.panelControl21.Name = "panelControl21";
-            this.panelControl21.Size = new System.Drawing.Size(1288, 70);
-            this.panelControl21.TabIndex = 1186;
-            // 
-            // tileControl13
-            // 
-            this.tileControl13.AllowDisabledStateIndication = false;
-            this.tileControl13.AllowDrag = false;
-            this.tileControl13.AllowDragTilesBetweenGroups = false;
-            this.tileControl13.AllowGlyphSkinning = true;
-            this.tileControl13.AllowItemHover = true;
-            this.tileControl13.AppearanceItem.Disabled.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileControl13.AppearanceItem.Disabled.Options.UseBackColor = true;
-            this.tileControl13.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileControl13.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.tileControl13.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileControl13.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileControl13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.tileControl13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tileControl13.Groups.Add(this.tileGroup13);
-            this.tileControl13.HorizontalContentAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.tileControl13.IndentBetweenItems = 2;
-            this.tileControl13.ItemBorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            this.tileControl13.ItemContentAnimation = DevExpress.XtraEditors.TileItemContentAnimationType.Fade;
-            this.tileControl13.ItemImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileControl13.ItemPadding = new System.Windows.Forms.Padding(0);
-            this.tileControl13.ItemSize = 98;
-            this.tileControl13.ItemTextShowMode = DevExpress.XtraEditors.TileItemContentShowMode.Hover;
-            this.tileControl13.Location = new System.Drawing.Point(2, 2);
-            this.tileControl13.MaxId = 6;
-            this.tileControl13.Name = "tileControl13";
-            this.tileControl13.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileControl13.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.tileControl13.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
-            this.tileControl13.Size = new System.Drawing.Size(1284, 66);
-            this.tileControl13.TabIndex = 1;
-            this.tileControl13.Text = "TileControlModsActions";
-            // 
-            // tileGroup13
-            // 
-            this.tileGroup13.Items.Add(this.tileItem48);
-            this.tileGroup13.Name = "tileGroup13";
-            this.tileGroup13.Text = "Cheats Actions";
-            // 
-            // tileItem48
-            // 
-            this.tileItem48.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem48.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.tileItem48.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem48.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem48.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem48.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.tileItem48.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tileItem48.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement98.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement98.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            tileItemElement98.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement98.Text = "";
-            tileItemElement98.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem48.Elements.Add(tileItemElement98);
-            this.tileItem48.Id = 1;
-            this.tileItem48.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem48.Name = "tileItem48";
-            this.tileItem48.Padding = new System.Windows.Forms.Padding(0, -6, 0, 0);
-            // 
-            // navigationPage15
-            // 
-            this.navigationPage15.Controls.Add(this.gridControl13);
-            this.navigationPage15.Controls.Add(this.panel21);
-            this.navigationPage15.Controls.Add(this.panelControl22);
-            this.navigationPage15.Name = "navigationPage15";
-            this.navigationPage15.Size = new System.Drawing.Size(1288, 571);
-            // 
-            // gridControl13
-            // 
-            this.gridControl13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl13.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.gridControl13.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gridControl13.EmbeddedNavigator.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.gridControl13.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gridControl13.Location = new System.Drawing.Point(0, 146);
-            this.gridControl13.MainView = this.gridView14;
-            this.gridControl13.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.gridControl13.Name = "gridControl13";
-            this.gridControl13.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.gridControl13.Size = new System.Drawing.Size(1288, 425);
-            this.gridControl13.TabIndex = 1221;
-            this.gridControl13.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView14});
-            // 
-            // gridView14
-            // 
-            this.gridView14.ActiveFilterEnabled = false;
-            this.gridView14.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView14.Appearance.Empty.Options.UseBackColor = true;
-            this.gridView14.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView14.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gridView14.Appearance.Row.Options.UseBackColor = true;
-            this.gridView14.Appearance.Row.Options.UseFont = true;
-            this.gridView14.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(55)))), ((int)(((byte)(58)))));
-            this.gridView14.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.gridView14.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridView14.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
-            this.gridView14.GridControl = this.gridControl13;
-            this.gridView14.GroupRowHeight = 30;
-            this.gridView14.Name = "gridView14";
-            this.gridView14.OptionsBehavior.Editable = false;
-            this.gridView14.OptionsBehavior.ReadOnly = true;
-            this.gridView14.OptionsCustomization.AllowFilter = false;
-            this.gridView14.OptionsFilter.AllowFilterEditor = false;
-            this.gridView14.OptionsMenu.ShowAutoFilterRowItem = false;
-            this.gridView14.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView14.OptionsView.ShowColumnHeaders = false;
-            this.gridView14.OptionsView.ShowGroupPanel = false;
-            this.gridView14.OptionsView.ShowHorizontalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView14.OptionsView.ShowIndicator = false;
-            this.gridView14.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView14.RowHeight = 30;
-            this.gridView14.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
-            // 
-            // panel21
-            // 
-            this.panel21.BackColor = System.Drawing.Color.Transparent;
-            this.panel21.Controls.Add(this.separatorControl67);
-            this.panel21.Controls.Add(this.separatorControl68);
-            this.panel21.Controls.Add(this.separatorControl69);
-            this.panel21.Controls.Add(this.separatorControl70);
-            this.panel21.Controls.Add(this.comboBoxEdit52);
-            this.panel21.Controls.Add(this.labelControl143);
-            this.panel21.Controls.Add(this.comboBoxEdit53);
-            this.panel21.Controls.Add(this.labelControl144);
-            this.panel21.Controls.Add(this.comboBoxEdit54);
-            this.panel21.Controls.Add(this.labelControl145);
-            this.panel21.Controls.Add(this.textEdit26);
-            this.panel21.Controls.Add(this.comboBoxEdit55);
-            this.panel21.Controls.Add(this.labelControl146);
-            this.panel21.Controls.Add(this.labelControl147);
-            this.panel21.Controls.Add(this.separatorControl71);
-            this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel21.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.panel21.Location = new System.Drawing.Point(0, 70);
-            this.panel21.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(1288, 76);
-            this.panel21.TabIndex = 1222;
-            // 
-            // separatorControl67
-            // 
-            this.separatorControl67.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl67.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl67.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl67.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl67.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl67.LineThickness = 1;
-            this.separatorControl67.Location = new System.Drawing.Point(1043, 12);
-            this.separatorControl67.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl67.Name = "separatorControl67";
-            this.separatorControl67.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl67.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl67.TabIndex = 1216;
-            // 
-            // separatorControl68
-            // 
-            this.separatorControl68.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl68.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl68.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl68.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl68.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl68.LineThickness = 1;
-            this.separatorControl68.Location = new System.Drawing.Point(1154, 12);
-            this.separatorControl68.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl68.Name = "separatorControl68";
-            this.separatorControl68.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl68.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl68.TabIndex = 1215;
-            // 
-            // separatorControl69
-            // 
-            this.separatorControl69.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl69.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl69.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl69.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl69.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl69.LineThickness = 1;
-            this.separatorControl69.Location = new System.Drawing.Point(949, 12);
-            this.separatorControl69.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl69.Name = "separatorControl69";
-            this.separatorControl69.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl69.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl69.TabIndex = 1212;
-            // 
-            // separatorControl70
-            // 
-            this.separatorControl70.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl70.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl70.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl70.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl70.LineThickness = 1;
-            this.separatorControl70.Location = new System.Drawing.Point(232, 12);
-            this.separatorControl70.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl70.Name = "separatorControl70";
-            this.separatorControl70.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl70.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl70.TabIndex = 1211;
-            // 
-            // comboBoxEdit52
-            // 
-            this.comboBoxEdit52.Location = new System.Drawing.Point(0, 34);
-            this.comboBoxEdit52.Name = "comboBoxEdit52";
-            this.comboBoxEdit52.Properties.AllowFocused = false;
-            this.comboBoxEdit52.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit52.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit52.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit52.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit52.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit52.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit52.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit52.Properties.AutoComplete = false;
-            this.comboBoxEdit52.Properties.AutoHeight = false;
-            this.comboBoxEdit52.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit52.Properties.DropDownRows = 15;
-            this.comboBoxEdit52.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit52.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit52.Size = new System.Drawing.Size(220, 30);
-            this.comboBoxEdit52.TabIndex = 2;
-            // 
-            // labelControl143
-            // 
-            this.labelControl143.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl143.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl143.Appearance.Options.UseFont = true;
-            this.labelControl143.Appearance.Options.UseForeColor = true;
-            this.labelControl143.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl143.Location = new System.Drawing.Point(-3, 12);
-            this.labelControl143.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl143.Name = "labelControl143";
-            this.labelControl143.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl143.Size = new System.Drawing.Size(61, 17);
-            this.labelControl143.TabIndex = 1171;
-            this.labelControl143.Text = "Category";
-            // 
-            // comboBoxEdit53
-            // 
-            this.comboBoxEdit53.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit53.Location = new System.Drawing.Point(1172, 34);
-            this.comboBoxEdit53.Name = "comboBoxEdit53";
-            this.comboBoxEdit53.Properties.AllowFocused = false;
-            this.comboBoxEdit53.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit53.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit53.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit53.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit53.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit53.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit53.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit53.Properties.AutoComplete = false;
-            this.comboBoxEdit53.Properties.AutoHeight = false;
-            this.comboBoxEdit53.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit53.Properties.Items.AddRange(new object[] {
-            "<All>",
-            "Downloaded",
-            "Not Installed",
-            "Installed"});
-            this.comboBoxEdit53.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit53.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit53.Size = new System.Drawing.Size(102, 30);
-            this.comboBoxEdit53.TabIndex = 9;
-            // 
-            // labelControl144
-            // 
-            this.labelControl144.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl144.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl144.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl144.Appearance.Options.UseFont = true;
-            this.labelControl144.Appearance.Options.UseForeColor = true;
-            this.labelControl144.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl144.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl144.Location = new System.Drawing.Point(1169, 12);
-            this.labelControl144.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl144.Name = "labelControl144";
-            this.labelControl144.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl144.Size = new System.Drawing.Size(44, 17);
-            this.labelControl144.TabIndex = 1169;
-            this.labelControl144.Text = "Status";
-            // 
-            // comboBoxEdit54
-            // 
-            this.comboBoxEdit54.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit54.Location = new System.Drawing.Point(967, 34);
-            this.comboBoxEdit54.Name = "comboBoxEdit54";
-            this.comboBoxEdit54.Properties.AllowFocused = false;
-            this.comboBoxEdit54.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit54.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit54.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit54.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit54.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit54.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit54.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit54.Properties.AutoComplete = false;
-            this.comboBoxEdit54.Properties.AutoHeight = false;
-            this.comboBoxEdit54.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit54.Properties.DropDownRows = 12;
-            this.comboBoxEdit54.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit54.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit54.Size = new System.Drawing.Size(64, 30);
-            this.comboBoxEdit54.TabIndex = 7;
-            // 
-            // labelControl145
-            // 
-            this.labelControl145.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl145.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl145.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl145.Appearance.Options.UseFont = true;
-            this.labelControl145.Appearance.Options.UseForeColor = true;
-            this.labelControl145.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl145.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl145.Location = new System.Drawing.Point(964, 12);
-            this.labelControl145.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl145.Name = "labelControl145";
-            this.labelControl145.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl145.Size = new System.Drawing.Size(53, 17);
-            this.labelControl145.TabIndex = 1165;
-            this.labelControl145.Text = "Version";
-            // 
-            // textEdit26
-            // 
-            this.textEdit26.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit26.Location = new System.Drawing.Point(250, 34);
-            this.textEdit26.Name = "textEdit26";
-            this.textEdit26.Properties.AllowFocused = false;
-            this.textEdit26.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.textEdit26.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textEdit26.Properties.Appearance.Options.UseFont = true;
-            this.textEdit26.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.textEdit26.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.textEdit26.Properties.AutoHeight = false;
-            this.textEdit26.Properties.NullValuePrompt = "Search...";
-            this.textEdit26.Size = new System.Drawing.Size(687, 30);
-            this.textEdit26.TabIndex = 3;
-            // 
-            // comboBoxEdit55
-            // 
-            this.comboBoxEdit55.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit55.Location = new System.Drawing.Point(1061, 34);
-            this.comboBoxEdit55.Name = "comboBoxEdit55";
-            this.comboBoxEdit55.Properties.AllowFocused = false;
-            this.comboBoxEdit55.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit55.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit55.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit55.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit55.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit55.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit55.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit55.Properties.AutoComplete = false;
-            this.comboBoxEdit55.Properties.AutoHeight = false;
-            this.comboBoxEdit55.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit55.Properties.DropDownRows = 12;
-            this.comboBoxEdit55.Properties.Items.AddRange(new object[] {
-            "<All>"});
-            this.comboBoxEdit55.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit55.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit55.Size = new System.Drawing.Size(81, 30);
-            this.comboBoxEdit55.TabIndex = 4;
-            // 
-            // labelControl146
-            // 
-            this.labelControl146.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl146.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl146.Appearance.Options.UseFont = true;
-            this.labelControl146.Appearance.Options.UseForeColor = true;
-            this.labelControl146.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl146.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl146.Location = new System.Drawing.Point(247, 12);
-            this.labelControl146.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl146.Name = "labelControl146";
-            this.labelControl146.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl146.Size = new System.Drawing.Size(42, 17);
-            this.labelControl146.TabIndex = 1157;
-            this.labelControl146.Text = "Name";
-            // 
-            // labelControl147
-            // 
-            this.labelControl147.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl147.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl147.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl147.Appearance.Options.UseFont = true;
-            this.labelControl147.Appearance.Options.UseForeColor = true;
-            this.labelControl147.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl147.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl147.Location = new System.Drawing.Point(1058, 12);
-            this.labelControl147.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl147.Name = "labelControl147";
-            this.labelControl147.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl147.Size = new System.Drawing.Size(77, 17);
-            this.labelControl147.TabIndex = 1156;
-            this.labelControl147.Text = "FW Version";
-            // 
-            // separatorControl71
-            // 
-            this.separatorControl71.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl71.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.separatorControl71.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl71.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl71.LineThickness = 1;
-            this.separatorControl71.Location = new System.Drawing.Point(0, 73);
-            this.separatorControl71.Margin = new System.Windows.Forms.Padding(0);
-            this.separatorControl71.Name = "separatorControl71";
-            this.separatorControl71.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl71.Size = new System.Drawing.Size(1288, 3);
-            this.separatorControl71.TabIndex = 1172;
-            // 
-            // panelControl22
-            // 
-            this.panelControl22.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.panelControl22.Appearance.Options.UseBackColor = true;
-            this.panelControl22.Controls.Add(this.tileControl14);
-            this.panelControl22.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl22.Location = new System.Drawing.Point(0, 0);
-            this.panelControl22.LookAndFeel.SkinName = "WXI";
-            this.panelControl22.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.panelControl22.Margin = new System.Windows.Forms.Padding(0);
-            this.panelControl22.Name = "panelControl22";
-            this.panelControl22.Size = new System.Drawing.Size(1288, 70);
-            this.panelControl22.TabIndex = 1224;
-            // 
-            // tileControl14
-            // 
-            this.tileControl14.AllowDisabledStateIndication = false;
-            this.tileControl14.AllowDrag = false;
-            this.tileControl14.AllowDragTilesBetweenGroups = false;
-            this.tileControl14.AllowGlyphSkinning = true;
-            this.tileControl14.AllowItemHover = true;
-            this.tileControl14.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileControl14.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileControl14.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileControl14.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.tileControl14.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileControl14.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileControl14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.tileControl14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tileControl14.HorizontalContentAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.tileControl14.IndentBetweenItems = 2;
-            this.tileControl14.ItemBorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            this.tileControl14.ItemContentAnimation = DevExpress.XtraEditors.TileItemContentAnimationType.Fade;
-            this.tileControl14.ItemImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileControl14.ItemPadding = new System.Windows.Forms.Padding(0);
-            this.tileControl14.ItemSize = 98;
-            this.tileControl14.ItemTextShowMode = DevExpress.XtraEditors.TileItemContentShowMode.Always;
-            this.tileControl14.Location = new System.Drawing.Point(2, 2);
-            this.tileControl14.MaxId = 8;
-            this.tileControl14.Name = "tileControl14";
-            this.tileControl14.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileControl14.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.tileControl14.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
-            this.tileControl14.Size = new System.Drawing.Size(1284, 66);
-            this.tileControl14.TabIndex = 1;
-            this.tileControl14.Text = "TileControlModsActions";
-            // 
-            // navigationPage16
-            // 
-            this.navigationPage16.Controls.Add(this.gridControl14);
-            this.navigationPage16.Controls.Add(this.panel22);
-            this.navigationPage16.Controls.Add(this.panelControl23);
-            this.navigationPage16.Name = "navigationPage16";
-            this.navigationPage16.Size = new System.Drawing.Size(1288, 571);
-            // 
-            // gridControl14
-            // 
-            this.gridControl14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridControl14.Location = new System.Drawing.Point(0, 146);
-            this.gridControl14.MainView = this.gridView15;
-            this.gridControl14.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.gridControl14.Name = "gridControl14";
-            this.gridControl14.Size = new System.Drawing.Size(1288, 425);
-            this.gridControl14.TabIndex = 1218;
-            this.gridControl14.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView15});
-            // 
-            // gridView15
-            // 
-            this.gridView15.ActiveFilterEnabled = false;
-            this.gridView15.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView15.Appearance.Empty.Options.UseBackColor = true;
-            this.gridView15.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.gridView15.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gridView15.Appearance.Row.Options.UseBackColor = true;
-            this.gridView15.Appearance.Row.Options.UseFont = true;
-            this.gridView15.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(55)))), ((int)(((byte)(58)))));
-            this.gridView15.Appearance.SelectedRow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(71)))), ((int)(((byte)(73)))));
-            this.gridView15.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.gridView15.Appearance.SelectedRow.Options.UseForeColor = true;
-            this.gridView15.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridView15.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
-            this.gridView15.GridControl = this.gridControl14;
-            this.gridView15.GroupRowHeight = 30;
-            this.gridView15.Name = "gridView15";
-            this.gridView15.OptionsBehavior.Editable = false;
-            this.gridView15.OptionsBehavior.ReadOnly = true;
-            this.gridView15.OptionsCustomization.AllowFilter = false;
-            this.gridView15.OptionsFilter.AllowFilterEditor = false;
-            this.gridView15.OptionsMenu.ShowAutoFilterRowItem = false;
-            this.gridView15.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView15.OptionsView.ShowColumnHeaders = false;
-            this.gridView15.OptionsView.ShowGroupPanel = false;
-            this.gridView15.OptionsView.ShowHorizontalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView15.OptionsView.ShowIndicator = false;
-            this.gridView15.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView15.RowHeight = 30;
-            this.gridView15.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
-            // 
-            // panel22
-            // 
-            this.panel22.BackColor = System.Drawing.Color.Transparent;
-            this.panel22.Controls.Add(this.separatorControl72);
-            this.panel22.Controls.Add(this.comboBoxEdit56);
-            this.panel22.Controls.Add(this.labelControl148);
-            this.panel22.Controls.Add(this.separatorControl73);
-            this.panel22.Controls.Add(this.separatorControl74);
-            this.panel22.Controls.Add(this.separatorControl75);
-            this.panel22.Controls.Add(this.separatorControl76);
-            this.panel22.Controls.Add(this.separatorControl77);
-            this.panel22.Controls.Add(this.comboBoxEdit57);
-            this.panel22.Controls.Add(this.separatorControl78);
-            this.panel22.Controls.Add(this.comboBoxEdit58);
-            this.panel22.Controls.Add(this.labelControl149);
-            this.panel22.Controls.Add(this.comboBoxEdit59);
-            this.panel22.Controls.Add(this.labelControl150);
-            this.panel22.Controls.Add(this.textEdit27);
-            this.panel22.Controls.Add(this.comboBoxEdit60);
-            this.panel22.Controls.Add(this.labelControl151);
-            this.panel22.Controls.Add(this.labelControl152);
-            this.panel22.Controls.Add(this.labelControl153);
-            this.panel22.Controls.Add(this.comboBoxEdit61);
-            this.panel22.Controls.Add(this.labelControl154);
-            this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel22.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.panel22.Location = new System.Drawing.Point(0, 70);
-            this.panel22.Margin = new System.Windows.Forms.Padding(0, 4, 0, 50);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(1288, 76);
-            this.panel22.TabIndex = 1219;
-            // 
-            // separatorControl72
-            // 
-            this.separatorControl72.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl72.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl72.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl72.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl72.LineThickness = 1;
-            this.separatorControl72.Location = new System.Drawing.Point(102, 12);
-            this.separatorControl72.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl72.Name = "separatorControl72";
-            this.separatorControl72.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl72.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl72.TabIndex = 1221;
-            // 
-            // comboBoxEdit56
-            // 
-            this.comboBoxEdit56.Location = new System.Drawing.Point(120, 34);
-            this.comboBoxEdit56.Name = "comboBoxEdit56";
-            this.comboBoxEdit56.Properties.AllowFocused = false;
-            this.comboBoxEdit56.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit56.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit56.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit56.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit56.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit56.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit56.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit56.Properties.AutoComplete = false;
-            this.comboBoxEdit56.Properties.AutoHeight = false;
-            this.comboBoxEdit56.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit56.Properties.DropDownRows = 15;
-            this.comboBoxEdit56.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit56.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit56.Size = new System.Drawing.Size(220, 30);
-            this.comboBoxEdit56.TabIndex = 1217;
-            // 
-            // labelControl148
-            // 
-            this.labelControl148.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl148.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl148.Appearance.Options.UseFont = true;
-            this.labelControl148.Appearance.Options.UseForeColor = true;
-            this.labelControl148.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl148.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl148.Location = new System.Drawing.Point(117, 12);
-            this.labelControl148.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl148.Name = "labelControl148";
-            this.labelControl148.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl148.Size = new System.Drawing.Size(61, 17);
-            this.labelControl148.TabIndex = 1218;
-            this.labelControl148.Text = "Category";
-            // 
-            // separatorControl73
-            // 
-            this.separatorControl73.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl73.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl73.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl73.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl73.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl73.LineThickness = 1;
-            this.separatorControl73.Location = new System.Drawing.Point(1060, 12);
-            this.separatorControl73.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl73.Name = "separatorControl73";
-            this.separatorControl73.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl73.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl73.TabIndex = 1216;
-            // 
-            // separatorControl74
-            // 
-            this.separatorControl74.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl74.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl74.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl74.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl74.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl74.LineThickness = 1;
-            this.separatorControl74.Location = new System.Drawing.Point(1154, 12);
-            this.separatorControl74.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl74.Name = "separatorControl74";
-            this.separatorControl74.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl74.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl74.TabIndex = 1215;
-            // 
-            // separatorControl75
-            // 
-            this.separatorControl75.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl75.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl75.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl75.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl75.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl75.LineThickness = 1;
-            this.separatorControl75.Location = new System.Drawing.Point(948, 12);
-            this.separatorControl75.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl75.Name = "separatorControl75";
-            this.separatorControl75.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl75.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl75.TabIndex = 1214;
-            // 
-            // separatorControl76
-            // 
-            this.separatorControl76.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl76.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl76.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl76.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl76.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl76.LineThickness = 1;
-            this.separatorControl76.Location = new System.Drawing.Point(818, 12);
-            this.separatorControl76.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl76.Name = "separatorControl76";
-            this.separatorControl76.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl76.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl76.TabIndex = 1213;
-            // 
-            // separatorControl77
-            // 
-            this.separatorControl77.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl77.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl77.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl77.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl77.LineThickness = 1;
-            this.separatorControl77.Location = new System.Drawing.Point(352, 12);
-            this.separatorControl77.Margin = new System.Windows.Forms.Padding(9, 0, 12, 0);
-            this.separatorControl77.Name = "separatorControl77";
-            this.separatorControl77.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl77.Size = new System.Drawing.Size(3, 52);
-            this.separatorControl77.TabIndex = 1211;
-            // 
-            // comboBoxEdit57
-            // 
-            this.comboBoxEdit57.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit57.Location = new System.Drawing.Point(836, 34);
-            this.comboBoxEdit57.Name = "comboBoxEdit57";
-            this.comboBoxEdit57.Properties.AllowFocused = false;
-            this.comboBoxEdit57.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit57.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit57.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit57.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit57.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit57.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit57.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit57.Properties.AutoComplete = false;
-            this.comboBoxEdit57.Properties.AutoHeight = false;
-            this.comboBoxEdit57.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit57.Properties.DropDownRows = 12;
-            this.comboBoxEdit57.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit57.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit57.Size = new System.Drawing.Size(100, 30);
-            this.comboBoxEdit57.TabIndex = 5;
-            // 
-            // separatorControl78
-            // 
-            this.separatorControl78.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl78.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.separatorControl78.LineAlignment = DevExpress.XtraEditors.Alignment.Center;
-            this.separatorControl78.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(63)))));
-            this.separatorControl78.LineThickness = 2;
-            this.separatorControl78.Location = new System.Drawing.Point(0, 73);
-            this.separatorControl78.Margin = new System.Windows.Forms.Padding(0);
-            this.separatorControl78.Name = "separatorControl78";
-            this.separatorControl78.Padding = new System.Windows.Forms.Padding(0);
-            this.separatorControl78.Size = new System.Drawing.Size(1288, 3);
-            this.separatorControl78.TabIndex = 1172;
-            // 
-            // comboBoxEdit58
-            // 
-            this.comboBoxEdit58.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit58.Location = new System.Drawing.Point(1172, 34);
-            this.comboBoxEdit58.Name = "comboBoxEdit58";
-            this.comboBoxEdit58.Properties.AllowFocused = false;
-            this.comboBoxEdit58.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit58.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit58.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit58.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit58.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit58.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit58.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit58.Properties.AutoComplete = false;
-            this.comboBoxEdit58.Properties.AutoHeight = false;
-            this.comboBoxEdit58.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit58.Properties.Items.AddRange(new object[] {
-            "<All>",
-            "Downloaded",
-            "Not Installed",
-            "Installed"});
-            this.comboBoxEdit58.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit58.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit58.Size = new System.Drawing.Size(102, 30);
-            this.comboBoxEdit58.TabIndex = 9;
-            // 
-            // labelControl149
-            // 
-            this.labelControl149.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl149.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl149.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl149.Appearance.Options.UseFont = true;
-            this.labelControl149.Appearance.Options.UseForeColor = true;
-            this.labelControl149.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl149.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl149.Location = new System.Drawing.Point(1169, 12);
-            this.labelControl149.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl149.Name = "labelControl149";
-            this.labelControl149.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl149.Size = new System.Drawing.Size(44, 17);
-            this.labelControl149.TabIndex = 1169;
-            this.labelControl149.Text = "Status";
-            // 
-            // comboBoxEdit59
-            // 
-            this.comboBoxEdit59.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit59.Location = new System.Drawing.Point(1078, 34);
-            this.comboBoxEdit59.Name = "comboBoxEdit59";
-            this.comboBoxEdit59.Properties.AllowFocused = false;
-            this.comboBoxEdit59.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit59.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit59.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit59.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit59.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit59.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit59.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit59.Properties.AutoComplete = false;
-            this.comboBoxEdit59.Properties.AutoHeight = false;
-            this.comboBoxEdit59.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit59.Properties.DropDownRows = 12;
-            this.comboBoxEdit59.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit59.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit59.Size = new System.Drawing.Size(64, 30);
-            this.comboBoxEdit59.TabIndex = 7;
-            // 
-            // labelControl150
-            // 
-            this.labelControl150.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl150.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl150.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl150.Appearance.Options.UseFont = true;
-            this.labelControl150.Appearance.Options.UseForeColor = true;
-            this.labelControl150.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl150.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl150.Location = new System.Drawing.Point(1075, 12);
-            this.labelControl150.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl150.Name = "labelControl150";
-            this.labelControl150.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl150.Size = new System.Drawing.Size(53, 17);
-            this.labelControl150.TabIndex = 1165;
-            this.labelControl150.Text = "Version";
-            // 
-            // textEdit27
-            // 
-            this.textEdit27.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit27.Location = new System.Drawing.Point(370, 34);
-            this.textEdit27.Name = "textEdit27";
-            this.textEdit27.Properties.AllowFocused = false;
-            this.textEdit27.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.textEdit27.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textEdit27.Properties.Appearance.Options.UseFont = true;
-            this.textEdit27.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.textEdit27.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.textEdit27.Properties.AutoHeight = false;
-            this.textEdit27.Properties.NullValuePrompt = "Search...";
-            this.textEdit27.Size = new System.Drawing.Size(436, 30);
-            this.textEdit27.TabIndex = 3;
-            // 
-            // comboBoxEdit60
-            // 
-            this.comboBoxEdit60.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit60.Location = new System.Drawing.Point(966, 34);
-            this.comboBoxEdit60.Name = "comboBoxEdit60";
-            this.comboBoxEdit60.Properties.AllowFocused = false;
-            this.comboBoxEdit60.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit60.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit60.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit60.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit60.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit60.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit60.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit60.Properties.AutoComplete = false;
-            this.comboBoxEdit60.Properties.AutoHeight = false;
-            this.comboBoxEdit60.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit60.Properties.DropDownRows = 12;
-            this.comboBoxEdit60.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit60.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit60.Size = new System.Drawing.Size(82, 30);
-            this.comboBoxEdit60.TabIndex = 6;
-            // 
-            // labelControl151
-            // 
-            this.labelControl151.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl151.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl151.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl151.Appearance.Options.UseFont = true;
-            this.labelControl151.Appearance.Options.UseForeColor = true;
-            this.labelControl151.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl151.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl151.Location = new System.Drawing.Point(963, 12);
-            this.labelControl151.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl151.Name = "labelControl151";
-            this.labelControl151.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl151.Size = new System.Drawing.Size(49, 17);
-            this.labelControl151.TabIndex = 1163;
-            this.labelControl151.Text = "Region";
-            // 
-            // labelControl152
-            // 
-            this.labelControl152.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl152.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl152.Appearance.Options.UseFont = true;
-            this.labelControl152.Appearance.Options.UseForeColor = true;
-            this.labelControl152.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl152.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl152.Location = new System.Drawing.Point(367, 12);
-            this.labelControl152.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl152.Name = "labelControl152";
-            this.labelControl152.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl152.Size = new System.Drawing.Size(42, 17);
-            this.labelControl152.TabIndex = 1157;
-            this.labelControl152.Text = "Name";
-            // 
-            // labelControl153
-            // 
-            this.labelControl153.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl153.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl153.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl153.Appearance.Options.UseFont = true;
-            this.labelControl153.Appearance.Options.UseForeColor = true;
-            this.labelControl153.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl153.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl153.Location = new System.Drawing.Point(833, 12);
-            this.labelControl153.Margin = new System.Windows.Forms.Padding(3, 4, 0, 2);
-            this.labelControl153.Name = "labelControl153";
-            this.labelControl153.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl153.Size = new System.Drawing.Size(68, 17);
-            this.labelControl153.TabIndex = 1122;
-            this.labelControl153.Text = "Mod Type";
-            // 
-            // comboBoxEdit61
-            // 
-            this.comboBoxEdit61.Location = new System.Drawing.Point(0, 34);
-            this.comboBoxEdit61.Name = "comboBoxEdit61";
-            this.comboBoxEdit61.Properties.AllowFocused = false;
-            this.comboBoxEdit61.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.comboBoxEdit61.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit61.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit61.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBoxEdit61.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.comboBoxEdit61.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.comboBoxEdit61.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.comboBoxEdit61.Properties.AutoComplete = false;
-            this.comboBoxEdit61.Properties.AutoHeight = false;
-            this.comboBoxEdit61.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit61.Properties.DropDownRows = 12;
-            this.comboBoxEdit61.Properties.Items.AddRange(new object[] {
-            "<All>",
-            "PlayStation 3",
-            "Xbox 360"});
-            this.comboBoxEdit61.Properties.NullValuePrompt = "Select...";
-            this.comboBoxEdit61.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit61.Size = new System.Drawing.Size(92, 30);
-            this.comboBoxEdit61.TabIndex = 1219;
-            // 
-            // labelControl154
-            // 
-            this.labelControl154.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl154.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl154.Appearance.Options.UseFont = true;
-            this.labelControl154.Appearance.Options.UseForeColor = true;
-            this.labelControl154.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelControl154.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelControl154.Location = new System.Drawing.Point(-3, 12);
-            this.labelControl154.Margin = new System.Windows.Forms.Padding(5, 4, 0, 2);
-            this.labelControl154.Name = "labelControl154";
-            this.labelControl154.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.labelControl154.Size = new System.Drawing.Size(60, 17);
-            this.labelControl154.TabIndex = 1220;
-            this.labelControl154.Text = "Platform";
-            // 
-            // panelControl23
-            // 
-            this.panelControl23.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.panelControl23.Appearance.Options.UseBackColor = true;
-            this.panelControl23.Controls.Add(this.tileControl15);
-            this.panelControl23.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl23.Location = new System.Drawing.Point(0, 0);
-            this.panelControl23.LookAndFeel.SkinName = "WXI";
-            this.panelControl23.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.panelControl23.Margin = new System.Windows.Forms.Padding(0);
-            this.panelControl23.Name = "panelControl23";
-            this.panelControl23.Size = new System.Drawing.Size(1288, 70);
-            this.panelControl23.TabIndex = 1221;
-            // 
-            // tileControl15
-            // 
-            this.tileControl15.AllowDisabledStateIndication = false;
-            this.tileControl15.AllowDrag = false;
-            this.tileControl15.AllowDragTilesBetweenGroups = false;
-            this.tileControl15.AllowGlyphSkinning = true;
-            this.tileControl15.AllowItemHover = true;
-            this.tileControl15.AppearanceGroupHighlighting.HoveredMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(70)))));
-            this.tileControl15.AppearanceGroupHighlighting.MaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(70)))));
-            this.tileControl15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.tileControl15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tileControl15.Groups.Add(this.tileGroup15);
-            this.tileControl15.HorizontalContentAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.tileControl15.IndentBetweenItems = 2;
-            this.tileControl15.ItemBorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            this.tileControl15.ItemContentAnimation = DevExpress.XtraEditors.TileItemContentAnimationType.Fade;
-            this.tileControl15.ItemImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileControl15.ItemImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            this.tileControl15.ItemPadding = new System.Windows.Forms.Padding(0);
-            this.tileControl15.ItemSize = 98;
-            this.tileControl15.ItemTextShowMode = DevExpress.XtraEditors.TileItemContentShowMode.Always;
-            this.tileControl15.Location = new System.Drawing.Point(2, 2);
-            this.tileControl15.MaxId = 13;
-            this.tileControl15.Name = "tileControl15";
-            this.tileControl15.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileControl15.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.tileControl15.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
-            this.tileControl15.Size = new System.Drawing.Size(1284, 66);
-            this.tileControl15.TabIndex = 9;
-            // 
-            // tileGroup15
-            // 
-            this.tileGroup15.Items.Add(this.tileItem53);
-            this.tileGroup15.Items.Add(this.tileItem54);
-            this.tileGroup15.Items.Add(this.tileItem55);
-            this.tileGroup15.Items.Add(this.tileItem56);
-            this.tileGroup15.Items.Add(this.tileItem57);
-            this.tileGroup15.Items.Add(this.tileItem58);
-            this.tileGroup15.Items.Add(this.tileItem59);
-            this.tileGroup15.Name = "tileGroup15";
-            // 
-            // tileItem53
-            // 
-            this.tileItem53.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem53.AppearanceItem.Disabled.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem53.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.tileItem53.AppearanceItem.Disabled.Options.UseBackColor = true;
-            this.tileItem53.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem53.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem53.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem53.AppearanceItem.Normal.Options.UseTextOptions = true;
-            this.tileItem53.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tileItem53.AppearanceItem.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
-            this.tileItem53.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement99.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement99.ImageOptions.ImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement99.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.None;
-            tileItemElement99.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement99.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement99.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement99.Text = "";
-            tileItemElement99.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem53.Elements.Add(tileItemElement99);
-            this.tileItem53.Id = 1;
-            this.tileItem53.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem53.Name = "tileItem53";
-            this.tileItem53.Padding = new System.Windows.Forms.Padding(0);
-            // 
-            // tileItem54
-            // 
-            this.tileItem54.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem54.AppearanceItem.Disabled.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem54.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem54.AppearanceItem.Disabled.Options.UseBackColor = true;
-            this.tileItem54.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem54.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem54.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem54.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement100.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement100.ImageOptions.ImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement100.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.None;
-            tileItemElement100.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement100.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_add_new;
-            tileItemElement100.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            this.tileItem54.Elements.Add(tileItemElement100);
-            this.tileItem54.Enabled = false;
-            this.tileItem54.Id = 2;
-            this.tileItem54.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem54.Name = "tileItem54";
-            this.tileItem54.Padding = new System.Windows.Forms.Padding(0);
-            // 
-            // tileItem55
-            // 
-            this.tileItem55.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem55.AppearanceItem.Disabled.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem55.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem55.AppearanceItem.Disabled.Options.UseBackColor = true;
-            this.tileItem55.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem55.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem55.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem55.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement101.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement101.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement101.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_edit_details;
-            tileItemElement101.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement101.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            this.tileItem55.Elements.Add(tileItemElement101);
-            this.tileItem55.Enabled = false;
-            this.tileItem55.Id = 3;
-            this.tileItem55.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem55.Name = "tileItem55";
-            this.tileItem55.Padding = new System.Windows.Forms.Padding(0);
-            // 
-            // tileItem56
-            // 
-            this.tileItem56.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem56.AppearanceItem.Disabled.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem56.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem56.AppearanceItem.Disabled.Options.UseBackColor = true;
-            this.tileItem56.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem56.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem56.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem56.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement102.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement102.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.delete;
-            tileItemElement102.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement102.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            this.tileItem56.Elements.Add(tileItemElement102);
-            this.tileItem56.Enabled = false;
-            this.tileItem56.Id = 4;
-            this.tileItem56.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem56.Name = "tileItem56";
-            this.tileItem56.Padding = new System.Windows.Forms.Padding(0);
-            // 
-            // tileItem57
-            // 
-            this.tileItem57.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem57.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem57.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem57.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem57.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem57.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement103.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement103.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement103.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement103.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement103.Text = "";
-            this.tileItem57.Elements.Add(tileItemElement103);
-            this.tileItem57.Enabled = false;
-            this.tileItem57.Id = 10;
-            this.tileItem57.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem57.Name = "tileItem57";
-            this.tileItem57.Padding = new System.Windows.Forms.Padding(0);
-            // 
-            // tileItem58
-            // 
-            this.tileItem58.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem58.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem58.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem58.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem58.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.tileItem58.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem58.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileItem58.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement104.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement104.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_install;
-            tileItemElement104.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement104.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement104.Text = "";
-            this.tileItem58.Elements.Add(tileItemElement104);
-            this.tileItem58.Enabled = false;
-            this.tileItem58.Id = 11;
-            this.tileItem58.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem58.Name = "tileItem58";
-            this.tileItem58.Padding = new System.Windows.Forms.Padding(0);
-            // 
-            // tileItem59
-            // 
-            this.tileItem59.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.tileItem59.AppearanceItem.Disabled.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tileItem59.AppearanceItem.Disabled.Options.UseForeColor = true;
-            this.tileItem59.AppearanceItem.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileItem59.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem59.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement105.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement105.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_uninstall;
-            tileItemElement105.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement105.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            tileItemElement105.Text = "";
-            this.tileItem59.Elements.Add(tileItemElement105);
-            this.tileItem59.Enabled = false;
-            this.tileItem59.Id = 12;
-            this.tileItem59.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
-            this.tileItem59.Name = "tileItem59";
-            this.tileItem59.Padding = new System.Windows.Forms.Padding(0);
             // 
             // navigationPage17
             // 
@@ -23573,11 +14274,11 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.TileItemHomebrewPS4ShowDetails.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.TileItemHomebrewPS4ShowDetails.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement106.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
-            tileItemElement106.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement106.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement106.Text = "";
-            this.TileItemHomebrewPS4ShowDetails.Elements.Add(tileItemElement106);
+            tileItemElement61.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_show_details;
+            tileItemElement61.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement61.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement61.Text = "";
+            this.TileItemHomebrewPS4ShowDetails.Elements.Add(tileItemElement61);
             this.TileItemHomebrewPS4ShowDetails.Enabled = false;
             this.TileItemHomebrewPS4ShowDetails.Id = 7;
             this.TileItemHomebrewPS4ShowDetails.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -23589,11 +14290,11 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.TileItemHomebrewPS4Download.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.TileItemHomebrewPS4Download.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement107.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
-            tileItemElement107.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement107.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement107.Text = "";
-            this.TileItemHomebrewPS4Download.Elements.Add(tileItemElement107);
+            tileItemElement62.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_download_from_cloud;
+            tileItemElement62.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement62.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement62.Text = "";
+            this.TileItemHomebrewPS4Download.Elements.Add(tileItemElement62);
             this.TileItemHomebrewPS4Download.Enabled = false;
             this.TileItemHomebrewPS4Download.Id = 6;
             this.TileItemHomebrewPS4Download.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
@@ -23611,13 +14312,13 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemHomebrewPS4SortOptions.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemHomebrewPS4SortOptions.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemHomebrewPS4SortOptions.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement108.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement108.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement108.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
-            tileItemElement108.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement108.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement108.Text = "";
-            this.TileItemHomebrewPS4SortOptions.Elements.Add(tileItemElement108);
+            tileItemElement63.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement63.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement63.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_sort;
+            tileItemElement63.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement63.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement63.Text = "";
+            this.TileItemHomebrewPS4SortOptions.Elements.Add(tileItemElement63);
             this.TileItemHomebrewPS4SortOptions.Id = 1;
             this.TileItemHomebrewPS4SortOptions.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemHomebrewPS4SortOptions.Name = "TileItemHomebrewPS4SortOptions";
@@ -23634,14 +14335,14 @@ namespace ArisenStudio.Forms.Windows
             this.TileItemHomebrewPS4ShowFavorites.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.TileItemHomebrewPS4ShowFavorites.AppearanceItem.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TileItemHomebrewPS4ShowFavorites.BorderVisibility = DevExpress.XtraEditors.TileItemBorderVisibility.Never;
-            tileItemElement109.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement109.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement109.ImageOptions.ImageToTextIndent = 2;
-            tileItemElement109.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
-            tileItemElement109.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            tileItemElement109.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            tileItemElement109.Text = "";
-            this.TileItemHomebrewPS4ShowFavorites.Elements.Add(tileItemElement109);
+            tileItemElement64.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement64.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileItemElement64.ImageOptions.ImageToTextIndent = 2;
+            tileItemElement64.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_heart;
+            tileItemElement64.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
+            tileItemElement64.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            tileItemElement64.Text = "";
+            this.TileItemHomebrewPS4ShowFavorites.Elements.Add(tileItemElement64);
             this.TileItemHomebrewPS4ShowFavorites.Id = 2;
             this.TileItemHomebrewPS4ShowFavorites.ItemSize = DevExpress.XtraEditors.TileItemSize.Small;
             this.TileItemHomebrewPS4ShowFavorites.Name = "TileItemHomebrewPS4ShowFavorites";
@@ -23819,7 +14520,7 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.PanelCurrentPoll)).EndInit();
             this.PanelCurrentPoll.ResumeLayout(false);
             this.PanelCurrentPoll.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.WebViewPoll)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WebViewCurrentPoll)).EndInit();
             this.PageDownloads.ResumeLayout(false);
             this.PanelDownloads.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridControlDownloads)).EndInit();
@@ -24059,8 +14760,6 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.GridViewGameCheats)).EndInit();
             this.PanelFiltersCheats.ResumeLayout(false);
             this.PanelFiltersCheats.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxGameCheatsFilterNumberCheats.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl93)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SeparatorCheats2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SeparatorCheats3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SeparatorCheats4)).EndInit();
@@ -24165,344 +14864,6 @@ namespace ArisenStudio.Forms.Windows
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MenuLocalFiles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).EndInit();
-            this.navigationFrame1.ResumeLayout(false);
-            this.navigationPage1.ResumeLayout(false);
-            this.navigationPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
-            this.panelControl3.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
-            this.panelControl4.ResumeLayout(false);
-            this.panelControl4.PerformLayout();
-            this.xtraScrollableControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
-            this.panelControl5.ResumeLayout(false);
-            this.panelControl5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
-            this.panelControl6.ResumeLayout(false);
-            this.panelControl6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
-            this.panelControl7.ResumeLayout(false);
-            this.panelControl7.PerformLayout();
-            this.xtraScrollableControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).EndInit();
-            this.panelControl8.ResumeLayout(false);
-            this.panelControl8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).EndInit();
-            this.panelControl9.ResumeLayout(false);
-            this.panelControl9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).EndInit();
-            this.panelControl10.ResumeLayout(false);
-            this.panelControl10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
-            this.navigationPage2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit8.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit9.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit10.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit11.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit12.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).EndInit();
-            this.panelControl11.ResumeLayout(false);
-            this.navigationPage3.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl22)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit13.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit14.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit15.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit16.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit17.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl12)).EndInit();
-            this.panelControl12.ResumeLayout(false);
-            this.navigationPage4.ResumeLayout(false);
-            this.navigationPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
-            this.tabPane1.ResumeLayout(false);
-            this.tabNavigationPage1.ResumeLayout(false);
-            this.tabNavigationPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit20.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch7.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch8.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch9.Properties)).EndInit();
-            this.tabNavigationPage2.ResumeLayout(false);
-            this.tabNavigationPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch10.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch11.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch12.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch13.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch14.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch15.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch16.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch17.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch18.Properties)).EndInit();
-            this.tabNavigationPage3.ResumeLayout(false);
-            this.tabNavigationPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl24)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl25)).EndInit();
-            this.tabNavigationPage4.ResumeLayout(false);
-            this.tabNavigationPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit12.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit13.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit14.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit15.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit16.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit17.Properties)).EndInit();
-            this.tabNavigationPage5.ResumeLayout(false);
-            this.tabNavigationPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch19.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch20.Properties)).EndInit();
-            this.navigationPage6.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl26)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl27)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl28)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl29)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl30)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl31)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit21.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl32)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit22.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit23.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit24.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit18.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit25.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit26.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl13)).EndInit();
-            this.panelControl13.ResumeLayout(false);
-            this.navigationPage7.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl33)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl34)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl35)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl36)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit27.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit28.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit19.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit29.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl14)).EndInit();
-            this.panelControl14.ResumeLayout(false);
-            this.navigationPage8.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).EndInit();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl37)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl38)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl39)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit30.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl40)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit31.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit32.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit20.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl15)).EndInit();
-            this.panelControl15.ResumeLayout(false);
-            this.navigationPage9.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView9)).EndInit();
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl41)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl42)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl43)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl44)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl45)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit8.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit3.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit9.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl46)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit33.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit21.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit34.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit35.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit10.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl16)).EndInit();
-            this.panelControl16.ResumeLayout(false);
-            this.navigationPage10.ResumeLayout(false);
-            this.panel14.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView10)).EndInit();
-            this.panel15.ResumeLayout(false);
-            this.panel15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl47)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl48)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl49)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl50)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl51)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit36.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl52)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit37.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit38.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit39.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit22.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit40.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl17)).EndInit();
-            this.panelControl17.ResumeLayout(false);
-            this.navigationPage11.ResumeLayout(false);
-            this.panel16.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView11)).EndInit();
-            this.panel17.ResumeLayout(false);
-            this.panel17.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl53)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl54)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl55)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl56)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl57)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit41.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit42.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit43.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit23.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit44.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl18)).EndInit();
-            this.panelControl18.ResumeLayout(false);
-            this.navigationPage12.ResumeLayout(false);
-            this.navigationPage12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl19)).EndInit();
-            this.panelControl19.ResumeLayout(false);
-            this.xtraScrollableControl4.ResumeLayout(false);
-            this.navigationPage13.ResumeLayout(false);
-            this.panel18.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView12)).EndInit();
-            this.panel19.ResumeLayout(false);
-            this.panel19.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl58)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl59)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl60)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl61)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit45.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit46.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit47.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit24.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit48.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl62)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl20)).EndInit();
-            this.panelControl20.ResumeLayout(false);
-            this.navigationPage14.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView13)).EndInit();
-            this.panel20.ResumeLayout(false);
-            this.panel20.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl63)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl64)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl65)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl66)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit49.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit50.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit25.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit51.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl21)).EndInit();
-            this.panelControl21.ResumeLayout(false);
-            this.navigationPage15.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView14)).EndInit();
-            this.panel21.ResumeLayout(false);
-            this.panel21.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl67)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl68)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl69)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl70)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit52.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit53.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit54.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit26.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit55.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl71)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl22)).EndInit();
-            this.panelControl22.ResumeLayout(false);
-            this.navigationPage16.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView15)).EndInit();
-            this.panel22.ResumeLayout(false);
-            this.panel22.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl72)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit56.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl73)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl74)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl75)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl76)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl77)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit57.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl78)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit58.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit59.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit27.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit60.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit61.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl23)).EndInit();
-            this.panelControl23.ResumeLayout(false);
             this.navigationPage17.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView16)).EndInit();
@@ -24865,7 +15226,7 @@ namespace ArisenStudio.Forms.Windows
         private LabelControl LabelHeaderFavoriteGames;
         private PanelControl PanelCurrentPoll;
         private LabelControl LabelHeaderCurrentPoll;
-        private Microsoft.Web.WebView2.WinForms.WebView2 WebViewPoll;
+        private Microsoft.Web.WebView2.WinForms.WebView2 WebViewCurrentPoll;
         private BarStaticItem barStaticItem3;
         private SimpleButton ButtonChangeLogNext;
         private Panel PanelGameGameMods;
@@ -25182,504 +15543,6 @@ namespace ArisenStudio.Forms.Windows
         private TileItem TileItemHomebrewXboxShowDetails;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private PanelControl panelControl2;
-        private DevExpress.XtraBars.Navigation.NavigationFrame navigationFrame1;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage1;
-        private PanelControl panelControl3;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private LabelControl labelControl15;
-        private LabelControl labelControl16;
-        private LabelControl labelControl17;
-        private LabelControl labelControl19;
-        private LabelControl labelControl20;
-        private LabelControl labelControl21;
-        private LabelControl labelControl22;
-        private LabelControl labelControl23;
-        private LabelControl labelControl24;
-        private PanelControl panelControl4;
-        private LabelControl labelControl25;
-        private XtraScrollableControl xtraScrollableControl1;
-        private Controls.NoAnnouncementsItem noAnnouncementsItem1;
-        private PanelControl panelControl5;
-        private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
-        private LabelControl labelControl26;
-        private PanelControl panelControl6;
-        private TileControl tileControl2;
-        private TileGroup tileGroup2;
-        private TileItem tileItem9;
-        private LabelControl labelControl27;
-        private PanelControl panelControl7;
-        private SimpleButton simpleButton1;
-        private SimpleButton simpleButton2;
-        private LabelControl labelControl28;
-        private XtraScrollableControl xtraScrollableControl2;
-        private LabelControl labelControl29;
-        private LabelControl labelControl30;
-        private SeparatorControl separatorControl8;
-        private PanelControl panelControl8;
-        private SvgImageBox svgImageBox1;
-        private XtraScrollableControl xtraScrollableControl3;
-        private LabelControl labelControl31;
-        private PanelControl panelControl9;
-        private LabelControl labelControl32;
-        private TileControl tileControl3;
-        private TileGroup tileGroup3;
-        private TileItem tileItem10;
-        private PanelControl panelControl10;
-        private DevExpress.XtraCharts.ChartControl chartControl2;
-        private LabelControl labelControl33;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage4;
-        private TableLayoutPanel tableLayoutPanel1;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage2;
-        private Panel panel1;
-        private GridControl gridControl1;
-        private GridView gridView2;
-        private Panel panel2;
-        private SeparatorControl separatorControl9;
-        private SeparatorControl separatorControl10;
-        private SeparatorControl separatorControl11;
-        private SeparatorControl separatorControl12;
-        private SeparatorControl separatorControl13;
-        private SeparatorControl separatorControl14;
-        private DateEdit dateEdit1;
-        private ComboBoxEdit comboBoxEdit8;
-        private LabelControl labelControl34;
-        private PictureEdit pictureEdit1;
-        private LabelControl labelControl35;
-        private PictureEdit pictureEdit2;
-        private ComboBoxEdit comboBoxEdit9;
-        private LabelControl labelControl36;
-        private ComboBoxEdit comboBoxEdit10;
-        private LabelControl labelControl37;
-        private ComboBoxEdit comboBoxEdit11;
-        private LabelControl labelControl38;
-        private SeparatorControl separatorControl15;
-        private ComboBoxEdit comboBoxEdit12;
-        private LabelControl labelControl39;
-        private TextEdit textEdit3;
-        private LabelControl labelControl40;
-        private PanelControl panelControl11;
-        private TileControl tileControl4;
-        private TileGroup tileGroup4;
-        private TileItem tileItem11;
-        private TileItem tileItem12;
-        private TileItem tileItem13;
-        private TileItem tileItem14;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage3;
-        private Panel panel3;
-        private GridControl gridControl2;
-        private GridView gridView3;
-        private Panel panel4;
-        private DateEdit dateEdit2;
-        private SpinEdit spinEdit1;
-        private SeparatorControl separatorControl16;
-        private SeparatorControl separatorControl17;
-        private SeparatorControl separatorControl18;
-        private SeparatorControl separatorControl19;
-        private SeparatorControl separatorControl20;
-        private SeparatorControl separatorControl21;
-        private SeparatorControl separatorControl22;
-        private PictureEdit pictureEdit3;
-        private PictureEdit pictureEdit4;
-        private LabelControl labelControl41;
-        private PictureEdit pictureEdit5;
-        private LabelControl labelControl42;
-        private PictureEdit pictureEdit6;
-        private ComboBoxEdit comboBoxEdit13;
-        private LabelControl labelControl43;
-        private SeparatorControl separatorControl23;
-        private ComboBoxEdit comboBoxEdit14;
-        private LabelControl labelControl44;
-        private ComboBoxEdit comboBoxEdit15;
-        private LabelControl labelControl45;
-        private TextEdit textEdit4;
-        private ComboBoxEdit comboBoxEdit16;
-        private ComboBoxEdit comboBoxEdit17;
-        private LabelControl labelControl46;
-        private LabelControl labelControl47;
-        private LabelControl labelControl48;
-        private PanelControl panelControl12;
-        private TileControl tileControl5;
-        private TileGroup tileGroup5;
-        private TileItem tileItem15;
-        private TileItem tileItem16;
-        private TileItem tileItem17;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage5;
-        private DevExpress.XtraBars.Navigation.TabPane tabPane1;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
-        private LabelControl labelControl51;
-        private LabelControl labelControl52;
-        private ToggleSwitch toggleSwitch1;
-        private LabelControl labelControl53;
-        private HyperlinkLabelControl LabelHelpTranslateCrowdin;
-        private ToggleSwitch toggleSwitch2;
-        private LabelControl labelControl54;
-        private LabelControl labelControl55;
-        private ToggleSwitch toggleSwitch3;
-        private ComboBoxEdit comboBoxEdit20;
-        private LabelControl labelControl56;
-        private ToggleSwitch toggleSwitch4;
-        private LabelControl labelControl57;
-        private LabelControl labelControl58;
-        private ToggleSwitch toggleSwitch5;
-        private LabelControl labelControl59;
-        private ToggleSwitch toggleSwitch6;
-        private ToggleSwitch toggleSwitch7;
-        private LabelControl labelControl60;
-        private ToggleSwitch toggleSwitch8;
-        private LabelControl labelControl61;
-        private ToggleSwitch toggleSwitch9;
-        private LabelControl labelControl62;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
-        private LabelControl labelControl63;
-        private LabelControl labelControl64;
-        private ToggleSwitch toggleSwitch10;
-        private ToggleSwitch toggleSwitch11;
-        private LabelControl labelControl65;
-        private ToggleSwitch toggleSwitch12;
-        private LabelControl labelControl66;
-        private ToggleSwitch toggleSwitch13;
-        private LabelControl labelControl67;
-        private ToggleSwitch toggleSwitch14;
-        private LabelControl labelControl68;
-        private ToggleSwitch toggleSwitch15;
-        private LabelControl labelControl69;
-        private ToggleSwitch toggleSwitch16;
-        private LabelControl labelControl70;
-        private ToggleSwitch toggleSwitch17;
-        private LabelControl labelControl71;
-        private ToggleSwitch toggleSwitch18;
-        private LabelControl labelControl72;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage3;
-        private SeparatorControl separatorControl24;
-        private LabelControl labelControl73;
-        private LabelControl labelControl74;
-        private TextEdit textEdit7;
-        private LabelControl labelControl75;
-        private LabelControl labelControl76;
-        private TextEdit textEdit8;
-        private TextEdit textEdit9;
-        private SeparatorControl separatorControl25;
-        private LabelControl labelControl77;
-        private LabelControl labelControl78;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage4;
-        private SimpleButton simpleButton17;
-        private LabelControl labelControl79;
-        private LabelControl labelControl80;
-        private TextEdit textEdit10;
-        private TextEdit textEdit11;
-        private TextEdit textEdit12;
-        private SimpleButton simpleButton18;
-        private LabelControl labelControl81;
-        private LabelControl labelControl82;
-        private SimpleButton simpleButton19;
-        private TextEdit textEdit13;
-        private SimpleButton simpleButton20;
-        private LabelControl labelControl83;
-        private TextEdit textEdit14;
-        private LabelControl labelControl84;
-        private LabelControl labelControl85;
-        private SimpleButton simpleButton21;
-        private SimpleButton simpleButton22;
-        private LabelControl labelControl86;
-        private TextEdit textEdit15;
-        private TextEdit textEdit16;
-        private LabelControl labelControl87;
-        private SimpleButton simpleButton23;
-        private SimpleButton simpleButton24;
-        private LabelControl labelControl88;
-        private TextEdit textEdit17;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage5;
-        private LabelControl labelControl89;
-        private LabelControl labelControl90;
-        private ToggleSwitch toggleSwitch19;
-        private ToggleSwitch toggleSwitch20;
-        private LabelControl labelControl91;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage6;
-        private Panel panel5;
-        private GridControl gridControl5;
-        private GridView gridView6;
-        private Panel panel6;
-        private SeparatorControl separatorControl26;
-        private SeparatorControl separatorControl27;
-        private SeparatorControl separatorControl28;
-        private SeparatorControl separatorControl29;
-        private SeparatorControl separatorControl30;
-        private SeparatorControl separatorControl31;
-        private ComboBoxEdit comboBoxEdit21;
-        private SeparatorControl separatorControl32;
-        private ComboBoxEdit comboBoxEdit22;
-        private LabelControl labelControl92;
-        private ComboBoxEdit comboBoxEdit23;
-        private LabelControl labelControl93;
-        private ComboBoxEdit comboBoxEdit24;
-        private LabelControl labelControl94;
-        private TextEdit textEdit18;
-        private ComboBoxEdit comboBoxEdit25;
-        private ComboBoxEdit comboBoxEdit26;
-        private LabelControl labelControl95;
-        private LabelControl labelControl96;
-        private LabelControl labelControl97;
-        private LabelControl labelControl98;
-        private PanelControl panelControl13;
-        private TileControl tileControl6;
-        private TileGroup tileGroup6;
-        private TileItem tileItem18;
-        private TileItem tileItem19;
-        private TileItem tileItem20;
-        private TileItem tileItem21;
-        private TileItem tileItem22;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage7;
-        private Panel panel7;
-        private GridControl gridControl6;
-        private GridView gridView7;
-        private Panel panel8;
-        private SeparatorControl separatorControl33;
-        private SeparatorControl separatorControl34;
-        private SeparatorControl separatorControl35;
-        private SeparatorControl separatorControl36;
-        private ComboBoxEdit comboBoxEdit27;
-        private LabelControl labelControl99;
-        private ComboBoxEdit comboBoxEdit28;
-        private TextEdit textEdit19;
-        private ComboBoxEdit comboBoxEdit29;
-        private PanelControl panelControl14;
-        private TileControl tileControl7;
-        private TileGroup tileGroup7;
-        private TileItem tileItem23;
-        private TileItem tileItem24;
-        private TileItem tileItem25;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage8;
-        private Panel panel9;
-        private GridControl gridControl7;
-        private GridView gridView8;
-        private Panel panel10;
-        private SeparatorControl separatorControl37;
-        private SeparatorControl separatorControl38;
-        private SeparatorControl separatorControl39;
-        private ComboBoxEdit comboBoxEdit30;
-        private LabelControl labelControl103;
-        private SeparatorControl separatorControl40;
-        private ComboBoxEdit comboBoxEdit31;
-        private LabelControl labelControl104;
-        private ComboBoxEdit comboBoxEdit32;
-        private LabelControl labelControl105;
-        private TextEdit textEdit20;
-        private LabelControl labelControl106;
-        private PanelControl panelControl15;
-        private TileControl tileControl8;
-        private TileGroup tileGroup8;
-        private TileItem tileItem26;
-        private TileItem tileItem27;
-        private TileItem tileItem28;
-        private TileItem tileItem29;
-        private TileItem tileItem30;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage9;
-        private Panel panel11;
-        private GridControl gridControl8;
-        private GridView gridView9;
-        private Panel panel13;
-        private SeparatorControl separatorControl41;
-        private SeparatorControl separatorControl42;
-        private SeparatorControl separatorControl43;
-        private SeparatorControl separatorControl44;
-        private SeparatorControl separatorControl45;
-        private PictureEdit pictureEdit7;
-        private PictureEdit pictureEdit8;
-        private LabelControl labelControl107;
-        private DateEdit dateEdit3;
-        private PictureEdit pictureEdit9;
-        private LabelControl labelControl108;
-        private SeparatorControl separatorControl46;
-        private ComboBoxEdit comboBoxEdit33;
-        private LabelControl labelControl109;
-        private TextEdit textEdit21;
-        private ComboBoxEdit comboBoxEdit34;
-        private LabelControl labelControl110;
-        private LabelControl labelControl111;
-        private ComboBoxEdit comboBoxEdit35;
-        private LabelControl labelControl112;
-        private PictureEdit pictureEdit10;
-        private SpinEdit spinEdit2;
-        private PanelControl panelControl16;
-        private TileControl tileControl9;
-        private TileGroup tileGroup9;
-        private TileItem tileItem31;
-        private TileItem tileItem32;
-        private TileItem tileItem33;
-        private TileItem tileItem34;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage10;
-        private Panel panel14;
-        private GridControl gridControl9;
-        private GridView gridView10;
-        private Panel panel15;
-        private SeparatorControl separatorControl47;
-        private SeparatorControl separatorControl48;
-        private SeparatorControl separatorControl49;
-        private SeparatorControl separatorControl50;
-        private SeparatorControl separatorControl51;
-        private ComboBoxEdit comboBoxEdit36;
-        private SeparatorControl separatorControl52;
-        private ComboBoxEdit comboBoxEdit37;
-        private LabelControl labelControl113;
-        private ComboBoxEdit comboBoxEdit38;
-        private LabelControl labelControl114;
-        private ComboBoxEdit comboBoxEdit39;
-        private LabelControl labelControl115;
-        private TextEdit textEdit22;
-        private ComboBoxEdit comboBoxEdit40;
-        private LabelControl labelControl116;
-        private LabelControl labelControl117;
-        private LabelControl labelControl118;
-        private PanelControl panelControl17;
-        private TileControl tileControl10;
-        private TileGroup tileGroup10;
-        private TileItem tileItem35;
-        private TileItem tileItem36;
-        private TileItem tileItem37;
-        private TileItem tileItem38;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage11;
-        private Panel panel16;
-        private GridControl gridControl10;
-        private GridView gridView11;
-        private Panel panel17;
-        private SeparatorControl separatorControl53;
-        private SeparatorControl separatorControl54;
-        private SeparatorControl separatorControl55;
-        private SeparatorControl separatorControl56;
-        private SeparatorControl separatorControl57;
-        private ComboBoxEdit comboBoxEdit41;
-        private LabelControl labelControl119;
-        private ComboBoxEdit comboBoxEdit42;
-        private ComboBoxEdit comboBoxEdit43;
-        private LabelControl labelControl121;
-        private TextEdit textEdit23;
-        private ComboBoxEdit comboBoxEdit44;
-        private LabelControl labelControl122;
-        private LabelControl labelControl123;
-        private PanelControl panelControl18;
-        private TileControl tileControl11;
-        private TileGroup tileGroup11;
-        private TileItem tileItem39;
-        private TileItem tileItem40;
-        private TileItem tileItem41;
-        private TileItem tileItem42;
-        private TileItem tileItem43;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage12;
-        private LabelControl labelControl124;
-        private LabelControl labelControl125;
-        private SvgImageBox svgImageBox2;
-        private SvgImageBox svgImageBox3;
-        private SvgImageBox svgImageBox4;
-        private SvgImageBox svgImageBox5;
-        private SvgImageBox svgImageBox6;
-        private LabelControl labelControl126;
-        private LabelControl labelControl127;
-        private PanelControl panelControl19;
-        private XtraScrollableControl xtraScrollableControl4;
-        private LabelControl labelControl128;
-        private LabelControl labelControl129;
-        private LabelControl labelControl130;
-        private LabelControl labelControl131;
-        private LabelControl labelControl132;
-        private LabelControl labelControl133;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage13;
-        private Panel panel18;
-        private GridControl gridControl11;
-        private GridView gridView12;
-        private Panel panel19;
-        private SeparatorControl separatorControl58;
-        private SeparatorControl separatorControl59;
-        private SeparatorControl separatorControl60;
-        private SeparatorControl separatorControl61;
-        private ComboBoxEdit comboBoxEdit45;
-        private LabelControl labelControl134;
-        private ComboBoxEdit comboBoxEdit46;
-        private LabelControl labelControl135;
-        private ComboBoxEdit comboBoxEdit47;
-        private LabelControl labelControl136;
-        private TextEdit textEdit24;
-        private ComboBoxEdit comboBoxEdit48;
-        private LabelControl labelControl137;
-        private LabelControl labelControl138;
-        private SeparatorControl separatorControl62;
-        private PanelControl panelControl20;
-        private TileControl tileControl12;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage14;
-        private GridControl gridControl12;
-        private GridView gridView13;
-        private Panel panel20;
-        private SeparatorControl separatorControl63;
-        private SeparatorControl separatorControl64;
-        private SeparatorControl separatorControl65;
-        private SeparatorControl separatorControl66;
-        private ComboBoxEdit comboBoxEdit49;
-        private LabelControl labelControl139;
-        private ComboBoxEdit comboBoxEdit50;
-        private LabelControl labelControl140;
-        private TextEdit textEdit25;
-        private ComboBoxEdit comboBoxEdit51;
-        private LabelControl labelControl141;
-        private LabelControl labelControl142;
-        private PanelControl panelControl21;
-        private TileControl tileControl13;
-        private TileGroup tileGroup13;
-        private TileItem tileItem48;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage15;
-        private GridControl gridControl13;
-        private GridView gridView14;
-        private Panel panel21;
-        private SeparatorControl separatorControl67;
-        private SeparatorControl separatorControl68;
-        private SeparatorControl separatorControl69;
-        private SeparatorControl separatorControl70;
-        private ComboBoxEdit comboBoxEdit52;
-        private LabelControl labelControl143;
-        private ComboBoxEdit comboBoxEdit53;
-        private LabelControl labelControl144;
-        private ComboBoxEdit comboBoxEdit54;
-        private LabelControl labelControl145;
-        private TextEdit textEdit26;
-        private ComboBoxEdit comboBoxEdit55;
-        private LabelControl labelControl146;
-        private LabelControl labelControl147;
-        private SeparatorControl separatorControl71;
-        private PanelControl panelControl22;
-        private TileControl tileControl14;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage16;
-        private GridControl gridControl14;
-        private GridView gridView15;
-        private Panel panel22;
-        private SeparatorControl separatorControl72;
-        private ComboBoxEdit comboBoxEdit56;
-        private LabelControl labelControl148;
-        private SeparatorControl separatorControl73;
-        private SeparatorControl separatorControl74;
-        private SeparatorControl separatorControl75;
-        private SeparatorControl separatorControl76;
-        private SeparatorControl separatorControl77;
-        private ComboBoxEdit comboBoxEdit57;
-        private SeparatorControl separatorControl78;
-        private ComboBoxEdit comboBoxEdit58;
-        private LabelControl labelControl149;
-        private ComboBoxEdit comboBoxEdit59;
-        private LabelControl labelControl150;
-        private TextEdit textEdit27;
-        private ComboBoxEdit comboBoxEdit60;
-        private LabelControl labelControl151;
-        private LabelControl labelControl152;
-        private LabelControl labelControl153;
-        private ComboBoxEdit comboBoxEdit61;
-        private LabelControl labelControl154;
-        private PanelControl panelControl23;
-        private TileControl tileControl15;
-        private TileGroup tileGroup15;
-        private TileItem tileItem53;
-        private TileItem tileItem54;
-        private TileItem tileItem55;
-        private TileItem tileItem56;
-        private TileItem tileItem57;
-        private TileItem tileItem58;
-        private TileItem tileItem59;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage17;
         private GridControl gridControl15;
         private GridView gridView16;
@@ -25767,9 +15630,6 @@ namespace ArisenStudio.Forms.Windows
         private TileGroup TileGroupTrainers;
         private TileItem TileItemTrainerSortOptions;
         private TileItem TileItemTrainerShowDetails;
-        private ComboBoxEdit ComboBoxGameCheatsFilterNumberCheats;
-        private LabelControl LabelGameCheatsFilterNumOfCheats;
-        private SeparatorControl separatorControl93;
         private SeparatorControl SeparatorCheats3;
         private ComboBoxEdit ComboBoxGameCheatsFilterVersion;
         private LabelControl LabelGameCheatsFilterVersion;
@@ -25798,7 +15658,7 @@ namespace ArisenStudio.Forms.Windows
         private ButtonEdit TextBoxSettingsPathDownloads;
         private DevExpress.XtraBars.Navigation.AccordionControlElement NavigationItemTrainers;
         private TablePanel TableDashboard3;
-        private BarButtonItem ButtonUpdate;
+        private BarButtonItem ButtonHeaderUpdate;
         private BarButtonItem barButtonItem14;
         private BarButtonItem barButtonItem15;
         private BarCheckItem barCheckItem2;
@@ -25806,5 +15666,6 @@ namespace ArisenStudio.Forms.Windows
         private Microsoft.Web.WebView2.WinForms.WebView2 WebViewAdBanner;
         private SimpleButton ButtonDonate;
         private AdsJumboWinForm.BannerAds BannerAdsDashboard;
+        private BarButtonItem ButtonHeaderDonate;
     }
 }

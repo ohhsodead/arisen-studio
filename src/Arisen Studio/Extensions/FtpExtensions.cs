@@ -9,6 +9,9 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Web.UI.WebControls;
 
 namespace ArisenStudio.Extensions
 {
@@ -30,37 +33,111 @@ namespace ArisenStudio.Extensions
         /// </summary>
         /// <param name="localFile"></param>
         /// <param name="consoleFile"></param>
-        public static FtpStatus UploadFile(string localFile, string consoleFile)
+        //public static FtpStatus UploadFile(string localFile, string consoleFile)
+        //{
+        //    AsyncFtpClient ftpClient = MainWindow.FtpClient;
+
+        //    string consolePath = Path.GetDirectoryName(consoleFile).Replace(@"\", "/") + "/";
+
+        //    if (!DirectoryExists(consolePath))
+        //    {
+        //        _ = CreateDirectory(consolePath);
+        //    }
+
+        //    //if (!ftpConnection.DirectoryExists(path))
+        //    //{
+        //    //    CreateDirectory(path);
+        //    //}
+
+        //    ftpClient.SetWorkingDirectory(consolePath);
+
+        //    return ftpClient.UploadFile(localFile, consoleFile, FtpRemoteExists.Overwrite, true);
+        //}
+
+        //public static FtpStatus UploadFileAsync(string localFile, string consoleFile, IProgress<int> progress)
+        //{
+        //    FtpClient ftpClient = MainWindow.FtpClient;
+
+        //    string consolePath = Path.GetDirectoryName(consoleFile).Replace(@"\", "/") + "/";
+
+        //    if (!DirectoryExists(consolePath))
+        //    {
+        //        _ = CreateDirectory(consolePath);
+        //    }
+
+        //    ftpClient.SetWorkingDirectory(consolePath);
+
+        //    // Subscribe to the progress event
+        //    ftpClient.UploadProgress += (sender, args) =>
+        //    {
+        //        // Calculate the percentage
+        //        double percentComplete = (double)args.TransferredBytes / args.TotalBytes * 100;
+
+        //        // Report progress
+        //        progress.Report(percentComplete);
+        //    };
+
+        //    // Upload the file with overwrite and progress enabled
+        //    return ftpClient.UploadFile(localFile, consoleFile, FtpRemoteExists.Overwrite, true);
+        //}
+
+        public static async Task<FtpStatus> UploadFileAsync(string localFile, string consoleFile, IProgress<int> progress = null)
         {
-            FtpClient ftpClient = MainWindow.FtpClient;
+            AsyncFtpClient ftpClient = MainWindow.FtpClient;
 
             string consolePath = Path.GetDirectoryName(consoleFile).Replace(@"\", "/") + "/";
 
-            if (!DirectoryExists(consolePath))
+            if (await DirectoryExistsAsync(consolePath) == false)
             {
-                _ = CreateDirectory(consolePath);
+                await CreateDirectoryAsync(consolePath);
             }
 
-            //if (!ftpConnection.DirectoryExists(path))
-            //{
-            //    CreateDirectory(path);
-            //}
+            await ftpClient.SetWorkingDirectory(consolePath);
 
-            ftpClient.SetWorkingDirectory(consolePath);
-            return ftpClient.UploadFile(localFile, consoleFile, FtpRemoteExists.Overwrite, true);
+            // Upload the file with overwrite and progress enabled
+            return await ftpClient.UploadFile(localFile, consoleFile, FtpRemoteExists.Overwrite, true, FtpVerify.None, progress: new Progress<FtpProgress>(p =>
+            {
+                // Calculate and report progress as a percentage
+                //double percentComplete = (double)p.TransferredBytes / p.TotalBytes * 100;
+                //progress.Report(percentComplete);
+                progress?.Report((int)p.Progress);
+            }));
         }
+
+        public static async Task<FtpStatus> DownloadFileAsync(string localFile, string consoleFile, IProgress<int> progress = null)
+        {
+            AsyncFtpClient ftpClient = MainWindow.FtpClient;
+
+            string consolePath = Path.GetDirectoryName(consoleFile).Replace(@"\", "/") + "/";
+
+            // Ensure the directory exists on the FTP server before downloading
+            if (await DirectoryExistsAsync(consolePath) == false)
+            {
+                throw new Exception($"Directory does not exist on FTP server: {consolePath}");
+            }
+
+            await ftpClient.SetWorkingDirectory(consolePath);
+
+            // Download the file with progress enabled (if progress is provided)
+            return await ftpClient.DownloadFile(localFile, consoleFile, FtpLocalExists.Overwrite, FtpVerify.None, progress: new Progress<FtpProgress>(p =>
+            {
+                // Only report progress if a valid progress handler is provided
+                progress?.Report((int)p.Progress);
+            }));
+        }
+
 
         /// <summary>
         /// Delete a file from the console.
         /// </summary>
         /// <param name="consoleFile"> File to delete. </param>
-        public static void DeleteFile(string consoleFile)
+        public static async void DeleteFile(string consoleFile)
         {
-            FtpClient ftpClient = MainWindow.FtpClient;
+            AsyncFtpClient ftpClient = MainWindow.FtpClient;
 
-            if (ftpClient.FileExists(consoleFile))
+            if (await ftpClient.FileExists(consoleFile))
             {
-                ftpClient.DeleteFile(consoleFile);
+                await ftpClient.DeleteFile(consoleFile);
             }
         }
 
@@ -68,13 +145,13 @@ namespace ArisenStudio.Extensions
         /// Delete a directory from the console.
         /// </summary>
         /// <param name="consolePath"> Directory to delete. </param>
-        public static void DeleteDirectory(string consolePath)
+        public static async void DeleteDirectory(string consolePath)
         {
-            FtpClient ftpClient = MainWindow.FtpClient;
+            AsyncFtpClient ftpClient = MainWindow.FtpClient;
 
-            if (ftpClient.DirectoryExists(consolePath))
+            if (await ftpClient.DirectoryExists(consolePath))
             {
-                ftpClient.DeleteDirectory(consolePath);
+                await ftpClient.DeleteDirectory(consolePath);
             }
         }
 
@@ -82,11 +159,11 @@ namespace ArisenStudio.Extensions
         /// Check whether directory exists on the console.
         /// </summary>
         /// <param name="consolePath"> File to delete from console. </param>
-        public static bool DirectoryExists(string consolePath)
+        public static async Task<bool> DirectoryExistsAsync(string consolePath)
         {
-            FtpClient ftpClient = MainWindow.FtpClient;
+            AsyncFtpClient ftpClient = MainWindow.FtpClient;
 
-            return ftpClient.DirectoryExists(consolePath);
+            return await ftpClient.DirectoryExists(consolePath);
         }
 
         /// <summary>
@@ -94,13 +171,13 @@ namespace ArisenStudio.Extensions
         /// </summary>
         /// <param name="consolePath"></param>
         /// <returns></returns>
-        public static bool IsDirectoryEmpty(string consolePath)
+        public static async Task<bool> IsDirectoryEmpty(string consolePath)
         {
-            FtpClient ftpClient = MainWindow.FtpClient;
+            AsyncFtpClient ftpClient = MainWindow.FtpClient;
 
             int itemCount = 0;
 
-            foreach (FtpListItem listItem in ftpClient.GetListing(consolePath))
+            foreach (FtpListItem listItem in await ftpClient.GetListing(consolePath))
             {
                 switch (listItem.Type)
                 {
@@ -124,10 +201,10 @@ namespace ArisenStudio.Extensions
         /// Downloads the specified console file to the computer.
         /// </summary>
         /// <param name="filePath"> Path of the uploading file directory </param>
-        public static bool FileExists(string filePath)
+        public static async Task<bool> FileExistsAsync(string filePath)
         {
-            FtpClient ftpClient = MainWindow.FtpClient;
-            return ftpClient.FileExists(filePath);
+            AsyncFtpClient ftpClient = MainWindow.FtpClient;
+            return await ftpClient.FileExists(filePath);
         }
 
         /// <summary>
@@ -137,7 +214,7 @@ namespace ArisenStudio.Extensions
         /// <param name="newFilePath"> </param>
         public static void RenameFileOrFolder(string filePath, string newFilePath)
         {
-            FtpClient ftpClient = MainWindow.FtpClient;
+            AsyncFtpClient ftpClient = MainWindow.FtpClient;
             ftpClient.Rename(filePath, newFilePath);
         }
 
@@ -146,10 +223,10 @@ namespace ArisenStudio.Extensions
         /// </summary>
         /// <param name="consolePath"> </param>
         /// <returns> Whether the directory was created or not. </returns>
-        public static bool CreateDirectory(string consolePath)
+        public static async Task<bool> CreateDirectoryAsync(string consolePath)
         {
-            FtpClient ftpClient = MainWindow.FtpClient;
-            return ftpClient.CreateDirectory(consolePath, true);
+            AsyncFtpClient ftpClient = MainWindow.FtpClient;
+            return await ftpClient.CreateDirectory(consolePath, true);
         }
 
         /// <summary>
@@ -159,7 +236,7 @@ namespace ArisenStudio.Extensions
         /// <param name="localPath"></param>
         public static void DownloadDirectory(string consolePath, string localPath)
         {
-            FtpClient ftpClient = MainWindow.FtpClient;
+            AsyncFtpClient ftpClient = MainWindow.FtpClient;
             _ = ftpClient.DownloadDirectory(localPath, consolePath, FtpFolderSyncMode.Update, FtpLocalExists.Overwrite);
         }
 
@@ -195,148 +272,65 @@ namespace ArisenStudio.Extensions
         /// Get the game title from the PARAM.SFO file.
         /// </summary>
         /// <param name="paramFilePath"> Path of the directory to fetch listing from </param>
-        public static string GetParamTitle(string paramFilePath)
+        public static async Task<string> GetParamTitleAsync(string paramFilePath)
         {
-            FtpClient ftpClient = MainWindow.FtpClient;
+            AsyncFtpClient ftpClient = MainWindow.FtpClient;
 
             try
             {
-                if (ftpClient.DownloadBytes(out byte[] file, paramFilePath))
+                // Check if the file exists first
+                if (await ftpClient.FileExists(paramFilePath))
                 {
-                    PARAM_SFO paramSfo = new(file);
+                    using (MemoryStream memoryStream = new MemoryStream())
+                    {
+                        // Download the file into the memory stream
+                        var fileBytes = await ftpClient.DownloadStream(memoryStream, paramFilePath);
 
-                    return paramSfo != null ? paramSfo.Title : "Not Recognized";
+                        // Convert the stream to a byte array
+                        byte[] paramFile = memoryStream.ToArray();
+
+                        // Parse the PARAM.SFO file
+                        PARAM_SFO paramSfo = new PARAM_SFO(paramFile);
+
+                        // Return the title from PARAM.SFO or default to "Not Recognized"
+                        return paramSfo != null ? paramSfo.Title : "Not Recognized";
+                    }
                 }
                 else
                 {
-                    throw new Exception(string.Format("File doesn't exist: {0}", paramFilePath));
+                    throw new Exception($"File doesn't exist: {paramFilePath}");
                 }
-
-                //using WebClient request = new();
-                //byte[] newFileData = request.DownloadData(fileUrl);
-                //PARAM_SFO paramSfo = new(newFileData);
-
-                //return paramSfo != null ? paramSfo.Title : "Not Recognized";
             }
             catch (WebException ex)
             {
                 Program.Log.Error(ex, "Unable to fetch game title from PARAM.SFO file: {0}", paramFilePath);
-                throw new Exception(string.Format("Unable to fetch game title from PARAM.SFO file: {0} - Error: {1}", paramFilePath, ex.Message), ex);
+                throw new Exception($"Unable to fetch game title from PARAM.SFO file: {paramFilePath} - Error: {ex.Message}", ex);
             }
             catch (Exception ex)
             {
                 Program.Log.Error(ex, "Unable to fetch game title from PARAM.SFO file: {0}", paramFilePath);
-                throw new Exception(string.Format("Unable to fetch game title from PARAM.SFO file: {0} - Error: {1}", paramFilePath, ex.Message), ex);
+                throw new Exception($"Unable to fetch game title from PARAM.SFO file: {paramFilePath} - Error: {ex.Message}", ex);
             }
-        }
-
-        public static void EditProfileComment(Form owner)
-        {
-            MainWindow.Window.SetStatus("Editing profile comment file...");
-
-            FtpClient ftpClient = MainWindow.FtpClient;
-
-            string userId = GetUserProfileId(owner);
-
-            if (userId.IsNullOrWhiteSpace())
-            {
-                _ = XtraMessageBox.Show(owner, "The comment file does not exist on your console. You can create one by editing the profile comment on your console.", "No Comment File", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            string commentFilePath = $"/dev_hdd0/home/{userId}/friendim/mecomment.dat";
-
-            if (!ftpClient.FileExists(commentFilePath))
-            {
-                _ = XtraMessageBox.Show(owner, "The comment file does not exist on your console. You can create one by editing the profile comment on your console.", "No Comment File", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            MemoryStream memoryStream = new();
-            _ = ftpClient.DownloadStream(memoryStream, commentFilePath);
-
-            using StreamReader streamReader = new(memoryStream);
-
-            string currentProfileComment = streamReader.ReadToEnd();
-
-            //if (ftpConnection.FileExists(commentFilePath))
-            //if (ftpClient.FileExists(commentFilePath))
-            //{
-            //    MessageBox.Show("File exists.");
-            //    //ftpConnection.GetFile(commentFilePath, filePath, false);
-            //    //DownloadFile(filePath, commentFilePath);
-            //    ftpClient.DownloadFile(filePath, commentFilePath);
-            //    MessageBox.Show("File downloaded to : " + filePath);
-            //    currentProfileComment = File.ReadAllLines(filePath);
-            //    MessageBox.Show(string.Join(",", currentProfileComment));
-            //}
-            //else
-            //{
-            //    MessageBox.Show("File doesn't exist.");
-            //    return;
-            //    //File.WriteAllText(filePath, string.Empty);
-            //}
-
-            //if (ftpClient.FileExists(commentFilePath))
-            //{
-            //    ftpClient.DownloadFile(filePath, commentFilePath);
-            //}
-            //else
-            //{
-            //    File.WriteAllText(filePath, string.Empty);
-            //}
-
-            string[] newProfileComment = DialogExtensions.ShowMultiTextInputDialog(owner, "Edit Profile Comment", "Profile Comment:", currentProfileComment.Trim().Split(' '));
-            //string newProfileComment = DialogExtensions.ShowTextInputDialog(owner, "Set Profile Comment", "Profile Comment:", currentProfileComment, 0);
-
-            switch (newProfileComment)
-            {
-                case null:
-                    _ = XtraMessageBox.Show(owner, "Profile comment file must be equal to or less than 64 bytes.", MainWindow.ResourceLanguage.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-            }
-
-            byte[] commentBytes = newProfileComment.SelectMany(s => Encoding.UTF8.GetBytes(s + Environment.NewLine)).ToArray();
-
-            //File.WriteAllLines(filePath, newProfileComment);
-
-            //if (new FileInfo(filePath).Length > 64)
-            //{
-            //    XtraMessageBox.Show(MainWindow.Window, "Profile comment file must be equal or less than 64 bytes.", "Maximum Bytes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //    MainWindow.Window.SetStatus("Profile comment file must be equal or less than 64 bytes.");
-            //    return;
-            //}
-
-            if (commentBytes.Length > 64)
-            {
-                _ = XtraMessageBox.Show(owner, "Profile comment file must be equal or less than 64 bytes.", "Maximum Bytes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                MainWindow.Window.SetStatus("Profile comment file must be equal or less than 64 bytes.");
-                return;
-            }
-
-            //UploadFile(newProfileComment, commentFilePath);
-            _ = ftpClient.UploadBytes(commentBytes, commentFilePath);
-            MainWindow.Window.SetStatus("Successfully edited profile comment.");
         }
 
         /// <summary>
         /// Gets the folder names inside the specified console path.
         /// </summary>
         /// <param name="consolePath"> Path of the directory to fetch listing from </param>
-        public static List<ListItem> GetFolderNames(string consolePath)
+        public static async Task<List<ListItem>> GetFolderNamesAsync(string consolePath)
         {
-            FtpClient ftpClient = MainWindow.FtpClient;
+            AsyncFtpClient ftpClient = MainWindow.FtpClient;
 
             List<ListItem> folderNames = [];
 
-            if (!ftpClient.DirectoryExists(consolePath))
+            if (await ftpClient.DirectoryExists(consolePath) == false)
             {
                 return folderNames;
             }
 
-            ftpClient.SetWorkingDirectory(consolePath);
+            await ftpClient.SetWorkingDirectory(consolePath);
 
-            foreach (FtpListItem listItem in ftpClient.GetListing(consolePath))
+            foreach (FtpListItem listItem in await ftpClient.GetListing(consolePath))
             {
                 switch (listItem.Type)
                 {
@@ -358,20 +352,20 @@ namespace ArisenStudio.Extensions
         /// </summary>
         /// <param name="consolePath"> Path of the directory to fetch listing from </param>
         /// <param name="recursive"> Whether to fetch files from subdirectories </param>
-        public static List<ListItem> GetFileNames(string consolePath, bool recursive = false)
+        public static async Task<List<ListItem>> GetFileNamesAsync(string consolePath, bool recursive = false)
         {
-            FtpClient ftpClient = MainWindow.FtpClient;
+            AsyncFtpClient ftpClient = MainWindow.FtpClient;
 
             List<ListItem> fileNames = [];
 
-            if (!ftpClient.DirectoryExists(consolePath))
+            if (await ftpClient.DirectoryExists(consolePath) == false)
             {
                 return fileNames;
             }
 
-            ftpClient.SetWorkingDirectory(consolePath);
+            await ftpClient.SetWorkingDirectory(consolePath);
 
-            foreach (FtpListItem listItem in ftpClient.GetListing(consolePath, recursive ? FtpListOption.Recursive : FtpListOption.AllFiles))
+            foreach (FtpListItem listItem in await ftpClient.GetListing(consolePath, recursive ? FtpListOption.Recursive : FtpListOption.AllFiles))
             {
                 switch (listItem.Type)
                 {
@@ -389,9 +383,9 @@ namespace ArisenStudio.Extensions
         /// </summary>
         /// <param name="owner"> Parent Form </param>
         /// <returns> </returns>
-        public static string GetUserProfileId(Form owner)
+        public static async Task<string> GetUserProfileIdAsync(Form owner)
         {
-            List<ListItem> userIds = GetFolderNames("/dev_hdd0/home/");
+            List<ListItem> userIds = await GetFolderNamesAsync("/dev_hdd0/home/");
 
             List<ListItem> userNames = [];
 
@@ -400,7 +394,7 @@ namespace ArisenStudio.Extensions
                 userNames.Add(new ListItem
                 {
                     Value = userId.Name,
-                    Name = $"{userId.Name} ({GetUserNameFromUserId(userId.Name)})"
+                    Name = $"{userId.Name} ({GetUserNameFromUserIdAsync(userId.Name)})"
                 });
             }
 
@@ -430,18 +424,18 @@ namespace ArisenStudio.Extensions
         /// </summary>
         /// <param name="userId"> Console IP Address </param>
         /// <returns> </returns>
-        public static string GetUserNameFromUserId(string userId)
+        public static async Task<string> GetUserNameFromUserIdAsync(string userId)
         {
-            FtpClient ftpClient = MainWindow.FtpClient;
+            AsyncFtpClient ftpClient = MainWindow.FtpClient;
 
             string usernameFile = $"/dev_hdd0/home/{userId}/localusername";
 
-            if (!ftpClient.FileExists(usernameFile))
+            if (await ftpClient.FileExists(usernameFile) == false)
             {
                 return "No Username";
             }
 
-            using Stream stream = ftpClient.OpenRead(usernameFile);
+            using Stream stream = await ftpClient.OpenRead(usernameFile);
             //using MemoryStream stream = new();
             //ftpClient.Download(stream, usernameFile);
             using StreamReader streamReader = new(stream);
@@ -452,9 +446,9 @@ namespace ArisenStudio.Extensions
         /// Returns the first USB path if one is connected to the console.
         /// </summary>
         /// <returns> </returns>
-        public static string GetUsbPath()
+        public static async Task<string> GetUsbPathAsync()
         {
-            List<ListItem> folderNames = GetFolderNames("/");
+            List<ListItem> folderNames = await GetFolderNamesAsync("/");
 
             foreach (string usbPort in UsbPorts)
             {
@@ -472,13 +466,12 @@ namespace ArisenStudio.Extensions
         /// Get all of the games from the internal drive, and external USB devices (if enabled in settings).
         /// </summary>
         /// <returns> </returns>
-        public static List<ListItem> GetGamesBd()
+        public static async Task<List<ListItem>> GetGamesBdAsync()
         {
             List<ListItem> games =
             [
-                // Games on Interal HDD
-                .. GetFolderNames("/dev_hdd0/GAMES/"),
-                .. GetFolderNames("/dev_hdd0/GAMEZ/"),
+                .. await GetFolderNamesAsync("/dev_hdd0/GAMES/"),
+                .. await GetFolderNamesAsync("/dev_hdd0/GAMEZ/"),
             ];
 
             switch (MainWindow.Settings.ShowGamesFromExternalDevices)
@@ -488,8 +481,8 @@ namespace ArisenStudio.Extensions
                     {
                         foreach (string usbPort in UsbPorts)
                         {
-                            games.AddRange(GetFolderNames($"/{usbPort}/GAMES/"));
-                            games.AddRange(GetFolderNames($"/{usbPort}/GAMEZ/"));
+                            games.AddRange(await GetFolderNamesAsync($"/{usbPort}/GAMES/"));
+                            games.AddRange(await GetFolderNamesAsync($"/{usbPort}/GAMEZ/"));
                         }
 
                         break;
@@ -503,12 +496,12 @@ namespace ArisenStudio.Extensions
         /// Get all of the games from the internal drive, and external USB devices (if enabled in settings).
         /// </summary>
         /// <returns> </returns>
-        public static List<ListItem> GetGamesIso()
+        public static async Task<List<ListItem>> GetGamesIsoAsync()
         {
             List<ListItem> games =
             [
                 // Games on Interal HDD
-                .. GetFileNames("/dev_hdd0/PS3ISO/"),
+                .. await GetFileNamesAsync("/dev_hdd0/PS3ISO/"),
             ];
 
             switch (MainWindow.Settings.ShowGamesFromExternalDevices)
@@ -518,7 +511,7 @@ namespace ArisenStudio.Extensions
                     {
                         foreach (string usbPort in UsbPorts)
                         {
-                            games.AddRange(GetFileNames($"/{usbPort}/PS3ISO/"));
+                            games.AddRange(await GetFileNamesAsync($"/{usbPort}/PS3ISO/"));
                         }
 
                         break;
@@ -532,12 +525,12 @@ namespace ArisenStudio.Extensions
         /// Get all of the games from the internal drive, and external devices (if enabled in settings).
         /// </summary>
         /// <returns> </returns>
-        public static List<ListItem> GetGamesPsn()
+        public static async Task<List<ListItem>> GetGamesPsnAsync()
         {
             List<ListItem> gamesPath =
             [
                 // Games on Interal HDD
-                .. GetFolderNames("/dev_hdd0/GAMEI/"),
+                .. await GetFolderNamesAsync("/dev_hdd0/GAMEI/"),
             ];
 
             switch (MainWindow.Settings.ShowGamesFromExternalDevices)
@@ -547,7 +540,7 @@ namespace ArisenStudio.Extensions
                     {
                         foreach (string usbPort in UsbPorts)
                         {
-                            gamesPath.AddRange(GetFolderNames($"/{usbPort}/GAMEI/"));
+                            gamesPath.AddRange(await GetFolderNamesAsync($"/{usbPort}/GAMEI/"));
                         }
 
                         break;
@@ -561,12 +554,12 @@ namespace ArisenStudio.Extensions
         /// Get all PS2 (ISO) games from the internal drive, and external devices (if enabled in settings).
         /// </summary>
         /// <returns> </returns>
-        public static List<ListItem> GetGamesPs2()
+        public static async Task<List<ListItem>> GetGamesPs2Async()
         {
             List<ListItem> gamesPath =
             [
                 // Games on Interal HDD
-                .. GetFileNames("/dev_hdd0/PS2ISO/")
+                .. await GetFileNamesAsync("/dev_hdd0/PS2ISO/")
             ];
 
             switch (MainWindow.Settings.ShowGamesFromExternalDevices)
@@ -576,7 +569,7 @@ namespace ArisenStudio.Extensions
                     {
                         foreach (string usbPort in UsbPorts)
                         {
-                            gamesPath.AddRange(GetFolderNames($"/{usbPort}/PS2ISO/"));
+                            gamesPath.AddRange(await GetFolderNamesAsync($"/{usbPort}/PS2ISO/"));
                         }
 
                         break;
@@ -590,13 +583,13 @@ namespace ArisenStudio.Extensions
         /// Get all PS1/PSX (ISO) games from the internal drive, and external devices (if enabled in settings).
         /// </summary>
         /// <returns> </returns>
-        public static List<ListItem> GetGamesPsx()
+        public static async Task<List<ListItem>> GetGamesPsxAsync()
         {
-            List<ListItem> gamesPath = [.. GetFileNames("/dev_hdd0/PSXISO/")];
+            List<ListItem> gamesPath = [.. await GetFileNamesAsync("/dev_hdd0/PSXISO/")];
 
-            foreach (var folder in GetFolderNames("/dev_hdd0/PSXGAMES/"))
+            foreach (var folder in await GetFolderNamesAsync("/dev_hdd0/PSXGAMES/"))
             {
-                foreach (var item in GetFileNames("/dev_hdd0/PSXGAMES/" + folder.Name))
+                foreach (var item in await GetFileNamesAsync("/dev_hdd0/PSXGAMES/" + folder.Name))
                 {
                     if (item.Name.EndsWith(".bin"))
                     {
@@ -613,11 +606,11 @@ namespace ArisenStudio.Extensions
                     {
                         foreach (string usbPort in UsbPorts)
                         {
-                            gamesPath.AddRange(GetFolderNames($"/{usbPort}/PSXISO/"));
+                            gamesPath.AddRange(await GetFolderNamesAsync($"/{usbPort}/PSXISO/"));
 
-                            foreach (var folder in GetFolderNames($"/{usbPort}/PSXGAMES/"))
+                            foreach (var folder in await GetFolderNamesAsync($"/{usbPort}/PSXGAMES/"))
                             {
-                                foreach (var item in GetFileNames($"/{usbPort}/PSXGAMES/" + folder.Name))
+                                foreach (var item in await GetFileNamesAsync($"/{usbPort}/PSXGAMES/" + folder.Name))
                                 {
                                     if (item.Name.EndsWith(".bin"))
                                     {

@@ -38,6 +38,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.ButtonOpenFolder = new DevExpress.XtraEditors.SimpleButton();
             this.ProgressBarStatus = new DevExpress.XtraEditors.ProgressBarControl();
+            this.LabelStatusSize = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProgressBarStatus.Properties)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +53,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.LabelModName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.LabelModName.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.LabelModName.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.LabelModName.Location = new System.Drawing.Point(12, 20);
+            this.LabelModName.Location = new System.Drawing.Point(12, 12);
             this.LabelModName.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelModName.Name = "LabelModName";
             this.LabelModName.Size = new System.Drawing.Size(530, 50);
@@ -81,16 +82,17 @@ namespace ArisenStudio.Forms.Dialogs
             this.LabelStatus.Appearance.Options.UseFont = true;
             this.LabelStatus.Appearance.Options.UseTextOptions = true;
             this.LabelStatus.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.LabelStatus.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter;
             this.LabelStatus.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.LabelStatus.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.LabelStatus.AutoEllipsis = true;
             this.LabelStatus.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.LabelStatus.Location = new System.Drawing.Point(12, 99);
+            this.LabelStatus.Location = new System.Drawing.Point(12, 91);
             this.LabelStatus.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.LabelStatus.Name = "LabelStatus";
-            this.LabelStatus.Size = new System.Drawing.Size(530, 50);
+            this.LabelStatus.Size = new System.Drawing.Size(530, 52);
             this.LabelStatus.TabIndex = 16;
-            this.LabelStatus.Text = "Preparing...";
+            this.LabelStatus.Text = "Preparing...\r\n";
             // 
             // ButtonOpenFolder
             // 
@@ -110,11 +112,30 @@ namespace ArisenStudio.Forms.Dialogs
             // 
             this.ProgressBarStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ProgressBarStatus.Location = new System.Drawing.Point(12, 73);
+            this.ProgressBarStatus.EditValue = 1;
+            this.ProgressBarStatus.Location = new System.Drawing.Point(12, 65);
             this.ProgressBarStatus.Name = "ProgressBarStatus";
+            this.ProgressBarStatus.Properties.AllowFocused = false;
             this.ProgressBarStatus.Properties.Step = 1;
             this.ProgressBarStatus.Size = new System.Drawing.Size(530, 20);
             this.ProgressBarStatus.TabIndex = 21;
+            // 
+            // LabelStatusSize
+            // 
+            this.LabelStatusSize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelStatusSize.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.LabelStatusSize.Appearance.Options.UseFont = true;
+            this.LabelStatusSize.Appearance.Options.UseTextOptions = true;
+            this.LabelStatusSize.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.LabelStatusSize.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.LabelStatusSize.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.LabelStatusSize.Location = new System.Drawing.Point(12, 154);
+            this.LabelStatusSize.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
+            this.LabelStatusSize.Name = "LabelStatusSize";
+            this.LabelStatusSize.Size = new System.Drawing.Size(346, 24);
+            this.LabelStatusSize.TabIndex = 22;
+            this.LabelStatusSize.Visible = false;
             // 
             // TransferDialog
             // 
@@ -126,6 +147,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(554, 191);
             this.ControlBox = false;
+            this.Controls.Add(this.LabelStatusSize);
             this.Controls.Add(this.ProgressBarStatus);
             this.Controls.Add(this.ButtonOpenFolder);
             this.Controls.Add(this.LabelStatus);
@@ -158,5 +180,6 @@ namespace ArisenStudio.Forms.Dialogs
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private SimpleButton ButtonOpenFolder;
         private ProgressBarControl ProgressBarStatus;
+        public LabelControl LabelStatusSize;
     }
 }

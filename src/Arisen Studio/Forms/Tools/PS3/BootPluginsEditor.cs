@@ -11,6 +11,7 @@ using System.Data;
 using System.IO;
 using System.Resources;
 using System.Windows.Forms;
+using System.Threading.Tasks;
 
 namespace ArisenStudio.Forms.Tools.PS3
 {
@@ -28,7 +29,7 @@ namespace ArisenStudio.Forms.Tools.PS3
         /// <summary>
         /// Get the PS3 console connection.
         /// </summary>
-        private static FtpClient FtpClient { get; } = MainWindow.FtpClient;
+        private static AsyncFtpClient FtpClient { get; } = MainWindow.FtpClient;
 
         /// <summary>
         /// Get the local boot_plugins.txt file backup directory.
@@ -63,7 +64,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             ButtonRestoreBackup.Text = Language.GetString("LABEL_RESTORE_BACKUP");
             ButtonSaveUpdate.Text = Language.GetString("LABEL_SAVE_AND_UPDATE");
 
-            LoadBootPluginsData();
+            LoadBootPluginsDataAsync();
         }
 
         private DataTable BootPlugins { get; } = DataExtensions.CreateDataTable(
@@ -71,11 +72,11 @@ namespace ArisenStudio.Forms.Tools.PS3
             new(Language.GetString("LABEL_FILE_PATH"), typeof(string))
         ]);
 
-        private void LoadBootPluginsData()
+        private async Task LoadBootPluginsDataAsync()
         {
             try
             {
-                if (!FtpClient.FileExists(ConsoleBootPluginsFilePath))
+                if (!await FtpClient.FileExists(ConsoleBootPluginsFilePath))
                 {
                     Program.Log.Error("Unable to load the boot_plugins.txt file. It doesn't exist on the console.");
                     _ = XtraMessageBox.Show(this, $"Unable to find the boot_plugins.txt file on your console.", Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -117,24 +118,24 @@ namespace ArisenStudio.Forms.Tools.PS3
 
         }
 
-        private void ButtonRestoreDefault_Click(object sender, EventArgs e)
+        private async void ButtonRestoreDefault_Click(object sender, EventArgs e)
         {
             if (XtraMessageBox.Show(this, Language.GetString("RESTORE_DEFAULT_FILE"), Language.GetString("CONFIRM"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 File.WriteAllText("boot_plugins.txt", string.Empty);
-                _ = FtpExtensions.UploadFile("boot_plugins.txt", ConsoleBootPluginsFilePath);
-                LoadBootPluginsData();
+                _ = FtpExtensions.UploadFileAsync("boot_plugins.txt", ConsoleBootPluginsFilePath);
+                await LoadBootPluginsDataAsync();
             }
         }
 
-        private void ButtonRestoreBackup_Click(object sender, EventArgs e)
+        private async void ButtonRestoreBackup_Click(object sender, EventArgs e)
         {
             if (File.Exists(LocalBootPluginsBackupFilePath))
             {
                 if (XtraMessageBox.Show(this, Language.GetString("RESTORE_BACKUP_FILE"), Language.GetString("CONFIRM"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    _ = FtpExtensions.UploadFile(LocalBootPluginsBackupFilePath, ConsoleBootPluginsFilePath);
-                    LoadBootPluginsData();
+                    _ = FtpExtensions.UploadFileAsync(LocalBootPluginsBackupFilePath, ConsoleBootPluginsFilePath);
+                    await LoadBootPluginsDataAsync();
                 }
             }
             else
@@ -143,7 +144,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             }
         }
 
-        private void ButtonSaveUpdate_Click(object sender, EventArgs e)
+        private async void ButtonSaveUpdate_Click(object sender, EventArgs e)
         {
             try
             {
@@ -155,7 +156,7 @@ namespace ArisenStudio.Forms.Tools.PS3
                     }
                 }
 
-                _ = FtpExtensions.UploadFile(LocalBootPluginsFilePath, ConsoleBootPluginsFilePath);
+                _ = await FtpExtensions.UploadFileAsync(LocalBootPluginsFilePath, ConsoleBootPluginsFilePath);
                 _ = XtraMessageBox.Show(this, Language.GetString("BOOT_PLUGINS_FILE_SAVED"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)

@@ -129,12 +129,6 @@ namespace ArisenStudio.Forms.Dialogs.Details
             }
         }
 
-        private void ButtonReportIssue_Click(object sender, EventArgs e)
-        {
-            _ = XtraMessageBox.Show(Language.GetString("REDIRECT_TO_GITHUB_ISSUES"), Language.GetString("REDIRECTING"), MessageBoxButtons.OK, MessageBoxIcon.Information);
-            _ = Process.Start(Urls.ReportIssue);
-        }
-
         private void LabelDescription_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
         {
             _ = Process.Start(e.Link);
@@ -171,6 +165,16 @@ namespace ArisenStudio.Forms.Dialogs.Details
                 ButtonFavorite.Text = Language.GetString("LABEL_REMOVE_FROM_FAVORITES");
                 IsFavorite = true;
             }
+        }
+
+        private void ButtonReport_Click(object sender, EventArgs e)
+        {
+            DialogExtensions.ShowReportIssueDialog(this);
+        }
+
+        private void ButtonHelp_Click(object sender, EventArgs e)
+        {
+            _ = Process.Start(Urls.WebsiteHelp);
         }
 
         protected override void OnPaint(PaintEventArgs e)

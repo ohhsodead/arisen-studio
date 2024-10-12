@@ -54,6 +54,8 @@ using System.Net.Http;
 using Microsoft.Web.WebView2.Wpf;
 using AdsJumboWinForm;
 using DevExpress.XtraRichEdit.API.Layout;
+using DevExpress.Utils.CodedUISupport;
+using DevExpress.Utils.About;
 
 namespace ArisenStudio.Forms.Windows
 {
@@ -68,6 +70,8 @@ namespace ArisenStudio.Forms.Windows
             InitializeComponent();
             SkinColors = CommonSkins.GetSkin(LookAndFeel).Colors;
         }
+
+        #region Global Variables
 
         /// <summary>
         /// Get/get the current language resources.
@@ -134,7 +138,7 @@ namespace ArisenStudio.Forms.Windows
         /// <summary>
         /// Return the FTP client for faster and more reliable functions.
         /// </summary>
-        public static FtpClient FtpClient { get; private set; }
+        public static AsyncFtpClient FtpClient { get; private set; }
 
         /// <summary>
         /// Return whether webMAN is installed on the console.
@@ -145,6 +149,15 @@ namespace ArisenStudio.Forms.Windows
         /// Get the colors for the current skin.
         /// </summary>
         public static SkinColors SkinColors { get; private set; }
+
+        /// <summary>
+        /// Get the 
+        /// </summary>
+        public static System.Windows.Forms.Timer StatusIdleTimer { get; private set; } = new System.Windows.Forms.Timer();
+
+        #endregion
+
+        #region Splash Screen
 
         public OverlayWindowOptions splashScreenOptions = new(
             opacity: 1,
@@ -158,7 +171,7 @@ namespace ArisenStudio.Forms.Windows
 
         private IOverlaySplashScreenHandle ShowSplashScreenProgress()
         {
-            overlayBackground = new() { BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder, Size = Window.WindowState == FormWindowState.Maximized ? new Size(Window.Size.Width - 0, Window.Size.Height - 10) : new Size(Window.Size.Width + 40, Window.Size.Height - 28), Location = new Point(-0, 36), Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom };
+            overlayBackground = new() { BorderStyle = BorderStyles.NoBorder, Size = Window.WindowState == FormWindowState.Maximized ? new Size(Window.Size.Width - 0, Window.Size.Height - 10) : new Size(Window.Size.Width + 40, Window.Size.Height - 28), Location = new Point(-0, 36), Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom };
             Controls.Add(overlayBackground);
             return SplashScreenManager.ShowOverlayForm(overlayBackground, splashScreenOptions);
             //return SplashScreenManager.ShowOverlayForm(this, splashScreenOptions);
@@ -174,6 +187,8 @@ namespace ArisenStudio.Forms.Windows
         }
 
         private IOverlaySplashScreenHandle handleSplashScreenProgress = null;
+
+        #endregion
 
         /// <summary>
         /// Form loading event.
@@ -217,32 +232,6 @@ namespace ArisenStudio.Forms.Windows
                 SetStatus(ResourceLanguage.GetString("INITIALIZING_APP_DB") + "...");
                 await LoadDataAsync();
                 InitializeFinished();
-
-                // Banner Ad
-
-                //WebViewAdBanner.CoreWebView2InitializationCompleted += WebViewAdBanner_CoreWebView2InitializationCompleted;
-
-                //await InitializeWebViewBanner();
-
-                //if ((WebViewAdBanner == null) || (WebViewAdBanner.CoreWebView2 == null))
-                //{
-                //    SetStatus("not ready");
-                //}
-
-                ////WebViewAdBanner.EnsureCoreWebView2Async();
-                ////string adScript = "<script async type=\"application/javascript\" src=\"https://a.magsrv.com/ad-provider.js\"></script>" +
-                ////                  "<ins class=\"eas6a97888e2\" data-zoneid=\"5410756\"></ins>" +
-                ////                  "<script>(AdProvider = window.AdProvider || []).push({\"serve\": {}});</script>";
-
-                //string adScript = "<script async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5131934319534750' " +
-                //                  "crossorigin='anonymous'></script>" +
-                //                  "<!-- Dashboard Page -->" +
-                //                  "<ins class='adsbygoogle' style='display:block' data-ad-client='ca-pub-5131934319534750' " +
-                //                  "data-ad-slot='4129494537' data-ad-format='auto' data-full-width-responsive='true'></ins>" +
-                //                  "<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>";
-
-
-                //WebViewAdBanner.NavigateToString(adScript);
             }
             else
             {
@@ -359,7 +348,7 @@ namespace ArisenStudio.Forms.Windows
 
             try
             {
-                _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("ArisenStudio");
+                _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("ArisenStudio-CheckDatabaseStatus");
                 string response = await _httpClient.GetStringAsync(Urls.StatusCheck);
 
                 if (string.Equals(response, "OK", StringComparison.OrdinalIgnoreCase))
@@ -475,25 +464,20 @@ namespace ArisenStudio.Forms.Windows
 
             // Banner Ad
 
-            //WebViewAdBanner.CoreWebView2InitializationCompleted += WebViewAdBanner_CoreWebView2InitializationCompleted;
-
-            //await InitializeWebViewBanner();
-
-            //if ((webView2 == null) || (webView2.CoreWebView2 == null))
-            //{
-            //    Debug.WriteLine("not ready");
-            //}
-
-            //WebViewAdBanner.EnsureCoreWebView2Async();
-            //string adScript = "<script async type=\"application/javascript\" src=\"https://a.magsrv.com/ad-provider.js\"></script>" +
-            //                  "<ins class=\"eas6a97888e2\" data-zoneid=\"5410756\"></ins>" +
-            //                  "<script>(AdProvider = window.AdProvider || []).push({\"serve\": {}});</script>";
-            //WebViewAdBanner.NavigateToString(adScript);
-
-            //BannerAdsDashboard.ShowAd(BannerAdsDashboard.Size.Width, BannerAdsDashboard.Size.Height, "33krwjd74qn6");
             BannerAdsDashboard.ShowAd(728, 90, "33krwjd74qn6");
+            BannerAdsDashboard.ShowAd(BannerAdsDashboard.Size.Width, BannerAdsDashboard.Size.Height, "33krwjd74qn6");
+
+            SkinElement element = SkinManager.GetSkinElement(SkinProductId.Editors, UserLookAndFeel.Default, "SplashForm");
+            element.Image.SizingMargins.All = 0;
+            element.Color.SolidImageCenterColor = Color.FromName("@Paint High");
+            LookAndFeelHelper.ForceDefaultLookAndFeelChanged();
 
             CloseSplashScreenProgress(handleSplashScreenProgress);
+
+            // Idle Status Timer
+            StatusIdleTimer.Tick += StatusIdleTimer_Tick;
+            StatusIdleTimer.Interval = 15000;
+            StatusIdleTimer.Enabled = true;
 
 #if !DEBUG
             if (ConsoleProfile.Platform == Platform.PS3)
@@ -564,7 +548,7 @@ namespace ArisenStudio.Forms.Windows
 
             if (defaultProfile == null)
             {
-                _ = XtraMessageBox.Show(this, "You must create and have one console profile set as default.", ResourceLanguage.GetString("LABEL_DEFAULT_CONSOLE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                _ = XtraMessageBox.Show(this, ResourceLanguage.GetString("MUST_HAVE_DEFAULT_CONSOLE"), ResourceLanguage.GetString("LABEL_DEFAULT_CONSOLE"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 DialogExtensions.ShowEditConnectionsDialog(this, true);
 
@@ -601,11 +585,16 @@ namespace ArisenStudio.Forms.Windows
 
         #region Ribbon Bar
 
-        // Update Button (Top Left)
+        // Header Buttons (Top Right)
+
+        private void ButtonHeaderDonate_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            _ = Process.Start(Urls.DonatePatreon);
+        }
 
         public void UpdateAvailable(bool isNewUpdate)
         {
-            ButtonUpdate.Visibility = isNewUpdate ? BarItemVisibility.Always : BarItemVisibility.Never;
+            ButtonHeaderUpdate.Visibility = isNewUpdate ? BarItemVisibility.Always : BarItemVisibility.Never;
         }
 
         private void ButtonUpdate_ItemClick(object sender, ItemClickEventArgs e)
@@ -918,11 +907,11 @@ namespace ArisenStudio.Forms.Windows
             SetStatus("webMAN Commands - Successfully Opened Game Launcher.");
         }
 
-        private void ButtonToolsPsGamesMountBD_ItemClick(object sender, ItemClickEventArgs e)
+        private async void ButtonToolsPsGamesMountBD_ItemClick(object sender, ItemClickEventArgs e)
         {
             SetStatus("Fetching games (BD) list...");
 
-            List<ListItem> games = FtpExtensions.GetGamesBd();
+            List<ListItem> games = await FtpExtensions.GetGamesBdAsync();
 
             switch (games.Count)
             {
@@ -947,11 +936,11 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        private void ButtonToolsPsGamesMountISO_ItemClick(object sender, ItemClickEventArgs e)
+        private async void ButtonToolsPsGamesMountISO_ItemClick(object sender, ItemClickEventArgs e)
         {
             SetStatus("Fetching games (ISO) list...");
 
-            List<ListItem> games = FtpExtensions.GetGamesIso();
+            List<ListItem> games = await FtpExtensions.GetGamesIsoAsync();
 
             switch (games.Count)
             {
@@ -976,11 +965,11 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        private void ButtonToolsPsGamesMountPSN_ItemClick(object sender, ItemClickEventArgs e)
+        private async void ButtonToolsPsGamesMountPSN_ItemClick(object sender, ItemClickEventArgs e)
         {
             SetStatus("Fetching games (PSN) list...");
 
-            List<ListItem> games = FtpExtensions.GetGamesPsn();
+            List<ListItem> games = await FtpExtensions.GetGamesPsnAsync();
 
             switch (games.Count)
             {
@@ -1134,7 +1123,7 @@ namespace ArisenStudio.Forms.Windows
                         //    //Config = new() { SocketKeepAlive = true, DataConnectionType = FtpDataConnectionType.AutoActive, ReadTimeout = 90000, ConnectTimeout = 90000, DataConnectionConnectTimeout = 90000, DataConnectionReadTimeout = 90000 },
                         //};
 
-                        FtpClient = new FtpClient
+                        FtpClient = new AsyncFtpClient
                         {
                             Host = ConsoleProfile.Address,
                             Port = 21,
@@ -1171,7 +1160,8 @@ namespace ArisenStudio.Forms.Windows
                         //    //Config = new() { SocketKeepAlive = true, DataConnectionType = FtpDataConnectionType.AutoActive, ReadTimeout = 90000, ConnectTimeout = 90000, DataConnectionConnectTimeout = 90000, DataConnectionReadTimeout = 90000 },
                         //};
 
-                        FtpClient.Connect();
+                        FtpClient.AutoConnect();
+                        //FtpClient.Connect();
 
                         IsWebManInstalled = WebManExtensions.IsWebManInstalled(ConsoleProfile.Address);
 
@@ -1208,7 +1198,7 @@ namespace ArisenStudio.Forms.Windows
                         //            MessageBoxIcon.Information);
                         //break;
 
-                        FtpClient = new FtpClient
+                        FtpClient = new AsyncFtpClient
                         {
                             Host = ConsoleProfile.Address,
                             Port = 9090,
@@ -1444,7 +1434,7 @@ namespace ArisenStudio.Forms.Windows
 
                 if (!hasLoadedHomebrewPS3)
                 {
-                    //LoadHomebrewCategoriesPS3();
+                    LoadHomebrewCategoriesPS3();
                     SearchHomebrewPS3();
                     hasLoadedHomebrewPS3 = true;
                 }
@@ -1455,7 +1445,7 @@ namespace ArisenStudio.Forms.Windows
 
                 if (!hasLoadedHomebrewXbox)
                 {
-                    //LoadHomebrewCategoriesXbox();
+                    LoadHomebrewCategoriesXbox();
                     SearchHomebrewXbox();
                     hasLoadedHomebrewXbox = true;
                 }
@@ -1466,7 +1456,7 @@ namespace ArisenStudio.Forms.Windows
 
                 if (!hasLoadedHomebrewPS4)
                 {
-                    //LoadHomebrewCategoriesPS4();
+                    LoadHomebrewCategoriesPS4();
                     SearchHomebrewPS4();
                     hasLoadedHomebrewPS4 = true;
                 }
@@ -1503,15 +1493,19 @@ namespace ArisenStudio.Forms.Windows
 
         private bool hasLoadedPackages = false;
 
-        private void NavigationItemPackages_Click(object sender, EventArgs e)
+        private async void NavigationItemPackages_Click(object sender, EventArgs e)
         {
             NavigationFrame.SelectedPage = PagePackagesPS3;
 
+            GridViewPackages.ShowLoadingPanel();
+
             if (!hasLoadedPackages)
             {
-                LoadPackages();
+                await SearchPackages();
                 hasLoadedPackages = true;
             }
+
+            GridViewPackages.HideLoadingPanel();
         }
 
         private bool hasLoadedGames = false;
@@ -1543,16 +1537,20 @@ namespace ArisenStudio.Forms.Windows
 
         private bool hasLoadedGameCheats = false;
 
-        private void NavigationItemGameCheats_Click(object sender, EventArgs e)
+        private async void NavigationItemGameCheats_ClickAsync(object sender, EventArgs e)
         {
             NavigationFrame.SelectedPage = PageGameCheats;
 
+            GridViewGameCheats.ShowLoadingPanel();
+
             if (!hasLoadedGameCheats)
             {
-                LoadGameCheatsCategories();
-                SearchGameCheats();
+                await LoadGameCheatsCategories();
+                await SearchGameCheats();
                 hasLoadedGameCheats = true;
             }
+
+            GridViewGameCheats.HideLoadingPanel();
         }
 
         #endregion
@@ -1758,12 +1756,12 @@ namespace ArisenStudio.Forms.Windows
 
         private async Task InitializeWebPollAsync()
         {
-            if (WebViewPoll.CoreWebView2 == null)
+            if (WebViewCurrentPoll.CoreWebView2 == null)
             {
-                WebViewPoll.CoreWebView2InitializationCompleted += WebViewPoll_CoreWebView2InitializationCompleted;
-                WebViewPoll.NavigationCompleted += WebViewPoll_NavigationCompleted;
-                WebViewPoll.NavigationStarting += WebViewPoll_NavigationStarting;
-                await WebViewPoll.EnsureCoreWebView2Async(null);
+                WebViewCurrentPoll.CoreWebView2InitializationCompleted += WebViewPoll_CoreWebView2InitializationCompleted;
+                WebViewCurrentPoll.NavigationCompleted += WebViewPoll_NavigationCompleted;
+                WebViewCurrentPoll.NavigationStarting += WebViewPoll_NavigationStarting;
+                await WebViewCurrentPoll.EnsureCoreWebView2Async(null);
             }
         }
 
@@ -1773,11 +1771,11 @@ namespace ArisenStudio.Forms.Windows
             {
                 if (!string.IsNullOrEmpty(Properties.Resources.PollLink))
                 {
-                    WebViewPoll.CoreWebView2.NavigateToString(Properties.Resources.PollLink);
+                    WebViewCurrentPoll.CoreWebView2.NavigateToString(Properties.Resources.PollLink);
                 }
 
                 //Credits：https://blog.jussipalo.com/2021/02/webview2-how-to-hide-scrollbars.html
-                _ = WebViewPoll.ExecuteScriptAsync("document.querySelector('body').style.overflow='scroll';var style=document.createElement('style');style.type='text/css';style.innerHTML='::-webkit-scrollbar{display:none}';document.getElementsByTagName('body')[0].appendChild(style)");
+                _ = WebViewCurrentPoll.ExecuteScriptAsync("document.querySelector('body').style.overflow='scroll';var style=document.createElement('style');style.type='text/css';style.innerHTML='::-webkit-scrollbar{display:none}';document.getElementsByTagName('body')[0].appendChild(style)");
             }
             else
             {
@@ -1905,8 +1903,8 @@ namespace ArisenStudio.Forms.Windows
                 $"{Database.HomebrewPS3.Library.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Homebrew).Count:N0} {ResourceLanguage.GetString("LABEL_HOMEBREW")}\n" +
                 $"{Database.ResourcesPS3.Library.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Resource).Count:N0} {ResourceLanguage.GetString("LABEL_RESOURCES")}\n" +
                 $"{Database.PackagesCount():N0} {ResourceLanguage.GetString("LABEL_PACKAGES")}\n" +
-                $"{Database.GameSaves.GameSaves.Where(x => x.GetPlatform() == Platform.PS3).ToList().Count:N0} {ResourceLanguage.GetString("LABEL_GAME_SAVES")}\n" +
-                $"{Database.GameCheatsPS3.GetTotalCheats():N0} {ResourceLanguage.GetString("LABEL_GAME_CHEATS")}";
+                $"{Database.GameSaves.GameSaves.Where(x => x.GetPlatform() == Platform.PS3).ToList().Count:N0} {ResourceLanguage.GetString("LABEL_GAME_SAVES")}\n";
+                //$"{Database.GamesDataPS3.Games.Count():N0} {ResourceLanguage.GetString("LABEL_GAME_CHEATS")}";
 
             LabelStatisticsPlayStation4.Text =
                 $"{Database.HomebrewPS4.Library.FindAll(x => x.GetCategoryType(Database.CategoriesData) == CategoryType.Homebrew).Count:N0} {ResourceLanguage.GetString("LABEL_HOMEBREW")}\n" +
@@ -3140,7 +3138,7 @@ namespace ArisenStudio.Forms.Windows
             hadLoadedFileManager = true;
         }
 
-        private void TimerLoadConsole_Tick(object sender, EventArgs e)
+        private async void TimerLoadConsole_Tick(object sender, EventArgs e)
         {
             TimerLoadConsole.Enabled = false;
 
@@ -3150,7 +3148,7 @@ namespace ArisenStudio.Forms.Windows
             {
                 case Platform.PS3:
                     {
-                        foreach (ListItem driveName in FtpExtensions.GetFolderNames("/"))
+                        foreach (ListItem driveName in await FtpExtensions.GetFolderNamesAsync("/"))
                         {
                             _ = ComboBoxFileManagerConsoleDrives.Properties.Items.Add(driveName.Name.Replace(@"/", string.Empty));
                         }
@@ -3632,7 +3630,7 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        public void UploadLocalFile()
+        public async void UploadLocalFile()
         {
             try
             {
@@ -3653,7 +3651,7 @@ namespace ArisenStudio.Forms.Windows
                                 switch (Platform)
                                 {
                                     case Platform.PS3:
-                                        _ = FtpExtensions.UploadFile(localPath, consolePath);
+                                        _ = await FtpExtensions.UploadFileAsync(localPath, consolePath);
                                         break;
                                     default:
                                         XboxConsole.SendFile(localPath, consolePath);
@@ -3838,7 +3836,7 @@ namespace ArisenStudio.Forms.Windows
         /// Loads files and folders into the console datagridview
         /// </summary>
         /// <param name="directoryPath"> Console path to retrieve </param>
-        public void LoadConsoleDirectory(string directoryPath)
+        public async void LoadConsoleDirectory(string directoryPath)
         {
             try
             {
@@ -3870,14 +3868,14 @@ namespace ArisenStudio.Forms.Windows
 
                 if (Platform == Platform.PS3)
                 {
-                    FtpClient.SetWorkingDirectory(DirectoryPathConsole);
+                    await FtpClient.SetWorkingDirectory(DirectoryPathConsole);
 
                     List<FtpListItem> folders = [];
                     List<FtpListItem> files = [];
 
                     int totalBytes = 0;
 
-                    foreach (FtpListItem listItem in FtpClient.GetListing(DirectoryPathConsole))
+                    foreach (FtpListItem listItem in await FtpClient.GetListing(DirectoryPathConsole))
                     {
                         switch (listItem.Type)
                         {
@@ -3900,7 +3898,7 @@ namespace ArisenStudio.Forms.Windows
                         {
                             case "/dev_hdd0/home/":
                                 {
-                                    string profileName = FtpExtensions.GetUserNameFromUserId(listItem.Name);
+                                    string profileName = await FtpExtensions.GetUserNameFromUserIdAsync(listItem.Name);
                                     _ = DataTableConsoleFiles.Rows.Add("folder",
                                                                    ImageCollection.Images[1],
                                                                    $"{listItem.Name} ({profileName})",
@@ -3911,7 +3909,7 @@ namespace ArisenStudio.Forms.Windows
                             case "/dev_hdd0/game/":
                                 {
                                     string gameTitle = Settings.AutoDetectGameTitles
-                                        ? $" ({FtpExtensions.GetParamTitle($"/dev_hdd0/game/{listItem.Name}/PARAM.SFO")})"
+                                        ? $" ({FtpExtensions.GetParamTitleAsync($"/dev_hdd0/game/{listItem.Name}/PARAM.SFO")})"
                                         : string.Empty;
                                     _ = DataTableConsoleFiles.Rows.Add("folder",
                                                                    ImageCollection.Images[0],
@@ -4487,7 +4485,7 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        private void RenameConsoleFile()
+        private async Task RenameConsoleFile()
         {
             try
             {
@@ -4505,7 +4503,7 @@ namespace ArisenStudio.Forms.Windows
                     switch (Platform)
                     {
                         case Platform.PS3:
-                            if (FtpClient.FileExists(newConsoleFilePath))
+                            if (await FtpClient.FileExists(newConsoleFilePath))
                             {
                                 SetConsoleStatus(ResourceLanguage.GetString("FILE_NAME_EXISTS"));
                                 return;
@@ -4547,7 +4545,7 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        private void RenameConsoleFolder()
+        private async void RenameConsoleFolder()
         {
             try
             {
@@ -4560,7 +4558,7 @@ namespace ArisenStudio.Forms.Windows
 
                 if (newFolderName != null && !newFolderName.Equals(oldFolderName))
                 {
-                    if (FtpClient.DirectoryExists(newFolderPath))
+                    if (await FtpClient.DirectoryExists(newFolderPath))
                     {
                         SetConsoleStatus(ResourceLanguage.GetString("FOLDER_NAME_EXISTS"));
                     }
@@ -4589,7 +4587,7 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        public void CreateConsoleFolder()
+        public async void CreateConsoleFolder()
         {
             try
             {
@@ -4599,7 +4597,7 @@ namespace ArisenStudio.Forms.Windows
                 {
                     string folderPath = DirectoryPathConsole + "/" + folderName;
 
-                    if (FtpClient.DirectoryExists(folderPath))
+                    if (await FtpClient.DirectoryExists(folderPath))
                     {
                         _ = XtraMessageBox.Show(ResourceLanguage.GetString("FOLDER_NAME_EXISTS"), ResourceLanguage.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -6322,9 +6320,9 @@ namespace ArisenStudio.Forms.Windows
 
         private void GridViewGameModsPS3_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            if (e.FocusedRowHandle != -1)
+            if (GridViewGameModsPS3.RowCount > 0)
             {
-                if (GridViewGameModsPS3.RowCount > 0)
+                if (e.FocusedRowHandle != -1)
                 {
                     SelectedGameModPS3Id = (int)GridViewGameModsPS3.GetRowCellValue(e.FocusedRowHandle, GridViewGameModsPS3.Columns[0]);
                 }
@@ -6342,12 +6340,12 @@ namespace ArisenStudio.Forms.Windows
             GridHitInfo info = view.CalcHitInfo(ea.Location);
             if (info.InRow)
             {
-                SelectedGameModXboxId = (int)GridViewGameModsPS3.GetRowCellValue(info.RowHandle, GridViewGameModsPS3.Columns[0]);
+                SelectedGameModPS3Id = (int)GridViewGameModsPS3.GetRowCellValue(info.RowHandle, GridViewGameModsPS3.Columns[0]);
             }
 
-            TileItemGameModsPS3AddFavorite.Enabled = SelectedGameModXboxId != -1;
-            TileItemGameModsPS3Download.Enabled = SelectedGameModXboxId != -1;
-            TileItemGameModsPS3ShowDetails.Enabled = SelectedGameModXboxId != -1;
+            TileItemGameModsPS3AddFavorite.Enabled = SelectedGameModPS3Id != -1;
+            TileItemGameModsPS3Download.Enabled = SelectedGameModPS3Id != -1;
+            TileItemGameModsPS3ShowDetails.Enabled = SelectedGameModPS3Id != -1;
         }
 
         private void GridViewGameModsPS3_DoubleClick(object sender, EventArgs e)
@@ -6361,7 +6359,7 @@ namespace ArisenStudio.Forms.Windows
                 //MessageBox.Show(string.Format("DoubleClick on row: {0}, column: {1}.", info.RowHandle, colCaption));
 
                 int modId = (int)GridViewGameModsPS3.GetRowCellValue(info.RowHandle, GridViewGameModsPS3.Columns[0]);
-                SelectedGameModXboxId = modId;
+                SelectedGameModPS3Id = modId;
                 ShowGameModDetails(Platform.PS3, modId);
             }
         }
@@ -6370,7 +6368,7 @@ namespace ArisenStudio.Forms.Windows
 
         #region Homebrew Page (PS3)
 
-        private int SelectedHomebrewId = 0;
+        private int SelectedHomebrewPS3Id = 0;
 
         private void TileItemHomebrewShowFavorites_ItemClick(object sender, TileItemEventArgs e)
         {
@@ -6402,27 +6400,27 @@ namespace ArisenStudio.Forms.Windows
 
         private void TileItemHomebrewAddFavorite_ItemClick(object sender, TileItemEventArgs e)
         {
-            if (SelectedHomebrewId != -1)
+            if (SelectedHomebrewPS3Id != -1)
             {
-                var modItem = Database.HomebrewPS3.GetModById(Platform.PS3, SelectedHomebrewId);
+                var modItem = Database.HomebrewPS3.GetModById(Platform.PS3, SelectedHomebrewPS3Id);
                 Settings.FavoriteMods.Add(new() { Platform = Platform.PS3, CategoryId = modItem.CategoryId, CategoryType = Database.CategoriesData.GetCategoryById(modItem.CategoryId).CategoryType, ModId = modItem.Id });
             }
         }
 
         private void TileItemHomebrewDownload_ItemClick(object sender, TileItemEventArgs e)
         {
-            if (SelectedHomebrewId != -1)
+            if (SelectedHomebrewPS3Id != -1)
             {
-                var modItem = Database.HomebrewPS3.GetModById(Platform.PS3, SelectedHomebrewId);
+                var modItem = Database.HomebrewPS3.GetModById(Platform.PS3, SelectedHomebrewPS3Id);
                 ShowTransferModsDialog(this, TransferType.DownloadMods, modItem, modItem.DownloadFiles.Last());
             }
         }
 
         private void TileItemHomebrewShowDetails_ItemClick(object sender, TileItemEventArgs e)
         {
-            if (SelectedHomebrewId != -1)
+            if (SelectedHomebrewPS3Id != -1)
             {
-                ShowHomebrewDetails(Platform.PS3, SelectedHomebrewId);
+                ShowHomebrewDetails(Platform.PS3, SelectedHomebrewPS3Id);
             }
         }
 
@@ -6516,7 +6514,7 @@ namespace ArisenStudio.Forms.Windows
             SearchHomebrewPS3();
         }
 
-        private void LoadHomebrewCategories()
+        private void LoadHomebrewCategoriesPS3()
         {
             ComboBoxHomebrewFilterCategory.Properties.Items.Clear();
 
@@ -6526,9 +6524,17 @@ namespace ArisenStudio.Forms.Windows
 
             _ = ComboBoxHomebrewFilterCategory.Properties.Items.Add($"<{ResourceLanguage.GetString("ALL_CATEGORIES")}>");
 
-            foreach (Category category in Database.CategoriesData.Categories.FindAll(x => CategoryType.Homebrew == x.CategoryType).OrderBy(x => x.Title))
+            IEnumerable<Category> categories = Database.CategoriesData.Categories.FindAll(x => CategoryType.Homebrew == x.CategoryType).Distinct();
+
+            foreach (Category category in categories.OrderBy(x => x.Title))
             {
-                _ = ComboBoxHomebrewFilterCategory.Properties.Items.Add(category.Title);
+                if (Database.HomebrewPS3.Library.Any(x => x.GetPlatform() == ConsoleProfile.Platform && x.CategoryId.Equals(category.Id)))
+                {
+                    if (!ComboBoxHomebrewFilterCategory.Properties.Items.Contains(category.Title))
+                    {
+                        _ = ComboBoxHomebrewFilterCategory.Properties.Items.Add(category.Title);
+                    }
+                }
             }
 
             List<string> ignoreValues = ["n/a", "-", "all regions", "all", "n", "a", ""];
@@ -6663,29 +6669,33 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        private void GridViewHomebrew_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+        private void GridViewHomebrewPS3_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            if (e.FocusedRowHandle != -1)
+            if (GridViewHomebrewPS3.RowCount > 0)
             {
-                SelectedHomebrewId = (int)GridViewHomebrewPS3.GetRowCellValue(e.FocusedRowHandle, GridViewHomebrewPS3.Columns[0]);
+                if (e.FocusedRowHandle != -1)
+                {
+                    SelectedHomebrewPS3Id = (int)GridViewHomebrewPS3.GetRowCellValue(e.FocusedRowHandle, GridViewHomebrewPS3.Columns[0]);
+                }
             }
 
+            TileItemHomebrewAddFavorite.Enabled = e.FocusedRowHandle != -1;
             TileItemHomebrewDownload.Enabled = e.FocusedRowHandle != -1;
             TileItemHomebrewShowDetails.Enabled = e.FocusedRowHandle != -1;
         }
 
-        private void GridViewHomebrew_RowClick(object sender, RowClickEventArgs e)
+        private void GridViewHomebrewPS3_RowClick(object sender, RowClickEventArgs e)
         {
             DXMouseEventArgs ea = e;
             GridView view = sender as GridView;
             GridHitInfo info = view.CalcHitInfo(ea.Location);
             if (info.InRow)
             {
-                SelectedHomebrewId = (int)GridViewHomebrewPS3.GetRowCellValue(info.RowHandle, GridViewHomebrewPS3.Columns[0]);
+                SelectedHomebrewPS3Id = (int)GridViewHomebrewPS3.GetRowCellValue(info.RowHandle, GridViewHomebrewPS3.Columns[0]);
             }
         }
 
-        private void GridViewHomebrew_DoubleClick(object sender, EventArgs e)
+        private void GridViewHomebrewPS3_DoubleClick(object sender, EventArgs e)
         {
             DXMouseEventArgs ea = e as DXMouseEventArgs;
             GridView view = sender as GridView;
@@ -6693,7 +6703,7 @@ namespace ArisenStudio.Forms.Windows
             if (info.InRow)
             {
                 int modId = (int)GridViewHomebrewPS3.GetRowCellValue(info.RowHandle, GridViewHomebrewPS3.Columns[0]);
-                SelectedHomebrewId = modId;
+                SelectedHomebrewPS3Id = modId;
                 ShowHomebrewDetails(Platform.PS3, modId);
             }
         }
@@ -7052,6 +7062,7 @@ namespace ArisenStudio.Forms.Windows
                 ShowResourceDetails(SelectedResourceId);
             }
 
+            TileItemResourcesShowFavorites.Enabled = SelectedResourceId != -1;
             TileItemResourcesDownload.Enabled = SelectedResourceId != -1;
             TileItemResourcesShowDetails.Enabled = SelectedResourceId != -1;
         }
@@ -7075,7 +7086,7 @@ namespace ArisenStudio.Forms.Windows
         private string SelectedPackageCategory = string.Empty;
         private string SelectedPackageUrl = string.Empty;
 
-        private void TileItemPackagesSortBy_ItemClick(object sender, TileItemEventArgs e)
+        private async void TileItemPackagesSortBy_ItemClick(object sender, TileItemEventArgs e)
         {
             Dialogs.SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterPackagesSortOption, [ResourceLanguage.GetString("LABEL_CATEGORY"), ResourceLanguage.GetString("LABEL_NAME"), ResourceLanguage.GetString("LABEL_REGION"), ResourceLanguage.GetString("LABEL_MODIFIED_DATE"), ResourceLanguage.GetString("LABEL_FILE_SIZE")], FilterPackagesSortOrder);
 
@@ -7083,7 +7094,7 @@ namespace ArisenStudio.Forms.Windows
             {
                 FilterPackagesSortOption = sortOptions.SortOption;
                 FilterPackagesSortOrder = sortOptions.SortOrder;
-                SearchPackages();
+                await SearchPackages();
             }
         }
 
@@ -7145,12 +7156,12 @@ namespace ArisenStudio.Forms.Windows
 
         private string FilterPackagesStatus { get; set; } = string.Empty;
 
-        private void ComboBoxPackagesFilterCategories_SelectedIndexChanged(object sender, EventArgs e)
+        private async void ComboBoxPackagesFilterCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ComboBoxFilterPackagesCategories.SelectedIndex is (-1) or 0)
             {
                 FilterPackagesCategory = string.Empty;
-                SearchPackages();
+                await SearchPackages();
                 return;
             }
 
@@ -7176,13 +7187,13 @@ namespace ArisenStudio.Forms.Windows
             }
 
             FilterPackagesCategory = ComboBoxFilterPackagesCategories.SelectedItem as string;
-            SearchPackages();
+            await SearchPackages();
         }
 
-        private void TextBoxPackagesFilterTitle_EditValueChanged(object sender, EventArgs e)
+        private async void TextBoxPackagesFilterTitle_EditValueChanged(object sender, EventArgs e)
         {
             FilterPackagesTitle = TextBoxPackagesFilterName.Text;
-            SearchPackages();
+            await SearchPackages();
         }
 
         private void ImagePackagesFilterDateType_Click(object sender, EventArgs e)
@@ -7204,20 +7215,20 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        private void ComboBoxPackagesFilterModifiedDate_EditValueChanged(object sender, EventArgs e)
+        private async void ComboBoxPackagesFilterModifiedDate_EditValueChanged(object sender, EventArgs e)
         {
             //if (ComboBoxPackagesFilterModifiedDate.EditValue.ToString().IsValidDate("MM/dd/yyyy"))
             if (!ComboBoxPackagesFilterModifiedDate.Text.IsNullOrWhiteSpace())
             {
                 FilterPackagesModifiedDate = ComboBoxPackagesFilterModifiedDate.DateTime;
-                SearchPackages();
+                await SearchPackages();
             }
             else
             {
                 //ComboBoxPackagesFilterModifiedDate.DateTime = null;
                 ComboBoxPackagesFilterModifiedDate.EditValue = null;
                 FilterPackagesModifiedDate = null;
-                SearchPackages();
+                await SearchPackages();
             }
         }
 
@@ -7240,30 +7251,30 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        private void ComboBoxPackagesFilterRegion_SelectedIndexChanged(object sender, EventArgs e)
+        private async void ComboBoxPackagesFilterRegion_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ComboBoxPackagesFilterRegion.SelectedIndex is (-1) or 0)
             {
                 FilterPackagesRegion = string.Empty;
-                SearchPackages();
+                await SearchPackages();
                 return;
             }
 
             FilterPackagesRegion = ComboBoxPackagesFilterRegion.SelectedItem as string;
-            SearchPackages();
+            await SearchPackages();
         }
 
-        private void ComboBoxPackagesFilterStatus_SelectedIndexChanged(object sender, EventArgs e)
+        private async void ComboBoxPackagesFilterStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ComboBoxPackagesFilterStatus.SelectedIndex is (-1) or 0)
             {
                 FilterPackagesStatus = string.Empty;
-                SearchPackages();
+                await SearchPackages();
                 return;
             }
 
             FilterPackagesStatus = ComboBoxPackagesFilterStatus.SelectedItem as string;
-            SearchPackages();
+            await SearchPackages();
         }
 
         private static DataTable DataTablePackages { get; } = DataExtensions.CreateDataTable(
@@ -7280,363 +7291,365 @@ namespace ArisenStudio.Forms.Windows
         /// <summary>
         /// Load packages into view.
         /// </summary>
-        private void LoadPackages()
+        //private async Task LoadPackages()
+        //{
+        //    GridViewPackages.ShowLoadingPanel();
+
+        //    DataTablePackages.Rows.Clear();
+
+        //    await Task.Run(() =>
+        //    {
+        //        if (FilterPackagesSortOption == ResourceLanguage.GetString("LABEL_FILE_SIZE"))
+        //        {
+        //            foreach (PackageItemData package in GetAllPackages().Where(x => !x.IsUrlMissing).OrderBy(x => x.Size))
+        //            {
+        //                bool isInstalled = Settings.InstalledPackages.Any(x => x.Url.Equals(x.Url));
+
+        //                bool isDownloaded = Settings.DownloadedMods.Any(x => x.CategoryId.Equals("PACKAGE"));
+
+        //                bool isDownloadNotInstalled = isDownloaded && !isInstalled;
+
+        //                if (FilterPackagesStatus == ResourceLanguage.GetString("LABEL_DOWNLOADED") && !isDownloaded)
+        //                {
+        //                    continue;
+        //                }
+        //                else if (FilterPackagesStatus == ResourceLanguage.GetString("LABEL_INSTALLED") && !isInstalled)
+        //                {
+        //                    continue;
+        //                }
+        //                else if (FilterPackagesStatus == ResourceLanguage.GetString("LABEL_NOT_INSTALLED") && isInstalled)
+        //                {
+        //                    continue;
+        //                }
+
+        //                bool shouldLoad = true;
+
+        //                if (!package.IsDateMissing)
+        //                {
+        //                    if (FilterPackagesModifiedDate != null)
+        //                    {
+        //                        if (FilterPackagesModifiedDateType == FilterType.Equal && DateTime.Parse(package.ModifiedDate) == FilterPackagesModifiedDate)
+        //                        {
+        //                            shouldLoad = true;
+        //                        }
+        //                        else if (FilterPackagesModifiedDateType == FilterType.MoreThanOrEqual && DateTime.Parse(package.ModifiedDate) >= FilterPackagesModifiedDate)
+        //                        {
+        //                            shouldLoad = true;
+        //                        }
+        //                        else
+        //                        {
+        //                            shouldLoad = FilterPackagesModifiedDateType == FilterType.LessThanOrEqual && DateTime.Parse(package.ModifiedDate) <= FilterPackagesModifiedDate;
+        //                        }
+        //                    }
+        //                }
+        //                else
+        //                {
+        //                    if (FilterPackagesModifiedDate != null)
+        //                    {
+        //                        shouldLoad = false;
+        //                        continue;
+        //                    }
+        //                }
+
+        //                if (!package.IsSizeMissing)
+        //                {
+        //                    if (FilterPackagesFileSize != -1)
+        //                    {
+        //                        if (FilterPackagesFileSizeType == FilterType.Equal && int.Parse(package.Size) == FilterPackagesFileSize)
+        //                        {
+        //                            shouldLoad = true;
+        //                        }
+        //                        else if (FilterPackagesFileSizeType == FilterType.MoreThanOrEqual && int.Parse(package.Size) >= FilterPackagesFileSize)
+        //                        {
+        //                            shouldLoad = true;
+        //                        }
+        //                        else
+        //                        {
+        //                            shouldLoad = FilterPackagesFileSizeType == FilterType.LessThanOrEqual && int.Parse(package.Size) <= FilterPackagesFileSize;
+        //                        }
+        //                    }
+        //                }
+        //                else
+        //                {
+        //                    if (FilterPackagesFileSize != -1)
+        //                    {
+        //                        shouldLoad = false;
+        //                        continue;
+        //                    }
+        //                }
+
+        //                if (shouldLoad)
+        //                {
+        //                    _ = DataTablePackages.Rows.Add(package.Url,
+        //                                               package.Category,
+        //                                               package.Name,
+        //                                               package.TitleId,
+        //                                               package.IsDateMissing ? ResourceLanguage.GetString("MISSING") : Settings.UseRelativeTimes ? DateTime.Parse(package.ModifiedDate).Humanize() : DateTime.Parse(package.ModifiedDate).ToString("MM/dd/yyyy"),
+        //                                               package.IsSizeMissing ? ResourceLanguage.GetString("MISSING") : Settings.UseFormattedFileSizes ? long.Parse(package.Size).Bytes().Humanize("#.##") : package.Size + " " + ResourceLanguage.GetString("LABEL_BYTES"),
+        //                                               isInstalled ? ResourceLanguage.GetString("LABEL_INSTALLED") : ResourceLanguage.GetString("LABEL_NOT_INSTALLED"));
+        //                }
+        //            }
+        //        }
+        //        else
+        //        {
+        //            foreach (PackageItemData package in GetAllPackages().OrderBy(x => x.Name))
+        //            {
+        //                bool isInstalled = ConsoleProfile != null && Settings.InstalledPackages.Any(x => x.Url.Equals(x.Url));
+
+        //                bool isDownloaded = Settings.DownloadedMods.Any(x => x.CategoryId.Equals("PACKAGE"));
+
+        //                bool isDownloadNotInstalled = isDownloaded && !isInstalled;
+
+        //                if (FilterPackagesStatus == ResourceLanguage.GetString("LABEL_DOWNLOADED") && !isDownloaded)
+        //                {
+        //                    continue;
+        //                }
+        //                else if (FilterPackagesStatus == ResourceLanguage.GetString("LABEL_INSTALLED") && !isInstalled)
+        //                {
+        //                    continue;
+        //                }
+        //                else if (FilterPackagesStatus == ResourceLanguage.GetString("LABEL_NOT_INSTALLED") && isInstalled)
+        //                {
+        //                    continue;
+        //                }
+
+        //                bool shouldLoad = true;
+
+        //                if (!package.IsDateMissing)
+        //                {
+        //                    if (FilterPackagesModifiedDate != null)
+        //                    {
+        //                        if (FilterPackagesModifiedDateType == FilterType.Equal && DateTime.Parse(package.ModifiedDate) == FilterPackagesModifiedDate)
+        //                        {
+        //                            shouldLoad = true;
+        //                        }
+        //                        else if (FilterPackagesModifiedDateType == FilterType.MoreThanOrEqual && DateTime.Parse(package.ModifiedDate) >= FilterPackagesModifiedDate)
+        //                        {
+        //                            shouldLoad = true;
+        //                        }
+        //                        else
+        //                        {
+        //                            shouldLoad = FilterPackagesModifiedDateType == FilterType.LessThanOrEqual && DateTime.Parse(package.ModifiedDate) <= FilterPackagesModifiedDate;
+        //                        }
+        //                    }
+        //                }
+        //                else
+        //                {
+        //                    if (FilterPackagesModifiedDate != null)
+        //                    {
+        //                        shouldLoad = false;
+        //                        continue;
+        //                    }
+        //                }
+
+        //                if (!package.IsSizeMissing)
+        //                {
+        //                    if (FilterPackagesFileSize != -1)
+        //                    {
+        //                        if (FilterPackagesFileSizeType == FilterType.Equal && long.Parse(package.Size) == FilterPackagesFileSize)
+        //                        {
+        //                            shouldLoad = true;
+        //                        }
+        //                        else if (FilterPackagesFileSizeType == FilterType.MoreThanOrEqual && long.Parse(package.Size) >= FilterPackagesFileSize)
+        //                        {
+        //                            shouldLoad = true;
+        //                        }
+        //                        else
+        //                        {
+        //                            shouldLoad = FilterPackagesFileSizeType == FilterType.LessThanOrEqual && long.Parse(package.Size) <= FilterPackagesFileSize;
+        //                        }
+        //                    }
+        //                }
+        //                else
+        //                {
+        //                    if (FilterPackagesFileSize != -1)
+        //                    {
+        //                        shouldLoad = false;
+        //                        continue;
+        //                    }
+        //                }
+
+        //                if (shouldLoad)
+        //                {
+        //                    _ = DataTablePackages.Rows.Add(package.Url,
+        //                                               package.Category,
+        //                                               package.Name,
+        //                                               package.TitleId,
+        //                                               package.IsDateMissing ? ResourceLanguage.GetString("MISSING") : Settings.UseRelativeTimes ? DateTime.Parse(package.ModifiedDate).Humanize() : DateTime.Parse(package.ModifiedDate).ToString("MM/dd/yyyy"),
+        //                                               package.IsSizeMissing ? ResourceLanguage.GetString("MISSING") : Settings.UseFormattedFileSizes ? long.Parse(package.Size).Bytes().Humanize("#.##") : package.Size + " " + ResourceLanguage.GetString("LABEL_BYTES"),
+        //                                               isDownloadNotInstalled ? ResourceLanguage.GetString("LABEL_DOWNLOADED") : isInstalled ? ResourceLanguage.GetString("LABEL_INSTALLED") : ResourceLanguage.GetString("LABEL_NOT_INSTALLED"));
+        //                }
+        //            }
+        //        }
+        //    });
+
+        //    GridControlPackages.DataSource = DataTablePackages;
+
+        //    GridViewPackages.Columns[0].Visible = false;
+
+        //    GridViewPackages.Columns[1].MinWidth = 98;
+        //    GridViewPackages.Columns[1].MaxWidth = 98;
+
+        //    //GridViewGames.Columns[2].MinWidth = 232;
+        //    //GridViewGames.Columns[2].MaxWidth = 232;
+
+        //    GridViewPackages.Columns[3].MaxWidth = 86;
+        //    GridViewPackages.Columns[3].MinWidth = 86;
+
+        //    GridViewPackages.Columns[4].MaxWidth = 108;
+        //    GridViewPackages.Columns[4].MinWidth = 108;
+
+        //    GridViewPackages.Columns[5].MaxWidth = 120;
+        //    GridViewPackages.Columns[5].MinWidth = 120;
+
+        //    GridViewPackages.Columns[6].MaxWidth = 100;
+        //    GridViewPackages.Columns[6].MinWidth = 100;
+
+        //    GridViewPackages.SortInfo.ClearAndAddRange([
+        //        new GridColumnSortInfo(GridViewPackages.Columns[FilterPackagesSortOption], FilterPackagesSortOrder),
+        //    ]);
+
+        //    GridViewPackages.HideLoadingPanel();
+
+        //    if (GridViewPackages.RowCount > 0)
+        //    {
+        //        GridViewPackages.FocusedRowHandle = 0;
+        //    }
+
+        //    GridViewPackages.MoveFirst();
+        //}
+
+        public async Task SearchPackages()
         {
+            // Show loading panel (UI thread)
             GridViewPackages.ShowLoadingPanel();
 
-            DataTablePackages.Rows.Clear();
-
-            _ = BeginInvoke(new Action(() =>
-            {
-                if (FilterPackagesSortOption == ResourceLanguage.GetString("LABEL_FILE_SIZE"))
-                {
-                    foreach (PackageItemData package in GetAllPackages().Where(x => !x.IsUrlMissing).OrderBy(x => x.Size))
-                    {
-                        bool isInstalled = Settings.InstalledPackages.Any(x => x.Url.Equals(x.Url));
-
-                        bool isDownloaded = Settings.DownloadedMods.Any(x => x.CategoryId.Equals("PACKAGE"));
-
-                        bool isDownloadNotInstalled = isDownloaded && !isInstalled;
-
-                        if (FilterPackagesStatus == ResourceLanguage.GetString("LABEL_DOWNLOADED") && !isDownloaded)
-                        {
-                            continue;
-                        }
-                        else if (FilterPackagesStatus == ResourceLanguage.GetString("LABEL_INSTALLED") && !isInstalled)
-                        {
-                            continue;
-                        }
-                        else if (FilterPackagesStatus == ResourceLanguage.GetString("LABEL_NOT_INSTALLED") && isInstalled)
-                        {
-                            continue;
-                        }
-
-                        bool shouldLoad = true;
-
-                        if (!package.IsDateMissing)
-                        {
-                            if (FilterPackagesModifiedDate != null)
-                            {
-                                if (FilterPackagesModifiedDateType == FilterType.Equal && DateTime.Parse(package.ModifiedDate) == FilterPackagesModifiedDate)
-                                {
-                                    shouldLoad = true;
-                                }
-                                else if (FilterPackagesModifiedDateType == FilterType.MoreThanOrEqual && DateTime.Parse(package.ModifiedDate) >= FilterPackagesModifiedDate)
-                                {
-                                    shouldLoad = true;
-                                }
-                                else
-                                {
-                                    shouldLoad = FilterPackagesModifiedDateType == FilterType.LessThanOrEqual && DateTime.Parse(package.ModifiedDate) <= FilterPackagesModifiedDate;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            if (FilterPackagesModifiedDate != null)
-                            {
-                                shouldLoad = false;
-                                continue;
-                            }
-                        }
-
-                        if (!package.IsSizeMissing)
-                        {
-                            if (FilterPackagesFileSize != -1)
-                            {
-                                if (FilterPackagesFileSizeType == FilterType.Equal && int.Parse(package.Size) == FilterPackagesFileSize)
-                                {
-                                    shouldLoad = true;
-                                }
-                                else if (FilterPackagesFileSizeType == FilterType.MoreThanOrEqual && int.Parse(package.Size) >= FilterPackagesFileSize)
-                                {
-                                    shouldLoad = true;
-                                }
-                                else
-                                {
-                                    shouldLoad = FilterPackagesFileSizeType == FilterType.LessThanOrEqual && int.Parse(package.Size) <= FilterPackagesFileSize;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            if (FilterPackagesFileSize != -1)
-                            {
-                                shouldLoad = false;
-                                continue;
-                            }
-                        }
-
-                        if (shouldLoad)
-                        {
-                            _ = DataTablePackages.Rows.Add(package.Url,
-                                                       package.Category,
-                                                       package.Name,
-                                                       package.TitleId,
-                                                       package.IsDateMissing ? ResourceLanguage.GetString("MISSING") : Settings.UseRelativeTimes ? DateTime.Parse(package.ModifiedDate).Humanize() : DateTime.Parse(package.ModifiedDate).ToString("MM/dd/yyyy"),
-                                                       package.IsSizeMissing ? ResourceLanguage.GetString("MISSING") : Settings.UseFormattedFileSizes ? long.Parse(package.Size).Bytes().Humanize("#.##") : package.Size + " " + ResourceLanguage.GetString("LABEL_BYTES"),
-                                                       isInstalled ? ResourceLanguage.GetString("LABEL_INSTALLED") : ResourceLanguage.GetString("LABEL_NOT_INSTALLED"));
-                        }
-                    }
-                }
-                else
-                {
-                    foreach (PackageItemData package in GetAllPackages().OrderBy(x => x.Name))
-                    {
-                        bool isInstalled = ConsoleProfile != null && Settings.InstalledPackages.Any(x => x.Url.Equals(x.Url));
-
-                        bool isDownloaded = Settings.DownloadedMods.Any(x => x.CategoryId.Equals("PACKAGE"));
-
-                        bool isDownloadNotInstalled = isDownloaded && !isInstalled;
-
-                        if (FilterPackagesStatus == ResourceLanguage.GetString("LABEL_DOWNLOADED") && !isDownloaded)
-                        {
-                            continue;
-                        }
-                        else if (FilterPackagesStatus == ResourceLanguage.GetString("LABEL_INSTALLED") && !isInstalled)
-                        {
-                            continue;
-                        }
-                        else if (FilterPackagesStatus == ResourceLanguage.GetString("LABEL_NOT_INSTALLED") && isInstalled)
-                        {
-                            continue;
-                        }
-
-                        bool shouldLoad = true;
-
-                        if (!package.IsDateMissing)
-                        {
-                            if (FilterPackagesModifiedDate != null)
-                            {
-                                if (FilterPackagesModifiedDateType == FilterType.Equal && DateTime.Parse(package.ModifiedDate) == FilterPackagesModifiedDate)
-                                {
-                                    shouldLoad = true;
-                                }
-                                else if (FilterPackagesModifiedDateType == FilterType.MoreThanOrEqual && DateTime.Parse(package.ModifiedDate) >= FilterPackagesModifiedDate)
-                                {
-                                    shouldLoad = true;
-                                }
-                                else
-                                {
-                                    shouldLoad = FilterPackagesModifiedDateType == FilterType.LessThanOrEqual && DateTime.Parse(package.ModifiedDate) <= FilterPackagesModifiedDate;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            if (FilterPackagesModifiedDate != null)
-                            {
-                                shouldLoad = false;
-                                continue;
-                            }
-                        }
-
-                        if (!package.IsSizeMissing)
-                        {
-                            if (FilterPackagesFileSize != -1)
-                            {
-                                if (FilterPackagesFileSizeType == FilterType.Equal && long.Parse(package.Size) == FilterPackagesFileSize)
-                                {
-                                    shouldLoad = true;
-                                }
-                                else if (FilterPackagesFileSizeType == FilterType.MoreThanOrEqual && long.Parse(package.Size) >= FilterPackagesFileSize)
-                                {
-                                    shouldLoad = true;
-                                }
-                                else
-                                {
-                                    shouldLoad = FilterPackagesFileSizeType == FilterType.LessThanOrEqual && long.Parse(package.Size) <= FilterPackagesFileSize;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            if (FilterPackagesFileSize != -1)
-                            {
-                                shouldLoad = false;
-                                continue;
-                            }
-                        }
-
-                        if (shouldLoad)
-                        {
-                            _ = DataTablePackages.Rows.Add(package.Url,
-                                                       package.Category,
-                                                       package.Name,
-                                                       package.TitleId,
-                                                       package.IsDateMissing ? ResourceLanguage.GetString("MISSING") : Settings.UseRelativeTimes ? DateTime.Parse(package.ModifiedDate).Humanize() : DateTime.Parse(package.ModifiedDate).ToString("MM/dd/yyyy"),
-                                                       package.IsSizeMissing ? ResourceLanguage.GetString("MISSING") : Settings.UseFormattedFileSizes ? long.Parse(package.Size).Bytes().Humanize("#.##") : package.Size + " " + ResourceLanguage.GetString("LABEL_BYTES"),
-                                                       isDownloadNotInstalled ? ResourceLanguage.GetString("LABEL_DOWNLOADED") : isInstalled ? ResourceLanguage.GetString("LABEL_INSTALLED") : ResourceLanguage.GetString("LABEL_NOT_INSTALLED"));
-                        }
-                    }
-                }
-            }));
-
-            GridControlPackages.DataSource = DataTablePackages;
-
-            GridViewPackages.Columns[0].Visible = false;
-
-            GridViewPackages.Columns[1].MinWidth = 98;
-            GridViewPackages.Columns[1].MaxWidth = 98;
-
-            //GridViewGames.Columns[2].MinWidth = 232;
-            //GridViewGames.Columns[2].MaxWidth = 232;
-
-            GridViewPackages.Columns[3].MaxWidth = 86;
-            GridViewPackages.Columns[3].MinWidth = 86;
-
-            GridViewPackages.Columns[4].MaxWidth = 108;
-            GridViewPackages.Columns[4].MinWidth = 108;
-
-            GridViewPackages.Columns[5].MaxWidth = 120;
-            GridViewPackages.Columns[5].MinWidth = 120;
-
-            GridViewPackages.Columns[6].MaxWidth = 100;
-            GridViewPackages.Columns[6].MinWidth = 100;
-
-            GridViewPackages.SortInfo.ClearAndAddRange([
-                new GridColumnSortInfo(GridViewPackages.Columns[FilterPackagesSortOption], FilterPackagesSortOrder),
-            ]);
-
-            GridViewPackages.HideLoadingPanel();
-
-            if (GridViewPackages.RowCount > 0)
-            {
-                GridViewPackages.FocusedRowHandle = 0;
-            }
-
-            GridViewPackages.MoveFirst();
-        }
-
-        private void SearchPackages()
-        {
-            GridViewPackages.ShowLoadingPanel();
-
+            // Clear the current data in the grid (UI thread)
             DataTablePackages.Rows.Clear();
 
             List<PackageItemData> packages;
 
-            if (FilterPackagesCategory.IsNullOrEmpty())
+            // Run the package retrieval logic in the background
+            packages = await Task.Run(() =>
             {
-                ComboBoxFilterPackagesCategories.SelectedIndexChanged -= ComboBoxPackagesFilterCategories_SelectedIndexChanged;
-                ComboBoxFilterPackagesCategories.SelectedIndex = -1;
-                ComboBoxFilterPackagesCategories.SelectedIndexChanged += ComboBoxPackagesFilterCategories_SelectedIndexChanged;
-                packages = GetAllPackages();
-            }
-            else
-            {
-                packages = PackagesData.Packages;
-            }
+                if (FilterPackagesCategory.IsNullOrEmpty())
+                {
+                    return GetAllPackages();
+                }
+                else
+                {
+                    return PackagesData.Packages;
+                }
+            });
 
-            _ = BeginInvoke(new Action(() =>
+            // Process the packages in the background thread and store the results
+            var rowsToAdd = await Task.Run(() =>
             {
+                var tempRows = new List<object[]>();
+
                 foreach ((PackageItemData package, bool isInstalled) in from PackageItemData package in packages.FindAll(x =>
                 !x.IsUrlMissing &&
                 !x.IsNameMissing &&
                 x.Category.ContainsIgnoreCase(FilterPackagesCategory) &&
                 x.Name.ContainsIgnoreCase(FilterPackagesTitle) &&
                 x.Region.ContainsIgnoreCase(FilterPackagesRegion)).OrderBy(x => x.Name)
-                                                                        let isInstalled = Settings.InstalledPackages.Any(x => x.Url.Equals(x.Url))
+                                                                        let isInstalled = Settings.InstalledPackages.Any(installed => installed.Url.Equals(package.Url))
                                                                         select (package, isInstalled))
                 {
                     bool shouldLoad = true;
 
+                    // Filter by modified date
                     if (!package.IsDateMissing)
                     {
                         if (FilterPackagesModifiedDate != null)
                         {
-                            if (FilterPackagesModifiedDateType == FilterType.Equal && DateTime.Parse(package.ModifiedDate) == FilterPackagesModifiedDate)
+                            shouldLoad = FilterPackagesModifiedDateType switch
                             {
-                                shouldLoad = true;
-                            }
-                            else if (FilterPackagesModifiedDateType == FilterType.MoreThanOrEqual && DateTime.Parse(package.ModifiedDate) >= FilterPackagesModifiedDate)
-                            {
-                                shouldLoad = true;
-                            }
-                            else
-                            {
-                                shouldLoad = FilterPackagesModifiedDateType == FilterType.LessThanOrEqual && DateTime.Parse(package.ModifiedDate) <= FilterPackagesModifiedDate;
-                            }
+                                FilterType.Equal => DateTime.Parse(package.ModifiedDate) == FilterPackagesModifiedDate,
+                                FilterType.MoreThanOrEqual => DateTime.Parse(package.ModifiedDate) >= FilterPackagesModifiedDate,
+                                FilterType.LessThanOrEqual => DateTime.Parse(package.ModifiedDate) <= FilterPackagesModifiedDate,
+                                _ => shouldLoad
+                            };
                         }
                     }
-                    else
+                    else if (FilterPackagesModifiedDate != null)
                     {
-                        if (FilterPackagesModifiedDate != null)
-                        {
-                            shouldLoad = false;
-                            continue;
-                        }
+                        shouldLoad = false;
+                        continue;
                     }
 
+                    // Filter by size
                     if (!package.IsSizeMissing)
                     {
                         if (FilterPackagesFileSize != -1)
                         {
-                            if (FilterPackagesFileSizeType == FilterType.Equal && int.Parse(package.Size) == FilterPackagesFileSize)
+                            shouldLoad = FilterPackagesFileSizeType switch
                             {
-                                shouldLoad = true;
-                            }
-                            else if (FilterPackagesFileSizeType == FilterType.MoreThanOrEqual && int.Parse(package.Size) >= FilterPackagesFileSize)
-                            {
-                                shouldLoad = true;
-                            }
-                            else
-                            {
-                                shouldLoad = FilterPackagesFileSizeType == FilterType.LessThanOrEqual && int.Parse(package.Size) <= FilterPackagesFileSize;
-                            }
+                                FilterType.Equal => int.Parse(package.Size) == FilterPackagesFileSize,
+                                FilterType.MoreThanOrEqual => int.Parse(package.Size) >= FilterPackagesFileSize,
+                                FilterType.LessThanOrEqual => int.Parse(package.Size) <= FilterPackagesFileSize,
+                                _ => shouldLoad
+                            };
                         }
                     }
-                    else
+                    else if (FilterPackagesFileSize != -1)
                     {
-                        if (FilterPackagesModifiedDate != null)
-                        {
-                            shouldLoad = false;
-                            continue;
-                        }
+                        shouldLoad = false;
+                        continue;
                     }
 
+                    // Collect rows to add later (on UI thread)
                     if (shouldLoad)
                     {
-                        if (FilterPackagesStatus == ResourceLanguage.GetString("LABEL_INSTALLED") && isInstalled)
+                        tempRows.Add(new object[]
                         {
-                            _ = DataTablePackages.Rows.Add(package.Url,
-                                                       package.Category,
-                                                       package.Name,
-                                                       package.TitleId,
-                                                       package.IsDateMissing ? ResourceLanguage.GetString("MISSING") : Settings.UseRelativeTimes ? DateTime.Parse(package.ModifiedDate).Humanize() : DateTime.Parse(package.ModifiedDate).ToString("MM/dd/yyyy"),
-                                                       package.IsSizeMissing ? ResourceLanguage.GetString("MISSING") : Settings.UseFormattedFileSizes ? long.Parse(package.Size).Bytes().Humanize("#.##") : package.Size + " " + ResourceLanguage.GetString("LABEL_BYTES"),
-                                                       isInstalled ? ResourceLanguage.GetString("LABEL_INSTALLED") : ResourceLanguage.GetString("LABEL_NOT_INSTALLED"));
-                        }
-                        else if (FilterPackagesStatus == ResourceLanguage.GetString("LABEL_NOT_INSTALLED") && !isInstalled)
-                        {
-                            _ = DataTablePackages.Rows.Add(package.Url,
-                                                       package.Category,
-                                                       package.Name,
-                                                       package.TitleId,
-                                                       package.IsDateMissing ? ResourceLanguage.GetString("MISSING") : Settings.UseRelativeTimes ? DateTime.Parse(package.ModifiedDate).Humanize() : DateTime.Parse(package.ModifiedDate).ToString("MM/dd/yyyy"),
-                                                       package.IsSizeMissing ? ResourceLanguage.GetString("MISSING") : Settings.UseFormattedFileSizes ? long.Parse(package.Size).Bytes().Humanize("#.##") : package.Size + " " + ResourceLanguage.GetString("LABEL_BYTES"),
-                                                       isInstalled ? ResourceLanguage.GetString("LABEL_INSTALLED") : ResourceLanguage.GetString("LABEL_NOT_INSTALLED"));
-                        }
-                        else
-                        {
-                            _ = DataTablePackages.Rows.Add(package.Url,
-                                                       package.Category,
-                                                       package.Name,
-                                                       package.TitleId,
-                                                       package.IsDateMissing ? ResourceLanguage.GetString("MISSING") : Settings.UseRelativeTimes ? DateTime.Parse(package.ModifiedDate).Humanize() : DateTime.Parse(package.ModifiedDate).ToString("MM/dd/yyyy"),
-                                                       package.IsSizeMissing ? ResourceLanguage.GetString("MISSING") : Settings.UseFormattedFileSizes ? long.Parse(package.Size).Bytes().Humanize("#.##") : package.Size + " " + ResourceLanguage.GetString("LABEL_BYTES"),
-                                                       isInstalled ? ResourceLanguage.GetString("LABEL_INSTALLED") : ResourceLanguage.GetString("LABEL_NOT_INSTALLED"));
-                        }
+                    package.Url,
+                    package.Category,
+                    package.Name,
+                    package.TitleId,
+                    package.IsDateMissing ? ResourceLanguage.GetString("MISSING") : Settings.UseRelativeTimes ? DateTime.Parse(package.ModifiedDate).Humanize() : DateTime.Parse(package.ModifiedDate).ToString("MM/dd/yyyy"),
+                    package.IsSizeMissing ? ResourceLanguage.GetString("MISSING") : Settings.UseFormattedFileSizes ? long.Parse(package.Size).Bytes().Humanize("#.##") : package.Size + " " + ResourceLanguage.GetString("LABEL_BYTES"),
+                    isInstalled ? ResourceLanguage.GetString("LABEL_INSTALLED") : ResourceLanguage.GetString("LABEL_NOT_INSTALLED")
+                        });
                     }
                 }
-            }));
 
+                return tempRows;
+            });
+
+            // Add rows to the DataTable on the UI thread
+            foreach (var row in rowsToAdd)
+            {
+                DataTablePackages.Rows.Add(row);
+            }
+
+            // Bind the data to the GridControl (UI thread)
             GridControlPackages.DataSource = DataTablePackages;
 
-            GridViewPackages.SortInfo.ClearAndAddRange([
-                new GridColumnSortInfo(GridViewPackages.Columns[FilterPackagesSortOption], FilterPackagesSortOrder),
-            ]);
+            // Set grid column properties (UI thread)
+            GridViewPackages.Columns[0].Visible = false;
 
+            GridViewPackages.Columns[1].MinWidth = 98;
+            GridViewPackages.Columns[1].MaxWidth = 98;
+
+            GridViewPackages.Columns[3].MaxWidth = 110;
+            GridViewPackages.Columns[3].MinWidth = 110;
+
+            GridViewPackages.Columns[4].MaxWidth = 128;
+            GridViewPackages.Columns[4].MinWidth = 128;
+
+            GridViewPackages.Columns[5].MaxWidth = 116;
+            GridViewPackages.Columns[5].MinWidth = 116;
+
+            GridViewPackages.Columns[6].MaxWidth = 96;
+            GridViewPackages.Columns[6].MinWidth = 96;
+
+            GridViewPackages.SortInfo.ClearAndAddRange(new[]
+            {
+                new GridColumnSortInfo(GridViewPackages.Columns[FilterPackagesSortOption], FilterPackagesSortOrder),
+            });
+
+            // Hide the loading panel (UI thread)
             GridViewPackages.HideLoadingPanel();
 
             if (GridViewPackages.RowCount > 0)
@@ -7644,8 +7657,10 @@ namespace ArisenStudio.Forms.Windows
                 GridViewPackages.FocusedRowHandle = 0;
             }
 
+            // Move the focus to the first row (UI thread)
             GridViewPackages.MoveFirst();
         }
+
 
         private static List<PackageItemData> GetAllPackages()
         {
@@ -7793,7 +7808,7 @@ namespace ArisenStudio.Forms.Windows
         private void TextBoxGameModsXboxFilterName_TextChanged(object sender, EventArgs e)
         {
             FilterGameModsXboxName = TextBoxGameModsXboxFilterName.Text;
-            SearchPackages();
+            SearchGameModsXbox();
         }
 
         private void ComboBoxGameModsXboxFilterVersion_SelectedIndexChanged(object sender, EventArgs e)
@@ -7934,9 +7949,12 @@ namespace ArisenStudio.Forms.Windows
 
         private void GridViewGameModsXbox_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            if (e.FocusedRowHandle != -1)
+            if (GridViewGameModsXbox.RowCount > 0)
             {
-                SelectedGameModXboxId = (int)GridViewGameModsXbox.GetRowCellValue(e.FocusedRowHandle, GridViewGameModsXbox.Columns[0]);
+                if (e.FocusedRowHandle != -1)
+                {
+                    SelectedGameModXboxId = (int)GridViewGameModsXbox.GetRowCellValue(e.FocusedRowHandle, GridViewGameModsXbox.Columns[0]);
+                }
             }
 
             TileItemGameModsXboxDownload.Enabled = e.FocusedRowHandle != -1;
@@ -8065,7 +8083,7 @@ namespace ArisenStudio.Forms.Windows
         private void TextBoxHomebrewXboxFilterName_TextChanged(object sender, EventArgs e)
         {
             FilterHomebrewXboxName = TextBoxHomebrewXboxFilterName.Text;
-            SearchPackages();
+            SearchHomebrewXbox();
         }
 
         private void ComboBoxHomebrewXboxFilterVersion_SelectedIndexChanged(object sender, EventArgs e)
@@ -8103,7 +8121,7 @@ namespace ArisenStudio.Forms.Windows
                 new(ResourceLanguage.GetString("LABEL_STATUS"), typeof(string))
             ]);
 
-        private void LoadHomebrewXboxCategoriesXbox()
+        private void LoadHomebrewCategoriesXbox()
         {
             ComboBoxHomebrewXboxFilterCategory.Properties.Items.Clear();
 
@@ -8206,9 +8224,12 @@ namespace ArisenStudio.Forms.Windows
 
         private void GridViewHomebrewXbox_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            if (e.FocusedRowHandle != -1)
+            if (GridViewHomebrewXbox.RowCount > 0)
             {
-                SelectedHomebrewXboxId = (int)GridViewHomebrewXbox.GetRowCellValue(e.FocusedRowHandle, GridViewHomebrewXbox.Columns[0]);
+                if (e.FocusedRowHandle != -1)
+                {
+                    SelectedHomebrewXboxId = (int)GridViewHomebrewXbox.GetRowCellValue(e.FocusedRowHandle, GridViewHomebrewXbox.Columns[0]);
+                }
             }
 
             TileItemHomebrewXboxDownload.Enabled = e.FocusedRowHandle != -1;
@@ -8304,7 +8325,7 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        private void LoadHomebrewPS4Categories()
+        private void LoadHomebrewCategoriesPS4()
         {
             ComboBoxHomebrewPS4FilterCategory.Properties.Items.Clear();
 
@@ -8526,9 +8547,12 @@ namespace ArisenStudio.Forms.Windows
 
         private void GridViewHomebrewPS4_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            if (e.FocusedRowHandle != -1)
+            if (GridViewHomebrewPS4.RowCount > 0)
             {
-                SelectedAppId = (int)GridViewHomebrewPS4.GetRowCellValue(e.FocusedRowHandle, GridViewHomebrewPS4.Columns[0]);
+                if (e.FocusedRowHandle != -1)
+                {
+                    SelectedAppId = (int)GridViewHomebrewPS4.GetRowCellValue(e.FocusedRowHandle, GridViewHomebrewPS4.Columns[0]);
+                }
             }
 
             TileItemHomebrewPS4Download.Enabled = e.FocusedRowHandle != -1;
@@ -8712,7 +8736,7 @@ namespace ArisenStudio.Forms.Windows
         private void TextBoxGamesFilterName_TextChanged(object sender, EventArgs e)
         {
             FilterGamesName = TextBoxGamesFilterName.Text;
-            SearchPackages();
+            SearchGames();
         }
 
         private void ComboBoxGamesFilterFwVersion_SelectedIndexChanged(object sender, EventArgs e)
@@ -9145,9 +9169,11 @@ namespace ArisenStudio.Forms.Windows
 
         #region Game Cheats Page
 
-        private GameCheatItemData SelectedGameCheatsItem { get; set; }
+        //private GameCheatItemData SelectedGameCheatsItem { get; set; }
 
-        private void TileItemGameCheatsSortBy_ItemClick(object sender, TileItemEventArgs e)
+        private GameItemData SelectedGameItem { get; set; }
+
+        private async void TileItemGameCheatsSortBy_ItemClick(object sender, TileItemEventArgs e)
         {
             Dialogs.SortOptionsDialog sortOptions = DialogExtensions.ShowSortOptions(this, FilterGameCheatsSortOption, [ResourceLanguage.GetString("LABEL_GAME"), ResourceLanguage.GetString("LABEL_NAME"), ResourceLanguage.GetString("LABEL_REGION"), ResourceLanguage.GetString("LABEL_VERSION"), ResourceLanguage.GetString("LABEL_CHEATS")], FilterGameCheatsSortOrder);
 
@@ -9155,13 +9181,13 @@ namespace ArisenStudio.Forms.Windows
             {
                 FilterGameCheatsSortOption = sortOptions.SortOption;
                 FilterGameCheatsSortOrder = sortOptions.SortOrder;
-                SearchGameCheats();
+                await SearchGameCheats();
             }
         }
 
         private void TileItemGameCheatsAddFavorite_ItemClick(object sender, TileItemEventArgs e)
         {
-            if (SelectedGameCheatsItem != null)
+            if (SelectedGameItem != null)
             {
                 //var gameCheatItem = Database.GameCheatsPS3.GameCheats.First(x => x.Game == );
                 //Settings.FavoriteMods.Add(new() { Platform = gameSaveItem.GetPlatform(), CategoryId = gameSaveItem.CategoryId, CategoryType = CategoryType.GameSave, ModId = gameSaveItem.Id });
@@ -9170,7 +9196,7 @@ namespace ArisenStudio.Forms.Windows
 
         private void TileItemGameCheatsDownload_ItemClick(object sender, TileItemEventArgs e)
         {
-            if (SelectedGameCheatsItem != null)
+            if (SelectedGameItem != null)
             {
                 //ShowTransferGameCheatsFileDialog(this, TransferType.DownloadGameSave, SelectedGameCheatsItem);
             }
@@ -9180,7 +9206,8 @@ namespace ArisenStudio.Forms.Windows
         {
             if (SelectedGameSaveItem != null)
             {
-                ShowGameCheats(SelectedGameCheatsItem);
+                //ShowGameCheats(SelectedGameCheatsItem);
+                ShowGameCheats(SelectedGameItem);
             }
         }
 
@@ -9193,11 +9220,6 @@ namespace ArisenStudio.Forms.Windows
         /// Get/set the sort order.
         /// </summary>
         private ColumnSortOrder FilterGameCheatsSortOrder { get; set; } = ColumnSortOrder.Ascending;
-
-        /// <summary>
-        /// Get/set the category Id for filtering game saves.
-        /// </summary>
-        private string FilterGameCheatsCategoryId { get; set; } = string.Empty;
 
         /// <summary>
         /// Get/set the file name for filtering game saves.
@@ -9214,134 +9236,148 @@ namespace ArisenStudio.Forms.Windows
         /// </summary>
         private string FilterGameCheatsVersion { get; set; } = string.Empty;
 
-        private void ComboBoxGameCheatsFilterGame_SelectedIndexChanged(object sender, EventArgs e)
+        private async void ComboBoxGameCheatsFilterGame_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ComboBoxGameCheatsFilterGame.SelectedIndex == 0 | ComboBoxGameCheatsFilterGame.SelectedIndex == -1)
+            if (ComboBoxGameCheatsFilterGame.SelectedIndex == 0 || ComboBoxGameCheatsFilterGame.SelectedIndex == -1)
             {
-                FilterGameCheatsCategoryId = string.Empty;
+                FilterGameCheatsName = string.Empty;
             }
             else
             {
                 string selectedCategory = ComboBoxGameCheatsFilterGame.SelectedItem as string;
-                Category category = Database.CategoriesData.GetCategoryByTitle(selectedCategory);
-                FilterGameCheatsCategoryId = category.Id;
+                FilterGameCheatsName = selectedCategory;
             }
 
-            SearchGameCheats();
+            await SearchGameCheats();
         }
 
-        private void ComboBoxGameCheatsFilterRegion_SelectedIndexChanged(object sender, EventArgs e)
+        private async void ComboBoxGameCheatsFilterRegion_SelectedIndexChanged(object sender, EventArgs e)
         {
             FilterGameCheatsRegion = ComboBoxGameCheatsFilterRegion.SelectedIndex == 0 | ComboBoxGameCheatsFilterRegion.SelectedIndex == -1
                 ? string.Empty
                 : ComboBoxGameCheatsFilterRegion.SelectedItem as string;
 
-            SearchGameCheats();
+            await SearchGameCheats();
         }
 
-        private void ComboBoxGameCheatsFilterVersion_SelectedIndexChanged(object sender, EventArgs e)
+        private async void ComboBoxGameCheatsFilterVersion_SelectedIndexChanged(object sender, EventArgs e)
         {
             FilterGameCheatsVersion = ComboBoxGameCheatsFilterVersion.SelectedIndex == 0 | ComboBoxGameCheatsFilterVersion.SelectedIndex == -1
                 ? string.Empty
                 : ComboBoxGameCheatsFilterVersion.SelectedItem as string;
 
-            SearchGameCheats();
+            await SearchGameCheats();
         }
 
         private static DataTable DataTableGameCheats { get; } = DataExtensions.CreateDataTable(
             [
+                new("File", typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_GAME"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_REGION"), typeof(string)),
                 new(ResourceLanguage.GetString("LABEL_VERSION"), typeof(string)),
-                new(ResourceLanguage.GetString("LABEL_CHEATS"), typeof(string)),
             ]);
 
-        private void LoadGameCheatsCategories()
+        public async Task LoadGameCheatsCategories()
         {
             ComboBoxGameCheatsFilterGame.Properties.Items.Clear();
 
             _ = ComboBoxGameCheatsFilterGame.Properties.Items.Add($"<{ResourceLanguage.GetString("ALL_GAMES")}>");
 
-            //foreach (Category category in Database.CategoriesData.Categories.FindAll(x => x.CategoryType == CategoryType.Game).OrderBy(x => x.Title))
-            //{
-            //    if (Database.GameCheatsPS3.GameCheats.Any(x => x.Game.Equals(category.Title)))
-            //    {
-            //        ComboBoxGameCheatsFilterGame.Properties.Items.Add(category.Title);
-            //    }
-            //}
-
-            foreach (GameCheatItemData game in Database.GameCheatsPS3.GameCheats.OrderBy(x => x.Game))
+            await Task.Run(() =>
             {
-                _ = ComboBoxGameCheatsFilterGame.Properties.Items.Add(game.Game);
-            }
+                var games = Database.GamesDataPS3.Games.OrderBy(x => x.Game).ToList();
 
-            List<string> ignoreValues = ["n/a", "-", "all regions", "all", "n", "a"];
-
-            foreach (GameCheatItemData gameCheatItem in Database.GameCheatsPS3.GameCheats)
-            {
-                foreach (string region in from string region in gameCheatItem.Region.Split(' ')
-                                          where !ComboBoxGameCheatsFilterRegion.Properties.Items.Contains(region)
-                                          where !ignoreValues.Exists(x => x.EqualsIgnoreCase(region))
-                                          select region)
+                foreach (var game in games)
                 {
-                    _ = ComboBoxGameCheatsFilterRegion.Properties.Items.Add(region);
+                    ComboBoxGameCheatsFilterGame.Invoke((Action)(() =>
+                    {
+                        _ = ComboBoxGameCheatsFilterGame.Properties.Items.Add(game.Game);
+                    }));
                 }
 
-                foreach (string version in from string version in gameCheatItem.Version.Split('/')
-                                           where !ComboBoxGameCheatsFilterVersion.Properties.Items.Contains(version)
-                                           where !ignoreValues.Exists(x => x.EqualsIgnoreCase(version))
-                                           select version)
+                // List of values to ignore
+                List<string> ignoreValues = new List<string> { "n/a", "-", "all regions", "all", "n", "a" };
+
+                // Update regions
+                foreach (var gameCheatItem in Database.GamesDataPS3.Games)
                 {
-                    _ = ComboBoxGameCheatsFilterVersion.Properties.Items.Add(version);
+                    foreach (string region in gameCheatItem.Region.Split(' ')
+                        .Where(region => !ComboBoxGameCheatsFilterRegion.Properties.Items.Contains(region))
+                        .Where(region => !ignoreValues.Exists(x => x.Equals(region, StringComparison.OrdinalIgnoreCase))))
+                    {
+                        ComboBoxGameCheatsFilterRegion.Invoke((Action)(() =>
+                        {
+                            _ = ComboBoxGameCheatsFilterRegion.Properties.Items.Add(region);
+                        }));
+                    }
+
+                    // Update versions
+                    foreach (string version in gameCheatItem.Version.Split('/')
+                        .Where(version => !ComboBoxGameCheatsFilterVersion.Properties.Items.Contains(version))
+                        .Where(version => !ignoreValues.Exists(x => x.Equals(version, StringComparison.OrdinalIgnoreCase))))
+                    {
+                        ComboBoxGameCheatsFilterVersion.Invoke((Action)(() =>
+                        {
+                            _ = ComboBoxGameCheatsFilterVersion.Properties.Items.Add(version);
+                        }));
+                    }
                 }
-            }
+            });
         }
 
         /// <summary>
         /// Search game cheats.
         /// </summary>
-        public void SearchGameCheats()
+        /// 
+        public async Task SearchGameCheats()
         {
-            LoadGameCheatsCategories();
-
             GridViewGameCheats.ShowLoadingPanel();
 
             DataTableGameCheats.Rows.Clear();
 
-            foreach (GameCheatItemData gameCheatItem in Database.GameCheatsPS3.GameCheats.FindAll(x => x.Game == FilterGameCheatsName && x.Region == FilterGameCheatsRegion && x.Version == FilterGameCheatsVersion))
+            var filteredGames = await Task.Run(() =>
             {
-                Category category = Database.CategoriesData.GetCategoryById(gameCheatItem.Game);
+                return Database.GamesDataPS3.Games.Where(x =>
+                    x.Game.ContainsIgnoreCase(FilterGameCheatsName) &&
+                    x.Region.ContainsIgnoreCase(FilterGameCheatsRegion) &&
+                    x.Version.ContainsIgnoreCase(FilterGameCheatsVersion)).ToList();
+            });
 
-                _ = DataTableGameCheats.Rows.Add(gameCheatItem.Game,
-                                             gameCheatItem.Region,
-                                             gameCheatItem.Version,
-                                             gameCheatItem.Cheats.Count() + " Cheats");
+            foreach (var gameItem in filteredGames)
+            {
+                DataTableGameCheats.Rows.Add(
+                    gameItem.File,
+                    gameItem.Game,
+                    gameItem.Region,
+                    gameItem.Version);
             }
 
             GridControlGameCheats.DataSource = DataTableGameCheats;
 
-            //GridViewGameCheats.Columns[0].Visible = false;
+            GridViewGameCheats.Columns[0].Visible = false;
 
-            GridViewGameCheats.Columns[1].MinWidth = 112;
-            GridViewGameCheats.Columns[1].MaxWidth = 112;
+            GridViewGameCheats.Columns[2].MinWidth = 166;
+            GridViewGameCheats.Columns[2].MaxWidth = 166;
 
-            GridViewGameCheats.Columns[2].MinWidth = 112;
-            GridViewGameCheats.Columns[2].MaxWidth = 112;
-
-            GridViewGameCheats.Columns[3].MinWidth = 92;
-            GridViewGameCheats.Columns[3].MaxWidth = 92;
+            GridViewGameCheats.Columns[3].MinWidth = 80;
+            GridViewGameCheats.Columns[3].MaxWidth = 80;
 
             ComboBoxGameCheatsFilterRegion.SelectedIndexChanged -= ComboBoxGameCheatsFilterRegion_SelectedIndexChanged;
-            ComboBoxGameCheatsFilterRegion.SelectedIndex = string.IsNullOrEmpty(FilterGameCheatsRegion) ? -1 : ComboBoxGameCheatsFilterRegion.Properties.Items.IndexOf(FilterGameCheatsRegion);
+            ComboBoxGameCheatsFilterRegion.SelectedIndex = string.IsNullOrEmpty(FilterGameCheatsRegion)
+                ? -1
+                : ComboBoxGameCheatsFilterRegion.Properties.Items.IndexOf(FilterGameCheatsRegion);
             ComboBoxGameCheatsFilterRegion.SelectedIndexChanged += ComboBoxGameCheatsFilterRegion_SelectedIndexChanged;
 
             ComboBoxGameCheatsFilterVersion.SelectedIndexChanged -= ComboBoxGameCheatsFilterVersion_SelectedIndexChanged;
-            ComboBoxGameCheatsFilterVersion.SelectedIndex = string.IsNullOrEmpty(FilterGameCheatsVersion) ? -1 : ComboBoxGameCheatsFilterVersion.Properties.Items.IndexOf(FilterGameCheatsVersion);
+            ComboBoxGameCheatsFilterVersion.SelectedIndex = string.IsNullOrEmpty(FilterGameCheatsVersion)
+                ? -1
+                : ComboBoxGameCheatsFilterVersion.Properties.Items.IndexOf(FilterGameCheatsVersion);
             ComboBoxGameCheatsFilterVersion.SelectedIndexChanged += ComboBoxGameCheatsFilterVersion_SelectedIndexChanged;
 
-            GridViewGameCheats.SortInfo.ClearAndAddRange([
+            GridViewGameCheats.SortInfo.ClearAndAddRange(new[]
+            {
                 new GridColumnSortInfo(GridViewGameCheats.Columns[FilterGameCheatsSortOption], FilterGameCheatsSortOrder),
-            ]);
+            });
 
             GridViewGameCheats.HideLoadingPanel();
 
@@ -9351,11 +9387,80 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
+        //
+        //public async Task SearchGameCheats()
+        //{
+        //    //await LoadGameCheatsCategories();
+
+        //    // Show loading panel
+        //    GridViewGameCheats.ShowLoadingPanel();
+
+        //    DataTableGameCheats.Rows.Clear();
+
+        //    await Task.Run(() =>
+        //    {
+        //        var filteredGameCheats = Database.GameCheatsDataPS3.Where(x =>
+        //            x.Game.ContainsIgnoreCase(FilterGameCheatsName) &&
+        //            x.Region.ContainsIgnoreCase(FilterGameCheatsRegion) &&
+        //            x.Version.ContainsIgnoreCase(FilterGameCheatsVersion)).ToList();
+
+        //        foreach (var gameCheatItem in filteredGameCheats)
+        //        {
+        //            DataTableGameCheats.Rows.Add("", //gameCheatItem.FileName,
+        //                                         gameCheatItem.Game,
+        //                                         gameCheatItem.Region,
+        //                                         gameCheatItem.Version);
+        //        }
+        //    });
+
+        //    GridControlGameCheats.DataSource = DataTableGameCheats;
+
+        //    GridViewGameCheats.Columns[0].Visible = false;
+
+        //    GridViewGameCheats.Columns[2].MinWidth = 166;
+        //    GridViewGameCheats.Columns[2].MaxWidth = 166;
+
+        //    GridViewGameCheats.Columns[3].MinWidth = 112;
+        //    GridViewGameCheats.Columns[3].MaxWidth = 112;
+
+        //    //GridViewGameCheats.Columns[3].MinWidth = 78;
+        //    //GridViewGameCheats.Columns[3].MaxWidth = 78;
+
+        //    ComboBoxGameCheatsFilterRegion.SelectedIndexChanged -= ComboBoxGameCheatsFilterRegion_SelectedIndexChanged;
+        //    ComboBoxGameCheatsFilterRegion.SelectedIndex = string.IsNullOrEmpty(FilterGameCheatsRegion)
+        //        ? -1
+        //        : ComboBoxGameCheatsFilterRegion.Properties.Items.IndexOf(FilterGameCheatsRegion);
+        //    ComboBoxGameCheatsFilterRegion.SelectedIndexChanged += ComboBoxGameCheatsFilterRegion_SelectedIndexChanged;
+
+        //    ComboBoxGameCheatsFilterVersion.SelectedIndexChanged -= ComboBoxGameCheatsFilterVersion_SelectedIndexChanged;
+        //    ComboBoxGameCheatsFilterVersion.SelectedIndex = string.IsNullOrEmpty(FilterGameCheatsVersion)
+        //        ? -1
+        //        : ComboBoxGameCheatsFilterVersion.Properties.Items.IndexOf(FilterGameCheatsVersion);
+        //    ComboBoxGameCheatsFilterVersion.SelectedIndexChanged += ComboBoxGameCheatsFilterVersion_SelectedIndexChanged;
+
+        //    GridViewGameCheats.SortInfo.ClearAndAddRange(new[]
+        //    {
+        //        new GridColumnSortInfo(GridViewGameCheats.Columns[FilterGameCheatsSortOption], FilterGameCheatsSortOrder),
+        //    });
+
+        //    GridViewGameCheats.HideLoadingPanel();
+
+        //    if (GridViewGameCheats.RowCount > 0)
+        //    {
+        //        GridViewGameCheats.FocusedRowHandle = 0;
+        //    }
+        //}
+        //
+
         private void GridViewGameCheats_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            if (e.FocusedRowHandle != -1)
+            if (GridViewGameCheats.RowCount > 0)
             {
-                SelectedGameCheatsItem = Database.GameCheatsPS3.GameCheats.First(x => x.Game == (string)GridViewGameCheats.GetRowCellValue(e.FocusedRowHandle, GridViewGameCheats.Columns[0]));
+                if (e.FocusedRowHandle != -1)
+                {
+                    //SelectedGameCheatsItem = Database.GameCheatsPS3.GameCheats.First(x => x.Game == (string)GridViewGameCheats.GetRowCellValue(e.FocusedRowHandle, GridViewGameCheats.Columns[0]));
+                    SelectedGameItem = Database.GamesDataPS3.Games.First(x => x.File == (string)GridViewGameCheats.GetRowCellValue(e.FocusedRowHandle, GridViewGameCheats.Columns[0]));
+                }
             }
 
             //TileItemGameCheatsDownload.Enabled = e.FocusedRowHandle != -1;
@@ -9364,12 +9469,10 @@ namespace ArisenStudio.Forms.Windows
 
         private void GridViewGameCheats_RowClick(object sender, RowClickEventArgs e)
         {
-            DXMouseEventArgs ea = e;
-            GridView view = sender as GridView;
-            GridHitInfo info = view.CalcHitInfo(ea.Location);
-            if (info.InRow)
+            if (e.RowHandle != -1)
             {
-                SelectedGameCheatsItem = Database.GameCheatsPS3.GameCheats.First(x => x.Game == (string)GridViewGameCheats.GetRowCellValue(e.RowHandle, GridViewGameCheats.Columns[0]));
+                //SelectedGameCheatsItem = Database.GameCheatsPS3.GameCheats.First(x => x.Game == (string)GridViewGameCheats.GetRowCellValue(e.RowHandle, GridViewGameCheats.Columns[0]));
+                SelectedGameItem = Database.GamesDataPS3.Games.First(x => x.File == (string)GridViewGameCheats.GetRowCellValue(e.RowHandle, GridViewGameCheats.Columns[0]));
             }
 
             //TileItemGameCheatsDownload.Enabled = SelectedGameCheatsItem != null;
@@ -9389,9 +9492,10 @@ namespace ArisenStudio.Forms.Windows
                 //int modId = (int)GridViewGames.GetRowCellValue(info.RowHandle, GridViewGames.Columns[0]);
                 //SelectedGameModXboxId = modId;
 
-                SelectedGameCheatsItem = Database.GameCheatsPS3.GameCheats.First(x => x.Game == (string)GridViewGameCheats.GetRowCellValue(info.RowHandle, GridViewGameCheats.Columns[0]));
+                //SelectedGameCheatsItem = Database.GameCheatsPS3.GameCheats.First(x => x.Game == (string)GridViewGameCheats.GetRowCellValue(info.RowHandle, GridViewGameCheats.Columns[0]));
+                SelectedGameItem = Database.GamesDataPS3.Games.First(x => x.File == (string)GridViewGameCheats.GetRowCellValue(info.RowHandle, GridViewGameCheats.Columns[0]));
 
-                ShowGameCheats(SelectedGameCheatsItem);
+                ShowGameCheats(SelectedGameItem);
             }
         }
 
@@ -9791,7 +9895,7 @@ namespace ArisenStudio.Forms.Windows
             {
                 modItemData = Database.HomebrewX360.GetModById(platform, modId);
             }
-            else
+            else if (platform == Platform.PS4)
             {
                 var appItemData = Database.HomebrewPS4.GetModById(modId);
 
@@ -9863,7 +9967,7 @@ namespace ArisenStudio.Forms.Windows
         /// <summary>
         /// Show the details dialog.
         /// </summary>
-        /// <param name=platform"> Specifies the <see cref="PlatformPrefix" /> </param>
+        /// <param name=platform"> Specifies the <see cref="Platform" /> </param>
         /// <param name="id"> Specifies the <see cref="GameSaveItemData.Id" /> </param>
         private void ShowGameSaveDetails(Platform platform, int id)
         {
@@ -9881,10 +9985,10 @@ namespace ArisenStudio.Forms.Windows
         /// <summary>
         /// Show the game cheats dialog for the selected game.
         /// </summary>
-        /// <param name="gameCheatItem"> Specifies the <see cref="GameCheatItemData" /> </param>
-        private void ShowGameCheats(GameCheatItemData gameCheatItem)
+        /// <param name="gameItem"> Specifies the <see cref="GameItemData" /> </param>
+        private void ShowGameCheats(GameItemData gameItem)
         {
-            DialogExtensions.ShowItemGameCheatsDialog(this, gameCheatItem);
+            DialogExtensions.ShowItemGameCheatsDialog(this, gameItem);
         }
 
         /// <summary>
@@ -10170,7 +10274,7 @@ namespace ArisenStudio.Forms.Windows
 
         private void ButtonDonate_Click(object sender, EventArgs e)
         {
-            Process.Start(Urls.DonatePatreon);
+            _ = Process.Start(Urls.DonatePatreon);
         }
 
         private void LabelCreditsLibraries_HyperlinkClick(object sender, HyperlinkClickEventArgs e)
@@ -10405,12 +10509,44 @@ namespace ArisenStudio.Forms.Windows
                     break;
 
                 default:
-                    Program.Log.Error(ex, status);
-                    _ = XtraMessageBox.Show(this, string.Format(ResourceLanguage.GetString("ERROR_OCCURRED"), ex.Message), ResourceLanguage.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error, DefaultBoolean.True);
+                    if (status != ResourceLanguage.GetString("STATUS_IDLING"))
+                    {
+                        StatusIdleTimer.Stop();
+                        StatusIdleTimer.Start();
+
+                        Program.Log.Error(ex, status);
+
+                        //var dialogResult = XtraMessageBox.Show(this,
+                        //    $"An error occurred: {ex.Message}\n\n" +
+                        //    $"If this issue continues, you can submit a bug report using our automatic tracker. Would you like to do this now?",
+                        //    "Arisen Studio Thread Exception",
+                        //    MessageBoxButtons.YesNo,
+                        //    MessageBoxIcon.Error,
+                        //    allowHtmlText: DefaultBoolean.True);
+
+                        //if (dialogResult == DialogResult.Yes)
+                        //{
+                        //    DialogExtensions.ShowReportIssueDialog(this, ex);
+                        //}
+
+                        _ = XtraMessageBox.Show(
+                            this,
+                            string.Format(ResourceLanguage.GetString("ERROR_OCCURRED"), ex.Message),
+                            ResourceLanguage.GetString("ERROR"),
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error,
+                            allowHtmlText: DefaultBoolean.True);
+                    }
+                    
                     break;
             }
 
             StatusLabelStatus.Caption = status;
+        }
+
+        private void StatusIdleTimer_Tick(object sender, EventArgs e)
+        {
+            SetStatus(ResourceLanguage.GetString("STATUS_IDLING"));
         }
 
         #endregion
@@ -10428,7 +10564,7 @@ namespace ArisenStudio.Forms.Windows
             {
                 if (!Directory.Exists(UserFolders.AppData))
                 {
-                    Directory.CreateDirectory(UserFolders.AppData);
+                    _ = Directory.CreateDirectory(UserFolders.AppData);
                 }
 
                 if (!File.Exists(UserFolders.SettingsData))
@@ -10471,7 +10607,7 @@ namespace ArisenStudio.Forms.Windows
             catch (Exception ex)
             {
                 SetStatus($"Unable to load application settings data. {ResourceLanguage.GetString("ERROR")}: {ex.Message}", ex);
-                XtraMessageBox.Show(this, string.Format("There is a problem loading the application settings data.\n\n{0}: {1}", ResourceLanguage.GetString("ERROR"), ex.Message), ResourceLanguage.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = XtraMessageBox.Show(this, string.Format("There is a problem loading the application settings data.\n\n{0}: {1}", ResourceLanguage.GetString("ERROR"), ex.Message), ResourceLanguage.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

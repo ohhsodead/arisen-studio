@@ -50,7 +50,6 @@ namespace ArisenStudio.Forms.Dialogs
             CheckBoxDefaultLogin.Text = Language.GetString("LABEL_DEFAULT_CREDENTIALS");
             ButtonEditLoginDetails.Text = Language.GetString("LABEL_EDIT");
             CheckBoxDefaultProfile.Text = Language.GetString("LABEL_DEFAULT_PROFILE");
-            CheckBoxPassiveMode.Text = Language.GetString("LABEL_PASSIVE_MODE");
             ButtonSave.Text = Language.GetString("LABEL_SAVE");
             ButtonCancel.Text = Language.GetString("LABEL_CANCEL");
 
@@ -75,9 +74,6 @@ namespace ArisenStudio.Forms.Dialogs
             {
                 CheckBoxDefaultLogin.Checked = ConsoleProfile.UseDefaultLogin;
             }
-
-            CheckBoxPassiveMode.Enabled = ConsoleProfile.Platform == Platform.PS3;
-            CheckBoxPassiveMode.Checked = ConsoleProfile.PassiveMode;
 
             CheckBoxGoldHEN.Enabled = ConsoleProfile.Platform == Platform.PS4;
             CheckBoxGoldHEN.Checked = ConsoleProfile.GoldHEN;
@@ -263,8 +259,6 @@ namespace ArisenStudio.Forms.Dialogs
             //LabelUserPass.Visible = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
             CheckBoxDefaultLogin.Checked = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
             ButtonEditLoginDetails.Enabled = ConsoleProfile.Platform == Platform.PS3 | ConsoleProfile.Platform == Platform.PS4;
-            CheckBoxPassiveMode.Enabled = ConsoleProfile.Platform == Platform.PS3;
-            CheckBoxPassiveMode.Checked = false;
             CheckBoxGoldHEN.Enabled = ConsoleProfile.Platform == Platform.PS4;
             CheckBoxGoldHEN.Checked = false;
 
@@ -373,11 +367,6 @@ namespace ArisenStudio.Forms.Dialogs
                     ConsoleProfile.UseDefaultLogin = true;
                     break;
             }
-        }
-
-        private void CheckBoxPassiveMode_CheckStateChanged(object sender, EventArgs e)
-        {
-            ConsoleProfile.PassiveMode = CheckBoxPassiveMode.Checked;
         }
 
         private void CheckBoxGoldHEN_CheckStateChanged(object sender, EventArgs e)

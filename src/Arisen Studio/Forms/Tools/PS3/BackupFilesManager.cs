@@ -185,7 +185,7 @@ namespace ArisenStudio.Forms.Tools.PS3
                     return;
                 }
 
-                _ = FtpExtensions.UploadFile(backupFile.LocalPath, backupFile.InstallPath);
+                _ = FtpExtensions.UploadFileAsync(backupFile.LocalPath, backupFile.InstallPath);
                 _ = XtraMessageBox.Show($"Successfully restored file: {backupFile.FileName} to path: {backupFile.InstallPath}", Language.GetString("SUCCESS"));
             }
             catch (Exception ex)

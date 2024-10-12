@@ -128,7 +128,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             ButtonCopySHA1ToClipboard.Enabled = GridViewGameUpdates.SelectedRowsCount > 0;
         }
 
-        private void ButtonInstallFile_Click(object sender, EventArgs e)
+        private async void ButtonInstallFile_Click(object sender, EventArgs e)
         {
             switch (GridViewGameUpdates.SelectedRowsCount)
             {
@@ -143,10 +143,10 @@ namespace ArisenStudio.Forms.Tools.PS3
                 string filePath = Settings.PathDownloads.GetFullPath(Settings.PathAppData) + "/" + fileName;
 
                 SetStatus(string.Format(Language.GetString("FILE_DOWNLOADING"), fileName));
-                HttpExtensions.DownloadFile(updateUrl, filePath);
+                await HttpExtensions.DownloadFileAsync(updateUrl, filePath);
 
                 SetStatus(string.Format(Language.GetString("FILE_INSTALLING"), fileName));
-                _ = FtpExtensions.UploadFile(filePath, MainWindow.Settings.PackageInstallPathPS3 + fileName);
+                _ = FtpExtensions.UploadFileAsync(filePath, MainWindow.Settings.PackageInstallPathPS3 + fileName);
                 SetStatus(Language.GetString("FILE_INSTALL_SUCCESS"));
                 _ = XtraMessageBox.Show(Language.GetString("FILE_INSTALL_SUCCESS"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -156,7 +156,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             }
         }
 
-        private void ButtonDownloadFile_Click(object sender, EventArgs e)
+        private async void ButtonDownloadFile_Click(object sender, EventArgs e)
         {
             string updateUrl = GridViewGameUpdates.GetRowCellDisplayText(GridViewGameUpdates.FocusedRowHandle, GridViewGameUpdates.Columns[0]);
             string fileName = Path.GetFileName(updateUrl);
@@ -165,7 +165,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             if (folderPath != null)
             {
                 SetStatus(string.Format(Language.GetString("FILE_DOWNLOADING"), fileName));
-                HttpExtensions.DownloadFile(updateUrl, folderPath + "/" + fileName);
+                await HttpExtensions.DownloadFileAsync(updateUrl, folderPath + "/" + fileName);
                 SetStatus(Language.GetString("FILE_DOWNLOAD_SUCCESS"));
                 _ = XtraMessageBox.Show(Language.GetString("FILE_DOWNLOAD_SUCCESS"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

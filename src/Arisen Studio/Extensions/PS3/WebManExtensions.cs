@@ -1,9 +1,7 @@
-﻿using FluentFTP.Helpers;
-using HtmlAgilityPack;
+﻿using HtmlAgilityPack;
 using System;
 using System.IO;
 using System.Net;
-using System.Net.Sockets;
 using System.Text;
 
 namespace ArisenStudio.Extensions
@@ -17,32 +15,11 @@ namespace ArisenStudio.Extensions
         /// <returns></returns>
         public static bool IsWebManInstalled(string ip)
         {
-            // alternative 
-            //Ping ping = new();
-            //IPAddress address = IPAddress.Parse(ip);
-            //PingReply pong = ping.Send(address);
-            //return pong.Status == IPStatus.Success;
-
-            //Socket socket = new(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
             try
             {
-                //WebRequest request = WebRequest.Create("http://" + ip + "/" + command);
-                //WebResponse response = request.GetResponse();
-
-                //using (Stream dataStream = response.GetResponseStream())
-                //{
-                //    StreamReader read = new(dataStream);
-                //    read.ReadToEnd();
-                //}
-
-                //response.Close();
-
                 SetConsoleLed(ip, LedColor.Green);
 
                 return true;
-                //socket.Connect(ip, 21);
-                //return socket.Connected;
             }
             catch (Exception ex)
             {
@@ -178,7 +155,7 @@ namespace ArisenStudio.Extensions
         /// </summary>
         /// <param name="ip"></param>
         /// <param name="consoleFilePath"></param>
-        public static void Screenshot(string ip, string consoleFilePath, bool downloadFile = true, string localFilePath = "")
+        public static async void Screenshot(string ip, string consoleFilePath, bool downloadFile = true, string localFilePath = "")
         {
             if (IsInGame(ip))
             {
@@ -191,7 +168,7 @@ namespace ArisenStudio.Extensions
 
             if (downloadFile)
             {
-                HttpExtensions.DownloadFile($"http://{ip}{consoleFilePath}", localFilePath);
+                await HttpExtensions.DownloadFileAsync($"http://{ip}{consoleFilePath}", localFilePath);
             }
         }
 

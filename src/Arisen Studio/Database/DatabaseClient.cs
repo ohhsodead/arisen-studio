@@ -4,9 +4,11 @@ using ArisenStudio.Models.Dashboard;
 using ArisenStudio.Models.Database;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using static DevExpress.XtraCharts.GLGraphics.GL;
 
@@ -75,6 +77,16 @@ namespace ArisenStudio.Database
         public PackagesData ThemesPS3 { get; private set; }
 
         /// <summary>
+        /// Contains the game cheats for PS3.
+        /// </summary>
+        //public GameCheatsData GameCheatsPS3 { get; private set; }
+
+        /// <summary>
+        /// Contains the game cheats for PS3.
+        /// </summary>
+        public GamesDataPS3 GamesDataPS3 { get; private set; }
+
+        /// <summary>
         /// Contains the mods from the Xbox database.
         /// </summary>
         public ModsData GameModsX360 { get; private set; }
@@ -100,11 +112,6 @@ namespace ArisenStudio.Database
         public GameSavesData GameSaves { get; private set; }
 
         /// <summary>
-        /// Contains the game cheats for PS3.
-        /// </summary>
-        public GameCheatsData GameCheatsPS3 { get; private set; }
-
-        /// <summary>
         /// Contains the game cheats for Xbox 360.
         /// </summary>
         public GamePatchesData GamePatchesX360 { get; private set; }
@@ -121,6 +128,8 @@ namespace ArisenStudio.Database
         private readonly SimpleCache<ModsData> _gameModsCachePS3;
         private readonly SimpleCache<ModsData> _homebrewCachePS3;
         private readonly SimpleCache<ModsData> _resourcesCachePS3;
+        private readonly SimpleCache<GameCheatsData> _gameCheatsCachePS3;
+        private readonly SimpleCache<GamesDataPS3> _gamesCachePS3;
         private readonly SimpleCache<ModsData> _gameModsCacheX360;
         private readonly SimpleCache<ModsData> _homebrewCacheX360;
         private readonly SimpleCache<TrainersData> _trainersCacheX360;
@@ -130,7 +139,6 @@ namespace ArisenStudio.Database
         private readonly SimpleCache<PackagesData> _avatarPackagesCachePS3;
         private readonly SimpleCache<PackagesData> _dlcPackagesCachePS3;
         private readonly SimpleCache<PackagesData> _themePackagesCachePS3;
-        private readonly SimpleCache<GameCheatsData> _gameCheatsCachePS3;
         private readonly SimpleCache<GameSavesData> _gameSavesCache;
         private readonly SimpleCache<XboxTitleIds> _titleIdsCacheX360;
         private readonly SimpleCache<FavoriteGamesData> _favoriteGamesCache;
@@ -143,27 +151,33 @@ namespace ArisenStudio.Database
         /// </summary>
         public DatabaseClient()
         {
-            _favoriteGamesCache = new SimpleCache<FavoriteGamesData>("favoriteGamesCache.json");
-            _favoriteModsCache = new SimpleCache<FavoriteModsData>("favoriteModsCache.json");
-            _categoriesCache = new SimpleCache<CategoriesData>("categoriesCache.json");
-            _gameModsCachePS3 = new SimpleCache<ModsData>("gameModsCachePS3.json");
-            _homebrewCachePS3 = new SimpleCache<ModsData>("homebrewCachePS3.json");
-            _resourcesCachePS3 = new SimpleCache<ModsData>("resourcesCachePS3.json");
-            _gameCheatsCachePS3 = new SimpleCache<GameCheatsData>("gameCheatsCachePS3.json");
+            _favoriteGamesCache = new SimpleCache<FavoriteGamesData>("favoriteGames.json");
+            _favoriteModsCache = new SimpleCache<FavoriteModsData>("favoriteMods.json");
+            _categoriesCache = new SimpleCache<CategoriesData>("categories.json");
+
+            _gameModsCachePS3 = new SimpleCache<ModsData>("gameModsPS3.json");
+            _homebrewCachePS3 = new SimpleCache<ModsData>("homebrewPS3.json");
+            _resourcesCachePS3 = new SimpleCache<ModsData>("resourcesPS3.json");
+            //_gameCheatsCachePS3 = new SimpleCache<GameCheatsData>("gameCheatsPS3.json");
+            _gamesCachePS3 = new SimpleCache<GamesDataPS3>("gamesDataPS3.json");
+
+            _gamePackagesCachePS3 = new SimpleCache<PackagesData>("packagesGamesPS3.json");
+            _demoPackagesCachePS3 = new SimpleCache<PackagesData>("packagesDemosPS3.json");
+            _avatarPackagesCachePS3 = new SimpleCache<PackagesData>("packagesAvatarsPS3.json");
+            _dlcPackagesCachePS3 = new SimpleCache<PackagesData>("packagesDlcPS3.json");
+            _themePackagesCachePS3 = new SimpleCache<PackagesData>("packagesThemesPS3.json");
+
             _gameModsCacheX360 = new SimpleCache<ModsData>("gameModsX360.json");
             _homebrewCacheX360 = new SimpleCache<ModsData>("homebrewX360.json");
-            _trainersCacheX360 = new SimpleCache<TrainersData>("trainersCacheX360.json");
+            _trainersCacheX360 = new SimpleCache<TrainersData>("trainersX360.json");
+            _titleIdsCacheX360 = new SimpleCache<XboxTitleIds>("titleIdsX360.json");
+
             _homebrewCachePS4 = new SimpleCache<AppsData>("homebrewPS4.json");
-            _gamePackagesCachePS3 = new SimpleCache<PackagesData>("gamePackageCachePS3.json");
-            _demoPackagesCachePS3 = new SimpleCache<PackagesData>("demoPackageCachePS3.json");
-            _avatarPackagesCachePS3 = new SimpleCache<PackagesData>("avatarPackageCachePS3.json");
-            _dlcPackagesCachePS3 = new SimpleCache<PackagesData>("dlcPackageCachePS3.json");
-            _themePackagesCachePS3 = new SimpleCache<PackagesData>("themePackageCachePS3.json");
-            _gameSavesCache = new SimpleCache<GameSavesData>("gameSavesCache.json");
-            _titleIdsCacheX360 = new SimpleCache<XboxTitleIds>("titleIdsCacheX360.json");
+
+            _gameSavesCache = new SimpleCache<GameSavesData>("gameSaves.json");
 
             _httpClient = new HttpClient();
-            _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("ArisenStudio");
+            _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("ArisenStudio-Database");
         }
 
         /// <summary>
@@ -260,7 +274,8 @@ namespace ArisenStudio.Database
                 AvatarsPS3 = await fetcher.GetAvatarsPkgsPS3(),
                 ThemesPS3 = await fetcher.GetThemesPkgsPS3(),
                 GameSaves = await fetcher.GetGameSaves(),
-                GameCheatsPS3 = await fetcher.GetGameCheats(),
+                //GameCheatsPS3 = await fetcher.GetGameCheats(),
+                GamesDataPS3 = await fetcher.GetGamesPS3(),
                 TitleIdsX360 = await fetcher.GetTitleIds()
             };
 
@@ -425,6 +440,22 @@ namespace ArisenStudio.Database
 
             return themes;
         });
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public Task<GamesDataPS3> GetGamesPS3() => GetFromCacheOrFetchAsync(_gamesCachePS3, "gamesPS3", "ps3/cheats/games.json", async () =>
+        {
+            string response = await _httpClient.GetStringAsync(Urls.GamesDataPS3);
+            return JsonConvert.DeserializeObject<GamesDataPS3>(response);
+        });
+
+        public async Task<GameCheatsData> GetGameCheatsPS3(string fileName)
+        {
+            string response = await _httpClient.GetStringAsync(Urls.GamesCheatsBasePS3 + fileName);
+            return JsonConvert.DeserializeObject<GameCheatsData>(response);
+        }
 
         /// <summary>
         /// Fetch the Applications data either from cache or the source file.

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Diagnostics;
 using PS3Lib;
 using FluentFTP;
+using DevExpress.XtraRichEdit.Model;
 
 namespace ArisenStudio.Forms.Tools.PS3
 {
@@ -29,9 +30,7 @@ namespace ArisenStudio.Forms.Tools.PS3
 
         public ConsoleProfile Profile = MainWindow.ConsoleProfile;
 
-        public FtpClient FtpClient = MainWindow.FtpClient;
-
-        //private PS3API Ps3 = new(SelectAPI.PS3Manager);
+        public AsyncFtpClient FtpClient = MainWindow.FtpClient;
 
         private ApiClient ImgurClient = new("f123f19ee8fa247");
 
@@ -48,7 +47,7 @@ namespace ArisenStudio.Forms.Tools.PS3
         private string LocalFilePath = null;
         private string ConsoleFilePath = null;
 
-        private void ButtonTakeScreenshot_Click(object sender, EventArgs e)
+        private async void ButtonTakeScreenshot_Click(object sender, EventArgs e)
         {
             try
             {
@@ -76,9 +75,9 @@ namespace ArisenStudio.Forms.Tools.PS3
 
                 //HttpExtensions.DownloadFile($"http://{ip}{consoleFilePath}", localFilePath);
 
-                if (FtpExtensions.FileExists($"http://{Profile.Address}{consolePath}{fileName}.bmp"))
+                if (await FtpExtensions.FileExistsAsync($"http://{Profile.Address}{consolePath}{fileName}.bmp"))
                 {
-                    _ = FtpClient.DownloadFile(fileLocation, consolePathUrl, FtpLocalExists.Overwrite);
+                    await FtpClient.DownloadFile(fileLocation, consolePathUrl, FtpLocalExists.Overwrite);
                 }
 
                 try
@@ -109,18 +108,33 @@ namespace ArisenStudio.Forms.Tools.PS3
             }
         }
 
-        private void ButtonDeleteScreenshot_Click(object sender, EventArgs e)
+        private async void ButtonDeleteScreenshot_Click(object sender, EventArgs e)
         {
-            if (!LocalFilePath.IsNullOrWhiteSpace())
+            try
             {
-                LocalFilePath = "";
-                File.Delete(LocalFilePath);
-                TextBoxFileName.Text = "";
-                ImageScreenshot.Image = null;
-                ButtonDeleteImage.Enabled = false;
-                ButtonNewImage.Enabled = false;
-                ButtonOpenFolder.Enabled = false;
-                Program.Log.Info($"Deleted screenshot file: {LocalFilePath}");
+                if (!LocalFilePath.IsNullOrWhiteSpace())
+                {
+                    LocalFilePath = "";
+                    TextBoxFileName.Text = "";
+                    ImageScreenshot.Image = null;
+                    ButtonDeleteImage.Enabled = false;
+                    ButtonNewImage.Enabled = false;
+                    ButtonOpenFolder.Enabled = false;
+
+                    File.Delete(LocalFilePath);
+
+                    if (await FtpExtensions.FileExistsAsync(ConsoleFilePath))
+                    {
+                        await FtpClient.DeleteFile(ConsoleFilePath);
+                    }
+
+                    Program.Log.Info($"Deleted screenshot file: {LocalFilePath}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Program.Log.Error(string.Format("Unable to delete screenshot. Error: {0}", ex.Message));
+                _ = MessageBox.Show(string.Format("Unable to delete screenshot. Error: {0}", ex.Message), Language.GetString("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -146,9 +160,9 @@ namespace ArisenStudio.Forms.Tools.PS3
             }
         }
 
-        public void DownloadScreenshot(string ip, string filePath, string localPath)
+        public async void DownloadScreenshot(string ip, string filePath, string localPath)
         {
-            HttpExtensions.DownloadFile($"http://{Profile.Address}/{filePath}", localPath);
+            await HttpExtensions.DownloadFileAsync($"http://{Profile.Address}/{filePath}", localPath);
         }
 
         private async void UploadImage(BitmapSource bitmap, ApiClient apiClient)

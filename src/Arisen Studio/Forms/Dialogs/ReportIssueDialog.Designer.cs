@@ -3,7 +3,7 @@ using DevExpress.XtraEditors;
 
 namespace ArisenStudio.Forms.Dialogs
 {
-    partial class RequestModsDialog
+    partial class ReportIssueDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,6 @@ namespace ArisenStudio.Forms.Dialogs
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RequestModsDialog));
             this.WebView = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.ToolbarControl = new DevExpress.XtraBars.ToolbarForm.ToolbarFormControl();
             this.ToolbarManager = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
@@ -51,12 +50,13 @@ namespace ArisenStudio.Forms.Dialogs
             // WebView
             // 
             this.WebView.AllowExternalDrop = false;
+            this.WebView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.WebView.CreationProperties = null;
             this.WebView.DefaultBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.WebView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.WebView.Location = new System.Drawing.Point(0, 35);
             this.WebView.Name = "WebView";
-            this.WebView.Size = new System.Drawing.Size(598, 761);
+            this.WebView.Size = new System.Drawing.Size(623, 764);
             this.WebView.Source = new System.Uri("https://form.jotform.com/223613539362355", System.UriKind.Absolute);
             this.WebView.TabIndex = 0;
             this.WebView.ZoomFactor = 1D;
@@ -68,7 +68,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.ToolbarControl.Location = new System.Drawing.Point(0, 0);
             this.ToolbarControl.Manager = this.ToolbarManager;
             this.ToolbarControl.Name = "ToolbarControl";
-            this.ToolbarControl.Size = new System.Drawing.Size(598, 29);
+            this.ToolbarControl.Size = new System.Drawing.Size(623, 29);
             this.ToolbarControl.TabIndex = 1;
             this.ToolbarControl.TabStop = false;
             this.ToolbarControl.TitleItemLinks.Add(this.ButtonOpenLink);
@@ -93,15 +93,15 @@ namespace ArisenStudio.Forms.Dialogs
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 29);
             this.barDockControlTop.Manager = this.ToolbarManager;
-            this.barDockControlTop.Size = new System.Drawing.Size(598, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(623, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 796);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 799);
             this.barDockControlBottom.Manager = this.ToolbarManager;
-            this.barDockControlBottom.Size = new System.Drawing.Size(598, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(623, 0);
             // 
             // barDockControlLeft
             // 
@@ -109,24 +109,24 @@ namespace ArisenStudio.Forms.Dialogs
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 29);
             this.barDockControlLeft.Manager = this.ToolbarManager;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 767);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 770);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(598, 29);
+            this.barDockControlRight.Location = new System.Drawing.Point(623, 29);
             this.barDockControlRight.Manager = this.ToolbarManager;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 767);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 770);
             // 
             // ButtonRefresh
             // 
             this.ButtonRefresh.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
             this.ButtonRefresh.Id = 0;
             this.ButtonRefresh.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ButtonRefresh.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.Refresh1;
+            this.ButtonRefresh.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.Refresh;
             this.ButtonRefresh.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            this.ButtonRefresh.ImageOptions.SvgImageSize = new System.Drawing.Size(14, 14);
+            this.ButtonRefresh.ImageOptions.SvgImageSize = new System.Drawing.Size(12, 12);
             this.ButtonRefresh.Name = "ButtonRefresh";
             this.ButtonRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonRefresh_ItemClick);
             // 
@@ -135,7 +135,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.ButtonOpenLink.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
             this.ButtonOpenLink.Id = 1;
             this.ButtonOpenLink.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ButtonOpenLink.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.OpenInNewWindow;
+            this.ButtonOpenLink.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.NewWindow;
             this.ButtonOpenLink.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
             this.ButtonOpenLink.Name = "ButtonOpenLink";
             this.ButtonOpenLink.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonOpenLink_ItemClick);
@@ -151,12 +151,12 @@ namespace ArisenStudio.Forms.Dialogs
             this.ProgressPanel.Name = "ProgressPanel";
             this.ProgressPanel.ShowCaption = false;
             this.ProgressPanel.ShowDescription = false;
-            this.ProgressPanel.Size = new System.Drawing.Size(598, 6);
-            this.ProgressPanel.TabIndex = 8;
+            this.ProgressPanel.Size = new System.Drawing.Size(623, 6);
+            this.ProgressPanel.TabIndex = 13;
             this.ProgressPanel.TabStop = false;
             this.ProgressPanel.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Bar;
             // 
-            // RequestModsDialog
+            // ReportIssueDialog
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.Appearance.Options.UseBackColor = true;
@@ -164,7 +164,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(598, 796);
+            this.ClientSize = new System.Drawing.Size(623, 799);
             this.Controls.Add(this.WebView);
             this.Controls.Add(this.ProgressPanel);
             this.Controls.Add(this.barDockControlLeft);
@@ -175,19 +175,18 @@ namespace ArisenStudio.Forms.Dialogs
             this.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
-            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("RequestModsDialog.IconOptions.Icon")));
             this.IconOptions.Image = global::ArisenStudio.Properties.Resources.arisenstudio;
             this.IconOptions.ShowIcon = false;
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "RequestModsDialog";
+            this.Name = "ReportIssueDialog";
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Request Mods";
+            this.Text = "Request Issue";
             this.ToolbarFormControl = this.ToolbarControl;
-            this.Load += new System.EventHandler(this.RequestModsDialog_Load);
+            this.Load += new System.EventHandler(this.ReportIssueDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.WebView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToolbarControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToolbarManager)).EndInit();
@@ -206,7 +205,7 @@ namespace ArisenStudio.Forms.Dialogs
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarButtonItem ButtonRefresh;
-        private DevExpress.XtraWaitForm.ProgressPanel ProgressPanel;
         private DevExpress.XtraBars.BarButtonItem ButtonOpenLink;
+        private DevExpress.XtraWaitForm.ProgressPanel ProgressPanel;
     }
 }

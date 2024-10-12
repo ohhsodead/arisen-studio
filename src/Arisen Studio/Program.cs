@@ -8,6 +8,8 @@ using System;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using ArisenStudio.Extensions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ArisenStudio
 {
@@ -27,6 +29,7 @@ namespace ArisenStudio
                 ConfigureLogger();
 
                 Application.ThreadException += Application_ThreadException;
+                Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
                 AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
                 WindowsFormsSettings.SetDPIAware();
@@ -102,28 +105,59 @@ namespace ArisenStudio
 
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
-            MainWindow.Window.SetStatus($"An error occurred: {e.Exception.Message}", e.Exception);
+            MainWindow.Window.SetStatus($"An error occurred: {e.Exception.Message}");
+            Log.Error($"An error occurred: {e.Exception.Message}", e.Exception);
 
-            _ = XtraMessageBox.Show(MainWindow.Window,
+            var dialogResult = XtraMessageBox.Show(MainWindow.Window,
                 $"An error occurred: {e.Exception.Message}\n\n" +
-                $"If this issue persists, please report it by <a href=\"https://github.com/ohhsodead/arisen-studio/issues/new?labels=bug&template=bug.yml/\">opening a new issue</a> on our GitHub tracker or opening a ticket in our Discord Server.",
-                "Arisen Studio Handled Error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
+                $"If this issue continues, you can submit a bug report using our automatic tracker. Would you like to do this now?",
+                "Arisen Studio Thread Exception",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Error,
+                allowHtmlText: DevExpress.Utils.DefaultBoolean.True);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                //var lastForm = MainWindow.Window.OwnedForms.Length == 0 ? MainWindow.Window : MainWindow.Window.OwnedForms[MainWindow.Window.OwnedForms.Length];
+                DialogExtensions.ShowReportIssueDialog(MainWindow.Window, e.Exception);
+            }
+
+            //_ = XtraMessageBox.Show(MainWindow.Window,
+            //    $"An error occurred: {e.Exception.Message}\n\n" +
+            //    $"Please try again later. If the issue continues, you can report it by <a href=\"https://github.com/ohhsodead/arisen-studio/issues/new?labels=bug&template=bug.yml\">opening a new issue</a> on our GitHub tracker.",
+            //    "Arisen Studio Handled Error",
+            //    MessageBoxButtons.OK,
+            //    MessageBoxIcon.Error,
+            //    allowHtmlText: DevExpress.Utils.DefaultBoolean.True);
         }
 
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
             Exception exception = e.ExceptionObject as Exception;
 
-            MainWindow.Window.SetStatus($"An error occurred: {exception.Message}", exception);
+            MainWindow.Window.SetStatus($"An error occurred: {exception.Message}");
+            Log.Error($"An error occurred: {exception.Message}", exception);
 
-            _ = XtraMessageBox.Show(MainWindow.Window,
+            var dialogResult = XtraMessageBox.Show(MainWindow.Window,
                 $"An error occurred: {exception.Message}\n\n" +
-                $"If this issue persists, please report it by <a href=\"https://github.com/ohhsodead/arisen-studio/issues/new?labels=bug&template=bug.yml/\">opening a new issue</a> on our GitHub tracker or opening a ticket in our Discord Server.",
-                "Arisen Studio Handled Error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
+                $"If this issue continues, you can submit a bug report using our automatic tracker. Would you like to do this now?",
+                "Arisen Studio Unhandled Exception",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Error,
+                allowHtmlText: DevExpress.Utils.DefaultBoolean.True);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                DialogExtensions.ShowReportIssueDialog(MainWindow.Window, exception);
+            }
+
+            //_ = XtraMessageBox.Show(MainWindow.Window,
+            //    $"An error occurred: {exception.Message}\n\n" +
+            //    $"Please try again later. If the issue continues, you can report it by <a href=\"https://github.com/ohhsodead/arisen-studio/issues/new?labels=bug&template=bug.yml\">opening a new issue</a> on our GitHub tracker.",
+            //    "Arisen Studio Handled Error",
+            //    MessageBoxButtons.OK,
+            //    MessageBoxIcon.Error,
+            //    allowHtmlText: DevExpress.Utils.DefaultBoolean.True);
         }
     }
 }
