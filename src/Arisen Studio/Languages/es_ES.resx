@@ -1911,4 +1911,12 @@ Ruta de Aurora: {0}</value>
 
 Si este problema persiste después de 30 minutos, por favor, contacta con nuestro equipo de soporte para reportarlo. ¡Gracias por tu paciencia y comprensión!</value>
   </data>
+  <data name="STATUS_IDLING" xml:space="preserve">
+    <value>Inactivo...</value>
+  </data>
+  <data name="UNKNOWN_ERROR_OCCURRED" xml:space="preserve">
+    <value>Ocurrió un error: {0}
+
+Si este problema continúa, puedes enviar un reporte de error usando nuestro seguidor automático. ¿Te gustaría hacer esto ahora?</value>
+  </data>
 </root>
