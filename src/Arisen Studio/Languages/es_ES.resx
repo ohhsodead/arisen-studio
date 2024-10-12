@@ -121,7 +121,7 @@
     <value>Acerca de</value>
   </data>
   <data name="ADD_CONSOLES_MANUALLY" xml:space="preserve">
-    <value>No se puede encontrar ninguna consola usando Neighborhood. Puedes introducir manualmente los detalles en la siguiente página.</value>
+    <value>Incapaz de encontrar ninguna consola usando Neighborhood. Puedes introducir manualmente los detalles en la siguiente página.</value>
   </data>
   <data name="ADD_NEW_PROFILE" xml:space="preserve">
     <value>Añadir nuevo perfil</value>
@@ -636,10 +636,10 @@ Error: {0}</value>
     <value>Regiones del juego predeterminadas</value>
   </data>
   <data name="GAME_SAVES" xml:space="preserve">
-    <value>PARTIDAS GUARDADAS</value>
+    <value>Partidas guardadas</value>
   </data>
   <data name="GAME_SAVE_RESIGNER" xml:space="preserve">
-    <value>Game Save Resigner</value>
+    <value>Renunciador de partidas guardadas</value>
   </data>
   <data name="GAME_UPDATES" xml:space="preserve">
     <value>Actualizaciones del juego</value>
@@ -1346,13 +1346,13 @@ Error: {0}</value>
     <value>Mods de juegos</value>
   </data>
   <data name="NAVIGATION_GAME_SAVES" xml:space="preserve">
-    <value>PARTIDAS GUARDADAS</value>
+    <value>Partidas guardadas</value>
   </data>
   <data name="NAVIGATION_HOMEBREW" xml:space="preserve">
     <value>HOMEBREW</value>
   </data>
-  <data name="NAVIGATION_INSTALLED_MODS" xml:space="preserve">
-    <value>MODS INSTALADOS</value>
+  <data name="NAVIGATION_INSTALLED_FILES" xml:space="preserve">
+    <value>Archivos instalados</value>
   </data>
   <data name="NAVIGATION_PACKAGES" xml:space="preserve">
     <value>PAQUETES</value>
@@ -1373,7 +1373,7 @@ Error: {0}</value>
     <value>¿Te gustaría usar Neighborhood para añadir automáticamente tus consolas?</value>
   </data>
   <data name="NEIGHBORHOOD_SCAN_FAILED" xml:space="preserve">
-    <value>No se puede encontrar ninguna consola usando Neighborhood.</value>
+    <value>Incapaz de encontrar ninguna consola usando Neighborhood.</value>
   </data>
   <data name="NOTICE_INSTALL_REBUG_FILES" xml:space="preserve">
     <value>Estos archivos están siendo instalados en la carpeta firmware (dev_rebug) que es solamente para REBUG Custom Firmware. Por favor, lee todo lo de abajo antes de proceder.

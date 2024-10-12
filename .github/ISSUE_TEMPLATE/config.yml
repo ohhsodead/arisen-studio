@@ -1,5 +1,8 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Discord Server
+  - name: Arisen Studio Website
+    url: https://arisen.studio
+    about: Check out our guide and frequently asked questions
+  - name: Our Discord Server
     url: https://discord.gg/FTCS3Xu
     about: Comments, ideas, suggestions? You can contact me here

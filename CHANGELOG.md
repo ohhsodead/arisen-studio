@@ -3,6 +3,30 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Beta v3.3.0
+- Updated HtmlAgilityPack package to 1.11.67
+- Updated WebView2 package to 1.0.2792.45
+- Added Report Issue form to auto submit errors
+- Added file size progress when downloading pkgs
+- Added support via donation button to title bar
+- Fixed double error message popup being shown
+- Fixed sequence error when showing mods details
+- Fixed Homebrew not populating categories
+- Fixed Homebrew page filters not working
+- Fixed Game Cheats page not loading
+- Improved speed of loading search results
+- Game Cheats are now hosted on GitHub
+- Status bar will show idle after some time
+
+## Beta v3.2.1
+- Added Romanian language translations
+- Fixed "425" connection issues when installing files
+- Fixed buttons being translated when its unnecessary
+- Fixed conflicts with Homebrew and Game Mods pages
+- Fixed wrong console image in Connections dialog
+- Fixed HTML tags in Setup Wizard and Dialogs
+- Removed "Passive Mode" as causes issues with connection
+
 ## Beta v3.2.0
 - Updated DevExpress library to 24.1
 - Updated AutoUpdater.NET package to 1.9.2
