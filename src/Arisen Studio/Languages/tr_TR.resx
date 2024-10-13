@@ -254,7 +254,7 @@ Oyun dosyalarının kaybolmasını önlemek için bu dosya kaldırılamaz, bu ne
     <value>Bağlantı</value>
   </data>
   <data name="CONNECTIONS" xml:space="preserve">
-    <value>Bağlantılar</value>
+    <value>Profil</value>
   </data>
   <data name="CONNECTION_FAILED" xml:space="preserve">
     <value>Bağlantı Başarısız</value>
@@ -1352,8 +1352,8 @@ Yine de dosyaları kaldırmayı denemek istiyor musunuz?</value>
   <data name="NAVIGATION_HOMEBREW" xml:space="preserve">
     <value>EV YAPIMI</value>
   </data>
-  <data name="NAVIGATION_INSTALLED_MODS" xml:space="preserve">
-    <value>KURULU MODLAR</value>
+  <data name="NAVIGATION_INSTALLED_FILES" xml:space="preserve">
+    <value>Kurulu Dosyalar</value>
   </data>
   <data name="NAVIGATION_PACKAGES" xml:space="preserve">
     <value>PAKETLER</value>
@@ -1911,5 +1911,13 @@ Aurora Yolu: {0}</value>
     <value>Görünüşe göre sunucularımız şu anda bakımdan geçiyor. Lütfen kısa bir süre sonra tekrar deneyin.
 
 Bu sorun 30 dakika sonra da devam ederse, sorunu bildirmek için lütfen destek ekibimizle iletişime geçin. Sabrınız ve anlayışınız için teşekkür ederiz!</value>
+  </data>
+  <data name="STATUS_IDLING" xml:space="preserve">
+    <value>Beklemede...</value>
+  </data>
+  <data name="UNKNOWN_ERROR_OCCURRED" xml:space="preserve">
+    <value>Bir hata oluştu: {0}
+
+Sorun devam ederse otomatik izleyicimizi kullanarak bir hata raporu gönderebilirsiniz. Bunu şimdi yapmak ister misin?</value>
   </data>
 </root>
