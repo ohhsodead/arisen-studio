@@ -1902,7 +1902,7 @@ Aurora Yolu: {0}</value>
     <value>Ünlem</value>
   </data>
   <data name="NEIGHBORHOOD_EDITOR" xml:space="preserve">
-    <value>Neighborhood Editör</value>
+    <value>Çevre Düzenleyici</value>
   </data>
   <data name="LABEL_SERVER_MAINTENANCE" xml:space="preserve">
     <value>Sunucu Bakımı</value>
