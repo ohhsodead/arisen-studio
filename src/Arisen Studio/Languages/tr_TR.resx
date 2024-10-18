@@ -769,7 +769,7 @@ Konsolunuza bir USB cihazı takın ve devam etmek için 'Evet' tıklayın. Yoksa
     <value>Oyun Modları/Eklentileri yerel USB cihazına kur</value>
   </data>
   <data name="INSTALL_MODS_TO_USB" xml:space="preserve">
-    <value>Modları USB Üstünden Kur</value>
+    <value>USB Üstünden Mod Kur</value>
   </data>
   <data name="INSTALL_PACKAGES_TO_LOCAL_USB" xml:space="preserve">
     <value>Paketleri yerel USB cihazına kur</value>
