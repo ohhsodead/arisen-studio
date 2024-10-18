@@ -350,7 +350,7 @@ Yinede eklemek istiyor musunuz?</value>
     <value>Konsol bağlantısı kesiliyor.</value>
   </data>
   <data name="DISCONNECT_CONSOLE" xml:space="preserve">
-    <value>Konsol Bağlantısını Kes</value>
+    <value>Bağlantıyı Kes</value>
   </data>
   <data name="DISCONNECT_LOWERCASE" xml:space="preserve">
     <value>Bağlantıyı Kes</value>
