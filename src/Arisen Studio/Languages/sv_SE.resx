@@ -1352,8 +1352,8 @@ Vill du försöka avinstallera filen/filerna ändå?</value>
   <data name="NAVIGATION_HOMEBREW" xml:space="preserve">
     <value>HOMEBREW</value>
   </data>
-  <data name="NAVIGATION_INSTALLED_MODS" xml:space="preserve">
-    <value>INSTALLERADE MODDAR</value>
+  <data name="NAVIGATION_INSTALLED_FILES" xml:space="preserve">
+    <value>Installerade Filer</value>
   </data>
   <data name="NAVIGATION_PACKAGES" xml:space="preserve">
     <value>PAKET</value>
@@ -1911,5 +1911,13 @@ Aurora Sökväg: {0}</value>
     <value>Det verkar som om våra servrar för närvarande genomgår underhåll. Försök igen om ett tag.
 
 Om detta problem kvarstår efter 30 minuter, vänligen kontakta vårt supportteam för att rapportera problemet. Tack för ditt tålamod och förståelse!</value>
+  </data>
+  <data name="STATUS_IDLING" xml:space="preserve">
+    <value>Inaktiv...</value>
+  </data>
+  <data name="UNKNOWN_ERROR_OCCURRED" xml:space="preserve">
+    <value>Ett fel uppstod: {0}
+
+Om problemet kvarstår kan du skicka in en felrapport automatiskt till oss. Vill du göra det nu?</value>
   </data>
 </root>
