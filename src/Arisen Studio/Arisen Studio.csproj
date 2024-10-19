@@ -180,13 +180,14 @@
     </Compile>
     <Compile Include="Database\AppItemFile.cs" />
     <Compile Include="Database\GameCheatsData.cs" />
+    <Compile Include="Database\PackagesData.cs" />
     <Compile Include="Database\TrainerGameData.cs" />
     <Compile Include="Database\XboxGame.cs" />
     <Compile Include="Models\Database\Category.cs" />
     <Compile Include="Models\Database\GameItemData.cs" />
     <Compile Include="Models\Database\AppItemFile.cs" />
     <Compile Include="Models\Database\GamePatchItemData.cs" />
-    <Compile Include="Models\Database\TrainerGameData.cs" />
+    <Compile Include="Models\Database\TrainerGameItemData.cs" />
     <Compile Include="Models\Database\GameSaveItemData.cs" />
     <Compile Include="Models\Database\AppItemData.cs" />
     <Compile Include="Models\Database\PackageItemData.cs" />
