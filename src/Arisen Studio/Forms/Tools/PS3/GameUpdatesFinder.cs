@@ -14,6 +14,7 @@ using System.Linq;
 using System.Resources;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using ArisenStudio.Models.GameData.PS3;
 
 namespace ArisenStudio.Forms.Tools.PS3
 {
@@ -56,6 +57,8 @@ namespace ArisenStudio.Forms.Tools.PS3
         {
             try
             {
+                GridViewGameUpdates.ShowLoadingPanel();
+
                 if (string.IsNullOrWhiteSpace(TextBoxTitleID.Text))
                 {
                     _ = XtraMessageBox.Show(Language.GetString("YOU_MUST_ENTER_TITLE_ID"), Language.GetString("NO_INPUT"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -64,7 +67,7 @@ namespace ArisenStudio.Forms.Tools.PS3
 
                 SetStatus(Language.GetString("LABEL_SEARCHING"));
 
-                Models.Game_Updates.Titlepatch gameUpdates = HttpExtensions.GetGameUpdatesFromTitleId(TextBoxTitleID.Text);
+                Titlepatch gameUpdates = HttpExtensions.GetGameUpdatesFromTitleId(TextBoxTitleID.Text);
 
                 if (gameUpdates == null)
                 {
@@ -77,7 +80,7 @@ namespace ArisenStudio.Forms.Tools.PS3
                     LabelTitle.Text = Regex.Replace(gameUpdates.Tag.Package.Last().Paramsfo.Title, @"\(.*?\)", string.Empty).Trim().Replace("Â®", "®"); // gameUpdates.Tag.Package.Last().Paramsfo.TITLE.Replace("Â®", "®"); 
                     gameUpdates.Tag.Package.Reverse();
 
-                    foreach (Models.Game_Updates.Package update in gameUpdates.Tag.Package)
+                    foreach (Package update in gameUpdates.Tag.Package)
                     {
                         _ = GameUpdateFiles.Rows.Add(
                             update.Url,
@@ -103,6 +106,8 @@ namespace ArisenStudio.Forms.Tools.PS3
                     GridViewGameUpdates.Columns[5].MaxWidth = 60;
 
                     SetStatus(Language.GetString("LABEL_SEARCH_SUCCESS"));
+
+                    GridViewGameUpdates.HideLoadingPanel();
                 }
             }
             catch (Exception ex)
@@ -143,7 +148,7 @@ namespace ArisenStudio.Forms.Tools.PS3
                 string filePath = Settings.PathDownloads.GetFullPath(Settings.PathAppData) + "/" + fileName;
 
                 SetStatus(string.Format(Language.GetString("FILE_DOWNLOADING"), fileName));
-                await HttpExtensions.DownloadFileAsync(updateUrl, filePath);
+                _ = await HttpExtensions.DownloadFileAsync(updateUrl, filePath);
 
                 SetStatus(string.Format(Language.GetString("FILE_INSTALLING"), fileName));
                 _ = FtpExtensions.UploadFileAsync(filePath, MainWindow.Settings.PackageInstallPathPS3 + fileName);
@@ -165,7 +170,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             if (folderPath != null)
             {
                 SetStatus(string.Format(Language.GetString("FILE_DOWNLOADING"), fileName));
-                await HttpExtensions.DownloadFileAsync(updateUrl, folderPath + "/" + fileName);
+                _ = await HttpExtensions.DownloadFileAsync(updateUrl, folderPath + "/" + fileName);
                 SetStatus(Language.GetString("FILE_DOWNLOAD_SUCCESS"));
                 _ = XtraMessageBox.Show(Language.GetString("FILE_DOWNLOAD_SUCCESS"), Language.GetString("SUCCESS"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -175,6 +180,7 @@ namespace ArisenStudio.Forms.Tools.PS3
         {
             string updateUrl = GridViewGameUpdates.GetRowCellDisplayText(GridViewGameUpdates.FocusedRowHandle, GridViewGameUpdates.Columns[0]);
             Clipboard.SetText(updateUrl);
+            SetStatus(Language.GetString("COPIED_URL"));
             _ = XtraMessageBox.Show(Language.GetString("COPIED_URL"), Language.GetString("LABEL_COPIED"), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -182,6 +188,7 @@ namespace ArisenStudio.Forms.Tools.PS3
         {
             string updateSha1 = GridViewGameUpdates.GetRowCellDisplayText(GridViewGameUpdates.FocusedRowHandle, GridViewGameUpdates.Columns[1]);
             Clipboard.SetText(updateSha1);
+            SetStatus(Language.GetString("COPIED_SHA1"));
             _ = XtraMessageBox.Show(Language.GetString("COPIED_SHA1"), Language.GetString("LABEL_COPIED"), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

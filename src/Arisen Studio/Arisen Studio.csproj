@@ -178,15 +178,20 @@
     <Compile Include="Controls\StatItem.Designer.cs">
       <DependentUpon>StatItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Database\GameItemData.cs" />
     <Compile Include="Database\AppItemFile.cs" />
     <Compile Include="Database\GameCheatsData.cs" />
-    <Compile Include="Database\GamePatchItemData.cs" />
     <Compile Include="Database\TrainerGameData.cs" />
-    <Compile Include="Database\GameSaveItemData.cs" />
-    <Compile Include="Database\AppItemData.cs" />
-    <Compile Include="Database\PackageItemData.cs" />
     <Compile Include="Database\XboxGame.cs" />
+    <Compile Include="Models\Database\Category.cs" />
+    <Compile Include="Models\Database\GameItemData.cs" />
+    <Compile Include="Models\Database\AppItemFile.cs" />
+    <Compile Include="Models\Database\GamePatchItemData.cs" />
+    <Compile Include="Models\Database\TrainerGameData.cs" />
+    <Compile Include="Models\Database\GameSaveItemData.cs" />
+    <Compile Include="Models\Database\AppItemData.cs" />
+    <Compile Include="Models\Database\PackageItemData.cs" />
+    <Compile Include="Models\Database\XboxTitleIds.cs" />
+    <Compile Include="Models\Game Data\XBOX360\GameXbox.cs" />
     <Compile Include="Enums\Enums.cs" />
     <Compile Include="Extensions\SimpleCache.cs" />
     <Compile Include="Extensions\GraphicExtensions.cs" />
@@ -322,10 +327,9 @@
     <Compile Include="Controls\ProfileItem.Designer.cs">
       <DependentUpon>ProfileItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Database\Category.cs" />
-    <Compile Include="Database\DownloadFiles.cs" />
-    <Compile Include="Database\DatabaseClient.cs" />
-    <Compile Include="Database\ModItemData.cs" />
+    <Compile Include="Models\Database\DownloadFiles.cs" />
+    <Compile Include="Database\Client\DatabaseClient.cs" />
+    <Compile Include="Models\Database\ModItemData.cs" />
     <Compile Include="Extensions\DataExtensions.cs" />
     <Compile Include="Extensions\ControlExtensions.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs" />
@@ -455,17 +459,15 @@
     <Compile Include="Models\Dashboard\FavoriteGamesData.cs" />
     <Compile Include="Models\Dashboard\FavoriteModsData.cs" />
     <Compile Include="Models\Dashboard\AnnouncementsData.cs" />
-    <Compile Include="Models\Database\GamesDataPS3.cs" />
-    <Compile Include="Models\Database\GameCheatsData.cs" />
-    <Compile Include="Models\Database\GamePatchesData.cs" />
-    <Compile Include="Models\Database\TrainersData.cs" />
-    <Compile Include="Models\Database\GameSavesData.cs" />
-    <Compile Include="Models\Database\AppsData.cs" />
+    <Compile Include="Database\GamesDataPS3.cs" />
+    <Compile Include="Database\GamePatchesData.cs" />
+    <Compile Include="Database\TrainersData.cs" />
+    <Compile Include="Database\GameSavesData.cs" />
+    <Compile Include="Database\AppsData.cs" />
     <Compile Include="Models\Database\StatsData.cs" />
-    <Compile Include="Models\Database\PackagesData.cs" />
-    <Compile Include="Models\Database\XboxTitleIds.cs" />
-    <Compile Include="Models\Game Updates\GameUpdates.cs" />
-    <Compile Include="Models\Resources\BackupFilesData.cs" />
+    <Compile Include="Models\Game Data\XBOX360\TitleIdsXbox.cs" />
+    <Compile Include="Models\Game Data\PS3\GameUpdatesPS3.cs" />
+    <Compile Include="Models\Configuration\BackupFilesData.cs" />
     <Compile Include="Extensions\FtpExtensions.cs" />
     <Compile Include="Extensions\ImageExtensions.cs" />
     <Compile Include="Extensions\HttpExtensions.cs" />
@@ -490,15 +492,15 @@
       <DependentUpon>DataViewDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Release Data\GitHubReleaseData.cs" />
-    <Compile Include="Models\Resources\SettingsData.cs" />
+    <Compile Include="Models\Configuration\SettingsData.cs" />
     <Compile Include="Forms\Dialogs\BackupFileDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Dialogs\BackupFileDialog.Designer.cs">
       <DependentUpon>BackupFileDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Database\CategoriesData.cs" />
-    <Compile Include="Models\Database\ModsData.cs" />
+    <Compile Include="Controls\CategoriesData.cs" />
+    <Compile Include="Database\ModsData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\Dialogs\NewProfileDialog.cs">

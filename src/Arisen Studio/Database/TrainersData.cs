@@ -10,7 +10,7 @@ namespace ArisenStudio.Models.Database
         /// <summary>
         /// Get the mods from the database.
         /// </summary>
-        public List<TrainerGameData> Library { get; set; }
+        public List<TrainerGameItemData> Library { get; set; }
 
         /// <summary>
         /// Get all of the mods matching the specified filters.
@@ -74,7 +74,7 @@ namespace ArisenStudio.Models.Database
         /// Get all the <see cref="ModItemData" /> matching the specified <see cref="Category.Id" />.
         /// </summary>
         /// <returns> </returns>
-        public List<TrainerGameData> GetItemsByTitleId(string titleId)
+        public List<TrainerGameItemData> GetItemsByTitleId(string titleId)
         {
             return Library.Where(x => x.TitleId.EqualsIgnoreCase(titleId)).ToList();
         }

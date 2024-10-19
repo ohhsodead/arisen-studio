@@ -45,9 +45,9 @@ namespace ArisenStudio.Forms.Tools.PS3
             ButtonDeleteAll.Text = Language.GetString("LABEL_DELETE_ALL");
         }
 
-        private void TimerWait_Tick(object sender, EventArgs e)
+        private async void TimerWait_Tick(object sender, EventArgs e)
         {
-            LoadPackagesAsync();
+            await LoadPackagesAsync();
             TimerWait.Enabled = false;
         }
 

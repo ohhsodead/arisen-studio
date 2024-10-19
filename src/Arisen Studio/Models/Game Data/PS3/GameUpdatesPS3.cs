@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace ArisenStudio.Models.Game_Updates
+namespace ArisenStudio.Models.GameData.PS3
 {
     [XmlRoot(ElementName = "package")]
     public class Package

@@ -1,6 +1,6 @@
 ﻿using ArisenStudio.Extensions;
 
-namespace ArisenStudio.Database
+namespace ArisenStudio.Models.Database
 {
     /// <summary>
     /// Get Package Information.

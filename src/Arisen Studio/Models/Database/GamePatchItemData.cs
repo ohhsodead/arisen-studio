@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace ArisenStudio.Database
+namespace ArisenStudio.Models.Database
 {
     /// <summary>
     /// Get the game patch information.

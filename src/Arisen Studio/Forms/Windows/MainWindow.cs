@@ -4290,7 +4290,7 @@ namespace ArisenStudio.Forms.Windows
             DeleteConsoleItem();
         }
 
-        private void ButtonConsoleRename_Click(object sender, EventArgs e)
+        private async void ButtonConsoleRename_Click(object sender, EventArgs e)
         {
             string type = GridViewFileManagerConsoleFiles.GetFocusedRowCellDisplayText(GridViewFileManagerConsoleFiles.Columns[0]);
 
@@ -4301,7 +4301,7 @@ namespace ArisenStudio.Forms.Windows
                     break;
 
                 case "file":
-                    RenameConsoleFile();
+                    await RenameConsoleFile();
                     break;
             }
         }
@@ -5426,11 +5426,15 @@ namespace ArisenStudio.Forms.Windows
         {
             if (TextBoxSettingsPackagesInstallPathPS3.Text.IsNullOrEmpty() | TextBoxSettingsPackagesInstallPathPS3.Text.IsNullOrWhiteSpace())
             {
-                TextBoxSettingsPackagesInstallPathPS3.Text = Settings.PackageInstallPathPS3;
+                TextBoxSettingsPackagesInstallPathPS3.Text = Settings.PackageInstallPathPS3.EndsWith("/") 
+                    ? Settings.PackageInstallPathPS3
+                    : Settings.PackageInstallPathPS3 + "/";
                 return;
             }
 
-            Settings.PackageInstallPathPS3 = TextBoxSettingsPackagesInstallPathPS3.Text;
+            Settings.PackageInstallPathPS3 = TextBoxSettingsPackagesInstallPathPS3.Text.EndsWith("/")
+                ? TextBoxSettingsPackagesInstallPathPS3.Text
+                : TextBoxSettingsPackagesInstallPathPS3.Text + "/";
         }
 
         /* PlayStation 4 */
@@ -5439,11 +5443,15 @@ namespace ArisenStudio.Forms.Windows
         {
             if (TextBoxSettingsPackagesInstallPathPS4.Text.IsNullOrEmpty() | TextBoxSettingsPackagesInstallPathPS4.Text.IsNullOrWhiteSpace())
             {
-                TextBoxSettingsPackagesInstallPathPS4.Text = Settings.PackageInstallPathPS4;
+                TextBoxSettingsPackagesInstallPathPS4.Text = Settings.PackageInstallPathPS4.EndsWith("/")
+                    ? Settings.PackageInstallPathPS4
+                    : Settings.PackageInstallPathPS4 + "/";
                 return;
             }
 
-            Settings.PackageInstallPathPS4 = TextBoxSettingsPackagesInstallPathPS4.Text;
+            Settings.PackageInstallPathPS4 = TextBoxSettingsPackagesInstallPathPS4.Text.EndsWith("/")
+                ? TextBoxSettingsPackagesInstallPathPS4.Text
+                : TextBoxSettingsPackagesInstallPathPS4.Text + "/";
         }
 
         /* Xbox 360 */
@@ -5452,24 +5460,30 @@ namespace ArisenStudio.Forms.Windows
         {
             if (TextBoxSettingsLaunchIniFilePath.Text.IsNullOrEmpty() | TextBoxSettingsLaunchIniFilePath.Text.IsNullOrWhiteSpace())
             {
-                TextBoxSettingsLaunchIniFilePath.Text = Settings.LaunchIniFilePath.Replace(@"HDD:\", @"Hdd:\");
+                TextBoxSettingsLaunchIniFilePath.Text = Settings.LaunchIniFilePath.TrimStart('\\').Replace(@"HDD:\", @"Hdd:\");
                 return;
             }
 
-            Settings.LaunchIniFilePath = TextBoxSettingsLaunchIniFilePath.Text.Replace(@"HDD:\", @"Hdd:\");
-            TextBoxSettingsLaunchIniFilePath.Text = Settings.LaunchIniFilePath.Replace(@"HDD:\", @"Hdd:\");
+            Settings.LaunchIniFilePath = TextBoxSettingsLaunchIniFilePath.Text.TrimStart('\\').StartsWithInvariantCultureIgnoreCase(@"HDD")
+                ? TextBoxSettingsLaunchIniFilePath.Text.TrimStart('\\').Replace(TextBoxSettingsAuroraFolderPath.Text.Substring(0, 3) + @":\", @"Hdd:\")
+                : TextBoxSettingsLaunchIniFilePath.Text.TrimStart('\\').Replace(TextBoxSettingsAuroraFolderPath.Text.Substring(0, 3) + @":\", @"Hdd:\");
+
+            TextBoxSettingsLaunchIniFilePath.Text = Settings.LaunchIniFilePath.TrimStart('\\').Replace(@"HDD:\", @"Hdd:\");
         }
 
         private void TextBoxSettingsAuroraFolderPath_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
             if (TextBoxSettingsAuroraFolderPath.Text.IsNullOrEmpty() | TextBoxSettingsAuroraFolderPath.Text.IsNullOrWhiteSpace())
             {
-                TextBoxSettingsAuroraFolderPath.Text = Settings.AuroraFolderPath.Replace(@"HDD:\", @"Hdd:\");
+                TextBoxSettingsAuroraFolderPath.Text = Settings.AuroraFolderPath.TrimStart('\\').Replace(@"HDD:\", @"Hdd:\");
                 return;
             }
 
-            Settings.AuroraFolderPath = TextBoxSettingsAuroraFolderPath.Text.Replace(@"HDD:\", @"Hdd:\");
-            TextBoxSettingsAuroraFolderPath.Text = Settings.AuroraFolderPath.Replace(@"HDD:\", @"Hdd:\");
+            Settings.AuroraFolderPath = TextBoxSettingsAuroraFolderPath.Text.TrimStart('\\').StartsWithInvariantCultureIgnoreCase(@"HDD")
+                ? TextBoxSettingsAuroraFolderPath.Text.TrimStart('\\').Replace(TextBoxSettingsAuroraFolderPath.Text.Substring(0, 3) + @":\", @"Hdd:\")
+                : TextBoxSettingsAuroraFolderPath.Text.TrimStart('\\').Replace(TextBoxSettingsAuroraFolderPath.Text.Substring(0, 3) + @":\", @"Hdd:\");
+
+            TextBoxSettingsAuroraFolderPath.Text = Settings.AuroraFolderPath.TrimStart('\\').Replace(@"HDD:\", @"Hdd:\");
         }
 
         // Cache
@@ -9641,7 +9655,7 @@ namespace ArisenStudio.Forms.Windows
             //    ComboBoxTrainersFilterGame.Properties.Items.Add(game.Game);
             //}
 
-            foreach (TrainerGameData game in Database.TrainersX360.Library)
+            foreach (TrainerGameItemData game in Database.TrainersX360.Library)
             {
                 _ = ComboBoxTrainersFilterGame.Properties.Items.Add(Database.TitleIdsX360.GetTitleFromTitleId(game.TitleId));
 
@@ -9662,7 +9676,7 @@ namespace ArisenStudio.Forms.Windows
 
             DataTableTrainers.Rows.Clear();
 
-            foreach (TrainerGameData trainerGame in Database.TrainersX360.Library.FindAll(x =>
+            foreach (TrainerGameItemData trainerGame in Database.TrainersX360.Library.FindAll(x =>
             {
                 return Database.TitleIdsX360.GetTitleFromTitleId(x.TitleId).ContainsIgnoreCaseSymbols(FilterTrainersGame) && x.TitleId.ContainsIgnoreCaseSymbols(FilterTrainersTitleId)
                 && string.IsNullOrEmpty(FilterTrainersTitleId) ? true : x.TitleId.ContainsIgnoreCaseSymbols(FilterTrainersTitleId)

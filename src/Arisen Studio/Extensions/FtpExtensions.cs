@@ -161,9 +161,17 @@ namespace ArisenStudio.Extensions
         /// <param name="consolePath"> File to delete from console. </param>
         public static async Task<bool> DirectoryExistsAsync(string consolePath)
         {
-            AsyncFtpClient ftpClient = MainWindow.FtpClient;
-
-            return await ftpClient.DirectoryExists(consolePath);
+            try
+            {
+                AsyncFtpClient ftpClient = MainWindow.FtpClient;
+                bool exists = await ftpClient.DirectoryExists(consolePath);
+                return exists;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error checking directory {consolePath}: {ex.Message}");
+                return false;
+            }
         }
 
         /// <summary>

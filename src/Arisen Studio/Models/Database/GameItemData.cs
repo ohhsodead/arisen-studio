@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ArisenStudio.Database
+﻿namespace ArisenStudio.Models.Database
 {
     /// <summary>
     /// Get the downloads information.

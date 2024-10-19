@@ -141,7 +141,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
             using Pen pen = new(Color.Transparent, 0);
-            e.Graphics.DrawPath(pen, GraphicExtensions.GetRoundedRectanglePath(ClientRectangle, 6));
+            e.Graphics.DrawPath(pen, GraphicExtensions.GetRoundedRectanglePath(ClientRectangle, 4));
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
@@ -150,7 +150,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
             using Brush brush = new SolidBrush(BackColor);
-            e.Graphics.FillPath(brush, GraphicExtensions.GetRoundedRectanglePath(ClientRectangle, 6));
+            e.Graphics.FillPath(brush, GraphicExtensions.GetRoundedRectanglePath(ClientRectangle, 4));
         }
 
         private const int WmHscroll = 0x114;

@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.Serialization;
 
-namespace ArisenStudio.Database
+namespace ArisenStudio.Models.Database
 {
     // Get the downloads information.
     public class DownloadFiles

@@ -88,6 +88,30 @@ namespace ArisenStudio.Forms.Dialogs.Details
             e.Graphics.FillPath(brush, GraphicExtensions.GetRoundedRectanglePath(ClientRectangle, 4));
         }
 
+        private const int WmHscroll = 0x114;
+        private const int WmVscroll = 0x115;
+
+        protected override void WndProc(ref Message m)
+        {
+            if ((m.Msg == WmHscroll || m.Msg == WmVscroll)
+            && (((int)m.WParam & 0xFFFF) == 5))
+            {
+                // Change SB_THUMBTRACK to SB_THUMBPOSITION
+                m.WParam = (IntPtr)(((int)m.WParam & ~0xFFFF) | 4);
+            }
+            base.WndProc(ref m);
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;    // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
+        }
+
         protected override bool ProcessDialogKey(Keys keyData)
         {
             if (ModifierKeys == Keys.None && keyData == Keys.Escape)

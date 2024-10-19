@@ -1,5 +1,4 @@
-﻿using ArisenStudio.Models.Game_Updates;
-using System;
+﻿using System;
 using System.Drawing;
 using System.IO;
 using System.Net;
@@ -19,6 +18,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using Humanizer;
 using System.Threading;
+using ArisenStudio.Models.GameData.PS3;
 
 namespace ArisenStudio.Extensions
 {
@@ -89,11 +89,14 @@ namespace ArisenStudio.Extensions
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls13;
             ServicePointManager.ServerCertificateValidationCallback = (_, _, _, _) => true;
 
-            using WebClient webClient = new WebClient();
+            using WebClient webClient = new();
             var tcs = new TaskCompletionSource<bool>();
 
             // Register the cancellation token to cancel the download
             cancellationToken.Register(() => webClient.CancelAsync());
+
+            // Set label visible only when some download progress has been made
+            bool hasProgressStarted = false;
 
             webClient.DownloadProgressChanged += (sender, e) =>
             {
@@ -110,17 +113,29 @@ namespace ArisenStudio.Extensions
                 // Report progress to the progress bar
                 progress?.Report(e.ProgressPercentage);
 
-                // Update the label if provided
-                if (statusLabel != null)
+                // Safely update the label if provided and if it's not disposed
+                if (statusLabel != null && !statusLabel.IsDisposed && statusLabel.IsHandleCreated)
                 {
+                    if (!hasProgressStarted && e.ProgressPercentage > 0)
+                    {
+                        // Only make the label visible when download progress starts
+                        hasProgressStarted = true;
+                        if (statusLabel.InvokeRequired)
+                        {
+                            statusLabel.Invoke((MethodInvoker)(() => statusLabel.Visible = true));
+                        }
+                        else
+                        {
+                            statusLabel.Visible = true;
+                        }
+                    }
+
                     if (statusLabel.InvokeRequired)
                     {
-                        statusLabel.Invoke((MethodInvoker)(() => statusLabel.Visible = true));
                         statusLabel.Invoke((MethodInvoker)(() => statusLabel.Text = progressMessage));
                     }
                     else
                     {
-                        statusLabel.Visible = true;
                         statusLabel.Text = progressMessage;
                     }
                 }
@@ -144,16 +159,16 @@ namespace ArisenStudio.Extensions
                     tcs.SetException(e.Error);
                 }
 
-                // Update the label on completion
-                if (statusLabel != null)
+                // Safely hide or reset the label on completion if it's not disposed
+                if (statusLabel != null && !statusLabel.IsDisposed && statusLabel.IsHandleCreated)
                 {
                     if (statusLabel.InvokeRequired)
                     {
-                        statusLabel.Invoke((MethodInvoker)(() => statusLabel.Visible = true));
+                        statusLabel.Invoke((MethodInvoker)(() => statusLabel.Visible = false));
                     }
                     else
                     {
-                        statusLabel.Visible = true;
+                        statusLabel.Visible = false;
                     }
                 }
             };
@@ -171,7 +186,7 @@ namespace ArisenStudio.Extensions
             catch (Exception ex)
             {
                 // Handle other exceptions
-                throw new Exception("Download failed", ex);
+                throw new Exception("There was an issue trying to downloading the file. Error: " + ex.Message, ex);
             }
         }
 

@@ -853,6 +853,7 @@ namespace ArisenStudio.Forms.Dialogs
                                         return;
                                     }
                                 }
+
                                 string gameRegion = string.Empty;
                                 if (downloadFiles.RequiresGameRegion)
                                 {
