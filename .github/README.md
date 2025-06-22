@@ -171,6 +171,13 @@ I know that not all mods aren't on our database, but if you [submit this form](h
 
 [![Termius Open Source](sponsors/termius/termius-logo-white.svg)](https://termius.com/)
 
+<a href="https://termius.com/opensource" target="_blank">
+  <picture>
+    <source srcset=".github/sponsors/termius/termius-light.svg" media="(prefers-color-scheme: dark)">
+    <img src=".github/sponsors/termius/termius-logo.svg" alt="Termius Open Source">
+  </picture>
+</a>
+
 ## Supporters
 
 [![Stargazers repo roster for @ohhsodead/arisen-studio](https://bytecrank.com/nastyox/reporoster/php/stargazersSVG.php?user=ohhsodead&repo=arisen-studio)](https://github.com/ohhsodead/arisen-studio/stargazers)
