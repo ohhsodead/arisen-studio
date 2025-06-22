@@ -169,7 +169,7 @@ I know that not all mods aren't on our database, but if you [submit this form](h
 
 ## Sponsors
 
-[![Termius Open Source](.github/sponsors/termius/termius-logo-white.svg)](https://termius.com/)
+[![Termius Open Source](sponsors/termius/termius-logo-white.svg)](https://termius.com/)
 
 ## Supporters
 
