@@ -169,13 +169,12 @@ I know that not all mods aren't on our database, but if you [submit this form](h
 
 ## Sponsors
 
-[![Termius Open Source](sponsors/termius/termius-logo-white.svg)](https://termius.com/)
-
-<a href="https://termius.com/opensource" target="_blank">
-  <picture>
-    <source srcset=".github/sponsors/termius/termius-light.svg" media="(prefers-color-scheme: dark)">
-    <img src=".github/sponsors/termius/termius-logo.svg" alt="Termius Open Source">
-  </picture>
+<p>
+  <strong>Termius</strong> provides a secure, reliable, and collaborative SSH client.<br>
+  Thanks to Termius for supporting our open-source work.
+</p>
+<a href="https://termius.com">
+  <img src="https://raw.githubusercontent.com/ohhsodead/arisen-studio/refs/heads/main/.github/sponsors/termius/termius-logo-light.svg" alt="Termius" height="75">
 </a>
 
 ## Supporters
