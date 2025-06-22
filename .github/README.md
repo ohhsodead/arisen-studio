@@ -167,6 +167,10 @@ I know that not all mods aren't on our database, but if you [submit this form](h
 * [WTFj](https://crowdin.com/profile/WTFj)
 * [Crowdin Team](https://crowdin.com/project/arisenstudio/members)
 
+## Sponsors
+
+[![Termius Open Source](.github/sponsors/termius/termius-logo-white.svg)](https://termius.com/)
+
 ## Supporters
 
 [![Stargazers repo roster for @ohhsodead/arisen-studio](https://bytecrank.com/nastyox/reporoster/php/stargazersSVG.php?user=ohhsodead&repo=arisen-studio)](https://github.com/ohhsodead/arisen-studio/stargazers)
