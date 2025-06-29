@@ -187,4 +187,4 @@ I can accept no responsibility for any damage you cause to your system by using 
 
 ## License
 
-This project is released under the MIT License.
+This project is licensed under AGPL-3.0 to ensure that all modifications and commercial uses must remain open-source. It **may not** be used in any proprietary or closed-source application, including SaaS platforms or commercial forks, without releasing full source code under AGPL-3.0.
