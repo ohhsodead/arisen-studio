@@ -36,7 +36,7 @@ The elegant, powerful, and open-source mod manager. Arisen Studio allows you to 
 
 **Comments, ideas, suggestions?**
 
-<a href="https://discord.gg/FTCS3Xu"><img src="https://arisen.studio/images/discord_banner_purple.svg" /></a>
+<a href="https://discord.gg/FTCS3Xu"><img src="https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/assets/discord_banner_purple.svg?raw=true" /></a>
 
 Please give this project a ⭐ if you find it useful.
 
