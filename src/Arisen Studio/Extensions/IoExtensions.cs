@@ -1,18 +1,17 @@
 ﻿using System.IO;
 using System;
+using ArisenStudio.Io;
 
 namespace ArisenStudio.Extensions
 {
     internal static class IoExtensions
     {
-        public static string GetFullPath(this string appData, string path, string platform = "", string category = "")
+        public static string GetFullPath(this string appData, string platform = "", string category = "")
         {
-            return appData.Contains("%APPDATA%")
-                ? appData
-                .Replace("%APPDATA%", path)
+            return appData
+                .Replace("%APPDATA%", UserFolders.AppData)
                 .Replace("%PLATFORM%", platform)
-                .Replace("%CATEGORY%", category)
-                : appData;
+                .Replace("%CATEGORY%", category);
         }
 
         /// <summary>

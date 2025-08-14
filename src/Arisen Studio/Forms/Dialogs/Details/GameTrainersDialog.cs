@@ -8,12 +8,11 @@ using System;
 using System.Data;
 using System.Linq;
 using System.Resources;
-using System.Text;
 using System.Windows.Forms;
 using ArisenStudio.Models.Resources;
 using System.Drawing;
 using Humanizer;
-using DevExpress.XtraCharts.Native;
+using ArisenStudio.Models.Database;
 
 namespace ArisenStudio.Forms.Dialogs.Details
 {
@@ -32,7 +31,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
 
         public ConsoleProfile ConsoleProfile = MainWindow.ConsoleProfile;
 
-        public TrainerGameData TrainerGameData = null;
+        public TrainerGameItem TrainerGameData = null;
 
         public TrainerItem SelectedTrainerItem = null;
 

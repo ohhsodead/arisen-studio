@@ -7,7 +7,6 @@ using ArisenStudio.Extensions;
 using ArisenStudio.Forms.Windows;
 using ArisenStudio.Models.Resources;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
@@ -67,7 +66,7 @@ namespace ArisenStudio.Forms.Tools.PS3
 
                 SetStatus(Language.GetString("LABEL_SEARCHING"));
 
-                Titlepatch gameUpdates = HttpExtensions.GetGameUpdatesFromTitleId(TextBoxTitleID.Text);
+                TitlePatch gameUpdates = HttpExtensions.GetGameUpdatesFromTitleId(TextBoxTitleID.Text);
 
                 if (gameUpdates == null)
                 {

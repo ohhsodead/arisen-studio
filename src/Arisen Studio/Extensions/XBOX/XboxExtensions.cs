@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using ArisenStudio.Forms.Windows;
 using ArisenStudio.Models.Resources;
-using DevExpress.XtraCharts.Native;
 using DevExpress.XtraEditors;
 using JRPC_Client;
 using XDevkit;

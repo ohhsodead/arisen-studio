@@ -1,21 +1,14 @@
-﻿using DevExpress.Utils;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using Humanizer;
-using ArisenStudio.Database;
 using ArisenStudio.Extensions;
 using ArisenStudio.Forms.Windows;
 using ArisenStudio.Models.Database;
 using ArisenStudio.Models.Resources;
 using System;
-using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Resources;
 using System.Windows.Forms;
-using System.Windows;
-using DevExpress.LookAndFeel;
-using DevExpress.Utils.Drawing;
-using DevExpress.Utils.Svg;
 
 namespace ArisenStudio.Controls
 {

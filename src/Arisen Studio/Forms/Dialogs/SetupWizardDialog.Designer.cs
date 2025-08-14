@@ -67,12 +67,14 @@
             this.WizardControlMain.Controls.Add(this.WizardPageConsoleProfiles);
             this.WizardControlMain.Controls.Add(this.WizardPageComplete);
             this.WizardControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WizardControlMain.ImageOptions.ImageWidth = 204;
+            this.WizardControlMain.MinimumSize = new System.Drawing.Size(110, 110);
             this.WizardControlMain.Name = "WizardControlMain";
             this.WizardControlMain.Pages.AddRange(new DevExpress.XtraWizard.BaseWizardPage[] {
             this.WizardPageWelcome,
             this.WizardPageConsoleProfiles,
             this.WizardPageComplete});
-            this.WizardControlMain.Size = new System.Drawing.Size(692, 506);
+            this.WizardControlMain.Size = new System.Drawing.Size(764, 588);
             this.WizardControlMain.Text = "Arisen Studio";
             this.WizardControlMain.UseCancelButton = false;
             this.WizardControlMain.WizardStyle = DevExpress.XtraWizard.WizardStyle.WizardAero;
@@ -84,7 +86,7 @@
             this.WizardPageWelcome.Controls.Add(this.LabelAbout);
             this.WizardPageWelcome.Controls.Add(this.TabControlChangeLog);
             this.WizardPageWelcome.Name = "WizardPageWelcome";
-            this.WizardPageWelcome.Size = new System.Drawing.Size(632, 339);
+            this.WizardPageWelcome.Size = new System.Drawing.Size(698, 401);
             this.WizardPageWelcome.Text = "Welcome to Arisen Studio";
             // 
             // LabelAbout
@@ -103,19 +105,20 @@
             this.LabelAbout.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelAbout.Location = new System.Drawing.Point(0, 0);
             this.LabelAbout.Name = "LabelAbout";
-            this.LabelAbout.Size = new System.Drawing.Size(277, 303);
+            this.LabelAbout.Size = new System.Drawing.Size(306, 362);
             this.LabelAbout.TabIndex = 1173;
             this.LabelAbout.Text = resources.GetString("LabelAbout.Text");
             // 
             // TabControlChangeLog
             // 
             this.TabControlChangeLog.Dock = System.Windows.Forms.DockStyle.Right;
+            this.TabControlChangeLog.HeaderButtons = ((DevExpress.XtraTab.TabButtons)((DevExpress.XtraTab.TabButtons.Prev | DevExpress.XtraTab.TabButtons.Close)));
             this.TabControlChangeLog.HeaderButtonsShowMode = DevExpress.XtraTab.TabButtonShowMode.Never;
-            this.TabControlChangeLog.Location = new System.Drawing.Point(329, 0);
+            this.TabControlChangeLog.Location = new System.Drawing.Point(363, 0);
             this.TabControlChangeLog.Name = "TabControlChangeLog";
             this.TabControlChangeLog.SelectedTabPage = this.TabPageChangeLog;
             this.TabControlChangeLog.ShowHeaderFocus = DevExpress.Utils.DefaultBoolean.False;
-            this.TabControlChangeLog.Size = new System.Drawing.Size(303, 339);
+            this.TabControlChangeLog.Size = new System.Drawing.Size(335, 401);
             this.TabControlChangeLog.TabIndex = 1172;
             this.TabControlChangeLog.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabPageChangeLog});
@@ -124,7 +127,7 @@
             // 
             this.TabPageChangeLog.Controls.Add(this.PanelChangeLog);
             this.TabPageChangeLog.Name = "TabPageChangeLog";
-            this.TabPageChangeLog.Size = new System.Drawing.Size(301, 315);
+            this.TabPageChangeLog.Size = new System.Drawing.Size(333, 375);
             this.TabPageChangeLog.Text = "Change Log";
             // 
             // PanelChangeLog
@@ -136,9 +139,11 @@
             this.PanelChangeLog.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelChangeLog.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.PanelChangeLog.Location = new System.Drawing.Point(0, 0);
+            this.PanelChangeLog.MaximumSize = new System.Drawing.Size(333, 375);
+            this.PanelChangeLog.MinimumSize = new System.Drawing.Size(333, 375);
             this.PanelChangeLog.Name = "PanelChangeLog";
             this.PanelChangeLog.Padding = new System.Windows.Forms.Padding(2);
-            this.PanelChangeLog.Size = new System.Drawing.Size(301, 315);
+            this.PanelChangeLog.Size = new System.Drawing.Size(333, 375);
             this.PanelChangeLog.TabIndex = 2;
             // 
             // LabelChangeLogVersion
@@ -151,7 +156,7 @@
             this.LabelChangeLogVersion.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Horizontal;
             this.LabelChangeLogVersion.Location = new System.Drawing.Point(5, 5);
             this.LabelChangeLogVersion.Name = "LabelChangeLogVersion";
-            this.LabelChangeLogVersion.Size = new System.Drawing.Size(264, 18);
+            this.LabelChangeLogVersion.Size = new System.Drawing.Size(292, 20);
             this.LabelChangeLogVersion.TabIndex = 1168;
             this.LabelChangeLogVersion.Text = "Title";
             // 
@@ -160,12 +165,12 @@
             this.LabelChangeLog.AllowHtmlString = true;
             this.LabelChangeLog.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.LabelChangeLog.Appearance.Options.UseFont = true;
-            this.LabelChangeLog.Appearance.Options.UseTextOptions = true;
-            this.LabelChangeLog.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.LabelChangeLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LabelChangeLog.Location = new System.Drawing.Point(5, 29);
+            this.LabelChangeLog.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.LabelChangeLog.Location = new System.Drawing.Point(5, 31);
+            this.LabelChangeLog.MaximumSize = new System.Drawing.Size(310, 0);
+            this.LabelChangeLog.MinimumSize = new System.Drawing.Size(310, 0);
             this.LabelChangeLog.Name = "LabelChangeLog";
-            this.LabelChangeLog.Size = new System.Drawing.Size(27, 15);
+            this.LabelChangeLog.Size = new System.Drawing.Size(310, 19);
             this.LabelChangeLog.TabIndex = 1169;
             this.LabelChangeLog.Text = "Body";
             // 
@@ -176,7 +181,7 @@
             this.WizardPageConsoleProfiles.Controls.Add(this.PanelConsoleProfiles);
             this.WizardPageConsoleProfiles.Controls.Add(this.PanelButtons);
             this.WizardPageConsoleProfiles.Name = "WizardPageConsoleProfiles";
-            this.WizardPageConsoleProfiles.Size = new System.Drawing.Size(632, 339);
+            this.WizardPageConsoleProfiles.Size = new System.Drawing.Size(698, 401);
             this.WizardPageConsoleProfiles.Text = "Console Profiles";
             // 
             // NoConsoleProfiles
@@ -185,10 +190,10 @@
             this.NoConsoleProfiles.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.NoConsoleProfiles.Appearance.Options.UseBackColor = true;
             this.NoConsoleProfiles.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.NoConsoleProfiles.Location = new System.Drawing.Point(79, 46);
-            this.NoConsoleProfiles.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.NoConsoleProfiles.Location = new System.Drawing.Point(135, 64);
+            this.NoConsoleProfiles.Margin = new System.Windows.Forms.Padding(0, 0, 0, 11);
             this.NoConsoleProfiles.Name = "NoConsoleProfiles";
-            this.NoConsoleProfiles.Size = new System.Drawing.Size(428, 184);
+            this.NoConsoleProfiles.Size = new System.Drawing.Size(428, 203);
             this.NoConsoleProfiles.TabIndex = 16;
             this.NoConsoleProfiles.TabStop = false;
             this.NoConsoleProfiles.Visible = false;
@@ -197,9 +202,9 @@
             // 
             this.ScrollBarConsoleProfiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ScrollBarConsoleProfiles.Location = new System.Drawing.Point(615, 0);
+            this.ScrollBarConsoleProfiles.Location = new System.Drawing.Point(679, 0);
             this.ScrollBarConsoleProfiles.Name = "ScrollBarConsoleProfiles";
-            this.ScrollBarConsoleProfiles.Size = new System.Drawing.Size(17, 307);
+            this.ScrollBarConsoleProfiles.Size = new System.Drawing.Size(19, 366);
             this.ScrollBarConsoleProfiles.TabIndex = 15;
             this.ScrollBarConsoleProfiles.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ScrollBarConsoleProfiles_Scroll);
             // 
@@ -208,7 +213,7 @@
             this.PanelConsoleProfiles.AutoScroll = true;
             this.PanelConsoleProfiles.Location = new System.Drawing.Point(0, 0);
             this.PanelConsoleProfiles.Name = "PanelConsoleProfiles";
-            this.PanelConsoleProfiles.Size = new System.Drawing.Size(632, 307);
+            this.PanelConsoleProfiles.Size = new System.Drawing.Size(698, 339);
             this.PanelConsoleProfiles.TabIndex = 14;
             this.PanelConsoleProfiles.Scroll += new System.Windows.Forms.ScrollEventHandler(this.PanelConsoleProfiles_Scroll);
             this.PanelConsoleProfiles.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.PanelConsoleProfiles_ControlAddedOrRemoved);
@@ -222,9 +227,9 @@
             this.PanelButtons.Controls.Add(this.ButtonAddNewProfile);
             this.PanelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelButtons.LayoutDirection = DevExpress.Utils.Layout.StackPanelLayoutDirection.RightToLeft;
-            this.PanelButtons.Location = new System.Drawing.Point(0, 313);
+            this.PanelButtons.Location = new System.Drawing.Point(0, 372);
             this.PanelButtons.Name = "PanelButtons";
-            this.PanelButtons.Size = new System.Drawing.Size(632, 26);
+            this.PanelButtons.Size = new System.Drawing.Size(698, 29);
             this.PanelButtons.TabIndex = 13;
             // 
             // ButtonDeleteProfile
@@ -239,11 +244,11 @@
             this.ButtonDeleteProfile.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.ButtonDeleteProfile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonDeleteProfile.ImageOptions.SvgImage")));
             this.ButtonDeleteProfile.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
-            this.ButtonDeleteProfile.Location = new System.Drawing.Point(510, 0);
+            this.ButtonDeleteProfile.Location = new System.Drawing.Point(563, 0);
             this.ButtonDeleteProfile.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.ButtonDeleteProfile.Name = "ButtonDeleteProfile";
             this.ButtonDeleteProfile.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonDeleteProfile.Size = new System.Drawing.Size(122, 26);
+            this.ButtonDeleteProfile.Size = new System.Drawing.Size(135, 29);
             this.ButtonDeleteProfile.TabIndex = 2;
             this.ButtonDeleteProfile.Text = "Delete Console";
             this.ButtonDeleteProfile.Click += new System.EventHandler(this.ButtonDeleteProfile_Click);
@@ -261,10 +266,10 @@
             this.ButtonEditProfile.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.ButtonEditProfile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonEditProfile.ImageOptions.SvgImage")));
             this.ButtonEditProfile.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonEditProfile.Location = new System.Drawing.Point(394, 0);
+            this.ButtonEditProfile.Location = new System.Drawing.Point(436, 0);
             this.ButtonEditProfile.Name = "ButtonEditProfile";
             this.ButtonEditProfile.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonEditProfile.Size = new System.Drawing.Size(110, 26);
+            this.ButtonEditProfile.Size = new System.Drawing.Size(121, 29);
             this.ButtonEditProfile.TabIndex = 1;
             this.ButtonEditProfile.Text = "Edit Console";
             this.ButtonEditProfile.Click += new System.EventHandler(this.ButtonEditProfile_Click);
@@ -287,10 +292,10 @@
             this.ButtonFindConsoles.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.ButtonFindConsoles.ImageOptions.SvgImage = global::ArisenStudio.Properties.Resources.icons8_advanced_search;
             this.ButtonFindConsoles.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonFindConsoles.Location = new System.Drawing.Point(274, 0);
+            this.ButtonFindConsoles.Location = new System.Drawing.Point(304, 0);
             this.ButtonFindConsoles.Name = "ButtonFindConsoles";
             this.ButtonFindConsoles.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonFindConsoles.Size = new System.Drawing.Size(114, 26);
+            this.ButtonFindConsoles.Size = new System.Drawing.Size(126, 29);
             this.ButtonFindConsoles.TabIndex = 13;
             this.ButtonFindConsoles.Text = "Find Consoles";
             this.ButtonFindConsoles.Click += new System.EventHandler(this.ButtonFindConsoles_Click);
@@ -314,10 +319,10 @@
             this.ButtonAddNewProfile.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.ButtonAddNewProfile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ButtonAddNewProfile.ImageOptions.SvgImage")));
             this.ButtonAddNewProfile.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonAddNewProfile.Location = new System.Drawing.Point(134, 0);
+            this.ButtonAddNewProfile.Location = new System.Drawing.Point(150, 0);
             this.ButtonAddNewProfile.Name = "ButtonAddNewProfile";
             this.ButtonAddNewProfile.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.ButtonAddNewProfile.Size = new System.Drawing.Size(134, 26);
+            this.ButtonAddNewProfile.Size = new System.Drawing.Size(148, 29);
             this.ButtonAddNewProfile.TabIndex = 12;
             this.ButtonAddNewProfile.Text = "Add New Console";
             this.ButtonAddNewProfile.Click += new System.EventHandler(this.ButtonAddNewProfile_Click);
@@ -326,7 +331,7 @@
             // 
             this.WizardPageComplete.Controls.Add(this.Label);
             this.WizardPageComplete.Name = "WizardPageComplete";
-            this.WizardPageComplete.Size = new System.Drawing.Size(632, 339);
+            this.WizardPageComplete.Size = new System.Drawing.Size(698, 401);
             this.WizardPageComplete.Text = "You\'ve Finished Setup!";
             // 
             // Label
@@ -343,18 +348,19 @@
             this.Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Label.Location = new System.Drawing.Point(0, 0);
             this.Label.Name = "Label";
-            this.Label.Size = new System.Drawing.Size(632, 339);
+            this.Label.Size = new System.Drawing.Size(698, 401);
             this.Label.TabIndex = 1174;
             this.Label.Text = resources.GetString("Label.Text");
             // 
             // SetupWizardDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(106F, 106F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(692, 506);
+            this.ClientSize = new System.Drawing.Size(764, 588);
             this.ControlBox = false;
             this.Controls.Add(this.WizardControlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("SetupWizardDialog.IconOptions.Icon")));
             this.IconOptions.Image = global::ArisenStudio.Properties.Resources.arisenstudio;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -372,7 +378,6 @@
             this.TabControlChangeLog.ResumeLayout(false);
             this.TabPageChangeLog.ResumeLayout(false);
             this.PanelChangeLog.ResumeLayout(false);
-            this.PanelChangeLog.PerformLayout();
             this.WizardPageConsoleProfiles.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PanelButtons)).EndInit();
             this.PanelButtons.ResumeLayout(false);

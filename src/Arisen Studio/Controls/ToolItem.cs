@@ -1,6 +1,5 @@
 ﻿using DevExpress.XtraEditors;
 using ArisenStudio.Forms.Windows;
-using ArisenStudio.Models.Resources;
 using System;
 using System.Drawing;
 using System.Windows.Forms;

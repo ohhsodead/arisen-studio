@@ -3,7 +3,6 @@ using ArisenStudio.Forms.Windows;
 using ArisenStudio.Models.Resources;
 using System;
 using System.Resources;
-using XDevkit;
 using ArisenStudio.Extensions;
 using System.IO;
 using System.Windows.Forms;
@@ -11,9 +10,7 @@ using System.Drawing;
 using Imgur.API.Authentication;
 using System.Windows.Media.Imaging;
 using System.Diagnostics;
-using PS3Lib;
 using FluentFTP;
-using DevExpress.XtraRichEdit.Model;
 
 namespace ArisenStudio.Forms.Tools.PS3
 {
@@ -71,9 +68,7 @@ namespace ArisenStudio.Forms.Tools.PS3
                 string consolePath = $"/dev_hdd0/dev_hdd0/tmp/screenshots/";
                 string consolePathUrl = $"http://{Profile.Address}{consolePath}{fileName}.bmp";
 
-                WebManExtensions.Screenshot(Profile.Address, consolePath + fileName + ".bmp");
-
-                //HttpExtensions.DownloadFile($"http://{ip}{consoleFilePath}", localFilePath);
+                await WebManExtensions.ScreenshotAsync(Profile.Address, consolePath + fileName + ".bmp");
 
                 if (await FtpExtensions.FileExistsAsync($"http://{Profile.Address}{consolePath}{fileName}.bmp"))
                 {

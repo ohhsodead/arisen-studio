@@ -14,7 +14,6 @@ using System.Resources;
 using System.Text;
 using System.Windows.Forms;
 using ScrollOrientation = DevExpress.XtraEditors.ScrollOrientation;
-using ArisenStudio.Database;
 using System.Drawing;
 
 namespace ArisenStudio.Forms.Dialogs.Details

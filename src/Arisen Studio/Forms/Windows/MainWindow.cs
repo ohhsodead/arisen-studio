@@ -46,16 +46,10 @@ using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraBars.Ribbon.ViewInfo;
 using JRPC_Client;
 using FluentFTP.Exceptions;
-using Microsoft.Web.WebView2.WinForms;
 using Microsoft.Web.WebView2.Core;
 using DevExpress.XtraCharts;
 using DevExpress.XtraEditors.Controls;
 using System.Net.Http;
-using Microsoft.Web.WebView2.Wpf;
-using AdsJumboWinForm;
-using DevExpress.XtraRichEdit.API.Layout;
-using DevExpress.Utils.CodedUISupport;
-using DevExpress.Utils.About;
 
 namespace ArisenStudio.Forms.Windows
 {
@@ -1774,7 +1768,7 @@ namespace ArisenStudio.Forms.Windows
                     WebViewCurrentPoll.CoreWebView2.NavigateToString(Properties.Resources.PollLink);
                 }
 
-                //Credits：https://blog.jussipalo.com/2021/02/webview2-how-to-hide-scrollbars.html
+                // Credits：https://blog.jussipalo.com/2021/02/webview2-how-to-hide-scrollbars.html
                 _ = WebViewCurrentPoll.ExecuteScriptAsync("document.querySelector('body').style.overflow='scroll';var style=document.createElement('style');style.type='text/css';style.innerHTML='::-webkit-scrollbar{display:none}';document.getElementsByTagName('body')[0].appendChild(style)");
             }
             else
@@ -2011,7 +2005,7 @@ namespace ArisenStudio.Forms.Windows
 
         private void TileItemDownloadsOpenFolder_ItemClick(object sender, TileItemEventArgs e)
         {
-            _ = Process.Start(Settings.PathDownloads);
+            _ = Process.Start(Settings.PathDownloads.GetFullPath());
         }
 
         private void TileItemDownloadsOpenFile_ItemClick(object sender, TileItemEventArgs e)
@@ -2223,7 +2217,7 @@ namespace ArisenStudio.Forms.Windows
 
         private void LoadDownloadsCategories()
         {
-            foreach (Category category in Database.CategoriesData.Categories.OrderBy(x => x.Title))
+            foreach (CategoryItem category in Database.CategoriesData.Categories.OrderBy(x => x.Title))
             {
                 _ = ComboBoxDownloadsFilterCategory.Properties.Items.Add(category.Title);
             }
@@ -2242,7 +2236,7 @@ namespace ArisenStudio.Forms.Windows
 
             foreach (DownloadedItem downloadedItem in Settings.DownloadedMods)
             {
-                Category category = Database.CategoriesData.GetCategoryById(downloadedItem.CategoryId);
+                CategoryItem category = Database.CategoriesData.GetCategoryById(downloadedItem.CategoryId);
 
                 PackageItemData packageItemData = Database.GetPackage(downloadedItem.CategoryId, downloadedItem.Url);
 
@@ -2318,7 +2312,7 @@ namespace ArisenStudio.Forms.Windows
             x.DownloadFile.Name.ContainsIgnoreCase(FilterDownloadsFileName) &&
             x.CategoryId.ContainsIgnoreCase(FilterDownloadsCategoryId)))
             {
-                Category category = Database.CategoriesData.GetCategoryById(downloadedItem.CategoryId);
+                CategoryItem category = Database.CategoriesData.GetCategoryById(downloadedItem.CategoryId);
 
                 PackageItemData packageItemData = Database.GetPackage(downloadedItem.CategoryId, downloadedItem.Url);
                 ModItemData modItemData = Database.GetModItem(downloadedItem.Platform, Database.CategoriesData.GetCategoryById(downloadedItem.CategoryId).CategoryType, downloadedItem.ModId);
@@ -2773,7 +2767,7 @@ namespace ArisenStudio.Forms.Windows
 
         private void LoadInstalledModsCategories()
         {
-            foreach (Category category in Database.CategoriesData.Categories.OrderBy(x => x.Title))
+            foreach (CategoryItem category in Database.CategoriesData.Categories.OrderBy(x => x.Title))
             {
                 _ = ComboBoxInstalledFilesFilterCategory.Properties.Items.Add(category.Title);
             }
@@ -2818,7 +2812,7 @@ namespace ArisenStudio.Forms.Windows
                     {
                         CustomItemData customMod = Settings.GetCustomMod(installedModInfo.ModId);
 
-                        Category modCategory = Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId);
+                        CategoryItem modCategory = Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId);
 
                         _ = DataTableInstalledMods.Rows.Add(consoleProfile.Id,
                                                             "custom|" + customMod.Id.ToString(),
@@ -2835,7 +2829,7 @@ namespace ArisenStudio.Forms.Windows
                     {
                         ModItemData modItemData = Database.GetModItem(installedModInfo.Platform, Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId).CategoryType, installedModInfo.ModId);
 
-                        Category modCategory = Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId);
+                        CategoryItem modCategory = Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId);
 
                         _ = DataTableInstalledMods.Rows.Add(consoleProfile.Id,
                                                             modItemData.Id.ToString(),
@@ -2903,7 +2897,7 @@ namespace ArisenStudio.Forms.Windows
             {
                 foreach (InstalledModInfo installedModInfo in consoleProfile.InstalledMods.Where(x => x.CategoryId == FilterInstalledModsCategoryId)) //&& x.Name.ContainsIgnoreCaseSymbols(FilterInstalledModsName))
                 {
-                    Category category = Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId);
+                    CategoryItem category = Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId);
 
                     ModItemData modItemData = Database.GetModItem(installedModInfo.Platform, Database.CategoriesData.GetCategoryById(installedModInfo.CategoryId).CategoryType, installedModInfo.ModId);
 
@@ -3140,94 +3134,24 @@ namespace ArisenStudio.Forms.Windows
 
         private async void TimerLoadConsole_Tick(object sender, EventArgs e)
         {
-            TimerLoadConsole.Enabled = false;
-
-            SetConsoleStatus(ResourceLanguage.GetString("FETCHING_ROOT_DIRECTORIES"));
-
-            switch (Platform)
+            if (ConsoleProfile.Platform == Platform.PS3)
             {
-                case Platform.PS3:
+                string game = await WebManExtensions.GetGameAsync(ConsoleProfile.Address);
+
+                if (IsWebManInstalled)
+                {
+                    if (string.IsNullOrWhiteSpace(game))
                     {
-                        foreach (ListItem driveName in await FtpExtensions.GetFolderNamesAsync("/"))
-                        {
-                            _ = ComboBoxFileManagerConsoleDrives.Properties.Items.Add(driveName.Name.Replace(@"/", string.Empty));
-                        }
-
-                        break;
+                        game = "XMB Menu";
                     }
+                }
+                else
+                {
+                    game = "webMAN Required";
+                }
 
-                case Platform.XBOX360:
-                    {
-                        foreach (string drive in XboxConsole.Drives.Split(','))
-                        {
-                            bool isStartUppercase = char.IsUpper(drive.First());
-
-                            if (isStartUppercase)
-                            {
-                                _ = ComboBoxFileManagerConsoleDrives.Properties.Items.Add(drive.Transform(To.TitleCase));
-                            }
-                            else
-                            {
-                                _ = ComboBoxFileManagerConsoleDrives.Properties.Items.Add(drive);
-                            }
-                        }
-
-                        break;
-                    }
+                StatusLabelCurrentGame.Caption = game;
             }
-
-            SetConsoleStatus(ResourceLanguage.GetString("SUCCESS_ROOT_DIRECTORIES"));
-
-            switch (Settings.RememberLocalPath)
-            {
-                case true:
-                    switch (Platform)
-                    {
-                        case Platform.PS3:
-
-                            if (Settings.ConsolePathPS3.Equals("/") || Settings.ConsolePathPS3.IsNullOrWhiteSpace())
-                            {
-                                LoadConsoleDirectory("/" + ComboBoxFileManagerConsoleDrives.Properties.Items[0] + "/");
-                            }
-                            else
-                            {
-                                LoadConsoleDirectory(Settings.ConsolePathPS3);
-                            }
-
-                            break;
-
-                        case Platform.XBOX360:
-
-                            if (Settings.ConsolePathXbox.Equals(@"\") || Settings.ConsolePathXbox.IsNullOrWhiteSpace())
-                            {
-                                LoadConsoleDirectory(ComboBoxFileManagerConsoleDrives.Properties.Items[0] + @":\");
-                            }
-                            else
-                            {
-                                LoadConsoleDirectory(Settings.ConsolePathXbox);
-                            }
-
-                            break;
-                    }
-
-                    break;
-                case false:
-                    switch (Platform)
-                    {
-                        case Platform.PS3:
-
-                            LoadConsoleDirectory("/dev_hdd0/");
-                            break;
-
-                        case Platform.XBOX360:
-
-                            LoadConsoleDirectory(ComboBoxFileManagerConsoleDrives.Properties.Items[0] + @":\");
-                            break;
-                    }
-                    break;
-            }
-
-            TimerLoadConsole.Enabled = false;
         }
 
         private void EnableFileManager(bool enable)
@@ -3592,7 +3516,7 @@ namespace ArisenStudio.Forms.Windows
         {
             try
             {
-                _ = Process.Start("explorer.exe", TextBoxFileManagerLocalPath.Text);
+                _ = Process.Start(TextBoxFileManagerLocalPath.Text);
             }
             catch (Exception ex)
             {
@@ -5173,7 +5097,7 @@ namespace ArisenStudio.Forms.Windows
             catch { }
         }
 
-        public void SetPresence()
+        public async void SetPresence()
         {
             if (Settings.AlwaysShowPresence)
             {
@@ -5185,7 +5109,7 @@ namespace ArisenStudio.Forms.Windows
                         new()
                         {
                             Label = "Download Arisen Studio",
-                            Url = "https://github.com/ohhsodead/arisen-studio"
+                            Url = "https://github.com/OhhSoWzrd/arisen-studio"
                         },
                         new()
                         {
@@ -5211,7 +5135,7 @@ namespace ArisenStudio.Forms.Windows
                         {
                             if (IsWebManInstalled)
                             {
-                                game = WebManExtensions.GetGame(ConsoleProfile.Address);
+                                game = await WebManExtensions.GetGameAsync(ConsoleProfile.Address);
                             }
                         }
                         else
@@ -5240,7 +5164,7 @@ namespace ArisenStudio.Forms.Windows
                                 new()
                                 {
                                     Label = "Download Arisen Studio",
-                                    Url = "https://github.com/ohhsodead/arisen-studio"
+                                    Url = "https://github.com/OhhSoWzrd/arisen-studio"
                                 },
                                 new()
                                 {
@@ -5760,7 +5684,7 @@ namespace ArisenStudio.Forms.Windows
             ComboBoxCustomModsFilterVersion.Properties.Items.Clear();
             _ = ComboBoxCustomModsFilterVersion.Properties.Items.Add($"<{ResourceLanguage.GetString("ANY")}>");
 
-            foreach (Category category in Database.CategoriesData.Categories.OrderBy(x => x.Title))
+            foreach (CategoryItem category in Database.CategoriesData.Categories.OrderBy(x => x.Title))
             {
                 if (Settings.CustomMods.Any(x => x.Category.EqualsIgnoreCaseSymbols(category.Title)))
                 {
@@ -5808,11 +5732,11 @@ namespace ArisenStudio.Forms.Windows
         {
             GridViewCustomMods.ShowLoadingPanel();
 
-            Category category;
+            CategoryItem category;
 
             if (FilterCustomModsCategory.IsNullOrWhiteSpace())
             {
-                category = new Category()
+                category = new CategoryItem()
                 {
                     Id = string.Empty,
                     Regions = [],
@@ -6080,7 +6004,7 @@ namespace ArisenStudio.Forms.Windows
             else
             {
                 string selectedCategory = ComboBoxGameModsPS3FilterGame.SelectedItem as string;
-                Category category = Database.CategoriesData.GetCategoryByTitle(selectedCategory);
+                CategoryItem category = Database.CategoriesData.GetCategoryByTitle(selectedCategory);
                 FilterGameModsPS3CategoryId = category.Id;
             }
 
@@ -6158,7 +6082,7 @@ namespace ArisenStudio.Forms.Windows
             ComboBoxGameModsPS3FilterVersion.Properties.Items.Clear();
             _ = ComboBoxGameModsPS3FilterVersion.Properties.Items.Add($"<{ResourceLanguage.GetString("ANY")}>");
 
-            foreach (Category category in Database.CategoriesData.Categories.FindAll(x => CategoryType.Game == x.CategoryType).OrderBy(x => x.Title))
+            foreach (CategoryItem category in Database.CategoriesData.Categories.FindAll(x => CategoryType.Game == x.CategoryType).OrderBy(x => x.Title))
             {
                 if (Database.GameModsPS3.Library.Any(x => x.GetPlatform() == ConsoleProfile.Platform && x.CategoryId.Equals(category.Id)))
                 {
@@ -6215,11 +6139,11 @@ namespace ArisenStudio.Forms.Windows
         {
             GridViewGameModsPS3.ShowLoadingPanel();
 
-            Category category;
+            CategoryItem category;
 
             if (FilterGameModsPS3CategoryId.IsNullOrWhiteSpace())
             {
-                category = new Category()
+                category = new CategoryItem()
                 {
                     Id = string.Empty,
                     Regions = [],
@@ -6487,7 +6411,7 @@ namespace ArisenStudio.Forms.Windows
             else
             {
                 string selectedCategory = ComboBoxHomebrewFilterCategory.SelectedItem as string;
-                Category category = Database.CategoriesData.GetCategoryByTitle(selectedCategory);
+                CategoryItem category = Database.CategoriesData.GetCategoryByTitle(selectedCategory);
                 FilterHomebrewCategoryId = category.Id;
             }
 
@@ -6538,9 +6462,9 @@ namespace ArisenStudio.Forms.Windows
 
             _ = ComboBoxHomebrewFilterCategory.Properties.Items.Add($"<{ResourceLanguage.GetString("ALL_CATEGORIES")}>");
 
-            IEnumerable<Category> categories = Database.CategoriesData.Categories.FindAll(x => CategoryType.Homebrew == x.CategoryType).Distinct();
+            IEnumerable<CategoryItem> categories = Database.CategoriesData.Categories.FindAll(x => CategoryType.Homebrew == x.CategoryType).Distinct();
 
-            foreach (Category category in categories.OrderBy(x => x.Title))
+            foreach (CategoryItem category in categories.OrderBy(x => x.Title))
             {
                 if (Database.HomebrewPS3.Library.Any(x => x.GetPlatform() == ConsoleProfile.Platform && x.CategoryId.Equals(category.Id)))
                 {
@@ -6585,11 +6509,11 @@ namespace ArisenStudio.Forms.Windows
         {
             GridViewHomebrewPS3.ShowLoadingPanel();
 
-            Category category;
+            CategoryItem category;
 
             if (FilterHomebrewCategoryId.IsNullOrWhiteSpace())
             {
-                category = new Category()
+                category = new CategoryItem()
                 {
                     Id = string.Empty,
                     Regions = [],
@@ -6836,7 +6760,7 @@ namespace ArisenStudio.Forms.Windows
             else
             {
                 string selectedCategory = ComboBoxResourcesFilterCategory.SelectedItem as string;
-                Category category = Database.CategoriesData.GetCategoryByTitle(selectedCategory);
+                CategoryItem category = Database.CategoriesData.GetCategoryByTitle(selectedCategory);
                 FilterResourcesCategoryId = category.Id;
             }
 
@@ -6896,7 +6820,7 @@ namespace ArisenStudio.Forms.Windows
 
             _ = ComboBoxResourcesFilterCategory.Properties.Items.Add($"<{ResourceLanguage.GetString("ALL_CATEGORIES")}>");
 
-            foreach (Category category in Database.CategoriesData.Categories.FindAll(x => CategoryType.Resource == x.CategoryType).OrderBy(x => x.Title))
+            foreach (CategoryItem category in Database.CategoriesData.Categories.FindAll(x => CategoryType.Resource == x.CategoryType).OrderBy(x => x.Title))
             {
                 _ = ComboBoxResourcesFilterCategory.Properties.Items.Add(category.Title);
             }
@@ -6947,11 +6871,11 @@ namespace ArisenStudio.Forms.Windows
         {
             GridViewResources.ShowLoadingPanel();
 
-            Category category;
+            CategoryItem category;
 
             if (FilterResourcesCategoryId.IsNullOrWhiteSpace())
             {
-                category = new Category()
+                category = new CategoryItem()
                 {
                     Id = string.Empty,
                     Regions = [],
@@ -7617,13 +7541,13 @@ namespace ArisenStudio.Forms.Windows
                     {
                         tempRows.Add(new object[]
                         {
-                    package.Url,
-                    package.Category,
-                    package.Name,
-                    package.TitleId,
-                    package.IsDateMissing ? ResourceLanguage.GetString("MISSING") : Settings.UseRelativeTimes ? DateTime.Parse(package.ModifiedDate).Humanize() : DateTime.Parse(package.ModifiedDate).ToString("MM/dd/yyyy"),
-                    package.IsSizeMissing ? ResourceLanguage.GetString("MISSING") : Settings.UseFormattedFileSizes ? long.Parse(package.Size).Bytes().Humanize("#.##") : package.Size + " " + ResourceLanguage.GetString("LABEL_BYTES"),
-                    isInstalled ? ResourceLanguage.GetString("LABEL_INSTALLED") : ResourceLanguage.GetString("LABEL_NOT_INSTALLED")
+                            package.Url,
+                            package.Category,
+                            package.Name,
+                            package.TitleId,
+                            package.IsDateMissing ? ResourceLanguage.GetString("MISSING") : Settings.UseRelativeTimes ? DateTime.Parse(package.ModifiedDate).Humanize() : DateTime.Parse(package.ModifiedDate).ToString("MM/dd/yyyy"),
+                            package.IsSizeMissing ? ResourceLanguage.GetString("MISSING") : Settings.UseFormattedFileSizes ? long.Parse(package.Size).Bytes().Humanize("#.##") : package.Size + " " + ResourceLanguage.GetString("LABEL_BYTES"),
+                            isInstalled ? ResourceLanguage.GetString("LABEL_INSTALLED") : ResourceLanguage.GetString("LABEL_NOT_INSTALLED")
                         });
                     }
                 }
@@ -7812,7 +7736,7 @@ namespace ArisenStudio.Forms.Windows
             else
             {
                 string selectedCategory = ComboBoxGameModsXboxFilterGame.SelectedItem as string;
-                Category category = Database.CategoriesData.GetCategoryByTitle(selectedCategory);
+                CategoryItem category = Database.CategoriesData.GetCategoryByTitle(selectedCategory);
                 FilterGameModsXboxCategoryId = category.Id;
             }
 
@@ -7873,7 +7797,7 @@ namespace ArisenStudio.Forms.Windows
             ComboBoxGameModsXboxFilterVersion.Properties.Items.Clear();
             _ = ComboBoxGameModsXboxFilterVersion.Properties.Items.Add($"<{ResourceLanguage.GetString("ANY")}>");
 
-            foreach (Category category in Database.CategoriesData.Categories.FindAll(x => CategoryType.Game == x.CategoryType).OrderBy(x => x.Title))
+            foreach (CategoryItem category in Database.CategoriesData.Categories.FindAll(x => CategoryType.Game == x.CategoryType).OrderBy(x => x.Title))
             {
                 if (Database.GameModsX360.Library.Any(x => x.GetPlatform() == ConsoleProfile.Platform && x.CategoryId.Equals(category.Id)))
                 {
@@ -7925,7 +7849,7 @@ namespace ArisenStudio.Forms.Windows
                     continue;
                 }
 
-                Category category = Database.CategoriesData.GetCategoryById(modItemData.CategoryId);
+                CategoryItem category = Database.CategoriesData.GetCategoryById(modItemData.CategoryId);
 
                 _ = DataTableGameModsXbox.Rows.Add(modItemData.Id,
                                           category.Title,
@@ -8087,7 +8011,7 @@ namespace ArisenStudio.Forms.Windows
             else
             {
                 string selectedCategory = ComboBoxHomebrewXboxFilterCategory.SelectedItem as string;
-                Category category = Database.CategoriesData.GetCategoryByTitle(selectedCategory);
+                CategoryItem category = Database.CategoriesData.GetCategoryByTitle(selectedCategory);
                 FilterHomebrewXboxCategoryId = category.Id;
             }
 
@@ -8148,7 +8072,7 @@ namespace ArisenStudio.Forms.Windows
             ComboBoxHomebrewXboxFilterVersion.Properties.Items.Clear();
             _ = ComboBoxHomebrewXboxFilterVersion.Properties.Items.Add($"<{ResourceLanguage.GetString("ANY")}>");
 
-            foreach (Category category in Database.CategoriesData.Categories.FindAll(x => CategoryType.Game == x.CategoryType).OrderBy(x => x.Title))
+            foreach (CategoryItem category in Database.CategoriesData.Categories.FindAll(x => CategoryType.Game == x.CategoryType).OrderBy(x => x.Title))
             {
                 if (Database.HomebrewX360.Library.Any(x => x.GetPlatform() == ConsoleProfile.Platform && x.CategoryId.Equals(category.Id)))
                 {
@@ -8200,7 +8124,7 @@ namespace ArisenStudio.Forms.Windows
                     continue;
                 }
 
-                Category category = Database.CategoriesData.GetCategoryById(modItemData.CategoryId);
+                CategoryItem category = Database.CategoriesData.GetCategoryById(modItemData.CategoryId);
 
                 _ = DataTableHomebrewXbox.Rows.Add(modItemData.Id,
                                           category.Title,
@@ -8355,7 +8279,7 @@ namespace ArisenStudio.Forms.Windows
             ComboBoxHomebrewPS4FilterVersion.Properties.Items.Clear();
             _ = ComboBoxHomebrewPS4FilterVersion.Properties.Items.Add($"<{ResourceLanguage.GetString("ANY")}>");
 
-            foreach (Category category in Database.CategoriesData.Categories.FindAll(x => CategoryType.Homebrew == x.CategoryType).OrderBy(x => x.Title))
+            foreach (CategoryItem category in Database.CategoriesData.Categories.FindAll(x => CategoryType.Homebrew == x.CategoryType).OrderBy(x => x.Title))
             {
                 if (Database.HomebrewPS4.Library.Any(x => x.CategoryId.Equals(category.Id)))
                 {
@@ -8410,7 +8334,7 @@ namespace ArisenStudio.Forms.Windows
             else
             {
                 string selectedCategory = ComboBoxHomebrewPS4FilterCategory.SelectedItem as string;
-                Category category = Database.CategoriesData.GetCategoryByTitle(selectedCategory);
+                CategoryItem category = Database.CategoriesData.GetCategoryByTitle(selectedCategory);
                 FilterHomebrewPS4CategoryId = category.Id;
             }
 
@@ -8479,11 +8403,11 @@ namespace ArisenStudio.Forms.Windows
         {
             GridViewHomebrewPS4.ShowLoadingPanel();
 
-            Category category;
+            CategoryItem category;
 
             if (FilterHomebrewPS4CategoryId.IsNullOrWhiteSpace())
             {
-                category = new Category()
+                category = new CategoryItem()
                 {
                     Id = string.Empty,
                     Regions = [],
@@ -8676,7 +8600,7 @@ namespace ArisenStudio.Forms.Windows
             ComboBoxGamesFilterVersion.Properties.Items.Clear();
             _ = ComboBoxGamesFilterVersion.Properties.Items.Add($"<{ResourceLanguage.GetString("ANY")}>");
 
-            foreach (Category category in Database.CategoriesData.Categories.FindAll(x => CategoryType.Game == x.CategoryType).OrderBy(x => x.Title))
+            foreach (CategoryItem category in Database.CategoriesData.Categories.FindAll(x => CategoryType.Game == x.CategoryType).OrderBy(x => x.Title))
             {
                 if (Database.HomebrewPS4.Library.Any(x => x.CategoryId.Equals(category.Id)))
                 {
@@ -8740,7 +8664,7 @@ namespace ArisenStudio.Forms.Windows
             else
             {
                 string selectedCategory = ComboBoxGamesFilterCategory.SelectedItem as string;
-                Category category = Database.CategoriesData.GetCategoryByTitle(selectedCategory);
+                CategoryItem category = Database.CategoriesData.GetCategoryByTitle(selectedCategory);
                 FilterGamesCategoryId = category.Id;
             }
 
@@ -8834,7 +8758,7 @@ namespace ArisenStudio.Forms.Windows
                     continue;
                 }
 
-                Category category = Database.CategoriesData.GetCategoryById(appItemData.CategoryId);
+                CategoryItem category = Database.CategoriesData.GetCategoryById(appItemData.CategoryId);
 
                 _ = DataTableGames.Rows.Add(appItemData.Id,
                                        category.Title,
@@ -9001,7 +8925,7 @@ namespace ArisenStudio.Forms.Windows
             else
             {
                 string selectedCategory = ComboBoxGameSavesFilterCategory.SelectedItem as string;
-                Category category = Database.CategoriesData.GetCategoryByTitle(selectedCategory);
+                CategoryItem category = Database.CategoriesData.GetCategoryByTitle(selectedCategory);
                 FilterGameSavesCategoryId = category.Id;
             }
 
@@ -9048,7 +8972,7 @@ namespace ArisenStudio.Forms.Windows
 
             _ = ComboBoxGameSavesFilterCategory.Properties.Items.Add($"<{ResourceLanguage.GetString("ALL_GAMES")}>");
 
-            foreach (Category category in Database.CategoriesData.Categories.FindAll(x => x.CategoryType == CategoryType.Game).OrderBy(x => x.Title))
+            foreach (CategoryItem category in Database.CategoriesData.Categories.FindAll(x => x.CategoryType == CategoryType.Game).OrderBy(x => x.Title))
             {
                 if (Database.GameSaves.GameSaves.Any(x => x.GetPlatform() == ConsoleProfile.Platform && x.CategoryId.Equals(category.Id)))
                 {
@@ -9091,7 +9015,7 @@ namespace ArisenStudio.Forms.Windows
 
             foreach (GameSaveItemData gameSaveItem in Database.GameSaves.GetGameSaveItems(Platform, FilterGameSavesCategoryId, FilterGameSavesName, FilterGameSavesRegion, FilterGameSavesVersion))
             {
-                Category category = Database.CategoriesData.GetCategoryById(gameSaveItem.CategoryId);
+                CategoryItem category = Database.CategoriesData.GetCategoryById(gameSaveItem.CategoryId);
 
                 _ = DataTableGameSaves.Rows.Add(gameSaveItem.Id,
                                             category.Title,
@@ -9185,7 +9109,7 @@ namespace ArisenStudio.Forms.Windows
 
         //private GameCheatItemData SelectedGameCheatsItem { get; set; }
 
-        private GameItemData SelectedGameItem { get; set; }
+        private Models.GameData.PS3.GameItemData SelectedGameItem { get; set; }
 
         private async void TileItemGameCheatsSortBy_ItemClick(object sender, TileItemEventArgs e)
         {
@@ -9517,7 +9441,7 @@ namespace ArisenStudio.Forms.Windows
 
         #region Trainers Page
 
-        private TrainerGameData SelectedTrainerGame { get; set; }
+        private TrainerGameItem SelectedTrainerGame { get; set; }
 
         private void TileItemTrainersSortBy_ItemClick(object sender, TileItemEventArgs e)
         {
@@ -9655,7 +9579,7 @@ namespace ArisenStudio.Forms.Windows
             //    ComboBoxTrainersFilterGame.Properties.Items.Add(game.Game);
             //}
 
-            foreach (TrainerGameItemData game in Database.TrainersX360.Library)
+            foreach (TrainerGameItem game in Database.TrainersX360.Library)
             {
                 _ = ComboBoxTrainersFilterGame.Properties.Items.Add(Database.TitleIdsX360.GetTitleFromTitleId(game.TitleId));
 
@@ -9676,7 +9600,7 @@ namespace ArisenStudio.Forms.Windows
 
             DataTableTrainers.Rows.Clear();
 
-            foreach (TrainerGameItemData trainerGame in Database.TrainersX360.Library.FindAll(x =>
+            foreach (TrainerGameItem trainerGame in Database.TrainersX360.Library.FindAll(x =>
             {
                 return Database.TitleIdsX360.GetTitleFromTitleId(x.TitleId).ContainsIgnoreCaseSymbols(FilterTrainersGame) && x.TitleId.ContainsIgnoreCaseSymbols(FilterTrainersTitleId)
                 && string.IsNullOrEmpty(FilterTrainersTitleId) ? true : x.TitleId.ContainsIgnoreCaseSymbols(FilterTrainersTitleId)
@@ -9684,10 +9608,11 @@ namespace ArisenStudio.Forms.Windows
                 && string.IsNullOrEmpty(FilterTrainersCount) ? true : x.Trainers.Count().ToString().Equals(FilterTrainersCount);
             }))
             {
-                _ = DataTableTrainers.Rows.Add(Database.TitleIdsX360.GetTitleFromTitleId(trainerGame.TitleId),
-                                           trainerGame.TitleId,
-                                           string.IsNullOrEmpty(FilterTrainersDashType) ? "All Types" : FilterTrainersDashType, //trainerGame.Trainers.Any(x => x.Type.EqualsIgnoreCaseSymbols(FilterTrainersDashType)).ToYesNoString(ResourceLanguage),
-                                           trainerGame.Trainers.Count() + " Trainers");
+                _ = DataTableTrainers.Rows.Add(
+                    Database.TitleIdsX360.GetTitleFromTitleId(trainerGame.TitleId),
+                    trainerGame.TitleId,
+                    string.IsNullOrEmpty(FilterTrainersDashType) ? "All Types" : FilterTrainersDashType, //trainerGame.Trainers.Any(x => x.Type.EqualsIgnoreCaseSymbols(FilterTrainersDashType)).ToYesNoString(ResourceLanguage),
+                    trainerGame.Trainers.Count() + " Trainers");
 
                 if (!FilterTrainersGame.IsNullOrEmpty() && FilterTrainersTitleId.IsNullOrEmpty())
                 {
@@ -10000,7 +9925,7 @@ namespace ArisenStudio.Forms.Windows
         /// Show the game cheats dialog for the selected game.
         /// </summary>
         /// <param name="gameItem"> Specifies the <see cref="GameItemData" /> </param>
-        private void ShowGameCheats(GameItemData gameItem)
+        private void ShowGameCheats(Models.GameData.PS3.GameItemData gameItem)
         {
             DialogExtensions.ShowItemGameCheatsDialog(this, gameItem);
         }
@@ -10017,8 +9942,8 @@ namespace ArisenStudio.Forms.Windows
         /// <summary>
         /// Show the details dialog.
         /// </summary>
-        /// <param name="trainerGame"> Specifies the <see cref="TrainerGameData" /> </param>
-        private void ShowGameTrainers(TrainerGameData trainerGame)
+        /// <param name="trainerGame"> Specifies the <see cref="TrainerGameItem" /> </param>
+        private void ShowGameTrainers(TrainerGameItem trainerGame)
         {
             DialogExtensions.ShowGameTrainers(this, trainerGame);
         }
@@ -10469,11 +10394,11 @@ namespace ArisenStudio.Forms.Windows
             }
         }
 
-        private void TimerCurrentGame_Tick(object sender, EventArgs e)
+        private async void TimerCurrentGame_Tick(object sender, EventArgs e)
         {
             if (ConsoleProfile.Platform == Platform.PS3)
             {
-                string game = WebManExtensions.GetGame(ConsoleProfile.Address);
+                string game = await WebManExtensions.GetGameAsync(ConsoleProfile.Address);
 
                 if (IsWebManInstalled)
                 {

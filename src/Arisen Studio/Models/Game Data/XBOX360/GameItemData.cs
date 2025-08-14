@@ -1,9 +1,9 @@
-﻿namespace ArisenStudio.Database
+﻿namespace ArisenStudio.Models.GameData.XBOX
 {
     /// <summary>
     /// Get the xbox game information.
     /// </summary>
-    public class XboxGame
+    public class GameItemData
     {
         public string GameTitle { get; set; }
 

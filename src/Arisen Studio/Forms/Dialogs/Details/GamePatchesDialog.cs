@@ -1,18 +1,15 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
-using ArisenStudio.Database;
 using ArisenStudio.Extensions;
 using ArisenStudio.Forms.Windows;
-using PS3Lib;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Resources;
 using System.Text;
 using System.Windows.Forms;
-using XDevkit;
 using JRPC_Client;
+using ArisenStudio.Models.Database;
 //using JRPC_Client;
 
 namespace ArisenStudio.Forms.Dialogs.Details

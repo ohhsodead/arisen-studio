@@ -19,12 +19,12 @@ namespace ArisenStudio.Constants
         /// <summary>
         /// URL pointing to the request mods form on the project website.
         /// </summary>
-        internal const string RequestForm = "https://arisen.studio/submit"; //"https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&labels=mod+request&projects=&template=mod-request.yml&title=%5BMod+Request%5D%3A+"; 
+        internal const string RequestForm = "https://arisen.studio/submit"; //"https://github.com/OhhSoWzrd/arisen-studio/issues/new?assignees=&labels=mod+request&projects=&template=mod-request.yml&title=%5BMod+Request%5D%3A+"; 
 
         /// <summary>
         /// URL pointing to the report issues form on the project website.
         /// </summary>
-        internal const string ReportIssue = "https://arisen.studio/report"; //"https://github.com/ohhsodead/arisen-studio/issues/new?assignees=&labels=bug&projects=&template=bug.yml&title=%5BBug%5D%3A+"; 
+        internal const string ReportIssue = "https://arisen.studio/report"; //"https://github.com/OhhSoWzrd/arisen-studio/issues/new?assignees=&labels=bug&projects=&template=bug.yml&title=%5BBug%5D%3A+"; 
 
         /// <summary>
         /// URL pointing to the project's Discord Server.
@@ -34,17 +34,17 @@ namespace ArisenStudio.Constants
         /// <summary>
         /// URL pointing to the donation page on Patreon.
         /// </summary>
-        internal const string DonatePatreon = "https://patreon.com/ohhsodead?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink";
+        internal const string DonatePatreon = "https://patreon.com/OhhSoWzrd?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink";
 
         /// <summary>
         /// URL pointing to the donation page on PayPal.
         /// </summary>
-        internal const string DonatePayPal = "https://paypal.me/ohhsodead";
+        internal const string DonatePayPal = "https://paypal.me/OhhSoWzrd";
 
         /// <summary>
         /// URL pointing to the my Twitter/X profile.
         /// </summary>
-        internal const string TwitterProfile = "https://twitter.com/ohhsodead";
+        internal const string TwitterProfile = "https://twitter.com/OhhSoWzrd";
 
         /// <summary>
         /// URL pointing to the test file hosted on @Goldug's server for Arisen.
@@ -69,17 +69,17 @@ namespace ArisenStudio.Constants
         /// <summary>
         /// URL pointing to the project repo hosted on GitHub.
         /// </summary>
-        internal const string GitHubRepo = "https://github.com/ohhsodead/arisen-studio/";
+        internal const string GitHubRepo = "https://github.com/OhhSoWzrd/arisen-studio/";
 
         /// <summary>
         /// URL pointing to the releases information via GitHub API.
         /// </summary>
-        internal const string GitHubReleases = "https://api.github.com/repos/ohhsodead/arisen-studio/releases";
+        internal const string GitHubReleases = "https://api.github.com/repos/OhhSoWzrd/arisen-studio/releases";
 
         /// <summary>
         /// URL pointing to the stats file.
         /// </summary>
-        internal const string StatsData = "https://raw.githubusercontent.com/ohhsodead/arisen-studio/main/.github/stats/stats.json";
+        internal const string StatsData = "https://raw.githubusercontent.com/OhhSoWzrd/arisen-studio/main/.github/stats/stats.json";
 
         /// <summary>
         /// URL pointing to the list of Categories database file.
@@ -199,12 +199,12 @@ namespace ArisenStudio.Constants
         /// <summary>
         /// URL pointing to the submit mods form.
         /// </summary>
-        internal const string FormReportIssue = "https://form.jotform.com/ohhsodead/arisen-studio-report-issue";
+        internal const string FormReportIssue = "https://form.jotform.com/OhhSoWzrd/arisen-studio-report-issue";
 
         /// <summary>
         /// URL pointing to the submit mods form.
         /// </summary>
-        internal const string FormSubmitMods = "https://form.jotform.com/ohhsodead/arisen-studio-submit-mods";
+        internal const string FormSubmitMods = "https://form.jotform.com/OhhSoWzrd/arisen-studio-submit-mods";
 
         /// <summary>
         /// Generate an issue form with the pre-populated exception error details.

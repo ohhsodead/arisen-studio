@@ -6,18 +6,15 @@ namespace ArisenStudio.Models.GameData.PS3
     [XmlRoot(ElementName = "package")]
     public class Package
     {
-        [XmlAttribute(AttributeName = "version")]
-        public string Version { get; set; }
+        [XmlAttribute(AttributeName = "version")] public string Version { get; set; }
 
         [XmlAttribute(AttributeName = "size")] public string Size { get; set; }
 
-        [XmlAttribute(AttributeName = "sha1sum")]
-        public string Sha1Sum { get; set; }
+        [XmlAttribute(AttributeName = "sha1sum")] public string Sha1Sum { get; set; }
 
         [XmlAttribute(AttributeName = "url")] public string Url { get; set; }
 
-        [XmlAttribute(AttributeName = "ps3_system_ver")]
-        public string Ps3SystemVer { get; set; }
+        [XmlAttribute(AttributeName = "ps3_system_ver")] public string Ps3SystemVer { get; set; }
 
         [XmlElement(ElementName = "paramsfo")] public Paramsfo Paramsfo { get; set; }
     }
@@ -35,22 +32,18 @@ namespace ArisenStudio.Models.GameData.PS3
 
         [XmlAttribute(AttributeName = "name")] public string Name { get; set; }
 
-        [XmlAttribute(AttributeName = "popup")]
-        public string Popup { get; set; }
+        [XmlAttribute(AttributeName = "popup")] public string Popup { get; set; }
 
-        [XmlAttribute(AttributeName = "signoff")]
-        public string Signoff { get; set; }
+        [XmlAttribute(AttributeName = "signoff")] public string Signoff { get; set; }
     }
 
     [XmlRoot(ElementName = "titlepatch")]
-    public class Titlepatch
+    public class TitlePatch
     {
         [XmlElement(ElementName = "tag")] public Tag Tag { get; set; }
 
-        [XmlAttribute(AttributeName = "status")]
-        public string Status { get; set; }
+        [XmlAttribute(AttributeName = "status")] public string Status { get; set; }
 
-        [XmlAttribute(AttributeName = "titleid")]
-        public string Titleid { get; set; }
+        [XmlAttribute(AttributeName = "titleid")] public string Titleid { get; set; }
     }
 }

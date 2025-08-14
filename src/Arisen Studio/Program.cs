@@ -5,11 +5,9 @@ using NLog;
 using NLog.Config;
 using NLog.Targets;
 using System;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using ArisenStudio.Extensions;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ArisenStudio
 {
@@ -124,7 +122,7 @@ namespace ArisenStudio
 
             //_ = XtraMessageBox.Show(MainWindow.Window,
             //    $"An error occurred: {e.Exception.Message}\n\n" +
-            //    $"Please try again later. If the issue continues, you can report it by <a href=\"https://github.com/ohhsodead/arisen-studio/issues/new?labels=bug&template=bug.yml\">opening a new issue</a> on our GitHub tracker.",
+            //    $"Please try again later. If the issue continues, you can report it by <a href=\"https://github.com/OhhSoWzrd/arisen-studio/issues/new?labels=bug&template=bug.yml\">opening a new issue</a> on our GitHub tracker.",
             //    "Arisen Studio Handled Error",
             //    MessageBoxButtons.OK,
             //    MessageBoxIcon.Error,
@@ -153,7 +151,7 @@ namespace ArisenStudio
 
             //_ = XtraMessageBox.Show(MainWindow.Window,
             //    $"An error occurred: {exception.Message}\n\n" +
-            //    $"Please try again later. If the issue continues, you can report it by <a href=\"https://github.com/ohhsodead/arisen-studio/issues/new?labels=bug&template=bug.yml\">opening a new issue</a> on our GitHub tracker.",
+            //    $"Please try again later. If the issue continues, you can report it by <a href=\"https://github.com/OhhSoWzrd/arisen-studio/issues/new?labels=bug&template=bug.yml\">opening a new issue</a> on our GitHub tracker.",
             //    "Arisen Studio Handled Error",
             //    MessageBoxButtons.OK,
             //    MessageBoxIcon.Error,

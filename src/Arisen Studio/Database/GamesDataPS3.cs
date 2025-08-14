@@ -1,5 +1,5 @@
-﻿using ArisenStudio.Database;
-using ArisenStudio.Extensions;
+﻿using ArisenStudio.Extensions;
+using ArisenStudio.Models.GameData.PS3;
 using System.Collections.Generic;
 using System.Linq;
 

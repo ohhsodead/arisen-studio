@@ -2,7 +2,6 @@
 using DevExpress.XtraEditors;
 using Humanizer;
 using ArisenStudio.Controls;
-using ArisenStudio.Database;
 using ArisenStudio.Extensions;
 using ArisenStudio.Forms.Windows;
 using ArisenStudio.Models.Database;
@@ -15,7 +14,6 @@ using System.Resources;
 using System.Windows.Forms;
 using ScrollOrientation = DevExpress.XtraEditors.ScrollOrientation;
 using System.Drawing;
-using DevExpress.Utils.Drawing;
 using ArisenStudio.Constants;
 
 namespace ArisenStudio.Forms.Dialogs.Details

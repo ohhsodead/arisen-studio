@@ -4,7 +4,6 @@ using System;
 using System.Resources;
 using System.Windows.Forms;
 using XDevkit;
-using JRPC_Client;
 using ArisenStudio.Extensions;
 
 namespace ArisenStudio.Forms.Tools.XBOX

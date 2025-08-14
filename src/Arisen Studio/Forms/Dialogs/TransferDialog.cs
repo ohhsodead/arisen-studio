@@ -16,8 +16,6 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using FluentFTP.Exceptions;
 using DevExpress.XtraLayout.Customization;
-using XDevkit;
-using FluentFTP;
 using System.Threading;
 
 namespace ArisenStudio.Forms.Dialogs
@@ -37,7 +35,7 @@ namespace ArisenStudio.Forms.Dialogs
 
         public TransferType TransferType { get; set; }
 
-        public Database.Category Category { get; set; }
+        public CategoryItem Category { get; set; }
 
         public ModItemData ModItem { get; set; }
 
@@ -55,7 +53,7 @@ namespace ArisenStudio.Forms.Dialogs
 
         public CustomItemData CustomMod { get; set; }
 
-        public TrainerGameData TrainerGame { get; set; }
+        public TrainerGameItem TrainerGame { get; set; }
 
         public TrainerItem TrainerItem { get; set; }
 
@@ -2138,7 +2136,7 @@ namespace ArisenStudio.Forms.Dialogs
                             try
                             {
                                 int indexFiles = 1;
-                                int totalFiles = 1; ;
+                                int totalFiles = 1;
 
                                 string localFilePath = appItem.LocalFilePath(downloadFiles);
 

@@ -1,6 +1,5 @@
 ﻿using DevExpress.XtraEditors;
 using ArisenStudio.Forms.Windows;
-using PS3Lib;
 using System;
 using System.Resources;
 using System.Windows.Forms;

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ArisenStudio.Extensions
+﻿namespace ArisenStudio.Extensions
 {
     internal static class PS4Extensions
     {

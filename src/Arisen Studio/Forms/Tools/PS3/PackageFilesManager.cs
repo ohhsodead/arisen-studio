@@ -158,7 +158,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             }
         }
 
-        private void ButtonDeletePackageFile_Click(object sender, EventArgs e)
+        private async void ButtonDeletePackageFile_Click(object sender, EventArgs e)
         {
             if (XtraMessageBox.Show("Do you really want to delete the selected package file from your console?", Language.GetString("CONFIRM_DELETE"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
@@ -167,20 +167,20 @@ namespace ArisenStudio.Forms.Tools.PS3
                 UpdateStatus($"Deleting file: {packageFileName}");
                 FtpExtensions.DeleteFile(PackageFilesPath + "/" + packageFileName);
                 UpdateStatus("Successfully deleted file.");
-                LoadPackagesAsync();
+                await LoadPackagesAsync();
             }
         }
 
-        private void ButtonDeleteAllPackageFiles_Click(object sender, EventArgs e)
+        private async void ButtonDeleteAllPackageFiles_Click(object sender, EventArgs e)
         {
-            if (XtraMessageBox.Show("Do you really want to delete all of your package files from your console?", Language.GetString("CONFIRM_DELETE_ALL"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            if (XtraMessageBox.Show("Do you really want to delete all package files from your console?", Language.GetString("CONFIRM_DELETE_ALL"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
                 foreach (FtpListItem package in PackageFiles)
                 {
                     UpdateStatus($"Deleting file: {package.Name}");
                     FtpExtensions.DeleteFile(PackageFilesPath + "/" + package.Name);
                     UpdateStatus("Successfully package file.");
-                    LoadPackagesAsync();
+                    await LoadPackagesAsync();
                 }
             }
         }

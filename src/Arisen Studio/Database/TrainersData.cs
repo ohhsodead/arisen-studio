@@ -1,16 +1,18 @@
 ﻿using ArisenStudio.Database;
 using ArisenStudio.Extensions;
+using ArisenStudio.Models.Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ArisenStudio.Models.Database
+namespace ArisenStudio.Database
 {
     public class TrainersData
     {
         /// <summary>
         /// Get the mods from the database.
         /// </summary>
-        public List<TrainerGameItemData> Library { get; set; }
+        public List<TrainerGameItem> Library { get; set; }
 
         /// <summary>
         /// Get all of the mods matching the specified filters.
@@ -74,7 +76,7 @@ namespace ArisenStudio.Models.Database
         /// Get all the <see cref="ModItemData" /> matching the specified <see cref="Category.Id" />.
         /// </summary>
         /// <returns> </returns>
-        public List<TrainerGameItemData> GetItemsByTitleId(string titleId)
+        public List<TrainerGameItem> GetItemsByTitleId(string titleId)
         {
             return Library.Where(x => x.TitleId.EqualsIgnoreCase(titleId)).ToList();
         }
@@ -97,4 +99,30 @@ namespace ArisenStudio.Models.Database
             return null;
         }
     }
+
+    public class TrainerItem
+    {
+        public DateTime LastUpdated { get; set; }
+
+        public string Name { get; set; }
+
+        public string Type { get; set; }
+
+        public string Url { get; set; }
+
+        public string[] InstallPaths { get; set; }
+
+        public new TrainerType GetType()
+        {
+            if (Type.EqualsIgnoreCase("aurora"))
+            {
+                return TrainerType.Aurora;
+            }
+            else
+            {
+                return TrainerType.Xbdm;
+            }
+        }
+    }
 }
+

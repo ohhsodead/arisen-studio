@@ -1,5 +1,4 @@
-﻿using ArisenStudio.Database;
-using ArisenStudio.Extensions;
+﻿using ArisenStudio.Extensions;
 using ArisenStudio.Forms.Windows;
 using System.Collections.Generic;
 using System.Linq;

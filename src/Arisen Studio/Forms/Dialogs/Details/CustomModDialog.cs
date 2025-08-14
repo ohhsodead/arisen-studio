@@ -2,19 +2,16 @@
 using DevExpress.XtraEditors;
 using Humanizer;
 using ArisenStudio.Controls;
-using ArisenStudio.Database;
 using ArisenStudio.Extensions;
 using ArisenStudio.Forms.Windows;
 using ArisenStudio.Models.Database;
 using ArisenStudio.Models.Resources;
 using System;
 using System.Diagnostics;
-using System.Globalization;
 using System.Linq;
 using System.Resources;
 using System.Windows.Forms;
 using ScrollOrientation = DevExpress.XtraEditors.ScrollOrientation;
-using System.Text.RegularExpressions;
 using System.Drawing;
 
 namespace ArisenStudio.Forms.Dialogs.Details

@@ -1,6 +1,4 @@
-﻿using DevExpress.Utils.Mdi;
-using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
 

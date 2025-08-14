@@ -1,16 +1,12 @@
 ﻿using ArisenStudio.Extensions;
 using ArisenStudio.Forms.Windows;
 using ArisenStudio.Models.Resources;
-using DevExpress.Utils.Extensions;
 using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Controls;
 using Humanizer;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Net;
 using System.Resources;
 using System.Windows.Forms;
 

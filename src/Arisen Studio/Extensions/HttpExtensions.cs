@@ -2,18 +2,10 @@
 using System.Drawing;
 using System.IO;
 using System.Net;
-using System.Net.Http.Headers;
-using System.Net.Http;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using System.Collections.Generic;
-using System.Windows.Media.Imaging;
-using FluentFTP;
 using System.Linq;
-using ArisenStudio.Models.Database;
-using System.IO.Compression;
-using ArisenStudio.Constants;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using Humanizer;
@@ -59,7 +51,7 @@ namespace ArisenStudio.Extensions
         /// </summary>
         /// <param name="titleId">  </param>
         /// <returns> </returns>
-        public static Titlepatch GetGameUpdatesFromTitleId(string titleId)
+        public static TitlePatch GetGameUpdatesFromTitleId(string titleId)
         {
             try
             {
@@ -67,10 +59,10 @@ namespace ArisenStudio.Extensions
                 ServicePointManager.ServerCertificateValidationCallback = (_, _, _, _) => true;
 
                 using WebClient webClient = new();
-                XmlSerializer serializer = new(typeof(Titlepatch));
+                XmlSerializer serializer = new(typeof(TitlePatch));
                 string titlePath = webClient.DownloadString("https://a0.ww.np.dl.playstation.net/tpl/np/" + titleId + "/" + titleId + "-ver.xml");
                 using TextReader textReader = new StringReader(titlePath);
-                return (Titlepatch)serializer.Deserialize(textReader);
+                return (TitlePatch)serializer.Deserialize(textReader);
             }
             catch (Exception ex)
             {

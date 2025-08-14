@@ -1,5 +1,4 @@
-﻿using ArisenStudio.Database;
-using ArisenStudio.Extensions;
+﻿using ArisenStudio.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +15,7 @@ namespace ArisenStudio.Models.Database
         /// <summary>
         /// Get all of the supported categories/games from the database.
         /// </summary>
-        public List<Category> Categories { get; set; }
+        public List<CategoryItem> Categories { get; set; }
 
         /// <summary>
         /// Get the total number of games.
@@ -29,7 +28,7 @@ namespace ArisenStudio.Models.Database
         /// </summary>
         /// <param name="categoryType"> </param>
         /// <returns> </returns>
-        public IEnumerable<Category> GetCategoriesByType(CategoryType categoryType)
+        public IEnumerable<CategoryItem> GetCategoriesByType(CategoryType categoryType)
         {
             return Categories.Where(x => x.CategoryType == categoryType);
         }
@@ -39,9 +38,9 @@ namespace ArisenStudio.Models.Database
         /// </summary>
         /// <param name="categoryId"> Title of the game </param>
         /// <returns> Game information </returns>
-        public Category GetCategoryById(string categoryId)
+        public CategoryItem GetCategoryById(string categoryId)
         {
-            Category category = Categories.FirstOrDefault(x => x.Id.EqualsIgnoreCase(categoryId));
+            CategoryItem category = Categories.FirstOrDefault(x => x.Id.EqualsIgnoreCase(categoryId));
 
             if (category != null)
             {
@@ -56,9 +55,9 @@ namespace ArisenStudio.Models.Database
         /// </summary>
         /// <param name="title"> Title of the game </param>
         /// <returns> Game information </returns>
-        public Category GetCategoryByTitle(string title)
+        public CategoryItem GetCategoryByTitle(string title)
         {
-            Category category = Categories.FirstOrDefault(x => x.Title.EqualsIgnoreCase(title));
+            CategoryItem category = Categories.FirstOrDefault(x => x.Title.EqualsIgnoreCase(title));
 
             if (category != null)
             {

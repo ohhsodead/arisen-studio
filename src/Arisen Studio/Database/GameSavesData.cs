@@ -1,5 +1,4 @@
-﻿using ArisenStudio.Database;
-using ArisenStudio.Extensions;
+﻿using ArisenStudio.Extensions;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -53,7 +52,7 @@ namespace ArisenStudio.Models.Database
         }
 
         /// <summary>
-        /// Get all the <see cref="ModItemData" /> matching the specified <see cref="Category.Id" />.
+        /// Get all the <see cref="ModItemData" /> matching the specified <see cref="CategoryItem.Id" />.
         /// </summary>
         /// <returns> </returns>
         public List<GameSaveItemData> GetModsByCategoryId(string categoryId)

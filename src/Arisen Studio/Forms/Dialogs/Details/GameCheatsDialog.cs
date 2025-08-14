@@ -1,7 +1,4 @@
-﻿using DevExpress.Utils;
-using DevExpress.XtraEditors;
-using Humanizer;
-using ArisenStudio.Controls;
+﻿using DevExpress.XtraEditors;
 using ArisenStudio.Database;
 using ArisenStudio.Extensions;
 using ArisenStudio.Forms.Windows;
@@ -9,11 +6,9 @@ using ArisenStudio.Models.Database;
 using ArisenStudio.Models.Resources;
 using System;
 using System.Diagnostics;
-using System.Globalization;
 using System.Linq;
 using System.Resources;
 using System.Windows.Forms;
-using ScrollOrientation = DevExpress.XtraEditors.ScrollOrientation;
 using System.Drawing;
 using ArisenStudio.Constants;
 using DevExpress.XtraGrid.Views.Base;
@@ -23,6 +18,7 @@ using PS3Lib;
 using System.Data;
 using System.Net.Http;
 using System.Threading.Tasks;
+using ArisenStudio.Models.GameData.PS3;
 
 namespace ArisenStudio.Forms.Dialogs.Details
 {
@@ -114,7 +110,7 @@ namespace ArisenStudio.Forms.Dialogs.Details
             //_httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("ArisenStudioDatabase");
 
             //string response = await _httpClient.GetStringAsync(Urls.GamesCheatsBasePS3 + fileName);
-            string response = await _httpClient.GetStringAsync("https://raw.githubusercontent.com/ohhsodead/game-cheats/refs/heads/main/PS3/" + fileName);
+            string response = await _httpClient.GetStringAsync("https://raw.githubusercontent.com/OhhSoWzrd/game-cheats/refs/heads/main/PS3/" + fileName);
             return JsonConvert.DeserializeObject<GameCheatsData>(response);
         }
 

@@ -6,11 +6,11 @@ using ArisenStudio.Extensions;
 using ArisenStudio.Forms.Windows;
 using ArisenStudio.Models.Resources;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Resources;
 using System.Windows.Forms;
+using ArisenStudio.Models.Database;
 
 namespace ArisenStudio.Forms.Tools.PS3
 {
@@ -34,7 +34,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             ComboBoxGameTitle.Properties.Items.Clear();
             ComboBoxGameRegion.Properties.Items.Clear();
 
-            foreach (Category category in Database.CategoriesData.GetCategoriesByType(CategoryType.Game))
+            foreach (CategoryItem category in Database.CategoriesData.GetCategoriesByType(CategoryType.Game))
             {
                 _ = ComboBoxGameTitle.Properties.Items.Add(category.Title);
             }
@@ -206,7 +206,7 @@ namespace ArisenStudio.Forms.Tools.PS3
         {
             if (XtraMessageBox.Show("All saved game regions will be cleared. Do you want to continue?", "Game Region", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                foreach (Category category in Database.CategoriesData.Categories.Where(x => x.CategoryType == CategoryType.Game))
+                foreach (CategoryItem category in Database.CategoriesData.Categories.Where(x => x.CategoryType == CategoryType.Game))
                 {
                     foreach (string region in category.Regions)
                     {

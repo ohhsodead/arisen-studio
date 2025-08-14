@@ -116,4 +116,10 @@ namespace ArisenStudio
         [Description("DOWNLOADING_TRAINER")]
         DownloadTrainer,
     }
+
+    public enum TrainerType
+    {
+        Aurora,
+        Xbdm,
+    }
 }

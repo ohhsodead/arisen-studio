@@ -2,13 +2,11 @@
 using ArisenStudio.Extensions;
 using ArisenStudio.Forms.Windows;
 using ArisenStudio.Models.Resources;
-using DevExpress.Utils.Mdi;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using Humanizer;
 using System;
 using System.Diagnostics;
-using System.Drawing;
 using System.Net;
 using System.Resources;
 using System.Windows.Forms;

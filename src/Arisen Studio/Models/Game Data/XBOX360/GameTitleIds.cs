@@ -1,12 +1,11 @@
-﻿using ArisenStudio.Database;
-using ArisenStudio.Extensions;
+﻿using ArisenStudio.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ArisenStudio.Models.Database
+namespace ArisenStudio.Models.GameData.XBOX
 {
-    public class XboxTitleIds
+    public class GameTitleIds
     {
         /// <summary>
         /// Date/time the file was updated in ISO format
@@ -16,7 +15,7 @@ namespace ArisenStudio.Models.Database
         /// <summary>
         /// All of the title IDs for Xbox 360
         /// </summary>
-        public List<XboxGame> Games { get; set; }
+        public List<GameItemData> Games { get; set; }
 
         /// <summary>
         /// Get the Game Title for the specified title ID

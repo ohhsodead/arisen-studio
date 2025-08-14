@@ -2,12 +2,16 @@
 using System;
 using System.IO;
 using System.Net;
+using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace ArisenStudio.Extensions
 {
     public static class WebManExtensions
     {
+        private static readonly HttpClient _httpClient = new HttpClient();
+
         /// <summary>
         /// Check if WebMAN is installed on the console.
         /// </summary>
@@ -66,32 +70,30 @@ namespace ArisenStudio.Extensions
             HandleRequest(ip, "rebuild.ps3");
         }
 
-        public static string GetGame(string ip)
+        /// <summary>
+        /// Asynchronously gets the current game title from the console.
+        /// </summary>
+        /// <param name="ip">PS3 Local IP Address</param>
+        /// <returns>Game title or "XMB Menu" if not in game.</returns>
+        public static async Task<string> GetGameAsync(string ip)
         {
             try
             {
-                string game;
+                string url = $"http://{ip}/cpursx.ps3?/sman.ps3";
+                string html = await _httpClient.GetStringAsync(url);
 
-                HtmlWeb web = new();
-
-                HtmlDocument htmlDoc = web.Load("http://" + ip + "/cpursx.ps3?/sman.ps3");
+                HtmlDocument htmlDoc = new HtmlDocument();
+                htmlDoc.LoadHtml(html);
 
                 HtmlNodeCollection node = htmlDoc.DocumentNode.SelectNodes("//body//h2");
+                if (node == null || node.Count == 0)
+                    return string.Empty;
 
                 string res = node[0].InnerText;
 
-                //var soup = BeautifulSoup(html, "html.parser");
-                //var strings = soup.findAll("h2");
-                //var res = strings[0].text;
-
                 if (res.StartsWith("BL") || res.StartsWith("NP") || res.StartsWith("BC"))
                 {
-                    //game = res.Split(" ", 1)[1].encode("ascii", "ignore").decode();
-                    //game = game.Split(new string [ ' ' ]);
-                    //game.Remove(-1);
-                    //game = " ".join(game);
-
-                    game = res.Substring(res.IndexOf(' ') + 1);
+                    string game = res.Substring(res.IndexOf(' ') + 1);
                     game = game.Substring(0, game.Length - 13);
                     game = game.Replace(" &nbsp; ", string.Empty);
                     game = game.Replace("á", "\u00e1");
@@ -99,13 +101,12 @@ namespace ArisenStudio.Extensions
                     byte[] bytes = Encoding.ASCII.GetBytes(game);
                     game = Encoding.ASCII.GetString(bytes);
                     game = game.Replace("?", string.Empty);
+                    return game;
                 }
                 else
                 {
-                    game = "XMB Menu";
+                    return "XMB Menu";
                 }
-
-                return game;
             }
             catch
             {
@@ -114,15 +115,26 @@ namespace ArisenStudio.Extensions
         }
 
         /// <summary>
-        /// Returns whther user is in game by checking the current TitleId
+        /// Returns whether user is in game by checking the current TitleId (async).
         /// </summary>
         /// <param name="ip"></param>
         /// <returns></returns>
+        public static async Task<bool> IsInGameAsync(string ip)
+        {
+            string game = await GetGameAsync(ip);
+            return !(game == "XMB Menu" || string.IsNullOrEmpty(game));
+        }
+
+        [Obsolete("Use GetGameAsync instead.")]
+        public static string GetGame(string ip)
+        {
+            return GetGameAsync(ip).GetAwaiter().GetResult();
+        }
+
+        [Obsolete("Use IsInGameAsync instead.")]
         public static bool IsInGame(string ip)
         {
-            string game = GetGame(ip);
-
-            return !(game == "XMB Menu" || string.IsNullOrEmpty(game));
+            return IsInGameAsync(ip).GetAwaiter().GetResult();
         }
 
         #region XMB
@@ -151,25 +163,31 @@ namespace ArisenStudio.Extensions
         }
 
         /// <summary>
-        /// Capture XMB screen and save it to the specified path on the console.
+        /// Capture XMB screen and save it to the specified path on the console (async).
         /// </summary>
         /// <param name="ip"></param>
         /// <param name="consoleFilePath"></param>
-        public static async void Screenshot(string ip, string consoleFilePath, bool downloadFile = true, string localFilePath = "")
+        public static async Task ScreenshotAsync(string ip, string consoleFilePath, bool downloadFile = true, string localFilePath = "")
         {
-            if (IsInGame(ip))
+            if (await IsInGameAsync(ip))
             {
                 EnableInGameScreenshot(ip);
             }
 
             HandleRequest(ip, $"xmb.ps3$screenshot{consoleFilePath}");
 
-            System.Threading.Thread.Sleep(750);
+            await Task.Delay(750);
 
             if (downloadFile)
             {
                 await HttpExtensions.DownloadFileAsync($"http://{ip}{consoleFilePath}", localFilePath);
             }
+        }
+
+        [Obsolete("Use ScreenshotAsync instead.")]
+        public static void Screenshot(string ip, string consoleFilePath, bool downloadFile = true, string localFilePath = "")
+        {
+            ScreenshotAsync(ip, consoleFilePath, downloadFile, localFilePath).GetAwaiter().GetResult();
         }
 
         #endregion

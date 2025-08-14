@@ -1,10 +1,10 @@
-﻿using ArisenStudio.Database;
-using ArisenStudio.Extensions;
+﻿using ArisenStudio.Extensions;
 using ArisenStudio.Forms.Windows;
+using ArisenStudio.Models.Database;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ArisenStudio.Models.Database
+namespace ArisenStudio.Database
 {
     public class ModsData
     {
@@ -28,10 +28,10 @@ namespace ArisenStudio.Models.Database
         }
 
         /// <summary>
-        /// Get all of the mod types from the specified <see cref="Category.Id" />
+        /// Get all of the mod types from the specified <see cref="CategoryItem.Id" />
         /// </summary>
         /// <param name="categoryId">
-        /// <see cref="Category.Id" />
+        /// <see cref="CategoryItem.Id" />
         /// </param>
         /// <returns> </returns>
         public List<string> AllModTypesForCategoryId(string categoryId)

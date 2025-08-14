@@ -51,7 +51,7 @@ namespace ArisenStudio.Controls
             this.LabelTitle.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.LabelTitle.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.LabelTitle.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Horizontal;
-            this.LabelTitle.Location = new System.Drawing.Point(32, 149);
+            this.LabelTitle.Location = new System.Drawing.Point(25, 174);
             this.LabelTitle.Margin = new System.Windows.Forms.Padding(0, 0, 0, 4);
             this.LabelTitle.Name = "LabelTitle";
             this.LabelTitle.Size = new System.Drawing.Size(250, 20);
@@ -62,7 +62,7 @@ namespace ArisenStudio.Controls
             // 
             this.ImageIcon.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ImageIcon.EditValue = global::ArisenStudio.Properties.Resources.icons8_no_profile;
-            this.ImageIcon.Location = new System.Drawing.Point(102, 27);
+            this.ImageIcon.Location = new System.Drawing.Point(95, 52);
             this.ImageIcon.Name = "ImageIcon";
             this.ImageIcon.Properties.AllowFocused = false;
             this.ImageIcon.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -90,10 +90,10 @@ namespace ArisenStudio.Controls
             this.LabelSubTitle.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
             this.LabelSubTitle.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.LabelSubTitle.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Horizontal;
-            this.LabelSubTitle.Location = new System.Drawing.Point(0, 173);
+            this.LabelSubTitle.Location = new System.Drawing.Point(0, 198);
             this.LabelSubTitle.Margin = new System.Windows.Forms.Padding(0, 0, 0, 4);
             this.LabelSubTitle.Name = "LabelSubTitle";
-            this.LabelSubTitle.Size = new System.Drawing.Size(315, 19);
+            this.LabelSubTitle.Size = new System.Drawing.Size(300, 20);
             this.LabelSubTitle.TabIndex = 1170;
             this.LabelSubTitle.Text = "Click \'Add New Console\' to create a profile";
             // 
@@ -110,7 +110,7 @@ namespace ArisenStudio.Controls
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.Name = "NoProfilesItem";
-            this.Size = new System.Drawing.Size(315, 250);
+            this.Size = new System.Drawing.Size(300, 300);
             this.Load += new System.EventHandler(this.NoConsolesItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ImageIcon.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();

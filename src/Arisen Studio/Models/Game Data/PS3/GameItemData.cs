@@ -1,4 +1,4 @@
-﻿namespace ArisenStudio.Models.Database
+﻿namespace ArisenStudio.Models.GameData.PS3
 {
     /// <summary>
     /// Get the downloads information.

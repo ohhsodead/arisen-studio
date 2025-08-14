@@ -1,5 +1,4 @@
 ﻿using ArisenStudio.Forms.Windows;
-using ArisenStudio.Models.Resources;
 using System;
 using System.Collections.Generic;
 using System.Data;

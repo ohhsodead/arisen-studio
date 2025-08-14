@@ -56,7 +56,7 @@ namespace ArisenStudio.Forms.Tools.PS3
         /// </summary>
         public static string ConsoleBootPluginsFilePath { get; } = Settings.BootPluginsFilePath;
 
-        private void BootPluginsEditor_Load(object sender, EventArgs e)
+        private async void BootPluginsEditor_Load(object sender, EventArgs e)
         {
             Text = Language.GetString("BOOT_PLUGINS_EDITOR");
 
@@ -64,7 +64,7 @@ namespace ArisenStudio.Forms.Tools.PS3
             ButtonRestoreBackup.Text = Language.GetString("LABEL_RESTORE_BACKUP");
             ButtonSaveUpdate.Text = Language.GetString("LABEL_SAVE_AND_UPDATE");
 
-            LoadBootPluginsDataAsync();
+            await LoadBootPluginsDataAsync();
         }
 
         private DataTable BootPlugins { get; } = DataExtensions.CreateDataTable(

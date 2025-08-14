@@ -9,6 +9,7 @@ using System.Data;
 using System.IO;
 using System.Resources;
 using System.Windows.Forms;
+using ArisenStudio.Models.Database;
 
 namespace ArisenStudio.Forms.Tools.PS3
 {
@@ -74,7 +75,7 @@ namespace ArisenStudio.Forms.Tools.PS3
                     try
                     {
                         BackupFile backupFile = MainWindow.BackupFiles.BackupFiles[GridViewBackupFiles.FocusedRowHandle];
-                        Database.Category category = MainWindow.Database.CategoriesData.GetCategoryById(backupFile.CategoryId);
+                        CategoryItem category = MainWindow.Database.CategoriesData.GetCategoryById(backupFile.CategoryId);
 
                         long fileSize = File.Exists(backupFile.LocalPath) ? new FileInfo(backupFile.LocalPath).Length : 0;
 

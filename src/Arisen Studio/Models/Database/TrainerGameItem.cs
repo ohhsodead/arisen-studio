@@ -9,14 +9,13 @@ using System.IO.Compression;
 using System.Net;
 using ArisenStudio.Database;
 using System.Threading.Tasks;
-using ArisenStudio.Models.Database;
 
-namespace ArisenStudio.Database
+namespace ArisenStudio.Models.Database
 {
     /// <summary>
     /// Get the game trainer information.
     /// </summary>
-    public class TrainerGameData
+    public class TrainerGameItem
     {
         public string TitleId { get; set; }
 
@@ -93,37 +92,4 @@ namespace ArisenStudio.Database
             ZipFile.ExtractToDirectory(archiveFilePath, archivePath);
         }
     }
-
-    public class TrainerItem
-    {
-        public DateTime LastUpdated { get; set; }
-
-        public string Name { get; set; }
-
-        public string Type { get; set; }
-
-        public string Url { get; set; }
-
-        public string[] InstallPaths { get; set; }
-
-        public new TrainerType GetType()
-        {
-            if (Type.EqualsIgnoreCase("aurora"))
-            {
-                return TrainerType.Aurora;
-            }
-            else
-            {
-                return TrainerType.Xbdm;
-            }
-        }
-    }
-}
-
-
-
-public enum TrainerType
-{
-    Aurora,
-    Xbdm,
 }

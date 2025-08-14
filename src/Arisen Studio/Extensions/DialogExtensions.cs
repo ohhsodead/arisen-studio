@@ -14,10 +14,10 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Reflection;
 using System.Resources;
 using ArisenStudio.Forms.Windows;
 using ArisenStudio.Constants;
+using ArisenStudio.Models.GameData.PS3;
 
 namespace ArisenStudio.Extensions
 {
@@ -236,7 +236,7 @@ namespace ArisenStudio.Extensions
 
         public static void ShowItemGamePatchesDialog(Form owner, GamePatchItemData gamePatchItem)
         {
-            XtraForm detailsDialog = new()
+            GamePatchesDialog detailsDialog = new()
             {
                 Owner = owner
             };
@@ -260,11 +260,12 @@ namespace ArisenStudio.Extensions
             overlayForm.Dispose();
         }
 
-        public static void ShowGameTrainers(Form owner, TrainerGameData trainerItem)
+        public static void ShowGameTrainers(Form owner, TrainerGameItem trainerItem)
         {
-            XtraForm detailsDialog = new()
+            GameTrainersDialog detailsDialog = new()
             {
-                Owner = owner
+                Owner = owner,
+                TrainerGameData = trainerItem
             };
 
             XtraForm overlayForm = new()
@@ -460,7 +461,7 @@ namespace ArisenStudio.Extensions
         /// <param name="modItem"></param>
         /// <param name="downloadFiles"></param>
         /// <param name="region"></param>
-        public static void ShowTransferFilesDialog(Form owner, TransferType transferType, Category category, ModItemData modItem, DownloadFiles downloadFiles, string region = "")
+        public static void ShowTransferFilesDialog(Form owner, TransferType transferType, CategoryItem category, ModItemData modItem, DownloadFiles downloadFiles, string region = "")
         {
             using TransferDialog transferDialog = new()
             {
@@ -483,7 +484,7 @@ namespace ArisenStudio.Extensions
         /// <param name="category"></param>
         /// <param name="appData"></param>
         /// <param name="appFile"></param>
-        public static void ShowTransferFilesDialog(Form owner, TransferType transferType, Category category, AppItemData appData, AppItemFile appFile)
+        public static void ShowTransferFilesDialog(Form owner, TransferType transferType, CategoryItem category, AppItemData appData, AppItemFile appFile)
         {
             using TransferDialog transferDialog = new()
             {
@@ -522,7 +523,7 @@ namespace ArisenStudio.Extensions
         /// <param name="transferType"></param>
         /// <param name="trainersGame"></param>
         /// <param name="trainerItem"></param>
-        public static void ShowTransferFilesDialog(Form owner, TransferType transferType, TrainerGameData trainersGame, TrainerItem trainerItem)
+        public static void ShowTransferFilesDialog(Form owner, TransferType transferType, TrainerGameItem trainersGame, TrainerItem trainerItem)
         {
             using TransferDialog transferDialog = new()
             {
@@ -536,7 +537,7 @@ namespace ArisenStudio.Extensions
             _ = transferDialog.ShowDialog();
         }
 
-        public static void ShowTransferGameSavesDialog(Form owner, TransferType transferType, Category category, GameSaveItemData gameSaveItem, DownloadFiles downloadFiles = null)
+        public static void ShowTransferGameSavesDialog(Form owner, TransferType transferType, CategoryItem category, GameSaveItemData gameSaveItem, DownloadFiles downloadFiles = null)
         {
             using TransferDialog transferDialog = new()
             {

@@ -122,10 +122,10 @@
 
 Arisen Studio allows you to easily browse through a regularly updated database of mods, game saves, homebrew, resources, themes, and much more for the PlayStation 3 and Xbox 360. All mods have been tested and verified in our library, which is populated by me, some friends, and awesome contributors. Arisen Studio can also be used as an FTP client to automatically install and uninstall mods directly from your computer. Without the need to search up old posts or use file managers - this will do everything for you.</value>
   </data>
-  <assembly alias="DevExpress.Data.v24.1" name="DevExpress.Data.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-  <data name="ButtonDeleteProfile.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v24.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <assembly alias="DevExpress.Data.v24.2" name="DevExpress.Data.v24.2, Version=24.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="ButtonDeleteProfile.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v24.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjI0LjEsIFZlcnNpb249MjQuMS4z
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjI0LjIsIFZlcnNpb249MjQuMi4z
         LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
         dkV4cHJlc3MuVXRpbHMuU3ZnLlN2Z0ltYWdlAQAAAAREYXRhBwICAAAACQMAAAAPAwAAAD0DAAAC77u/
         PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4NCjxzdmcgeD0iMHB4IiB5PSIwcHgi
@@ -144,9 +144,9 @@ Arisen Studio allows you to easily browse through a regularly updated database o
         LDE2eiIgY2xhc3M9IlJlZCIgLz4NCiAgICA8L2c+DQogIDwvZz4NCjwvc3ZnPgs=
 </value>
   </data>
-  <data name="ButtonEditProfile.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v24.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ButtonEditProfile.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v24.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjI0LjEsIFZlcnNpb249MjQuMS4z
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjI0LjIsIFZlcnNpb249MjQuMi4z
         LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
         dkV4cHJlc3MuVXRpbHMuU3ZnLlN2Z0ltYWdlAQAAAAREYXRhBwICAAAACQMAAAAPAwAAAB0DAAAC77u/
         PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4NCjxzdmcgeD0iMHB4IiB5PSIwcHgi
@@ -165,9 +165,9 @@ Arisen Studio allows you to easily browse through a regularly updated database o
         ICA8L2c+DQo8L3N2Zz4L
 </value>
   </data>
-  <data name="ButtonAddNewProfile.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v24.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ButtonAddNewProfile.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v24.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjI0LjEsIFZlcnNpb249MjQuMS4z
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjI0LjIsIFZlcnNpb249MjQuMi4z
         LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
         dkV4cHJlc3MuVXRpbHMuU3ZnLlN2Z0ltYWdlAQAAAAREYXRhBwICAAAACQMAAAAPAwAAAKcCAAAC77u/
         PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4NCjxzdmcgeD0iMHB4IiB5PSIwcHgi
@@ -206,5 +206,82 @@ Here are some things you need to know:
 
 &lt;b&gt;Usage:&lt;/b&gt;
 • You must be at the Dashboard when installing files or using any built-in tools.</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="SetupWizardDialog.IconOptions.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAACMuAAAjLgAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF0eKwA2AC0Gu4QnRN6r
+        JbPeqyX13qsl9t6rJbTdqiVE3KglBt2pJQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGMkKwBkJSsEYSIrN2Ql
+        K523gSfs360l/96rJf/eqyX/3qsl/96rJezeqyWc3aolN9yoJQTdqSUAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGMkKwBkJSsDYSIrM2Ei
+        K5hfICvrcTMq/8+bJv/grSX/3qsl/96rJf/frCX/3qsl/96rJf/eqyXr3qslmN2qJTLcqCUD3KklAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGMkKwBlJisCYiMrLmEi
+        K5NgISvoYCEr/14eK/+CRin/1qEk/8+VIv/IiiH/yIoh/8+VIv/apST/3qwl/96rJf/eqyX/3qsl6N6r
+        JZLdqiUu26clAtyoJQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGEiKwBhISsCYSIrKmEi
+        K41gISvlYCEr/2AhK/9fICv/aCgq/5dXJf/Afh//unUe/7l0Hv+5dB7/unUe/8B+H//OkyL/2qYk/9+s
+        Jf/eqyX/3qsl/96rJeXeqyWN3aolKtunJQLcqCUAAAAAAAAAAAAAAAAAAAAAAGEiKwBjIisBYCErJmAh
+        K4dgISviYCEr/2AhK/9fICv/aCgq/4VEJv+pZSD/uXQe/7p1Hv+6dR7/unUe/7p0Hv+6dR7/unQe/7p1
+        Hv/Bfx//z5Qi/9umJP/frCX/3qsl/96rJf/eqyXi3qolh92qJSbbpiUB3KglAAAAAABWGysAYCErIWAh
+        K4FgISveYCEr/mAhK/9fISv/ZCQr/4A8J/+mYiH/unUe/7t2Hv+6dR7/u3Ye/7p0Hv+/fCD/woEg/7p2
+        Hv+6dB7/unUe/7p0Hv+6dR7/wYAf/9CWIv/bpyX/36wl/96rJf/eqyX+3qsl3t6qJYHdqiUg5LQlAGAh
+        K0lgISvSYCEr/mAhK/9fISv/YyIr/3AnKP+EMSf/lT8n/51KJ/+mWCT/tGwg/7l0Hv+nYyH/mEsm/61h
+        KP/WnyL/0JUf/8F/HP+6dBr/uXMa/7lzGv+5cxv/unUe/8KBIP/QlyL/3Kcl/9+sJf/eqyX/3qsl/t6r
+        JdHdqiVIYCEr02AhK/9gISv/YCEr/20nK/+HNzD/tHlw/7+MhP+lXlP/kDYp/5A4K/+NPCn/gT4n/2co
+        Kv9rJiv/jTks/86cY//t0YD/6cl//924fP/Xrnv/06dv/8iRTP+8eib/uXMc/7p2Hv/DgiD/05sj/96r
+        Jf/eqyX/3qsl/96rJdRgISv8YCEr/18hK/9tJyv/jDcr/5M6LP/TsKv//////+/i3/+pa2T/dCkp/2Qi
+        K/9fICv/YCEr/18gKv+APj//69va/////////////////////f////7/+/fz/+rUuf/Jkk3/unUd/7dy
+        Hv+QUCX/vIYn/9+sJf/eqyX/3qsl/WAhK/9gISv/YSEr/4AxK/+SOSv/jzYo/7Fzav/7+fj//////+7m
+        5/+TaG//XyAq/2AhK/9gISv/XR4o/5Nob//8+/v/+vb1/+vVrP/ry3X/6MVq/+vMev/15Ln///36//Xr
+        3//Fj03/jEoi/2AgK/+KTyn/3Kkl/96rJf/eqyX/YCEr/2AhK/9jIiv/hzQr/5I5K/+ROCr/lEY7/+PV
+        1f////////////Ls7f+cdXv/YSIs/18gKv9hIy3/xKyw///////Mop3/p1os/9afIf/eqyH/3aoh/9+t
+        K//w2Jn//////9G6s/9mKC7/Xh8r/3o9Kv/XoyX/3qsl/96rJf9gISv/YCEr/2MjK/+HNCv/kjkr/5I5
+        K/+FMin/tZaZ///////18PH/+Pb2//by8/+lgof/YSIs/3U+R//s5eb/8uzs/51XT/+QNij/sGYp/9un
+        Jf/erCX/3qoi/+S7Tv///PP/5Nnc/20zPP9eHir/eTwq/9aiJf/erCX/3qsl/2AhK/9gISv/YyMr/4c0
+        K/+SOSv/kjkr/4QxKP+HVVv/9/P0/+fd3/+ylJn/9PDx//n39/+sjJH/pYGH///////Ktbn/dy8v/5A4
+        K/+SOiv/tnAo/9ynI//dqiD/6cZs////+//e0NP/ai44/14eKv95PCr/1qIl/96sJf/eqyX/YCEr/2Ah
+        K/9jIyv/iDUr/5E3K/+RNyv/hTIq/2ksNP/Wxcj//fz8/5Npb/+Yb3X/8ezs//r5+f/z7u///f39/5ly
+        eP9jICf/iTMo/5E4Kv+XQzP/xIpE/+vMfP/68+D//////7CQlP9fICr/Xh8r/3k8Kv/WoiX/3qwl/96r
+        Jf9gISv/YCEr/2cpK/+ubij/rWEp/6lcKf+fWSn/YiIo/6aDif//////w6uv/2EiLP+RZmz/7OTl////
+        ///o3+D/cTlC/20yO/+teHT/0q6o/+TPy//06+n////+//v49P/q1KT/f0Y5/14fKv9eHyv/eTwq/9ai
+        Jf/erCX/3qsl/2AhK/9gICv/aCor/8aRJv/fqyX/3qol/8ONJv9lJij/ekZP//Hr7P/s5eb/dT9I/1wc
+        J/+4nKD//////72jp/+CUVn/2szO//39/f/7+fj/7uHf/+DGw//Kn5n/r21e/6hfLv9yMCn/XyAr/14f
+        K/94Oyr/1qIl/9+sJf/eqyX/YCEr/2AgK/9oKiv/xZAm/+CtJf/grSX/wo0m/2YoKv9iJC//yrW5////
+        //+nfH7/ejQ0/93Nzv/8+vr/nXR4/9fHyf//////1768/61sYv+aSj3/kz0w/5A3Kf+QNij/jjYr/2sm
+        K/9fISv/XyAr/20rK/+xayj/1J0m/9+sJf9kIyv/XyAr/2gqK//FkCb/4K0l/+CtJf/CjCb/Zigr/28t
+        Jf+1iHX//////9zBvP+xcWf/+/j3/+fV0v+wd3D/+/j4/97R0/+JQj3/jzYn/5A4Kv+ROSv/kTkr/5E5
+        K/+QOy7/bCgt/18hK/9fISv/aSUr/443K/+eSyr/tW4o/3IqK/9fICv/aCor/8WQJv/grSX/360l/8aQ
+        Jv+PTiX/sGse/8KEOf/17OD/9u/u/+LLx///////x5uV/7FxaP///v7/2L27/485LP+ROSv/kTkr/5E5
+        K/+PNij/qWRZ/9zAvP+fdnv/Xx8q/18hK/9qJiv/jjcr/5E4K/+QOCv/hDMr/2MiK/9nKSv/xI8m/+Ct
+        Jf/erCX/16Ek/799H/+6dR7/unUf/+PHpP////////7+//r28f+zclX/o1lJ//Pq6f/07Or/rGlf/5A3
+        KP+PNif/jzYn/5lIO//avLf//v7//5x1e/9eHij/XyEr/2omK/+OOCv/kTkr/5E5K/+TPSr/eTUo/2Ei
+        K/+zfCf/4K0l/96rJf/eqyX/2KIk/8qNIf+8eBv/zp1g//36+P//////7dvD/7x5KP+vZSL/0quO//79
+        +//y5+b/zKSe/7uFfP/ElI3/5dDN///+/v/QvcD/azE6/18gKv9fISv/cCkr/5A5K/+ROSv/kTkr/5Q9
+        KvyeViT/bi4p/4ZKKf/YoyX/36wl/96rJf/erCX/3qsl/9egI//OljH/6dKv/+/gzf/TqHH/uXQc/7p1
+        Hf+8eSb/2bKC//bs4P///v3////////////z7/D/wKer/3I7Q/9fHyn/XyEr/2QjK/+EMyv/kjkr/5E5
+        K/+ROSv8kDgr06VWJf+rZyD/pWIh/8ODIP/VnSP/3aol/96sJf/eqyX/3qwl/96rJf/ZpCr/y5Aq/757
+        If+5dB7/unUe/7p1Hf+6dR3/un06/6Z2a/+geoH/mG92/31JUf9jJS7/Xh8p/2AhK/9rJiv/gzEr/5A4
+        K/+QOCv/kTkr/5E5K9OPNixImkYo0LdwH/67dh7/unQe/7x4Hv/HiSH/1p8j/96qJf/erCX/3qsl/96r
+        Jf/dqiT/1p8j/8eJIf+9eR7/uHEf/6RbI/91Myb/Xx8n/10dJ/9dHSf/XR0p/2EiK/9wLSn/hjop/5dF
+        KP+fTSf/olIm/6JSJv6XQinRkDgrSLp0HgCTPSogs2sggbp1Ht66dR7+unUe/7l0Hv+8eR7/yIoh/9ag
+        JP/eqyX/3qwl/96rJf/erCX/3aol/9egI//HiSX/mkcq/3EoK/9fICv/XyAr/2EiK/9zMij/l1Qj/7Fs
+        H/+3cB//uHIf/7l0Hv66dR7eunUegbFoISH//wAAAAAAALlzHgC4ch4BunQeJrp1Hoe6dR7iunUe/7p1
+        Hv+5dB7/vXkf/8mLIf/XoST/3qsl/96sJf/eqyX/36wl/9+sJf/PlCb/oV0p/2QlK/9xMSn/lVIj/7Ju
+        H/+7dh7/unYe/7p1Hv+6dR7iunUeh7p0Hia4ch4BuXMeAAAAAAAAAAAAAAAAAAAAAAC5dB4AuHMeArp0
+        Hiq6dR6NunUe5bp1Hv+6dR7/uXQe/716H//JjCH/2KEk/96rJf/frCX/36wl/+CtJf/LlCT/m1kj/7Fs
+        H/+7dh7/unUe/7p1Hv+6dR7lunUejbp0Hiq4cx4CuXQeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAuXQeALhzHgK6dB4uunUekrp1Hui6dR7/unUe/7l0Hv++ex//yIoh/9CWIv/PlSL/yIoh/757
+        H/+7dh7/u3Ue/7p1Hv+6dR7ounUekrp0Hi64cx4CuXQeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAALl0HgC5cx4DunUeMrp1Hpi6dR7runUe/7p1Hv+5dB7/unUe/7p1
+        Hv+5dB7/unUe/7p1Hv+6dR7runUemLp1HjK5cx4DuXQeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC5dB4AuXMeBLp0Hje6dR6cunUe7Lp1
+        Hv+6dR7/unUe/7p1Hv+6dR7sunUenLp0Hje5cx4EuXQeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAuXQeALlz
+        Hga6dB5EunUetLp1Hva6dR71unUes7p0HkS5cx4GuXQeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAA//AP///AA///AAD//AAAP/AAAA/AAAADgAAAAQAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA
+        AAHAAAAD8AAAD/wAAD//AAD//8AD///wD/8=
+</value>
   </data>
 </root>
