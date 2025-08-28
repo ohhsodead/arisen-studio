@@ -89,7 +89,7 @@ Please give this project a ⭐ if you find it useful.
 
 Download and run the latest version of the Windows installer, "ArisenStudio.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/arisen-studio/releases/latest) page.
 
-## Support Us
+## Support This Project
 
 If you find this project helpful and would like to support its development, please consider making a *small donation*. Your support is greatly appreciated! Funds are mainly to cover the server costs, our domains and developer alive.
 
@@ -101,24 +101,21 @@ If you find this project helpful and would like to support its development, plea
 
 Arisen Studio isn't perfect. If you encounter any issues, you are encouraged to submit bug reports through our [issue tracker](https://github.com/ohhsodead/arisen-studio/issues/new?&labels=bug&template=bug.yml&title=%5BBug+Report%5D%3A+). Please make your reports as detailed as possible. Be sure to include any exception messages you get (if any), and give steps showing how we can reproduce the behavior you encountered.
 
-## Contributing
+## Contributions
 
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
 
-### Database
+### Database & Requests
 
 Arisen Studio previously used a self-curated repository for its database, but we have since migrated to a more secure server to enhance performance. The old repository is no longer in use and can be considered obsolete.
 
-If you want to contribute or request mods to the database, you can submit a request via [this form](https://arisen.studio/submit) on our website or [open an issue](https://github.com/ohhsodead/arisen-studio-database/issues/new?assignees=&labels=mod+request&projects=&template=mod_request.yml&title=%5BRequest%5D%3A+).
+If you’d like to help grow the library by contributing your own mods, you can [submit a request on our website](https://arisen.studio/submit) or [open a mod request on GitHub](https://github.com/ohhsodead/arisen-studio-database/issues/new?assignees=&labels=mod+request&projects=&template=mod_request.yml&title=%5BRequest%5D%3A+).
 
 ### Translations
+
 For the localization process we use the collaborative platform from [Crowdin](https://crowdin.com/), thanks to their generosity for providing a professional service to Open Source projects free of charge. Please read the [introduction for new translators](https://support.crowdin.com/crowdin-intro/) and [guide for using the online editor](https://support.crowdin.com/online-editor/) to understand how it works.
 
 If you are already familiar with the Crowdin platform and want to contribute your time to translating a few strings, just head to our [Crowdin project](https://crowdin.com/project/arisenstudio) to get started.
-
-## Requesting Mods
-
-I know that not all mods aren't on our database, but if you [submit this form](https://arisen.studio/submit) with the details then we can get them added for you!
 
 ## Credits & Libraries
 
@@ -146,6 +143,8 @@ I know that not all mods aren't on our database, but if you [submit this form](h
 
 ## Contributors
 
+Thanks to all the people who have contributed to Arisen Studio! 💜
+
 * [ambientdisplay]()
 * [asen0776]()
 * [basimahmed](https://www.instagram.com/basimahmed114)
@@ -157,6 +156,10 @@ I know that not all mods aren't on our database, but if you [submit this form](h
 * [oSerenity](https://github.com/oSerenity)
 * [TheHiddenHour](https://github.com/TheHiddenHour) 
 * [tsuiarts](mailto:nurishafa26@gmail.com)
+
+<a href="https://github.com/ohhsodead/arisen-studio/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ohhsodead/arisen-studio" />
+</a> 
 
 ## Translators
 
@@ -183,7 +186,7 @@ I know that not all mods aren't on our database, but if you [submit this form](h
 
 ## Disclaimer
 
-I can accept no responsibility for any damage you cause to your system by using this tool.
+I can accept no responsibility for any damage you cause to your system by using this tool. Follow the instructions so you shouldn't have any issues.
 
 ## License
 
