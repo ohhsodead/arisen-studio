@@ -71,7 +71,7 @@ namespace ArisenStudio
                 ArchiveFileName = UserFolders.Logs + "arisen-studio-{#####}.zip",
                 ArchiveEvery = FileArchivePeriod.Day,
                 MaxArchiveFiles = 7,
-                EnableArchiveFileCompression = true,
+                //EnableArchiveFileCompression = true,
                 CreateDirs = true,
                 Layout = layout,//"${longdate} [${level:uppercase=true}] ${message} ${exception:format=ToString}"
             };

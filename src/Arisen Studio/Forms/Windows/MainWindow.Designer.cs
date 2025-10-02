@@ -2997,7 +2997,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelChangeLog.Controls.Add(this.PanelChangeLogText);
             this.PanelChangeLog.Controls.Add(this.LabelHeaderWhatsNew);
             this.PanelChangeLog.Controls.Add(this.separatorControl7);
-            this.PanelChangeLog.Location = new System.Drawing.Point(961, 908);
+            this.PanelChangeLog.Location = new System.Drawing.Point(904, 908);
             this.PanelChangeLog.Margin = new System.Windows.Forms.Padding(6);
             this.PanelChangeLog.MinimumSize = new System.Drawing.Size(459, 386);
             this.PanelChangeLog.Name = "PanelChangeLog";
@@ -3123,7 +3123,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelOurFavoriteMods.Margin = new System.Windows.Forms.Padding(0, 6, 0, 0);
             this.PanelOurFavoriteMods.Name = "PanelOurFavoriteMods";
             this.TableDashboard1.SetRow(this.PanelOurFavoriteMods, 1);
-            this.PanelOurFavoriteMods.Size = new System.Drawing.Size(950, 215);
+            this.PanelOurFavoriteMods.Size = new System.Drawing.Size(949, 215);
             this.PanelOurFavoriteMods.TabIndex = 2;
             // 
             // TileControlFavoriteMods
@@ -3144,7 +3144,7 @@ namespace ArisenStudio.Forms.Windows
             this.TileControlFavoriteMods.Name = "TileControlFavoriteMods";
             this.TileControlFavoriteMods.Padding = new System.Windows.Forms.Padding(15, 11, 15, 11);
             this.TileControlFavoriteMods.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
-            this.TileControlFavoriteMods.Size = new System.Drawing.Size(934, 146);
+            this.TileControlFavoriteMods.Size = new System.Drawing.Size(933, 146);
             this.TileControlFavoriteMods.TabIndex = 3;
             this.TileControlFavoriteMods.Text = "tileControl1";
             // 
@@ -3273,11 +3273,12 @@ namespace ArisenStudio.Forms.Windows
             this.panelControl1.Location = new System.Drawing.Point(0, 908);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(0, 6, 6, 6);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(950, 214);
+            this.panelControl1.Size = new System.Drawing.Size(893, 214);
             this.panelControl1.TabIndex = 17;
             // 
             // ButtonGscDownload
             // 
+            this.ButtonGscDownload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonGscDownload.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.ButtonGscDownload.Appearance.Options.UseFont = true;
             this.ButtonGscDownload.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
@@ -3285,7 +3286,7 @@ namespace ArisenStudio.Forms.Windows
             this.ButtonGscDownload.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.ButtonGscDownload.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
             this.ButtonGscDownload.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonGscDownload.Location = new System.Drawing.Point(760, 13);
+            this.ButtonGscDownload.Location = new System.Drawing.Point(722, 13);
             this.ButtonGscDownload.Name = "ButtonGscDownload";
             this.ButtonGscDownload.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonGscDownload.Size = new System.Drawing.Size(149, 25);
@@ -3294,6 +3295,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             // ButtonGscLink
             // 
+            this.ButtonGscLink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonGscLink.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.ButtonGscLink.Appearance.Options.UseFont = true;
             this.ButtonGscLink.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
@@ -3301,7 +3303,7 @@ namespace ArisenStudio.Forms.Windows
             this.ButtonGscLink.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.ButtonGscLink.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
             this.ButtonGscLink.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.ButtonGscLink.Location = new System.Drawing.Point(760, 45);
+            this.ButtonGscLink.Location = new System.Drawing.Point(722, 45);
             this.ButtonGscLink.Name = "ButtonGscLink";
             this.ButtonGscLink.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.ButtonGscLink.Size = new System.Drawing.Size(149, 25);
@@ -3310,6 +3312,8 @@ namespace ArisenStudio.Forms.Windows
             // 
             // ListBoxGscFeatures
             // 
+            this.ListBoxGscFeatures.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.ListBoxGscFeatures.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ListBoxGscFeatures.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.ListBoxGscFeatures.Appearance.Options.UseBackColor = true;
@@ -3367,7 +3371,7 @@ namespace ArisenStudio.Forms.Windows
             this.TableDashboard3.Name = "TableDashboard3";
             this.TableDashboard3.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.TableDashboard3.Size = new System.Drawing.Size(950, 443);
+            this.TableDashboard3.Size = new System.Drawing.Size(949, 443);
             this.TableDashboard3.TabIndex = 15;
             // 
             // PanelStatistics
@@ -3379,7 +3383,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelStatistics.Margin = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.PanelStatistics.Name = "PanelStatistics";
             this.TableDashboard3.SetRow(this.PanelStatistics, 0);
-            this.PanelStatistics.Size = new System.Drawing.Size(346, 443);
+            this.PanelStatistics.Size = new System.Drawing.Size(345, 443);
             this.PanelStatistics.TabIndex = 6;
             // 
             // FlowPanelStatistics
@@ -3399,7 +3403,7 @@ namespace ArisenStudio.Forms.Windows
             this.FlowPanelStatistics.Location = new System.Drawing.Point(1, 40);
             this.FlowPanelStatistics.Name = "FlowPanelStatistics";
             this.FlowPanelStatistics.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.FlowPanelStatistics.Size = new System.Drawing.Size(340, 406);
+            this.FlowPanelStatistics.Size = new System.Drawing.Size(342, 401);
             this.FlowPanelStatistics.TabIndex = 9;
             // 
             // LabelStatsDownloads
@@ -3431,16 +3435,15 @@ namespace ArisenStudio.Forms.Windows
             this.LabelStatsPlayStation3.Location = new System.Drawing.Point(12, 51);
             this.LabelStatsPlayStation3.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
             this.LabelStatsPlayStation3.Name = "LabelStatsPlayStation3";
-            this.LabelStatsPlayStation3.Size = new System.Drawing.Size(94, 133);
+            this.LabelStatsPlayStation3.Size = new System.Drawing.Size(94, 114);
             this.LabelStatsPlayStation3.TabIndex = 4;
-            this.LabelStatsPlayStation3.Text = "0 Game Mods\r\n0 Homebrew\r\n0 Resources\r\n0 Packages\r\n0 Game Saves\r\n0 Game Cheats\r\n0 " +
-    "Something";
+            this.LabelStatsPlayStation3.Text = "0 Game Mods\r\n0 Homebrew\r\n0 Resources\r\n0 Packages\r\n0 Game Saves\r\n0 Game Cheats";
             // 
             // LabelStatsHeaderPlayStation4
             // 
             this.LabelStatsHeaderPlayStation4.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.LabelStatsHeaderPlayStation4.Appearance.Options.UseFont = true;
-            this.LabelStatsHeaderPlayStation4.Location = new System.Drawing.Point(12, 190);
+            this.LabelStatsHeaderPlayStation4.Location = new System.Drawing.Point(12, 171);
             this.LabelStatsHeaderPlayStation4.Name = "LabelStatsHeaderPlayStation4";
             this.LabelStatsHeaderPlayStation4.Size = new System.Drawing.Size(88, 19);
             this.LabelStatsHeaderPlayStation4.TabIndex = 8;
@@ -3452,7 +3455,7 @@ namespace ArisenStudio.Forms.Windows
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelStatisticsPlayStation4.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.LabelStatisticsPlayStation4.Appearance.Options.UseFont = true;
-            this.LabelStatisticsPlayStation4.Location = new System.Drawing.Point(12, 213);
+            this.LabelStatisticsPlayStation4.Location = new System.Drawing.Point(12, 194);
             this.LabelStatisticsPlayStation4.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
             this.LabelStatisticsPlayStation4.Name = "LabelStatisticsPlayStation4";
             this.LabelStatisticsPlayStation4.Size = new System.Drawing.Size(86, 38);
@@ -3463,7 +3466,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.LabelStatsHeaderXbox360.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.LabelStatsHeaderXbox360.Appearance.Options.UseFont = true;
-            this.LabelStatsHeaderXbox360.Location = new System.Drawing.Point(12, 257);
+            this.LabelStatsHeaderXbox360.Location = new System.Drawing.Point(12, 238);
             this.LabelStatsHeaderXbox360.Name = "LabelStatsHeaderXbox360";
             this.LabelStatsHeaderXbox360.Size = new System.Drawing.Size(63, 19);
             this.LabelStatsHeaderXbox360.TabIndex = 5;
@@ -3473,7 +3476,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.LabelStatsXbox360.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.LabelStatsXbox360.Appearance.Options.UseFont = true;
-            this.LabelStatsXbox360.Location = new System.Drawing.Point(12, 280);
+            this.LabelStatsXbox360.Location = new System.Drawing.Point(12, 261);
             this.LabelStatsXbox360.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
             this.LabelStatsXbox360.Name = "LabelStatsXbox360";
             this.LabelStatsXbox360.Size = new System.Drawing.Size(94, 57);
@@ -3484,7 +3487,7 @@ namespace ArisenStudio.Forms.Windows
             // 
             this.LabelStatsLastUpdated.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.LabelStatsLastUpdated.Appearance.Options.UseFont = true;
-            this.LabelStatsLastUpdated.Location = new System.Drawing.Point(12, 347);
+            this.LabelStatsLastUpdated.Location = new System.Drawing.Point(12, 328);
             this.LabelStatsLastUpdated.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.LabelStatsLastUpdated.Name = "LabelStatsLastUpdated";
             this.LabelStatsLastUpdated.Size = new System.Drawing.Size(163, 19);
@@ -3511,7 +3514,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelAdPlacement.Location = new System.Drawing.Point(0, 1134);
             this.PanelAdPlacement.Margin = new System.Windows.Forms.Padding(0, 6, 6, 6);
             this.PanelAdPlacement.Name = "PanelAdPlacement";
-            this.PanelAdPlacement.Size = new System.Drawing.Size(950, 214);
+            this.PanelAdPlacement.Size = new System.Drawing.Size(893, 214);
             this.PanelAdPlacement.TabIndex = 4;
             // 
             // BannerAdsDashboard
@@ -3520,15 +3523,15 @@ namespace ArisenStudio.Forms.Windows
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BannerAdsDashboard.ApplicationId = "33krwjd74qn6";
-            this.BannerAdsDashboard.BackColor = System.Drawing.Color.White;
+            this.BannerAdsDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.BannerAdsDashboard.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.BannerAdsDashboard.HeightAd = 134;
+            this.BannerAdsDashboard.HeightAd = 159;
             this.BannerAdsDashboard.Location = new System.Drawing.Point(13, 40);
             this.BannerAdsDashboard.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BannerAdsDashboard.Name = "BannerAdsDashboard";
-            this.BannerAdsDashboard.Size = new System.Drawing.Size(932, 159);
+            this.BannerAdsDashboard.Size = new System.Drawing.Size(863, 159);
             this.BannerAdsDashboard.TabIndex = 16;
-            this.BannerAdsDashboard.WidthAd = 802;
+            this.BannerAdsDashboard.WidthAd = 901;
             // 
             // WebViewAdBanner
             // 
@@ -3537,11 +3540,11 @@ namespace ArisenStudio.Forms.Windows
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.WebViewAdBanner.CreationProperties = null;
-            this.WebViewAdBanner.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.WebViewAdBanner.DefaultBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.WebViewAdBanner.ForeColor = System.Drawing.Color.White;
-            this.WebViewAdBanner.Location = new System.Drawing.Point(6, 49);
+            this.WebViewAdBanner.Location = new System.Drawing.Point(13, 40);
             this.WebViewAdBanner.Name = "WebViewAdBanner";
-            this.WebViewAdBanner.Size = new System.Drawing.Size(948, 150);
+            this.WebViewAdBanner.Size = new System.Drawing.Size(863, 159);
             this.WebViewAdBanner.TabIndex = 12;
             this.WebViewAdBanner.Visible = false;
             this.WebViewAdBanner.ZoomFactor = 1D;
@@ -3570,7 +3573,7 @@ namespace ArisenStudio.Forms.Windows
             this.TableDashboard1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.TableDashboard1.Size = new System.Drawing.Size(950, 443);
+            this.TableDashboard1.Size = new System.Drawing.Size(949, 443);
             this.TableDashboard1.TabIndex = 13;
             // 
             // PanelOurFavoriteGames
@@ -3583,7 +3586,7 @@ namespace ArisenStudio.Forms.Windows
             this.PanelOurFavoriteGames.Margin = new System.Windows.Forms.Padding(0, 0, 0, 6);
             this.PanelOurFavoriteGames.Name = "PanelOurFavoriteGames";
             this.TableDashboard1.SetRow(this.PanelOurFavoriteGames, 0);
-            this.PanelOurFavoriteGames.Size = new System.Drawing.Size(950, 216);
+            this.PanelOurFavoriteGames.Size = new System.Drawing.Size(949, 216);
             this.PanelOurFavoriteGames.TabIndex = 12;
             // 
             // LabelHeaderFavoriteGames
@@ -3616,7 +3619,7 @@ namespace ArisenStudio.Forms.Windows
             this.TileControlFavoriteGames.Name = "TileControlFavoriteGames";
             this.TileControlFavoriteGames.Padding = new System.Windows.Forms.Padding(15, 11, 15, 11);
             this.TileControlFavoriteGames.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
-            this.TileControlFavoriteGames.Size = new System.Drawing.Size(934, 146);
+            this.TileControlFavoriteGames.Size = new System.Drawing.Size(933, 146);
             this.TileControlFavoriteGames.TabIndex = 1;
             this.TileControlFavoriteGames.Text = "tileControl1";
             // 
@@ -14590,6 +14593,7 @@ namespace ArisenStudio.Forms.Windows
             this.Controls.Add(this.barDockControl1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.False;
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("MainWindow.IconOptions.Icon")));
             this.IconOptions.Image = global::ArisenStudio.Properties.Resources.arisenstudio;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MinimumSize = new System.Drawing.Size(1300, 700);

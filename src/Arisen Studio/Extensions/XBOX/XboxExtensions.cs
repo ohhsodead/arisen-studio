@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Forms;
-using ArisenStudio.Forms.Windows;
+﻿using ArisenStudio.Forms.Windows;
 using ArisenStudio.Models.Resources;
 using DevExpress.XtraEditors;
 using JRPC_Client;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows.Forms;
 using XDevkit;
 
 namespace ArisenStudio.Extensions
@@ -52,6 +53,59 @@ namespace ArisenStudio.Extensions
             }
 
             return consoles;
+        }
+
+        /// <summary>
+        /// Safely scan for Xbox 360 consoles. XboxManager.Consoles yields console names (strings),
+        /// so open each by name to get connection details.
+        /// </summary>
+        public static IEnumerable<ConsoleProfile> ScanForXboxConsolesSafe()
+        {
+            var results = new List<ConsoleProfile>();
+
+            try
+            {
+                var manager = new XboxManager();
+
+                if (manager.Consoles is IEnumerable consoles)
+                {
+                    foreach (var item in consoles)
+                    {
+                        var consoleName = item as string;
+                        if (string.IsNullOrWhiteSpace(consoleName))
+                        {
+                            continue;
+                        }
+
+                        try
+                        {
+                            var console = manager.OpenConsole(consoleName);
+                            if (console != null)
+                            {
+                                results.Add(new ConsoleProfile
+                                {
+                                    Id = DataExtensions.GenerateUniqueId(),
+                                    Name = console.Name,
+                                    Address = StringExtensions.UIntToIp(console.IPAddress),
+                                    Platform = Platform.XBOX360,
+                                    PlatformType = PlatformType.Xbox360FatWhite,
+                                    UseDefaultLogin = true
+                                });
+                            }
+                        }
+                        catch (Exception openEx)
+                        {
+                            Program.Log.Error(openEx, $"Failed to open console '{consoleName}'.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Program.Log.Error(ex, "Xbox scan failed.");
+            }
+
+            return results;
         }
 
         public static void ScanForXboxConsoles(Form owner)

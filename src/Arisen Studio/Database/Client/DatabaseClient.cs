@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace ArisenStudio.Database
 {
@@ -156,7 +157,7 @@ namespace ArisenStudio.Database
             _gameModsCachePS3 = new SimpleCache<ModsData>("gameModsPS3.json");
             _homebrewCachePS3 = new SimpleCache<ModsData>("homebrewPS3.json");
             _resourcesCachePS3 = new SimpleCache<ModsData>("resourcesPS3.json");
-            //_gameCheatsCachePS3 = new SimpleCache<GameCheatsData>("gameCheatsPS3.json");
+            _gameCheatsCachePS3 = new SimpleCache<GameCheatsData>("gameCheatsPS3.json");
             _gamesCachePS3 = new SimpleCache<GamesDataPS3>("gamesDataPS3.json");
 
             _gamePackagesCachePS3 = new SimpleCache<PackagesData>("packagesGamesPS3.json");
@@ -176,6 +177,7 @@ namespace ArisenStudio.Database
 
             _httpClient = new HttpClient();
             _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("ArisenStudio-Database");
+            _httpClient.Timeout = TimeSpan.FromSeconds(30);
         }
 
         /// <summary>
@@ -202,6 +204,12 @@ namespace ArisenStudio.Database
                 // Add the If-None-Match or If-Modified-Since header based on cached metadata
                 if (!string.IsNullOrEmpty(eTag))
                 {
+                    // Ensure tag is quoted
+                    if (!eTag.StartsWith("\""))
+                    {
+                        eTag = "\"" + eTag + "\"";
+                    }
+
                     request.Headers.IfNoneMatch.Add(new System.Net.Http.Headers.EntityTagHeaderValue(eTag));
                 }
                 else if (lastModified.HasValue)
@@ -209,7 +217,22 @@ namespace ArisenStudio.Database
                     request.Headers.IfModifiedSince = lastModified.Value;
                 }
 
-                var response = await _httpClient.SendAsync(request);
+                HttpResponseMessage response = null;
+
+                try
+                {
+                    response = await _httpClient.SendAsync(request);
+                }
+                catch (TaskCanceledException)
+                {
+                    // Network timed out or request cancelled - fallback to cached data
+                    return cachedData;
+                }
+                catch (HttpRequestException)
+                {
+                    // Network error - fallback to cached data
+                    return cachedData;
+                }
 
                 // Check if the file has not been modified (304 Not Modified)
                 if (response.StatusCode == HttpStatusCode.NotModified)
@@ -218,29 +241,69 @@ namespace ArisenStudio.Database
                 }
                 else if (response.IsSuccessStatusCode)
                 {
-                    // Fetch new data and update the cache
-                    var newData = await fetchFunction();
-
-                    // Update the cache with new data and metadata
-                    cache.Add(cacheKey, newData, new CacheMetadata
+                    try
                     {
-                        ETag = response.Headers.ETag?.Tag,
-                        LastModified = response.Content.Headers.LastModified
-                    });
+                        // Fetch new data and update the cache
+                        var newData = await fetchFunction();
 
-                    return newData;
+                        cache.Add(cacheKey, newData, new CacheMetadata
+                        {
+                            ETag = response.Headers.ETag?.Tag,
+                            LastModified = response.Content.Headers.LastModified
+                        });
+
+                        return newData;
+                    }
+                    catch (TaskCanceledException)
+                    {
+                        // If fetching the content failed, keep using cached data
+                        return cachedData;
+                    }
+                    catch (HttpRequestException)
+                    {
+                        return cachedData;
+                    }
+                    catch
+                    {
+                        return cachedData;
+                    }
                 }
+
+                // If non-success status and no useful cached data, return cachedData as fallback
+                return cachedData;
             }
 
             // If no cached data, fetch fresh data and cache it
-            var data = await fetchFunction();
-
-            var fetchResponse = await _httpClient.GetAsync(fileUrl);
-            cache.Add(cacheKey, data, new CacheMetadata
+            T data;
+            try
             {
-                ETag = fetchResponse.Headers.ETag?.Tag,
-                LastModified = fetchResponse.Content.Headers.LastModified
-            });
+                data = await fetchFunction();
+            }
+            catch (TaskCanceledException)
+            {
+                // No cached data and fetch timed out - rethrow so caller can handle it
+                throw;
+            }
+
+            try
+            {
+                var fetchResponse = await _httpClient.GetAsync(fileUrl);
+
+                cache.Add(cacheKey, data, new CacheMetadata
+                {
+                    ETag = fetchResponse.Headers.ETag?.Tag,
+                    LastModified = fetchResponse.Content.Headers.LastModified
+                });
+            }
+            catch
+            {
+                // If metadata fetch fails, still return the data without caching metadata
+                cache.Add(cacheKey, data, new CacheMetadata
+                {
+                    ETag = null,
+                    LastModified = null
+                });
+            }
 
             return data;
         }
@@ -253,31 +316,53 @@ namespace ArisenStudio.Database
         {
             DatabaseClient fetcher = new();
 
-            DatabaseClient data = new()
+            // Helper to safely fetch and return default on failure
+            async Task<T> SafeFetch<T>(Func<Task<T>> func)
             {
-                Announcements = await fetcher.GetAnnouncements(),
-                FavoriteGames = await fetcher.GetFavoriteGames(),
-                FavoriteMods = await fetcher.GetFavoriteMods(),
-                CategoriesData = await fetcher.GetCategories(),
-                GameModsPS3 = await fetcher.GetGameModsPS3(),
-                HomebrewPS3 = await fetcher.GetHomebrewPS3(),
-                ResourcesPS3 = await fetcher.GetResourcesPS3(),
-                GameModsX360 = await fetcher.GetGameModsX360(),
-                HomebrewX360 = await fetcher.GetHomebrewX360(),
-                TrainersX360 = await fetcher.GetTrainersX360(),
-                HomebrewPS4 = await fetcher.GetHomebrewPS4(),
-                GamesPS3 = await fetcher.GetGamesPkgsPS3(),
-                DemosPS3 = await fetcher.GetDemosPkgsPS3(),
-                DLCsPS3 = await fetcher.GetDLCsPkgsPS3(),
-                AvatarsPS3 = await fetcher.GetAvatarsPkgsPS3(),
-                ThemesPS3 = await fetcher.GetThemesPkgsPS3(),
-                GameSaves = await fetcher.GetGameSaves(),
-                //GameCheatsPS3 = await fetcher.GetGameCheats(),
-                GamesDataPS3 = await fetcher.GetGamesPS3(),
-                TitleIdsX360 = await fetcher.TitleIds
-            };
+                try
+                {
+                    return await func();
+                }
+                catch
+                {
+                    return default(T);
+                }
+            }
 
-            data.CategoriesData.Categories = [.. data.CategoriesData.Categories.OrderBy(o => o.Title)];
+            DatabaseClient data = new();
+
+            data.Announcements = await SafeFetch(() => fetcher.GetAnnouncements());
+            data.FavoriteGames = await SafeFetch(() => fetcher.GetFavoriteGames());
+            data.FavoriteMods = await SafeFetch(() => fetcher.GetFavoriteMods());
+            data.CategoriesData = await SafeFetch(() => fetcher.GetCategories());
+            data.GameModsPS3 = await SafeFetch(() => fetcher.GetGameModsPS3());
+            data.HomebrewPS3 = await SafeFetch(() => fetcher.GetHomebrewPS3());
+            data.ResourcesPS3 = await SafeFetch(() => fetcher.GetResourcesPS3());
+            data.GameModsX360 = await SafeFetch(() => fetcher.GetGameModsX360());
+            data.HomebrewX360 = await SafeFetch(() => fetcher.GetHomebrewX360());
+            data.TrainersX360 = await SafeFetch(() => fetcher.GetTrainersX360());
+            data.HomebrewPS4 = await SafeFetch(() => fetcher.GetHomebrewPS4());
+            data.GamesPS3 = await SafeFetch(() => fetcher.GetGamesPkgsPS3());
+            data.DemosPS3 = await SafeFetch(() => fetcher.GetDemosPkgsPS3());
+            data.DLCsPS3 = await SafeFetch(() => fetcher.GetDLCsPkgsPS3());
+            data.AvatarsPS3 = await SafeFetch(() => fetcher.GetAvatarsPkgsPS3());
+            data.ThemesPS3 = await SafeFetch(() => fetcher.GetThemesPkgsPS3());
+            data.GameSaves = await SafeFetch(() => fetcher.GetGameSaves());
+            //data.GameCheatsPS3 = await SafeFetch(() => fetcher.GetGameCheats());
+            data.GamesDataPS3 = await SafeFetch(() => fetcher.GetGamesPS3());
+            data.TitleIdsX360 = await SafeFetch(() => fetcher.TitleIds);
+
+            // Ensure categories list is non-null and ordered
+            if (data.CategoriesData != null && data.CategoriesData.Categories != null)
+            {
+                data.CategoriesData.Categories = data.CategoriesData.Categories.OrderBy(o => o.Title).ToList();
+            }
+            else if (data.CategoriesData == null)
+            {
+                //data.CategoriesData = new CategoriesData { Categories = new List<CategoryData>() };
+                throw new Exception("Failed to load categories data from the database.");
+            }
+
             return data;
         }
 
@@ -355,7 +440,7 @@ namespace ArisenStudio.Database
             return JsonConvert.DeserializeObject<ModsData>(response);
         });
         }
-
+        
         /// <summary>
         /// Fetch the Resources data either from cache or the source file.
         /// </summary>

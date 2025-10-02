@@ -124,7 +124,7 @@ Unload Freestyle Plugin. Set trainer options in aurora, and launch game.
 
 All credit goes to their appropriate developers, as they created the trainers, any info on a specific one, would be best gotten over there. Most trainers are TU specific, so if it doesn't work, check online and it will tell you which TU is needed for it to work.</value>
   </data>
-  <assembly alias="DevExpress.Data.v24.2" name="DevExpress.Data.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <assembly alias="DevExpress.Data.v24.2" name="DevExpress.Data.v24.2, Version=24.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
   <data name="ImageClose.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v24.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjI0LjEsIFZlcnNpb249MjQuMS4z

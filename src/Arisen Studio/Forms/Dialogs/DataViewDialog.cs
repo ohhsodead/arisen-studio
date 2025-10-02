@@ -18,7 +18,8 @@ namespace ArisenStudio.Forms.Dialogs
 
         private void DataViewDialog_Load(object sender, EventArgs e)
         {
-            MaximumSize = new System.Drawing.Size(Width, MainWindow.Window.Height - 40);
+            //MaximumSize = new System.Drawing.Size(Width, MainWindow.Window.Height - 40);
+            Size = new System.Drawing.Size(Width, PanelDetails.Size.Height + 100);
             CenterToParent();
         }
 

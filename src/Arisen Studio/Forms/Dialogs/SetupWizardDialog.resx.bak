@@ -122,7 +122,7 @@
 
 Arisen Studio allows you to easily browse through a regularly updated database of mods, game saves, homebrew, resources, themes, and much more for the PlayStation 3 and Xbox 360. All mods have been tested and verified in our library, which is populated by me, some friends, and awesome contributors. Arisen Studio can also be used as an FTP client to automatically install and uninstall mods directly from your computer. Without the need to search up old posts or use file managers - this will do everything for you.</value>
   </data>
-  <assembly alias="DevExpress.Data.v24.2" name="DevExpress.Data.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <assembly alias="DevExpress.Data.v24.2" name="DevExpress.Data.v24.2, Version=24.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
   <data name="ButtonDeleteProfile.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v24.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjI0LjIsIFZlcnNpb249MjQuMi4z

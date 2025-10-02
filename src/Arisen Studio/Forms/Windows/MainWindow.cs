@@ -663,13 +663,13 @@ namespace ArisenStudio.Forms.Windows
             {
                 int count = 0;
 
-                foreach (var consoleProfile in XboxExtensions.ScanForConsoles(this))
+                foreach (var consoleProfile in XboxExtensions.ScanForXboxConsolesSafe())
                 {
                     Settings.ConsoleProfiles.Add(consoleProfile);
                     count++;
                 }
 
-                _ = XtraMessageBox.Show(this, $"A total of {count} consoles were added to your profiles.", ResourceLanguage.GetString("XBOX_CONSOLES"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _ = XtraMessageBox.Show(this, $"A total of {count} console profiles were added to your connections.", ResourceLanguage.GetString("XBOX_CONSOLES"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -1172,12 +1172,31 @@ namespace ArisenStudio.Forms.Windows
                             ? XboxManager.OpenConsole(XboxManager.DefaultConsole)
                             : XboxManager.OpenConsole(ConsoleProfile.Address);
 
-                        JRPC.Connect(XboxConsole, out _);
+                        //XboxConsole.Connect(out XboxConsole);
 
-                        if (!JRPC.Connect(XboxConsole, out _))
+                        try
                         {
-                            DialogExtensions.ShowErrorMessage(this, "You must have JRPC2 module set as a plugin on your console to use some features.");
+                            JRPC.Connect(XboxConsole, out _);
                         }
+                        catch (Exception ex)
+                        {
+                            Program.Log.Error(ex, "First attempt; Failed to connect to JRPC2 on the Xbox 360 console.");
+
+                            try
+                            {
+                                JRPC.Connect(XboxConsole, out _, ConsoleProfile.UseDefaultLogin ? "default" : ConsoleProfile.Address);
+                            }
+                            catch (Exception innerEx)
+                            {
+                                Program.Log.Error(innerEx, "Second attempt; Failed to connect to JRPC2 on the Xbox 360 console.");
+                                DialogExtensions.ShowErrorMessage(this, "You must have JRPC2 module set as a plugin on your console to use some features.");
+                            }
+                        }
+
+                        //if (!JRPC.Connect(XboxConsole, out _, ConsoleProfile.UseDefaultLogin ? "default" : ConsoleProfile.Address))
+                        //{
+                        //    DialogExtensions.ShowErrorMessage(this, "You must have JRPC2 module set as a plugin on your console to use some features.");
+                        //}
 
                         SetPlatform(ConsoleProfile.Platform);
 
@@ -1412,6 +1431,17 @@ namespace ArisenStudio.Forms.Windows
                     LoadGameModsCategoriesXbox();
                     SearchGameModsXbox();
                     hasLoadedGameModsXbox = true;
+                }
+            }
+            else if (Platform == Platform.PS4)
+            {
+                NavigationFrame.SelectedPage = PageHomebrewPS4;
+
+                if (!hasLoadedHomebrewPS4)
+                {
+                    LoadHomebrewCategoriesPS4();
+                    SearchHomebrewPS4();
+                    hasLoadedHomebrewPS4 = true;
                 }
             }
         }
@@ -3096,40 +3126,32 @@ namespace ArisenStudio.Forms.Windows
 
             switch (Settings.RememberLocalPath)
             {
-                case true when Platform == Platform.PS3:
-                    {
-                        if (Settings.LocalPathPS3.Equals(@"\") || string.IsNullOrWhiteSpace(Settings.LocalPathPS3))
-                        {
-                            LoadLocalDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\");
-                        }
-                        else
-                        {
-                            LoadLocalDirectory(Settings.LocalPathPS3);
-                        }
-
-                        break;
-                    }
                 case true:
+                    switch (Platform)
                     {
-                        switch (Platform)
-                        {
-                            case Platform.XBOX360 when Settings.LocalPathXbox.Equals(@"\") || string.IsNullOrWhiteSpace(Settings.LocalPathXbox):
-                                LoadLocalDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\");
-                                break;
-                            case Platform.XBOX360:
-                                LoadLocalDirectory(Settings.LocalPathXbox);
-                                break;
-                        }
-
-                        break;
+                        case Platform.PS3 when !string.IsNullOrWhiteSpace(Settings.LocalPathPS3) && !Settings.LocalPathPS3.Equals(@"\"):
+                            LoadLocalDirectory(Settings.LocalPathPS3);
+                            break;
+                        case Platform.PS3:
+                            LoadLocalDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\");
+                            break;
+                        case Platform.XBOX360 when !string.IsNullOrWhiteSpace(Settings.LocalPathXbox) && !Settings.LocalPathXbox.Equals(@"\"):
+                            LoadLocalDirectory(Settings.LocalPathXbox);
+                            break;
+                        case Platform.XBOX360:
+                            LoadLocalDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\");
+                            break;
+                        default:
+                            LoadLocalDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\");
+                            break;
                     }
+                    break;
                 default:
                     LoadLocalDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\");
                     break;
             }
 
-            //EnableFileManager(true);
-            hadLoadedFileManager = true;
+            EnableFileManager(true);
         }
 
         private async void TimerLoadConsole_Tick(object sender, EventArgs e)
@@ -3174,6 +3196,8 @@ namespace ArisenStudio.Forms.Windows
                 GridControlFileManagerLocalFiles.DataSource = null;
                 GridControlFileManagerConsoleFiles.DataSource = null;
             }
+
+            hadLoadedFileManager = true;
         }
 
         GridHitInfo downHitInfo = null;
@@ -3824,10 +3848,10 @@ namespace ArisenStudio.Forms.Windows
                                 {
                                     string profileName = await FtpExtensions.GetUserNameFromUserIdAsync(listItem.Name);
                                     _ = DataTableConsoleFiles.Rows.Add("folder",
-                                                                   ImageCollection.Images[1],
-                                                                   $"{listItem.Name} ({profileName})",
-                                                                   "<PROFILE>",
-                                                                   listItem.Modified);
+                                                                       ImageCollection.Images[1],
+                                                                       $"{listItem.Name} ({profileName})",
+                                                                       "<PROFILE>",
+                                                                       listItem.Modified);
                                     break;
                                 }
                             case "/dev_hdd0/game/":
@@ -3836,18 +3860,18 @@ namespace ArisenStudio.Forms.Windows
                                         ? $" ({FtpExtensions.GetParamTitleAsync($"/dev_hdd0/game/{listItem.Name}/PARAM.SFO")})"
                                         : string.Empty;
                                     _ = DataTableConsoleFiles.Rows.Add("folder",
-                                                                   ImageCollection.Images[0],
-                                                                   $"{listItem.Name}{gameTitle}",
-                                                                   "<UPDATE>",
-                                                                   listItem.Modified);
+                                                                       ImageCollection.Images[0],
+                                                                       $"{listItem.Name}{gameTitle}",
+                                                                       "<UPDATE>",
+                                                                       listItem.Modified);
                                     break;
                                 }
                             default:
                                 _ = DataTableConsoleFiles.Rows.Add("folder",
-                                                               ImageCollection.Images[1],
-                                                               listItem.Name,
-                                                               "<DIRECTORY>",
-                                                               listItem.Modified);
+                                                                   ImageCollection.Images[1],
+                                                                   listItem.Name,
+                                                                   "<DIRECTORY>",
+                                                                   listItem.Modified);
                                 break;
                         }
                     }
@@ -3855,10 +3879,10 @@ namespace ArisenStudio.Forms.Windows
                     foreach (FtpListItem listItem in files.OrderBy(x => x.Name))
                     {
                         _ = DataTableConsoleFiles.Rows.Add("file",
-                                                       ImageFile,
-                                                       listItem.Name,
-                                                       Settings.UseFormattedFileSizes ? listItem.Size.Bytes().Humanize("#.##") : listItem.Size + " " + ResourceLanguage.GetString("LABEL_BYTES"),
-                                                       Settings.UseRelativeTimes ? listItem.Modified.Humanize() : listItem.Modified);
+                                                           ImageFile,
+                                                           listItem.Name,
+                                                           Settings.UseFormattedFileSizes ? listItem.Size.Bytes().Humanize("#.##") : listItem.Size + " " + ResourceLanguage.GetString("LABEL_BYTES"),
+                                                           Settings.UseRelativeTimes ? listItem.Modified.Humanize() : listItem.Modified);
 
                         totalBytes += Convert.ToInt32(listItem.Size);
                     }

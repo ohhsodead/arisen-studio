@@ -81,6 +81,7 @@ namespace ArisenStudio.Forms.Dialogs
             this.LabelBody.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.LabelBody.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
             this.LabelBody.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelDetails.SetFlowBreak(this.LabelBody, true);
             this.LabelBody.Location = new System.Drawing.Point(3, 27);
             this.LabelBody.Margin = new System.Windows.Forms.Padding(3, 3, 3, 11);
             this.LabelBody.MaximumSize = new System.Drawing.Size(380, 0);
@@ -94,11 +95,11 @@ namespace ArisenStudio.Forms.Dialogs
             // DataViewDialog
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(106F, 106F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.AutoScrollMargin = new System.Drawing.Size(0, 12);
             this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(418, 90);
             this.Controls.Add(this.PanelDetails);
             this.DoubleBuffered = true;
