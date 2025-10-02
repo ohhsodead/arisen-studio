@@ -175,6 +175,7 @@ namespace ArisenStudio.Database
             _gameSavesCache = new SimpleCache<GameSavesData>("gameSaves.json");
 
             _httpClient = new HttpClient();
+            _httpClient.Timeout = TimeSpan.FromMinutes(5);
             _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("ArisenStudio-Database");
         }
 
@@ -235,7 +236,7 @@ namespace ArisenStudio.Database
             // If no cached data, fetch fresh data and cache it
             var data = await fetchFunction();
 
-            var fetchResponse = await _httpClient.GetAsync(fileUrl);
+            var fetchResponse = await _httpClient.GetAsync(fileUrl, HttpCompletionOption.ResponseHeadersRead);
             cache.Add(cacheKey, data, new CacheMetadata
             {
                 ETag = fetchResponse.Headers.ETag?.Tag,
@@ -325,7 +326,7 @@ namespace ArisenStudio.Database
         {
             return GetFromCacheOrFetchAsync(_categoriesCache, "categories", "categories.json", async () =>
         {
-            string response = await _httpClient.GetStringAsync(Urls.CategoriesData);
+            string response = await _httpClient.GetStringAsync(Urls.CategoriesData).ConfigureAwait(false);
             return JsonConvert.DeserializeObject<CategoriesData>(response);
         });
         }

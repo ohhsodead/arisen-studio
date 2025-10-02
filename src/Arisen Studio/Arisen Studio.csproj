@@ -103,7 +103,7 @@
     </Reference>
     <Reference Include="JRPC, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Resources\xdevkit + jrpc\JRPC.dll</HintPath>
+      <HintPath>..\References\JRPC.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualBasic" />
@@ -113,15 +113,16 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PS3Lib, Version=4.5.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Arisen GSC Injector\src\References\PS3Lib.dll</HintPath>
+      <HintPath>..\References\PS3Lib.dll</HintPath>
     </Reference>
     <Reference Include="PS3ManagerAPI, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Arisen GSC Injector\src\References\PS3ManagerAPI.dll</HintPath>
+      <HintPath>..\References\PS3ManagerAPI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web" />
@@ -129,7 +130,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
     <Reference Include="xdevkit">
-      <HintPath>..\..\..\..\Resources\xdevkit.dll</HintPath>
+      <HintPath>..\References\XDevkit.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
   </ItemGroup>
@@ -748,13 +749,13 @@
       <Version>1.2.6</Version>
     </PackageReference>
     <PackageReference Include="DiscordRichPresence">
-      <Version>1.2.1.24</Version>
+      <Version>1.6.1.70</Version>
     </PackageReference>
     <PackageReference Include="FluentFTP">
-      <Version>52.1.0</Version>
+      <Version>53.0.1</Version>
     </PackageReference>
     <PackageReference Include="HtmlAgilityPack">
-      <Version>1.12.1</Version>
+      <Version>1.12.3</Version>
     </PackageReference>
     <PackageReference Include="Humanizer">
       <Version>2.14.1</Version>
@@ -766,22 +767,25 @@
       <Version>2.5.2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Web.WebView2">
-      <Version>1.0.3240.44</Version>
+      <Version>1.0.3485.44</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>13.0.3</Version>
+      <Version>13.0.4</Version>
     </PackageReference>
     <PackageReference Include="NLog">
-      <Version>5.4.0</Version>
+      <Version>5.5.1</Version>
     </PackageReference>
     <PackageReference Include="NLog.Config">
       <Version>4.7.15</Version>
+    </PackageReference>
+    <PackageReference Include="NLog.Targets.ConcurrentFile">
+      <Version>6.0.3</Version>
     </PackageReference>
     <PackageReference Include="SharpZipLib">
       <Version>1.4.2</Version>
     </PackageReference>
     <PackageReference Include="System.Text.Encodings.Web">
-      <Version>9.0.4</Version>
+      <Version>9.0.9</Version>
     </PackageReference>
     <PackageReference Include="Tomlyn">
       <Version>0.19.0</Version>
@@ -967,6 +971,8 @@
     <Content Include="arisenstudio.ico" />
     <None Include="Resources\arisenstudio.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
